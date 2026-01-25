@@ -1,0 +1,202 @@
+# Website Build Instructions: noahhshaw.com
+**Final Specification for Claude Code**
+
+---
+
+## 1. Overview
+
+Build a personal website for Noah Shaw, a product leader. The site should establish professional credibility without appearing promotional or job-seeking.
+
+**Domain:** noahhshaw.com (already configured on Vercel)  
+**Deployment:** Vercel
+
+---
+
+## 2. Design Philosophy
+
+**Core Principle:** Show, don't tell. Clean, confident, understated.
+
+**Tone:** *"Product leader who has demonstrated the ability to build valuable products in complex domains"*
+
+**What to AVOID:**
+- Poor use of whitespace / cluttered layouts
+- Walls of descriptive text
+- Skill bars, percentages, or metrics displays
+- Template-y or generic tech aesthetics
+- Purple/blue color schemes
+- "Coming soon" placeholders
+- Anything that feels eager or salesy
+
+**What to EMBRACE:**
+- Clear visual hierarchy
+- Scannable, minimal content
+- Professional restraint
+
+---
+
+## 3. Visual Design Specs
+
+**Mode:** Light mode only (no dark mode)
+
+**Color Palette:**
+- Background: Warm neutral (off-white, light cream)
+- Text primary: Near-black (#1A1A1A or similar)
+- Text secondary: Medium gray
+- **Accent: Teal** (for links, highlights, interactive elements)
+
+**Typography:**
+- Headlines/Display: Distinctive serif font (e.g., Fraunces, Playfair Display, or similar)
+- Body text: Clean sans-serif (e.g., DM Sans, Satoshi, or similar)
+- Generous line-height and letter-spacing
+
+**Layout:**
+- Max content width ~720px, centered
+- Generous vertical padding between sections
+- Responsive: mobile, tablet, desktop
+
+---
+
+## 4. Site Structure
+
+**Single-page scroll** with four sections:
+
+### 4.1 Navigation
+- Fixed/sticky header
+- Logo or name on left
+- Section links on right: About, Experience, Contact
+- Clean, minimal styling
+
+### 4.2 Hero Section
+- Name: **Noah Shaw**
+- Positioning statement (example): *"Product leader building and scaling AI/ML products in complex and safety-critical domains"*
+- LinkedIn link (icon + text or just icon): https://www.linkedin.com/in/noahhshaw/
+- Optional: Headshot placeholder (will be added later)
+
+### 4.3 About Section
+**Section label:** About
+
+**Content (2 short paragraphs to be revised later):**
+
+> Product leader with 10+ years of experience spanning data science, autonomous vehicles, and marketplace optimization. Currently leading product for Uber Eats Logistics, driving AI/ML initiatives and cross-functional execution across multiple business lines.
+>
+> Previously an early hire at Ghost Autonomy (Khosla-funded AV startup), where I helped scale the organization and led the human-machine interface for autonomous driving systems through public road deployment.
+
+### 4.4 Experience Section
+**Section label:** Experience
+
+**Format:** Vertical timeline, minimal by default with expandable details
+
+**Display behavior:**
+- Show company, role, and dates in collapsed state
+- Click/tap to expand and reveal brief description
+- Smooth expand/collapse animation
+
+**Timeline entries (top to bottom, most recent first):**
+
+1. **Uber** — Senior Product Manager, Marketplace 
+
+2. **Ghost Autonomy** — Product Manager
+
+3. **Uber** — Data Scientist
+
+4. **Boeing** — Systems Engineer
+
+5. **Northwestern University** — BS Mechanical Engineering
+
+### 4.5 Contact Section
+**Section label:** Contact
+
+**Format:** Chat-style bubble interface
+
+**Behavior:**
+- Styled like a messaging conversation
+- Initial bot message displayed: *"Have a question or want to connect? Send me a message."*
+- User input area with fields woven into chat flow:
+  - Name (appears as user's first bubble after prompt)
+  - Email
+  - Message
+- Submit sends form data to: **noahhshaw@gmail.com**
+- Success state: Bot reply bubble like *"Thanks! I'll be in touch soon."*
+
+**Backend:** Use Formspree or Vercel serverless function for form handling
+
+---
+
+## 5. Technical Requirements
+
+**Stack:**
+- Next.js (App Router) OR static HTML/CSS/JS
+- Tailwind CSS
+- Deploy to Vercel
+
+**Responsive breakpoints:**
+- Mobile: < 640px
+- Tablet: 640px – 1024px
+- Desktop: > 1024px
+
+**Analytics:**
+- Integrate Vercel Analytics (simple, privacy-friendly)
+
+**Performance:**
+- Optimize fonts (preconnect, font-display: swap)
+- Minimal JavaScript
+- Fast initial load
+
+---
+
+## 6. Components to Build
+
+| Component | Description |
+|-----------|-------------|
+| `Navbar` | Fixed header with name/logo + section links |
+| `Hero` | Name, tagline, LinkedIn link, optional photo |
+| `About` | Two paragraphs + expertise tags |
+| `Timeline` | Expandable experience entries |
+| `ChatContact` | Chat-bubble styled contact form |
+| `Footer` | Minimal—copyright or empty |
+
+---
+
+## 7. Content Summary
+
+**Name:** Noah Shaw  
+**Email (for form):** noahhshaw@gmail.com  
+**LinkedIn:** https://www.linkedin.com/in/noahhshaw/  
+**Tagline:** "Product leader building and scaling AI/ML products in complex and safety-critical domains"
+
+**About text:** (see Section 4.3 above)
+
+**Experience entries:** (see Section 4.4 above)
+---
+
+## 8. Future Extensibility
+
+Design and code structure should make it easy to add later:
+- Blog/Writing section
+- Embedded videos
+- AI chatbot for contact
+- Individual case study pages
+- Newsletter signup
+
+---
+
+## 9. Assets Pending
+
+| Asset | Status |
+|-------|--------|
+| Headshot photo | Will be uploaded separately—include placeholder |
+| Any additional copy refinements | May come later |
+
+---
+
+## 10. Deliverables
+
+1. Complete, deployable Next.js project (or static site)
+2. All components styled and responsive
+3. Contact form functional (connected to Formspree or equivalent)
+4. Vercel Analytics integrated
+5. Ready to deploy to noahhshaw.com
+
+---
+
+**End of specification.**
