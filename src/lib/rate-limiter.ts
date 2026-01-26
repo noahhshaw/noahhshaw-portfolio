@@ -1,5 +1,7 @@
 /**
  * Rate Limiter and Cost Ledger for Chatbot
+ * Uses Upstash Redis for persistent storage
+ *
  * Implements hard caps as per PRD:
  * - Daily LLM spend cap: $5/day
  * - Rolling 30-day cap: $100
@@ -7,10 +9,7 @@
  * - Circuit breaker for high traffic
  */
 
-// In-memory storage (in production, use Redis or similar)
-const ipRequestCounts: Map<string, { count: number; resetTime: number }> = new Map()
-const sessionCounts: Map<string, { turns: number; tokens: number; startTime: number }> = new Map()
-const costLedger: { timestamp: number; cost: number }[] = []
+import { redis, REDIS_KEYS, isRedisConfigured, getTodayKey, getMonthKey } from './redis'
 
 // Configuration
 const CONFIG = {
@@ -46,51 +45,82 @@ interface SessionState {
   startTime: number
 }
 
+// In-memory fallback for when Redis is not configured
+const memoryFallback = {
+  ipCounts: new Map<string, { count: number; resetTime: number }>(),
+  sessions: new Map<string, SessionState>(),
+  dailyCost: 0,
+  monthlyCost: 0,
+  lastReset: getTodayKey(),
+}
+
 /**
  * Check if request is allowed based on IP rate limiting
  */
-export function checkIPRateLimit(ip: string): RateLimitResult {
+export async function checkIPRateLimit(ip: string): Promise<RateLimitResult> {
   const now = Date.now()
-  const record = ipRequestCounts.get(ip)
 
-  if (!record || now > record.resetTime) {
-    ipRequestCounts.set(ip, { count: 1, resetTime: now + 60000 })
+  if (!isRedisConfigured()) {
+    // Fallback to in-memory
+    const record = memoryFallback.ipCounts.get(ip)
+    if (!record || now > record.resetTime) {
+      memoryFallback.ipCounts.set(ip, { count: 1, resetTime: now + 60000 })
+      return { allowed: true }
+    }
+    if (record.count >= CONFIG.maxRequestsPerMinutePerIP) {
+      return {
+        allowed: false,
+        reason: 'Rate limit exceeded. Please wait before sending another message.',
+        retryAfterSeconds: Math.ceil((record.resetTime - now) / 1000),
+      }
+    }
+    record.count++
     return { allowed: true }
   }
 
-  if (record.count >= CONFIG.maxRequestsPerMinutePerIP) {
-    const retryAfter = Math.ceil((record.resetTime - now) / 1000)
+  // Use Redis
+  const key = REDIS_KEYS.IP_RATE(ip)
+  const count = await redis.incr(key)
+
+  if (count === 1) {
+    // First request, set expiry
+    await redis.expire(key, 60)
+  }
+
+  if (count > CONFIG.maxRequestsPerMinutePerIP) {
+    const ttl = await redis.ttl(key)
     return {
       allowed: false,
       reason: 'Rate limit exceeded. Please wait before sending another message.',
-      retryAfterSeconds: retryAfter,
+      retryAfterSeconds: ttl > 0 ? ttl : 60,
     }
   }
 
-  record.count++
   return { allowed: true }
 }
 
 /**
  * Check circuit breaker (global request volume)
  */
-export function checkCircuitBreaker(): RateLimitResult {
-  const now = Date.now()
-  const oneHourAgo = now - 3600000
+export async function checkCircuitBreaker(): Promise<RateLimitResult> {
+  if (!isRedisConfigured()) {
+    // Skip circuit breaker in memory mode
+    return { allowed: true }
+  }
 
-  // Count requests in last hour across all IPs
-  let totalRequests = 0
-  ipRequestCounts.forEach((record) => {
-    if (record.resetTime > oneHourAgo) {
-      totalRequests += record.count
-    }
-  })
+  const key = REDIS_KEYS.CIRCUIT_BREAKER
+  const count = await redis.incr(key)
 
-  if (totalRequests >= CONFIG.maxRequestsPerHour) {
+  if (count === 1) {
+    // Set 1-hour expiry
+    await redis.expire(key, 3600)
+  }
+
+  if (count > CONFIG.maxRequestsPerHour) {
     return {
       allowed: false,
       reason: 'Service temporarily unavailable due to high demand. Please use the contact form below.',
-      retryAfterSeconds: 300, // 5 minute cooldown
+      retryAfterSeconds: 300,
     }
   }
 
@@ -100,16 +130,64 @@ export function checkCircuitBreaker(): RateLimitResult {
 /**
  * Check session limits (turns, tokens, duration)
  */
-export function checkSessionLimits(sessionId: string, inputTokens: number): RateLimitResult {
+export async function checkSessionLimits(sessionId: string, inputTokens: number): Promise<RateLimitResult> {
   const now = Date.now()
-  let session = sessionCounts.get(sessionId)
 
-  if (!session) {
-    session = { turns: 0, tokens: 0, startTime: now }
-    sessionCounts.set(sessionId, session)
+  if (!isRedisConfigured()) {
+    // Fallback to in-memory
+    let session = memoryFallback.sessions.get(sessionId)
+    if (!session) {
+      session = { turns: 0, inputTokens: 0, outputTokens: 0, startTime: now }
+      memoryFallback.sessions.set(sessionId, session)
+    }
+
+    if (now - session.startTime > CONFIG.maxConversationDurationMs) {
+      return {
+        allowed: false,
+        reason: 'Conversation time limit reached. Please start a new conversation or use the contact form.',
+      }
+    }
+
+    if (session.turns >= CONFIG.maxTurnsPerConversation) {
+      return {
+        allowed: false,
+        reason: 'Maximum conversation length reached. Please use the contact form to send a message to Noah.',
+      }
+    }
+
+    if (session.inputTokens + inputTokens > CONFIG.maxInputTokensPerConversation) {
+      return {
+        allowed: false,
+        reason: 'Message too long. Please keep your message concise or use the contact form.',
+      }
+    }
+
+    return { allowed: true }
   }
 
-  // Check duration
+  // Use Redis
+  const key = REDIS_KEYS.SESSION(sessionId)
+  const sessionData = await redis.hgetall(key) as Record<string, string> | null
+
+  if (!sessionData || Object.keys(sessionData).length === 0) {
+    // New session
+    await redis.hset(key, {
+      turns: 0,
+      inputTokens: 0,
+      outputTokens: 0,
+      startTime: now,
+    })
+    await redis.expire(key, Math.ceil(CONFIG.maxConversationDurationMs / 1000) * 2)
+    return { allowed: true }
+  }
+
+  const session: SessionState = {
+    turns: parseInt(sessionData.turns || '0'),
+    inputTokens: parseInt(sessionData.inputTokens || '0'),
+    outputTokens: parseInt(sessionData.outputTokens || '0'),
+    startTime: parseInt(sessionData.startTime || String(now)),
+  }
+
   if (now - session.startTime > CONFIG.maxConversationDurationMs) {
     return {
       allowed: false,
@@ -117,7 +195,6 @@ export function checkSessionLimits(sessionId: string, inputTokens: number): Rate
     }
   }
 
-  // Check turns
   if (session.turns >= CONFIG.maxTurnsPerConversation) {
     return {
       allowed: false,
@@ -125,8 +202,7 @@ export function checkSessionLimits(sessionId: string, inputTokens: number): Rate
     }
   }
 
-  // Check input tokens
-  if (session.tokens + inputTokens > CONFIG.maxInputTokensPerConversation) {
+  if (session.inputTokens + inputTokens > CONFIG.maxInputTokensPerConversation) {
     return {
       allowed: false,
       reason: 'Message too long. Please keep your message concise or use the contact form.',
@@ -139,22 +215,50 @@ export function checkSessionLimits(sessionId: string, inputTokens: number): Rate
 /**
  * Update session after successful response
  */
-export function updateSession(sessionId: string, inputTokens: number, outputTokens: number): void {
-  const session = sessionCounts.get(sessionId)
-  if (session) {
-    session.turns++
-    session.tokens += inputTokens
-  }
-
-  // Record cost
+export async function updateSession(sessionId: string, inputTokens: number, outputTokens: number): Promise<void> {
   const cost = calculateCost(inputTokens, outputTokens)
-  costLedger.push({ timestamp: Date.now(), cost })
 
-  // Clean old entries (keep 30 days)
-  const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000
-  while (costLedger.length > 0 && costLedger[0].timestamp < thirtyDaysAgo) {
-    costLedger.shift()
+  if (!isRedisConfigured()) {
+    // Fallback to in-memory
+    const session = memoryFallback.sessions.get(sessionId)
+    if (session) {
+      session.turns++
+      session.inputTokens += inputTokens
+      session.outputTokens += outputTokens
+    }
+
+    // Reset daily cost if new day
+    const today = getTodayKey()
+    if (memoryFallback.lastReset !== today) {
+      memoryFallback.dailyCost = 0
+      memoryFallback.lastReset = today
+    }
+    memoryFallback.dailyCost += cost
+    memoryFallback.monthlyCost += cost
+    return
   }
+
+  // Update session in Redis
+  const sessionKey = REDIS_KEYS.SESSION(sessionId)
+  await redis.hincrby(sessionKey, 'turns', 1)
+  await redis.hincrby(sessionKey, 'inputTokens', inputTokens)
+  await redis.hincrby(sessionKey, 'outputTokens', outputTokens)
+
+  // Update cost tracking
+  const today = getTodayKey()
+  const month = getMonthKey()
+  const dailyKey = REDIS_KEYS.COST_DAILY(today)
+  const monthlyKey = REDIS_KEYS.COST_MONTHLY(month)
+
+  // Use INCRBYFLOAT for cost tracking (multiply by 1000000 to avoid float precision issues)
+  const costMicros = Math.round(cost * 1000000)
+  await redis.incrby(dailyKey, costMicros)
+  await redis.incrby(monthlyKey, costMicros)
+
+  // Set expiry on daily key (2 days to be safe)
+  await redis.expire(dailyKey, 86400 * 2)
+  // Set expiry on monthly key (35 days)
+  await redis.expire(monthlyKey, 86400 * 35)
 }
 
 /**
@@ -169,15 +273,35 @@ function calculateCost(inputTokens: number, outputTokens: number): number {
 /**
  * Check if within cost caps
  */
-export function checkCostCaps(): RateLimitResult {
-  const now = Date.now()
-  const oneDayAgo = now - 24 * 60 * 60 * 1000
-  const thirtyDaysAgo = now - 30 * 24 * 60 * 60 * 1000
+export async function checkCostCaps(): Promise<RateLimitResult> {
+  if (!isRedisConfigured()) {
+    // Fallback to in-memory
+    if (memoryFallback.dailyCost >= CONFIG.dailyCostCapUSD) {
+      return {
+        allowed: false,
+        reason: 'Chat service is currently unavailable. Please use the contact form below.',
+      }
+    }
+    if (memoryFallback.monthlyCost >= CONFIG.monthlyCostCapUSD) {
+      return {
+        allowed: false,
+        reason: 'Chat service is currently unavailable. Please use the contact form below.',
+      }
+    }
+    return { allowed: true }
+  }
 
-  // Calculate daily cost
-  const dailyCost = costLedger
-    .filter(entry => entry.timestamp > oneDayAgo)
-    .reduce((sum, entry) => sum + entry.cost, 0)
+  // Check Redis
+  const today = getTodayKey()
+  const month = getMonthKey()
+
+  const [dailyCostMicros, monthlyCostMicros] = await Promise.all([
+    redis.get(REDIS_KEYS.COST_DAILY(today)),
+    redis.get(REDIS_KEYS.COST_MONTHLY(month)),
+  ])
+
+  const dailyCost = (Number(dailyCostMicros) || 0) / 1000000
+  const monthlyCost = (Number(monthlyCostMicros) || 0) / 1000000
 
   if (dailyCost >= CONFIG.dailyCostCapUSD) {
     return {
@@ -185,11 +309,6 @@ export function checkCostCaps(): RateLimitResult {
       reason: 'Chat service is currently unavailable. Please use the contact form below.',
     }
   }
-
-  // Calculate monthly cost
-  const monthlyCost = costLedger
-    .filter(entry => entry.timestamp > thirtyDaysAgo)
-    .reduce((sum, entry) => sum + entry.cost, 0)
 
   if (monthlyCost >= CONFIG.monthlyCostCapUSD) {
     return {
@@ -204,23 +323,32 @@ export function checkCostCaps(): RateLimitResult {
 /**
  * Get current usage stats (for monitoring)
  */
-export function getUsageStats(): {
+export async function getUsageStats(): Promise<{
   dailyCost: number
   monthlyCost: number
   dailyCostLimit: number
   monthlyCostLimit: number
-} {
-  const now = Date.now()
-  const oneDayAgo = now - 24 * 60 * 60 * 1000
-  const thirtyDaysAgo = now - 30 * 24 * 60 * 60 * 1000
+}> {
+  if (!isRedisConfigured()) {
+    return {
+      dailyCost: memoryFallback.dailyCost,
+      monthlyCost: memoryFallback.monthlyCost,
+      dailyCostLimit: CONFIG.dailyCostCapUSD,
+      monthlyCostLimit: CONFIG.monthlyCostCapUSD,
+    }
+  }
+
+  const today = getTodayKey()
+  const month = getMonthKey()
+
+  const [dailyCostMicros, monthlyCostMicros] = await Promise.all([
+    redis.get(REDIS_KEYS.COST_DAILY(today)),
+    redis.get(REDIS_KEYS.COST_MONTHLY(month)),
+  ])
 
   return {
-    dailyCost: costLedger
-      .filter(entry => entry.timestamp > oneDayAgo)
-      .reduce((sum, entry) => sum + entry.cost, 0),
-    monthlyCost: costLedger
-      .filter(entry => entry.timestamp > thirtyDaysAgo)
-      .reduce((sum, entry) => sum + entry.cost, 0),
+    dailyCost: (Number(dailyCostMicros) || 0) / 1000000,
+    monthlyCost: (Number(monthlyCostMicros) || 0) / 1000000,
     dailyCostLimit: CONFIG.dailyCostCapUSD,
     monthlyCostLimit: CONFIG.monthlyCostCapUSD,
   }
@@ -231,24 +359,4 @@ export function getUsageStats(): {
  */
 export function generateSessionId(): string {
   return `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
-}
-
-/**
- * Clean up old session data (call periodically)
- */
-export function cleanupSessions(): void {
-  const now = Date.now()
-  const maxAge = CONFIG.maxConversationDurationMs * 2
-
-  sessionCounts.forEach((session, id) => {
-    if (now - session.startTime > maxAge) {
-      sessionCounts.delete(id)
-    }
-  })
-
-  ipRequestCounts.forEach((record, ip) => {
-    if (now > record.resetTime + 3600000) {
-      ipRequestCounts.delete(ip)
-    }
-  })
 }

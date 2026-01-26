@@ -28,7 +28,9 @@ export default function Chatbot() {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [sessionId, setSessionId] = useState<string | null>(null)
+  const [conversationId, setConversationId] = useState<string | null>(null)
   const [mode, setMode] = useState<Mode>('chat')
+  const [contactIntentNotified, setContactIntentNotified] = useState(false)
   const [contactData, setContactData] = useState<ContactData>({
     firstName: '',
     lastName: '',
@@ -77,6 +79,30 @@ export default function Chatbot() {
     }
   }, [])
 
+  // Notify about contact intent when user provides name and email
+  useEffect(() => {
+    if (
+      mode === 'contact' &&
+      !contactIntentNotified &&
+      contactData.firstName &&
+      contactData.email
+    ) {
+      // Send notification that contact intent started
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: `${contactData.firstName} ${contactData.lastName}`.trim(),
+          email: contactData.email,
+          company: contactData.company,
+          conversationId,
+          notifyIntentOnly: true,
+        }),
+      }).catch(console.error)
+      setContactIntentNotified(true)
+    }
+  }, [mode, contactData.firstName, contactData.email, contactData.lastName, contactData.company, contactIntentNotified, conversationId])
+
   const toggleVoiceInput = () => {
     if (!recognitionRef.current) {
       setError('Voice input is not supported in your browser.')
@@ -108,6 +134,7 @@ export default function Chatbot() {
         body: JSON.stringify({
           message: userMessage,
           sessionId,
+          conversationId,
           conversationHistory: messages.slice(-10),
         }),
       })
@@ -129,6 +156,9 @@ export default function Chatbot() {
 
       if (data.sessionId) {
         setSessionId(data.sessionId)
+      }
+      if (data.conversationId) {
+        setConversationId(data.conversationId)
       }
 
       // Check if this is a contact intent
@@ -175,7 +205,10 @@ export default function Chatbot() {
         body: JSON.stringify({
           name: `${contactData.firstName} ${contactData.lastName}`,
           email: contactData.email,
-          message: `${contactData.company ? `Company: ${contactData.company}\n` : ''}${contactData.reason ? `Reason: ${contactData.reason}\n\n` : ''}${contactData.message}`,
+          company: contactData.company,
+          reason: contactData.reason,
+          message: contactData.message,
+          conversationId,
         }),
       })
 

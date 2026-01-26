@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Anthropic from '@anthropic-ai/sdk'
-import { getFullContext, searchCanonicalData, canonicalData } from '@/lib/canonical-data'
+import { getFullContext, searchCanonicalData } from '@/lib/canonical-data'
 import {
   checkIPRateLimit,
   checkCircuitBreaker,
@@ -9,6 +9,11 @@ import {
   updateSession,
   generateSessionId,
 } from '@/lib/rate-limiter'
+import {
+  startConversation,
+  logMessage,
+  generateConversationId,
+} from '@/lib/conversation-logger'
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -121,13 +126,13 @@ function getGreetingResponse(): string {
 
 export async function POST(request: NextRequest) {
   try {
-    // Get IP for rate limiting
+    // Get IP for rate limiting and logging
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0] ||
                request.headers.get('x-real-ip') ||
                'unknown'
 
     // Check all rate limits and caps
-    const ipCheck = checkIPRateLimit(ip)
+    const ipCheck = await checkIPRateLimit(ip)
     if (!ipCheck.allowed) {
       return NextResponse.json(
         { error: ipCheck.reason, fallbackToForm: true },
@@ -135,7 +140,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const circuitCheck = checkCircuitBreaker()
+    const circuitCheck = await checkCircuitBreaker()
     if (!circuitCheck.allowed) {
       return NextResponse.json(
         { error: circuitCheck.reason, fallbackToForm: true },
@@ -143,7 +148,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const costCheck = checkCostCaps()
+    const costCheck = await checkCostCaps()
     if (!costCheck.allowed) {
       return NextResponse.json(
         { error: costCheck.reason, fallbackToForm: true },
@@ -153,7 +158,12 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const body = await request.json()
-    const { message, sessionId: providedSessionId, conversationHistory = [] } = body
+    const {
+      message,
+      sessionId: providedSessionId,
+      conversationId: providedConversationId,
+      conversationHistory = [],
+    } = body
 
     if (!message || typeof message !== 'string') {
       return NextResponse.json(
@@ -165,13 +175,20 @@ export async function POST(request: NextRequest) {
     // Estimate input tokens (rough estimate: ~4 chars per token)
     const estimatedInputTokens = Math.ceil(message.length / 4) + 500 // +500 for system prompt
 
-    // Get or create session
+    // Get or create session and conversation IDs
     const sessionId = providedSessionId || generateSessionId()
+    const conversationId = providedConversationId || generateConversationId()
+    const isNewConversation = !providedConversationId
 
-    const sessionCheck = checkSessionLimits(sessionId, estimatedInputTokens)
+    // Start conversation log if new
+    if (isNewConversation) {
+      await startConversation(conversationId, sessionId, ip)
+    }
+
+    const sessionCheck = await checkSessionLimits(sessionId, estimatedInputTokens)
     if (!sessionCheck.allowed) {
       return NextResponse.json(
-        { error: sessionCheck.reason, fallbackToForm: true, sessionId },
+        { error: sessionCheck.reason, fallbackToForm: true, sessionId, conversationId },
         { status: 429 }
       )
     }
@@ -179,21 +196,45 @@ export async function POST(request: NextRequest) {
     // Classify intent
     const intent = classifyIntent(message)
 
+    // Log user message
+    await logMessage(conversationId, {
+      role: 'user',
+      content: message,
+      timestamp: Date.now(),
+      intent,
+    })
+
     // Handle off-scope immediately without LLM
     if (intent === 'OFF_SCOPE') {
+      const response = getOffScopeResponse()
+      await logMessage(conversationId, {
+        role: 'assistant',
+        content: response,
+        timestamp: Date.now(),
+        intent,
+      })
       return NextResponse.json({
-        response: getOffScopeResponse(),
+        response,
         intent,
         sessionId,
+        conversationId,
       })
     }
 
     // Handle greetings without LLM to save tokens
     if (intent === 'GREETING' && conversationHistory.length === 0) {
+      const response = getGreetingResponse()
+      await logMessage(conversationId, {
+        role: 'assistant',
+        content: response,
+        timestamp: Date.now(),
+        intent,
+      })
       return NextResponse.json({
-        response: getGreetingResponse(),
+        response,
         intent,
         sessionId,
+        conversationId,
       })
     }
 
@@ -235,12 +276,25 @@ export async function POST(request: NextRequest) {
     // Update session with actual token usage
     const inputTokens = response.usage.input_tokens
     const outputTokens = response.usage.output_tokens
-    updateSession(sessionId, inputTokens, outputTokens)
+    await updateSession(sessionId, inputTokens, outputTokens)
+
+    // Log assistant response
+    await logMessage(conversationId, {
+      role: 'assistant',
+      content: responseText,
+      timestamp: Date.now(),
+      intent,
+      tokensUsed: {
+        input: inputTokens,
+        output: outputTokens,
+      },
+    })
 
     return NextResponse.json({
       response: responseText,
       intent,
       sessionId,
+      conversationId,
       usage: {
         inputTokens,
         outputTokens,
