@@ -14,11 +14,20 @@
 
 import { Redis } from '@upstash/redis'
 
-// Create Redis client (will throw if env vars not set)
-export const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL || '',
-  token: process.env.UPSTASH_REDIS_REST_TOKEN || '',
-})
+// Check if Redis is configured with valid values
+const hasValidRedisConfig = (): boolean => {
+  const url = process.env.UPSTASH_REDIS_REST_URL
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN
+  return !!(url && token && url.startsWith('https://') && !url.includes('your_redis'))
+}
+
+// Create Redis client only if properly configured
+export const redis = hasValidRedisConfig()
+  ? new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL!,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+    })
+  : null as any // Will be caught by isRedisConfigured() checks
 
 // Key prefixes for organization
 export const REDIS_KEYS = {
@@ -44,7 +53,7 @@ export const REDIS_KEYS = {
  * Check if Redis is configured
  */
 export function isRedisConfigured(): boolean {
-  return !!(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN)
+  return redis !== null && hasValidRedisConfig()
 }
 
 /**
