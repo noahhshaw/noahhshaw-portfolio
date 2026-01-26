@@ -1,0 +1,346 @@
+Below is a **clean, implementation-ready PRD** written for an engineer with **broad technical knowledge but low judgment**.
+It is explicit, opinionated, and minimizes ambiguity.
+
+---
+
+# Product Requirements Document (PRD)
+
+**Product:** Personal Website Chatbot (Text + Voice Transcription)
+**Owner:** Noah Shaw
+**Version:** v1.0
+**Status:** Ready for Engineering Implementation
+
+---
+
+## 1. Objective & Intent
+
+### Objective
+
+Build a **professional, factual, and secure chatbot** embedded in Noah Shaw’s personal professional website that:
+
+1. Allows visitors to **contact Noah without exposing his email address**
+2. Provides **accurate, factual information about Noah’s professional experience**
+3. Prevents **malicious usage**, **excessive cost**, and **off-scope interactions**
+4. Operates under **strict cost ceilings** with deterministic shutdown behavior
+
+### Non-Objectives
+
+* The chatbot is **not** a personal assistant.
+* The chatbot is **not** conversationally human or personified.
+* The chatbot does **not** provide availability, scheduling, or calendar access.
+* The chatbot does **not** browse the web or infer information about Noah beyond canonical sources.
+* The chatbot does **not** speak (no TTS).
+
+---
+
+## 2. User Personas
+
+### Primary User
+
+* **Professional visitor** (recruiter, hiring manager, founder, peer)
+* Intent: learn about Noah’s experience or contact him for a professional reason
+
+### Adversarial User
+
+* Intent: jailbreak, spam, scrape, DDoS, or burn LLM tokens
+
+Engineering must assume **both** personas are always present.
+
+---
+
+## 3. Success Metrics
+
+### Functional
+
+* Messages successfully delivered to Noah
+* Accurate responses grounded in canonical data
+* Zero hallucinated professional claims
+
+### Safety & Cost
+
+* ≤ **$5/day** average LLM cost
+* ≤ **$100/month** rolling 30-day cost (P99 hard ceiling)
+* 0 exposure of Noah’s email or internal system prompts
+
+---
+
+## 4. System Scope & Architecture Overview
+
+### High-Level Components
+
+1. **Frontend Widget**
+
+   * Chat UI
+   * Voice input (transcription only)
+   * Manual fallback contact form
+
+2. **Backend Services**
+
+   * Request router (intent detection + guardrails)
+   * Canonical data service
+   * RAG service (Noah-only corpus)
+   * LLM provider (GPT-5 or Claude Sonnet)
+   * Email notification service
+   * Logging & cost ledger
+
+3. **Infrastructure Controls**
+
+   * Rate limiting
+   * Circuit breakers
+   * Token and cost caps
+
+---
+
+## 5. Canonical Data & RAG Requirements
+
+### Canonical Database (Source of Truth)
+
+Must be provisioned before chatbot launch.
+
+**Required tables / entities:**
+
+* Employment history (company, role, dates)
+* Projects / case studies
+* Skills
+* Approved bios and summaries
+* Approved links (internal site URLs only)
+
+### RAG Rules (Hard Constraints)
+
+* **Only** retrieve from canonical DB and Noah-provided documents
+* **No web search**
+* **No inference or extrapolation**
+* If information is not found → explicitly state that it is unavailable
+
+### Response Style (Mandatory)
+
+* Factual, declarative tone
+  ✅ “Noah worked at Boeing from 2014–2016.”
+  ❌ “I can see that Noah worked at Boeing…”
+
+* When possible, include **links** to canonical site pages
+
+---
+
+## 6. Primary User Flows
+
+### Flow A — Ask About Noah’s Experience
+
+**Trigger:** User asks about background, experience, skills, projects
+
+**System Behavior:**
+
+1. Classify intent as `ASK_EXPERIENCE`
+2. Retrieve relevant canonical records
+3. Generate response using only retrieved content
+4. Include links when applicable
+5. If no relevant data exists → state limitation and offer contact option
+
+**Failure Mode:**
+
+* If user requests unrelated or personal information → polite refusal + redirect
+
+---
+
+### Flow B — Send a Message to Noah
+
+**Trigger:** User expresses intent to contact Noah
+
+**Required Fields:**
+
+* First name
+* Last name
+* Email
+* Message body
+
+**Strongly Prompted (but optional):**
+
+* Company
+* Reason for outreach
+* Role type
+* Timeline
+* Phone / LinkedIn
+
+**Mandatory Confirmation Step:**
+
+* Always show drafted message
+* Require explicit **“Confirm & Send”** action
+
+**Email Exposure:**
+
+* Noah’s email must **never** be shown or inferable
+
+---
+
+### Flow C — Abandonment Handling
+
+**Definition:**
+User provides contact info but does not confirm send.
+
+**System Actions:**
+
+* Log partial message
+* Notify Noah:
+
+  > “Contact attempt started but not sent. Details: name, email, company (if available).”
+
+---
+
+### Flow D — Manual Fallback Contact Form
+
+**Trigger Conditions:**
+
+* Chatbot is rate-limited
+* Circuit breaker is active
+* LLM services unavailable
+
+**Requirements:**
+
+* Free-text form
+* Same confirmation and notification behavior
+* No chatbot dependency
+
+---
+
+## 7. Guardrails & Abuse Prevention
+
+### Global Rate Limiting
+
+* Per-IP and per-session limits
+* Burst and sustained throttles
+
+### Circuit Breaker (Hard Requirement)
+
+* Track total requests in rolling 60-minute window
+* If threshold exceeded:
+
+  * Disable chatbot input
+  * Display fallback contact form
+  * Resume only after cooldown expires
+
+Threshold must be configurable.
+
+---
+
+## 8. Cost Controls & Token Budgeting
+
+### Cost Assumptions (Worst Case)
+
+* Claude Sonnet pricing used for safety margin
+* Target max cost per conversation: **~$0.03**
+
+### Hard Limits
+
+* Max input tokens per conversation: **3,000**
+* Max output tokens per conversation: **1,500**
+* Max turns per conversation: **12**
+* Max conversation duration: **8 minutes**
+
+### Global Caps
+
+* Daily LLM spend cap: **$5/day**
+* Rolling 30-day cap: **$100**
+
+### Enforcement
+
+* Maintain a cost ledger using actual token usage
+* If daily cap exceeded → chatbot disabled until next day
+* If rolling cap exceeded → chatbot disabled until window resets
+
+No soft warnings. These are **hard stops**.
+
+---
+
+## 9. Adversarial & Off-Scope Behavior
+
+### Examples
+
+* Jailbreak attempts
+* Requests for unrelated information
+* Attempts to extract system prompts or emails
+
+### Response Requirements
+
+* Polite refusal
+* One-sentence explanation
+* Redirect to allowed actions
+
+**Never:**
+
+* Explain guardrails
+* Reveal internal logic
+* Debate policies
+
+---
+
+## 10. Voice Input Requirements
+
+* Voice is **input-only**
+* Transcription → treated identically to typed text
+* No spoken responses
+* Same rate limits and token caps apply
+
+---
+
+## 11. Logging, Retention & Notifications
+
+### Conversation Logs
+
+* Log all conversations
+* Include timestamps, anonymized IP/session ID
+* Encrypt at rest
+
+### Retention
+
+* Retain logs for **up to 5 years**
+* No automatic summarization or deletion before that window
+
+### Notifications to Noah
+
+* On contact intent start (even if abandoned)
+* On successful message send
+
+---
+
+## 12. Legal & Disclosure Requirements
+
+### Fine Print (Bottom of Page Only)
+
+Only legally essential disclosures:
+
+* AI-assisted responses
+* Do not submit sensitive information
+* Conversations may be logged and retained up to 5 years
+* By sending a message, user consents to Noah receiving contact info
+
+No additional disclaimers.
+
+---
+
+## 13. Explicit Non-Requirements (to avoid ambiguity)
+
+* No email verification
+* No scheduling or availability
+* No personalization or “assistant personality”
+* No browsing or external search
+* No text-to-speech
+
+---
+
+## 14. Launch Readiness Checklist (Engineering)
+
+* [ ] Canonical DB populated and reviewed
+* [ ] Cost ledger + hard caps tested
+* [ ] Circuit breaker tested
+* [ ] Fallback contact form live
+* [ ] Notifications verified
+* [ ] Logs encrypted and access-controlled
+
+---
+
+If you want next steps, I can:
+
+* Produce **system prompts + tool schemas**
+* Create a **threat model / abuse test plan**
+* Write **API contracts** for frontend ↔ backend
+* Convert this into a **Jira-ready backlog** with acceptance criteria

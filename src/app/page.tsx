@@ -2,7 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Timeline from './components/Timeline'
-import ChatContact from './components/ChatContact'
+import Chatbot from './components/Chatbot'
 import Footer from './components/Footer'
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
         <Hero />
         <About />
         <Timeline />
-        <ChatContact />
+        <Chatbot />
       </main>
       <Footer />
     </>
