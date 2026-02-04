@@ -10,7 +10,7 @@
  */
 
 import { redis, REDIS_KEYS, isRedisConfigured } from './redis'
-import { createHash } from 'crypto'
+import { createHash, randomUUID } from 'crypto'
 
 export interface ConversationMessage {
   role: 'user' | 'assistant'
@@ -53,7 +53,7 @@ function anonymizeIp(ip: string): string {
  * Generate a conversation ID
  */
 export function generateConversationId(): string {
-  return `conv_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+  return `conv_${Date.now()}_${randomUUID()}`
 }
 
 /**
@@ -89,6 +89,24 @@ export async function startConversation(
 }
 
 /**
+ * Safely parse conversation data from Redis
+ * Upstash Redis auto-deserializes JSON, so we may receive an object or string
+ */
+function parseConversationData(data: unknown): ConversationLog | null {
+  if (!data) return null
+  if (typeof data === 'object') return data as ConversationLog
+  if (typeof data === 'string') {
+    try {
+      return JSON.parse(data)
+    } catch (error) {
+      console.error('[Logger] Failed to parse conversation data:', error)
+      return null
+    }
+  }
+  return null
+}
+
+/**
  * Log a message to an existing conversation
  */
 export async function logMessage(
@@ -100,14 +118,18 @@ export async function logMessage(
   }
 
   const key = REDIS_KEYS.CONVERSATION(conversationId)
-  const existing = await redis.get(key) as string | null
+  const existing = await redis.get(key)
 
   if (!existing) {
     console.warn(`[Logger] Conversation ${conversationId} not found`)
     return
   }
 
-  const log: ConversationLog = JSON.parse(existing)
+  const log = parseConversationData(existing)
+  if (!log) {
+    console.warn(`[Logger] Failed to parse conversation ${conversationId}`)
+    return
+  }
   log.messages.push(message)
   log.lastActivity = Date.now()
 
@@ -128,13 +150,13 @@ export async function markContactAttemptStarted(
   }
 
   const key = REDIS_KEYS.CONVERSATION(conversationId)
-  const existing = await redis.get(key) as string | null
+  const existing = await redis.get(key)
 
-  if (!existing) {
+  const log = parseConversationData(existing)
+  if (!log) {
     return
   }
 
-  const log: ConversationLog = JSON.parse(existing)
   log.contactAttempt = {
     started: true,
     completed: false,
@@ -159,13 +181,13 @@ export async function markContactAttemptCompleted(conversationId: string): Promi
   }
 
   const key = REDIS_KEYS.CONVERSATION(conversationId)
-  const existing = await redis.get(key) as string | null
+  const existing = await redis.get(key)
 
-  if (!existing) {
+  const log = parseConversationData(existing)
+  if (!log) {
     return
   }
 
-  const log: ConversationLog = JSON.parse(existing)
   if (log.contactAttempt) {
     log.contactAttempt.completed = true
   }
@@ -190,9 +212,9 @@ export async function getPendingContactAttempts(): Promise<ConversationLog[]> {
 
   for (const id of pendingIds) {
     const key = REDIS_KEYS.CONVERSATION(id)
-    const data = await redis.get(key) as string | null
-    if (data) {
-      const log: ConversationLog = JSON.parse(data)
+    const data = await redis.get(key)
+    const log = parseConversationData(data)
+    if (log) {
       // Check if it's been more than 10 minutes since last activity (likely abandoned)
       if (Date.now() - log.lastActivity > 10 * 60 * 1000) {
         results.push(log)
@@ -212,13 +234,9 @@ export async function getConversation(conversationId: string): Promise<Conversat
   }
 
   const key = REDIS_KEYS.CONVERSATION(conversationId)
-  const data = await redis.get(key) as string | null
+  const data = await redis.get(key)
 
-  if (!data) {
-    return null
-  }
-
-  return JSON.parse(data)
+  return parseConversationData(data)
 }
 
 /**
