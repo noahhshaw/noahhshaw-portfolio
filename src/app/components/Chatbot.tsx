@@ -70,7 +70,7 @@ export default function Chatbot() {
           setIsListening(false)
         }
 
-        recognitionRef.current.onerror = (event) => {
+        recognitionRef.current.onerror = (event: any) => {
           setIsListening(false)
           setError('Voice recognition error. Please try typing instead.')
           console.error('Speech recognition error:', event.error)
