@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Fraunces, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import { ErrorBoundary } from './components/ErrorBoundary'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -35,7 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
       <body className="font-sans">
-        {children}
+        <ErrorBoundary>
+          {children}
+        </ErrorBoundary>
         <Analytics />
       </body>
     </html>

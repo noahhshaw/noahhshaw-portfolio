@@ -63,13 +63,17 @@ export default function Chatbot() {
         recognitionRef.current.lang = 'en-US'
 
         recognitionRef.current.onresult = (event) => {
-          const transcript = event.results[0][0].transcript
-          setInput(prev => prev + transcript)
+          if (event.results && event.results.length > 0 && event.results[0].length > 0) {
+            const transcript = event.results[0][0].transcript
+            setInput(prev => prev + transcript)
+          }
           setIsListening(false)
         }
 
-        recognitionRef.current.onerror = () => {
+        recognitionRef.current.onerror = (event) => {
           setIsListening(false)
+          setError('Voice recognition error. Please try typing instead.')
+          console.error('Speech recognition error:', event.error)
         }
 
         recognitionRef.current.onend = () => {
@@ -98,10 +102,15 @@ export default function Chatbot() {
           conversationId,
           notifyIntentOnly: true,
         }),
-      }).catch(console.error)
+      }).catch((error) => {
+        console.error('Failed to send contact intent notification:', error)
+        setError('Failed to save contact information. Please try submitting again.')
+      })
       setContactIntentNotified(true)
     }
-  }, [mode, contactData.firstName, contactData.email, contactData.lastName, contactData.company, contactIntentNotified, conversationId])
+    // Only depend on mode and contactIntentNotified to avoid re-firing on every keystroke
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode, contactIntentNotified])
 
   const toggleVoiceInput = () => {
     if (!recognitionRef.current) {
@@ -189,7 +198,7 @@ export default function Chatbot() {
     }
 
     // Validate email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
     if (!emailRegex.test(contactData.email)) {
       setError('Please enter a valid email address.')
       return

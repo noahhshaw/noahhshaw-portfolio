@@ -42,11 +42,19 @@ export interface ConversationLog {
 // 5 years in seconds (PRD requirement)
 const RETENTION_SECONDS = 5 * 365 * 24 * 60 * 60
 
+// Generate a secure random salt if not provided via env var
+// WARNING: This will change on each restart if IP_SALT is not set!
+const IP_SALT = process.env.IP_SALT || (() => {
+  const salt = randomUUID()
+  console.warn('[Logger] IP_SALT not set in environment, using runtime-generated salt. Set IP_SALT for consistent anonymization across restarts.')
+  return salt
+})()
+
 /**
  * Anonymize IP address by hashing
  */
 function anonymizeIp(ip: string): string {
-  return createHash('sha256').update(ip + process.env.IP_SALT || 'default-salt').digest('hex').substring(0, 16)
+  return createHash('sha256').update(ip + IP_SALT).digest('hex').substring(0, 16)
 }
 
 /**

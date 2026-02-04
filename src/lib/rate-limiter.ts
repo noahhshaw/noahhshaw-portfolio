@@ -10,6 +10,7 @@
  */
 
 import { redis, REDIS_KEYS, isRedisConfigured, getTodayKey, getMonthKey } from './redis'
+import { randomUUID } from 'crypto'
 
 // Configuration
 const CONFIG = {
@@ -358,5 +359,5 @@ export async function getUsageStats(): Promise<{
  * Generate a session ID
  */
 export function generateSessionId(): string {
-  return `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+  return `session_${Date.now()}_${randomUUID()}`
 }

@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-20">

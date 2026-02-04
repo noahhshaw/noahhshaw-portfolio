@@ -157,7 +157,16 @@ export async function POST(request: NextRequest) {
     }
 
     // Parse request body
-    const body = await request.json()
+    let body
+    try {
+      body = await request.json()
+    } catch (error) {
+      return NextResponse.json(
+        { error: 'Invalid JSON in request body', fallbackToForm: true },
+        { status: 400 }
+      )
+    }
+
     const {
       message,
       sessionId: providedSessionId,

@@ -12,7 +12,7 @@ import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-const NOAH_EMAIL = 'noahhshaw@gmail.com'
+const NOAH_EMAIL = process.env.NOTIFICATION_EMAIL || 'noahhshaw@gmail.com'
 const FROM_EMAIL = 'Portfolio Bot <onboarding@resend.dev>' // Use Resend sandbox initially
 
 interface ContactNotificationData {
