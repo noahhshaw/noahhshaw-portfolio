@@ -16,13 +16,13 @@ interface ContactData {
   reason?: string
 }
 
-type Mode = 'chat' | 'contact' | 'fallback'
+type Mode = 'chat' | 'fallback'
 
 export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "Hello! I can help you learn about Noah Shaw's professional background or assist you in sending him a message. What would you like to know?",
+      content: "Hi there! I'm Noah's assistant. I can tell you about his professional background, or help you get a message to him. What can I help you with today?",
     },
   ])
   const [input, setInput] = useState('')
@@ -30,8 +30,10 @@ export default function Chatbot() {
   const [sessionId, setSessionId] = useState<string | null>(null)
   const [conversationId, setConversationId] = useState<string | null>(null)
   const [mode, setMode] = useState<Mode>('chat')
-  const [contactIntentNotified, setContactIntentNotified] = useState(false)
-  const [contactData, setContactData] = useState<ContactData>({
+  const [isListening, setIsListening] = useState(false)
+  const [isSendingContact, setIsSendingContact] = useState(false)
+  // Fallback form data (only used when chat fails)
+  const [fallbackFormData, setFallbackFormData] = useState<ContactData>({
     firstName: '',
     lastName: '',
     email: '',
@@ -39,8 +41,6 @@ export default function Chatbot() {
     company: '',
     reason: '',
   })
-  const [contactStep, setContactStep] = useState(0)
-  const [isListening, setIsListening] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   const messagesEndRef = useRef<HTMLDivElement>(null)
@@ -83,34 +83,61 @@ export default function Chatbot() {
     }
   }, [])
 
-  // Notify about contact intent when user provides name and email
-  useEffect(() => {
-    if (
-      mode === 'contact' &&
-      !contactIntentNotified &&
-      contactData.firstName &&
-      contactData.email
-    ) {
-      // Send notification that contact intent started
-      fetch('/api/contact', {
+  /**
+   * Parse CONTACT_READY JSON from assistant response
+   */
+  const parseContactReady = (response: string): ContactData | null => {
+    const match = response.match(/```CONTACT_READY\s*\n?([\s\S]*?)\n?```/)
+    if (!match) return null
+
+    try {
+      const data = JSON.parse(match[1])
+      if (data.firstName && data.lastName && data.email && data.message) {
+        return {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          message: data.message,
+          company: data.company || '',
+          reason: data.reason || '',
+        }
+      }
+    } catch (e) {
+      console.error('Failed to parse CONTACT_READY:', e)
+    }
+    return null
+  }
+
+  /**
+   * Remove CONTACT_READY JSON block from displayed message
+   */
+  const cleanResponseForDisplay = (response: string): string => {
+    return response.replace(/```CONTACT_READY\s*\n?[\s\S]*?\n?```/g, '').trim()
+  }
+
+  /**
+   * Send contact data to the API
+   */
+  const sendContactData = async (contactData: ContactData): Promise<boolean> => {
+    try {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: `${contactData.firstName} ${contactData.lastName}`.trim(),
+          name: `${contactData.firstName} ${contactData.lastName}`,
           email: contactData.email,
           company: contactData.company,
+          reason: contactData.reason,
+          message: contactData.message,
           conversationId,
-          notifyIntentOnly: true,
         }),
-      }).catch((error) => {
-        console.error('Failed to send contact intent notification:', error)
-        setError('Failed to save contact information. Please try submitting again.')
       })
-      setContactIntentNotified(true)
+      return response.ok
+    } catch (e) {
+      console.error('Failed to send contact:', e)
+      return false
     }
-    // Only depend on mode and contactIntentNotified to avoid re-firing on every keystroke
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, contactIntentNotified])
+  }
 
   const toggleVoiceInput = () => {
     if (!recognitionRef.current) {
@@ -170,13 +197,31 @@ export default function Chatbot() {
         setConversationId(data.conversationId)
       }
 
-      // Check if this is a contact intent
-      if (data.intent === 'CONTACT_INTENT' && mode === 'chat') {
-        setMode('contact')
-        setContactStep(0)
-      }
+      // Check if response contains CONTACT_READY data
+      const contactData = parseContactReady(data.response)
+      const displayResponse = cleanResponseForDisplay(data.response)
 
-      setMessages([...newMessages, { role: 'assistant', content: data.response }])
+      if (contactData) {
+        // Show the confirmation message first
+        setMessages([...newMessages, { role: 'assistant', content: displayResponse }])
+
+        // Send the contact data automatically
+        setIsSendingContact(true)
+        const success = await sendContactData(contactData)
+        setIsSendingContact(false)
+
+        if (success) {
+          setMessages(prev => [...prev, {
+            role: 'assistant',
+            content: "I've sent your message to Noah. He'll get back to you soon!",
+          }])
+        } else {
+          setError('Failed to send your message. Please try again.')
+          setMode('fallback')
+        }
+      } else {
+        setMessages([...newMessages, { role: 'assistant', content: displayResponse || data.response }])
+      }
     } catch (err) {
       setError('Failed to connect. Please try again.')
     } finally {
@@ -189,17 +234,17 @@ export default function Chatbot() {
     sendMessage(input)
   }
 
-  const handleContactSubmit = async (e: React.FormEvent) => {
+  const handleFallbackSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    if (!contactData.firstName || !contactData.lastName || !contactData.email || !contactData.message) {
+    if (!fallbackFormData.firstName || !fallbackFormData.lastName || !fallbackFormData.email || !fallbackFormData.message) {
       setError('Please fill in all required fields.')
       return
     }
 
     // Validate email
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-    if (!emailRegex.test(contactData.email)) {
+    if (!emailRegex.test(fallbackFormData.email)) {
       setError('Please enter a valid email address.')
       return
     }
@@ -212,11 +257,11 @@ export default function Chatbot() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: `${contactData.firstName} ${contactData.lastName}`,
-          email: contactData.email,
-          company: contactData.company,
-          reason: contactData.reason,
-          message: contactData.message,
+          name: `${fallbackFormData.firstName} ${fallbackFormData.lastName}`,
+          email: fallbackFormData.email,
+          company: fallbackFormData.company,
+          reason: fallbackFormData.reason,
+          message: fallbackFormData.message,
           conversationId,
         }),
       })
@@ -224,12 +269,10 @@ export default function Chatbot() {
       if (response.ok) {
         setMessages([
           ...messages,
-          { role: 'user', content: `[Sent a message to Noah]` },
           { role: 'assistant', content: "Your message has been sent successfully! Noah will get back to you soon." },
         ])
         setMode('chat')
-        setContactData({ firstName: '', lastName: '', email: '', message: '', company: '', reason: '' })
-        setContactStep(0)
+        setFallbackFormData({ firstName: '', lastName: '', email: '', message: '', company: '', reason: '' })
       } else {
         setError('Failed to send message. Please try again.')
       }
@@ -270,13 +313,14 @@ export default function Chatbot() {
               </div>
             ))}
 
-            {isLoading && (
+            {(isLoading || isSendingContact) && (
               <div className="flex justify-start">
                 <div className="bg-slate/10 rounded-2xl rounded-tl-sm px-4 py-3">
-                  <div className="flex gap-1">
+                  <div className="flex gap-1 items-center">
                     <div className="w-2 h-2 bg-slate/40 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
                     <div className="w-2 h-2 bg-slate/40 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
                     <div className="w-2 h-2 bg-slate/40 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                    {isSendingContact && <span className="ml-2 text-sm text-slate">Sending your message...</span>}
                   </div>
                 </div>
               </div>
@@ -330,22 +374,23 @@ export default function Chatbot() {
             </form>
           )}
 
-          {/* Contact form mode */}
-          {(mode === 'contact' || mode === 'fallback') && (
-            <form onSubmit={handleContactSubmit} className="p-4 border-t border-slate/20 space-y-4">
+          {/* Fallback form - only shown when chat service fails */}
+          {mode === 'fallback' && (
+            <form onSubmit={handleFallbackSubmit} className="p-4 border-t border-slate/20 space-y-4">
+              <p className="text-sm text-slate mb-2">Use the form below to send Noah a message directly:</p>
               <div className="grid grid-cols-2 gap-4">
                 <input
                   type="text"
-                  value={contactData.firstName}
-                  onChange={(e) => setContactData({ ...contactData, firstName: e.target.value })}
+                  value={fallbackFormData.firstName}
+                  onChange={(e) => setFallbackFormData({ ...fallbackFormData, firstName: e.target.value })}
                   placeholder="First name *"
                   className="px-4 py-3 border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal"
                   required
                 />
                 <input
                   type="text"
-                  value={contactData.lastName}
-                  onChange={(e) => setContactData({ ...contactData, lastName: e.target.value })}
+                  value={fallbackFormData.lastName}
+                  onChange={(e) => setFallbackFormData({ ...fallbackFormData, lastName: e.target.value })}
                   placeholder="Last name *"
                   className="px-4 py-3 border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal"
                   required
@@ -353,8 +398,8 @@ export default function Chatbot() {
               </div>
               <input
                 type="email"
-                value={contactData.email}
-                onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
+                value={fallbackFormData.email}
+                onChange={(e) => setFallbackFormData({ ...fallbackFormData, email: e.target.value })}
                 placeholder="Email *"
                 className="w-full px-4 py-3 border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal"
                 required
@@ -362,45 +407,34 @@ export default function Chatbot() {
               <div className="grid grid-cols-2 gap-4">
                 <input
                   type="text"
-                  value={contactData.company}
-                  onChange={(e) => setContactData({ ...contactData, company: e.target.value })}
+                  value={fallbackFormData.company}
+                  onChange={(e) => setFallbackFormData({ ...fallbackFormData, company: e.target.value })}
                   placeholder="Company (optional)"
                   className="px-4 py-3 border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal"
                 />
                 <input
                   type="text"
-                  value={contactData.reason}
-                  onChange={(e) => setContactData({ ...contactData, reason: e.target.value })}
+                  value={fallbackFormData.reason}
+                  onChange={(e) => setFallbackFormData({ ...fallbackFormData, reason: e.target.value })}
                   placeholder="Reason (optional)"
                   className="px-4 py-3 border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal"
                 />
               </div>
               <textarea
-                value={contactData.message}
-                onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
+                value={fallbackFormData.message}
+                onChange={(e) => setFallbackFormData({ ...fallbackFormData, message: e.target.value })}
                 placeholder="Your message *"
                 rows={4}
                 className="w-full px-4 py-3 border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal/50 focus:border-teal resize-none"
                 required
               />
-              <div className="flex gap-2">
-                {mode === 'contact' && (
-                  <button
-                    type="button"
-                    onClick={() => setMode('chat')}
-                    className="px-6 py-3 bg-slate/10 text-charcoal rounded-lg hover:bg-slate/20 transition-colors"
-                  >
-                    Back to Chat
-                  </button>
-                )}
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="flex-1 px-6 py-3 bg-teal text-white rounded-lg hover:bg-teal-dark transition-colors disabled:opacity-50"
-                >
-                  {isLoading ? 'Sending...' : 'Confirm & Send'}
-                </button>
-              </div>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full px-6 py-3 bg-teal text-white rounded-lg hover:bg-teal-dark transition-colors disabled:opacity-50"
+              >
+                {isLoading ? 'Sending...' : 'Send Message'}
+              </button>
             </form>
           )}
         </div>
