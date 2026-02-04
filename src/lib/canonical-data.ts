@@ -26,6 +26,14 @@ export interface Skill {
   items: string[]
 }
 
+export interface Patent {
+  number: string
+  title: string
+  status: 'Granted' | 'Pending'
+  url: string
+  description: string
+}
+
 export interface CanonicalData {
   personalInfo: {
     name: string
@@ -33,6 +41,8 @@ export interface CanonicalData {
     tagline: string
     linkedIn: string
     location: string
+    livesIn: string
+    spouse: string
   }
   approvedBios: {
     short: string
@@ -41,6 +51,12 @@ export interface CanonicalData {
   employment: Employment[]
   education: Education[]
   skills: Skill[]
+  patents: Patent[]
+  personalLife: {
+    hobbies: string[]
+    interests: string[]
+  }
+  collegeActivities: string[]
   approvedLinks: {
     label: string
     url: string
@@ -55,6 +71,8 @@ export const canonicalData: CanonicalData = {
     tagline: 'Product leader building and scaling AI/ML products in complex and safety-critical domains',
     linkedIn: 'https://www.linkedin.com/in/noahhshaw/',
     location: 'San Francisco Bay Area',
+    livesIn: 'San Francisco, CA',
+    spouse: 'Anoushka Vaswani',
   },
 
   approvedBios: {
@@ -68,11 +86,13 @@ export const canonicalData: CanonicalData = {
       role: 'Senior Product Manager, Marketplace',
       startDate: '2022',
       endDate: 'Present',
-      description: 'Leading product strategy for Uber Eats Logistics, focusing on marketplace efficiency and AI/ML-powered optimization.',
+      description: 'Leading product strategy for Uber Eats Logistics and Grocery delivery, focusing on marketplace efficiency and AI/ML-powered optimization.',
       highlights: [
         'Driving AI/ML initiatives across multiple business lines',
         'Cross-functional execution with engineering, operations, and data science teams',
         'Improving delivery speed and reliability at scale',
+        'Leading Grocery delivery improvements including batched delivery and matching optimizations',
+        'Achieved more than $1 per trip in delivery cost savings through optimization initiatives',
       ],
     },
     {
@@ -105,11 +125,13 @@ export const canonicalData: CanonicalData = {
       role: 'Systems Engineer',
       startDate: '2016',
       endDate: '2018',
-      description: 'Worked on avionics systems for commercial aircraft programs.',
+      description: 'Worked on avionics systems and airplane-level safety analysis for the 777-9 commercial aircraft program.',
       highlights: [
+        'Led airplane-level Failure Mode and Effects Analysis (FMEA) for the 777-9 program',
+        'Interfaced with senior engineers across 60+ aircraft systems including engines, electrical power, avionics, flight controls, and displays',
         'Managed requirements, integration, and testing for flight control systems',
         'Collaborated with cross-functional engineering teams across global sites',
-        'Worked on safety-critical systems for commercial aviation',
+        'Worked on safety-critical systems for commercial aviation following aerospace standards (ARP4761, AS9100)',
       ],
     },
   ],
@@ -122,6 +144,12 @@ export const canonicalData: CanonicalData = {
       startDate: '2012',
       endDate: '2016',
     },
+  ],
+
+  collegeActivities: [
+    'Served as Sustainability Chair of fraternity, leading initiatives to reduce waste',
+    'Led transition from paper plates and plastic cutlery to reusable varieties',
+    'Implemented environmental sustainability programs in the fraternity house',
   ],
 
   skills: [
@@ -138,6 +166,53 @@ export const canonicalData: CanonicalData = {
       items: ['Logistics', 'Mobility', 'Autonomous Driving', 'Aviation', 'Two-Sided Marketplaces'],
     },
   ],
+
+  patents: [
+    {
+      number: 'US12219033B2',
+      title: 'Prediction engine for a network-based service',
+      status: 'Granted',
+      url: 'https://patents.google.com/patent/US12219033B2',
+      description: 'System that uses optimization models to determine actions improving wait time, travel distance, and earnings for service providers.',
+    },
+    {
+      number: 'US11914366B2',
+      title: 'Blended operator and autonomous control in an autonomous vehicle',
+      status: 'Granted',
+      url: 'https://patents.google.com/patent/US11914366B2',
+      description: 'System for blended control determining degree of autonomous control for each control input based on sensor data.',
+    },
+    {
+      number: 'US20220402499A1',
+      title: 'Detecting operator contact with a steering wheel',
+      status: 'Granted',
+      url: 'https://patents.google.com/patent/US20220402499A1',
+      description: 'Method for detecting whether an operator is in contact with steering wheel by comparing measured and expected torque.',
+    },
+    {
+      number: 'US20250217756A1',
+      title: 'Real-time multi-order batching using multiple couriers',
+      status: 'Granted',
+      url: 'https://patents.google.com/patent/US20250217756A1',
+      description: 'Systems for coordinating delivery by splitting orders between walker and vehicle couriers for efficient pickup and delivery.',
+    },
+    {
+      number: 'US20250390832A1',
+      title: 'Adjusting Signals to Shift System Resource Utilization',
+      status: 'Pending',
+      url: 'https://patents.google.com/patent/US20250390832A1',
+      description: 'Demand shaping system that provides personalized incentives to encourage scheduling deliveries during optimal time windows for batching.',
+    },
+  ],
+
+  personalLife: {
+    hobbies: [
+      'Running in Marin and the Presidio',
+      'Completed multiple half marathons and full marathons',
+      'Annual participant in Bay to Breakers',
+    ],
+    interests: ['Endurance running', 'Outdoor activities in the Bay Area'],
+  },
 
   approvedLinks: [
     {
@@ -159,6 +234,31 @@ export const canonicalData: CanonicalData = {
       label: 'Contact Section',
       url: '#contact',
       description: 'Send Noah a message',
+    },
+    {
+      label: 'Patent: Prediction Engine',
+      url: 'https://patents.google.com/patent/US12219033B2',
+      description: 'Patent for network-based service prediction engine',
+    },
+    {
+      label: 'Patent: Blended Autonomous Control',
+      url: 'https://patents.google.com/patent/US11914366B2',
+      description: 'Patent for blended operator and autonomous vehicle control',
+    },
+    {
+      label: 'Patent: Steering Wheel Contact Detection',
+      url: 'https://patents.google.com/patent/US20220402499A1',
+      description: 'Patent for detecting operator contact with steering wheel',
+    },
+    {
+      label: 'Patent: Multi-Order Batching',
+      url: 'https://patents.google.com/patent/US20250217756A1',
+      description: 'Patent for real-time multi-order batching with multiple couriers',
+    },
+    {
+      label: 'Patent: Demand Shaping (Pending)',
+      url: 'https://patents.google.com/patent/US20250390832A1',
+      description: 'Patent for adjusting signals to shift system resource utilization',
     },
   ],
 }
@@ -213,6 +313,54 @@ export function searchCanonicalData(query: string): string | null {
     }
   }
 
+  // Search patents
+  if (
+    lowerQuery.includes('patent') ||
+    lowerQuery.includes('invention') ||
+    lowerQuery.includes('intellectual property')
+  ) {
+    for (const patent of canonicalData.patents) {
+      results.push(
+        `Patent ${patent.number} (${patent.status}): ${patent.title} - ${patent.description} View at: ${patent.url}`
+      )
+    }
+  }
+
+  // Search personal life
+  if (
+    lowerQuery.includes('hobby') ||
+    lowerQuery.includes('hobbies') ||
+    lowerQuery.includes('running') ||
+    lowerQuery.includes('marathon') ||
+    lowerQuery.includes('personal') ||
+    lowerQuery.includes('free time') ||
+    lowerQuery.includes('outside work')
+  ) {
+    results.push(`Hobbies: ${canonicalData.personalLife.hobbies.join('; ')}`)
+  }
+
+  // Search family/personal info
+  if (
+    lowerQuery.includes('wife') ||
+    lowerQuery.includes('spouse') ||
+    lowerQuery.includes('married') ||
+    lowerQuery.includes('family') ||
+    lowerQuery.includes('live')
+  ) {
+    results.push(`Noah lives in ${canonicalData.personalInfo.livesIn} with his wife ${canonicalData.personalInfo.spouse}.`)
+  }
+
+  // Search college activities
+  if (
+    lowerQuery.includes('college') ||
+    lowerQuery.includes('university') ||
+    lowerQuery.includes('fraternity') ||
+    lowerQuery.includes('sustainability') ||
+    lowerQuery.includes('extracurricular')
+  ) {
+    results.push(`College Activities: ${canonicalData.collegeActivities.join('; ')}`)
+  }
+
   // General queries about Noah
   if (
     lowerQuery.includes('who is') ||
@@ -235,22 +383,33 @@ export function getFullContext(): string {
   parts.push(`Name: ${canonicalData.personalInfo.name}`)
   parts.push(`Title: ${canonicalData.personalInfo.title}`)
   parts.push(`Tagline: ${canonicalData.personalInfo.tagline}`)
+  parts.push(`Location: ${canonicalData.personalInfo.livesIn} with wife ${canonicalData.personalInfo.spouse}`)
   parts.push(`\nBio: ${canonicalData.approvedBios.medium}`)
 
   parts.push('\nWork Experience:')
   for (const job of canonicalData.employment) {
     parts.push(`- ${job.role} at ${job.company} (${job.startDate}-${job.endDate}): ${job.description}`)
+    parts.push(`  Highlights: ${job.highlights.join('; ')}`)
   }
 
   parts.push('\nEducation:')
   for (const edu of canonicalData.education) {
     parts.push(`- ${edu.degree} in ${edu.field} from ${edu.institution} (${edu.startDate}-${edu.endDate})`)
   }
+  parts.push(`  College Activities: ${canonicalData.collegeActivities.join('; ')}`)
 
   parts.push('\nSkills:')
   for (const skill of canonicalData.skills) {
     parts.push(`- ${skill.category}: ${skill.items.join(', ')}`)
   }
+
+  parts.push('\nPatents:')
+  for (const patent of canonicalData.patents) {
+    parts.push(`- ${patent.title} (${patent.number}, ${patent.status}): ${patent.description} URL: ${patent.url}`)
+  }
+
+  parts.push('\nPersonal Life:')
+  parts.push(`- Hobbies: ${canonicalData.personalLife.hobbies.join('; ')}`)
 
   return parts.join('\n')
 }
