@@ -9,6 +9,7 @@ export interface Employment {
   role: string
   startDate: string
   endDate: string | 'Present'
+  location?: string
   description: string
   highlights: string[]
 }
@@ -19,6 +20,8 @@ export interface Education {
   field: string
   startDate: string
   endDate: string
+  gpa?: string
+  location?: string
 }
 
 export interface Skill {
@@ -76,8 +79,8 @@ export const canonicalData: CanonicalData = {
   },
 
   approvedBios: {
-    short: 'Product leader with 10+ years of experience spanning data science, autonomous vehicles, and marketplace optimization.',
-    medium: 'Product leader with 10+ years of experience spanning data science, autonomous vehicles, and marketplace optimization. Currently leading product for Uber Eats Logistics, driving AI/ML initiatives and cross-functional execution across multiple business lines. Previously an early hire at Ghost Autonomy (Khosla-funded AV startup), where I helped scale the organization and led the human-machine interface for autonomous driving systems through public road deployment.',
+    short: 'Product leader building and scaling AI/ML products in complex and safety-critical domains.',
+    medium: 'Product leader with 10+ years of experience spanning data science, autonomous vehicles, and marketplace optimization. Currently leading product for Uber Eats Logistics Optimization, delivering $440M annual courier cost savings through AI/ML models and optimization. Previously an early hire (#20) at Ghost Autonomy (Khosla-funded AV startup), where I helped scale to 120 employees and led the human-machine interface for autonomous driving systems through public road deployment. Started career at Boeing on 777-9 safety certification and at Uber as a Data Scientist on surge pricing and incentives.',
   },
 
   employment: [
@@ -86,51 +89,56 @@ export const canonicalData: CanonicalData = {
       role: 'Senior Product Manager, Marketplace',
       startDate: '2022',
       endDate: 'Present',
-      description: 'Leading product strategy for Uber Eats Logistics and Grocery delivery, focusing on marketplace efficiency and AI/ML-powered optimization.',
+      description: 'Leading product for UberEats Logistics Optimization and Marketplace Product Strategy for growth delivery verticals.',
       highlights: [
-        'Driving AI/ML initiatives across multiple business lines',
-        'Cross-functional execution with engineering, operations, and data science teams',
-        'Improving delivery speed and reliability at scale',
-        'Leading Grocery delivery improvements including batched delivery and matching optimizations',
-        'Achieved more than $1 per trip in delivery cost savings through optimization initiatives',
+        'Delivered $440M annual courier cost savings building AI/ML models, new UX, inference/solver latency optimizations, and vertical-specific optimization',
+        'Leading Marketplace Product Strategy for growth delivery verticals (>$20B GMV across Grocery, Retail, and Direct)',
+        'Founded and scaled "Shop Only" grocery delivery model: $26M run rate, 8K+ shoppers onboarded, breakeven unit economics across US, Canada, and Mexico within 20 months',
+        'Coordinated 100+ person development team, stood up operations management and reporting',
+        'Managed 4 Associate Product Managers, including role definition, recruiting, onboarding, and development',
+        'Received top ranking ("Far Exceeds", top 5%) in 2024 and 2025 annual performance reviews',
       ],
     },
     {
       company: 'Ghost Autonomy',
       role: 'Product Manager',
-      startDate: '2020',
+      startDate: '2018',
       endDate: '2022',
-      description: 'Early team member at Khosla Ventures-backed autonomous vehicle startup.',
+      description: 'Early hire (#20) at Khosla Ventures-backed autonomous vehicle startup, helped scale to 120 employees and public-road prototype.',
       highlights: [
-        'Led human-machine interface product from concept through public road deployment',
-        'Managed cross-functional teams for safety-critical software delivery',
-        'Helped scale the organization during rapid growth phase',
-        'Delivered Level 2+ autonomous driving systems',
+        'Developed the human-machine interface (UX) for the Ghost autonomous driving system, balancing safety and ease of use',
+        'Led an 8-person team through design, system integration, UX research, and safety verification',
+        'Designed verification program for safety-critical autonomous functionality from first boot through public road operations',
+        'Obtained CA DMV permits and executive reporting to founders',
+        'Program leader for data acquisition to train perception and decision models, standing up a 3-person installation team',
+        'Monitored vehicle fleet and data corpus quality evaluation',
       ],
     },
     {
       company: 'Uber',
       role: 'Data Scientist',
-      startDate: '2018',
-      endDate: '2020',
-      description: 'Built predictive models and analytics tools for marketplace optimization.',
+      startDate: '2016',
+      endDate: '2018',
+      description: 'Built predictive models and analytics tools for marketplace optimization, pricing, and incentives.',
       highlights: [
-        'Developed machine learning systems for driver-rider matching',
-        'Reduced wait times through data-driven optimization',
-        'Collaborated with product and engineering teams to deploy features at scale',
+        'Developed and evaluated redesign of UberX surge pricing, including experiment design and analysis to support global launch',
+        'Estimated driver relocation elasticity, network value estimation, and budget adherence',
+        'Designed and executed $200M incentives strategy to increase driver engagement and optimize geotemporal positioning',
+        'Improved spend efficiency 25% via continuous A/B testing experimentation',
+        'Managed Ride Pass subscription product locally, increasing rider engagement 50% while reducing costs 62% on $12M annual budget',
       ],
     },
     {
-      company: 'Boeing',
+      company: 'Boeing Commercial Airplanes',
       role: 'Systems Engineer',
-      startDate: '2016',
-      endDate: '2018',
-      description: 'Worked on avionics systems and airplane-level safety analysis for the 777-9 commercial aircraft program.',
+      startDate: '2014',
+      endDate: '2016',
+      location: 'Everett, WA',
+      description: 'Performed airplane-level safety analysis for the 777-9 commercial aircraft program to support type certification.',
       highlights: [
-        'Led airplane-level Failure Mode and Effects Analysis (FMEA) for the 777-9 program',
+        'Performed FMEA (Failure Mode and Effects Analysis) and FHA (Functional Hazard Assessment) Airplane-Level Safety Assessment on 777-9',
+        'Supported type certification process for new aircraft',
         'Interfaced with senior engineers across 60+ aircraft systems including engines, electrical power, avionics, flight controls, and displays',
-        'Managed requirements, integration, and testing for flight control systems',
-        'Collaborated with cross-functional engineering teams across global sites',
         'Worked on safety-critical systems for commercial aviation following aerospace standards (ARP4761, AS9100)',
       ],
     },
@@ -140,30 +148,36 @@ export const canonicalData: CanonicalData = {
     {
       institution: 'Northwestern University',
       degree: 'Bachelor of Science',
-      field: 'Mechanical Engineering',
-      startDate: '2012',
-      endDate: '2016',
+      field: 'Mechanical Engineering with Honors',
+      startDate: '2010',
+      endDate: '2014',
+      location: 'Evanston, IL',
     },
   ],
 
   collegeActivities: [
-    'Served as Sustainability Chair of fraternity, leading initiatives to reduce waste',
-    'Led transition from paper plates and plastic cutlery to reusable varieties',
-    'Implemented environmental sustainability programs in the fraternity house',
+    'Tau Beta Pi engineering honor society member',
+    'Mechatronics Club member',
+    'Chi Psi Sustainability Chair - led initiatives to reduce waste, transitioned from paper plates and plastic cutlery to reusable varieties',
+    'Research Assistant at NU Sun Research Group',
   ],
 
   skills: [
     {
       category: 'Product Management',
-      items: ['Product Strategy', 'Roadmap Planning', 'Cross-functional Leadership', 'Stakeholder Management', 'User Research'],
+      items: ['Product Strategy', 'Roadmap Planning', 'Cross-functional Leadership', 'Stakeholder Management', 'User Research', 'OKR Setting', 'GTM Strategy'],
     },
     {
       category: 'Technical',
-      items: ['AI/ML Products', 'Data Science', 'Marketplace Systems', 'Autonomous Vehicles', 'Safety-Critical Systems'],
+      items: ['AI/ML Products', 'Data Science', 'Marketplace Systems', 'Autonomous Vehicles', 'Safety-Critical Systems', 'A/B Testing', 'Experiment Design'],
+    },
+    {
+      category: 'Tools',
+      items: ['Claude Code', 'Figma', 'Python'],
     },
     {
       category: 'Domains',
-      items: ['Logistics', 'Mobility', 'Autonomous Driving', 'Aviation', 'Two-Sided Marketplaces'],
+      items: ['Logistics', 'Mobility', 'Autonomous Driving', 'Aviation', 'Two-Sided Marketplaces', 'Grocery/Retail Delivery'],
     },
   ],
 
@@ -207,11 +221,17 @@ export const canonicalData: CanonicalData = {
 
   personalLife: {
     hobbies: [
-      'Running in Marin and the Presidio',
+      'Trail running in Marin and the Presidio',
       'Completed multiple half marathons and full marathons',
       'Annual participant in Bay to Breakers',
+      'Alpine skiing',
     ],
-    interests: ['Endurance running', 'Outdoor activities in the Bay Area'],
+    interests: [
+      'Product consulting',
+      'Volunteering - former Seattle Works Board Member',
+      'Trail running',
+      'Alpine skiing',
+    ],
   },
 
   approvedLinks: [
@@ -394,7 +414,10 @@ export function getFullContext(): string {
 
   parts.push('\nEducation:')
   for (const edu of canonicalData.education) {
-    parts.push(`- ${edu.degree} in ${edu.field} from ${edu.institution} (${edu.startDate}-${edu.endDate})`)
+    let eduLine = `- ${edu.degree} in ${edu.field} from ${edu.institution} (${edu.startDate}-${edu.endDate})`
+    if (edu.gpa) eduLine += `, GPA: ${edu.gpa}`
+    if (edu.location) eduLine += `, ${edu.location}`
+    parts.push(eduLine)
   }
   parts.push(`  College Activities: ${canonicalData.collegeActivities.join('; ')}`)
 
