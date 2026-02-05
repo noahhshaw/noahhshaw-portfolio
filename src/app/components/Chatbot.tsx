@@ -44,12 +44,16 @@ export default function Chatbot() {
   const [error, setError] = useState<string | null>(null)
 
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const chatContainerRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null)
 
-  // Scroll to bottom when messages change
+  // Scroll to bottom when messages change - contained within chat container only
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    const container = chatContainerRef.current
+    if (container) {
+      container.scrollTop = container.scrollHeight
+    }
   }, [messages])
 
   // Initialize speech recognition
@@ -295,7 +299,7 @@ export default function Chatbot() {
 
         <div className="bg-white rounded-lg shadow-sm overflow-hidden">
           {/* Chat messages */}
-          <div className="h-96 overflow-y-auto p-4 space-y-4">
+          <div ref={chatContainerRef} className="h-96 overflow-y-auto p-4 space-y-4">
             {messages.map((msg, idx) => (
               <div
                 key={idx}

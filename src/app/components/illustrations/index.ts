@@ -1,0 +1,5 @@
+export { default as MarketplaceIllustration } from './MarketplaceIllustration'
+export { default as AutonomousVehicleIllustration } from './AutonomousVehicleIllustration'
+export { default as AerospaceIllustration } from './AerospaceIllustration'
+export { default as NorthwesternIllustration } from './NorthwesternIllustration'
+export { default as UberDataIllustration } from './UberDataIllustration'

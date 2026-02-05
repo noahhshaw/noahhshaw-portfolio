@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`lg:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-cream shadow-sm' : 'bg-transparent'
       }`}
     >
@@ -27,7 +27,7 @@ export default function Navbar() {
         >
           Noah Shaw
         </a>
-        <div className="flex gap-8">
+        <div className="flex gap-6">
           <a
             href="#about"
             className="text-sm text-charcoal hover:text-teal transition-colors"

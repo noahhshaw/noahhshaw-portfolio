@@ -1,13 +1,23 @@
-import TimelineItem from './TimelineItem'
+import TimelineItem, { IllustrationType } from './TimelineItem'
+
+interface Experience {
+  company: string
+  role: string
+  dates: string
+  description: string
+  isEducation?: boolean
+  illustrationType?: IllustrationType
+}
 
 export default function Timeline() {
-  const experiences = [
+  const experiences: Experience[] = [
     {
       company: 'Uber',
       role: 'Senior Product Manager, Marketplace',
       dates: '2022 - Present',
       description:
         'Leading product strategy for Uber Eats Logistics, focusing on marketplace efficiency and AI/ML-powered optimization. Driving cross-functional execution across engineering, operations, and data science teams to improve delivery speed and reliability at scale.',
+      illustrationType: 'marketplace',
     },
     {
       company: 'Ghost Autonomy',
@@ -15,6 +25,7 @@ export default function Timeline() {
       dates: '2020 - 2022',
       description:
         'Early team member at Khosla Ventures-backed autonomous vehicle startup. Led the human-machine interface product from concept through public road deployment. Managed cross-functional teams to deliver safety-critical software for Level 2+ autonomous driving systems.',
+      illustrationType: 'autonomous-vehicle',
     },
     {
       company: 'Uber',
@@ -22,6 +33,7 @@ export default function Timeline() {
       dates: '2018 - 2020',
       description:
         'Built predictive models and analytics tools for marketplace optimization. Developed machine learning systems to improve driver-rider matching and reduce wait times. Collaborated with product and engineering teams to deploy data-driven features at scale.',
+      illustrationType: 'uber-data',
     },
     {
       company: 'Boeing',
@@ -29,6 +41,7 @@ export default function Timeline() {
       dates: '2016 - 2018',
       description:
         'Worked on avionics systems for commercial aircraft programs. Managed requirements, integration, and testing for safety-critical flight control systems. Collaborated with cross-functional engineering teams across multiple global sites.',
+      illustrationType: 'aerospace',
     },
     {
       company: 'Northwestern University',
@@ -37,6 +50,7 @@ export default function Timeline() {
       description:
         'Graduated with a Bachelor of Science in Mechanical Engineering. Focused on controls, robotics, and design. Participated in research projects and engineering design teams.',
       isEducation: true,
+      illustrationType: 'northwestern',
     },
   ]
 
@@ -55,6 +69,7 @@ export default function Timeline() {
               dates={exp.dates}
               description={exp.description}
               isEducation={exp.isEducation}
+              illustrationType={exp.illustrationType}
             />
           ))}
         </div>
