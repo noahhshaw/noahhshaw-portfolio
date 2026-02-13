@@ -20,8 +20,8 @@ const CONFIG = {
 
   // Session limits (from PRD)
   maxTurnsPerConversation: 12,
-  maxInputTokensPerConversation: 3000,
-  maxOutputTokensPerConversation: 1500,
+  maxInputTokensPerConversation: 20000,
+  maxOutputTokensPerConversation: 6000,
   maxConversationDurationMs: 8 * 60 * 1000, // 8 minutes
 
   // Cost limits (from PRD)
