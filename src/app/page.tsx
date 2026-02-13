@@ -10,7 +10,9 @@ export default function Home() {
   return (
     <>
       {/* Mobile navbar - hidden on desktop */}
-      <Navbar />
+      <div className="lg:hidden">
+        <Navbar variant="mobile" />
+      </div>
 
       <div className="lg:flex">
         {/* Left Panel - Fixed on desktop, normal flow on mobile */}
@@ -20,6 +22,10 @@ export default function Home() {
 
         {/* Right Panel - Scrollable content, offset on desktop */}
         <main className="lg:w-[60%] xl:w-[65%] lg:ml-[40%] xl:ml-[35%]">
+          {/* Desktop navbar - sticky at top of scrollable area */}
+          <div className="hidden lg:block sticky top-0 z-40">
+            <Navbar variant="desktop" />
+          </div>
           <About />
           <Timeline />
           <Projects />

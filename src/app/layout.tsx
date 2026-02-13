@@ -19,6 +19,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Noah Shaw | Product Leader',
   description: 'Product leader building and scaling AI/ML products in complex and safety-critical domains',
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: {
     title: 'Noah Shaw | Product Leader',
     description: 'Product leader building and scaling AI/ML products in complex and safety-critical domains',
