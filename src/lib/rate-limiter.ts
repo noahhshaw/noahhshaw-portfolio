@@ -28,9 +28,9 @@ const CONFIG = {
   dailyCostCapUSD: 5,
   monthlyCostCapUSD: 100,
 
-  // Token pricing (Claude Sonnet - conservative estimate)
-  inputTokenPricePerMillion: 3.00,
-  outputTokenPricePerMillion: 15.00,
+  // Token pricing (Claude Haiku 4.5)
+  inputTokenPricePerMillion: 0.80,
+  outputTokenPricePerMillion: 4.00,
 }
 
 interface RateLimitResult {
