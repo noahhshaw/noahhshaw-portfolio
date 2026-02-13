@@ -4,8 +4,8 @@ export default function ProfilePanel() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center px-8 lg:px-12 py-16 lg:py-0 bg-cream lg:border-r lg:border-slate/10">
       {/* Profile Picture */}
-      <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-slate/20 flex items-center justify-center overflow-hidden mb-6 lg:mb-8 shadow-sm">
-        <span className="text-5xl lg:text-6xl">👤</span>
+      <div className="w-52 h-52 lg:w-64 lg:h-64 rounded-full overflow-hidden mb-6 lg:mb-8 shadow-sm">
+        <img src="/profile.jpg" alt="Noah Shaw" className="w-full h-full object-cover" />
       </div>
 
       {/* Name */}
