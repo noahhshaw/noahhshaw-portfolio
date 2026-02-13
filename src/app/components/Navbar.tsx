@@ -41,6 +41,12 @@ export default function Navbar() {
             Experience
           </a>
           <a
+            href="#projects"
+            className="text-sm text-charcoal hover:text-teal transition-colors"
+          >
+            Projects
+          </a>
+          <a
             href="#contact"
             className="text-sm text-charcoal hover:text-teal transition-colors"
           >

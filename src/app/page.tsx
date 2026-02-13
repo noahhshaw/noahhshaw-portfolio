@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import ProfilePanel from './components/ProfilePanel'
 import About from './components/About'
 import Timeline from './components/Timeline'
+import Projects from './components/Projects'
 import Chatbot from './components/Chatbot'
 import Footer from './components/Footer'
 
@@ -21,6 +22,7 @@ export default function Home() {
         <main className="lg:w-[60%] xl:w-[65%] lg:ml-[40%] xl:ml-[35%]">
           <About />
           <Timeline />
+          <Projects />
           <Chatbot />
           <Footer />
         </main>
