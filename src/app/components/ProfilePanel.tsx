@@ -15,7 +15,7 @@ export default function ProfilePanel() {
 
       {/* Headline */}
       <p className="text-lg lg:text-xl text-slate text-center max-w-sm mb-6 lg:mb-8 leading-relaxed">
-        Product leader building and scaling AI/ML products in complex and safety-critical domains
+        Building and scaling AI/ML products in complex and safety-critical domains
       </p>
 
       {/* Social Links */}

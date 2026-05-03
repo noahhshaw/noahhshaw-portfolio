@@ -1,7 +1,6 @@
 import Navbar from './components/Navbar'
 import ProfilePanel from './components/ProfilePanel'
-import About from './components/About'
-import Timeline from './components/Timeline'
+import PersonalNote from './components/PersonalNote'
 import Projects from './components/Projects'
 import Chatbot from './components/Chatbot'
 import Footer from './components/Footer'
@@ -26,8 +25,7 @@ export default function Home() {
           <div className="hidden lg:block sticky top-0 z-40">
             <Navbar variant="desktop" />
           </div>
-          <About />
-          <Timeline />
+          <PersonalNote />
           <Projects />
           <Chatbot />
           <Footer />

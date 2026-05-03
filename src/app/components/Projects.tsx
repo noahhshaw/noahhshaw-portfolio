@@ -5,10 +5,19 @@ interface Project {
   description: string
   tags: string[]
   href: string
+  external?: boolean
 }
 
 export default function Projects() {
   const projects: Project[] = [
+    {
+      title: 'Arts & Culture in San Francisco',
+      description:
+        'A small private guide to museums, galleries, and performance halls around the city, with an interactive Leaflet map of every stop and a one-tap link into Google Maps for each one.',
+      tags: ['HTML', 'CSS', 'Leaflet', 'OpenStreetMap'],
+      href: '/sf-guide/',
+      external: true,
+    },
     {
       title: 'Baby Name Rater',
       description:
@@ -25,12 +34,8 @@ export default function Projects() {
           Projects
         </h2>
         <div className="space-y-6">
-          {projects.map((project) => (
-            <Link
-              key={project.title}
-              href={project.href}
-              className="block group"
-            >
+          {projects.map((project) => {
+            const card = (
               <div className="border border-slate/20 rounded-lg p-6 transition-all duration-200 hover:border-teal/40 hover:shadow-md">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
@@ -66,8 +71,18 @@ export default function Projects() {
                   </svg>
                 </div>
               </div>
-            </Link>
-          ))}
+            )
+
+            return project.external ? (
+              <a key={project.title} href={project.href} className="block group">
+                {card}
+              </a>
+            ) : (
+              <Link key={project.title} href={project.href} className="block group">
+                {card}
+              </Link>
+            )
+          })}
         </div>
       </div>
     </section>

@@ -241,16 +241,6 @@ export const canonicalData: CanonicalData = {
       description: "Noah's LinkedIn profile",
     },
     {
-      label: 'About Section',
-      url: '#about',
-      description: 'Learn more about Noah',
-    },
-    {
-      label: 'Experience Section',
-      url: '#experience',
-      description: "View Noah's work history",
-    },
-    {
       label: 'Contact Section',
       url: '#contact',
       description: 'Send Noah a message',

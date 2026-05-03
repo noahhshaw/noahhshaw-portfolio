@@ -23,18 +23,6 @@ export default function Navbar({ variant = 'mobile' }: NavbarProps) {
   const navLinks = (
     <div className="flex gap-6">
       <a
-        href="#about"
-        className="text-sm text-charcoal hover:text-teal transition-colors"
-      >
-        About
-      </a>
-      <a
-        href="#experience"
-        className="text-sm text-charcoal hover:text-teal transition-colors"
-      >
-        Experience
-      </a>
-      <a
         href="#projects"
         className="text-sm text-charcoal hover:text-teal transition-colors"
       >
