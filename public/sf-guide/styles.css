@@ -1,0 +1,333 @@
+:root {
+  --bg: #f5f1e9;
+  --bg-soft: #ede7da;
+  --ink: #1c1a17;
+  --ink-soft: #4a443c;
+  --muted: #847d72;
+  --rule: rgba(28, 26, 23, 0.12);
+  --accent: #8a6e3f;
+  --accent-soft: #b39669;
+  --serif: "EB Garamond", "Sorts Mill Goudy", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --content: 680px;
+  --gutter: clamp(20px, 5vw, 40px);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "kern";
+}
+
+/* Cover */
+.cover {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: clamp(56px, 12vw, 112px) var(--gutter) clamp(32px, 6vw, 56px);
+}
+.kicker {
+  margin: 0 0 18px;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+.cover h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(44px, 10vw, 84px);
+  letter-spacing: -0.01em;
+  line-height: 1;
+  margin: 0 0 28px;
+}
+.lede {
+  font-family: var(--serif);
+  font-size: clamp(19px, 2.5vw, 22px);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 32em;
+}
+
+/* Table of contents */
+.toc {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 8px var(--gutter) 32px;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: area;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4px;
+}
+.toc li {
+  counter-increment: area;
+}
+.toc a {
+  display: block;
+  padding: 8px 0;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--serif);
+  font-size: 19px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 120ms ease;
+}
+.toc li::before {
+  content: counter(area, decimal-leading-zero);
+  display: inline-block;
+  width: 2.4em;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  vertical-align: 1px;
+}
+.toc a:hover {
+  color: var(--accent);
+}
+
+/* Map sections */
+.map-section {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 40px var(--gutter) 24px;
+}
+.map {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--bg-soft);
+}
+.map-large { height: clamp(360px, 60vh, 520px); }
+.map-area { height: 280px; margin-top: 8px; }
+
+/* Areas */
+main {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.area {
+  padding: 56px 0;
+  border-top: 1px solid var(--rule);
+}
+.area:first-child { border-top: none; padding-top: 32px; }
+.area > header { margin-bottom: 24px; }
+.area h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(28px, 5vw, 38px);
+  letter-spacing: -0.005em;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+.area .overview {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 34em;
+}
+
+/* Stops */
+.stops {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  counter-reset: stop;
+}
+.stops > li {
+  counter-increment: stop;
+  position: relative;
+  padding: 24px 0 22px 0;
+  border-top: 1px solid var(--rule);
+}
+.stops > li::before {
+  content: counter(stop);
+  position: absolute;
+  left: 0;
+  top: 27px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+.stops > li > * { padding-left: 36px; }
+.stops h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.005em;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+.addr {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  font-style: italic;
+  font-family: var(--serif);
+}
+.stops p { margin: 0 0 10px; }
+.stops .note {
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-style: italic;
+  font-family: var(--serif);
+  margin-top: 4px;
+}
+
+/* Dining */
+.dining {
+  margin: 24px 0 0;
+  padding: 16px 18px;
+  background: var(--bg-soft);
+  border-radius: 4px;
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+.dining strong {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.005em;
+}
+
+/* Map links */
+.maps-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+  padding-bottom: 1px;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+.maps-link:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+.maps-link.inline {
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+/* Footer (intentionally unobtrusive) */
+.page-footer {
+  height: 96px;
+}
+
+/* Leaflet popup styling */
+.leaflet-popup-content-wrapper {
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: 0 6px 20px rgba(28, 26, 23, 0.18);
+}
+.leaflet-popup-content {
+  font-family: var(--sans);
+  font-size: 14px;
+  margin: 14px 16px;
+  line-height: 1.5;
+}
+.leaflet-popup-content .pop-name {
+  display: block;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.leaflet-popup-content .pop-addr {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.leaflet-popup-content .pop-link {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+  padding-bottom: 1px;
+}
+.leaflet-popup-content .pop-link:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+.leaflet-popup-tip { background: var(--bg); }
+.leaflet-container { font-family: var(--sans); }
+
+/* Pin styling — built via DivIcon in JS */
+.pin {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 1px 4px rgba(28, 26, 23, 0.35);
+  transform: translate(-9px, -9px);
+}
+.pin.is-active {
+  background: var(--ink);
+}
+
+/* Make a list item interactive when it has a corresponding pin */
+.stops > li[data-stop] {
+  cursor: pointer;
+  transition: background-color 140ms ease;
+  border-radius: 2px;
+}
+.stops > li[data-stop]:hover {
+  background-color: rgba(138, 110, 63, 0.06);
+}
+.stops > li[data-stop]:hover h3 {
+  color: var(--accent);
+}
+
+/* Desktop refinements */
+@media (min-width: 760px) {
+  body { font-size: 18px; }
+  .toc ol { grid-template-columns: 1fr 1fr; column-gap: 32px; }
+  .map-area { height: 320px; }
+}
+
+@media (min-width: 1100px) {
+  .toc ol { grid-template-columns: 1fr 1fr; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

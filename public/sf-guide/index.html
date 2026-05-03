@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>San Francisco — A Guide</title>
+  <meta name="description" content="A private guide to San Francisco — museums, galleries, the waterfront, and a few good places to eat.">
+  <meta name="theme-color" content="#f5f1e9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="cover">
+    <p class="kicker">A Guide</p>
+    <h1>San Francisco</h1>
+    <p class="lede">
+      A handful of corners of the city worth wandering to — museums, galleries,
+      a cathedral on a hill, the waterfront, and a few good places to eat.
+      Nothing here needs to be done in order. Drift in as the morning suggests.
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="Areas">
+    <ol>
+      <li><a href="#golden-gate-park">Golden Gate Park &amp; the de Young</a></li>
+      <li><a href="#lincoln-park">Lincoln Park &amp; the Legion of Honor</a></li>
+      <li><a href="#yerba-buena">SFMOMA &amp; Yerba Buena</a></li>
+      <li><a href="#civic-center">Civic Center &amp; the Performing Arts</a></li>
+      <li><a href="#dogpatch">Dogpatch</a></li>
+      <li><a href="#nob-hill">Nob Hill &amp; Chinatown Galleries</a></li>
+      <li><a href="#marina">The Marina &amp; Fort Mason</a></li>
+      <li><a href="#ferry-building">The Ferry Building &amp; Sausalito</a></li>
+      <li><a href="#peninsula">A Drive Down the Peninsula</a></li>
+      <li><a href="#map">Map</a></li>
+    </ol>
+  </nav>
+
+  <section id="map" class="map-section">
+    <div id="map-all" class="map map-large" aria-label="Map of all locations in this guide"></div>
+  </section>
+
+  <main>
+
+    <article id="golden-gate-park" class="area">
+      <header>
+        <h2>Golden Gate Park &amp; the de Young</h2>
+        <p class="overview">
+          A morning unhurried among American painting, contemporary photography,
+          and an observation tower that rises above the trees to the Pacific.
+          The Music Concourse outside makes for a slow walk between visits.
+        </p>
+      </header>
+
+      <ol class="stops">
+        <li data-stop="de-young">
+          <h3>de Young Museum</h3>
+          <p class="addr">50 Hagiwara Tea Garden Dr</p>
+          <p>
+            An anchor of the city's fine-arts collection — American painting from the
+            seventeenth century forward, contemporary photography, textiles, and a
+            program of rotating exhibitions. The free Hamon Tower observation level
+            opens onto one of the calmest 360° views in the city.
+          </p>
+          <p class="note">Closed Mondays. The Herzog &amp; de Meuron building is itself worth the visit.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=de+Young+Museum%2C+50+Hagiwara+Tea+Garden+Dr%2C+San+Francisco%2C+CA+94118" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+      </ol>
+
+      <p class="dining">An unhurried café sits inside the museum.</p>
+
+      <div id="map-golden-gate-park" class="map map-area" aria-label="Map of Golden Gate Park stops"></div>
+    </article>
+
+    <article id="lincoln-park" class="area">
+      <header>
+        <h2>Lincoln Park &amp; the Legion of Honor</h2>
+        <p class="overview">
+          A Beaux-Arts pavilion on a clifftop above the Pacific, with Rodin
+          galleries, European masters, and a strong holding of prints and
+          drawings. A short walk from the entrance, George Segal's Holocaust
+          Memorial sits quietly in a grove.
+        </p>
+      </header>
+
+      <ol class="stops">
+        <li data-stop="legion">
+          <h3>Legion of Honor</h3>
+          <p class="addr">100 34th Ave</p>
+          <p>
+            The building is modeled on the Hôtel de Salm in Paris; the collection
+            spans medieval through nineteenth-century European painting, decorative
+            arts, and one of the world's largest holdings of Rodin sculpture.
+          </p>
+          <p class="note">Closed Mondays. A café on the lower level handles a quiet lunch.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Legion+of+Honor%2C+100+34th+Ave%2C+San+Francisco%2C+CA+94121" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+        <li data-stop="holocaust-memorial">
+          <h3>Holocaust Memorial</h3>
+          <p class="addr">Lincoln Park, just outside the Legion of Honor</p>
+          <p>
+            George Segal's white-painted bronze installation, set in a small grove
+            northeast of the museum. Free, outdoors, and best approached on foot
+            from the Legion's entrance.
+          </p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Holocaust+Memorial+Legion+of+Honor+San+Francisco" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+      </ol>
+
+      <div id="map-lincoln-park" class="map map-area" aria-label="Map of Lincoln Park stops"></div>
+    </article>
+
+    <article id="yerba-buena" class="area">
+      <header>
+        <h2>SFMOMA &amp; Yerba Buena</h2>
+        <p class="overview">
+          The city's modern and contemporary axis. SFMOMA anchors the block;
+          the Museum of the African Diaspora sits across the street; Berggruen,
+          a long-standing dealer in modern painting, is around the corner.
+          Yerba Buena Gardens between them offers a pause.
+        </p>
+      </header>
+
+      <ol class="stops">
+        <li data-stop="sfmoma">
+          <h3>SFMOMA</h3>
+          <p class="addr">151 3rd St</p>
+          <p>
+            Seven floors of modern and contemporary art with deep holdings in
+            postwar painting, photography, and design, and rotating exhibitions on
+            the upper levels. The 2016 Snøhetta expansion opened public stairways
+            and free ground-floor galleries.
+          </p>
+          <p class="note">Closed Tuesdays and Wednesdays. The photography wing is among the strongest on the West Coast.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=SFMOMA%2C+151+3rd+St%2C+San+Francisco%2C+CA+94103" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+        <li data-stop="moad">
+          <h3>Museum of the African Diaspora</h3>
+          <p class="addr">685 Mission St</p>
+          <p>
+            Three floors of contemporary art of the African diaspora inside the
+            St. Regis tower. Smaller and more focused than SFMOMA, easily absorbed
+            in an hour.
+          </p>
+          <p class="note">Closed Mondays.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Museum+of+the+African+Diaspora%2C+685+Mission+St%2C+San+Francisco%2C+CA+94105" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+        <li data-stop="berggruen">
+          <h3>Berggruen Gallery</h3>
+          <p class="addr">10 Hawthorne St</p>
+          <p>
+            A long-established San Francisco gallery for modern and contemporary
+            painting, around the corner from SFMOMA. An understated, well-lit space
+            that makes for a quiet final stop.
+          </p>
+          <p class="note">Weekday hours; worth a look at the current show before walking over.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Berggruen+Gallery%2C+10+Hawthorne+St%2C+San+Francisco%2C+CA+94105" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+      </ol>
+
+      <p class="dining">SFMOMA has cafés on-site; Yerba Buena Gardens has casual options between buildings.</p>
+
+      <div id="map-yerba-buena" class="map map-area" aria-label="Map of Yerba Buena stops"></div>
+    </article>
+
+    <article id="civic-center" class="area">
+      <header>
+        <h2>Civic Center &amp; the Performing Arts</h2>
+        <p class="overview">
+          The civic spine of the city — the Asian Art Museum's collections by day,
+          and four performing-arts halls within a three-block walk for the evening.
+          Hayes Valley sits a block west for an unhurried dinner before a show.
+        </p>
+      </header>
+
+      <ol class="stops">
+        <li data-stop="asian-art">
+          <h3>Asian Art Museum</h3>
+          <p class="addr">200 Larkin St</p>
+          <p>
+            One of the largest collections of Asian art in the West, set inside the
+            old Beaux-Arts main library and reworked by Gae Aulenti. Strong holdings
+            in Chinese painting, Japanese ceramics, and South and Southeast Asian
+            sculpture.
+          </p>
+          <p class="note">Closed Tuesdays and Wednesdays. Late hours on Thursdays.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Asian+Art+Museum%2C+200+Larkin+St%2C+San+Francisco%2C+CA+94102" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+        <li data-stop="davies">
+          <h3>Davies Symphony Hall</h3>
+          <p class="addr">201 Van Ness Ave</p>
+          <p>Home of the San Francisco Symphony.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Davies+Symphony+Hall%2C+201+Van+Ness+Ave%2C+San+Francisco%2C+CA+94102" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+        <li data-stop="war-memorial">
+          <h3>War Memorial Opera House</h3>
+          <p class="addr">301 Van Ness Ave</p>
+          <p>San Francisco Opera and San Francisco Ballet perform here.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=War+Memorial+Opera+House%2C+301+Van+Ness+Ave%2C+San+Francisco%2C+CA+94102" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+        <li data-stop="sfjazz">
+          <h3>SFJAZZ Center</h3>
+          <p class="addr">201 Franklin St</p>
+          <p>A purpose-built jazz hall with a year-round concert calendar.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=SFJAZZ+Center%2C+201+Franklin+St%2C+San+Francisco%2C+CA+94102" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+      </ol>
+
+      <p class="dining">
+        <strong>a Mano</strong> — 450 Hayes St — handmade pasta, vegetarian options,
+        a ten-minute walk to Davies. A reliable pre-performance dinner.
+        <a class="maps-link inline" href="https://www.google.com/maps/search/?api=1&amp;query=a+Mano%2C+450+Hayes+St%2C+San+Francisco%2C+CA+94102" target="_blank" rel="noopener">Open in Maps</a>
+      </p>
+
+      <div id="map-civic-center" class="map map-area" aria-label="Map of Civic Center stops"></div>
+    </article>
+
+    <article id="dogpatch" class="area">
+      <header>
+        <h2>Dogpatch</h2>
+        <p class="overview">
+          A working waterfront neighborhood that has, over a decade, become
+          San Francisco's quietest gallery district. Two stops sit a few blocks
+          apart, and the eating is among the best in the city for an unfussy
+          lunch or a morning pastry.
+        </p>
+      </header>
+
+      <ol class="stops">
+        <li data-stop="msp">
+          <h3>Minnesota Street Project</h3>
+          <p class="addr">1275 Minnesota St</p>
+          <p>
+            A purpose-built complex housing eleven contemporary galleries and
+            rotating exhibitions under one roof. The density of programming
+            makes for an efficient hour — a real survey of what the city's
+            commercial scene is doing.
+          </p>
+          <p class="note">Galleries free and open Tue–Sat, 11–5; individual hours vary.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Minnesota+Street+Project%2C+1275+Minnesota+St%2C+San+Francisco%2C+CA+94107" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+        <li data-stop="mcd">
+          <h3>Museum of Craft and Design</h3>
+          <p class="addr">2569 3rd St</p>
+          <p>
+            A small museum of contemporary craft, design, and material art,
+            with one or two thoughtful exhibitions on at any time. The scale
+            is exactly right — one floor, a few rooms, an after-coffee visit.
+          </p>
+          <p class="note">Closed Monday and Tuesday.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Museum+of+Craft+and+Design%2C+2569+3rd+St%2C+San+Francisco%2C+CA+94107" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+      </ol>
+
+      <p class="dining">
+        <strong>Neighbor Bakehouse</strong> — 2343 3rd St — morning pastries
+        and coffee until 2 pm, Wed–Sun.
+        <a class="maps-link inline" href="https://www.google.com/maps/search/?api=1&amp;query=Neighbor+Bakehouse%2C+2343+3rd+St%2C+San+Francisco%2C+CA+94107" target="_blank" rel="noopener">Open in Maps</a>
+        <br>
+        <strong>Piccino</strong> — 1001 Minnesota St — Italian, vegetarian options,
+        for lunch or an early dinner.
+        <a class="maps-link inline" href="https://www.google.com/maps/search/?api=1&amp;query=Piccino%2C+1001+Minnesota+St%2C+San+Francisco%2C+CA+94107" target="_blank" rel="noopener">Open in Maps</a>
+      </p>
+
+      <div id="map-dogpatch" class="map map-area" aria-label="Map of Dogpatch stops"></div>
+    </article>
+
+    <article id="nob-hill" class="area">
+      <header>
+        <h2>Nob Hill &amp; Chinatown Galleries</h2>
+        <p class="overview">
+          Begin atop Nob Hill at Grace Cathedral, then descend through the edge
+          of Chinatown to two of the city's strongest commercial galleries —
+          one on Grant, one on Geary.
+        </p>
+      </header>
+
+      <ol class="stops">
+        <li data-stop="grace">
+          <h3>Grace Cathedral</h3>
+          <p class="addr">1100 California St</p>
+          <p>
+            The Episcopal cathedral, modeled in part on Notre-Dame de Paris,
+            with a Ghiberti reproduction of the Gates of Paradise, Keith Haring's
+            altarpiece in the AIDS Interfaith Chapel, and two labyrinths — one
+            inside, one in the forecourt.
+          </p>
+          <p class="note">Open daily; the interior is cool, quiet, and built for slow walking.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Grace+Cathedral%2C+1100+California+St%2C+San+Francisco%2C+CA+94108" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+        <li data-stop="silverman">
+          <h3>Jessica Silverman</h3>
+          <p class="addr">621 Grant Ave</p>
+          <p>
+            A contemporary gallery on the Chinatown–Financial District border with
+            a strong roster of mid-career artists. Crisply curated; a short,
+            satisfying visit.
+          </p>
+          <p class="note">Tue–Sat, 10–6.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Jessica+Silverman%2C+621+Grant+Ave%2C+San+Francisco%2C+CA+94108" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+        <li data-stop="fraenkel">
+          <h3>Fraenkel Gallery</h3>
+          <p class="addr">49 Geary St, Suite 450</p>
+          <p>
+            A canonical photography gallery — Diane Arbus, Lee Friedlander,
+            Hiroshi Sugimoto, Adam Fuss are part of the program — set inside 49
+            Geary, a building of perhaps a dozen galleries on its upper floors,
+            all worth a wander.
+          </p>
+          <p class="note">Tue–Fri 10:30–5:30, Sat 11–5.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Fraenkel+Gallery%2C+49+Geary+St%2C+San+Francisco%2C+CA+94108" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+      </ol>
+
+      <div id="map-nob-hill" class="map map-area" aria-label="Map of Nob Hill stops"></div>
+    </article>
+
+    <article id="marina" class="area">
+      <header>
+        <h2>The Marina &amp; Fort Mason</h2>
+        <p class="overview">
+          Walk the colonnade of the Palace of Fine Arts, then drift east along
+          the bay to Fort Mason — a former military complex turned arts campus
+          on the water — with one of the city's best vegetarian dining rooms
+          beside it.
+        </p>
+      </header>
+
+      <ol class="stops">
+        <li data-stop="palace">
+          <h3>Palace of Fine Arts</h3>
+          <p class="addr">3301 Lyon St</p>
+          <p>
+            Bernard Maybeck's 1915 rotunda and colonnade, restored, with a
+            small lagoon and lawns to walk. A piece of architectural theater
+            that rewards slow circumambulation.
+          </p>
+          <p class="note">Outdoor grounds free and open daily.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Palace+of+Fine+Arts%2C+3301+Lyon+St%2C+San+Francisco%2C+CA+94123" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+        <li data-stop="fort-mason">
+          <h3>Fort Mason Center for Arts &amp; Culture</h3>
+          <p class="addr">2 Marina Blvd</p>
+          <p>
+            A historic waterfront campus housing a constellation of arts
+            organizations, including FOR-SITE Foundation, with rotating
+            exhibitions and installations across the buildings.
+          </p>
+          <p class="note">Worth checking the current programming before going.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Fort+Mason+Center+for+Arts+%26+Culture%2C+2+Marina+Blvd%2C+San+Francisco%2C+CA+94123" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+      </ol>
+
+      <p class="dining">
+        <strong>Greens Restaurant</strong> — 2 Marina Blvd — landmark vegetarian
+        dining room founded by the SF Zen Center in 1979, with a wall of bay
+        window. Reservations advisable.
+        <a class="maps-link inline" href="https://www.google.com/maps/search/?api=1&amp;query=Greens+Restaurant%2C+2+Marina+Blvd%2C+San+Francisco%2C+CA+94123" target="_blank" rel="noopener">Open in Maps</a>
+      </p>
+
+      <div id="map-marina" class="map map-area" aria-label="Map of Marina and Fort Mason stops"></div>
+    </article>
+
+    <article id="ferry-building" class="area">
+      <header>
+        <h2>The Ferry Building &amp; Sausalito</h2>
+        <p class="overview">
+          A waterfront half-day. Begin in the Ferry Building's marketplace;
+          cross the bay to Sausalito on a Golden Gate ferry; come back on
+          a later sailing.
+        </p>
+      </header>
+
+      <ol class="stops">
+        <li data-stop="ferry-building">
+          <h3>Ferry Building</h3>
+          <p class="addr">1 Ferry Building, The Embarcadero</p>
+          <p>
+            The 1898 ferry terminal, restored as a public marketplace —
+            coffee, pastries, oysters, ceramics at Heath, tea at Imperial
+            Tea Court, books, flowers. The Saturday farmers' market is the
+            busiest and most rewarding day.
+          </p>
+          <p class="note">Building open daily 7 am–10 pm; individual shop hours vary.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Ferry+Building%2C+1+Ferry+Building%2C+San+Francisco%2C+CA+94105" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+        <li data-stop="sausalito">
+          <h3>Sausalito</h3>
+          <p class="addr">Golden Gate Ferry from the Ferry Building</p>
+          <p>
+            A twenty-five-minute crossing with full views of the bay and the
+            bridge. In Sausalito, walk Bridgeway, browse the small galleries
+            along the waterfront, and take a later ferry home.
+          </p>
+          <p class="note">Check the Golden Gate Ferry schedule the day of — sailings are limited.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Sausalito+Ferry+Landing%2C+Sausalito%2C+CA" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+      </ol>
+
+      <p class="dining">Many cafés inside the Ferry Building marketplace itself.</p>
+
+      <div id="map-ferry-building" class="map map-area" aria-label="Map of Ferry Building and Sausalito"></div>
+    </article>
+
+    <article id="peninsula" class="area">
+      <header>
+        <h2>A Drive Down the Peninsula</h2>
+        <p class="overview">
+          Thirty miles south, set into the hills above Woodside, a 1917 country
+          estate with sixteen acres of formal gardens. A whole day, restful
+          pace, and the most rewarding garden visit within reach of the city.
+        </p>
+      </header>
+
+      <ol class="stops">
+        <li data-stop="filoli">
+          <h3>Filoli</h3>
+          <p class="addr">86 Cañada Rd, Woodside</p>
+          <p>
+            The Bourn family's Georgian-revival house and an estate of Italianate
+            gardens — a sunken garden, a knot garden, a long pool flanked by
+            yews, an orchard. A National Trust site.
+          </p>
+          <p class="note">Open daily 10–5; tickets in advance via filoli.org. About 45 minutes by car from the city.</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Filoli%2C+86+Ca%C3%B1ada+Rd%2C+Woodside%2C+CA+94062" target="_blank" rel="noopener">Open in Maps</a>
+        </li>
+      </ol>
+
+      <p class="dining">A café on the grounds; Woodside and Menlo Park also have lunch options.</p>
+
+      <div id="map-peninsula" class="map map-area" aria-label="Map of Filoli"></div>
+    </article>
+
+  </main>
+
+  <footer class="page-footer" aria-hidden="true"></footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>
