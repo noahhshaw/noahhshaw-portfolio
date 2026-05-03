@@ -47,9 +47,9 @@ body {
 .cover h1 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(44px, 10vw, 84px);
+  font-size: clamp(40px, 8.5vw, 76px);
   letter-spacing: -0.01em;
-  line-height: 1;
+  line-height: 1.05;
   margin: 0 0 28px;
 }
 .lede {
@@ -200,6 +200,25 @@ main {
   font-family: var(--serif);
   margin-top: 4px;
 }
+.stops .now {
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  margin: 10px 0 6px;
+  line-height: 1.55;
+}
+.stops .now-label {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 1px 7px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent-soft);
+  border-radius: 2px;
+  vertical-align: 2px;
+}
 
 /* Dining */
 .dining {
@@ -241,10 +260,18 @@ main {
   font-size: 12px;
 }
 
-/* Footer (intentionally unobtrusive) */
+/* Footer */
 .page-footer {
-  height: 96px;
+  max-width: var(--content);
+  margin: 56px auto 0;
+  padding: 24px var(--gutter) 80px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 13px;
+  font-family: var(--sans);
+  line-height: 1.5;
 }
+.page-footer p { margin: 0; }
 
 /* Leaflet popup styling */
 .leaflet-popup-content-wrapper {
