@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Restaurant Triage</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f5f1e9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/triage/styles.css">
+</head>
+<body>
+
+  <header class="cover">
+    <p class="kicker">Triage</p>
+    <h1>SF Restaurants</h1>
+    <p class="lede">
+      Tap <span class="ico-up">👍</span> to keep, <span class="ico-down">👎</span> to drop,
+      <span class="ico-skip">↻</span> to undo. Choices save in your browser. When you're done,
+      tap <strong>Export</strong> at the bottom and paste the results back into chat.
+    </p>
+  </header>
+
+  <nav class="toolbar" aria-label="Triage controls">
+    <div class="progress" id="progress" aria-live="polite">Loading…</div>
+    <div class="filters" role="tablist" aria-label="Show">
+      <button data-filter="all" class="active" role="tab">All</button>
+      <button data-filter="undecided" role="tab">Undecided</button>
+      <button data-filter="up" role="tab">Liked</button>
+      <button data-filter="down" role="tab">Passed</button>
+    </div>
+  </nav>
+
+  <main id="list">Loading restaurants…</main>
+
+  <div class="bottom-bar">
+    <button id="export-btn" class="primary">Export results</button>
+    <button id="reset-btn" class="ghost" title="Clear all votes">Reset</button>
+  </div>
+
+  <dialog id="export-dialog" class="export-dialog">
+    <header>
+      <strong>Copy and paste back to chat</strong>
+      <button id="close-export" class="close" aria-label="Close">×</button>
+    </header>
+    <textarea id="export-text" readonly rows="20"></textarea>
+    <footer>
+      <button id="copy-btn" class="primary">Copy to clipboard</button>
+      <span id="copied-msg" class="copied-msg" hidden>Copied.</span>
+    </footer>
+  </dialog>
+
+  <script src="/triage/script.js"></script>
+</body>
+</html>

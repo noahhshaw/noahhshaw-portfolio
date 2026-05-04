@@ -1,84 +1,139 @@
 # San Francisco Restaurants — Working List
 
-A broad list of ~200 San Francisco restaurants spanning fine dining, neighborhood favorites, casual counters, bakeries, and bars. Delete the entries you don't want; survivors will become the website's restaurant section.
+A merged, San-Francisco-only list. Sources, in priority order:
 
-Prices are rough per-person estimates: **$** under $25 · **$$** $25–50 · **$$$** $50–100 · **$$$$** $100+. Stars indicate Michelin (★, ★★, ★★★).
+- **SF Chronicle Top 100 (2025/26)** — every SF-proper entry kept, ranked. Marked `#NN Chron`.
+- **Michelin Guide SF** — every SF entry kept. Marked with stars (★, ★★, ★★★) where awarded; otherwise listed as Bib or Selected.
+- **Supplementary research** — classics, neighborhood favorites, bakeries, bars, and cuisines under-represented in the two source lists.
+
+Format: `**Name** — Neighborhood — cuisine, $-tier` `[#NN Chron] [★]`
+
+Price tiers: **$** under $25 · **$$** $25–50 · **$$$** $50–100 · **$$$$** $100+. Stars are Michelin awards (★ one star, ★★ two stars, ★★★ three stars).
 
 Compiled May 2026. Confirm hours and current operation before relying on any of these.
 
+Closed and dropped: Café Jacqueline, August (1) Five, Lazeez, Cala, McEvoy. Bay Area entries from the Chronicle list (Oakland, Berkeley, Marin, Peninsula, South Bay, Wine Country) are kept at the bottom in a separate **Beyond SF** section in case any are worth a drive — delete the section entirely if you want strict SF-only.
+
 ---
 
-## Tasting Menus & Fine Dining
+## Three-Star Tasting Menus
 
-- **Atelier Crenn** — Cow Hollow — modern French, ★★★, $$$$
-- **Benu** — SoMa — Asian-leaning, ★★★, $$$$
-- **Quince** — Jackson Square — Italian-French, ★★★, $$$$
-- **Birdsong** — SoMa — fire-driven Californian, ★★, $$$$
-- **Saison** — SoMa — wood-fire, ★★, $$$$
-- **Lazy Bear** — Mission — communal-table, ★★, $$$$
-- **Californios** — SoMa — Mexican, ★★, $$$$
-- **Nari** — Japantown — Thai, ★★, $$$$
-- **Sons & Daughters** — Mission — Nordic-leaning, ★, $$$$
-- **Acquerello** — Nob Hill — refined Italian, ★, $$$$
-- **Wolfsbane** — Dogpatch — Californian, ★, $$$$
-- **Marlena** — Bernal Heights — French-leaning, ★, $$$
-- **Nisei** — Russian Hill — Japanese-American, ★, $$$$
+- **Atelier Crenn** — Cow Hollow — modern French, $$$$ — `#31 Chron` `★★★`
+- **Benu** — SoMa — Asian-leaning, $$$$ — `#17 Chron` `★★★`
+- **Quince** — Jackson Square — Italian-French, $$$$ — `#20 Chron` `★★★`
+
+## Two-Star Tasting Menus
+
+- **Birdsong** — SoMa — fire-driven Cal, $$$$ — `★★`
+- **Saison** — SoMa — wood-fire Cal, $$$$ — `★★`
+- **Lazy Bear** — Mission — communal-table, $$$$ — `★★`
+- **Californios** — SoMa — Mexican fine dining, $$$$ — `#28 Chron` `★★`
+- **Nari** — Japantown — Thai, $$$ — `#48 Chron` `★★`
+
+## One-Star & Recent Michelin Additions
+
+- **Acquerello** — Nob Hill — refined Italian, $$$$ — `★`
+- **Sons & Daughters** — Mission — Nordic-leaning, $$$$ — `#24 Chron` `★`
+- **Wolfsbane** — Dogpatch — Cal tasting (replaced Lord Stanley), $$$$ — `★ NEW`
+- **Naides** — SF — Filipino fine dining, $$$$ — `★ NEW`
+- **Dingles Public House** — SF — gastropub, $$$ — `★ NEW`
+- **Mister Jiu's** — Chinatown — modern Cantonese, $$$$ — `#64 Chron` `★`
+- **Kin Khao** — Tenderloin — Thai, $$$ — `★`
+- **State Bird Provisions** — Fillmore — dim-sum-style Cal, $$$ — `#29 Chron` `★`
+- **Nisei** — Russian Hill — Japanese-American, $$$$ — `★`
+- **San Ho Won** — Mission — Korean BBQ + Cal, $$$ — `#34 Chron` `★`
+- **Marlena** — Bernal Heights — French-leaning, $$$ — `★`
+
+## Other High-End Tasting Menus
+
+- **Kiln** — SF — contemporary, $$$$ — Michelin Selected
+- **Sorrel** — Presidio Heights — Cal-Italian, $$$$ — Michelin Selected
+- **Angler SF** — Embarcadero — wood-fire seafood, $$$$ — Michelin Selected
+- **7 Adams** — Pacific Heights — Californian, $$$$ — Michelin Selected
+- **Le Comptoir at Bar Crenn** — Cow Hollow — French counter, $$$$
+- **Ssal** — Mission — Korean tasting, $$$$ — Michelin Selected
+- **Friends Only** — Pacific Heights — sushi omakase, $$$$ — `#27 Chron`
+- **jū-ni** — NoPa — counter omakase, $$$$ — Michelin Selected
+- **Omakase** — SoMa — sushi omakase, $$$$ — Michelin Selected
 - **Hashiri** — SoMa — kaiseki / sushi, $$$$
 - **Gozu** — SoMa — wagyu omakase, $$$$
-- **Eight Tables** — Chinatown — fine Chinese, $$$$
-- **Mijoté** — Mission — French-Californian, $$$
-- **Ernest** — Mission — Californian, $$$
+- **Eight Tables** — Chinatown — fine Chinese tasting, $$$$
+- **Niku Steakhouse** — SoMa — wagyu steakhouse, $$$$ — Michelin Selected
+- **Miller & Lux** — Mission Bay — Tyler Florence steakhouse, $$$$ — Michelin Selected
+- **Mijoté** — Mission — French-Cal bistro tasting, $$$ — `#18 Chron`
 
-## New American / Californian
+## Californian / New American (à la carte)
 
-- **Nopa** — NoPa — Cal-Mediterranean late-night, $$$
-- **Rich Table** — Hayes Valley — playful Cal cuisine, $$$
-- **State Bird Provisions** — Fillmore — dim-sum-style Cal, $$$
-- **The Progress** — Fillmore — communal Cal (State Bird sister), $$$
-- **Foreign Cinema** — Mission — Cal-Med w/ courtyard films, $$$
-- **Zuni Café** — Hayes Valley — institution; chicken-for-two, $$$
-- **Liholiho Yacht Club** — Tendernob — Hawaiian-leaning, $$$
+- **Zuni Café** — Hayes Valley / Market — institution; chicken-for-two, $$$ — `#10 Chron`
+- **Rich Table** — Hayes Valley — playful Cal, $$$ — `#3 Chron`
+- **The Progress** — Fillmore — communal Cal (State Bird sister), $$$ — `#6 Chron`
+- **Liholiho Yacht Club** — Tendernob — Hawaiian-leaning, $$$ — `#60 Chron`
+- **Hilda and Jesse** — North Beach — gay-aural California brunch+, $$$ — `#92 Chron`
+- **Trestle** — Jackson Square — three-course prix fixe, $$ — Bib
+- **Ernest** — Mission — Californian, $$$ — Michelin Selected
+- **Routier** — Hayes Valley — Cal-French, $$$ — Michelin Selected
+- **Prospect** — SoMa — Californian, $$$ — Michelin Selected
 - **Boulevard** — Embarcadero — Pat Kuleto institution, $$$$
-- **Trestle** — Jackson Square — three-course prix fixe, $$
-- **Outerlands** — Outer Sunset — coastal Cal cuisine, $$$
-- **Routier** — Hayes Valley — Cal-French, $$
-- **Arquet** — Embarcadero — hyper-seasonal Cal (Sorrel team), $$$
-- **Sorrel** — Presidio Heights — Cal-Italian, $$$
+- **Foreign Cinema** — Mission — Cal-Med w/ courtyard films, $$$
+- **Outerlands** — Outer Sunset — coastal Cal, $$$
 - **Octavia** — Pacific Heights — refined neighborhood Cal, $$$
 - **Spruce** — Presidio Heights — Cal cuisine + wine, $$$$
 - **The Anchovy Bar** — Fillmore — small-fish-focused (State Bird team), $$$
 - **Petit Crenn** — Hayes Valley — Brittany-inspired, $$$
 - **Bar Crenn** — Cow Hollow — French wine bar, $$$
 - **Marlowe** — SoMa — bistro + burger, $$
-- **Hilda and Jesse** — North Beach — Californian brunch+, $$$
-- **Prubechu** — Mission — Guamanian, $$
+- **Prubechu** — Mission — Guamanian, $$ — `#65 Chron`
+- **The Rotunda** — Union Square (Neiman Marcus) — popovers + sleeper-hit burger, $$ — `#98 Chron`
+- **Yo También Cantina** — Inner Sunset — Cal-Mex café, $ — `#79 Chron`
 - **Mersea** — Treasure Island — bay-view casual, $$
 
 ## Italian
 
-- **Cotogna** — Jackson Square — rustic wood-fire, $$$
-- **Flour + Water** — Mission — handmade pasta, $$$
-- **Penny Roma** — Mission — Roman pasta (Flour + Water sister), $$$
-- **Che Fico** — NoPa — Roman-Cal, $$$
-- **Beretta** — Mission — pizza + Italian, $$
-- **Delfina** — Mission — neighborhood Italian, $$$
-- **SPQR** — Pacific Heights — regional Italian, $$$
-- **A16** — Marina — Southern Italian, $$$
+- **Cotogna** — Jackson Square — rustic wood-fire, $$$ — `#57 Chron`
+- **Flour + Water** — Mission — handmade pasta, $$$ — `#39 Chron`
+- **Penny Roma** — Mission — Roman pasta (F+W sister), $$$
+- **Itria** — Mission (24th) — pasta + crudo, $$$ — `#75 Chron`
+- **Delfina** — Mission — neighborhood Italian, $$$ — `#30 Chron`
+- **Barberio Osteria** — Mission (Valencia) — Cal-Italian, $$ — `#53 Chron`
+- **La Ciccia** — Noe Valley — Sardinian, $$ — `#33 Chron`
+- **Che Fico** — NoPa — Roman-Cal, $$$ — Michelin Selected
+- **SPQR** — Pacific Heights — regional Italian, $$$$ — Michelin Selected
+- **A16** — Marina — Southern Italian, $$$ — Michelin Selected
 - **Locanda** — Mission — Roman, $$$
 - **Original Joe's** — North Beach — Italian-American institution, $$
 - **Tommaso's** — North Beach — historic Neapolitan, $$
 - **Sotto Mare** — North Beach — cioppino + Italian seafood, $$$
 - **Bocconcino** — North Beach — modern Italian, $$
+- **Beretta** — Mission — pizza + Italian, $$
 - **Piccino** — Dogpatch — Cal-Italian, $$$
 - **Bosco** — SoMa — Italian, $$$
 - **La Connessa** — Potrero Hill — wood-fired, $$
 - **Bar Iris** — Mission — natural-wine pasta bar, $$$
 - **Belga** — Marina — Belgian-Italian, $$
 
-## French
+## Pizza
 
+- **Tony's Pizza Napoletana** — North Beach — every-style, $$
+- **Del Popolo** — Tenderloin — wood-fired Neapolitan, $$ — Michelin Selected
+- **Jules** — Hayes Valley — wood-fired w/ wallet pizza, $$
+- **Outta Sight Pizza** — Tenderloin — slice shop + sandwiches, $ — `#68 Chron`
+- **The Laundromat** — Outer Richmond — bagels by day, Detroit-ish pizza by night, $$ — `#88 Chron`
+- **Golden Boy Pizza** — North Beach — square slice focaccia, $
+- **Pizzeria Delfina** — Mission / Pacific Heights — Neapolitan, $$
+- **The Square Pie Guys** — SoMa — Detroit, $
+- **Long Bridge Pizza** — Bernal Heights — neighborhood, $$
+- **Capo's** — North Beach — Chicago-style, $$
+- **Flour + Water Pizzeria** — Mission — wood-fired, $$
+- **Pi Bar** — Mission — slice + craft beer, $
+- **Ragazza** — NoPa — Neapolitan, $$
+- **Casey's Pizza** — Mission Bay — sourdough, $$
+- **Il Casaro** — North Beach — Neapolitan, $$
+
+## French / Bistros / Brasseries
+
+- **Verjus** — Jackson Square — natural-wine bar w/ French food, $$ — `#12 Chron`
 - **Le Central** — Financial District — historic bistro (since 1974), $$$
-- **Chapeau** — Inner Richmond — neighborhood bistro, $$$
+- **Chapeau** — Inner Richmond — bistro classics, $$$
 - **Bouche** — Financial District — French + small plates, $$$
 - **L'Ardoise Bistro** — Castro — bistro classics, $$
 - **Cote Ouest Bistro** — Polk — bistro, $$
@@ -87,24 +142,26 @@ Compiled May 2026. Confirm hours and current operation before relying on any of 
 - **Absinthe Brasserie & Bar** — Hayes Valley — brasserie, $$$
 - **Bistro Aix** — Marina — French bistro, $$
 - **Le Marais Bakery & Bistro** — Castro / Polk — French, $$
-- **Verjus** — Jackson Square — natural-wine + French (also under Wine Bars), $$$
 
 ## Japanese — Sushi / Omakase
 
-- **Kusakabe** — Financial District — omakase, ★, $$$$
-- **Kabuto** — Outer Richmond — omakase, ★, $$$$
-- **An Japanese Restaurant** — Inner Sunset — omakase, ★, $$$$
+- **Izakaya Rintaro** — Mission — izakaya + counter, $$ — `#76 Chron`
+- **Friends Only** — Pacific Heights — omakase, $$$$ — `#27 Chron`
+- **Nisei** — Russian Hill — Japanese-American tasting, $$$$ — `★`
+- **jū-ni** — NoPa — counter omakase, $$$$ — Michelin Selected
+- **Omakase** — SoMa — sushi omakase, $$$$ — Michelin Selected
+- **Kusakabe** — Financial District — omakase, $$$$
+- **Kabuto** — Outer Richmond — omakase, $$$$
+- **An Japanese Restaurant** — Inner Sunset — omakase, $$$$
 - **Akiko's** — North Beach — sushi, $$$
 - **Robin** — Hayes Valley — omakase, $$$$
-- **Ju-Ni** — NoPa — counter omakase, $$$$
 - **Wako** — Inner Richmond — omakase, $$$$
-- **Omakase** — SoMa — sushi omakase, $$$$
 - **Saru Sushi Bar** — Noe Valley — neighborhood sushi, $$$
+- **Okane** — SoMa — sushi + small plates, $$ — Michelin Selected
 - **Ozumo** — Embarcadero — sushi + robata, $$$$
 
 ## Japanese — Izakaya / Ramen / Yakitori
 
-- **Rintaro** — Mission — izakaya, $$$
 - **Izakaya Sozai** — Inner Sunset — izakaya, $$
 - **Yakitori Edomasa** — Inner Sunset — yakitori counter, $$
 - **TBD** — Union Square — modern izakaya (Akiko's team), $$$
@@ -117,40 +174,45 @@ Compiled May 2026. Confirm hours and current operation before relying on any of 
 - **Pabu Izakaya** — Financial District — izakaya, $$$
 - **Udon Mugizo** — Japantown — udon, $$
 - **Hinata** — Japantown — kushikatsu, $$
-- **Pabu** — see Pabu Izakaya
 
-## Chinese
+## Chinese — Cantonese / Dim Sum
 
-- **Mister Jiu's** — Chinatown — modern Cantonese, ★, $$$$
-- **Empress by Boon** — Chinatown — modern Chinese banquet, ★, $$$$
-- **The Happy Crane** — Lower Haight — modern Chinese, $$$
+- **Four Kings** — Chinatown — modern Cantonese, $$ — `#2 Chron`
+- **Mister Jiu's** — Chinatown — Cantonese, $$$$ — `#64 Chron` `★`
+- **Taishan Cuisine** — Chinatown — late-night Cantonese, $$ — `#21 Chron`
+- **HK Lounge Bistro** — SoMa — dim sum, $$ — `#47 Chron`
+- **Yank Sing** — Rincon Center — dim sum (cart service), $$$ — Michelin Selected
+- **Hong Kong Lounge II** — Inner Richmond — dim sum, $$
+- **Harborview** — Financial District — Cantonese banquet + dim sum, $$$
+- **R&G Lounge** — Chinatown — Cantonese, $$
 - **China Live** — Chinatown — multi-concept marketplace, $$$
-- **Z & Y** — Chinatown — Sichuan, $$
+- **Empress by Boon** — Chinatown — modern Chinese banquet, $$$$
+- **Good Mong Kok Bakery** — Chinatown — bao + dim sum to go, $
+
+## Chinese — Sichuan / Hunan / Northern
+
+- **Z & Y** — Chinatown — Sichuan, $$ — `#72 Chron`
 - **Z & Y Peking Duck** — Chinatown — duck specialist, $$
 - **Chong Qing Xiao Mian** — Chinatown — Sichuan noodles, $
 - **Mama Ji's** — Castro — home-style Sichuan, $$
 - **Yuanbao Jiaozi** — Inner Richmond — dumplings, $
-- **Good Mong Kok Bakery** — Chinatown — bao + dim sum to-go, $
-- **Yank Sing** — Rincon Center — dim sum (cart service), $$$
-- **Hong Kong Lounge II** — Inner Richmond — dim sum, $$
-- **Harborview** — Financial District — Cantonese banquet + dim sum, $$$
-- **R&G Lounge** — Chinatown — Cantonese, $$
 - **San Tung** — Inner Sunset — dry-fried wings, $$
 - **Old Mandarin Islamic** — Outer Sunset — northwestern Chinese, $$
-- **Henry's Hunan** — multiple locations — Hunan, $$
+- **Henry's Hunan** — multiple — Hunan, $$
 - **Brandy Ho's Hunan** — Chinatown — Hunan, $$
 
 ## Mexican / Latin
 
-- **La Taqueria** — Mission — burritos / tacos, $
+- **La Taqueria** — Mission — burritos / tacos, $ — `#59 Chron`
+- **La Vaca Birria** — Mission (24th) — burritos + birria, $ — `#40 Chron`
+- **Californios** — SoMa — Mexican fine dining, $$$$ — `#28 Chron` `★★`
 - **El Farolito** — Mission — late-night burritos, $
 - **Taqueria Cancun** — Mission — burritos, $
 - **Taqueria Vallarta** — Mission — al pastor, $
 - **El Buen Comer** — Bernal Heights — Mexico City home cooking, $$
 - **Nopalito** — NoPa / Inner Sunset — regional Mexican, $$
 - **Maria Isabel** — Presidio Heights — upscale Mexican, $$$
-- **Flores** — Cow Hollow — Mexican brunch + dinner, $$
-- **Tropisueño** — SoMa — Mexican, $$
+- **Flores** — Cow Hollow — Mexican brunch + dinner, $$ — Michelin Selected
 - **Cantina Los Mayas** — Mission — Yucatecan, $$
 - **El Buen Sabor** — Mission — taqueria, $
 - **Picaro** — Mission — Spanish-leaning tapas, $$
@@ -159,44 +221,50 @@ Compiled May 2026. Confirm hours and current operation before relying on any of 
 
 ## Vietnamese
 
+- **Lily** — Inner Richmond — modern Vietnamese, $$ — `#45 Chron`
 - **Bodega** — Mid-Market — modern Vietnamese, $$
 - **Turtle Tower** — Tenderloin / Larkin — northern pho, $
 - **An Chi** — Inner Sunset — modern Vietnamese, $$
-- **Lily** — Inner Richmond — modern Vietnamese, $$$
 - **Pho Huong Viet** — Tenderloin — pho, $
 - **Pho 2000** — Tenderloin — pho, $
 - **Yummy Yummy** — Inner Sunset — pho, $
 - **Saigon Sandwich** — Tenderloin — banh mi counter, $
 - **PPQ Dungeness Island** — Outer Richmond — Vietnamese crab, $$$
 
-## Thai / Burmese / Lao
+## Thai / Burmese / Lao / Malaysian
 
-- **Kin Khao** — Tenderloin — Thai, ★, $$$
+- **Nari** — Japantown — Thai, $$$ — `#48 Chron` `★★`
+- **Kin Khao** — Tenderloin — Thai, $$$ — `★`
+- **Mandalay** — Inner Richmond — historic Burmese, $$ — `#96 Chron`
+- **Damansara** — Noe Valley — Malaysian (Dungeness chili crab), $$ — `#91 Chron`
+- **Azalina's** — Tenderloin — Malaysian Mamak set menu, $$$ — `#67 Chron`
+- **Prik Hom** — SF — Thai, $$ — Michelin Selected
 - **Lers Ros** — Hayes Valley / Tenderloin — Thai, $$
-- **Farmhouse Kitchen Thai** — Mission — Thai, $$
+- **Farmhouse Kitchen Thai** — Mission — Thai, $$ — Bib
 - **Hawker Fare** — Mission — Lao / northern Thai, $$
 - **Marnee Thai** — Inner Sunset — neighborhood Thai, $$
 - **Burma Superstar** — Inner Richmond — Burmese, $$
 - **Burma Love** — Mission — Burmese, $$
-- **Mandalay** — Inner Richmond — historic Burmese, $$
 - **Inle Burmese Cuisine** — Inner Sunset — Burmese, $$
 - **Yamo** — Mission — counter Burmese, $
 - **Lapisara Eatery** — Tenderloin — Thai-Filipino, $$
 
 ## Indian / Pakistani / South Asian
 
-- **Copra** — Fillmore — coastal South Indian, $$$
-- **Besharam** — Dogpatch — Gujarati Cal-Indian, $$$
-- **Rooh** — SoMa — modern Indian, $$$
+- **Copra** — Fillmore — coastal South Indian, $$$ — `#7 Chron`
+- **Besharam** — Dogpatch (Minnesota Street Project) — Gujarati Cal-Indian, $$ — `#83 Chron`
+- **Rooh** — SoMa — modern Indian, $$$ — Michelin Selected
 - **Dosa** — Fillmore / Mission — South Indian, $$
 - **Pakwan** — Mission / Tenderloin — Pakistani, $
 - **Shalimar** — Tenderloin — Pakistani / Indian, $
-- **Curry Up Now** — Mission / multiple — modern Indian fast-casual, $
+- **Curry Up Now** — multiple — modern Indian fast-casual, $
 
 ## Korean
 
-- **Um.Ma** — Outer Sunset — modern Korean, ★, $$$
-- **San Ho Won** — Mission — Korean BBQ + Cal, ★, $$$$
+- **Um.Ma** — Outer Sunset — modern Korean, $$$ — `★`
+- **San Ho Won** — Mission — Korean BBQ + Cal, $$$ — `#34 Chron` `★`
+- **Ssal** — Mission — Korean tasting, $$$$ — Michelin Selected
+- **Bansang** — SF — Korean (Michelin), $$ — Michelin Selected
 - **Daeho Kalbijjim & Beef Soup** — Japantown — galbijjim, $$
 - **Han Il Kwan** — Inner Richmond — Korean, $$
 - **Hwa Mi Won** — Inner Richmond — Korean, $$
@@ -204,8 +272,11 @@ Compiled May 2026. Confirm hours and current operation before relying on any of 
 - **Manna** — Inner Sunset — Korean, $$
 - **Muguboka** — Inner Richmond — Korean, $$
 
-## Mediterranean / Middle Eastern / Greek / Persian
+## Mediterranean / Middle Eastern / Persian / Turkish / Greek / Moroccan
 
+- **Aziza** — Outer Richmond — Moroccan, $$ — `#14 Chron`
+- **Kitchen Istanbul** — Inner Richmond — Turkish + wine, $$ — `#69 Chron`
+- **Reem's** — Mission — Arab bakery, $ — `#85 Chron`
 - **Kokkari Estiatorio** — Jackson Square — Greek, $$$$
 - **Dalida** — Presidio (Tunnel Tops) — Mediterranean, $$$
 - **Beit Rima** — Duboce Triangle / Inner Sunset — Levantine, $$
@@ -218,8 +289,9 @@ Compiled May 2026. Confirm hours and current operation before relying on any of 
 
 ## Filipino
 
-- **Abacá** — Fisherman's Wharf — modern Filipino, $$$
-- **Senor Sisig** — Mission / Ferry Building — Filipino-Mexican fusion, $
+- **Abacá** — Fisherman's Wharf — modern Filipino, $$ — Michelin Selected
+- **Naides** — SF — Filipino fine dining, $$$$ — `★ NEW`
+- **Senor Sisig** — Mission / Ferry Building — Filipino-Mexican, $
 - **The Sarap Shop** — multiple — Filipino, $
 - **Hi Lo Club** — Mission — Filipino bar food, $$
 
@@ -241,22 +313,31 @@ Compiled May 2026. Confirm hours and current operation before relying on any of 
 - **House of Tadu** — Tenderloin — Ethiopian, $
 - **Meski Restaurant** — Inner Sunset — Eritrean, $
 
-## Seafood / Oysters
+## Soul Food / American Regional
 
+- **Minnie Bell's Soul Movement** — Fillmore — soul food, $ — `#37 Chron`
+- **Sandy's** — Haight-Ashbury — NOLA muffulettas + cookies, $ — `#22 Chron`
+- **Brenda's French Soul Food** — Civic Center — beignets + Creole, $$
+
+## Seafood / Oysters / Classic Grills
+
+- **Scoma's** — Fisherman's Wharf — classic seafood (since 1965), $$$ — `#43 Chron`
 - **Swan Oyster Depot** — Polk Gulch — counter institution since 1912, $$$
-- **Anchor Oyster Bar** — Castro — counter seafood, $$$
+- **Anchor Oyster Bar** — Castro — counter seafood, $$$ — Bib
 - **Hog Island Oyster Co.** — Ferry Building — oysters, $$$
 - **Woodhouse Fish Co.** — Castro / Marina — fish house, $$
-- **Scoma's** — Fisherman's Wharf — classic seafood, $$$
-- **Waterbar** — Embarcadero — bay-view seafood, $$$$
-- **Fog Harbor** — Pier 39 — touristy waterfront, $$$
-
-## Steakhouses / Classic Grills
-
-- **House of Prime Rib** — Van Ness — silver carts since 1949, $$$
 - **Tadich Grill** — Financial District — oldest in SF (1849), $$$
 - **Sam's Grill** — Financial District — historic grill (1867), $$$
 - **John's Grill** — Financial District — Maltese Falcon haunt (1908), $$$
+- **Waterbar** — Embarcadero — bay-view seafood, $$$$
+- **Fog Harbor** — Pier 39 — touristy waterfront, $$$
+- **Angler SF** — Embarcadero — wood-fire seafood, $$$$ — Michelin Selected
+
+## Steakhouses
+
+- **House of Prime Rib** — Van Ness — silver carts since 1949, $$$ — `#87 Chron`
+- **Niku Steakhouse** — SoMa — wagyu, $$$$ — Michelin Selected
+- **Miller & Lux** — Mission Bay — Tyler Florence, $$$$ — Michelin Selected
 - **Harris' Steakhouse** — Polk — steakhouse, $$$$
 - **Bourbon Steak** — Financial District — steakhouse, $$$$
 - **Boboquivari's** — Marina — steak + crab, $$$
@@ -264,35 +345,9 @@ Compiled May 2026. Confirm hours and current operation before relying on any of 
 - **5A5 Steak Lounge** — Jackson Square — wagyu, $$$$
 - **Schroeder's** — Financial District — 1893 German-American beer hall, $$
 
-## Pizza
+## Bakeries / Pastry / Cafés
 
-- **Tony's Pizza Napoletana** — North Beach — every-style, $$
-- **Del Popolo** — Tenderloin — wood-fired Neapolitan, $$
-- **Jules** — Hayes Valley — wood-fired w/ wallet pizza, $$
-- **Golden Boy Pizza** — North Beach — square slice, $
-- **Pizzeria Delfina** — Mission / Pacific Heights — Neapolitan, $$
-- **The Square Pie Guys** — SoMa — Detroit, $
-- **Outta Sight Pizza** — Tenderloin — slice shop, $
-- **Long Bridge Pizza** — Bernal Heights — neighborhood, $$
-- **Capo's** — North Beach — Chicago-style, $$
-- **Flour + Water Pizzeria** — Mission — wood-fired (also Detroit), $$
-- **Pi Bar** — Mission — slice + craft beer, $
-- **Ragazza** — NoPa — Neapolitan, $$
-- **Casey's Pizza** — Mission Bay — sourdough, $$
-- **Il Casaro** — North Beach — Neapolitan, $$
-
-## Burgers / Sandwiches / Counter
-
-- **Causwells** — Marina — Americana burger + cocktails, $$
-- **Mo's Grill** — North Beach — burger, $
-- **Maillards** — Outer Sunset — smashburger counter, $
-- **Roam Artisan Burgers** — multiple — burger, $
-- **Wise Sons Jewish Deli** — Mission — pastrami / deli, $$
-- **Ike's Place** — multiple — sandwiches, $
-- **Gott's Roadside** — Ferry Building — burgers + shakes, $
-
-## Bakeries / Pastry / Coffee
-
+- **Breadbelly** — Inner Richmond — Asian-leaning bakery + brunch, $ — `#8 Chron`
 - **Tartine Bakery** — Mission — flagship bakery, $
 - **Tartine Manufactory** — Mission — bakery + restaurant, $$
 - **Arsicault Bakery** — Inner Richmond — croissants, $
@@ -304,19 +359,17 @@ Compiled May 2026. Confirm hours and current operation before relying on any of 
 - **Boulettes Larder** — Ferry Building — café + provisions, $$
 - **Sol Bakery** — NoPa — pastries, $
 - **Liguria Bakery** — North Beach — focaccia until sold out, $
-- **Breadbelly** — Inner Richmond — Asian-leaning bakery + brunch, $$
 - **Dandelion Chocolate** — Mission — chocolate factory + café, $$
 - **Bob's Donuts** — Polk — late-night donuts, $
 - **Dynamo Donuts** — Mission — donuts, $
 - **Saint Frank Coffee** — Russian Hill — coffee bar, $
 - **Sightglass** — SoMa / Mission — coffee, $
 - **Ritual Coffee** — Mission — coffee, $
-- **Andytown** — Outer Sunset — Snowy Plover, $
+- **Andytown** — Outer Sunset — Snowy Plover coffee, $
 - **Caffe Trieste** — North Beach — beat-era café, $
 
 ## Brunch / Breakfast
 
-- **Brenda's French Soul Food** — Civic Center — beignets + Creole, $$
 - **Plow** — Potrero Hill — pancakes + breakfast, $$
 - **Sweet Maple** — Pacific Heights — Millionaire's Bacon, $$
 - **Mama's on Washington Square** — North Beach — French-toast lines, $$
@@ -325,16 +378,26 @@ Compiled May 2026. Confirm hours and current operation before relying on any of 
 - **The Mill** — NoPa — toast + coffee, $
 - **Just for You Café** — Dogpatch — Cajun-Southern brunch, $$
 
+## Burgers / Sandwiches / Casual Counter
+
+- **Causwells** — Marina — Americana burger + cocktails, $$
+- **Mo's Grill** — North Beach — burger, $
+- **Maillards** — Outer Sunset — smashburger counter, $
+- **Roam Artisan Burgers** — multiple — burger, $
+- **Wise Sons Jewish Deli** — Mission — pastrami / deli, $$
+- **Ike's Place** — multiple — sandwiches, $
+- **Gott's Roadside** — Ferry Building — burgers + shakes, $
+
 ## Vegetarian / Vegan
 
+- **Shizen** — Mission — vegan sushi + ramen, $$ — `#99 Chron`
 - **Greens** — Fort Mason — landmark vegetarian, $$$
-- **Shizen** — Mission — vegan sushi + ramen, $$
 - **Wildseed** — Cow Hollow — plant-based Cal, $$
 - **Golden Era** — Tenderloin — vegan pan-Asian, $
 - **Loving Hut** — Outer Richmond — vegan Asian, $
 - **Nourish Café** — multiple — vegan brunch, $$
 
-## Cocktail Bars / Wine Bars (with food worth ordering)
+## Bars (Cocktail / Wine / Tiki) with Notable Food
 
 - **Trick Dog** — Mission — World's-50-Best cocktails, $$
 - **ABV** — Mission — bartender's bar w/ snacks, $$
@@ -357,11 +420,86 @@ Compiled May 2026. Confirm hours and current operation before relying on any of 
 - **Ungrafted** — Dogpatch — wine bar w/ snacks, $$
 - **The Vault Garden** — Financial District — outdoor seasonal, $$$
 
+## Iconic / Singular SF
+
+- **Tadich Grill** — Financial District — 1849, oldest in SF
+- **Sam's Grill** — Financial District — 1867 / 1931
+- **Swan Oyster Depot** — Polk — 1912 counter
+- **House of Prime Rib** — Van Ness — silver carts since 1949
+- **Liguria Bakery** — North Beach — focaccia since 1911
+- **Tommaso's** — North Beach — first wood-fired in US (1935)
+- **Caffe Trieste** — North Beach — beat-era café
+- **Schroeder's** — Financial District — 1893 beer hall
+- **John's Grill** — FiDi — Maltese Falcon haunt (1908)
+- **Original Joe's** — North Beach — Italian-American institution
+- **Boulevard** — Embarcadero — Pat Kuleto institution
+- **Foreign Cinema** — Mission — courtyard with films
+- **Mama's on Washington Square** — North Beach — brunch line
+- **Mo's Grill** — North Beach — burgers
+- **Gott's Roadside** — Ferry Building — burgers + shakes
+
+---
+
+## Beyond SF — Bay Area Chronicle Top 100 Picks
+
+Delete the entire section if you'd rather keep it strictly San Francisco. Otherwise, the highest-rated non-SF entries from the Chronicle list:
+
+### East Bay
+- **Burdell** — Oakland (Telegraph) — soul food, $$$ — `#1 Chron`
+- **Popoca** — Old Oakland — Salvadoran, $$ — `#5 Chron`
+- **Sun Moon Studio** — West Oakland — fine dining, $$$$ — `#4 Chron`
+- **Snail Bar** — Oakland — wine bar, $$ — `#15 Chron`
+- **Soba Ichi** — West Oakland — artisan soba, $ — `#16 Chron`
+- **Rose Pizzeria** — Berkeley — pizza, $ — `#13 Chron`
+- **Tacos Oscar** — Oakland — tacos, $ — `#11 Chron`
+- **Ok's Deli** — Oakland — Asian-American deli, $ — `#32 Chron`
+- **Mägo** — Oakland — Colombian tasting, $$$ — `#38 Chron`
+- **Joodooboo** — Oakland — Korean tofu + banchan, $ — `#41 Chron`
+- **Fikscue** — Alameda — Indo-Texas barbecue, $$ — `#44 Chron`
+- **Cultured Pickle Shop** — Berkeley — fermented bowls, $$ — `#62 Chron`
+- **Peña's Bakery** — Oakland (Fruitvale) — Mexican tortas, $ — `#66 Chron`
+- **Cafe Colucci** — Oakland — Ethiopian, $ — `#86 Chron`
+- **Vik's Chaat** — Berkeley — Indian chaat, $ — `#50 Chron`
+- **3 Bottled Fish** — Oakland — Vietnamese, $ — `#54 Chron`
+- **Tanzie's** — Berkeley — Thai brunch, $$ — `#55 Chron`
+- **Ming's Tasty** — Oakland Chinatown — dim sum, $ — `#89 Chron`
+- **Sequoia Diner** — Oakland — diner, $ — `#84 Chron`
+- **Alem's Coffee** — Oakland — Eritrean breakfast, $ — `#93 Chron`
+- **Poppy Bagels** — Oakland (Temescal) — bagels, $ — `#100 Chron`
+- **FOB Kitchen** — Oakland — Filipino, $$ — `#97 Chron`
+
+### Marin / North Bay
+- **Madcap** — San Anselmo — Japanese-inflected fine dining, $$$$ — `#36 Chron`
+- **Lou's Takeaway** — San Rafael — Asian-Cal takeout, $ — `#63 Chron`
+- **Charter Oak** — St. Helena — wood-hearth Americana, $$$ — `#94 Chron`
+- **Mustards Grill** — Napa — Wine Country institution, $$ — `#80 Chron`
+- **Cyrus** — Geyserville — fine dining, $$$$ — `#71 Chron`
+- **SingleThread** — Healdsburg — Cal-kaiseki tasting, $$$$ — `#9 Chron`
+- **Troubadour Bread & Bistro** — Healdsburg — French sandwiches + tasting, $$$$ — `#49 Chron`
+- **Valley** — Sonoma — wine bar / café / shop, $$ — `#51 Chron`
+- **Psychic Pie** — Sebastopol — pizza, $ — `#73 Chron`
+- **Table Culture Provisions** — Petaluma — French, $$$ — `#77 Chron`
+
+### Peninsula / South Bay
+- **Mrs Khan Uyghur Cuisine** — Menlo Park — Uyghur, $ — `#78 Chron`
+- **Mazra** — Redwood City — Levantine, $ — `#81 Chron`
+- **Ettan** — Palo Alto — modern Indian, $$ — `#56 Chron`
+- **Kajiken** — San Mateo — aburasoba ramen, $ — `#35 Chron`
+- **Goodtime Bar** — San Jose — natural wine + small plates, $$ — `#90 Chron`
+- **Kunjip** — Santa Clara — Korean seolleongtang, $ — `#70 Chron`
+- **Mariscos El Charco** — San Jose — Sinaloan seafood truck, $$ — `#52 Chron`
+- **10 Butchers** — Sunnyvale — Korean BBQ, $$$ — `#74 Chron`
+- **Jubba** — San Jose — Somali, $ — `#82 Chron`
+- **Bo Ne Phu Yen** — San Jose — Vietnamese steak & eggs, $ — `#42 Chron`
+- **LeYou** — San Jose — Ethiopian, $ — `#46 Chron`
+- **Tacos Mama Cuca** — San Jose (Alum Rock) — Sonoran, $ — `#23 Chron`
+
 ---
 
 ## Notes
 
-- Each restaurant appears once, in its most natural category.
-- A handful of dual-fit places (e.g., Foreign Cinema is also a brunch destination, Tartine is also a café) are filed under their primary identity.
-- Confirmed-closed places (August (1) Five, Lazeez, McEvoy, Pace Palo Alto, Cala) are excluded.
+- Entries appear once, in their primary category (a place that's both Italian and pizza is filed under whichever feels stronger).
+- `#NN Chron` = SF Chronicle Top 100 rank (2025/26 update).
+- ★ / ★★ / ★★★ = Michelin star count. Bib Gourmand and Michelin Selected entries are noted explicitly.
+- Confirmed-closed places (Café Jacqueline, August (1) Five, Lazeez, Cala, McEvoy) are excluded.
 - After your pruning pass, the survivors will become the basis for a `/restaurants` section on the site, with the same Leaflet-map treatment as the SF guide.

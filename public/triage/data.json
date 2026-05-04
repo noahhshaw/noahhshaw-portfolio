@@ -1,0 +1,2581 @@
+[
+  {
+    "title": "Three-Star Tasting Menus",
+    "entries": [
+      {
+        "id": "atelier-crenn",
+        "name": "Atelier Crenn",
+        "neighborhood": "Cow Hollow",
+        "cuisine": "modern French, $$$$",
+        "badges": "`#31 Chron` `★★★`"
+      },
+      {
+        "id": "benu",
+        "name": "Benu",
+        "neighborhood": "SoMa",
+        "cuisine": "Asian-leaning, $$$$",
+        "badges": "`#17 Chron` `★★★`"
+      },
+      {
+        "id": "quince",
+        "name": "Quince",
+        "neighborhood": "Jackson Square",
+        "cuisine": "Italian-French, $$$$",
+        "badges": "`#20 Chron` `★★★`"
+      }
+    ]
+  },
+  {
+    "title": "Two-Star Tasting Menus",
+    "entries": [
+      {
+        "id": "birdsong",
+        "name": "Birdsong",
+        "neighborhood": "SoMa",
+        "cuisine": "fire-driven Cal, $$$$",
+        "badges": "`★★`"
+      },
+      {
+        "id": "saison",
+        "name": "Saison",
+        "neighborhood": "SoMa",
+        "cuisine": "wood-fire Cal, $$$$",
+        "badges": "`★★`"
+      },
+      {
+        "id": "lazy-bear",
+        "name": "Lazy Bear",
+        "neighborhood": "Mission",
+        "cuisine": "communal-table, $$$$",
+        "badges": "`★★`"
+      },
+      {
+        "id": "californios",
+        "name": "Californios",
+        "neighborhood": "SoMa",
+        "cuisine": "Mexican fine dining, $$$$",
+        "badges": "`#28 Chron` `★★`"
+      },
+      {
+        "id": "nari",
+        "name": "Nari",
+        "neighborhood": "Japantown",
+        "cuisine": "Thai, $$$",
+        "badges": "`#48 Chron` `★★`"
+      }
+    ]
+  },
+  {
+    "title": "One-Star & Recent Michelin Additions",
+    "entries": [
+      {
+        "id": "acquerello",
+        "name": "Acquerello",
+        "neighborhood": "Nob Hill",
+        "cuisine": "refined Italian, $$$$",
+        "badges": "`★`"
+      },
+      {
+        "id": "sons-daughters",
+        "name": "Sons & Daughters",
+        "neighborhood": "Mission",
+        "cuisine": "Nordic-leaning, $$$$",
+        "badges": "`#24 Chron` `★`"
+      },
+      {
+        "id": "wolfsbane",
+        "name": "Wolfsbane",
+        "neighborhood": "Dogpatch",
+        "cuisine": "Cal tasting (replaced Lord Stanley), $$$$",
+        "badges": "`★ NEW`"
+      },
+      {
+        "id": "naides",
+        "name": "Naides",
+        "neighborhood": "SF",
+        "cuisine": "Filipino fine dining, $$$$",
+        "badges": "`★ NEW`"
+      },
+      {
+        "id": "dingles-public-house",
+        "name": "Dingles Public House",
+        "neighborhood": "SF",
+        "cuisine": "gastropub, $$$",
+        "badges": "`★ NEW`"
+      },
+      {
+        "id": "mister-jiu-s",
+        "name": "Mister Jiu's",
+        "neighborhood": "Chinatown",
+        "cuisine": "modern Cantonese, $$$$",
+        "badges": "`#64 Chron` `★`"
+      },
+      {
+        "id": "kin-khao",
+        "name": "Kin Khao",
+        "neighborhood": "Tenderloin",
+        "cuisine": "Thai, $$$",
+        "badges": "`★`"
+      },
+      {
+        "id": "state-bird-provisions",
+        "name": "State Bird Provisions",
+        "neighborhood": "Fillmore",
+        "cuisine": "dim-sum-style Cal, $$$",
+        "badges": "`#29 Chron` `★`"
+      },
+      {
+        "id": "nisei",
+        "name": "Nisei",
+        "neighborhood": "Russian Hill",
+        "cuisine": "Japanese-American, $$$$",
+        "badges": "`★`"
+      },
+      {
+        "id": "san-ho-won",
+        "name": "San Ho Won",
+        "neighborhood": "Mission",
+        "cuisine": "Korean BBQ + Cal, $$$",
+        "badges": "`#34 Chron` `★`"
+      },
+      {
+        "id": "marlena",
+        "name": "Marlena",
+        "neighborhood": "Bernal Heights",
+        "cuisine": "French-leaning, $$$",
+        "badges": "`★`"
+      }
+    ]
+  },
+  {
+    "title": "Other High-End Tasting Menus",
+    "entries": [
+      {
+        "id": "kiln",
+        "name": "Kiln",
+        "neighborhood": "SF",
+        "cuisine": "contemporary, $$$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "sorrel",
+        "name": "Sorrel",
+        "neighborhood": "Presidio Heights",
+        "cuisine": "Cal-Italian, $$$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "angler-sf",
+        "name": "Angler SF",
+        "neighborhood": "Embarcadero",
+        "cuisine": "wood-fire seafood, $$$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "7-adams",
+        "name": "7 Adams",
+        "neighborhood": "Pacific Heights",
+        "cuisine": "Californian, $$$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "le-comptoir-at-bar-crenn",
+        "name": "Le Comptoir at Bar Crenn",
+        "neighborhood": "Cow Hollow",
+        "cuisine": "French counter, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "ssal",
+        "name": "Ssal",
+        "neighborhood": "Mission",
+        "cuisine": "Korean tasting, $$$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "friends-only",
+        "name": "Friends Only",
+        "neighborhood": "Pacific Heights",
+        "cuisine": "sushi omakase, $$$$",
+        "badges": "`#27 Chron`"
+      },
+      {
+        "id": "j-ni",
+        "name": "jū-ni",
+        "neighborhood": "NoPa",
+        "cuisine": "counter omakase, $$$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "omakase",
+        "name": "Omakase",
+        "neighborhood": "SoMa",
+        "cuisine": "sushi omakase, $$$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "hashiri",
+        "name": "Hashiri",
+        "neighborhood": "SoMa",
+        "cuisine": "kaiseki / sushi, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "gozu",
+        "name": "Gozu",
+        "neighborhood": "SoMa",
+        "cuisine": "wagyu omakase, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "eight-tables",
+        "name": "Eight Tables",
+        "neighborhood": "Chinatown",
+        "cuisine": "fine Chinese tasting, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "niku-steakhouse",
+        "name": "Niku Steakhouse",
+        "neighborhood": "SoMa",
+        "cuisine": "wagyu steakhouse, $$$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "miller-lux",
+        "name": "Miller & Lux",
+        "neighborhood": "Mission Bay",
+        "cuisine": "Tyler Florence steakhouse, $$$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "mijot",
+        "name": "Mijoté",
+        "neighborhood": "Mission",
+        "cuisine": "French-Cal bistro tasting, $$$",
+        "badges": "`#18 Chron`"
+      }
+    ]
+  },
+  {
+    "title": "Californian / New American (à la carte)",
+    "entries": [
+      {
+        "id": "zuni-caf",
+        "name": "Zuni Café",
+        "neighborhood": "Hayes Valley / Market",
+        "cuisine": "institution; chicken-for-two, $$$",
+        "badges": "`#10 Chron`"
+      },
+      {
+        "id": "rich-table",
+        "name": "Rich Table",
+        "neighborhood": "Hayes Valley",
+        "cuisine": "playful Cal, $$$",
+        "badges": "`#3 Chron`"
+      },
+      {
+        "id": "the-progress",
+        "name": "The Progress",
+        "neighborhood": "Fillmore",
+        "cuisine": "communal Cal (State Bird sister), $$$",
+        "badges": "`#6 Chron`"
+      },
+      {
+        "id": "liholiho-yacht-club",
+        "name": "Liholiho Yacht Club",
+        "neighborhood": "Tendernob",
+        "cuisine": "Hawaiian-leaning, $$$",
+        "badges": "`#60 Chron`"
+      },
+      {
+        "id": "hilda-and-jesse",
+        "name": "Hilda and Jesse",
+        "neighborhood": "North Beach",
+        "cuisine": "gay-aural California brunch+, $$$",
+        "badges": "`#92 Chron`"
+      },
+      {
+        "id": "trestle",
+        "name": "Trestle",
+        "neighborhood": "Jackson Square",
+        "cuisine": "three-course prix fixe, $$",
+        "badges": "Bib"
+      },
+      {
+        "id": "ernest",
+        "name": "Ernest",
+        "neighborhood": "Mission",
+        "cuisine": "Californian, $$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "routier",
+        "name": "Routier",
+        "neighborhood": "Hayes Valley",
+        "cuisine": "Cal-French, $$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "prospect",
+        "name": "Prospect",
+        "neighborhood": "SoMa",
+        "cuisine": "Californian, $$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "boulevard",
+        "name": "Boulevard",
+        "neighborhood": "Embarcadero",
+        "cuisine": "Pat Kuleto institution, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "foreign-cinema",
+        "name": "Foreign Cinema",
+        "neighborhood": "Mission",
+        "cuisine": "Cal-Med w/ courtyard films, $$$",
+        "badges": ""
+      },
+      {
+        "id": "outerlands",
+        "name": "Outerlands",
+        "neighborhood": "Outer Sunset",
+        "cuisine": "coastal Cal, $$$",
+        "badges": ""
+      },
+      {
+        "id": "octavia",
+        "name": "Octavia",
+        "neighborhood": "Pacific Heights",
+        "cuisine": "refined neighborhood Cal, $$$",
+        "badges": ""
+      },
+      {
+        "id": "spruce",
+        "name": "Spruce",
+        "neighborhood": "Presidio Heights",
+        "cuisine": "Cal cuisine + wine, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "the-anchovy-bar",
+        "name": "The Anchovy Bar",
+        "neighborhood": "Fillmore",
+        "cuisine": "small-fish-focused (State Bird team), $$$",
+        "badges": ""
+      },
+      {
+        "id": "petit-crenn",
+        "name": "Petit Crenn",
+        "neighborhood": "Hayes Valley",
+        "cuisine": "Brittany-inspired, $$$",
+        "badges": ""
+      },
+      {
+        "id": "bar-crenn",
+        "name": "Bar Crenn",
+        "neighborhood": "Cow Hollow",
+        "cuisine": "French wine bar, $$$",
+        "badges": ""
+      },
+      {
+        "id": "marlowe",
+        "name": "Marlowe",
+        "neighborhood": "SoMa",
+        "cuisine": "bistro + burger, $$",
+        "badges": ""
+      },
+      {
+        "id": "prubechu",
+        "name": "Prubechu",
+        "neighborhood": "Mission",
+        "cuisine": "Guamanian, $$",
+        "badges": "`#65 Chron`"
+      },
+      {
+        "id": "the-rotunda",
+        "name": "The Rotunda",
+        "neighborhood": "Union Square (Neiman Marcus)",
+        "cuisine": "popovers + sleeper-hit burger, $$",
+        "badges": "`#98 Chron`"
+      },
+      {
+        "id": "yo-tambi-n-cantina",
+        "name": "Yo También Cantina",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "Cal-Mex café, $",
+        "badges": "`#79 Chron`"
+      },
+      {
+        "id": "mersea",
+        "name": "Mersea",
+        "neighborhood": "Treasure Island",
+        "cuisine": "bay-view casual, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Italian",
+    "entries": [
+      {
+        "id": "cotogna",
+        "name": "Cotogna",
+        "neighborhood": "Jackson Square",
+        "cuisine": "rustic wood-fire, $$$",
+        "badges": "`#57 Chron`"
+      },
+      {
+        "id": "flour-water",
+        "name": "Flour + Water",
+        "neighborhood": "Mission",
+        "cuisine": "handmade pasta, $$$",
+        "badges": "`#39 Chron`"
+      },
+      {
+        "id": "penny-roma",
+        "name": "Penny Roma",
+        "neighborhood": "Mission",
+        "cuisine": "Roman pasta (F+W sister), $$$",
+        "badges": ""
+      },
+      {
+        "id": "itria",
+        "name": "Itria",
+        "neighborhood": "Mission (24th)",
+        "cuisine": "pasta + crudo, $$$",
+        "badges": "`#75 Chron`"
+      },
+      {
+        "id": "delfina",
+        "name": "Delfina",
+        "neighborhood": "Mission",
+        "cuisine": "neighborhood Italian, $$$",
+        "badges": "`#30 Chron`"
+      },
+      {
+        "id": "barberio-osteria",
+        "name": "Barberio Osteria",
+        "neighborhood": "Mission (Valencia)",
+        "cuisine": "Cal-Italian, $$",
+        "badges": "`#53 Chron`"
+      },
+      {
+        "id": "la-ciccia",
+        "name": "La Ciccia",
+        "neighborhood": "Noe Valley",
+        "cuisine": "Sardinian, $$",
+        "badges": "`#33 Chron`"
+      },
+      {
+        "id": "che-fico",
+        "name": "Che Fico",
+        "neighborhood": "NoPa",
+        "cuisine": "Roman-Cal, $$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "spqr",
+        "name": "SPQR",
+        "neighborhood": "Pacific Heights",
+        "cuisine": "regional Italian, $$$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "a16",
+        "name": "A16",
+        "neighborhood": "Marina",
+        "cuisine": "Southern Italian, $$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "locanda",
+        "name": "Locanda",
+        "neighborhood": "Mission",
+        "cuisine": "Roman, $$$",
+        "badges": ""
+      },
+      {
+        "id": "original-joe-s",
+        "name": "Original Joe's",
+        "neighborhood": "North Beach",
+        "cuisine": "Italian-American institution, $$",
+        "badges": ""
+      },
+      {
+        "id": "tommaso-s",
+        "name": "Tommaso's",
+        "neighborhood": "North Beach",
+        "cuisine": "historic Neapolitan, $$",
+        "badges": ""
+      },
+      {
+        "id": "sotto-mare",
+        "name": "Sotto Mare",
+        "neighborhood": "North Beach",
+        "cuisine": "cioppino + Italian seafood, $$$",
+        "badges": ""
+      },
+      {
+        "id": "bocconcino",
+        "name": "Bocconcino",
+        "neighborhood": "North Beach",
+        "cuisine": "modern Italian, $$",
+        "badges": ""
+      },
+      {
+        "id": "beretta",
+        "name": "Beretta",
+        "neighborhood": "Mission",
+        "cuisine": "pizza + Italian, $$",
+        "badges": ""
+      },
+      {
+        "id": "piccino",
+        "name": "Piccino",
+        "neighborhood": "Dogpatch",
+        "cuisine": "Cal-Italian, $$$",
+        "badges": ""
+      },
+      {
+        "id": "bosco",
+        "name": "Bosco",
+        "neighborhood": "SoMa",
+        "cuisine": "Italian, $$$",
+        "badges": ""
+      },
+      {
+        "id": "la-connessa",
+        "name": "La Connessa",
+        "neighborhood": "Potrero Hill",
+        "cuisine": "wood-fired, $$",
+        "badges": ""
+      },
+      {
+        "id": "bar-iris",
+        "name": "Bar Iris",
+        "neighborhood": "Mission",
+        "cuisine": "natural-wine pasta bar, $$$",
+        "badges": ""
+      },
+      {
+        "id": "belga",
+        "name": "Belga",
+        "neighborhood": "Marina",
+        "cuisine": "Belgian-Italian, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Pizza",
+    "entries": [
+      {
+        "id": "tony-s-pizza-napoletana",
+        "name": "Tony's Pizza Napoletana",
+        "neighborhood": "North Beach",
+        "cuisine": "every-style, $$",
+        "badges": ""
+      },
+      {
+        "id": "del-popolo",
+        "name": "Del Popolo",
+        "neighborhood": "Tenderloin",
+        "cuisine": "wood-fired Neapolitan, $$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "jules",
+        "name": "Jules",
+        "neighborhood": "Hayes Valley",
+        "cuisine": "wood-fired w/ wallet pizza, $$",
+        "badges": ""
+      },
+      {
+        "id": "outta-sight-pizza",
+        "name": "Outta Sight Pizza",
+        "neighborhood": "Tenderloin",
+        "cuisine": "slice shop + sandwiches, $",
+        "badges": "`#68 Chron`"
+      },
+      {
+        "id": "the-laundromat",
+        "name": "The Laundromat",
+        "neighborhood": "Outer Richmond",
+        "cuisine": "bagels by day, Detroit-ish pizza by night, $$",
+        "badges": "`#88 Chron`"
+      },
+      {
+        "id": "golden-boy-pizza",
+        "name": "Golden Boy Pizza",
+        "neighborhood": "North Beach",
+        "cuisine": "square slice focaccia, $",
+        "badges": ""
+      },
+      {
+        "id": "pizzeria-delfina",
+        "name": "Pizzeria Delfina",
+        "neighborhood": "Mission / Pacific Heights",
+        "cuisine": "Neapolitan, $$",
+        "badges": ""
+      },
+      {
+        "id": "the-square-pie-guys",
+        "name": "The Square Pie Guys",
+        "neighborhood": "SoMa",
+        "cuisine": "Detroit, $",
+        "badges": ""
+      },
+      {
+        "id": "long-bridge-pizza",
+        "name": "Long Bridge Pizza",
+        "neighborhood": "Bernal Heights",
+        "cuisine": "neighborhood, $$",
+        "badges": ""
+      },
+      {
+        "id": "capo-s",
+        "name": "Capo's",
+        "neighborhood": "North Beach",
+        "cuisine": "Chicago-style, $$",
+        "badges": ""
+      },
+      {
+        "id": "flour-water-pizzeria",
+        "name": "Flour + Water Pizzeria",
+        "neighborhood": "Mission",
+        "cuisine": "wood-fired, $$",
+        "badges": ""
+      },
+      {
+        "id": "pi-bar",
+        "name": "Pi Bar",
+        "neighborhood": "Mission",
+        "cuisine": "slice + craft beer, $",
+        "badges": ""
+      },
+      {
+        "id": "ragazza",
+        "name": "Ragazza",
+        "neighborhood": "NoPa",
+        "cuisine": "Neapolitan, $$",
+        "badges": ""
+      },
+      {
+        "id": "casey-s-pizza",
+        "name": "Casey's Pizza",
+        "neighborhood": "Mission Bay",
+        "cuisine": "sourdough, $$",
+        "badges": ""
+      },
+      {
+        "id": "il-casaro",
+        "name": "Il Casaro",
+        "neighborhood": "North Beach",
+        "cuisine": "Neapolitan, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "French / Bistros / Brasseries",
+    "entries": [
+      {
+        "id": "verjus",
+        "name": "Verjus",
+        "neighborhood": "Jackson Square",
+        "cuisine": "natural-wine bar w/ French food, $$",
+        "badges": "`#12 Chron`"
+      },
+      {
+        "id": "le-central",
+        "name": "Le Central",
+        "neighborhood": "Financial District",
+        "cuisine": "historic bistro (since 1974), $$$",
+        "badges": ""
+      },
+      {
+        "id": "chapeau",
+        "name": "Chapeau",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "bistro classics, $$$",
+        "badges": ""
+      },
+      {
+        "id": "bouche",
+        "name": "Bouche",
+        "neighborhood": "Financial District",
+        "cuisine": "French + small plates, $$$",
+        "badges": ""
+      },
+      {
+        "id": "l-ardoise-bistro",
+        "name": "L'Ardoise Bistro",
+        "neighborhood": "Castro",
+        "cuisine": "bistro classics, $$",
+        "badges": ""
+      },
+      {
+        "id": "cote-ouest-bistro",
+        "name": "Cote Ouest Bistro",
+        "neighborhood": "Polk",
+        "cuisine": "bistro, $$",
+        "badges": ""
+      },
+      {
+        "id": "galinette",
+        "name": "Galinette",
+        "neighborhood": "Pacific Heights",
+        "cuisine": "modern French, $$$",
+        "badges": ""
+      },
+      {
+        "id": "cach",
+        "name": "Caché",
+        "neighborhood": "Pacific Heights",
+        "cuisine": "French wine bar, $$",
+        "badges": ""
+      },
+      {
+        "id": "absinthe-brasserie-bar",
+        "name": "Absinthe Brasserie & Bar",
+        "neighborhood": "Hayes Valley",
+        "cuisine": "brasserie, $$$",
+        "badges": ""
+      },
+      {
+        "id": "bistro-aix",
+        "name": "Bistro Aix",
+        "neighborhood": "Marina",
+        "cuisine": "French bistro, $$",
+        "badges": ""
+      },
+      {
+        "id": "le-marais-bakery-bistro",
+        "name": "Le Marais Bakery & Bistro",
+        "neighborhood": "Castro / Polk",
+        "cuisine": "French, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Japanese — Sushi / Omakase",
+    "entries": [
+      {
+        "id": "izakaya-rintaro",
+        "name": "Izakaya Rintaro",
+        "neighborhood": "Mission",
+        "cuisine": "izakaya + counter, $$",
+        "badges": "`#76 Chron`"
+      },
+      {
+        "id": "kusakabe",
+        "name": "Kusakabe",
+        "neighborhood": "Financial District",
+        "cuisine": "omakase, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "kabuto",
+        "name": "Kabuto",
+        "neighborhood": "Outer Richmond",
+        "cuisine": "omakase, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "an-japanese-restaurant",
+        "name": "An Japanese Restaurant",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "omakase, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "akiko-s",
+        "name": "Akiko's",
+        "neighborhood": "North Beach",
+        "cuisine": "sushi, $$$",
+        "badges": ""
+      },
+      {
+        "id": "robin",
+        "name": "Robin",
+        "neighborhood": "Hayes Valley",
+        "cuisine": "omakase, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "wako",
+        "name": "Wako",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "omakase, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "saru-sushi-bar",
+        "name": "Saru Sushi Bar",
+        "neighborhood": "Noe Valley",
+        "cuisine": "neighborhood sushi, $$$",
+        "badges": ""
+      },
+      {
+        "id": "okane",
+        "name": "Okane",
+        "neighborhood": "SoMa",
+        "cuisine": "sushi + small plates, $$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "ozumo",
+        "name": "Ozumo",
+        "neighborhood": "Embarcadero",
+        "cuisine": "sushi + robata, $$$$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Japanese — Izakaya / Ramen / Yakitori",
+    "entries": [
+      {
+        "id": "izakaya-sozai",
+        "name": "Izakaya Sozai",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "izakaya, $$",
+        "badges": ""
+      },
+      {
+        "id": "yakitori-edomasa",
+        "name": "Yakitori Edomasa",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "yakitori counter, $$",
+        "badges": ""
+      },
+      {
+        "id": "tbd",
+        "name": "TBD",
+        "neighborhood": "Union Square",
+        "cuisine": "modern izakaya (Akiko's team), $$$",
+        "badges": ""
+      },
+      {
+        "id": "chome",
+        "name": "Chome",
+        "neighborhood": "Mission",
+        "cuisine": "izakaya, $$",
+        "badges": ""
+      },
+      {
+        "id": "the-public-izakaya",
+        "name": "The Public Izakaya",
+        "neighborhood": "Tenderloin",
+        "cuisine": "izakaya, $$",
+        "badges": ""
+      },
+      {
+        "id": "mensho-tokyo",
+        "name": "Mensho Tokyo",
+        "neighborhood": "Tenderloin",
+        "cuisine": "ramen, $$",
+        "badges": ""
+      },
+      {
+        "id": "marufuku-ramen",
+        "name": "Marufuku Ramen",
+        "neighborhood": "Japantown",
+        "cuisine": "tonkotsu, $$",
+        "badges": ""
+      },
+      {
+        "id": "iza-ramen",
+        "name": "Iza Ramen",
+        "neighborhood": "Lower Haight",
+        "cuisine": "ramen, $$",
+        "badges": ""
+      },
+      {
+        "id": "hinodeya-ramen",
+        "name": "Hinodeya Ramen",
+        "neighborhood": "Japantown",
+        "cuisine": "ramen, $$",
+        "badges": ""
+      },
+      {
+        "id": "pabu-izakaya",
+        "name": "Pabu Izakaya",
+        "neighborhood": "Financial District",
+        "cuisine": "izakaya, $$$",
+        "badges": ""
+      },
+      {
+        "id": "udon-mugizo",
+        "name": "Udon Mugizo",
+        "neighborhood": "Japantown",
+        "cuisine": "udon, $$",
+        "badges": ""
+      },
+      {
+        "id": "hinata",
+        "name": "Hinata",
+        "neighborhood": "Japantown",
+        "cuisine": "kushikatsu, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Chinese — Cantonese / Dim Sum",
+    "entries": [
+      {
+        "id": "four-kings",
+        "name": "Four Kings",
+        "neighborhood": "Chinatown",
+        "cuisine": "modern Cantonese, $$",
+        "badges": "`#2 Chron`"
+      },
+      {
+        "id": "taishan-cuisine",
+        "name": "Taishan Cuisine",
+        "neighborhood": "Chinatown",
+        "cuisine": "late-night Cantonese, $$",
+        "badges": "`#21 Chron`"
+      },
+      {
+        "id": "hk-lounge-bistro",
+        "name": "HK Lounge Bistro",
+        "neighborhood": "SoMa",
+        "cuisine": "dim sum, $$",
+        "badges": "`#47 Chron`"
+      },
+      {
+        "id": "yank-sing",
+        "name": "Yank Sing",
+        "neighborhood": "Rincon Center",
+        "cuisine": "dim sum (cart service), $$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "hong-kong-lounge-ii",
+        "name": "Hong Kong Lounge II",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "dim sum, $$",
+        "badges": ""
+      },
+      {
+        "id": "harborview",
+        "name": "Harborview",
+        "neighborhood": "Financial District",
+        "cuisine": "Cantonese banquet + dim sum, $$$",
+        "badges": ""
+      },
+      {
+        "id": "r-g-lounge",
+        "name": "R&G Lounge",
+        "neighborhood": "Chinatown",
+        "cuisine": "Cantonese, $$",
+        "badges": ""
+      },
+      {
+        "id": "china-live",
+        "name": "China Live",
+        "neighborhood": "Chinatown",
+        "cuisine": "multi-concept marketplace, $$$",
+        "badges": ""
+      },
+      {
+        "id": "empress-by-boon",
+        "name": "Empress by Boon",
+        "neighborhood": "Chinatown",
+        "cuisine": "modern Chinese banquet, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "good-mong-kok-bakery",
+        "name": "Good Mong Kok Bakery",
+        "neighborhood": "Chinatown",
+        "cuisine": "bao + dim sum to go, $",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Chinese — Sichuan / Hunan / Northern",
+    "entries": [
+      {
+        "id": "z-y",
+        "name": "Z & Y",
+        "neighborhood": "Chinatown",
+        "cuisine": "Sichuan, $$",
+        "badges": "`#72 Chron`"
+      },
+      {
+        "id": "z-y-peking-duck",
+        "name": "Z & Y Peking Duck",
+        "neighborhood": "Chinatown",
+        "cuisine": "duck specialist, $$",
+        "badges": ""
+      },
+      {
+        "id": "chong-qing-xiao-mian",
+        "name": "Chong Qing Xiao Mian",
+        "neighborhood": "Chinatown",
+        "cuisine": "Sichuan noodles, $",
+        "badges": ""
+      },
+      {
+        "id": "mama-ji-s",
+        "name": "Mama Ji's",
+        "neighborhood": "Castro",
+        "cuisine": "home-style Sichuan, $$",
+        "badges": ""
+      },
+      {
+        "id": "yuanbao-jiaozi",
+        "name": "Yuanbao Jiaozi",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "dumplings, $",
+        "badges": ""
+      },
+      {
+        "id": "san-tung",
+        "name": "San Tung",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "dry-fried wings, $$",
+        "badges": ""
+      },
+      {
+        "id": "old-mandarin-islamic",
+        "name": "Old Mandarin Islamic",
+        "neighborhood": "Outer Sunset",
+        "cuisine": "northwestern Chinese, $$",
+        "badges": ""
+      },
+      {
+        "id": "henry-s-hunan",
+        "name": "Henry's Hunan",
+        "neighborhood": "multiple",
+        "cuisine": "Hunan, $$",
+        "badges": ""
+      },
+      {
+        "id": "brandy-ho-s-hunan",
+        "name": "Brandy Ho's Hunan",
+        "neighborhood": "Chinatown",
+        "cuisine": "Hunan, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Mexican / Latin",
+    "entries": [
+      {
+        "id": "la-taqueria",
+        "name": "La Taqueria",
+        "neighborhood": "Mission",
+        "cuisine": "burritos / tacos, $",
+        "badges": "`#59 Chron`"
+      },
+      {
+        "id": "la-vaca-birria",
+        "name": "La Vaca Birria",
+        "neighborhood": "Mission (24th)",
+        "cuisine": "burritos + birria, $",
+        "badges": "`#40 Chron`"
+      },
+      {
+        "id": "el-farolito",
+        "name": "El Farolito",
+        "neighborhood": "Mission",
+        "cuisine": "late-night burritos, $",
+        "badges": ""
+      },
+      {
+        "id": "taqueria-cancun",
+        "name": "Taqueria Cancun",
+        "neighborhood": "Mission",
+        "cuisine": "burritos, $",
+        "badges": ""
+      },
+      {
+        "id": "taqueria-vallarta",
+        "name": "Taqueria Vallarta",
+        "neighborhood": "Mission",
+        "cuisine": "al pastor, $",
+        "badges": ""
+      },
+      {
+        "id": "el-buen-comer",
+        "name": "El Buen Comer",
+        "neighborhood": "Bernal Heights",
+        "cuisine": "Mexico City home cooking, $$",
+        "badges": ""
+      },
+      {
+        "id": "nopalito",
+        "name": "Nopalito",
+        "neighborhood": "NoPa / Inner Sunset",
+        "cuisine": "regional Mexican, $$",
+        "badges": ""
+      },
+      {
+        "id": "maria-isabel",
+        "name": "Maria Isabel",
+        "neighborhood": "Presidio Heights",
+        "cuisine": "upscale Mexican, $$$",
+        "badges": ""
+      },
+      {
+        "id": "flores",
+        "name": "Flores",
+        "neighborhood": "Cow Hollow",
+        "cuisine": "Mexican brunch + dinner, $$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "cantina-los-mayas",
+        "name": "Cantina Los Mayas",
+        "neighborhood": "Mission",
+        "cuisine": "Yucatecan, $$",
+        "badges": ""
+      },
+      {
+        "id": "el-buen-sabor",
+        "name": "El Buen Sabor",
+        "neighborhood": "Mission",
+        "cuisine": "taqueria, $",
+        "badges": ""
+      },
+      {
+        "id": "picaro",
+        "name": "Picaro",
+        "neighborhood": "Mission",
+        "cuisine": "Spanish-leaning tapas, $$",
+        "badges": ""
+      },
+      {
+        "id": "coqueta",
+        "name": "Coqueta",
+        "neighborhood": "Embarcadero",
+        "cuisine": "Spanish tapas (José Andrés alum), $$$",
+        "badges": ""
+      },
+      {
+        "id": "gracias-madre",
+        "name": "Gracias Madre",
+        "neighborhood": "Mission",
+        "cuisine": "vegan Mexican, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Vietnamese",
+    "entries": [
+      {
+        "id": "lily",
+        "name": "Lily",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "modern Vietnamese, $$",
+        "badges": "`#45 Chron`"
+      },
+      {
+        "id": "bodega",
+        "name": "Bodega",
+        "neighborhood": "Mid-Market",
+        "cuisine": "modern Vietnamese, $$",
+        "badges": ""
+      },
+      {
+        "id": "turtle-tower",
+        "name": "Turtle Tower",
+        "neighborhood": "Tenderloin / Larkin",
+        "cuisine": "northern pho, $",
+        "badges": ""
+      },
+      {
+        "id": "an-chi",
+        "name": "An Chi",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "modern Vietnamese, $$",
+        "badges": ""
+      },
+      {
+        "id": "pho-huong-viet",
+        "name": "Pho Huong Viet",
+        "neighborhood": "Tenderloin",
+        "cuisine": "pho, $",
+        "badges": ""
+      },
+      {
+        "id": "pho-2000",
+        "name": "Pho 2000",
+        "neighborhood": "Tenderloin",
+        "cuisine": "pho, $",
+        "badges": ""
+      },
+      {
+        "id": "yummy-yummy",
+        "name": "Yummy Yummy",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "pho, $",
+        "badges": ""
+      },
+      {
+        "id": "saigon-sandwich",
+        "name": "Saigon Sandwich",
+        "neighborhood": "Tenderloin",
+        "cuisine": "banh mi counter, $",
+        "badges": ""
+      },
+      {
+        "id": "ppq-dungeness-island",
+        "name": "PPQ Dungeness Island",
+        "neighborhood": "Outer Richmond",
+        "cuisine": "Vietnamese crab, $$$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Thai / Burmese / Lao / Malaysian",
+    "entries": [
+      {
+        "id": "mandalay",
+        "name": "Mandalay",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "historic Burmese, $$",
+        "badges": "`#96 Chron`"
+      },
+      {
+        "id": "damansara",
+        "name": "Damansara",
+        "neighborhood": "Noe Valley",
+        "cuisine": "Malaysian (Dungeness chili crab), $$",
+        "badges": "`#91 Chron`"
+      },
+      {
+        "id": "azalina-s",
+        "name": "Azalina's",
+        "neighborhood": "Tenderloin",
+        "cuisine": "Malaysian Mamak set menu, $$$",
+        "badges": "`#67 Chron`"
+      },
+      {
+        "id": "prik-hom",
+        "name": "Prik Hom",
+        "neighborhood": "SF",
+        "cuisine": "Thai, $$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "lers-ros",
+        "name": "Lers Ros",
+        "neighborhood": "Hayes Valley / Tenderloin",
+        "cuisine": "Thai, $$",
+        "badges": ""
+      },
+      {
+        "id": "farmhouse-kitchen-thai",
+        "name": "Farmhouse Kitchen Thai",
+        "neighborhood": "Mission",
+        "cuisine": "Thai, $$",
+        "badges": "Bib"
+      },
+      {
+        "id": "hawker-fare",
+        "name": "Hawker Fare",
+        "neighborhood": "Mission",
+        "cuisine": "Lao / northern Thai, $$",
+        "badges": ""
+      },
+      {
+        "id": "marnee-thai",
+        "name": "Marnee Thai",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "neighborhood Thai, $$",
+        "badges": ""
+      },
+      {
+        "id": "burma-superstar",
+        "name": "Burma Superstar",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "Burmese, $$",
+        "badges": ""
+      },
+      {
+        "id": "burma-love",
+        "name": "Burma Love",
+        "neighborhood": "Mission",
+        "cuisine": "Burmese, $$",
+        "badges": ""
+      },
+      {
+        "id": "inle-burmese-cuisine",
+        "name": "Inle Burmese Cuisine",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "Burmese, $$",
+        "badges": ""
+      },
+      {
+        "id": "yamo",
+        "name": "Yamo",
+        "neighborhood": "Mission",
+        "cuisine": "counter Burmese, $",
+        "badges": ""
+      },
+      {
+        "id": "lapisara-eatery",
+        "name": "Lapisara Eatery",
+        "neighborhood": "Tenderloin",
+        "cuisine": "Thai-Filipino, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Indian / Pakistani / South Asian",
+    "entries": [
+      {
+        "id": "copra",
+        "name": "Copra",
+        "neighborhood": "Fillmore",
+        "cuisine": "coastal South Indian, $$$",
+        "badges": "`#7 Chron`"
+      },
+      {
+        "id": "besharam",
+        "name": "Besharam",
+        "neighborhood": "Dogpatch (Minnesota Street Project)",
+        "cuisine": "Gujarati Cal-Indian, $$",
+        "badges": "`#83 Chron`"
+      },
+      {
+        "id": "rooh",
+        "name": "Rooh",
+        "neighborhood": "SoMa",
+        "cuisine": "modern Indian, $$$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "dosa",
+        "name": "Dosa",
+        "neighborhood": "Fillmore / Mission",
+        "cuisine": "South Indian, $$",
+        "badges": ""
+      },
+      {
+        "id": "pakwan",
+        "name": "Pakwan",
+        "neighborhood": "Mission / Tenderloin",
+        "cuisine": "Pakistani, $",
+        "badges": ""
+      },
+      {
+        "id": "shalimar",
+        "name": "Shalimar",
+        "neighborhood": "Tenderloin",
+        "cuisine": "Pakistani / Indian, $",
+        "badges": ""
+      },
+      {
+        "id": "curry-up-now",
+        "name": "Curry Up Now",
+        "neighborhood": "multiple",
+        "cuisine": "modern Indian fast-casual, $",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Korean",
+    "entries": [
+      {
+        "id": "um-ma",
+        "name": "Um.Ma",
+        "neighborhood": "Outer Sunset",
+        "cuisine": "modern Korean, $$$",
+        "badges": "`★`"
+      },
+      {
+        "id": "bansang",
+        "name": "Bansang",
+        "neighborhood": "SF",
+        "cuisine": "Korean (Michelin), $$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "daeho-kalbijjim-beef-soup",
+        "name": "Daeho Kalbijjim & Beef Soup",
+        "neighborhood": "Japantown",
+        "cuisine": "galbijjim, $$",
+        "badges": ""
+      },
+      {
+        "id": "han-il-kwan",
+        "name": "Han Il Kwan",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "Korean, $$",
+        "badges": ""
+      },
+      {
+        "id": "hwa-mi-won",
+        "name": "Hwa Mi Won",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "Korean, $$",
+        "badges": ""
+      },
+      {
+        "id": "sonamu",
+        "name": "Sonamu",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "Korean, $$",
+        "badges": ""
+      },
+      {
+        "id": "manna",
+        "name": "Manna",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "Korean, $$",
+        "badges": ""
+      },
+      {
+        "id": "muguboka",
+        "name": "Muguboka",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "Korean, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Mediterranean / Middle Eastern / Persian / Turkish / Greek / Moroccan",
+    "entries": [
+      {
+        "id": "aziza",
+        "name": "Aziza",
+        "neighborhood": "Outer Richmond",
+        "cuisine": "Moroccan, $$",
+        "badges": "`#14 Chron`"
+      },
+      {
+        "id": "kitchen-istanbul",
+        "name": "Kitchen Istanbul",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "Turkish + wine, $$",
+        "badges": "`#69 Chron`"
+      },
+      {
+        "id": "reem-s",
+        "name": "Reem's",
+        "neighborhood": "Mission",
+        "cuisine": "Arab bakery, $",
+        "badges": "`#85 Chron`"
+      },
+      {
+        "id": "kokkari-estiatorio",
+        "name": "Kokkari Estiatorio",
+        "neighborhood": "Jackson Square",
+        "cuisine": "Greek, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "dalida",
+        "name": "Dalida",
+        "neighborhood": "Presidio (Tunnel Tops)",
+        "cuisine": "Mediterranean, $$$",
+        "badges": ""
+      },
+      {
+        "id": "beit-rima",
+        "name": "Beit Rima",
+        "neighborhood": "Duboce Triangle / Inner Sunset",
+        "cuisine": "Levantine, $$",
+        "badges": ""
+      },
+      {
+        "id": "souvla",
+        "name": "Souvla",
+        "neighborhood": "multiple",
+        "cuisine": "Greek fast-fine, $$",
+        "badges": ""
+      },
+      {
+        "id": "milos-meze",
+        "name": "Milos Meze",
+        "neighborhood": "Marina",
+        "cuisine": "Greek, $$",
+        "badges": ""
+      },
+      {
+        "id": "lokma",
+        "name": "Lokma",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "Turkish, $$",
+        "badges": ""
+      },
+      {
+        "id": "la-mediterranee",
+        "name": "La Mediterranee",
+        "neighborhood": "Castro / Fillmore",
+        "cuisine": "Lebanese-Armenian, $$",
+        "badges": ""
+      },
+      {
+        "id": "bursa-kebab",
+        "name": "Bursa Kebab",
+        "neighborhood": "West Portal",
+        "cuisine": "Turkish, $$",
+        "badges": ""
+      },
+      {
+        "id": "lavash",
+        "name": "Lavash",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "Persian, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Filipino",
+    "entries": [
+      {
+        "id": "abac",
+        "name": "Abacá",
+        "neighborhood": "Fisherman's Wharf",
+        "cuisine": "modern Filipino, $$",
+        "badges": "Michelin Selected"
+      },
+      {
+        "id": "senor-sisig",
+        "name": "Senor Sisig",
+        "neighborhood": "Mission / Ferry Building",
+        "cuisine": "Filipino-Mexican, $",
+        "badges": ""
+      },
+      {
+        "id": "the-sarap-shop",
+        "name": "The Sarap Shop",
+        "neighborhood": "multiple",
+        "cuisine": "Filipino, $",
+        "badges": ""
+      },
+      {
+        "id": "hi-lo-club",
+        "name": "Hi Lo Club",
+        "neighborhood": "Mission",
+        "cuisine": "Filipino bar food, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Peruvian / South American",
+    "entries": [
+      {
+        "id": "la-mar",
+        "name": "La Mar",
+        "neighborhood": "Embarcadero",
+        "cuisine": "Peruvian seafood, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "mochica",
+        "name": "Mochica",
+        "neighborhood": "SoMa",
+        "cuisine": "Peruvian, $$$",
+        "badges": ""
+      },
+      {
+        "id": "lim-n",
+        "name": "Limón",
+        "neighborhood": "Mission",
+        "cuisine": "Peruvian, $$",
+        "badges": ""
+      },
+      {
+        "id": "el-dorado",
+        "name": "El Dorado",
+        "neighborhood": "Mission",
+        "cuisine": "Peruvian, $$",
+        "badges": ""
+      },
+      {
+        "id": "mariposas",
+        "name": "Mariposas",
+        "neighborhood": "Hayes Valley",
+        "cuisine": "South American small plates, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "African — Ethiopian / Senegalese / Eritrean",
+    "entries": [
+      {
+        "id": "bissap-baobab",
+        "name": "Bissap Baobab",
+        "neighborhood": "Mission",
+        "cuisine": "Senegalese, $$",
+        "badges": ""
+      },
+      {
+        "id": "teranga",
+        "name": "Teranga",
+        "neighborhood": "Mission",
+        "cuisine": "Senegalese, $$",
+        "badges": ""
+      },
+      {
+        "id": "cafe-ethiopia",
+        "name": "Cafe Ethiopia",
+        "neighborhood": "Mission",
+        "cuisine": "Ethiopian, $$",
+        "badges": ""
+      },
+      {
+        "id": "new-eritrea",
+        "name": "New Eritrea",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "Eritrean, $",
+        "badges": ""
+      },
+      {
+        "id": "moya",
+        "name": "Moya",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "Ethiopian, $$",
+        "badges": ""
+      },
+      {
+        "id": "house-of-tadu",
+        "name": "House of Tadu",
+        "neighborhood": "Tenderloin",
+        "cuisine": "Ethiopian, $",
+        "badges": ""
+      },
+      {
+        "id": "meski-restaurant",
+        "name": "Meski Restaurant",
+        "neighborhood": "Inner Sunset",
+        "cuisine": "Eritrean, $",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Soul Food / American Regional",
+    "entries": [
+      {
+        "id": "minnie-bell-s-soul-movement",
+        "name": "Minnie Bell's Soul Movement",
+        "neighborhood": "Fillmore",
+        "cuisine": "soul food, $",
+        "badges": "`#37 Chron`"
+      },
+      {
+        "id": "sandy-s",
+        "name": "Sandy's",
+        "neighborhood": "Haight-Ashbury",
+        "cuisine": "NOLA muffulettas + cookies, $",
+        "badges": "`#22 Chron`"
+      },
+      {
+        "id": "brenda-s-french-soul-food",
+        "name": "Brenda's French Soul Food",
+        "neighborhood": "Civic Center",
+        "cuisine": "beignets + Creole, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Seafood / Oysters / Classic Grills",
+    "entries": [
+      {
+        "id": "scoma-s",
+        "name": "Scoma's",
+        "neighborhood": "Fisherman's Wharf",
+        "cuisine": "classic seafood (since 1965), $$$",
+        "badges": "`#43 Chron`"
+      },
+      {
+        "id": "swan-oyster-depot",
+        "name": "Swan Oyster Depot",
+        "neighborhood": "Polk Gulch",
+        "cuisine": "counter institution since 1912, $$$",
+        "badges": ""
+      },
+      {
+        "id": "anchor-oyster-bar",
+        "name": "Anchor Oyster Bar",
+        "neighborhood": "Castro",
+        "cuisine": "counter seafood, $$$",
+        "badges": "Bib"
+      },
+      {
+        "id": "hog-island-oyster-co",
+        "name": "Hog Island Oyster Co.",
+        "neighborhood": "Ferry Building",
+        "cuisine": "oysters, $$$",
+        "badges": ""
+      },
+      {
+        "id": "woodhouse-fish-co",
+        "name": "Woodhouse Fish Co.",
+        "neighborhood": "Castro / Marina",
+        "cuisine": "fish house, $$",
+        "badges": ""
+      },
+      {
+        "id": "tadich-grill",
+        "name": "Tadich Grill",
+        "neighborhood": "Financial District",
+        "cuisine": "oldest in SF (1849), $$$",
+        "badges": ""
+      },
+      {
+        "id": "sam-s-grill",
+        "name": "Sam's Grill",
+        "neighborhood": "Financial District",
+        "cuisine": "historic grill (1867), $$$",
+        "badges": ""
+      },
+      {
+        "id": "john-s-grill",
+        "name": "John's Grill",
+        "neighborhood": "Financial District",
+        "cuisine": "Maltese Falcon haunt (1908), $$$",
+        "badges": ""
+      },
+      {
+        "id": "waterbar",
+        "name": "Waterbar",
+        "neighborhood": "Embarcadero",
+        "cuisine": "bay-view seafood, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "fog-harbor",
+        "name": "Fog Harbor",
+        "neighborhood": "Pier 39",
+        "cuisine": "touristy waterfront, $$$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Steakhouses",
+    "entries": [
+      {
+        "id": "house-of-prime-rib",
+        "name": "House of Prime Rib",
+        "neighborhood": "Van Ness",
+        "cuisine": "silver carts since 1949, $$$",
+        "badges": "`#87 Chron`"
+      },
+      {
+        "id": "harris-steakhouse",
+        "name": "Harris' Steakhouse",
+        "neighborhood": "Polk",
+        "cuisine": "steakhouse, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "bourbon-steak",
+        "name": "Bourbon Steak",
+        "neighborhood": "Financial District",
+        "cuisine": "steakhouse, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "boboquivari-s",
+        "name": "Boboquivari's",
+        "neighborhood": "Marina",
+        "cuisine": "steak + crab, $$$",
+        "badges": ""
+      },
+      {
+        "id": "superprime",
+        "name": "Superprime",
+        "neighborhood": "wagyu + vinyl, $$$$",
+        "cuisine": "",
+        "badges": ""
+      },
+      {
+        "id": "5a5-steak-lounge",
+        "name": "5A5 Steak Lounge",
+        "neighborhood": "Jackson Square",
+        "cuisine": "wagyu, $$$$",
+        "badges": ""
+      },
+      {
+        "id": "schroeder-s",
+        "name": "Schroeder's",
+        "neighborhood": "Financial District",
+        "cuisine": "1893 German-American beer hall, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Bakeries / Pastry / Cafés",
+    "entries": [
+      {
+        "id": "breadbelly",
+        "name": "Breadbelly",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "Asian-leaning bakery + brunch, $",
+        "badges": "`#8 Chron`"
+      },
+      {
+        "id": "tartine-bakery",
+        "name": "Tartine Bakery",
+        "neighborhood": "Mission",
+        "cuisine": "flagship bakery, $",
+        "badges": ""
+      },
+      {
+        "id": "tartine-manufactory",
+        "name": "Tartine Manufactory",
+        "neighborhood": "Mission",
+        "cuisine": "bakery + restaurant, $$",
+        "badges": ""
+      },
+      {
+        "id": "arsicault-bakery",
+        "name": "Arsicault Bakery",
+        "neighborhood": "Inner Richmond",
+        "cuisine": "croissants, $",
+        "badges": ""
+      },
+      {
+        "id": "b-patisserie",
+        "name": "B. Patisserie",
+        "neighborhood": "Pacific Heights",
+        "cuisine": "kouign-amann, $",
+        "badges": ""
+      },
+      {
+        "id": "mr-holmes-bakehouse",
+        "name": "Mr. Holmes Bakehouse",
+        "neighborhood": "Tenderloin",
+        "cuisine": "cruffins, $",
+        "badges": ""
+      },
+      {
+        "id": "neighbor-bakehouse",
+        "name": "Neighbor Bakehouse",
+        "neighborhood": "Dogpatch",
+        "cuisine": "pastries, $",
+        "badges": ""
+      },
+      {
+        "id": "jane-the-bakery",
+        "name": "Jane the Bakery",
+        "neighborhood": "Pacific Heights / Fillmore",
+        "cuisine": "sourdough + café, $",
+        "badges": ""
+      },
+      {
+        "id": "devil-s-teeth-baking-co",
+        "name": "Devil's Teeth Baking Co.",
+        "neighborhood": "Outer Sunset",
+        "cuisine": "beach-town bakery, $",
+        "badges": ""
+      },
+      {
+        "id": "boulettes-larder",
+        "name": "Boulettes Larder",
+        "neighborhood": "Ferry Building",
+        "cuisine": "café + provisions, $$",
+        "badges": ""
+      },
+      {
+        "id": "sol-bakery",
+        "name": "Sol Bakery",
+        "neighborhood": "NoPa",
+        "cuisine": "pastries, $",
+        "badges": ""
+      },
+      {
+        "id": "liguria-bakery",
+        "name": "Liguria Bakery",
+        "neighborhood": "North Beach",
+        "cuisine": "focaccia until sold out, $",
+        "badges": ""
+      },
+      {
+        "id": "dandelion-chocolate",
+        "name": "Dandelion Chocolate",
+        "neighborhood": "Mission",
+        "cuisine": "chocolate factory + café, $$",
+        "badges": ""
+      },
+      {
+        "id": "bob-s-donuts",
+        "name": "Bob's Donuts",
+        "neighborhood": "Polk",
+        "cuisine": "late-night donuts, $",
+        "badges": ""
+      },
+      {
+        "id": "dynamo-donuts",
+        "name": "Dynamo Donuts",
+        "neighborhood": "Mission",
+        "cuisine": "donuts, $",
+        "badges": ""
+      },
+      {
+        "id": "saint-frank-coffee",
+        "name": "Saint Frank Coffee",
+        "neighborhood": "Russian Hill",
+        "cuisine": "coffee bar, $",
+        "badges": ""
+      },
+      {
+        "id": "sightglass",
+        "name": "Sightglass",
+        "neighborhood": "SoMa / Mission",
+        "cuisine": "coffee, $",
+        "badges": ""
+      },
+      {
+        "id": "ritual-coffee",
+        "name": "Ritual Coffee",
+        "neighborhood": "Mission",
+        "cuisine": "coffee, $",
+        "badges": ""
+      },
+      {
+        "id": "andytown",
+        "name": "Andytown",
+        "neighborhood": "Outer Sunset",
+        "cuisine": "Snowy Plover coffee, $",
+        "badges": ""
+      },
+      {
+        "id": "caffe-trieste",
+        "name": "Caffe Trieste",
+        "neighborhood": "North Beach",
+        "cuisine": "beat-era café, $",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Brunch / Breakfast",
+    "entries": [
+      {
+        "id": "plow",
+        "name": "Plow",
+        "neighborhood": "Potrero Hill",
+        "cuisine": "pancakes + breakfast, $$",
+        "badges": ""
+      },
+      {
+        "id": "sweet-maple",
+        "name": "Sweet Maple",
+        "neighborhood": "Pacific Heights",
+        "cuisine": "Millionaire's Bacon, $$",
+        "badges": ""
+      },
+      {
+        "id": "mama-s-on-washington-square",
+        "name": "Mama's on Washington Square",
+        "neighborhood": "North Beach",
+        "cuisine": "French-toast lines, $$",
+        "badges": ""
+      },
+      {
+        "id": "mymy",
+        "name": "Mymy",
+        "neighborhood": "Polk",
+        "cuisine": "pancakes, $$",
+        "badges": ""
+      },
+      {
+        "id": "zazie",
+        "name": "Zazie",
+        "neighborhood": "Cole Valley",
+        "cuisine": "French brunch, $$",
+        "badges": ""
+      },
+      {
+        "id": "the-mill",
+        "name": "The Mill",
+        "neighborhood": "NoPa",
+        "cuisine": "toast + coffee, $",
+        "badges": ""
+      },
+      {
+        "id": "just-for-you-caf",
+        "name": "Just for You Café",
+        "neighborhood": "Dogpatch",
+        "cuisine": "Cajun-Southern brunch, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Burgers / Sandwiches / Casual Counter",
+    "entries": [
+      {
+        "id": "causwells",
+        "name": "Causwells",
+        "neighborhood": "Marina",
+        "cuisine": "Americana burger + cocktails, $$",
+        "badges": ""
+      },
+      {
+        "id": "mo-s-grill",
+        "name": "Mo's Grill",
+        "neighborhood": "North Beach",
+        "cuisine": "burger, $",
+        "badges": ""
+      },
+      {
+        "id": "maillards",
+        "name": "Maillards",
+        "neighborhood": "Outer Sunset",
+        "cuisine": "smashburger counter, $",
+        "badges": ""
+      },
+      {
+        "id": "roam-artisan-burgers",
+        "name": "Roam Artisan Burgers",
+        "neighborhood": "multiple",
+        "cuisine": "burger, $",
+        "badges": ""
+      },
+      {
+        "id": "wise-sons-jewish-deli",
+        "name": "Wise Sons Jewish Deli",
+        "neighborhood": "Mission",
+        "cuisine": "pastrami / deli, $$",
+        "badges": ""
+      },
+      {
+        "id": "ike-s-place",
+        "name": "Ike's Place",
+        "neighborhood": "multiple",
+        "cuisine": "sandwiches, $",
+        "badges": ""
+      },
+      {
+        "id": "gott-s-roadside",
+        "name": "Gott's Roadside",
+        "neighborhood": "Ferry Building",
+        "cuisine": "burgers + shakes, $",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Vegetarian / Vegan",
+    "entries": [
+      {
+        "id": "shizen",
+        "name": "Shizen",
+        "neighborhood": "Mission",
+        "cuisine": "vegan sushi + ramen, $$",
+        "badges": "`#99 Chron`"
+      },
+      {
+        "id": "greens",
+        "name": "Greens",
+        "neighborhood": "Fort Mason",
+        "cuisine": "landmark vegetarian, $$$",
+        "badges": ""
+      },
+      {
+        "id": "wildseed",
+        "name": "Wildseed",
+        "neighborhood": "Cow Hollow",
+        "cuisine": "plant-based Cal, $$",
+        "badges": ""
+      },
+      {
+        "id": "golden-era",
+        "name": "Golden Era",
+        "neighborhood": "Tenderloin",
+        "cuisine": "vegan pan-Asian, $",
+        "badges": ""
+      },
+      {
+        "id": "loving-hut",
+        "name": "Loving Hut",
+        "neighborhood": "Outer Richmond",
+        "cuisine": "vegan Asian, $",
+        "badges": ""
+      },
+      {
+        "id": "nourish-caf",
+        "name": "Nourish Café",
+        "neighborhood": "multiple",
+        "cuisine": "vegan brunch, $$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Bars (Cocktail / Wine / Tiki) with Notable Food",
+    "entries": [
+      {
+        "id": "trick-dog",
+        "name": "Trick Dog",
+        "neighborhood": "Mission",
+        "cuisine": "World's-50-Best cocktails, $$",
+        "badges": ""
+      },
+      {
+        "id": "abv",
+        "name": "ABV",
+        "neighborhood": "Mission",
+        "cuisine": "bartender's bar w/ snacks, $$",
+        "badges": ""
+      },
+      {
+        "id": "true-laurel",
+        "name": "True Laurel",
+        "neighborhood": "Mission",
+        "cuisine": "Lazy Bear cocktails, $$",
+        "badges": ""
+      },
+      {
+        "id": "pagan-idol",
+        "name": "Pagan Idol",
+        "neighborhood": "Financial District",
+        "cuisine": "tiki, $$",
+        "badges": ""
+      },
+      {
+        "id": "comstock-saloon",
+        "name": "Comstock Saloon",
+        "neighborhood": "North Beach",
+        "cuisine": "historic saloon, $$",
+        "badges": ""
+      },
+      {
+        "id": "birba",
+        "name": "Birba",
+        "neighborhood": "Hayes Valley",
+        "cuisine": "wine bar w/ patio, $$",
+        "badges": ""
+      },
+      {
+        "id": "the-snug",
+        "name": "The Snug",
+        "neighborhood": "Pacific Heights",
+        "cuisine": "neighborhood cocktail, $$",
+        "badges": ""
+      },
+      {
+        "id": "the-morris",
+        "name": "The Morris",
+        "neighborhood": "Mission",
+        "cuisine": "wine + duck, $$$",
+        "badges": ""
+      },
+      {
+        "id": "the-pawn-shop",
+        "name": "The Pawn Shop",
+        "neighborhood": "Mission",
+        "cuisine": "speakeasy, $$",
+        "badges": ""
+      },
+      {
+        "id": "hi-tops",
+        "name": "Hi Tops",
+        "neighborhood": "Castro",
+        "cuisine": "sports bar, $$",
+        "badges": ""
+      },
+      {
+        "id": "smuggler-s-cove",
+        "name": "Smuggler's Cove",
+        "neighborhood": "Civic Center",
+        "cuisine": "tiki, $",
+        "badges": ""
+      },
+      {
+        "id": "15-romolo",
+        "name": "15 Romolo",
+        "neighborhood": "North Beach",
+        "cuisine": "cocktails + small plates, $$",
+        "badges": ""
+      },
+      {
+        "id": "bourbon-branch",
+        "name": "Bourbon & Branch",
+        "neighborhood": "Tenderloin",
+        "cuisine": "speakeasy, $$",
+        "badges": ""
+      },
+      {
+        "id": "pacific-cocktail-haven-pch",
+        "name": "Pacific Cocktail Haven (PCH)",
+        "neighborhood": "Tenderloin",
+        "cuisine": "Asian-inflected, $$",
+        "badges": ""
+      },
+      {
+        "id": "the-treasury",
+        "name": "The Treasury",
+        "neighborhood": "Financial District",
+        "cuisine": "classic cocktails, $$",
+        "badges": ""
+      },
+      {
+        "id": "last-rites",
+        "name": "Last Rites",
+        "neighborhood": "Mission",
+        "cuisine": "tiki-leaning, $$",
+        "badges": ""
+      },
+      {
+        "id": "el-lopo",
+        "name": "El Lopo",
+        "neighborhood": "Polk",
+        "cuisine": "Spanish bar, $$",
+        "badges": ""
+      },
+      {
+        "id": "lord-george",
+        "name": "Lord George",
+        "neighborhood": "Polk",
+        "cuisine": "wine bar / hotel, $$",
+        "badges": ""
+      },
+      {
+        "id": "ungrafted",
+        "name": "Ungrafted",
+        "neighborhood": "Dogpatch",
+        "cuisine": "wine bar w/ snacks, $$",
+        "badges": ""
+      },
+      {
+        "id": "the-vault-garden",
+        "name": "The Vault Garden",
+        "neighborhood": "Financial District",
+        "cuisine": "outdoor seasonal, $$$",
+        "badges": ""
+      }
+    ]
+  },
+  {
+    "title": "Beyond SF — Bay Area Chronicle Top 100 Picks",
+    "entries": [
+      {
+        "id": "burdell",
+        "name": "Burdell",
+        "neighborhood": "Oakland (Telegraph)",
+        "cuisine": "soul food, $$$",
+        "badges": "`#1 Chron`"
+      },
+      {
+        "id": "popoca",
+        "name": "Popoca",
+        "neighborhood": "Old Oakland",
+        "cuisine": "Salvadoran, $$",
+        "badges": "`#5 Chron`"
+      },
+      {
+        "id": "sun-moon-studio",
+        "name": "Sun Moon Studio",
+        "neighborhood": "West Oakland",
+        "cuisine": "fine dining, $$$$",
+        "badges": "`#4 Chron`"
+      },
+      {
+        "id": "snail-bar",
+        "name": "Snail Bar",
+        "neighborhood": "Oakland",
+        "cuisine": "wine bar, $$",
+        "badges": "`#15 Chron`"
+      },
+      {
+        "id": "soba-ichi",
+        "name": "Soba Ichi",
+        "neighborhood": "West Oakland",
+        "cuisine": "artisan soba, $",
+        "badges": "`#16 Chron`"
+      },
+      {
+        "id": "rose-pizzeria",
+        "name": "Rose Pizzeria",
+        "neighborhood": "Berkeley",
+        "cuisine": "pizza, $",
+        "badges": "`#13 Chron`"
+      },
+      {
+        "id": "tacos-oscar",
+        "name": "Tacos Oscar",
+        "neighborhood": "Oakland",
+        "cuisine": "tacos, $",
+        "badges": "`#11 Chron`"
+      },
+      {
+        "id": "ok-s-deli",
+        "name": "Ok's Deli",
+        "neighborhood": "Oakland",
+        "cuisine": "Asian-American deli, $",
+        "badges": "`#32 Chron`"
+      },
+      {
+        "id": "m-go",
+        "name": "Mägo",
+        "neighborhood": "Oakland",
+        "cuisine": "Colombian tasting, $$$",
+        "badges": "`#38 Chron`"
+      },
+      {
+        "id": "joodooboo",
+        "name": "Joodooboo",
+        "neighborhood": "Oakland",
+        "cuisine": "Korean tofu + banchan, $",
+        "badges": "`#41 Chron`"
+      },
+      {
+        "id": "fikscue",
+        "name": "Fikscue",
+        "neighborhood": "Alameda",
+        "cuisine": "Indo-Texas barbecue, $$",
+        "badges": "`#44 Chron`"
+      },
+      {
+        "id": "cultured-pickle-shop",
+        "name": "Cultured Pickle Shop",
+        "neighborhood": "Berkeley",
+        "cuisine": "fermented bowls, $$",
+        "badges": "`#62 Chron`"
+      },
+      {
+        "id": "pe-a-s-bakery",
+        "name": "Peña's Bakery",
+        "neighborhood": "Oakland (Fruitvale)",
+        "cuisine": "Mexican tortas, $",
+        "badges": "`#66 Chron`"
+      },
+      {
+        "id": "cafe-colucci",
+        "name": "Cafe Colucci",
+        "neighborhood": "Oakland",
+        "cuisine": "Ethiopian, $",
+        "badges": "`#86 Chron`"
+      },
+      {
+        "id": "vik-s-chaat",
+        "name": "Vik's Chaat",
+        "neighborhood": "Berkeley",
+        "cuisine": "Indian chaat, $",
+        "badges": "`#50 Chron`"
+      },
+      {
+        "id": "3-bottled-fish",
+        "name": "3 Bottled Fish",
+        "neighborhood": "Oakland",
+        "cuisine": "Vietnamese, $",
+        "badges": "`#54 Chron`"
+      },
+      {
+        "id": "tanzie-s",
+        "name": "Tanzie's",
+        "neighborhood": "Berkeley",
+        "cuisine": "Thai brunch, $$",
+        "badges": "`#55 Chron`"
+      },
+      {
+        "id": "ming-s-tasty",
+        "name": "Ming's Tasty",
+        "neighborhood": "Oakland Chinatown",
+        "cuisine": "dim sum, $",
+        "badges": "`#89 Chron`"
+      },
+      {
+        "id": "sequoia-diner",
+        "name": "Sequoia Diner",
+        "neighborhood": "Oakland",
+        "cuisine": "diner, $",
+        "badges": "`#84 Chron`"
+      },
+      {
+        "id": "alem-s-coffee",
+        "name": "Alem's Coffee",
+        "neighborhood": "Oakland",
+        "cuisine": "Eritrean breakfast, $",
+        "badges": "`#93 Chron`"
+      },
+      {
+        "id": "poppy-bagels",
+        "name": "Poppy Bagels",
+        "neighborhood": "Oakland (Temescal)",
+        "cuisine": "bagels, $",
+        "badges": "`#100 Chron`"
+      },
+      {
+        "id": "fob-kitchen",
+        "name": "FOB Kitchen",
+        "neighborhood": "Oakland",
+        "cuisine": "Filipino, $$",
+        "badges": "`#97 Chron`"
+      },
+      {
+        "id": "madcap",
+        "name": "Madcap",
+        "neighborhood": "San Anselmo",
+        "cuisine": "Japanese-inflected fine dining, $$$$",
+        "badges": "`#36 Chron`"
+      },
+      {
+        "id": "lou-s-takeaway",
+        "name": "Lou's Takeaway",
+        "neighborhood": "San Rafael",
+        "cuisine": "Asian-Cal takeout, $",
+        "badges": "`#63 Chron`"
+      },
+      {
+        "id": "charter-oak",
+        "name": "Charter Oak",
+        "neighborhood": "St. Helena",
+        "cuisine": "wood-hearth Americana, $$$",
+        "badges": "`#94 Chron`"
+      },
+      {
+        "id": "mustards-grill",
+        "name": "Mustards Grill",
+        "neighborhood": "Napa",
+        "cuisine": "Wine Country institution, $$",
+        "badges": "`#80 Chron`"
+      },
+      {
+        "id": "cyrus",
+        "name": "Cyrus",
+        "neighborhood": "Geyserville",
+        "cuisine": "fine dining, $$$$",
+        "badges": "`#71 Chron`"
+      },
+      {
+        "id": "singlethread",
+        "name": "SingleThread",
+        "neighborhood": "Healdsburg",
+        "cuisine": "Cal-kaiseki tasting, $$$$",
+        "badges": "`#9 Chron`"
+      },
+      {
+        "id": "troubadour-bread-bistro",
+        "name": "Troubadour Bread & Bistro",
+        "neighborhood": "Healdsburg",
+        "cuisine": "French sandwiches + tasting, $$$$",
+        "badges": "`#49 Chron`"
+      },
+      {
+        "id": "valley",
+        "name": "Valley",
+        "neighborhood": "Sonoma",
+        "cuisine": "wine bar / café / shop, $$",
+        "badges": "`#51 Chron`"
+      },
+      {
+        "id": "psychic-pie",
+        "name": "Psychic Pie",
+        "neighborhood": "Sebastopol",
+        "cuisine": "pizza, $",
+        "badges": "`#73 Chron`"
+      },
+      {
+        "id": "table-culture-provisions",
+        "name": "Table Culture Provisions",
+        "neighborhood": "Petaluma",
+        "cuisine": "French, $$$",
+        "badges": "`#77 Chron`"
+      },
+      {
+        "id": "mrs-khan-uyghur-cuisine",
+        "name": "Mrs Khan Uyghur Cuisine",
+        "neighborhood": "Menlo Park",
+        "cuisine": "Uyghur, $",
+        "badges": "`#78 Chron`"
+      },
+      {
+        "id": "mazra",
+        "name": "Mazra",
+        "neighborhood": "Redwood City",
+        "cuisine": "Levantine, $",
+        "badges": "`#81 Chron`"
+      },
+      {
+        "id": "ettan",
+        "name": "Ettan",
+        "neighborhood": "Palo Alto",
+        "cuisine": "modern Indian, $$",
+        "badges": "`#56 Chron`"
+      },
+      {
+        "id": "kajiken",
+        "name": "Kajiken",
+        "neighborhood": "San Mateo",
+        "cuisine": "aburasoba ramen, $",
+        "badges": "`#35 Chron`"
+      },
+      {
+        "id": "goodtime-bar",
+        "name": "Goodtime Bar",
+        "neighborhood": "San Jose",
+        "cuisine": "natural wine + small plates, $$",
+        "badges": "`#90 Chron`"
+      },
+      {
+        "id": "kunjip",
+        "name": "Kunjip",
+        "neighborhood": "Santa Clara",
+        "cuisine": "Korean seolleongtang, $",
+        "badges": "`#70 Chron`"
+      },
+      {
+        "id": "mariscos-el-charco",
+        "name": "Mariscos El Charco",
+        "neighborhood": "San Jose",
+        "cuisine": "Sinaloan seafood truck, $$",
+        "badges": "`#52 Chron`"
+      },
+      {
+        "id": "10-butchers",
+        "name": "10 Butchers",
+        "neighborhood": "Sunnyvale",
+        "cuisine": "Korean BBQ, $$$",
+        "badges": "`#74 Chron`"
+      },
+      {
+        "id": "jubba",
+        "name": "Jubba",
+        "neighborhood": "San Jose",
+        "cuisine": "Somali, $",
+        "badges": "`#82 Chron`"
+      },
+      {
+        "id": "bo-ne-phu-yen",
+        "name": "Bo Ne Phu Yen",
+        "neighborhood": "San Jose",
+        "cuisine": "Vietnamese steak & eggs, $",
+        "badges": "`#42 Chron`"
+      },
+      {
+        "id": "leyou",
+        "name": "LeYou",
+        "neighborhood": "San Jose",
+        "cuisine": "Ethiopian, $",
+        "badges": "`#46 Chron`"
+      },
+      {
+        "id": "tacos-mama-cuca",
+        "name": "Tacos Mama Cuca",
+        "neighborhood": "San Jose (Alum Rock)",
+        "cuisine": "Sonoran, $",
+        "badges": "`#23 Chron`"
+      }
+    ]
+  }
+]
