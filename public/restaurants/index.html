@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Restaurants in San Francisco</title>
+  <meta name="description" content="A private guide to good places to eat in San Francisco — fine dining, neighborhood favorites, bakeries, and bars.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f5f1e9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/restaurants/styles.css">
+</head>
+<body>
+
+  <header class="cover">
+    <p class="kicker">A Guide</p>
+    <h1>Restaurants in San Francisco</h1>
+    <p class="lede">
+      A short list of good places to eat — fine dining, neighborhood favorites,
+      bakeries and bars. Tap the cuisine pills to filter, or search by name.
+    </p>
+  </header>
+
+  <nav class="filters" aria-label="Filters">
+    <div class="filters-row">
+      <input type="search" id="search" placeholder="Search restaurants…" aria-label="Search restaurants">
+      <div class="price-filter" role="radiogroup" aria-label="Price">
+        <button class="price-btn active" data-price="all">All</button>
+        <button class="price-btn" data-price="$">$</button>
+        <button class="price-btn" data-price="$$">$$</button>
+        <button class="price-btn" data-price="$$$">$$$</button>
+        <button class="price-btn" data-price="$$$$">$$$$</button>
+      </div>
+    </div>
+    <div class="cuisine-filter" id="cuisine-filter" role="tablist" aria-label="Cuisine">
+      <button class="cuisine-btn active" data-cat="all" role="tab">All</button>
+    </div>
+  </nav>
+
+  <main id="grid" class="grid">Loading…</main>
+
+  <p id="empty" class="empty" hidden>No restaurants match those filters.</p>
+
+  <footer class="page-footer">
+    <p>Curated May 2026. Confirm hours and current operation before going.</p>
+  </footer>
+
+  <script src="/restaurants/script.js"></script>
+</body>
+</html>

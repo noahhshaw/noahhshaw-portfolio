@@ -19,6 +19,14 @@ export default function Projects() {
       external: true,
     },
     {
+      title: 'Restaurants in San Francisco',
+      description:
+        'A filterable card grid of ~100 San Francisco restaurants — fine dining, neighborhood favorites, bakeries, and bars — with cuisine and price filters and a one-tap link into Google Maps for every spot.',
+      tags: ['HTML', 'CSS', 'JSON', 'No build step'],
+      href: '/restaurants/',
+      external: true,
+    },
+    {
       title: 'Baby Name Rater',
       description:
         'A collaborative app for couples to rate and discover baby names together. Features a Tinder-style swiping interface, smart ranking algorithm, and a shared shortlist to find the perfect name.',
