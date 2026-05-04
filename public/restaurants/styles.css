@@ -60,6 +60,122 @@ body {
   max-width: 36em;
 }
 
+/* Map */
+.map-section {
+  max-width: var(--content);
+  margin: 16px auto 0;
+  padding: 0 var(--gutter);
+}
+.map {
+  width: 100%;
+  height: clamp(320px, 50vh, 480px);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--bg-soft);
+}
+.map-note {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* Leaflet popup styling — match the site's aesthetic */
+.leaflet-popup-content-wrapper {
+  border-radius: 4px;
+  background: var(--bg-card);
+  color: var(--ink);
+  box-shadow: 0 6px 20px rgba(28, 26, 23, 0.18);
+}
+.leaflet-popup-content {
+  font-family: var(--sans);
+  font-size: 13px;
+  margin: 12px 14px;
+  line-height: 1.45;
+}
+.leaflet-popup-content .pop-name {
+  display: block;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.leaflet-popup-content .pop-meta {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.leaflet-popup-content .pop-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.leaflet-popup-content .pop-link {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+  padding-bottom: 1px;
+  cursor: pointer;
+}
+.leaflet-popup-content .pop-link:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+.leaflet-popup-tip { background: var(--bg-card); }
+.leaflet-container { font-family: var(--sans); }
+
+/* Pins (DivIcon) — keyed by category so they group visually */
+.pin-marker {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 1px 3px rgba(28, 26, 23, 0.35);
+  transform: translate(-8px, -8px);
+}
+.pin-marker[data-cat="tasting"]    { background: #6e3a3a; }
+.pin-marker[data-cat="cal-am"]     { background: #6b7a3f; }
+.pin-marker[data-cat="italian"]    { background: #a23f3f; }
+.pin-marker[data-cat="pizza"]      { background: #c47156; }
+.pin-marker[data-cat="french"]     { background: #5f6e85; }
+.pin-marker[data-cat="japanese"]   { background: #3b4a6b; }
+.pin-marker[data-cat="chinese"]    { background: #b04535; }
+.pin-marker[data-cat="mexican"]    { background: #b07347; }
+.pin-marker[data-cat="vietnamese"] { background: #4a7c5a; }
+.pin-marker[data-cat="thai"]       { background: #c47156; }
+.pin-marker[data-cat="indian"]     { background: #b87328; }
+.pin-marker[data-cat="korean"]     { background: #4a4a4a; }
+.pin-marker[data-cat="med"]        { background: #b09060; }
+.pin-marker[data-cat="filipino"]   { background: #b08855; }
+.pin-marker[data-cat="peruvian"]   { background: #4a8a8a; }
+.pin-marker[data-cat="seafood"]    { background: #4a6e85; }
+.pin-marker[data-cat="steakhouse"] { background: #6e4a35; }
+.pin-marker[data-cat="bakery"]     { background: #c0a45f; }
+.pin-marker[data-cat="brunch"]     { background: #c08555; }
+.pin-marker[data-cat="burgers"]    { background: #8a5a3a; }
+.pin-marker[data-cat="vegetarian"] { background: #7a8a5a; }
+.pin-marker[data-cat="bars"]       { background: #6e4a6e; }
+
+/* Highlight a card briefly when it's targeted from a pin click */
+.card.is-flash {
+  animation: card-flash 1.4s ease-out;
+}
+@keyframes card-flash {
+  0%   { box-shadow: 0 0 0 3px var(--accent); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
 /* Filters (sticky) */
 .filters {
   position: sticky;

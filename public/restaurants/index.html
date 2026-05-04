@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="/restaurants/styles.css">
 </head>
 <body>
@@ -19,9 +20,15 @@
     <h1>Restaurants in San Francisco</h1>
     <p class="lede">
       A short list of good places to eat — fine dining, neighborhood favorites,
-      bakeries and bars. Tap the cuisine pills to filter, or search by name.
+      bakeries and bars. Tap a pin on the map, search by name, or filter by
+      cuisine and price.
     </p>
   </header>
+
+  <section class="map-section" aria-label="Map of all restaurants">
+    <div id="map" class="map"></div>
+    <p class="map-note" id="map-note"><span id="map-count">101</span> restaurants on the map. Tap a pin to jump to its card.</p>
+  </section>
 
   <nav class="filters" aria-label="Filters">
     <div class="filters-row">
@@ -47,6 +54,7 @@
     <p>Curated May 2026. Confirm hours and current operation before going.</p>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="/restaurants/script.js"></script>
 </body>
 </html>
