@@ -7,8 +7,8 @@ import {
   BABY_SESSION_COOKIE,
   MAGIC_LINK_TTL_SECONDS,
   SESSION_TTL_SECONDS,
-  isWhitelistedParent,
 } from "./constants";
+import { isWhitelistedRecipient } from "./recipients-store";
 
 function getResendClient(): Resend {
   return new Resend(process.env.RESEND_API_KEY);
@@ -74,7 +74,7 @@ export async function requestMagicLink(
   origin: string
 ): Promise<AuthRequestResult> {
   const normalized = email.toLowerCase().trim();
-  if (!isWhitelistedParent(normalized)) {
+  if (!await isWhitelistedRecipient(normalized)) {
     return { ok: false, reason: "not-whitelisted" };
   }
 
@@ -123,7 +123,7 @@ export async function verifyMagicLink(token: string): Promise<VerifyResult> {
   if (row.usedAt) return { ok: false, reason: "used" };
   if (row.expiresAt.getTime() < Date.now())
     return { ok: false, reason: "expired" };
-  if (!isWhitelistedParent(row.email))
+  if (!(await isWhitelistedRecipient(row.email)))
     return { ok: false, reason: "not-whitelisted" };
 
   await db
@@ -164,7 +164,7 @@ export async function readSessionCookie(
   const expiresAt = Number(expiresAtStr);
   if (!Number.isFinite(expiresAt)) return null;
   if (expiresAt * 1000 < Date.now()) return null;
-  if (!isWhitelistedParent(email)) return null;
+  if (!(await isWhitelistedRecipient(email))) return null;
   return { email };
 }
 

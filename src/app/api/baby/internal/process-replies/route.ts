@@ -32,6 +32,7 @@ import {
 import { fetchObjectBase64 } from "@/lib/baby/r2-fetch";
 import { computeReplyRecipients, plainToHtml } from "@/lib/baby/recipients";
 import { getCurrentParent } from "@/lib/baby/session";
+import { getAllRecipientEmails } from "@/lib/baby/recipients-store";
 
 export const runtime = "nodejs";
 // Allow longer execution since this calls the Anthropic API.
@@ -217,7 +218,8 @@ async function processSender(sender: string): Promise<Record<string, unknown>> {
     classification.replyText &&
     classification.replySubject
   ) {
-    const recipients = computeReplyRecipients(pending);
+    const parentAllowList = await getAllRecipientEmails();
+    const recipients = computeReplyRecipients(pending, { parentAllowList });
     const inReplyToHeaders: Record<string, string> = {};
     const lastMessageId = pending[pending.length - 1].messageId;
     if (lastMessageId) {

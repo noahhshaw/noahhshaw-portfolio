@@ -10,6 +10,7 @@ import { PhotoSection } from "./components/PhotoSection";
 import { ReplyLogSection } from "./components/ReplyLogSection";
 import { KbQueueSection } from "./components/KbQueueSection";
 import { PreviewSection } from "./components/PreviewSection";
+import { RecipientsSection } from "./components/RecipientsSection";
 
 export const dynamic = "force-dynamic";
 
@@ -51,6 +52,7 @@ export default async function BabyDashboardPage() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <ProfileSection initial={profile} />
           <SettingsSection initial={settingsMap} />
+          <RecipientsSection />
           <CalendarSection />
           <PreviewSection />
           <PhotoSection />

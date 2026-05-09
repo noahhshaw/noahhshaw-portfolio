@@ -1,4 +1,14 @@
-import { describe, it, expect, beforeAll, afterAll } from "vitest";
+import { describe, it, expect, beforeAll, afterAll, vi } from "vitest";
+
+// Stub the DB-backed recipients store so auth tests stay pure-crypto.
+vi.mock("../recipients-store", () => ({
+  isWhitelistedRecipient: vi.fn(async (email: string) =>
+    ["noahhshaw@gmail.com", "vaswani.anoushka@gmail.com"].includes(
+      email.toLowerCase()
+    )
+  ),
+}));
+
 import { issueSessionCookie, readSessionCookie } from "../auth";
 
 const ORIG_ENV: Partial<NodeJS.ProcessEnv> = {};

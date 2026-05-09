@@ -9,9 +9,9 @@ import {
 } from "@/db/schema";
 import { gte, desc, eq, or } from "drizzle-orm";
 import { loadAgeContext } from "@/lib/baby/age";
-import { BABY_PARENT_EMAILS } from "@/lib/baby/constants";
 import { checkInternalAuth } from "@/lib/baby/internal-auth";
 import { eventsInWindow } from "@/lib/baby/recurrence";
+import { getDailyEmailRecipients } from "@/lib/baby/recipients-store";
 
 export const runtime = "nodejs";
 
@@ -73,7 +73,14 @@ export async function GET(request: NextRequest) {
 
   const settings = await db.select().from(agentSettings);
   const settingsMap: Record<string, unknown> = {};
-  for (const s of settings) settingsMap[s.key] = s.value;
+  for (const s of settings) {
+    // Don't leak the recipients list under settings — it's already returned
+    // as `recipients` from the dynamic store.
+    if (s.key === "recipients") continue;
+    settingsMap[s.key] = s.value;
+  }
+
+  const recipients = await getDailyEmailRecipients();
 
   return NextResponse.json({
     profile: {
@@ -87,7 +94,7 @@ export async function GET(request: NextRequest) {
     age,
     todayKey,
     alreadySentToday,
-    recipients: BABY_PARENT_EMAILS,
+    recipients,
     recentContext,
     upcomingEvents,
     settings: settingsMap,

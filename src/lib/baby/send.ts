@@ -1,7 +1,8 @@
 import { Resend } from "resend";
 import { db } from "@/db";
 import { dailyEmails } from "@/db/schema";
-import { BABY_FROM_EMAIL, BABY_PARENT_EMAILS, BABY_REPLY_TO_EMAIL } from "./constants";
+import { BABY_FROM_EMAIL, BABY_REPLY_TO_EMAIL } from "./constants";
+import { getDailyEmailRecipients } from "./recipients-store";
 
 // Light wrapper around Resend with logging into daily_emails.
 
@@ -22,7 +23,10 @@ export async function sendDaily(opts: {
   tokensUsed?: number;
 }) {
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const recipients = opts.recipients ?? [...BABY_PARENT_EMAILS];
+  const recipients =
+    opts.recipients && opts.recipients.length > 0
+      ? opts.recipients
+      : await getDailyEmailRecipients();
 
   let messageId: string | null = null;
   let error: string | null = null;
