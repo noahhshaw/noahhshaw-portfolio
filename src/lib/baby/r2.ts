@@ -29,6 +29,10 @@ function getClient(): S3Client {
     region: "auto",
     endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
     credentials: { accessKeyId, secretAccessKey },
+    // R2 returns 403 with text/plain bodies when SigV4 is computed against
+    // virtual-hosted-style URLs (bucket-as-subdomain). Force path-style:
+    //   https://<account>.r2.cloudflarestorage.com/<bucket>/<key>
+    forcePathStyle: true,
   });
   return _client;
 }
