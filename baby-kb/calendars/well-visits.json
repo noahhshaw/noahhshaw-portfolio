@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "source": "AAP Bright Futures Recommendations for Preventive Pediatric Health Care (Periodicity Schedule)",
+  "source_url": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/",
+  "notes_to_renderer": [
+    "Schedule reflects standard well-child cadence in year 1. Many pediatric practices add a 1-week visit and a 4-week visit, which are not on the AAP schedule but are routine in private practice.",
+    "Vaccines listed are the ones administered AT the well visit. Cross-reference vaccines.json for full schedule."
+  ],
+  "visits": [
+    {
+      "visit": "Newborn",
+      "age": "Day 0–1 (in hospital)",
+      "day_of_life_window": [0, 1],
+      "screenings_assessments": [
+        "Apgar scores at 1 and 5 minutes",
+        "Newborn metabolic screen (heel-prick, state-mandated panel)",
+        "Critical congenital heart disease (CCHD) pulse-ox screen",
+        "Newborn hearing screen",
+        "Bilirubin (transcutaneous or serum, especially if risk factors)",
+        "Weight, length, head circumference",
+        "Feeding assessment"
+      ],
+      "vaccines_administered": ["HepB #1", "Erythromycin eye ointment (prophylaxis)", "Vitamin K IM injection"],
+      "questions_to_ask": [
+        "What's the bilirubin trajectory and when do we need to recheck?",
+        "Is the latch effective? (if breastfeeding)",
+        "What's the expected weight loss in the first 5 days?",
+        "When will I see a lactation consultant?"
+      ]
+    },
+    {
+      "visit": "First week",
+      "age": "Day 3–5",
+      "day_of_life_window": [3, 5],
+      "screenings_assessments": [
+        "Weight check (looking for return-to-birth-weight by ~day 10–14)",
+        "Bilirubin recheck (jaundice peaks day 3–5)",
+        "Feeding assessment (output: ≥6 wet diapers/day, ≥3 stools/day by end of first week)",
+        "Maternal mood screen (informal)"
+      ],
+      "vaccines_administered": [],
+      "questions_to_ask": [
+        "Is weight loss within the expected range (typical: 5–10% of birth weight, regained by day 10–14)?",
+        "Should we supplement with formula or expressed milk?",
+        "What does jaundice that warrants phototherapy look like vs. low-grade jaundice?"
+      ]
+    },
+    {
+      "visit": "1 month",
+      "age": "Approximately 4 weeks",
+      "day_of_life_window": [28, 35],
+      "screenings_assessments": [
+        "Growth parameters plotted on WHO curves",
+        "Maternal depression screen (Edinburgh Postnatal Depression Scale standard)",
+        "Developmental surveillance (responding to sound, lifting head briefly during tummy time)",
+        "Vision check (does she fix and follow?)"
+      ],
+      "vaccines_administered": ["HepB #2 (if not given at 2-mo visit)"],
+      "questions_to_ask": [
+        "Is feeding/weight gain on track?",
+        "When do we transition out of the swaddle?",
+        "Any signs of GERD that warrant intervention?"
+      ]
+    },
+    {
+      "visit": "2 months",
+      "age": "8–10 weeks",
+      "day_of_life_window": [56, 70],
+      "screenings_assessments": [
+        "Growth + head circumference (microcephaly/macrocephaly screen)",
+        "CDC milestone surveillance: smiles socially, holds head up on tummy, makes sounds other than crying",
+        "Hip exam (DDH)",
+        "Maternal depression rescreen",
+        "Anticipatory guidance: 4-month sleep regression preview, solids planning"
+      ],
+      "vaccines_administered": ["HepB #2", "RV #1", "DTaP #1", "Hib #1", "PCV #1", "IPV #1"],
+      "questions_to_ask": [
+        "Is the timing right for sleep training / sleep hygiene routines?",
+        "When should we plan to introduce solids?",
+        "Any feedback on whether she's tracking on growth percentiles?"
+      ]
+    },
+    {
+      "visit": "4 months",
+      "age": "16–18 weeks",
+      "day_of_life_window": [112, 126],
+      "screenings_assessments": [
+        "Growth, head circumference",
+        "CDC milestones: head steady when held upright, coos, looks at hands, brings hands to mouth, pushes up on forearms during tummy time",
+        "Sleep history (to flag the 4-month regression)",
+        "Hip exam (final routine DDH check)"
+      ],
+      "vaccines_administered": ["RV #2", "DTaP #2", "Hib #2", "PCV #2", "IPV #2"],
+      "questions_to_ask": [
+        "Is she ready for solids at 6 months or earlier?",
+        "What's the readiness signal beyond the 4-month mark?",
+        "Recommended approach to night feedings going forward?"
+      ]
+    },
+    {
+      "visit": "6 months",
+      "age": "24–26 weeks",
+      "day_of_life_window": [168, 182],
+      "screenings_assessments": [
+        "Growth, head circumference",
+        "CDC milestones: rolls tummy-to-back, laughs, takes turns making sounds, reaches to grab a toy",
+        "Hemoglobin / iron screen (especially if exclusively breastfed — iron stores deplete around 6 mo)",
+        "Solid-foods readiness assessment (sits with support, lost tongue-thrust reflex, shows interest)",
+        "Lead exposure risk questionnaire"
+      ],
+      "vaccines_administered": ["RV #3 (if RV5 product)", "DTaP #3", "Hib #3 (if PRP-T product)", "PCV #3", "Influenza #1 (annual, seasonal start Oct)", "COVID-19 #1 if family elects"],
+      "questions_to_ask": [
+        "Iron status — supplement needed?",
+        "Allergen-introduction protocol — any reason to delay peanut/egg?",
+        "Are night wakings developmentally appropriate at this point?"
+      ]
+    },
+    {
+      "visit": "9 months",
+      "age": "36–40 weeks",
+      "day_of_life_window": [252, 280],
+      "screenings_assessments": [
+        "Growth, head circumference",
+        "CDC milestones: sits without support, gets to sitting position, rakes food with fingers, babbles 'mamamama'/'bababababa', stranger anxiety appropriate",
+        "Hemoglobin / iron rescreen",
+        "Lead screen (if risk factors or per state protocol)",
+        "Tuberculosis risk factors",
+        "Standardized developmental screen (M-CHAT not yet — that's at 18 mo — but ASQ-3 may be done)"
+      ],
+      "vaccines_administered": ["Influenza #2 if first season"],
+      "questions_to_ask": [
+        "Is the iron screen normal?",
+        "Any concerns from the developmental screen?",
+        "Pulling-to-stand timing — should we already see it?"
+      ]
+    },
+    {
+      "visit": "12 months",
+      "age": "52 weeks",
+      "day_of_life_window": [364, 380],
+      "screenings_assessments": [
+        "Growth, head circumference",
+        "CDC milestones: pulls to stand, cruises, pincer grasp, says 'mama'/'dada' specifically, waves bye-bye, understands 'no'",
+        "Hemoglobin",
+        "Lead level (universal at 12 mo per CDC/state Medicaid; private insurance varies)",
+        "Vision and hearing screen",
+        "Transition off bottle, off formula (whole milk start), off crib bumpers (still relevant)",
+        "Anticipatory guidance: walking, table foods, cup, dental visit"
+      ],
+      "vaccines_administered": ["MMR #1", "VAR #1", "HepA #1", "PCV #4", "Hib booster"],
+      "questions_to_ask": [
+        "Any speech/language concerns by 12 mo?",
+        "Recommended time for first dental visit (AAP says by age 1)?",
+        "When to drop the bottle entirely?",
+        "M-CHAT-R/F autism screen schedule (18 and 24 mo)?"
+      ]
+    }
+  ]
+}

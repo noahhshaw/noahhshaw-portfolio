@@ -3,13 +3,16 @@ import {
   serial,
   text,
   integer,
+  bigint,
   boolean,
   smallint,
   timestamp,
+  date,
   unique,
   check,
   index,
   char,
+  jsonb,
 } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 
@@ -164,3 +167,214 @@ export type NewCouple = typeof couples.$inferInsert;
 export type Rating = typeof ratings.$inferSelect;
 export type NewRating = typeof ratings.$inferInsert;
 export type ShortListRow = typeof shortList.$inferSelect;
+
+// ============================================================
+// BABY AGENT TABLES
+// Daily email + interactive AI agent for the first child.
+// Reuses `users` for parent identity (email-keyed).
+// ============================================================
+
+// Singleton row (id=1). All baby state lives here for simplicity.
+export const babyProfile = pgTable("baby_profile", {
+  id: serial("id").primaryKey(),
+  dueDate: date("due_date").notNull(),
+  birthDate: date("birth_date"),
+  babyName: text("baby_name"),
+  pediatricianName: text("pediatrician_name"),
+  pediatricianPhone: text("pediatrician_phone"),
+  // free-form jsonb for evolving fields without migrations
+  meta: jsonb("meta").notNull().default(sql`'{}'::jsonb`),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
+export const dailyEmails = pgTable(
+  "daily_emails",
+  {
+    id: serial("id").primaryKey(),
+    sentDate: date("sent_date").notNull().unique(),
+    sentAt: timestamp("sent_at", { withTimezone: true }).notNull().defaultNow(),
+    ageInDays: integer("age_in_days").notNull(),
+    subject: text("subject").notNull(),
+    bodyHtml: text("body_html").notNull(),
+    bodyText: text("body_text").notNull(),
+    recipients: text("recipients").array().notNull(),
+    resendMessageId: text("resend_message_id"),
+    sourcePath: text("source_path").notNull(), // 'routine' | 'cron-fallback'
+    status: text("status").notNull().default("sent"), // 'sent' | 'failed' | 'queued'
+    error: text("error"),
+    tokensUsed: integer("tokens_used"),
+    costUsd: text("cost_usd"), // string for decimal precision
+  },
+  (table) => [
+    index("idx_daily_emails_sent_at").on(table.sentAt),
+    index("idx_daily_emails_status").on(table.status),
+  ]
+);
+
+export const emailReplies = pgTable(
+  "email_replies",
+  {
+    id: serial("id").primaryKey(),
+    receivedAt: timestamp("received_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    fromEmail: text("from_email").notNull(),
+    toEmails: text("to_emails").array().notNull(),
+    ccEmails: text("cc_emails").array().notNull().default(sql`'{}'::text[]`),
+    subject: text("subject"),
+    bodyText: text("body_text"),
+    bodyHtml: text("body_html"),
+    inReplyTo: text("in_reply_to"),
+    messageId: text("message_id").unique(),
+    dailyEmailId: integer("daily_email_id").references(() => dailyEmails.id),
+    rawHeaders: jsonb("raw_headers"),
+    classification: text("classification"), // 'question' | 'context' | 'feedback' | 'photo-only' | 'none'
+    actionTaken: text("action_taken"), // 'replied' | 'stored-context' | 'queued-kb-update' | 'silent'
+    agentResponseMessageId: text("agent_response_message_id"),
+    processedAt: timestamp("processed_at", { withTimezone: true }),
+    processingError: text("processing_error"),
+  },
+  (table) => [
+    index("idx_email_replies_received_at").on(table.receivedAt),
+    index("idx_email_replies_classification").on(table.classification),
+    index("idx_email_replies_daily_email").on(table.dailyEmailId),
+  ]
+);
+
+export const photos = pgTable(
+  "photos",
+  {
+    id: serial("id").primaryKey(),
+    r2Key: text("r2_key").notNull().unique(),
+    mimeType: text("mime_type").notNull(),
+    sizeBytes: bigint("size_bytes", { mode: "number" }).notNull(),
+    takenAt: timestamp("taken_at", { withTimezone: true }),
+    uploadedByEmail: text("uploaded_by_email").notNull(),
+    uploadedAt: timestamp("uploaded_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    caption: text("caption"),
+    tags: text("tags").array().notNull().default(sql`'{}'::text[]`),
+    sourceReplyId: integer("source_reply_id").references(() => emailReplies.id),
+  },
+  (table) => [
+    index("idx_photos_uploaded_at").on(table.uploadedAt),
+    index("idx_photos_taken_at").on(table.takenAt),
+  ]
+);
+
+// Catch-all for things the agent should remember about the family / baby.
+// Examples: "Eli rolled over today", "Mother's Day is May 10", "we prefer no
+// notifications on weekends". Surfaced to the daily render and reply agent.
+export const parentContext = pgTable(
+  "parent_context",
+  {
+    id: serial("id").primaryKey(),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    source: text("source").notNull(), // 'reply' | 'config' | 'agent'
+    sourceReplyId: integer("source_reply_id").references(() => emailReplies.id),
+    contentType: text("content_type").notNull(), // 'milestone' | 'note' | 'concern' | 'preference' | 'photo-tag'
+    content: text("content").notNull(),
+    relatedPhotoId: integer("related_photo_id").references(() => photos.id),
+    // tags help the renderer pick what's relevant on a given day
+    tags: text("tags").array().notNull().default(sql`'{}'::text[]`),
+    expiresAt: timestamp("expires_at", { withTimezone: true }),
+  },
+  (table) => [
+    index("idx_parent_context_created_at").on(table.createdAt),
+    index("idx_parent_context_content_type").on(table.contentType),
+  ]
+);
+
+export const calendarEvents = pgTable(
+  "calendar_events",
+  {
+    id: serial("id").primaryKey(),
+    eventDate: date("event_date").notNull(),
+    eventType: text("event_type").notNull(), // 'vaccine' | 'well-visit' | 'milestone' | 'family-date' | 'school-deadline' | 'custom'
+    title: text("title").notNull(),
+    description: text("description"),
+    recurrence: text("recurrence").notNull().default("none"), // 'none' | 'yearly'
+    source: text("source").notNull(), // 'aap' | 'parent' | 'agent'
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_calendar_events_date").on(table.eventDate),
+    index("idx_calendar_events_type").on(table.eventType),
+  ]
+);
+
+export const kbUpdateQueue = pgTable(
+  "kb_update_queue",
+  {
+    id: serial("id").primaryKey(),
+    requestedAt: timestamp("requested_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    requesterEmail: text("requester_email").notNull(),
+    sourceReplyId: integer("source_reply_id").references(() => emailReplies.id),
+    requestText: text("request_text").notNull(),
+    targetTopic: text("target_topic"),
+    status: text("status").notNull().default("queued"), // 'queued' | 'in-progress' | 'pr-opened' | 'merged' | 'rejected'
+    prUrl: text("pr_url"),
+    notes: text("notes"),
+    completedAt: timestamp("completed_at", { withTimezone: true }),
+  },
+  (table) => [
+    index("idx_kb_update_queue_status").on(table.status),
+  ]
+);
+
+// Magic-link auth for the /baby config page.
+export const magicLinkTokens = pgTable(
+  "magic_link_tokens",
+  {
+    id: serial("id").primaryKey(),
+    email: text("email").notNull(),
+    tokenHash: text("token_hash").notNull().unique(),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+    usedAt: timestamp("used_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_magic_link_email").on(table.email),
+    index("idx_magic_link_expires").on(table.expiresAt),
+  ]
+);
+
+// Key/value config the renderer & reply agent both read.
+// Examples of keys: 'voice_overrides', 'topics_enabled', 'send_time_local',
+// 'paused_until', 'enrichment_intensity'.
+export const agentSettings = pgTable("agent_settings", {
+  key: text("key").primaryKey(),
+  value: jsonb("value").notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedByEmail: text("updated_by_email"),
+});
+
+export type BabyProfile = typeof babyProfile.$inferSelect;
+export type NewBabyProfile = typeof babyProfile.$inferInsert;
+export type DailyEmail = typeof dailyEmails.$inferSelect;
+export type NewDailyEmail = typeof dailyEmails.$inferInsert;
+export type EmailReply = typeof emailReplies.$inferSelect;
+export type NewEmailReply = typeof emailReplies.$inferInsert;
+export type Photo = typeof photos.$inferSelect;
+export type NewPhoto = typeof photos.$inferInsert;
+export type ParentContext = typeof parentContext.$inferSelect;
+export type NewParentContext = typeof parentContext.$inferInsert;
+export type CalendarEvent = typeof calendarEvents.$inferSelect;
+export type NewCalendarEvent = typeof calendarEvents.$inferInsert;
+export type KbUpdateRequest = typeof kbUpdateQueue.$inferSelect;
+export type NewKbUpdateRequest = typeof kbUpdateQueue.$inferInsert;
+export type MagicLinkToken = typeof magicLinkTokens.$inferSelect;
+export type AgentSetting = typeof agentSettings.$inferSelect;

@@ -1,0 +1,16 @@
+name = "baby-email-router"
+main = "src/worker.ts"
+compatibility_date = "2025-09-01"
+
+# Production-only — single Worker, no preview deployments.
+workers_dev = false
+
+# Set INBOUND_WEBHOOK_URL and INBOUND_WEBHOOK_SECRET via:
+#   npx wrangler secret put INBOUND_WEBHOOK_SECRET
+#   npx wrangler secret put INBOUND_WEBHOOK_URL
+# (vars stay encrypted at rest in Cloudflare).
+
+# Email routing connects this Worker to incoming addresses via the
+# Cloudflare Email Routing dashboard, NOT via wrangler config. After deploy,
+# go to Cloudflare → Email → Email Routing → Routing rules → "Send to a Worker"
+# and pick `baby-email-router`.

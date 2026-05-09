@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.0",
+  "source": "CDC Child and Adolescent Immunization Schedule, 2026; AAP 2026 Immunization Schedule policy statement (Pediatrics)",
+  "source_urls": [
+    "https://www.cdc.gov/vaccines/hcp/imz-schedules/child-adolescent-age.html",
+    "https://publications.aap.org/pediatrics/article/doi/10.1542/peds.2025-075754"
+  ],
+  "notes_to_renderer": [
+    "All dose ages assume term infant with no contraindications. Premature/medical exceptions defer to pediatrician.",
+    "RSV strategy in 2026 is either maternal RSVpreF vaccine in pregnancy OR infant nirsevimab/clesrovimab dosing in first RSV season — not both. Confirm which path the OB/peds team chose.",
+    "Influenza begins at 6 months and is annual.",
+    "MMR, Varicella, HepA standardly given at the 12-month well visit (the bridge into year 2)."
+  ],
+  "doses": [
+    {
+      "vaccine": "HepB",
+      "full_name": "Hepatitis B",
+      "dose_number": 1,
+      "age": "Birth (within 24 hours)",
+      "age_months": 0,
+      "common_reactions": ["soreness at injection site", "low-grade fever <100.4°F"],
+      "severity_thresholds": {
+        "low_concern": "fussiness 24–48h, mild local redness",
+        "monitor": "fever 100.4–102°F (rectal) lasting >48h",
+        "call_within_24h": "fever >102°F, persistent inconsolable crying >3h",
+        "call_now": "anaphylaxis (rare): facial swelling, breathing difficulty, hypotonia"
+      }
+    },
+    {
+      "vaccine": "HepB",
+      "dose_number": 2,
+      "age": "1–2 months",
+      "age_months_window": [1, 2]
+    },
+    {
+      "vaccine": "RV",
+      "full_name": "Rotavirus (oral)",
+      "dose_number": 1,
+      "age": "2 months",
+      "age_months": 2,
+      "common_reactions": ["mild diarrhea", "fussiness"],
+      "notes": "Two formulations: RV5 (RotaTeq) is a 3-dose series at 2/4/6 mo; RV1 (Rotarix) is a 2-dose series at 2/4 mo. First dose must be given by 14 weeks 6 days; series complete by 8 mo 0 days."
+    },
+    {
+      "vaccine": "DTaP",
+      "full_name": "Diphtheria, Tetanus, acellular Pertussis",
+      "dose_number": 1,
+      "age": "2 months",
+      "age_months": 2,
+      "common_reactions": ["fever", "soreness", "fussiness", "drowsiness"],
+      "severity_thresholds": {
+        "low_concern": "fever <102°F, local redness <2 inches",
+        "monitor": "fever 102–104°F, persistent fussiness 24–48h",
+        "call_within_24h": "fever >104°F, swelling extending past joint, persistent crying >3h, hypotonic-hyporesponsive episode",
+        "call_now": "seizure, anaphylaxis, encephalopathy"
+      }
+    },
+    {
+      "vaccine": "Hib",
+      "full_name": "Haemophilus influenzae type b",
+      "dose_number": 1,
+      "age": "2 months",
+      "age_months": 2
+    },
+    {
+      "vaccine": "PCV",
+      "full_name": "Pneumococcal Conjugate (PCV15 or PCV20)",
+      "dose_number": 1,
+      "age": "2 months",
+      "age_months": 2,
+      "notes": "PCV20 is approved for the full series; PCV15 also acceptable. Either covers serotypes responsible for most invasive pneumococcal disease in young children."
+    },
+    {
+      "vaccine": "IPV",
+      "full_name": "Inactivated Poliovirus",
+      "dose_number": 1,
+      "age": "2 months",
+      "age_months": 2
+    },
+    {
+      "vaccine": "COVID-19",
+      "dose_number": 1,
+      "age": "6 months and older",
+      "age_months_window": [6, 12],
+      "notes": "Schedule depends on product (Moderna vs. Pfizer-BioNTech) and whether infant has had prior doses. As of 2026 the AAP and CDC schedules diverged on COVID-19 routine recommendation; check both with your pediatrician."
+    },
+    {
+      "vaccine": "RV",
+      "dose_number": 2,
+      "age": "4 months",
+      "age_months": 4
+    },
+    {
+      "vaccine": "DTaP",
+      "dose_number": 2,
+      "age": "4 months",
+      "age_months": 4
+    },
+    {
+      "vaccine": "Hib",
+      "dose_number": 2,
+      "age": "4 months",
+      "age_months": 4
+    },
+    {
+      "vaccine": "PCV",
+      "dose_number": 2,
+      "age": "4 months",
+      "age_months": 4
+    },
+    {
+      "vaccine": "IPV",
+      "dose_number": 2,
+      "age": "4 months",
+      "age_months": 4
+    },
+    {
+      "vaccine": "RV",
+      "dose_number": 3,
+      "age": "6 months",
+      "age_months": 6,
+      "conditional": "Only if RV5 (RotaTeq) product is in use; RV1 (Rotarix) ends at 2 doses."
+    },
+    {
+      "vaccine": "DTaP",
+      "dose_number": 3,
+      "age": "6 months",
+      "age_months": 6
+    },
+    {
+      "vaccine": "Hib",
+      "dose_number": 3,
+      "age": "6 months (if PRP-T product) — may be omitted if PRP-OMP product",
+      "age_months": 6,
+      "notes": "PRP-OMP Hib (PedvaxHIB) is a 2-dose primary series (2 mo, 4 mo) plus booster; PRP-T (ActHIB, Hiberix) is a 3-dose primary series."
+    },
+    {
+      "vaccine": "PCV",
+      "dose_number": 3,
+      "age": "6 months",
+      "age_months": 6
+    },
+    {
+      "vaccine": "HepB",
+      "dose_number": 3,
+      "age": "6–18 months",
+      "age_months_window": [6, 18]
+    },
+    {
+      "vaccine": "IPV",
+      "dose_number": 3,
+      "age": "6–18 months",
+      "age_months_window": [6, 18]
+    },
+    {
+      "vaccine": "Influenza",
+      "dose_number": 1,
+      "age": "6 months and older, annually",
+      "age_months_window": [6, 12],
+      "notes": "First flu season: 2 doses 4 weeks apart if first time receiving flu vaccine. Subsequent seasons: 1 dose annually."
+    },
+    {
+      "vaccine": "Influenza",
+      "dose_number": 2,
+      "age": "4 weeks after first flu dose (first season only)",
+      "notes": "Only required for first flu season."
+    },
+    {
+      "vaccine": "RSV-nirsevimab",
+      "full_name": "Nirsevimab (RSV monoclonal antibody)",
+      "dose_number": 1,
+      "age": "Birth–8 months entering first RSV season (typically Oct–Mar)",
+      "age_months_window": [0, 8],
+      "common_reactions": ["mild injection-site rash", "fussiness"],
+      "notes": "Skip if mother received RSVpreF (Abrysvo) in pregnancy at ≥32 weeks gestation and infant born ≥14 days after maternal vaccination. Clesrovimab is a newer 2024-approved alternative."
+    },
+    {
+      "vaccine": "MMR",
+      "full_name": "Measles, Mumps, Rubella",
+      "dose_number": 1,
+      "age": "12–15 months",
+      "age_months_window": [12, 15],
+      "notes": "Crosses into year 2 but typically given at 12-month well visit. Mild rash and fever 7–12 days post-vaccine is common (not contagious)."
+    },
+    {
+      "vaccine": "VAR",
+      "full_name": "Varicella (chickenpox)",
+      "dose_number": 1,
+      "age": "12–15 months",
+      "age_months_window": [12, 15]
+    },
+    {
+      "vaccine": "HepA",
+      "full_name": "Hepatitis A",
+      "dose_number": 1,
+      "age": "12–23 months",
+      "age_months_window": [12, 23]
+    },
+    {
+      "vaccine": "Hib",
+      "dose_number": "booster",
+      "age": "12–15 months",
+      "age_months_window": [12, 15]
+    },
+    {
+      "vaccine": "PCV",
+      "dose_number": 4,
+      "age": "12–15 months",
+      "age_months_window": [12, 15]
+    },
+    {
+      "vaccine": "DTaP",
+      "dose_number": 4,
+      "age": "15–18 months (year 2)",
+      "age_months_window": [15, 18]
+    }
+  ]
+}

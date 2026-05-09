@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Critical-period and sensitive-period windows for cognitive/sensory/motor enrichment in year 1. Each entry includes evidence-quality flag (high/medium/low) and recommended actions.",
+  "evidence_quality_definitions": {
+    "high": "Multiple replicated peer-reviewed studies, mechanism understood, intervention effect sizes meaningful",
+    "medium": "Some peer-reviewed evidence, plausible mechanism, intervention effect sizes contested or modest",
+    "low": "Theoretical / popular-press claim with limited or non-replicated empirical support"
+  },
+  "windows": [
+    {
+      "domain": "phonemic discrimination (foreign-language speech sounds)",
+      "window_months": [0, 12],
+      "peak_months": [6, 10],
+      "evidence_quality": "high",
+      "evidence_summary": "Infants are universal phoneme discriminators at birth; perceptual narrowing to the native phoneme inventory begins ~6 mo and is largely complete by ~12 mo. Kuhl and colleagues showed live-interaction exposure to Mandarin at 9–10 mo preserved Mandarin phoneme discrimination in English-environment infants; passive video/audio did not (Kuhl 2003).",
+      "recommended_actions": [
+        "If raising bilingually/trilingually, expose baby to second language via live human speech daily from birth, ideally one-parent-one-language (OPOL) or minority-language-at-home (mL@H).",
+        "Audio-only (Spotify, podcasts) does NOT preserve phoneme sensitivity. Live human speech is the active ingredient.",
+        "Quantity threshold (rough heuristic): ~25–30% of waking interaction time in the second language to maintain robust acquisition."
+      ],
+      "sources": ["Kuhl PK et al. PNAS 2003; 100(15):9096-9101", "Werker & Tees, Infant Behav Dev 1984"]
+    },
+    {
+      "domain": "early-talker conversational turns (language outcomes)",
+      "window_months": [9, 24],
+      "peak_months": [12, 18],
+      "evidence_quality": "high",
+      "evidence_summary": "Romeo et al. (2018) showed conversational turns — not adult word count alone — predict left-inferior-frontal-gyrus (Broca's) activation and verbal scores at 4–6 yo, controlling for SES and IQ. Hart & Risley's 30-million-word figure is contested; the conversational-turn finding replicates.",
+      "recommended_actions": [
+        "Engage in serve-and-return: when baby vocalizes, respond as if she'd spoken; pause; respond to her next vocalization.",
+        "Narrate ordinary tasks ('I'm putting the kettle on. The water is cold. Now it's getting hot.').",
+        "Avoid background TV/audio — it suppresses parental talk and conversational turns."
+      ],
+      "sources": ["Romeo RR et al., Psych Sci 2018; 29(5):700-710", "Hart & Risley 1995", "Sperry et al. Child Development 2019 (replication)"]
+    },
+    {
+      "domain": "pitch and rhythm sensitivity (music)",
+      "window_months": [0, 24],
+      "peak_months": [6, 18],
+      "evidence_quality": "medium",
+      "evidence_summary": "Trainor and colleagues showed 6-month-olds in active music classes (vs. passive listening) had earlier and more sophisticated brain responses to music, more pre-linguistic communicative gestures, and reduced distress at unfamiliar stimuli (Gerry et al. 2012). Cross-cultural rhythm exposure during infancy preserves perceptual sensitivities that adults lose.",
+      "recommended_actions": [
+        "Play live music (sing, hum, clap) at least daily. Recorded music is fine background but the active ingredient is participatory.",
+        "Vary the harmonic and rhythmic vocabulary — Western, non-Western, classical, jazz. Limited evidence that any genre is superior; variety preserves perceptual range.",
+        "Begin Suzuki-style instrument-listening exposure (recordings of the eventual instrument's repertoire) at 6–12 mo if planning early lessons. Formal lessons typically begin age 3–4."
+      ],
+      "sources": ["Gerry D, Unrau A, Trainor LJ. Dev Sci 2012; 15(3):398-407", "Hannon EE, Trehub SE. Psychol Sci 2005"]
+    },
+    {
+      "domain": "visual development",
+      "window_months": [0, 6],
+      "peak_months": [0, 4],
+      "evidence_quality": "high",
+      "evidence_summary": "Visual cortex development is highly plastic in the first 6 months. Untreated congenital cataracts/strabismus during this window cause permanent amblyopia. Color and contrast sensitivity mature in the first 4 months.",
+      "recommended_actions": [
+        "Newborn-hearing-screen-equivalent for vision is the red-reflex check at every well visit; ensure it's done.",
+        "Black-white-red high-contrast visual cards in the first 6 weeks (visual cortex preference for high contrast).",
+        "Variety of faces in baby's visual field — face-perception circuitry tunes to the demographic distribution of faces seen in year 1."
+      ],
+      "sources": ["AAP Vision Screening guidelines"]
+    },
+    {
+      "domain": "tummy time / prone motor",
+      "window_months": [0, 6],
+      "peak_months": [0, 4],
+      "evidence_quality": "medium",
+      "evidence_summary": "Adequate prone (tummy) time correlates with earlier achievement of rolling, sitting, and crawling; insufficient tummy time correlates with positional plagiocephaly. Causal direction is inferred but plausible.",
+      "recommended_actions": [
+        "Start tummy time on day 1 (chest-to-chest with parent counts).",
+        "By 8 weeks: 30+ min/day cumulative, in short bouts after feeds.",
+        "By 4 months: 60–90 min/day across the day.",
+        "Avoid extended container time (bouncer, rock'n'play, car seat outside the car) — limits motor practice."
+      ],
+      "sources": ["AAP Back to Sleep, Tummy to Play guidance", "Pin T et al. Infant Behav Dev 2007"]
+    },
+    {
+      "domain": "early book exposure (dialogic reading)",
+      "window_months": [0, 60],
+      "peak_months": [6, 36],
+      "evidence_quality": "high",
+      "evidence_summary": "Reach Out and Read program studies and meta-analyses show shared book reading from infancy is associated with larger expressive vocabularies and earlier literacy. Dialogic-reading techniques (PEER: Prompt-Evaluate-Expand-Repeat) amplify the effect.",
+      "recommended_actions": [
+        "Read aloud daily from birth (yes, newborns).",
+        "From 6 mo: board books with high-contrast images and rhythmic text.",
+        "From 12 mo: dialogic reading — point at images, ask 'what's that?', expand the answer ('yes, a dog — a brown dog with floppy ears').",
+        "Aim for the '1000 books before kindergarten' frame — about 1 book/day from birth gets you there."
+      ],
+      "sources": ["Reach Out and Read evidence base", "Whitehurst GJ et al., Dev Psychol 1988"]
+    },
+    {
+      "domain": "allergen introduction (food allergy prevention)",
+      "window_months": [4, 11],
+      "peak_months": [4, 6],
+      "evidence_quality": "high",
+      "evidence_summary": "LEAP trial (Du Toit 2015 NEJM) showed early peanut introduction in high-risk infants reduces peanut allergy by ~80%. NIAID 2017 addendum recommends peanut introduction at 4–6 mo for high-risk (severe eczema or egg allergy), 6 mo for moderate-risk, and around 6 mo with other solids for low-risk infants. Egg evidence is similar.",
+      "recommended_actions": [
+        "Introduce peanut (as thinned peanut butter, peanut puffs softened in milk, NEVER whole nuts) by 6 mo unless contraindicated.",
+        "Introduce egg (well-cooked, including yolk) by 6 mo.",
+        "Continue exposure 2–3× per week for sustained tolerance — single-dose introduction does not maintain tolerance.",
+        "If severe eczema or known egg allergy: consult pediatric allergist BEFORE first peanut exposure."
+      ],
+      "sources": ["Du Toit G et al. NEJM 2015; 372:803-813 (LEAP)", "NIAID Addendum 2017", "Perkin MR et al. NEJM 2016 (EAT trial)"]
+    },
+    {
+      "domain": "secure attachment formation",
+      "window_months": [0, 18],
+      "peak_months": [6, 12],
+      "evidence_quality": "high",
+      "evidence_summary": "Bowlby/Ainsworth-tradition research: secure attachment forms reliably with consistent, responsive caregiving across the first year. Stranger anxiety (~7–9 mo) and separation anxiety (~8–14 mo) are normal markers of attachment formation, not signs of overdependence. Daycare/nanny transitions are well-tolerated when primary attachment figures remain consistent.",
+      "recommended_actions": [
+        "Respond to distress promptly in the first 6 months (no sleep training before 4 mo per AAP).",
+        "Stable primary caregivers (parents + 1–2 consistent others) outperform rotating-caregiver setups.",
+        "Daycare entry around 4–6 mo or after 12 mo are equally well-tolerated; the 7–10 mo window coincides with peak stranger anxiety and is the hardest transition."
+      ],
+      "sources": ["Ainsworth, Strange Situation studies", "NICHD Study of Early Child Care and Youth Development"]
+    },
+    {
+      "domain": "sleep consolidation (night sleep architecture)",
+      "window_months": [3, 6],
+      "peak_months": [4, 5],
+      "evidence_quality": "high",
+      "evidence_summary": "Sleep cycles transition from neonatal active/quiet sleep to adult-like 4-stage architecture around 4 months — the biological substrate of the so-called '4-month sleep regression.' Circadian rhythm consolidates 6–12 weeks. Sleep training studies show graduated extinction methods are effective from ~4–6 mo and not associated with measurable harm at 5-year follow-up.",
+      "recommended_actions": [
+        "From 6–8 weeks: dim lights and quiet voices after sunset to entrain circadian rhythm.",
+        "From 8–12 weeks: introduce a consistent sleep-wake routine (e.g., feed-wake-sleep) without rigid scheduling.",
+        "From 4–6 mo: if night wakings persist beyond 1–2 feeds, consider behavioral sleep intervention. Methods include graduated extinction (Ferber), unmodified extinction (Weissbluth), chair method, pick-up-put-down. See topics/sleep-training-methods.md."
+      ],
+      "sources": ["Mindell et al. Sleep 2006 (AASM review)", "Hiscock et al. Pediatrics 2012 (5-yr follow-up)", "AAP Safe Sleep 2022"]
+    },
+    {
+      "domain": "fine-motor / pincer grasp",
+      "window_months": [6, 12],
+      "peak_months": [9, 11],
+      "evidence_quality": "medium",
+      "evidence_summary": "Pincer grasp (thumb-and-finger opposition) emerges around 9–11 mo and is a well-documented developmental milestone. Practice with appropriately sized self-feeding objects accelerates refinement; the milestone itself is endogenous.",
+      "recommended_actions": [
+        "From 6 mo: offer soft, dissolvable finger foods (puffs, well-steamed vegetables).",
+        "From 9 mo: small pieces of cheese, banana, well-cooked pasta — sized to require pincer pickup.",
+        "Avoid pre-loaded spoons exclusively — let baby practice self-feeding even if messier."
+      ],
+      "sources": ["CDC Learn the Signs 9-mo and 12-mo milestones"]
+    },
+    {
+      "domain": "joint attention / pointing",
+      "window_months": [6, 18],
+      "peak_months": [9, 14],
+      "evidence_quality": "high",
+      "evidence_summary": "Joint attention (following a parent's gaze, then later pointing to share interest) emerges 9–14 mo and is one of the strongest early predictors of later language and social cognition. Failure to develop joint attention by 18 mo is a red flag for autism spectrum disorder (M-CHAT-R/F at 18 mo screens for this).",
+      "recommended_actions": [
+        "Comment on and follow baby's gaze — 'Yes, you see the dog!' rather than redirecting attention.",
+        "Point at objects when naming them; pause to see if she looks where you point.",
+        "If she's not pointing or following pointing by 15 mo, raise it at the 15-mo well visit (not on the AAP standard schedule, but commonly done in private practice; otherwise the 18-mo visit is the official screen)."
+      ],
+      "sources": ["Mundy P, Newell L. Curr Dir Psychol Sci 2007", "AAP M-CHAT-R/F screening guidelines"]
+    }
+  ]
+}
