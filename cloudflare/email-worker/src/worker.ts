@@ -59,17 +59,6 @@ export default {
       `${timestamp}.${body}`
     );
 
-    // DIAGNOSTIC — remove once /api/inbound/baby is confirmed 200 OK.
-    const secretHash = await sha256Hex(env.INBOUND_WEBHOOK_SECRET ?? "");
-    const testHash = await hmacHex(env.INBOUND_WEBHOOK_SECRET ?? "", "test123");
-    console.log(
-      `[diag] secret_length=${env.INBOUND_WEBHOOK_SECRET?.length ?? 0} ` +
-        `secret_hash_prefix=${secretHash.slice(0, 12)} ` +
-        `test_hash=${testHash.slice(0, 12)} ` +
-        `body_length=${body.length} ` +
-        `timestamp=${timestamp}`
-    );
-
     const res = await fetch(env.INBOUND_WEBHOOK_URL, {
       method: "POST",
       headers: {
@@ -91,16 +80,6 @@ export default {
     }
   },
 } satisfies ExportedHandler<Env>;
-
-async function sha256Hex(input: string): Promise<string> {
-  const buf = await crypto.subtle.digest(
-    "SHA-256",
-    new TextEncoder().encode(input)
-  );
-  return Array.from(new Uint8Array(buf))
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
-}
 
 async function hmacHex(secret: string, input: string): Promise<string> {
   const key = await crypto.subtle.importKey(
