@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/db";
 import { photos } from "@/db/schema";
-import { desc } from "drizzle-orm";
+import { desc, inArray } from "drizzle-orm";
 import { isR2Configured, presignDownload } from "@/lib/baby/r2";
 import { getCurrentParent } from "@/lib/baby/session";
 import { S3Client, ListObjectsV2Command } from "@aws-sdk/client-s3";
@@ -124,4 +124,33 @@ export async function GET() {
   );
 
   return NextResponse.json({ config, bucket_contents: bucketContents, photos: results });
+}
+
+// DELETE /api/baby/diag/r2 → removes photos rows whose R2 key 404s.
+// One-shot cleanup for orphans created before the upload-confirm flow landed.
+export async function DELETE() {
+  const parent = await getCurrentParent();
+  if (!parent) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  if (!isR2Configured()) {
+    return NextResponse.json({ error: "R2 not configured" }, { status: 503 });
+  }
+  const rows = await db.select({ id: photos.id, r2Key: photos.r2Key }).from(photos);
+  const orphanIds: number[] = [];
+  for (const row of rows) {
+    try {
+      const url = await presignDownload(row.r2Key);
+      const res = await fetch(url, { method: "GET" });
+      if (res.status === 404) orphanIds.push(row.id);
+    } catch {
+      orphanIds.push(row.id);
+    }
+  }
+  if (orphanIds.length > 0) {
+    await db.delete(photos).where(inArray(photos.id, orphanIds));
+  }
+  return NextResponse.json({
+    scanned: rows.length,
+    deleted: orphanIds.length,
+    orphan_ids: orphanIds,
+  });
 }

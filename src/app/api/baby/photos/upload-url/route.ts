@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/db";
-import { photos } from "@/db/schema";
 import { getCurrentParent } from "@/lib/baby/session";
 import { isR2Configured, makePhotoKey, presignUpload } from "@/lib/baby/r2";
 
@@ -8,11 +6,13 @@ export const runtime = "nodejs";
 
 // POST /api/baby/photos/upload-url
 // Body: { filename, contentType, sizeBytes, takenAt?, caption?, tags? }
-// Returns: { uploadUrl, key, photoId }
+// Returns: { uploadUrl, key }
 //
-// Two-step pattern: client requests a signed URL, then PUTs the bytes
-// directly to R2. We pre-create the photos row in 'pending' state and
-// the client confirms upload separately.
+// Three-step pattern (no orphan rows):
+//   1. Client requests presigned URL here (no DB row yet)
+//   2. Client PUTs bytes directly to R2
+//   3. Client calls /api/baby/photos/confirm with the key + metadata
+//      to record the row.
 
 type Body = {
   filename: string;
@@ -70,22 +70,5 @@ export async function POST(request: NextRequest) {
     contentLength: body.sizeBytes,
   });
 
-  const inserted = await db
-    .insert(photos)
-    .values({
-      r2Key: key,
-      mimeType: body.contentType,
-      sizeBytes: body.sizeBytes,
-      takenAt: takenAt ?? null,
-      uploadedByEmail: parent.email,
-      caption: body.caption ?? null,
-      tags: body.tags ?? [],
-    })
-    .returning();
-
-  return NextResponse.json({
-    uploadUrl,
-    key,
-    photoId: inserted[0].id,
-  });
+  return NextResponse.json({ uploadUrl, key });
 }

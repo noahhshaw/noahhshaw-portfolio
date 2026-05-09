@@ -46,6 +46,7 @@ export function PhotoSection() {
         .split(",")
         .map((t) => t.trim())
         .filter(Boolean);
+      // Step 1: get presigned URL (no DB row yet)
       const presign = await fetch("/api/baby/photos/upload-url", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -53,8 +54,6 @@ export function PhotoSection() {
           filename: file.name,
           contentType: file.type,
           sizeBytes: file.size,
-          caption: caption || undefined,
-          tags: tags.length > 0 ? tags : undefined,
         }),
       });
       if (!presign.ok) {
@@ -62,16 +61,41 @@ export function PhotoSection() {
         setErr(data.error ?? "could not get upload URL");
         return;
       }
-      const { uploadUrl } = (await presign.json()) as { uploadUrl: string };
+      const { uploadUrl, key } = (await presign.json()) as {
+        uploadUrl: string;
+        key: string;
+      };
+
+      // Step 2: PUT bytes directly to R2
       const put = await fetch(uploadUrl, {
         method: "PUT",
         headers: { "Content-Type": file.type },
         body: file,
       });
       if (!put.ok) {
-        setErr(`R2 upload failed: ${put.status}`);
+        const errBody = await put.text().catch(() => "");
+        setErr(`R2 upload failed: ${put.status} ${errBody.slice(0, 200)}`);
         return;
       }
+
+      // Step 3: confirm — only now do we record the DB row
+      const confirm = await fetch("/api/baby/photos/confirm", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          key,
+          mimeType: file.type,
+          sizeBytes: file.size,
+          caption: caption || undefined,
+          tags: tags.length > 0 ? tags : undefined,
+        }),
+      });
+      if (!confirm.ok) {
+        const data = await confirm.json().catch(() => ({}));
+        setErr(data.error ?? "confirm failed");
+        return;
+      }
+
       setCaption("");
       setTagsInput("");
       e.target.value = "";
