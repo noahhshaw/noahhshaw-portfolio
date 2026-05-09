@@ -24,6 +24,22 @@ export type ContextEntry = {
   tags: string[];
 };
 
+export type FeedbackChangeType =
+  | "voice"
+  | "code"
+  | "kb-content"
+  | "calendar"
+  | "recipient"
+  | "other";
+
+export type FeedbackItem = {
+  changeType: FeedbackChangeType;
+  targetPath: string; // e.g. "baby-kb/voice.md", "src/lib/baby/constants.ts"
+  changeSummary: string; // 1–2 sentence what-and-why
+  evidenceQuote: string; // verbatim quote from the parent's reply
+  confidence: "low" | "medium" | "high";
+};
+
 export type ClassifierResult = {
   classification: Classification;
   shouldReply: boolean;
@@ -31,7 +47,7 @@ export type ClassifierResult = {
   replyHtml?: string;
   replyText?: string;
   contextToStore: ContextEntry[];
-  kbUpdateRequest?: string;
+  feedbackItems: FeedbackItem[];
   reasoning: string;
   inputTokens: number;
   outputTokens: number;
@@ -171,7 +187,13 @@ export async function classifyAndDraft(
       content: c.content,
       tags: c.tags ?? [],
     })),
-    kbUpdateRequest: args.kb_update_request ?? undefined,
+    feedbackItems: (args.feedback_items ?? []).map((f) => ({
+      changeType: f.change_type,
+      targetPath: f.target_path,
+      changeSummary: f.change_summary,
+      evidenceQuote: f.evidence_quote,
+      confidence: f.confidence ?? "medium",
+    })),
     reasoning: args.reasoning,
     inputTokens: response.usage.input_tokens,
     outputTokens: response.usage.output_tokens,
@@ -227,7 +249,20 @@ Decide:
 
 4. **context_to_store**: every meaningful fact about the baby, the family, dates, preferences, or noted concerns goes here so future emails can use it. Each entry has a content_type and tags.
 
-5. **kb_update_request**: only set this if the parent has explicitly asked the agent to learn something it doesn't know, or to update its long-term knowledge. Otherwise null.
+5. **feedback_items**: One entry per **distinct change request** the parent made. A single reply can contain multiple asks ("change the voice AND add my birthday AND fix this typo") — emit one item per ask. For each:
+   - **change_type**:
+     - "voice" → edits to baby-kb/voice.md (the binding tone guide)
+     - "code" → edits to src/* (TypeScript)
+     - "kb-content" → edits to baby-kb/topics/*.md or baby-kb/buckets/week-NN.md
+     - "calendar" → adds to calendar_events table (one-click approve later, no PR needed)
+     - "recipient" → edits to BABY_PARENT_EMAILS in constants.ts
+     - "other" → anything else
+   - **target_path**: best guess at the file path that should change
+   - **change_summary**: 1–2 sentences in imperative voice ("Add inline source URLs to all topic deep-dives")
+   - **evidence_quote**: verbatim quote from the parent's reply that asks for this change
+   - **confidence**: "high" if the parent stated it clearly and unambiguously; "medium" if implied; "low" if uncertain inference. Apply the anti-overfit rule: parents are tired and stressed. Don't infer changes that aren't clearly stated.
+
+Leave feedback_items empty if classification is not "feedback" (or if the feedback is purely conversational with no actionable change).
 
 6. **reasoning**: 1-2 sentences explaining the classification and whether you replied. This is for the audit log, not the parent.
 
@@ -235,7 +270,9 @@ Critical rules:
 - The reply MUST be plain prose written in the voice guide register. No exclamation points. No saccharine framing.
 - If the parent asks about a symptom or concerning observation, you may give a severity flag and reasoning. Do not refuse.
 - For images: describe what you see briefly in context_to_store (e.g., "Photo of baby smiling at 7 weeks") and reference it if relevant in the reply.
-- If the parent asked something the KB doesn't cover (you genuinely don't know), say so plainly and queue a kb_update_request.
+- If the parent asked something the KB doesn't cover (you genuinely don't know), say so plainly and add a feedback_item with change_type="kb-content".
+- Anti-overfit: parents are tired and stressed; their inputs are noisy. Don't infer changes from a single ambiguous comment. When confidence is low, mark it as such — the human will review.
+- Privacy: never quote parent-supplied context verbatim in the reply body. Use it only to inform classification decisions.
 
 Return your decision via the "respond" tool.`;
 
@@ -250,7 +287,13 @@ type ToolArgs = {
     content: string;
     tags?: string[];
   }>;
-  kb_update_request?: string | null;
+  feedback_items?: Array<{
+    change_type: FeedbackChangeType;
+    target_path: string;
+    change_summary: string;
+    evidence_quote: string;
+    confidence?: "low" | "medium" | "high";
+  }>;
   reasoning: string;
 };
 
@@ -286,7 +329,31 @@ const TOOL_SCHEMA: Anthropic.Messages.Tool.InputSchema = {
         required: ["content_type", "content"],
       },
     },
-    kb_update_request: { type: ["string", "null"] },
+    feedback_items: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          change_type: {
+            type: "string",
+            enum: ["voice", "code", "kb-content", "calendar", "recipient", "other"],
+          },
+          target_path: { type: "string" },
+          change_summary: { type: "string" },
+          evidence_quote: { type: "string" },
+          confidence: {
+            type: "string",
+            enum: ["low", "medium", "high"],
+          },
+        },
+        required: [
+          "change_type",
+          "target_path",
+          "change_summary",
+          "evidence_quote",
+        ],
+      },
+    },
     reasoning: { type: "string" },
   },
   required: ["classification", "should_reply", "reasoning"],

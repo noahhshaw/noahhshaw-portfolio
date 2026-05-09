@@ -31,6 +31,7 @@ import {
 } from "@/lib/baby/classifier";
 import { fetchObjectBase64 } from "@/lib/baby/r2-fetch";
 import { computeReplyRecipients, plainToHtml } from "@/lib/baby/recipients";
+import { getCurrentParent } from "@/lib/baby/session";
 
 export const runtime = "nodejs";
 // Allow longer execution since this calls the Anthropic API.
@@ -59,16 +60,22 @@ type ProcessRequestBody = {
 };
 
 export async function POST(request: NextRequest) {
+  // Accept any of: BABY_INTERNAL_SECRET (routine), QStash signature
+  // (deferred), or an authenticated parent session (manual trigger from
+  // dashboard).
+  const auth = request.headers.get("authorization");
+  const upstashSig = request.headers.get("upstash-signature");
   const internalSecret = process.env.BABY_INTERNAL_SECRET;
-  if (internalSecret) {
-    const auth = request.headers.get("authorization");
-    if (auth !== `Bearer ${internalSecret}`) {
-      // QStash uses different signing headers; tolerate that path.
-      const upstashSig = request.headers.get("upstash-signature");
-      if (!upstashSig) {
-        return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-      }
-    }
+  const internalAuthOk =
+    !!internalSecret && auth === `Bearer ${internalSecret}`;
+  const qstashAuthOk = !!upstashSig;
+  let sessionAuthOk = false;
+  if (!internalAuthOk && !qstashAuthOk) {
+    const parent = await getCurrentParent();
+    sessionAuthOk = !!parent;
+  }
+  if (!internalAuthOk && !qstashAuthOk && !sessionAuthOk) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
   let body: ProcessRequestBody = {};
@@ -192,12 +199,13 @@ async function processSender(sender: string): Promise<Record<string, unknown>> {
     });
   }
 
-  // Queue KB-update request if any
-  if (classification.kbUpdateRequest) {
+  // Queue one KB-update request per feedback item.
+  for (const item of classification.feedbackItems) {
     await db.insert(kbUpdateQueue).values({
       requesterEmail: sender,
       sourceReplyId: pending[0].id,
-      requestText: classification.kbUpdateRequest,
+      requestText: `[${item.changeType} → ${item.targetPath}] ${item.changeSummary}\n\nEvidence: "${item.evidenceQuote}"\nConfidence: ${item.confidence}`,
+      targetTopic: item.targetPath,
     });
   }
 
@@ -238,12 +246,14 @@ async function processSender(sender: string): Promise<Record<string, unknown>> {
   const action = sendError
     ? "send-failed"
     : classification.shouldReply
-    ? "replied"
+    ? classification.feedbackItems.length > 0
+      ? "replied+queued-kb-update"
+      : "replied"
+    : classification.feedbackItems.length > 0
+    ? "queued-kb-update"
     : classification.classification === "context" ||
       classification.classification === "photo-only"
     ? "stored-context"
-    : classification.classification === "feedback"
-    ? "queued-kb-update"
     : "silent";
 
   for (const r of pending) {
@@ -268,7 +278,7 @@ async function processSender(sender: string): Promise<Record<string, unknown>> {
     agentResponseMessageId,
     sendError,
     contextStored: classification.contextToStore.length,
-    kbUpdateQueued: !!classification.kbUpdateRequest,
+    feedbackItemsQueued: classification.feedbackItems.length,
     cost,
     tokens: {
       input: classification.inputTokens,
