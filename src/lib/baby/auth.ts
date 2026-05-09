@@ -88,7 +88,7 @@ export async function requestMagicLink(
     expiresAt,
   });
 
-  const link = `${origin}/baby/auth/verify?token=${encodeURIComponent(token)}`;
+  const link = `${origin}/api/baby/auth/verify?token=${encodeURIComponent(token)}`;
 
   try {
     await getResendClient().emails.send({
