@@ -4,6 +4,7 @@ import { photos } from "@/db/schema";
 import { desc } from "drizzle-orm";
 import { isR2Configured, presignDownload } from "@/lib/baby/r2";
 import { getCurrentParent } from "@/lib/baby/session";
+import { S3Client, ListObjectsV2Command } from "@aws-sdk/client-s3";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -32,6 +33,35 @@ export async function GET() {
 
   if (!isR2Configured()) {
     return NextResponse.json({ config, photos: [] });
+  }
+
+  // List actual objects in the R2 bucket so we can compare against the DB
+  let bucketContents: { keys: string[]; total: number; error?: string } = {
+    keys: [],
+    total: 0,
+  };
+  try {
+    const client = new S3Client({
+      region: "auto",
+      endpoint: `https://${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+      credentials: {
+        accessKeyId: process.env.R2_ACCESS_KEY_ID!,
+        secretAccessKey: process.env.R2_SECRET_ACCESS_KEY!,
+      },
+      forcePathStyle: true,
+    });
+    const result = await client.send(
+      new ListObjectsV2Command({
+        Bucket: process.env.R2_BUCKET!,
+        MaxKeys: 50,
+      })
+    );
+    bucketContents = {
+      keys: (result.Contents ?? []).map((o) => o.Key ?? ""),
+      total: result.KeyCount ?? 0,
+    };
+  } catch (err) {
+    bucketContents.error = err instanceof Error ? err.message : String(err);
   }
 
   const rows = await db
@@ -93,5 +123,5 @@ export async function GET() {
     })
   );
 
-  return NextResponse.json({ config, photos: results });
+  return NextResponse.json({ config, bucket_contents: bucketContents, photos: results });
 }
