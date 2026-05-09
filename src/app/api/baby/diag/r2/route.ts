@@ -1,9 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { db } from "@/db";
 import { photos } from "@/db/schema";
 import { desc } from "drizzle-orm";
 import { isR2Configured, presignDownload } from "@/lib/baby/r2";
-import { checkInternalAuth } from "@/lib/baby/internal-auth";
+import { getCurrentParent } from "@/lib/baby/session";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -12,11 +12,13 @@ export const maxDuration = 30;
 // reports the HTTP status. Diagnoses sign/permission/missing-object issues
 // without exposing presigned URLs to the client.
 //
-// Auth: Bearer BABY_INTERNAL_SECRET.
+// Auth: parent session cookie (log into /baby first).
 
-export async function GET(request: NextRequest) {
-  const denied = checkInternalAuth(request);
-  if (denied) return denied;
+export async function GET() {
+  const parent = await getCurrentParent();
+  if (!parent) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
 
   const config = {
     r2_configured: isR2Configured(),
