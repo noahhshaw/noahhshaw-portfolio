@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db";
 import { photos } from "@/db/schema";
 import { desc, inArray } from "drizzle-orm";
@@ -15,10 +15,16 @@ export const maxDuration = 30;
 //
 // Auth: parent session cookie (log into /baby first).
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   const parent = await getCurrentParent();
   if (!parent) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
+
+  // ?cleanup=1 → delete orphan photo rows (those whose R2 key 404s).
+  // Convenient for browser-driven cleanup since DELETE isn't navigable.
+  if (request.nextUrl.searchParams.get("cleanup") === "1") {
+    return cleanupOrphans();
   }
 
   const config = {
@@ -127,10 +133,14 @@ export async function GET() {
 }
 
 // DELETE /api/baby/diag/r2 → removes photos rows whose R2 key 404s.
-// One-shot cleanup for orphans created before the upload-confirm flow landed.
+// Same effect as GET ?cleanup=1.
 export async function DELETE() {
   const parent = await getCurrentParent();
   if (!parent) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  return cleanupOrphans();
+}
+
+async function cleanupOrphans() {
   if (!isR2Configured()) {
     return NextResponse.json({ error: "R2 not configured" }, { status: 503 });
   }
