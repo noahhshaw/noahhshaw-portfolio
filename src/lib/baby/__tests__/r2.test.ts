@@ -33,12 +33,12 @@ describe("makePhotoKey", () => {
 
   it("sanitizes the email prefix to a short, safe slug", () => {
     const key = makePhotoKey({
-      uploadedByEmail: "Vaswani.Anushka@gmail.com",
+      uploadedByEmail: "Vaswani.Anoushka@gmail.com",
       filename: "test.jpg",
       takenAt: new Date("2026-05-12T12:00:00Z"),
     });
     // The slug is the lowercased local-part with non-alphanumerics replaced.
-    expect(key).toMatch(/-vaswani-anushka-/);
+    expect(key).toMatch(/-vaswani-anoushka-/);
   });
 
   it("caps absurdly long filenames", () => {

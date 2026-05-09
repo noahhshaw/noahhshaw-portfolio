@@ -84,9 +84,9 @@ describe("session cookie HMAC", () => {
   it("handles emails containing dots (gmail.com) correctly", async () => {
     // Regression: the parser used to split on dots from the left, which
     // mis-parsed "noahhshaw@gmail.com" because of the gmail.com dot.
-    const cookie = await issueSessionCookie("vaswani.anushka@gmail.com");
+    const cookie = await issueSessionCookie("vaswani.anoushka@gmail.com");
     expect(await readSessionCookie(cookie)).toEqual({
-      email: "vaswani.anushka@gmail.com",
+      email: "vaswani.anoushka@gmail.com",
     });
   });
 

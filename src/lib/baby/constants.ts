@@ -5,7 +5,7 @@ export const BABY_PARENTS = {
     role: "primary" as const,
   },
   anushka: {
-    email: "vaswani.anushka@gmail.com",
+    email: "vaswani.anoushka@gmail.com",
     firstName: "Anushka",
     role: "partner" as const,
   },

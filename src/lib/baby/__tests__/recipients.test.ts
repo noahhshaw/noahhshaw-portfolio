@@ -3,7 +3,7 @@ import { computeReplyRecipients, plainToHtml } from "../recipients";
 
 const AGENT = "daily-baby@noahhshaw.com";
 const NOAH = "noahhshaw@gmail.com";
-const ANUSHKA = "vaswani.anushka@gmail.com";
+const ANUSHKA = "vaswani.anoushka@gmail.com";
 const ALLOW = [NOAH, ANUSHKA];
 const OPTS = {
   agentAddress: AGENT,

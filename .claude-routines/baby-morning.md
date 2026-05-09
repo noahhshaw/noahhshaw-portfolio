@@ -41,7 +41,7 @@ Response shape:
          preBirthDaysRemaining },
   todayKey: "YYYY-MM-DD" (Pacific),
   alreadySentToday: boolean,
-  recipients: ["noahhshaw@gmail.com", "vaswani.anushka@gmail.com", ...],
+  recipients: ["noahhshaw@gmail.com", "vaswani.anoushka@gmail.com", ...],
   recentContext: [{ contentType, content, tags, createdAt }, ...],   // last 7 days
   upcomingEvents: [{ effectiveDate, eventType, title, ... }, ...],  // next 14 days
   settings: {

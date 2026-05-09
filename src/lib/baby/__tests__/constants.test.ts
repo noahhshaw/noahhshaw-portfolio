@@ -13,7 +13,7 @@ describe("isWhitelistedParent", () => {
 
   it("normalizes capitalization and surrounding whitespace", () => {
     expect(isWhitelistedParent("  NoahhShaw@gmail.com  ")).toBe(true);
-    expect(isWhitelistedParent("VASWANI.ANUSHKA@GMAIL.COM")).toBe(true);
+    expect(isWhitelistedParent("VASWANI.ANOUSHKA@GMAIL.COM")).toBe(true);
   });
 
   it("rejects emails not on the allow list", () => {
@@ -29,7 +29,7 @@ describe("parentByEmail", () => {
     expect(noah?.firstName).toBe("Noah");
     expect(noah?.role).toBe("primary");
 
-    const anushka = parentByEmail("vaswani.anushka@gmail.com");
+    const anushka = parentByEmail("vaswani.anoushka@gmail.com");
     expect(anushka?.firstName).toBe("Anushka");
     expect(anushka?.role).toBe("partner");
   });
