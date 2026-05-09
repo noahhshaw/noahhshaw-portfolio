@@ -60,18 +60,22 @@ export async function GET() {
         };
       }
 
-      // Probe with HEAD to see if R2 actually returns the bytes.
-      let headStatus: number | null = null;
-      let headError: string | null = null;
+      // Probe with GET so we can read the error body if R2 rejects.
+      let getStatus: number | null = null;
+      let getError: string | null = null;
       let contentLength: string | null = null;
       let contentType: string | null = null;
+      let errorBody: string | null = null;
       try {
-        const res = await fetch(presignedUrl, { method: "HEAD" });
-        headStatus = res.status;
+        const res = await fetch(presignedUrl, { method: "GET" });
+        getStatus = res.status;
         contentLength = res.headers.get("content-length");
         contentType = res.headers.get("content-type");
+        if (!res.ok) {
+          errorBody = (await res.text()).slice(0, 500);
+        }
       } catch (err) {
-        headError = err instanceof Error ? err.message : String(err);
+        getError = err instanceof Error ? err.message : String(err);
       }
 
       // Strip query string + signature from URL for the response (don't leak signature)
@@ -80,10 +84,11 @@ export async function GET() {
       return {
         ...p,
         url_path: urlNoQuery,
-        head_status: headStatus,
-        head_error: headError,
+        get_status: getStatus,
+        get_error: getError,
         content_length: contentLength,
         content_type: contentType,
+        error_body: errorBody,
       };
     })
   );
