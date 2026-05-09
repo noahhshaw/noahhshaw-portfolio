@@ -1,0 +1,90 @@
+import { NextRequest, NextResponse } from "next/server";
+import { db } from "@/db";
+import { photos } from "@/db/schema";
+import { desc } from "drizzle-orm";
+import { isR2Configured, presignDownload } from "@/lib/baby/r2";
+import { checkInternalAuth } from "@/lib/baby/internal-auth";
+
+export const runtime = "nodejs";
+export const maxDuration = 30;
+
+// Server-side R2 inspection. Hits each photo's presigned URL with HEAD and
+// reports the HTTP status. Diagnoses sign/permission/missing-object issues
+// without exposing presigned URLs to the client.
+//
+// Auth: Bearer BABY_INTERNAL_SECRET.
+
+export async function GET(request: NextRequest) {
+  const denied = checkInternalAuth(request);
+  if (denied) return denied;
+
+  const config = {
+    r2_configured: isR2Configured(),
+    account_id_present: !!process.env.R2_ACCOUNT_ID,
+    access_key_present: !!process.env.R2_ACCESS_KEY_ID,
+    secret_key_present: !!process.env.R2_SECRET_ACCESS_KEY,
+    bucket: process.env.R2_BUCKET ?? null,
+    bucket_present: !!process.env.R2_BUCKET,
+    public_base_url: process.env.R2_PUBLIC_BASE_URL ?? null,
+  };
+
+  if (!isR2Configured()) {
+    return NextResponse.json({ config, photos: [] });
+  }
+
+  const rows = await db
+    .select({
+      id: photos.id,
+      r2Key: photos.r2Key,
+      mimeType: photos.mimeType,
+      sizeBytes: photos.sizeBytes,
+      uploadedByEmail: photos.uploadedByEmail,
+      uploadedAt: photos.uploadedAt,
+      sourceReplyId: photos.sourceReplyId,
+    })
+    .from(photos)
+    .orderBy(desc(photos.uploadedAt))
+    .limit(10);
+
+  const results = await Promise.all(
+    rows.map(async (p) => {
+      let presignedUrl: string;
+      try {
+        presignedUrl = await presignDownload(p.r2Key);
+      } catch (err) {
+        return {
+          ...p,
+          presign_error: err instanceof Error ? err.message : String(err),
+        };
+      }
+
+      // Probe with HEAD to see if R2 actually returns the bytes.
+      let headStatus: number | null = null;
+      let headError: string | null = null;
+      let contentLength: string | null = null;
+      let contentType: string | null = null;
+      try {
+        const res = await fetch(presignedUrl, { method: "HEAD" });
+        headStatus = res.status;
+        contentLength = res.headers.get("content-length");
+        contentType = res.headers.get("content-type");
+      } catch (err) {
+        headError = err instanceof Error ? err.message : String(err);
+      }
+
+      // Strip query string + signature from URL for the response (don't leak signature)
+      const urlNoQuery = presignedUrl.split("?")[0];
+
+      return {
+        ...p,
+        url_path: urlNoQuery,
+        head_status: headStatus,
+        head_error: headError,
+        content_length: contentLength,
+        content_type: contentType,
+      };
+    })
+  );
+
+  return NextResponse.json({ config, photos: results });
+}
