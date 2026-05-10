@@ -12,7 +12,8 @@
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "db:check": "tsx scripts/check-baby-schema.ts"
+    "db:check": "tsx scripts/check-baby-schema.ts",
+    "precompute": "tsx scripts/precompute-emails.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.72.1",

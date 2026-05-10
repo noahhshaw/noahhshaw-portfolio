@@ -1,22 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db";
-import { dailyEmails, agentSettings } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import {
+  dailyEmails,
+  agentSettings,
+  precomputedEmails,
+  calendarEvents,
+} from "@/db/schema";
+import { eq, gte, or } from "drizzle-orm";
 import { loadAgeContext } from "@/lib/baby/age";
 import { renderFallback, loadProfile } from "@/lib/baby/render-fallback";
 import { sendDaily } from "@/lib/baby/send";
+import { eventsInWindow } from "@/lib/baby/recurrence";
+import { applyOverlay } from "@/lib/baby/upcoming-overlay";
 
 export const runtime = "nodejs";
 
-// Daily 7am Pacific cron. The Claude routine is the primary daily render path;
-// this cron exists as a guaranteed fallback. If the routine has already
-// recorded a `daily_emails` row for today, this cron exits without sending.
-//
-// Two cron entries handle PST/PDT in vercel.json:
-//   `0 14 * * *` — 6am PST / 7am PDT
-//   `0 15 * * *` — 7am PST / 8am PDT
-// One of those will be 7am-local; the other 8am-local. We send if no row
-// exists yet for today, so both can fire safely on either side of DST.
+// Daily 7am Pacific cron. Resolution order:
+//   1. If a daily_emails row already exists for today (status=sent),
+//      exit silently.
+//   2. If `paused_until` is in the future, exit.
+//   3. Look up precomputed_emails for today's ageInDays with status='approved'.
+//      If found, apply the calendar overlay (next 14 days) and send.
+//   4. Otherwise, render the template fallback and send.
 
 export async function GET(request: NextRequest) {
   const cronSecret = process.env.CRON_SECRET;
@@ -46,7 +51,6 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    // Honor the paused_until setting (set via /baby config page).
     const paused = await db
       .select({ value: agentSettings.value })
       .from(agentSettings)
@@ -81,13 +85,51 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const render = await renderFallback(age, profile);
+  // Try precomputed first.
+  const precomputed = await db
+    .select()
+    .from(precomputedEmails)
+    .where(eq(precomputedEmails.ageInDays, age.ageInDays))
+    .limit(1);
+
+  let sourcePath: "precomputed" | "cron-fallback";
+  let render: Awaited<ReturnType<typeof renderFallback>>;
+
+  if (precomputed[0] && precomputed[0].status === "approved") {
+    const upcoming = await loadUpcomingForOverlay();
+    const overlaid = applyOverlay(
+      {
+        html: precomputed[0].bodyHtml,
+        text: precomputed[0].bodyText,
+      },
+      upcoming
+    );
+    render = {
+      subject: precomputed[0].subject,
+      html: overlaid.html,
+      text: overlaid.text,
+      citations: precomputed[0].citations,
+    };
+    sourcePath = "precomputed";
+  } else {
+    render = await renderFallback(age, profile);
+    sourcePath = "cron-fallback";
+  }
+
   const result = await sendDaily({
     render,
     ageInDays: age.ageInDays,
     sentDate: todayKey,
-    sourcePath: "cron-fallback",
+    sourcePath,
   });
+
+  // Mark the precomputed row as sent if we used it.
+  if (sourcePath === "precomputed" && precomputed[0] && !result.error) {
+    await db
+      .update(precomputedEmails)
+      .set({ status: "sent", sentAt: new Date() })
+      .where(eq(precomputedEmails.id, precomputed[0].id));
+  }
 
   return NextResponse.json({
     ok: !result.error,
@@ -96,12 +138,32 @@ export async function GET(request: NextRequest) {
     dailyEmailId: result.dailyEmail?.id,
     sentDate: todayKey,
     ageInDays: age.ageInDays,
+    source: sourcePath,
+    precomputedStatus: precomputed[0]?.status ?? null,
   });
 }
 
+async function loadUpcomingForOverlay() {
+  const now = new Date();
+  const cutoff = new Date(now);
+  cutoff.setFullYear(cutoff.getFullYear() - 1);
+  const cutoffStr = cutoff.toISOString().slice(0, 10);
+  const all = await db
+    .select()
+    .from(calendarEvents)
+    .where(
+      or(
+        eq(calendarEvents.recurrence, "yearly"),
+        gte(calendarEvents.eventDate, cutoffStr)
+      )
+    );
+  return eventsInWindow(all, now, 14).map((e) => ({
+    effectiveDate: e.effectiveDate,
+    title: e.title,
+  }));
+}
+
 function isoDateInPacific(now: Date): string {
-  // Get the YYYY-MM-DD label for "today" in America/Los_Angeles, since the
-  // cron fires in UTC but our schedule is local-time.
   const fmt = new Intl.DateTimeFormat("en-CA", {
     timeZone: "America/Los_Angeles",
     year: "numeric",
