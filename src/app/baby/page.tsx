@@ -9,9 +9,7 @@ import { EmailArchiveSection } from "./components/EmailArchiveSection";
 import { PhotoSection } from "./components/PhotoSection";
 import { ReplyLogSection } from "./components/ReplyLogSection";
 import { KbQueueSection } from "./components/KbQueueSection";
-import { PreviewSection } from "./components/PreviewSection";
 import { RecipientsSection } from "./components/RecipientsSection";
-import { PrecomputedSection } from "./components/PrecomputedSection";
 
 export const dynamic = "force-dynamic";
 
@@ -54,9 +52,7 @@ export default async function BabyDashboardPage() {
           <ProfileSection initial={profile} />
           <SettingsSection initial={settingsMap} />
           <RecipientsSection />
-          <PrecomputedSection />
           <CalendarSection />
-          <PreviewSection />
           <PhotoSection />
           <EmailArchiveSection />
           <ReplyLogSection />

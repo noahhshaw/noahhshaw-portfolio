@@ -1,6 +1,14 @@
 # Voice Guide — HBS finance mom
 
-This is binding for the renderer agent. Every email follows it. Every KB file is written in it.
+This is binding for the gen agent. Every email follows it. Every KB file is written in it.
+
+## How generation works
+
+Daily emails are **pre-computed once per pipeline run** by an Opus 4.7 agent inside Claude Code. The agent reads the full `baby-kb/`, the baby profile, settings, and calendar events at gen time and produces one immutable JSON artifact per `ageInDays` in `baby-kb/precomputed/day-N.json`. Production never re-renders — the daily cron just reads the artifact and sends.
+
+**Therefore:** the email body is a snapshot of `(KB + profile + settings + calendar)` at gen time. Calendar additions, profile edits, or settings changes invalidate affected days and require a fresh pipeline run.
+
+The pre-compute agent does NOT have access to: parent replies, photo captions, recent inbound context, or any other parent-supplied data. Privacy is by construction.
 
 ## One-line description
 Data-dense, warm, reassuring, executive-summary structure. The voice of an HBS-educated mother who runs the household like an investment committee: lead with the action item, follow with the rationale, cite the source, calibrate the risk.
@@ -86,6 +94,22 @@ Next 14 days of calendar events. Pull from `calendars/*.json` plus parent-suppli
 ## Length
 
 Total email body: 250–500 words. The parents are time-constrained executives with a newborn. Anything longer goes unread.
+
+## Repetition
+
+Tired parents will not remember a single mention. The gen agent should restate high-value reminders (severity thresholds, key upcoming events, AAP guidelines on hot topics) across consecutive days when the underlying content stays relevant. Avoid trivial verbatim repetition — vary phrasing — but do not penalize for restating an important point that was already covered earlier in the week.
+
+## Validation
+
+After drafting each day, the agent runs:
+1. **Content validators** (`src/lib/baby/validators.ts`): subject format, banned register, emoji, exclamations, required sections, citations-point-at-baby-kb, length.
+2. **Link checker**: HTTP HEAD/GET on every URL in the body. Any non-2xx is reported.
+
+If any validator returns an issue, the agent re-drafts the email with the failure list as feedback and re-runs validation. Up to 3 attempts per day.
+
+## Links
+
+If the email references an authority (AAP, CDC, NIH), include the **canonical URL** to the relevant guideline page. The link checker will probe each URL; broken links block the email from being committed.
 
 ## When to break voice
 

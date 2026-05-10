@@ -28,12 +28,10 @@ const goodEmail = {
     "Enrichment opportunity",
     "Narrate one ordinary task during his next awake-alert window.",
     "",
-    "{{UPCOMING_TEXT}}",
-    "",
     "Source",
     "AAP Bright Futures, Hyperbilirubinemia CPG 2022, Romeo et al 2018.",
   ].join("\n"),
-  bodyHtml: "<p>...</p>{{UPCOMING_HTML}}<p>Source: baby-kb/voice.md</p>",
+  bodyHtml: "<p>...</p><p>Source: baby-kb/voice.md</p>",
 };
 
 describe("validateEmail", () => {
@@ -106,29 +104,6 @@ describe("validateEmail", () => {
     );
     const issues = validateEmail({ ...goodEmail, bodyText: stripped });
     expect(issues.some((i) => i.includes("Watch-fors"))).toBe(true);
-  });
-
-  it("flags missing placeholders", () => {
-    const noText = validateEmail({
-      ...goodEmail,
-      bodyText: goodEmail.bodyText.replace("{{UPCOMING_TEXT}}", ""),
-    });
-    expect(noText.some((i) => i.includes("UPCOMING_TEXT"))).toBe(true);
-
-    const noHtml = validateEmail({
-      ...goodEmail,
-      bodyHtml: "<p>no placeholder</p>",
-    });
-    expect(noHtml.some((i) => i.includes("UPCOMING_HTML"))).toBe(true);
-  });
-
-  it("flags privacy tells like 'you mentioned'", () => {
-    const issues = validateEmail({
-      ...goodEmail,
-      bodyText:
-        goodEmail.bodyText + "\n\nAs you mentioned, the baby was fussy.",
-    });
-    expect(issues.some((i) => i.includes("privacy tell"))).toBe(true);
   });
 
   it("flags non-baby-kb citations", () => {

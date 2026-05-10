@@ -17,7 +17,7 @@ export async function sendDaily(opts: {
   render: Render;
   ageInDays: number;
   sentDate: string;
-  sourcePath: "routine" | "cron-fallback" | "precomputed";
+  sourcePath: "precomputed";
   recipients?: string[];
   costUsd?: string;
   tokensUsed?: number;

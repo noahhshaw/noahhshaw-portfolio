@@ -4,7 +4,6 @@ import {
   emailReplies,
   dailyEmails,
   photos,
-  parentContext,
   kbUpdateQueue,
 } from "@/db/schema";
 import {
@@ -156,22 +155,10 @@ async function processSender(sender: string): Promise<Record<string, unknown>> {
     }
   }
 
-  // Load age + recent context
+  // Load age. We intentionally do NOT load parent_context — the classifier
+  // never reads from the parent-context store (architecture decision: avoid
+  // feeding parent-supplied content back to the reply agent).
   const age = await loadAgeContext();
-  const recentRows = await db
-    .select({
-      contentType: parentContext.contentType,
-      content: parentContext.content,
-    })
-    .from(parentContext)
-    .where(
-      gte(
-        parentContext.createdAt,
-        new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
-      )
-    )
-    .orderBy(desc(parentContext.createdAt))
-    .limit(15);
 
   // Run classifier
   const classification = await classifyAndDraft({
@@ -184,21 +171,13 @@ async function processSender(sender: string): Promise<Record<string, unknown>> {
       weekIndex: age?.weekIndex ?? 0,
       status: age?.status ?? "unknown",
     },
-    recentParentContext: recentRows,
   });
 
   const cost = estimateCost(classification);
 
-  // Persist context entries
-  for (const ctx of classification.contextToStore) {
-    await db.insert(parentContext).values({
-      source: "reply",
-      sourceReplyId: pending[0].id,
-      contentType: ctx.contentType,
-      content: ctx.content,
-      tags: ctx.tags,
-    });
-  }
+  // Per the architecture decision (no parent_context in outgoing emails),
+  // the classifier's contextToStore output is intentionally discarded.
+  // Any actionable change must come through feedback_items → PR review.
 
   // Queue one KB-update request per feedback item.
   for (const item of classification.feedbackItems) {

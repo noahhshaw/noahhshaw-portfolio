@@ -86,7 +86,6 @@ export type ClassifierInputs = {
     weekIndex: number;
     status: string;
   };
-  recentParentContext: Array<{ contentType: string; content: string }>;
 };
 
 export async function classifyAndDraft(
@@ -211,13 +210,6 @@ function buildContextBlock(inputs: ClassifierInputs): string {
   if (inputs.originalDailyEmail) {
     lines.push(
       `\n## Today's outbound email (subject: "${inputs.originalDailyEmail.subject}")\n${inputs.originalDailyEmail.bodyText}`
-    );
-  }
-  if (inputs.recentParentContext.length > 0) {
-    lines.push(
-      `\n## Recent parent-supplied context (last 7 days)\n${inputs.recentParentContext
-        .map((c) => `- ${c.contentType}: ${c.content}`)
-        .join("\n")}`
     );
   }
   return lines.join("\n");

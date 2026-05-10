@@ -16,7 +16,6 @@ type Settings = {
   voice_intensity?: number;
   enrichment_intensity?: number;
   topics_enabled?: Record<string, boolean>;
-  additional_context?: string;
   paused_until?: string | null;
 };
 
@@ -35,9 +34,6 @@ export function SettingsSection({ initial }: Props) {
     for (const t of TOPIC_DEFS) base[t.key] = t.defaultOn;
     return { ...base, ...(init.topics_enabled ?? {}) };
   });
-  const [additionalContext, setAdditionalContext] = useState<string>(
-    init.additional_context ?? ""
-  );
   const [pausedUntil, setPausedUntil] = useState<string>(
     init.paused_until ?? ""
   );
@@ -56,7 +52,6 @@ export function SettingsSection({ initial }: Props) {
           voice_intensity: voiceIntensity,
           enrichment_intensity: enrichmentIntensity,
           topics_enabled: topics,
-          additional_context: additionalContext,
           paused_until: pausedUntil || null,
         }),
       });
@@ -118,19 +113,6 @@ export function SettingsSection({ initial }: Props) {
             ))}
           </div>
         </div>
-
-        <label className="block">
-          <span className="mb-1 block text-[11px] uppercase tracking-wide text-gray-500">
-            Always-known context (the agent will always have this in mind)
-          </span>
-          <textarea
-            value={additionalContext}
-            onChange={(e) => setAdditionalContext(e.target.value)}
-            rows={3}
-            placeholder="e.g. We live in San Francisco. Both sets of grandparents are in NYC. Anushka's birthday is March 12."
-            className="w-full rounded border border-gray-300 px-2 py-1.5 text-sm focus:border-gray-500 focus:outline-none"
-          />
-        </label>
 
         <label className="block">
           <span className="mb-1 block text-[11px] uppercase tracking-wide text-gray-500">

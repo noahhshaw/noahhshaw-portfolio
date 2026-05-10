@@ -1,9 +1,13 @@
 // Validation rules for pre-computed daily emails.
 // Source of truth: baby-kb/voice.md.
 //
-// Each validator returns a list of issue strings. The renderer/script can
-// gate on `issues.length === 0` for auto-approval thresholds, or surface
-// them in the review UI.
+// Two layers:
+//   1. `validateEmail()` — pure content checks (sync, no network).
+//   2. `checkLinks()`   — async HEAD probes on every URL.
+//
+// The generation pipeline runs both. If either reports issues, the agent
+// re-drafts with the issues as feedback. Production never re-validates;
+// artifacts are immutable once committed.
 
 export type EmailToValidate = {
   ageInDays: number;
@@ -95,8 +99,10 @@ export function validateEmail(email: EmailToValidate): string[] {
   const lines = email.bodyText.split("\n");
   for (const line of lines) {
     if (line.includes("!") && !line.includes("[call now]")) {
-      issues.push(`exclamation outside [call now] context: "${line.trim().slice(0, 80)}"`);
-      break; // one report is enough
+      issues.push(
+        `exclamation outside [call now] context: "${line.trim().slice(0, 80)}"`
+      );
+      break;
     }
   }
 
@@ -119,31 +125,95 @@ export function validateEmail(email: EmailToValidate): string[] {
     }
   }
 
-  // Privacy: outgoing email must not contain anything that looks like
-  // verbatim parent context. We can't fully detect this without runtime
-  // context, but we can check for likely tells.
-  const privacyTells = [
-    "you mentioned",
-    "as you noted",
-    "you told us",
-    "you wrote",
-    "you said earlier",
-    "in your reply",
-  ];
-  for (const tell of privacyTells) {
-    if (haystack.includes(tell)) {
-      issues.push(`privacy tell — likely echoes parent context: "${tell}"`);
+  return issues;
+}
+
+// Extract HTTP(S) URLs from a text body or html body.
+export function extractUrls(text: string): string[] {
+  const urls = new Set<string>();
+  const re = /https?:\/\/[^\s<>"')\]]+/gi;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    // strip trailing punctuation
+    urls.add(m[0].replace(/[.,;:!?)\]]+$/, ""));
+  }
+  return Array.from(urls);
+}
+
+export type LinkCheckResult = {
+  url: string;
+  ok: boolean;
+  status?: number;
+  error?: string;
+};
+
+// Probe every URL in the body with HEAD (fallback to GET if HEAD is
+// rejected) and report which ones don't resolve.
+export async function checkLinks(
+  email: EmailToValidate,
+  opts: { concurrency?: number; timeoutMs?: number } = {}
+): Promise<LinkCheckResult[]> {
+  const urls = Array.from(
+    new Set([...extractUrls(email.bodyText), ...extractUrls(email.bodyHtml)])
+  );
+  const concurrency = opts.concurrency ?? 5;
+  const timeoutMs = opts.timeoutMs ?? 8000;
+
+  const results: LinkCheckResult[] = [];
+  const queue = [...urls];
+  async function worker() {
+    while (queue.length > 0) {
+      const url = queue.shift();
+      if (!url) return;
+      results.push(await probe(url, timeoutMs));
     }
   }
+  await Promise.all(
+    Array.from({ length: Math.min(concurrency, urls.length) }, () => worker())
+  );
+  return results;
+}
 
-  // Placeholder for the upcoming-events overlay must be present in both
-  // text and html, otherwise the calendar can't be applied at send time.
-  if (!email.bodyText.includes("{{UPCOMING_TEXT}}")) {
-    issues.push("body_text missing {{UPCOMING_TEXT}} placeholder");
+async function probe(url: string, timeoutMs: number): Promise<LinkCheckResult> {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), timeoutMs);
+  try {
+    let res = await fetch(url, {
+      method: "HEAD",
+      redirect: "follow",
+      signal: ctrl.signal,
+    });
+    // Some servers 405 on HEAD. Retry with GET.
+    if (res.status === 405 || res.status === 403) {
+      res = await fetch(url, {
+        method: "GET",
+        redirect: "follow",
+        signal: ctrl.signal,
+      });
+    }
+    return { url, ok: res.ok, status: res.status };
+  } catch (err) {
+    return {
+      url,
+      ok: false,
+      error: err instanceof Error ? err.message : String(err),
+    };
+  } finally {
+    clearTimeout(t);
   }
-  if (!email.bodyHtml.includes("{{UPCOMING_HTML}}")) {
-    issues.push("body_html missing {{UPCOMING_HTML}} placeholder");
-  }
+}
 
-  return issues;
+// Aggregate a content + links check into a single issues[] list.
+export async function validateEmailAndLinks(
+  email: EmailToValidate
+): Promise<{ contentIssues: string[]; linkIssues: string[] }> {
+  const contentIssues = validateEmail(email);
+  const linkResults = await checkLinks(email);
+  const linkIssues = linkResults
+    .filter((r) => !r.ok)
+    .map(
+      (r) =>
+        `link broken: ${r.url} → ${r.status ? `HTTP ${r.status}` : r.error}`
+    );
+  return { contentIssues, linkIssues };
 }
