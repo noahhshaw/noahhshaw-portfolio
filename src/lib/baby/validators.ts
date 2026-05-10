@@ -174,20 +174,35 @@ export async function checkLinks(
   return results;
 }
 
+// Many authority sites (AAP, SagePub, etc.) reject non-browser user-agents
+// with 403, even though humans can reach the page fine. Send a realistic UA
+// to avoid false positives.
+const BROWSER_UA =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
+const BROWSER_ACCEPT =
+  "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
+
 async function probe(url: string, timeoutMs: number): Promise<LinkCheckResult> {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), timeoutMs);
+  const headers = {
+    "User-Agent": BROWSER_UA,
+    Accept: BROWSER_ACCEPT,
+    "Accept-Language": "en-US,en;q=0.9",
+  };
   try {
     let res = await fetch(url, {
       method: "HEAD",
       redirect: "follow",
+      headers,
       signal: ctrl.signal,
     });
-    // Some servers 405 on HEAD. Retry with GET.
-    if (res.status === 405 || res.status === 403) {
+    // Many servers 405/403 on HEAD even with a browser UA. Retry with GET.
+    if (!res.ok && (res.status === 405 || res.status === 403)) {
       res = await fetch(url, {
         method: "GET",
         redirect: "follow",
+        headers,
         signal: ctrl.signal,
       });
     }

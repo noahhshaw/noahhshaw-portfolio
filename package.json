@@ -13,7 +13,7 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "db:check": "tsx scripts/check-baby-schema.ts",
-    "precompute": "tsx scripts/precompute-emails.ts"
+    "precompute:validate": "tsx scripts/validate-precomputed.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.72.1",
