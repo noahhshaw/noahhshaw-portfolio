@@ -8,7 +8,7 @@ import {
 describe("isWhitelistedParent", () => {
   it("accepts each parent's primary email", () => {
     expect(isWhitelistedParent(BABY_PARENTS.noah.email)).toBe(true);
-    expect(isWhitelistedParent(BABY_PARENTS.anushka.email)).toBe(true);
+    expect(isWhitelistedParent(BABY_PARENTS.anoushka.email)).toBe(true);
   });
 
   it("normalizes capitalization and surrounding whitespace", () => {
@@ -29,9 +29,9 @@ describe("parentByEmail", () => {
     expect(noah?.firstName).toBe("Noah");
     expect(noah?.role).toBe("primary");
 
-    const anushka = parentByEmail("vaswani.anoushka@gmail.com");
-    expect(anushka?.firstName).toBe("Anushka");
-    expect(anushka?.role).toBe("partner");
+    const anoushka = parentByEmail("vaswani.anoushka@gmail.com");
+    expect(anoushka?.firstName).toBe("Anoushka");
+    expect(anoushka?.role).toBe("partner");
   });
 
   it("returns undefined for unknown emails", () => {

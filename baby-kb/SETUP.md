@@ -144,6 +144,6 @@ open https://noahhshaw.com/baby
 
 Magic-link login is restricted to:
 - `noahhshaw@gmail.com` (Noah)
-- `vaswani.anoushka@gmail.com` (Anushka)
+- `vaswani.anoushka@gmail.com` (Anoushka)
 
 Edit `src/lib/baby/constants.ts` to change.

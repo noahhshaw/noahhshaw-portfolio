@@ -28,10 +28,11 @@ const goodEmail = {
     "Enrichment opportunity",
     "Narrate one ordinary task during his next awake-alert window.",
     "",
-    "Source",
-    "AAP Bright Futures, Hyperbilirubinemia CPG 2022, Romeo et al 2018.",
+    "Further reading",
+    "- AAP HealthyChildren on the first month: https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx",
+    "- CDC newborn screening explainer: https://www.cdc.gov/newborn-screening/about/index.html",
   ].join("\n"),
-  bodyHtml: "<p>...</p><p>Source: baby-kb/voice.md</p>",
+  bodyHtml: "<p>...</p><p>External links only here.</p>",
 };
 
 describe("validateEmail", () => {
@@ -104,6 +105,42 @@ describe("validateEmail", () => {
     );
     const issues = validateEmail({ ...goodEmail, bodyText: stripped });
     expect(issues.some((i) => i.includes("Watch-fors"))).toBe(true);
+  });
+
+  it("flags Anushka misspelling in body", () => {
+    const issues = validateEmail({
+      ...goodEmail,
+      bodyText: goodEmail.bodyText.replace(
+        "his next awake-alert",
+        "Anushka's next awake-alert"
+      ),
+    });
+    expect(issues.some((i) => i.toLowerCase().includes("anoushka"))).toBe(true);
+  });
+
+  it("flags baby-kb path leak in body", () => {
+    const issues = validateEmail({
+      ...goodEmail,
+      bodyText:
+        goodEmail.bodyText +
+        "\n\nSee baby-kb/topics/sleep-newborn-fundamentals.md for more.",
+    });
+    expect(issues.some((i) => i.includes("baby-kb/"))).toBe(true);
+  });
+
+  it("flags Further reading with fewer than 2 bulleted URLs", () => {
+    const stripped = goodEmail.bodyText.replace(
+      "- AAP HealthyChildren on the first month: https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx",
+      "Only one resource described in prose."
+    );
+    const issues = validateEmail({ ...goodEmail, bodyText: stripped });
+    expect(
+      issues.some(
+        (i) =>
+          i.includes("Further reading must have at least 2") ||
+          i.includes("without a URL")
+      )
+    ).toBe(true);
   });
 
   it("flags non-baby-kb citations", () => {

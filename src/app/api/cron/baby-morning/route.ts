@@ -117,6 +117,13 @@ export async function GET(request: NextRequest) {
     sourcePath: "precomputed",
   });
 
+  // Forward-looking coverage check: warn if any of the next 7 days lack
+  // artifacts. The notice goes only to Noah and only when a gap exists.
+  const gaps = await findCoverageGaps(age.ageInDays, 7);
+  if (gaps.length > 0) {
+    await sendCoverageGapNotice(gaps, age.ageInDays);
+  }
+
   return NextResponse.json({
     ok: !result.error,
     error: result.error,
@@ -125,6 +132,7 @@ export async function GET(request: NextRequest) {
     sentDate: todayKey,
     ageInDays: age.ageInDays,
     kbVersion: artifact.kbVersion ?? null,
+    coverageGaps: gaps,
   });
 }
 
@@ -142,6 +150,53 @@ async function loadPrecomputed(
     return JSON.parse(content) as PrecomputedArtifact;
   } catch {
     return null;
+  }
+}
+
+// Look ahead to see how many of the next `lookaheadDays` days have artifacts.
+// Returns the list of missing ageInDays (excluding today, which is the
+// cron's main job already).
+async function findCoverageGaps(
+  todayAge: number,
+  lookaheadDays: number
+): Promise<number[]> {
+  const missing: number[] = [];
+  for (let i = 1; i <= lookaheadDays; i++) {
+    const age = todayAge + i;
+    const file = path.join(
+      process.cwd(),
+      "baby-kb",
+      "precomputed",
+      `day-${age}.json`
+    );
+    try {
+      await fs.access(file);
+    } catch {
+      missing.push(age);
+    }
+  }
+  return missing;
+}
+
+async function sendCoverageGapNotice(
+  missing: number[],
+  todayAge: number
+): Promise<void> {
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const list = missing.join(", ");
+    await resend.emails.send({
+      from: BABY_FROM_EMAIL,
+      to: "noahhshaw@gmail.com",
+      subject: `[Daily Baby] Upcoming coverage gap: ${missing.length} day(s) missing in next 7`,
+      text: `Today is day ${todayAge}. The next 7 days are missing artifacts for: day ${list}.
+
+Action needed: run the pre-compute pipeline in Claude Code for these days, commit the artifacts, and redeploy before the cron fires for each.
+
+Today's send went out successfully. This is a forward-looking heads-up so you have time to fix it before the next miss.`,
+    });
+  } catch (err) {
+    console.error("[baby-cron] failed to send coverage-gap notice", err);
   }
 }
 

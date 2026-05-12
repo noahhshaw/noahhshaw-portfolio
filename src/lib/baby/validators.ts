@@ -43,7 +43,17 @@ const BANNED_PHRASES = [
   "honor the child's experience",
 ];
 
-const REQUIRED_SECTIONS = ["Action items", "Watch-fors", "Source"];
+// Canonical-name misspellings the validator flags as hard errors. Match is
+// case-insensitive with word boundaries (so "Anushka's", "ANUSHKA" all flag,
+// but "Anoushka" passes).
+const BANNED_NAME_REGEXES: Array<{ pattern: RegExp; canonical: string }> = [
+  { pattern: /\bAnushka\b/i, canonical: "Anoushka" },
+];
+
+const REQUIRED_SECTIONS = ["Action items", "Watch-fors", "Further reading"];
+
+const BULLET_RE = /^\s*[-*•]\s+/;
+const URL_IN_LINE_RE = /https?:\/\/\S+/i;
 
 const SUBJECT_PREFIX = (age: number) => `Day ${age}:`;
 const MAX_SUBJECT_LENGTH = 72;
@@ -88,6 +98,22 @@ export function validateEmail(email: EmailToValidate): string[] {
     }
   }
 
+  // Banned canonical-name misspellings (e.g., Anushka → Anoushka)
+  for (const { pattern, canonical } of BANNED_NAME_REGEXES) {
+    if (pattern.test(email.bodyText) || pattern.test(email.subject)) {
+      issues.push(
+        `canonical-name misspelling: pattern ${pattern} found; correct spelling is "${canonical}"`
+      );
+    }
+  }
+
+  // KB file paths leak into body — internal metadata never goes to readers
+  if (/baby-kb\//.test(email.bodyText) || /baby-kb\//.test(email.bodyHtml)) {
+    issues.push(
+      "body contains 'baby-kb/' file path — KB paths are internal metadata; use external authority URLs in the body"
+    );
+  }
+
   // Emoji in body
   if (/[\u{1F300}-\u{1F9FF}\u{2600}-\u{27BF}]/u.test(email.bodyText)) {
     issues.push("body contains emoji");
@@ -113,6 +139,28 @@ export function validateEmail(email: EmailToValidate): string[] {
     }
   }
 
+  // "Further reading" must be a bullet list of 2+ items, each with a URL.
+  const frBlock = extractSection(email.bodyText, "Further reading");
+  if (frBlock !== null) {
+    const bulletLines = frBlock
+      .split("\n")
+      .filter((l) => BULLET_RE.test(l));
+    if (bulletLines.length < 2) {
+      issues.push(
+        `Further reading must have at least 2 bullet items; found ${bulletLines.length}`
+      );
+    }
+    let urlMissing = 0;
+    for (const line of bulletLines) {
+      if (!URL_IN_LINE_RE.test(line)) urlMissing += 1;
+    }
+    if (urlMissing > 0) {
+      issues.push(
+        `Further reading has ${urlMissing} bullet(s) without a URL`
+      );
+    }
+  }
+
   // Citations
   if (!email.citations || email.citations.length === 0) {
     issues.push("no citations supplied");
@@ -126,6 +174,34 @@ export function validateEmail(email: EmailToValidate): string[] {
   }
 
   return issues;
+}
+
+// Pull the body of a named section out of the plain-text email. Returns
+// everything from the heading line until the next blank-line-followed-by-
+// another-heading, or end of text.
+function extractSection(bodyText: string, heading: string): string | null {
+  const idx = bodyText.indexOf(heading);
+  if (idx < 0) return null;
+  const after = bodyText.slice(idx + heading.length);
+  // Find the next "header line" — a non-empty line that's followed by content
+  // and matches one of the known section headings.
+  const otherHeadings = [
+    "Today's focus",
+    "Action items",
+    "Watch-fors",
+    "Enrichment opportunity",
+    "Upcoming",
+    "Further reading",
+    "Source",
+  ].filter((h) => h !== heading);
+  const lines = after.split("\n");
+  const collected: string[] = [];
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i];
+    if (otherHeadings.some((h) => line.trim() === h)) break;
+    collected.push(line);
+  }
+  return collected.join("\n");
 }
 
 // Extract HTTP(S) URLs from a text body or html body.

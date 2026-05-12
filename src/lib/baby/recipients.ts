@@ -9,8 +9,8 @@ import { BABY_PARENT_EMAILS, BABY_REPLY_TO_EMAIL } from "./constants";
 //   things like bounce@ aliases).
 //
 // Examples:
-//   - Anushka emails just the agent → reply to Anushka only.
-//   - Anushka replies-all (To: agent + Noah) → reply to Anushka + Noah.
+//   - Anoushka emails just the agent → reply to Anoushka only.
+//   - Anoushka replies-all (To: agent + Noah) → reply to Anoushka + Noah.
 //   - Multiple inbound replies merged via debouncing → union of all
 //     senders/recipients.
 

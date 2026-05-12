@@ -215,7 +215,7 @@ function buildContextBlock(inputs: ClassifierInputs): string {
   return lines.join("\n");
 }
 
-const SYSTEM_PROLOGUE = `You are the inbound-reply agent for "Daily Baby" — a daily email service for Noah Shaw and Anushka Vaswani about their first child (a boy, due 2026-05-11). Your job is to read inbound replies from a parent, decide whether they need a response, and if so draft it. Never invent medical facts. Never violate the voice guide.`;
+const SYSTEM_PROLOGUE = `You are the inbound-reply agent for "Daily Baby" — a daily email service for Noah Shaw and Anoushka Vaswani about their first child (a boy, due 2026-05-11). Your job is to read inbound replies from a parent, decide whether they need a response, and if so draft it. Never invent medical facts. Never violate the voice guide.`;
 
 const SYSTEM_TASK = `## Your task
 

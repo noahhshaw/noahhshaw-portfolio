@@ -40,7 +40,7 @@ When any of those change for production days, re-run the pre-compute pipeline in
 
 ## Test mode
 
-For the initial validation pass, the agent generates 3 days (the first batch) and the gen-and-send script routes them to `noahhshaw@gmail.com` only (not Anushka). Once Noah confirms tone and format, the full year gets generated.
+For the initial validation pass, the agent generates 3 days (the first batch) and the gen-and-send script routes them to `noahhshaw@gmail.com` only (not Anoushka). Once Noah confirms tone and format, the full year gets generated.
 
 ## What's NOT here
 

@@ -16,7 +16,7 @@ Data-dense, warm, reassuring, executive-summary structure. The voice of an HBS-e
 ## Required register
 
 - **Lead with action, not preamble.** "Schedule the 2-month well visit this week" beats "It's an exciting time as your baby grows!"
-- **Cite.** Inline footnote-style. Renderer prints a "Source note" line at the bottom of each email.
+- **Cite externally.** Every fact, recommendation, or threshold must be supported by an inline link to a *trusted external authority* — CDC, AAP/HealthyChildren, NIH/PubMed, ACOG, peer-reviewed journals, well-recognized books. **Never paste KB file paths into the body** (e.g., `baby-kb/topics/sleep.md`). KB file paths are internal-only metadata and go in the `citations` array, never in `bodyText` or `bodyHtml`.
 - **Calibrate severity precisely.** Use the four-level flag set:
   - `[low concern]` — common, no action needed
   - `[monitor]` — watch and document
@@ -24,7 +24,15 @@ Data-dense, warm, reassuring, executive-summary structure. The voice of an HBS-e
   - `[call now]` — same-day call or 911/ER
 - **Quantify when possible.** "About 75% of babies roll back-to-tummy by 6 months" beats "your baby may be rolling soon."
 - **Name the tradeoff.** When experts disagree, present the disagreement. Do not pretend consensus where there isn't.
-- **Direct address, second person.** "You'll" / "Your pediatrician will" / "He'll" (the baby) — pick a pronoun and stay consistent within an email. Default to **he/him** for the baby (Noah and Anushka's child is a boy).
+- **Direct address, second person.** "You'll" / "Your pediatrician will" / "He'll" (the baby) — pick a pronoun and stay consistent within an email. Default to **he/him** for the baby.
+
+## Canonical names (binding spelling)
+
+Use exactly these spellings in every email:
+
+- **Avi** — the baby (he/him). Default pronoun.
+- **Noah** or **Noah Shaw** — the father.
+- **Anoushka** or **Anoushka Vaswani** — the mother. The validator flags the misspelling `Anushka` as a hard error.
 - **Outcome-oriented framing is welcome.** Cognitive enrichment, language exposure, music, reading, motor — present in terms of long-term competencies the parents care about: top schools, executive function, multilingualism, instrumental skill.
 
 ## Banned register
@@ -87,13 +95,21 @@ Next 14 days of calendar events. Pull from `calendars/*.json` plus parent-suppli
 - "Day 56 (Jul 6): 2-month well visit. Vaccines due: HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1."
 - "Day 60 (Jul 10): pediatrician will likely flag 4-month sleep regression as upcoming."
 
-### 6. Source note
-1–3 lines crediting the inline citations of today's content. Example:
-- "Today's milestones from CDC Learn the Signs (2022 revision); sleep training synthesis from Mindell et al., 2006 AASM review and Hiscock et al., 2008 RCT."
+### 6. Further reading
+A bullet list of **2–5 external resources** the parents can open to go deeper. Every bullet must contain a clickable URL. Acceptable resource types:
+
+- Authority pages on healthychildren.org, cdc.gov, aap.org, nih.gov, acog.org, who.int, edd.ca.gov, ssa.gov, healthcare.gov
+- Peer-reviewed papers on pubmed.ncbi.nlm.nih.gov or pmc.ncbi.nlm.nih.gov
+- Specific named books with an author and year (link to a stable bookseller/library page)
+- Reputable podcasts or video courses (link to the episode/course page)
+
+Format: `- {resource title} — {one-line takeaway}: {url}`
+
+Do NOT list `baby-kb/...` paths in this section. KB paths belong in the `citations` array only, which is internal metadata never shown to the recipient.
 
 ## Length
 
-Total email body: 250–500 words. The parents are time-constrained executives with a newborn. Anything longer goes unread.
+Total email body: 250–550 words (Further reading bullets included). The parents are time-constrained executives with a newborn. Anything longer goes unread.
 
 ## Repetition
 
@@ -102,14 +118,10 @@ Tired parents will not remember a single mention. The gen agent should restate h
 ## Validation
 
 After drafting each day, the agent runs:
-1. **Content validators** (`src/lib/baby/validators.ts`): subject format, banned register, emoji, exclamations, required sections, citations-point-at-baby-kb, length.
-2. **Link checker**: HTTP HEAD/GET on every URL in the body. Any non-2xx is reported.
+1. **Content validators** (`src/lib/baby/validators.ts`): subject format; banned register; banned canonical-name misspellings (`Anushka`); emoji; exclamations; required sections (Action items, Watch-fors, Further reading); length; Further reading bullet count + URL-per-bullet; no `baby-kb/` in body; `citations[]` entries point at `baby-kb/`.
+2. **Link checker**: HTTP HEAD/GET (browser User-Agent) on every URL in the body. Any non-2xx is reported.
 
 If any validator returns an issue, the agent re-drafts the email with the failure list as feedback and re-runs validation. Up to 3 attempts per day.
-
-## Links
-
-If the email references an authority (AAP, CDC, NIH), include the **canonical URL** to the relevant guideline page. The link checker will probe each URL; broken links block the email from being committed.
 
 ## When to break voice
 

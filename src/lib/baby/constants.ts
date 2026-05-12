@@ -4,16 +4,16 @@ export const BABY_PARENTS = {
     firstName: "Noah",
     role: "primary" as const,
   },
-  anushka: {
+  anoushka: {
     email: "vaswani.anoushka@gmail.com",
-    firstName: "Anushka",
+    firstName: "Anoushka",
     role: "partner" as const,
   },
 } as const;
 
 export const BABY_PARENT_EMAILS: readonly string[] = [
   BABY_PARENTS.noah.email,
-  BABY_PARENTS.anushka.email,
+  BABY_PARENTS.anoushka.email,
 ];
 
 export const BABY_FROM_EMAIL = "Daily Baby <daily-baby@noahhshaw.com>";

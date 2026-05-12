@@ -27,8 +27,8 @@ const DEFAULT_RECIPIENTS: Recipient[] = [
     receivesDailyEmail: true,
   },
   {
-    email: BABY_PARENTS.anushka.email,
-    firstName: BABY_PARENTS.anushka.firstName,
+    email: BABY_PARENTS.anoushka.email,
+    firstName: BABY_PARENTS.anoushka.firstName,
     role: "partner",
     receivesDailyEmail: true,
   },
