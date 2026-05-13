@@ -1,0 +1,2427 @@
+[
+  {
+    "id": "de-young",
+    "name": "de Young Museum",
+    "category": "art",
+    "subcategory": "Golden Gate Park",
+    "kind": "Museum",
+    "neighborhood": "Golden Gate Park",
+    "address": "50 Hagiwara Tea Garden Dr, San Francisco, CA 94118",
+    "coords": [
+      37.7715,
+      -122.4687
+    ],
+    "description": "Anchor of the city's fine-arts collection; the Hamon Tower observation level is one of the calmest views in the city.",
+    "why": "American painting, photography, and a Herzog & de Meuron building that's worth the visit on its own.",
+    "tags": [
+      "Closed Mondays"
+    ],
+    "website": "https://www.famsf.org/visit/de-young"
+  },
+  {
+    "id": "legion",
+    "name": "Legion of Honor",
+    "category": "art",
+    "subcategory": "Lincoln Park",
+    "kind": "Museum",
+    "neighborhood": "Lincoln Park",
+    "address": "100 34th Ave, San Francisco, CA 94121",
+    "coords": [
+      37.7841,
+      -122.5006
+    ],
+    "description": "Beaux-Arts pavilion above the Pacific with European masters and one of the world's great Rodin collections.",
+    "why": "The setting, the building, and the Rodin galleries — rare in any American museum.",
+    "tags": [
+      "Closed Mondays",
+      "The Etruscans through Sept 20"
+    ],
+    "website": "https://www.famsf.org/visit/legion-of-honor"
+  },
+  {
+    "id": "holocaust-memorial",
+    "name": "Holocaust Memorial",
+    "category": "art",
+    "subcategory": "Lincoln Park",
+    "kind": "Outdoor sculpture",
+    "neighborhood": "Lincoln Park",
+    "address": "Lincoln Park, San Francisco, CA 94121",
+    "coords": [
+      37.7838,
+      -122.5
+    ],
+    "description": "George Segal's white-painted bronze installation (1984) in a grove just outside the Legion of Honor.",
+    "why": "A quiet, piercing piece set on a hill above the bay — free, outdoors, and easily missed.",
+    "tags": [
+      "Free",
+      "Outdoors"
+    ],
+    "website": "https://en.wikipedia.org/wiki/Holocaust_Memorial_at_California_Palace_of_the_Legion_of_Honor"
+  },
+  {
+    "id": "sfmoma",
+    "name": "SFMOMA",
+    "category": "art",
+    "subcategory": "Yerba Buena",
+    "kind": "Museum",
+    "neighborhood": "Yerba Buena / SoMa",
+    "address": "151 3rd St, San Francisco, CA 94103",
+    "coords": [
+      37.7857,
+      -122.4011
+    ],
+    "description": "Seven floors of modern and contemporary art with one of the strongest photography wings on the West Coast.",
+    "why": "The Snøhetta expansion opened a building you want to wander, beyond what's on the walls.",
+    "tags": [
+      "Closed Tue & Wed"
+    ],
+    "website": "https://www.sfmoma.org/"
+  },
+  {
+    "id": "moad",
+    "name": "Museum of the African Diaspora",
+    "category": "art",
+    "subcategory": "Yerba Buena",
+    "kind": "Museum",
+    "neighborhood": "Yerba Buena / SoMa",
+    "address": "685 Mission St, San Francisco, CA 94105",
+    "coords": [
+      37.7858,
+      -122.4024
+    ],
+    "description": "Three floors of contemporary art of the African diaspora inside the St. Regis tower.",
+    "why": "Smaller and more focused than SFMOMA — easily absorbed in an hour.",
+    "tags": [
+      "Closed Mondays"
+    ],
+    "website": "https://www.moadsf.org/"
+  },
+  {
+    "id": "berggruen",
+    "name": "Berggruen Gallery",
+    "category": "art",
+    "subcategory": "Yerba Buena",
+    "kind": "Commercial gallery",
+    "neighborhood": "Yerba Buena / SoMa",
+    "address": "10 Hawthorne St, San Francisco, CA 94105",
+    "coords": [
+      37.7876,
+      -122.398
+    ],
+    "description": "Long-established SF gallery for modern and contemporary painting, around the corner from SFMOMA.",
+    "why": "Understated, well-lit, and a quiet final stop after a museum afternoon.",
+    "tags": [
+      "Weekday hours"
+    ],
+    "website": "https://berggruen.com/"
+  },
+  {
+    "id": "asian-art",
+    "name": "Asian Art Museum",
+    "category": "art",
+    "subcategory": "Civic Center",
+    "kind": "Museum",
+    "neighborhood": "Civic Center",
+    "address": "200 Larkin St, San Francisco, CA 94102",
+    "coords": [
+      37.7799,
+      -122.4163
+    ],
+    "description": "One of the largest Asian art collections in the West, in a Beaux-Arts library reworked by Gae Aulenti.",
+    "why": "Calm galleries at an unhurried scale, and rotating shows worth checking the calendar for.",
+    "tags": [
+      "Closed Tue & Wed",
+      "Late hours Thursdays"
+    ],
+    "website": "https://asianart.org/"
+  },
+  {
+    "id": "davies",
+    "name": "Davies Symphony Hall",
+    "category": "art",
+    "subcategory": "Civic Center",
+    "kind": "Concert hall",
+    "neighborhood": "Civic Center",
+    "address": "201 Van Ness Ave, San Francisco, CA 94102",
+    "coords": [
+      37.778,
+      -122.4202
+    ],
+    "description": "Home of the San Francisco Symphony — a purpose-built 1980 hall on Van Ness.",
+    "why": "Check the season for Mahler or Tchaikovsky with a guest conductor of the week.",
+    "tags": [
+      "Performance venue"
+    ],
+    "website": "https://www.sfsymphony.org/"
+  },
+  {
+    "id": "war-memorial",
+    "name": "War Memorial Opera House",
+    "category": "art",
+    "subcategory": "Civic Center",
+    "kind": "Opera & ballet",
+    "neighborhood": "Civic Center",
+    "address": "301 Van Ness Ave, San Francisco, CA 94102",
+    "coords": [
+      37.7787,
+      -122.4203
+    ],
+    "description": "Home of San Francisco Opera and San Francisco Ballet, in a 1932 Beaux-Arts hall.",
+    "why": "Dress up. Catch The Barber of Seville or whatever SF Ballet is mounting that month.",
+    "tags": [
+      "Performance venue"
+    ],
+    "website": "https://sfwarmemorial.org/"
+  },
+  {
+    "id": "sfjazz",
+    "name": "SFJAZZ Center",
+    "category": "art",
+    "subcategory": "Civic Center",
+    "kind": "Jazz hall",
+    "neighborhood": "Civic Center",
+    "address": "201 Franklin St, San Francisco, CA 94102",
+    "coords": [
+      37.777,
+      -122.4216
+    ],
+    "description": "Purpose-built jazz hall with a year-round calendar across two stages.",
+    "why": "Smaller, more intimate room than the symphony — and the booking is consistently great.",
+    "tags": [
+      "Performance venue"
+    ],
+    "website": "https://www.sfjazz.org/"
+  },
+  {
+    "id": "msp",
+    "name": "Minnesota Street Project",
+    "category": "art",
+    "subcategory": "Dogpatch",
+    "kind": "Gallery complex",
+    "neighborhood": "Dogpatch",
+    "address": "1275 Minnesota St, San Francisco, CA 94107",
+    "coords": [
+      37.7551,
+      -122.3932
+    ],
+    "description": "Purpose-built complex housing eleven contemporary galleries under one roof.",
+    "why": "An efficient survey of what San Francisco's commercial art scene is doing.",
+    "tags": [
+      "Tue–Sat, free"
+    ],
+    "website": "https://minnesotastreetproject.com/"
+  },
+  {
+    "id": "mcd",
+    "name": "Museum of Craft and Design",
+    "category": "art",
+    "subcategory": "Dogpatch",
+    "kind": "Museum",
+    "neighborhood": "Dogpatch",
+    "address": "2569 3rd St, San Francisco, CA 94107",
+    "coords": [
+      37.756,
+      -122.3884
+    ],
+    "description": "Small museum of contemporary craft, design, and material art — one floor, a few rooms.",
+    "why": "The scale is right for an after-coffee visit; one or two thoughtful shows at a time.",
+    "tags": [
+      "Closed Mon & Tue"
+    ],
+    "website": "https://sfmcd.org/"
+  },
+  {
+    "id": "grace",
+    "name": "Grace Cathedral",
+    "category": "art",
+    "subcategory": "Nob Hill / Chinatown",
+    "kind": "Cathedral",
+    "neighborhood": "Nob Hill",
+    "address": "1100 California St, San Francisco, CA 94108",
+    "coords": [
+      37.7918,
+      -122.4131
+    ],
+    "description": "Episcopal cathedral with a Ghiberti Gates of Paradise, a Keith Haring altarpiece, and two labyrinths.",
+    "why": "A cool, quiet interior on top of Nob Hill — built for slow walking and slow looking.",
+    "tags": [
+      "Open daily"
+    ],
+    "website": "https://gracecathedral.org/"
+  },
+  {
+    "id": "silverman",
+    "name": "Jessica Silverman",
+    "category": "art",
+    "subcategory": "Nob Hill / Chinatown",
+    "kind": "Commercial gallery",
+    "neighborhood": "Chinatown / FiDi border",
+    "address": "621 Grant Ave, San Francisco, CA 94108",
+    "coords": [
+      37.7919,
+      -122.4063
+    ],
+    "description": "Contemporary gallery with a strong roster of mid-career artists.",
+    "why": "Crisply curated — a short, satisfying visit.",
+    "tags": [
+      "Tue–Sat 10–6"
+    ],
+    "website": "https://jessicasilvermangallery.com/"
+  },
+  {
+    "id": "fraenkel",
+    "name": "Fraenkel Gallery",
+    "category": "art",
+    "subcategory": "Nob Hill / Chinatown",
+    "kind": "Photography gallery",
+    "neighborhood": "Union Square / 49 Geary",
+    "address": "49 Geary St #450, San Francisco, CA 94108",
+    "coords": [
+      37.7884,
+      -122.4047
+    ],
+    "description": "Canonical photography gallery — Arbus, Friedlander, Sugimoto, Fuss — in a building of a dozen galleries.",
+    "why": "If photography is of interest, Fraenkel is the West Coast destination.",
+    "tags": [
+      "Tue–Sat"
+    ],
+    "website": "https://fraenkelgallery.com/"
+  },
+  {
+    "id": "fort-mason",
+    "name": "Fort Mason Center for Arts & Culture",
+    "category": "art",
+    "subcategory": "Fort Mason",
+    "kind": "Arts campus",
+    "neighborhood": "Fort Mason",
+    "address": "2 Marina Blvd, San Francisco, CA 94123",
+    "coords": [
+      37.8062,
+      -122.4317
+    ],
+    "description": "Former military complex turned arts campus on the bay; home to FOR-SITE and rotating exhibitions.",
+    "why": "Bay views, a contemplative pace, and shows you won't see elsewhere.",
+    "tags": [
+      "Check current programming"
+    ],
+    "website": "https://fortmason.org/"
+  },
+  {
+    "id": "ferry-building",
+    "name": "Ferry Building",
+    "category": "art",
+    "subcategory": "Ferry Building & Sausalito",
+    "kind": "Marketplace & landmark",
+    "neighborhood": "Embarcadero",
+    "address": "1 Ferry Building, San Francisco, CA 94105",
+    "coords": [
+      37.7956,
+      -122.3933
+    ],
+    "description": "The restored 1898 ferry terminal — a public marketplace by day, civic landmark by all hours.",
+    "why": "Coffee, oysters, ceramics, books — the polished, walkable interior is the whole pleasure.",
+    "tags": [
+      "Daily 7am–10pm",
+      "Sat farmers' market"
+    ],
+    "website": "https://www.ferrybuildingmarketplace.com/"
+  },
+  {
+    "id": "sausalito-ferry",
+    "name": "Sausalito (the crossing)",
+    "category": "art",
+    "subcategory": "Ferry Building & Sausalito",
+    "kind": "Ferry crossing",
+    "neighborhood": "Ferry Building → Sausalito",
+    "address": "Sausalito Ferry Terminal, Sausalito, CA 94965",
+    "coords": [
+      37.859,
+      -122.4787
+    ],
+    "description": "A 25-minute Golden Gate Ferry crossing with full views of the bay and bridge — the ride is the experience.",
+    "why": "Brunch at the Ferry Building, ferry over, walk Bridgeway, return on a later sailing.",
+    "tags": [
+      "Limited sailings — check schedule"
+    ],
+    "website": "https://www.goldengate.org/ferry/route-schedule/sausalito-san-francisco/"
+  },
+  {
+    "id": "sca",
+    "name": "Sausalito Center for the Arts",
+    "category": "art",
+    "subcategory": "Ferry Building & Sausalito",
+    "kind": "Community arts center",
+    "neighborhood": "Sausalito",
+    "address": "750 Bridgeway, Sausalito, CA 94965",
+    "coords": [
+      37.859,
+      -122.4799
+    ],
+    "description": "Community arts center on Bridgeway with rotating juried exhibitions in painting, sculpture, and photography.",
+    "why": "Two blocks from the ferry landing — a quick, civilized stop on the Sausalito leg.",
+    "tags": [
+      "Check schedule before you cross"
+    ],
+    "website": "https://www.sausalitocenterforthearts.org/"
+  },
+  {
+    "id": "filoli",
+    "name": "Filoli",
+    "category": "art",
+    "subcategory": "Peninsula",
+    "kind": "Historic estate & gardens",
+    "neighborhood": "Woodside",
+    "address": "86 Cañada Rd, Woodside, CA 94062",
+    "coords": [
+      37.472,
+      -122.3128
+    ],
+    "description": "1917 Georgian-revival house and sixteen acres of Italianate gardens — sunken garden, knot garden, long pool.",
+    "why": "The most rewarding garden visit within reach of the city; bonsai exhibition through May.",
+    "tags": [
+      "Daily 10–5",
+      "Tickets in advance",
+      "~45 min drive"
+    ],
+    "website": "https://filoli.org/"
+  },
+  {
+    "id": "benu",
+    "name": "Benu",
+    "category": "eats",
+    "subcategory": "Fine Dining",
+    "kind": "Asian-leaning tasting menu",
+    "neighborhood": "SoMa",
+    "address": "22 Hawthorne St, San Francisco, CA 94105",
+    "coords": [
+      37.7876,
+      -122.399
+    ],
+    "description": "Corey Lee's pioneering tasting menu — Korean-Cantonese-American precision across ~20 courses.",
+    "why": "If you want one of the most ambitious meals in the country and you can plan months ahead.",
+    "tags": [
+      "Michelin ★★★",
+      "#17 Chronicle"
+    ],
+    "price": "$$$$",
+    "website": "https://www.benusf.com/"
+  },
+  {
+    "id": "saison",
+    "name": "Saison",
+    "category": "eats",
+    "subcategory": "Fine Dining",
+    "kind": "Wood-fire Californian tasting",
+    "neighborhood": "SoMa",
+    "address": "178 Townsend St, San Francisco, CA 94107",
+    "coords": [
+      37.7779,
+      -122.3919
+    ],
+    "description": "Open-hearth, ingredient-driven Californian tasting menu in a brick-walled former power station.",
+    "why": "For the ritual of cooking over live flame, taken to its absolute peak.",
+    "tags": [
+      "Michelin ★★"
+    ],
+    "price": "$$$$",
+    "website": "https://www.saisonsf.com/"
+  },
+  {
+    "id": "lazy-bear",
+    "name": "Lazy Bear",
+    "category": "eats",
+    "subcategory": "Fine Dining",
+    "kind": "Communal-table tasting",
+    "neighborhood": "Mission",
+    "address": "3416 19th St, San Francisco, CA 94110",
+    "coords": [
+      37.7607,
+      -122.4187
+    ],
+    "description": "Modern American tasting menu served around long communal tables — half dinner party, half theater.",
+    "why": "Going alone? You'll leave with new friends. Going with friends? You'll leave with new ones too.",
+    "tags": [
+      "Michelin ★★"
+    ],
+    "price": "$$$$",
+    "website": "https://www.lazybearsf.com/"
+  },
+  {
+    "id": "californios",
+    "name": "Californios",
+    "category": "eats",
+    "subcategory": "Fine Dining",
+    "kind": "Mexican fine dining tasting",
+    "neighborhood": "SoMa",
+    "address": "355 11th St, San Francisco, CA 94103",
+    "coords": [
+      37.7711,
+      -122.4128
+    ],
+    "description": "Val Cantú's elevated Mexican tasting menu, with heirloom corn masa milled in-house and Mexican wines.",
+    "why": "The most elegant case anywhere for what fine-dining Mexican cuisine can be.",
+    "tags": [
+      "Michelin ★★",
+      "#28 Chronicle"
+    ],
+    "price": "$$$$",
+    "website": "https://www.californiossf.com/"
+  },
+  {
+    "id": "nari",
+    "name": "Nari",
+    "category": "eats",
+    "subcategory": "Fine Dining",
+    "kind": "Modern Thai",
+    "neighborhood": "Japantown",
+    "address": "1625 Post St, San Francisco, CA 94115",
+    "coords": [
+      37.7847,
+      -122.4266
+    ],
+    "description": "Pim Techamuanvivit's California-seasoned Thai — laab with artichokes, massaman curry with cherries.",
+    "why": "Bold, fearless cooking in a sexy, plant-filled room — date-night without being precious.",
+    "tags": [
+      "Michelin ★★",
+      "#48 Chronicle"
+    ],
+    "price": "$$$",
+    "website": "https://narisf.com/"
+  },
+  {
+    "id": "acquerello",
+    "name": "Acquerello",
+    "category": "eats",
+    "subcategory": "Fine Dining",
+    "kind": "Refined Italian",
+    "neighborhood": "Nob Hill",
+    "address": "1722 Sacramento St, San Francisco, CA 94109",
+    "coords": [
+      37.7935,
+      -122.4214
+    ],
+    "description": "Suzette Gresham's white-tablecloth Italian — the famed black-truffle ridged pasta is its calling card.",
+    "why": "For the most polished, hushed Italian fine-dining experience in the city.",
+    "tags": [
+      "Michelin ★"
+    ],
+    "price": "$$$$",
+    "website": "https://www.acquerellosf.com/"
+  },
+  {
+    "id": "kin-khao",
+    "name": "Kin Khao",
+    "category": "eats",
+    "subcategory": "Thai / SE Asian",
+    "kind": "Thai",
+    "neighborhood": "Tenderloin",
+    "address": "55 Cyril Magnin St, San Francisco, CA 94102",
+    "coords": [
+      37.7858,
+      -122.4097
+    ],
+    "description": "Pim Techamuanvivit's first restaurant — fiery, herb-laden Thai using small Northern California producers.",
+    "why": "Crispy duck noodle soup, tamarind-glazed wings, and curries you'll think about for weeks.",
+    "tags": [
+      "Michelin ★"
+    ],
+    "price": "$$$",
+    "website": "https://www.kinkhao.com/"
+  },
+  {
+    "id": "state-bird-provisions",
+    "name": "State Bird Provisions",
+    "category": "eats",
+    "subcategory": "Californian",
+    "kind": "Dim-sum-style Californian",
+    "neighborhood": "Fillmore",
+    "address": "1529 Fillmore St, San Francisco, CA 94115",
+    "coords": [
+      37.7822,
+      -122.4324
+    ],
+    "description": "Servers wheel rotating carts of small plates referencing Asia, Mexico, Europe — pick what looks good.",
+    "why": "An anti-tasting-menu — the most fun way to eat ambitious food in San Francisco.",
+    "tags": [
+      "Michelin ★",
+      "#29 Chronicle",
+      "James Beard winner"
+    ],
+    "price": "$$$",
+    "website": "https://statebirdsf.com/"
+  },
+  {
+    "id": "mijote",
+    "name": "Mijoté",
+    "category": "eats",
+    "subcategory": "French",
+    "kind": "French-Cal bistro tasting",
+    "neighborhood": "Mission",
+    "address": "2400 Harrison St, San Francisco, CA 94110",
+    "coords": [
+      37.7585,
+      -122.4127
+    ],
+    "description": "Tiny bistro from a Japanese chef trained in Paris — four-course set menu, wild natural-wine list.",
+    "why": "Open Mondays, generously portioned, and unlike anything else in San Francisco.",
+    "tags": [
+      "#18 Chronicle"
+    ],
+    "price": "$$$",
+    "website": "https://www.mijote.com/"
+  },
+  {
+    "id": "zuni-cafe",
+    "name": "Zuni Café",
+    "category": "eats",
+    "subcategory": "Californian",
+    "kind": "Californian",
+    "neighborhood": "Hayes Valley",
+    "address": "1658 Market St, San Francisco, CA 94102",
+    "coords": [
+      37.7733,
+      -122.4216
+    ],
+    "description": "Roast chicken for two with bread salad, oysters at the copper bar — the city's most enduring icon.",
+    "why": "Order the chicken when you sit down — it takes an hour, and it's worth every minute.",
+    "tags": [
+      "#10 Chronicle",
+      "James Beard winner",
+      "SF institution"
+    ],
+    "price": "$$$",
+    "website": "https://zunicafe.com/"
+  },
+  {
+    "id": "rich-table",
+    "name": "Rich Table",
+    "category": "eats",
+    "subcategory": "Californian",
+    "kind": "Playful Californian",
+    "neighborhood": "Hayes Valley",
+    "address": "199 Gough St, San Francisco, CA 94102",
+    "coords": [
+      37.773,
+      -122.4221
+    ],
+    "description": "Sardine chips, porcini doughnuts, douglas-fir levain — Sarah and Evan Rich's craveable, signature menu.",
+    "why": "Service that knows what it's doing, food that makes you smile, ten years of consistency.",
+    "tags": [
+      "#3 Chronicle"
+    ],
+    "price": "$$$",
+    "website": "https://richtablesf.com/"
+  },
+  {
+    "id": "the-progress",
+    "name": "The Progress",
+    "category": "eats",
+    "subcategory": "Californian",
+    "kind": "Communal Californian",
+    "neighborhood": "Fillmore",
+    "address": "1525 Fillmore St, San Francisco, CA 94115",
+    "coords": [
+      37.7825,
+      -122.4324
+    ],
+    "description": "Family-style menu of shareable plates from State Bird's siblings — pick four, the kitchen sends everything.",
+    "why": "The choose-your-own-adventure format makes it perfect for groups of six.",
+    "tags": [
+      "#6 Chronicle"
+    ],
+    "price": "$$$",
+    "website": "https://theprogress-sf.com/"
+  },
+  {
+    "id": "outerlands",
+    "name": "Outerlands",
+    "category": "eats",
+    "subcategory": "Californian",
+    "kind": "Coastal Californian",
+    "neighborhood": "Outer Sunset",
+    "address": "4001 Judah St, San Francisco, CA 94122",
+    "coords": [
+      37.7611,
+      -122.5059
+    ],
+    "description": "Ocean Beach hideout serving sourdough, grilled-cheese-and-soup, and seasonal Cal cuisine.",
+    "why": "After a long beach walk, there is no better place to land for brunch or dinner.",
+    "tags": [
+      "Surf-and-fog institution"
+    ],
+    "price": "$$$",
+    "website": "https://www.outerlandssf.com/"
+  },
+  {
+    "id": "octavia",
+    "name": "Octavia",
+    "category": "eats",
+    "subcategory": "Californian",
+    "kind": "Refined Californian",
+    "neighborhood": "Pacific Heights",
+    "address": "1701 Octavia St, San Francisco, CA 94109",
+    "coords": [
+      37.7873,
+      -122.4263
+    ],
+    "description": "Melissa Perello's Pac Heights anchor — the city's best Cal cuisine done quietly and exactly right.",
+    "why": "Approachable refinement: deviled eggs, coastal halibut, cappelletti — every plate considered.",
+    "tags": [
+      "Melissa Perello"
+    ],
+    "price": "$$$",
+    "website": "https://www.octavia-sf.com/"
+  },
+  {
+    "id": "spruce",
+    "name": "Spruce",
+    "category": "eats",
+    "subcategory": "Californian",
+    "kind": "Cal cuisine + wine",
+    "neighborhood": "Presidio Heights",
+    "address": "3640 Sacramento St, San Francisco, CA 94118",
+    "coords": [
+      37.7875,
+      -122.453
+    ],
+    "description": "Polished Sacramento Street dining room with one of the city's most serious cellars and a famed burger.",
+    "why": "Old-world service, banquettes built for special occasions, a cellar built for collectors.",
+    "tags": [
+      "Michelin ★ history",
+      "Wine Spectator"
+    ],
+    "price": "$$$$",
+    "website": "https://www.sprucesf.com/"
+  },
+  {
+    "id": "cotogna",
+    "name": "Cotogna",
+    "category": "eats",
+    "subcategory": "Italian",
+    "kind": "Rustic wood-fire Italian",
+    "neighborhood": "Jackson Square",
+    "address": "490 Pacific Ave, San Francisco, CA 94133",
+    "coords": [
+      37.7973,
+      -122.4019
+    ],
+    "description": "Quince's casual sister: handmade pasta, the famed egg-yolk raviolo, focaccia di recco.",
+    "why": "More accessible than Quince, less edgy than Verjus — beloved by everyone.",
+    "tags": [
+      "#57 Chronicle"
+    ],
+    "price": "$$$",
+    "website": "https://cotognasf.com/"
+  },
+  {
+    "id": "flour-water",
+    "name": "Flour + Water",
+    "category": "eats",
+    "subcategory": "Italian",
+    "kind": "Handmade pasta",
+    "neighborhood": "Mission",
+    "address": "2401 Harrison St, San Francisco, CA 94110",
+    "coords": [
+      37.7585,
+      -122.4126
+    ],
+    "description": "Eighty-three pasta shapes a year — McNaughton and Pollnow's pasta-and-Neapolitan-pizza flagship.",
+    "why": "Splurge on the pasta tasting menu; it's one of the city's defining special-occasion meals.",
+    "tags": [
+      "#39 Chronicle"
+    ],
+    "price": "$$$",
+    "website": "https://flourandwater.com/"
+  },
+  {
+    "id": "penny-roma",
+    "name": "Penny Roma",
+    "category": "eats",
+    "subcategory": "Italian",
+    "kind": "Roman pasta",
+    "neighborhood": "Mission",
+    "address": "3000 20th St, San Francisco, CA 94110",
+    "coords": [
+      37.7593,
+      -122.4116
+    ],
+    "description": "Roman-leaning trattoria from the Flour + Water team — cacio e pepe, suppli, fritto misto.",
+    "why": "When you want all the F+W technique with the swagger of a Trastevere dinner.",
+    "tags": [
+      "Flour + Water family"
+    ],
+    "price": "$$$",
+    "website": "https://www.pennyromasf.com/"
+  },
+  {
+    "id": "delfina",
+    "name": "Delfina",
+    "category": "eats",
+    "subcategory": "Italian",
+    "kind": "Cal-Italian",
+    "neighborhood": "Mission",
+    "address": "3621 18th St, San Francisco, CA 94110",
+    "coords": [
+      37.7615,
+      -122.4255
+    ],
+    "description": "Twenty-six years of perfect spaghetti, grilled calamari over white beans, and marinated anchovies.",
+    "why": "The dictionary definition of al dente — the version of Italian everyone else copies.",
+    "tags": [
+      "#30 Chronicle",
+      "SF institution"
+    ],
+    "price": "$$$",
+    "website": "https://www.delfinasf.com/"
+  },
+  {
+    "id": "che-fico",
+    "name": "Che Fico",
+    "category": "eats",
+    "subcategory": "Italian",
+    "kind": "Roman-Cal Italian",
+    "neighborhood": "NoPa",
+    "address": "838 Divisadero St, San Francisco, CA 94117",
+    "coords": [
+      37.7765,
+      -122.4373
+    ],
+    "description": "Fragrant rotisserie meats and bright Italian-Jewish cooking under playful patterned wallpaper.",
+    "why": "Crowd-pleasing Italian that still surprises — the carciofi alla giudia is a must.",
+    "tags": [
+      "Michelin Selected"
+    ],
+    "price": "$$$",
+    "website": "https://chefico.com/"
+  },
+  {
+    "id": "spqr",
+    "name": "SPQR",
+    "category": "eats",
+    "subcategory": "Italian",
+    "kind": "Regional Italian",
+    "neighborhood": "Pacific Heights",
+    "address": "1911 Fillmore St, San Francisco, CA 94115",
+    "coords": [
+      37.7867,
+      -122.4348
+    ],
+    "description": "Pasta-driven menu rotating through Italy's regions, by chef Matthew Accarrino — refined, deeply technical.",
+    "why": "If pasta is your love language, SPQR speaks it more fluently than almost anyone.",
+    "tags": [
+      "Michelin Selected"
+    ],
+    "price": "$$$$",
+    "website": "https://www.spqrsf.com/"
+  },
+  {
+    "id": "a16",
+    "name": "A16",
+    "category": "eats",
+    "subcategory": "Italian",
+    "kind": "Southern Italian / Neapolitan",
+    "neighborhood": "Marina",
+    "address": "2355 Chestnut St, San Francisco, CA 94123",
+    "coords": [
+      37.8003,
+      -122.4404
+    ],
+    "description": "Naples-inspired pizza, ricotta gnudi, and burrata with a wine list deep on Campanian whites.",
+    "why": "Twenty years in and still the best Southern Italian in town.",
+    "tags": [
+      "Michelin Selected",
+      "Wine Spectator"
+    ],
+    "price": "$$$",
+    "website": "https://www.a16sf.com/"
+  },
+  {
+    "id": "original-joes",
+    "name": "Original Joe's",
+    "category": "eats",
+    "subcategory": "Italian",
+    "kind": "Italian-American",
+    "neighborhood": "North Beach",
+    "address": "601 Union St, San Francisco, CA 94133",
+    "coords": [
+      37.8004,
+      -122.4099
+    ],
+    "description": "Red leather booths, white-jacketed waiters, calf's liver and Joe's special — old-school Italian-American.",
+    "why": "Time-capsule SF. Order a martini, a cassata for dessert, and pretend it's 1947.",
+    "tags": [
+      "SF institution"
+    ],
+    "price": "$$",
+    "website": "https://originaljoes.com/"
+  },
+  {
+    "id": "piccino",
+    "name": "Piccino",
+    "category": "eats",
+    "subcategory": "Italian",
+    "kind": "Cal-Italian",
+    "neighborhood": "Dogpatch",
+    "address": "1001 Minnesota St, San Francisco, CA 94107",
+    "coords": [
+      37.7567,
+      -122.3897
+    ],
+    "description": "Sunny corner trattoria in a yellow Victorian — wood-fired pizza, antipasti, and vegetable-forward pasta.",
+    "why": "Wander Dogpatch's galleries, then land here for an unhurried lunch on the patio.",
+    "tags": [
+      "Neighborhood favorite"
+    ],
+    "price": "$$$",
+    "website": "https://www.piccinocafe.com/"
+  },
+  {
+    "id": "poesia",
+    "name": "Poesia",
+    "category": "eats",
+    "subcategory": "Italian",
+    "kind": "Calabrian Italian",
+    "neighborhood": "Castro",
+    "address": "4072 18th St, San Francisco, CA 94114",
+    "coords": [
+      37.7613,
+      -122.4358
+    ],
+    "description": "Warm Castro osteria serving authentic Calabrian-leaning regional Italian since 2008.",
+    "why": "A taste of southern Italy you won't find easily elsewhere in the city.",
+    "tags": [
+      "Calabrian regional cuisine"
+    ],
+    "price": "$$$",
+    "website": "https://poesiasf.com/"
+  },
+  {
+    "id": "roses-cafe",
+    "name": "Rose's Cafe",
+    "category": "eats",
+    "subcategory": "Italian",
+    "kind": "Cal-Italian",
+    "neighborhood": "Cow Hollow",
+    "address": "2298 Union St, San Francisco, CA 94123",
+    "coords": [
+      37.7975,
+      -122.4395
+    ],
+    "description": "All-day Cal-Italian café on Union — house-made pastas, breakfast pizzas, sidewalk seating.",
+    "why": "The best brunch in Cow Hollow, with a long, sun-soaked lunch built right in.",
+    "tags": [
+      "Neighborhood favorite"
+    ],
+    "price": "$$",
+    "website": "https://www.rosescafesf.com/"
+  },
+  {
+    "id": "tonys-pizza-napoletana",
+    "name": "Tony's Pizza Napoletana",
+    "category": "eats",
+    "subcategory": "Pizza",
+    "kind": "Pizza (every style)",
+    "neighborhood": "North Beach",
+    "address": "1570 Stockton St, San Francisco, CA 94133",
+    "coords": [
+      37.8,
+      -122.41
+    ],
+    "description": "Thirteen ovens, every regional pizza style done correctly, plus pasta and salads.",
+    "why": "The Margherita STG is one of only a few certified-Neapolitan pies in the country.",
+    "tags": [
+      "Tony Gemignani — multi-time pizza champion"
+    ],
+    "price": "$$",
+    "website": "https://tonyspizzanapoletana.com/"
+  },
+  {
+    "id": "del-popolo",
+    "name": "Del Popolo",
+    "category": "eats",
+    "subcategory": "Pizza",
+    "kind": "Wood-fired Neapolitan",
+    "neighborhood": "Tenderloin",
+    "address": "855 Bush St, San Francisco, CA 94108",
+    "coords": [
+      37.7896,
+      -122.4126
+    ],
+    "description": "Glass-walled wood oven, blistered Neapolitan pies, market-driven seasonal toppings.",
+    "why": "Some of the best Neapolitan pizza in the country, in a room you'll want to linger in.",
+    "tags": [
+      "Michelin Selected"
+    ],
+    "price": "$$",
+    "website": "https://www.delpopolosf.com/"
+  },
+  {
+    "id": "pizzeria-delfina",
+    "name": "Pizzeria Delfina",
+    "category": "eats",
+    "subcategory": "Pizza",
+    "kind": "Neapolitan-Cal pizza",
+    "neighborhood": "Mission / Pacific Heights",
+    "address": "3611 18th St, San Francisco, CA 94110",
+    "coords": [
+      37.7615,
+      -122.4256
+    ],
+    "description": "Thin, charred pies with serious toppings — broccoli rabe, fennel sausage, salt cod.",
+    "why": "The salumi pie with a glass of red is the easiest perfect dinner in town.",
+    "tags": [
+      "Delfina family"
+    ],
+    "price": "$$",
+    "website": "https://pizzeriadelfina.com/"
+  },
+  {
+    "id": "capos",
+    "name": "Capo's",
+    "category": "eats",
+    "subcategory": "Pizza",
+    "kind": "Chicago-style pizza",
+    "neighborhood": "North Beach",
+    "address": "641 Vallejo St, San Francisco, CA 94133",
+    "coords": [
+      37.7977,
+      -122.4078
+    ],
+    "description": "Sister to Tony's — deep-dish, tavern-style, and stuffed Chicago pies in a clubby red room.",
+    "why": "When you specifically need a deep-dish in a city of thin crusts.",
+    "tags": [
+      "Tony Gemignani"
+    ],
+    "price": "$$",
+    "website": "https://caposrestaurant.com/"
+  },
+  {
+    "id": "flour-water-pizzeria",
+    "name": "Flour + Water Pizzeria",
+    "category": "eats",
+    "subcategory": "Pizza",
+    "kind": "Wood-fired pizza",
+    "neighborhood": "Mission",
+    "address": "702 Valencia St, San Francisco, CA 94110",
+    "coords": [
+      37.7611,
+      -122.4216
+    ],
+    "description": "Casual Valencia pizza spinoff: Neapolitan and Detroit pies plus salads and pastas.",
+    "why": "Walk-in friendly, slice-shop fast, with the F+W team's pasta DNA in the dough.",
+    "tags": [
+      "Flour + Water family"
+    ],
+    "price": "$$",
+    "website": "https://flourandwaterpizzeria.com/"
+  },
+  {
+    "id": "galinette",
+    "name": "Galinette",
+    "category": "eats",
+    "subcategory": "French",
+    "kind": "Modern French",
+    "neighborhood": "Pacific Heights",
+    "address": "2101 Sutter St, San Francisco, CA 94115",
+    "coords": [
+      37.7854,
+      -122.4357
+    ],
+    "description": "Provençal-leaning seafood from the Petit Marlowe team — bouillabaisse, plateaux, sea urchin pasta.",
+    "why": "The polished French seafood spot San Francisco was missing.",
+    "tags": [
+      "Sea-leaning"
+    ],
+    "price": "$$$",
+    "website": "https://www.galinette-sf.com/"
+  },
+  {
+    "id": "le-marais-bakery",
+    "name": "Le Marais Bakery & Bistro",
+    "category": "eats",
+    "subcategory": "French",
+    "kind": "French bakery + bistro",
+    "neighborhood": "Castro / Polk",
+    "address": "498 Sanchez St, San Francisco, CA 94114",
+    "coords": [
+      37.7619,
+      -122.431
+    ],
+    "description": "Genuine French boulangerie + sidewalk bistro — kouign-amann, croque-monsieur, steak-frites.",
+    "why": "Brunch on the patio with a basket of pastries — the closest thing to a Paris café in SF.",
+    "tags": [
+      "French-trained baker"
+    ],
+    "price": "$$",
+    "website": "https://www.lemaraisbakery.com/"
+  },
+  {
+    "id": "frances",
+    "name": "Frances",
+    "category": "eats",
+    "subcategory": "Californian",
+    "kind": "Cal-American",
+    "neighborhood": "Castro",
+    "address": "3870 17th St, San Francisco, CA 94114",
+    "coords": [
+      37.7619,
+      -122.4338
+    ],
+    "description": "Melissa Perello's Castro original — a daily-changing menu of California ingredients in a warm room.",
+    "why": "Tiny dining room, white wines on tap by the ounce, cooking that has aged beautifully.",
+    "tags": [
+      "Michelin ★",
+      "Melissa Perello"
+    ],
+    "price": "$$$$",
+    "website": "https://www.frances-sf.com/"
+  },
+  {
+    "id": "chez-maman-east",
+    "name": "Chez Maman",
+    "category": "eats",
+    "subcategory": "French",
+    "kind": "French bistro",
+    "neighborhood": "Potrero Hill (also Hayes Valley)",
+    "address": "1401 18th St, San Francisco, CA 94107",
+    "coords": [
+      37.7625,
+      -122.3975
+    ],
+    "description": "Cozy bistro for moules-frites, croque-monsieurs, and crepes — counter seating around an open kitchen.",
+    "why": "Casual, candle-lit, and the kind of dinner that feels effortless on a weeknight.",
+    "tags": [
+      "Neighborhood institution"
+    ],
+    "price": "$$",
+    "website": "https://www.chezmamanrestos.com/"
+  },
+  {
+    "id": "robin",
+    "name": "Robin",
+    "category": "eats",
+    "subcategory": "Japanese",
+    "kind": "Sushi omakase",
+    "neighborhood": "Hayes Valley",
+    "address": "620 Gough St, San Francisco, CA 94102",
+    "coords": [
+      37.778,
+      -122.4226
+    ],
+    "description": "No-menu omakase in a stylish wood-paneled room — vinyl on the turntable, sake list to match.",
+    "why": "Fish flown in daily, paired with a pulse — the loosest, most fun omakase in town.",
+    "tags": [
+      "DJ-spun omakase"
+    ],
+    "price": "$$$$",
+    "website": "https://www.robinsanfrancisco.com/"
+  },
+  {
+    "id": "marufuku-ramen",
+    "name": "Marufuku Ramen",
+    "category": "eats",
+    "subcategory": "Japanese",
+    "kind": "Tonkotsu ramen",
+    "neighborhood": "Japantown",
+    "address": "1581 Webster St #235, San Francisco, CA 94115",
+    "coords": [
+      37.7849,
+      -122.431
+    ],
+    "description": "Creamy 20-hour Hakata-style tonkotsu broth and thin straight noodles — the bowl people line up for.",
+    "why": "The richest, most satisfying ramen in the city — worth the inevitable wait.",
+    "tags": [
+      "Hakata-style"
+    ],
+    "price": "$$",
+    "website": "https://marufukuramen.com/"
+  },
+  {
+    "id": "iza-ramen",
+    "name": "Iza Ramen",
+    "category": "eats",
+    "subcategory": "Japanese",
+    "kind": "Ramen + izakaya",
+    "neighborhood": "Lower Haight",
+    "address": "237 Fillmore St, San Francisco, CA 94117",
+    "coords": [
+      37.7726,
+      -122.4304
+    ],
+    "description": "Tightly run noodle bar — tonkotsu, miso, shoyu, plus killer izakaya snacks and shochu cocktails.",
+    "why": "When you want ramen plus a karaage and a highball, all in 45 minutes.",
+    "tags": [
+      "Lower Haight neighborhood"
+    ],
+    "price": "$$",
+    "website": "https://www.izaramen.com/"
+  },
+  {
+    "id": "hk-lounge-bistro",
+    "name": "HK Lounge Bistro",
+    "category": "eats",
+    "subcategory": "Chinese",
+    "kind": "Cantonese dim sum",
+    "neighborhood": "SoMa",
+    "address": "1136 Folsom St, San Francisco, CA 94103",
+    "coords": [
+      37.7757,
+      -122.4079
+    ],
+    "description": "Annie Ho's Hong Kong Lounge II reborn in SoMa — pristine har gow, chive dumplings, salted-egg buns.",
+    "why": "The best dim sum in the city, served with the warmth and care of a neighborhood restaurant.",
+    "tags": [
+      "#47 Chronicle"
+    ],
+    "price": "$$",
+    "website": "https://www.hongkonglounge2.com/"
+  },
+  {
+    "id": "rg-lounge",
+    "name": "R&G Lounge",
+    "category": "eats",
+    "subcategory": "Chinese",
+    "kind": "Cantonese",
+    "neighborhood": "Chinatown",
+    "address": "631 Kearny St, San Francisco, CA 94108",
+    "coords": [
+      37.7949,
+      -122.4042
+    ],
+    "description": "Salt-and-pepper crab is the dish that built the reputation — order it, plus the clay pot rice.",
+    "why": "A Chinatown institution that gets it right night after night.",
+    "tags": [
+      "Chinatown classic"
+    ],
+    "price": "$$",
+    "website": "https://rnglounge.com/"
+  },
+  {
+    "id": "china-live",
+    "name": "China Live",
+    "category": "eats",
+    "subcategory": "Chinese",
+    "kind": "Modern Chinese marketplace",
+    "neighborhood": "Chinatown",
+    "address": "644 Broadway, San Francisco, CA 94133",
+    "coords": [
+      37.7977,
+      -122.4071
+    ],
+    "description": "George Chen's three-floor showcase — open kitchens for Peking duck, dim sum, hot pot, dumplings.",
+    "why": "An interactive Chinese food experience that's part restaurant, part edible museum.",
+    "tags": [
+      "George Chen"
+    ],
+    "price": "$$$",
+    "website": "https://chinalivesf.com/"
+  },
+  {
+    "id": "mama-jis",
+    "name": "Mama Ji's",
+    "category": "eats",
+    "subcategory": "Chinese",
+    "kind": "Sichuan + Sichuan-dim sum",
+    "neighborhood": "Castro",
+    "address": "4416 18th St, San Francisco, CA 94114",
+    "coords": [
+      37.761,
+      -122.4378
+    ],
+    "description": "Tiny Castro spot for fiery mapo tofu, dan dan noodles, and rare home-style Sichuan dim sum.",
+    "why": "Spicy without being macho — actual Sichuan flavors at neighborhood prices.",
+    "tags": [
+      "Cult Sichuan"
+    ],
+    "price": "$$",
+    "website": "https://www.mamajis.com/"
+  },
+  {
+    "id": "dumpling-time",
+    "name": "Dumpling Time",
+    "category": "eats",
+    "subcategory": "Chinese",
+    "kind": "Pan-Asian dumplings",
+    "neighborhood": "SoMa",
+    "address": "11 Division St, San Francisco, CA 94103",
+    "coords": [
+      37.7691,
+      -122.4087
+    ],
+    "description": "Soup dumplings, pork buns, gyoza, and a giant XLB you eat with a straw — Asian dumplings, all of them.",
+    "why": "Lively, walk-in friendly, and the dumplings are genuinely excellent.",
+    "tags": [
+      "Cult favorite"
+    ],
+    "price": "$$",
+    "website": "https://www.dumplingtime.com/"
+  },
+  {
+    "id": "la-taqueria",
+    "name": "La Taqueria",
+    "category": "eats",
+    "subcategory": "Mexican / Latin",
+    "kind": "Mission burritos / tacos",
+    "neighborhood": "Mission",
+    "address": "2889 Mission St, San Francisco, CA 94110",
+    "coords": [
+      37.7508,
+      -122.418
+    ],
+    "description": "Charred carne asada, no rice — the quietly perfect Mission burrito, ordered dorado (seared).",
+    "why": "Decades-long debate winner. Order the burrito with everything, dorado, with avocado.",
+    "tags": [
+      "#59 Chronicle",
+      "James Beard America's Classic"
+    ],
+    "price": "$",
+    "website": "https://lataqueriasf.net/"
+  },
+  {
+    "id": "el-farolito",
+    "name": "El Farolito",
+    "category": "eats",
+    "subcategory": "Mexican / Latin",
+    "kind": "Late-night burritos",
+    "neighborhood": "Mission",
+    "address": "2779 Mission St, San Francisco, CA 94110",
+    "coords": [
+      37.753,
+      -122.418
+    ],
+    "description": "Massive, cheap, made-to-order burritos open until 2:30 a.m. — al pastor and shrimp are the moves.",
+    "why": "The post-bar burrito, but also a perfectly fine lunch.",
+    "tags": [
+      "Late-night legend"
+    ],
+    "price": "$",
+    "website": "https://elfarolitoinc.com/"
+  },
+  {
+    "id": "nopalito",
+    "name": "Nopalito",
+    "category": "eats",
+    "subcategory": "Mexican / Latin",
+    "kind": "Regional Mexican",
+    "neighborhood": "NoPa / Inner Sunset",
+    "address": "306 Broderick St, San Francisco, CA 94117",
+    "coords": [
+      37.7752,
+      -122.4399
+    ],
+    "description": "Bay Area-organic regional Mexican from the Nopa team — masa pressed in-house, mole, carnitas.",
+    "why": "Refined Mexican that doesn't try to be fancy, just deeply done well.",
+    "tags": [
+      "Sustainable / certified organic"
+    ],
+    "price": "$$",
+    "website": "https://www.nopalitosf.com/"
+  },
+  {
+    "id": "coqueta",
+    "name": "Coqueta",
+    "category": "eats",
+    "subcategory": "Mexican / Latin",
+    "kind": "Spanish tapas",
+    "neighborhood": "Embarcadero",
+    "address": "Pier 5, The Embarcadero, San Francisco, CA 94111",
+    "coords": [
+      37.7969,
+      -122.3936
+    ],
+    "description": "Waterfront pintxos and paella, with bay views and a serious sherry list.",
+    "why": "Sit on the patio at dusk with a glass of cava and a plate of jamón — pure SF.",
+    "tags": [
+      "Michael Chiarello legacy"
+    ],
+    "price": "$$$",
+    "website": "https://www.coquetasf.com/"
+  },
+  {
+    "id": "turtle-tower",
+    "name": "Turtle Tower",
+    "category": "eats",
+    "subcategory": "Vietnamese",
+    "kind": "Northern pho",
+    "neighborhood": "Tenderloin / Larkin",
+    "address": "501 Jones St, San Francisco, CA 94102",
+    "coords": [
+      37.7864,
+      -122.4128
+    ],
+    "description": "Northern (Hanoi) pho with wide rice noodles and clear, ginger-forward chicken broth.",
+    "why": "If your idea of pho is the cilantro-bean-sprout version, this will gently rewrite it.",
+    "tags": [
+      "Hanoi-style"
+    ],
+    "price": "$",
+    "website": "https://turtletowersf.com/"
+  },
+  {
+    "id": "lers-ros",
+    "name": "Lers Ros",
+    "category": "eats",
+    "subcategory": "Thai / SE Asian",
+    "kind": "Thai",
+    "neighborhood": "Hayes Valley / Tenderloin",
+    "address": "307 Hayes St, San Francisco, CA 94102",
+    "coords": [
+      37.777,
+      -122.4233
+    ],
+    "description": "Pages-long menu of regional Thai, including the harder-to-find dishes — boar, frog, herb-heavy salads.",
+    "why": "Open until 1 a.m. and willing to bring the heat when you ask — the city's most reliable Thai.",
+    "tags": [
+      "Thai classic"
+    ],
+    "price": "$$",
+    "website": "https://lersros.com/"
+  },
+  {
+    "id": "farmhouse-thai",
+    "name": "Farmhouse Kitchen Thai",
+    "category": "eats",
+    "subcategory": "Thai / SE Asian",
+    "kind": "Thai",
+    "neighborhood": "Mission",
+    "address": "710 Florida St, San Francisco, CA 94110",
+    "coords": [
+      37.7592,
+      -122.4111
+    ],
+    "description": "Bright, modern Thai with Instagram-friendly cocktails and standout massaman curry and khao soi.",
+    "why": "Group dinner heaven — flavorful, photogenic, and never overrun.",
+    "tags": [
+      "Michelin Bib Gourmand"
+    ],
+    "price": "$$",
+    "website": "https://farmhousekitchenthai.com/"
+  },
+  {
+    "id": "hawker-fare",
+    "name": "Hawker Fare",
+    "category": "eats",
+    "subcategory": "Thai / SE Asian",
+    "kind": "Lao / Northern Thai",
+    "neighborhood": "Mission",
+    "address": "680 Valencia St, San Francisco, CA 94110",
+    "coords": [
+      37.7616,
+      -122.4214
+    ],
+    "description": "James Syhabout's Lao-Isan rice plates — papaya salad, larb, sticky rice, jeow dipping sauces.",
+    "why": "An education in Lao food, served casually and without fuss.",
+    "tags": [
+      "James Syhabout"
+    ],
+    "price": "$$",
+    "website": "https://www.hawkerfare.com/"
+  },
+  {
+    "id": "burma-superstar",
+    "name": "Burma Superstar",
+    "category": "eats",
+    "subcategory": "Thai / SE Asian",
+    "kind": "Burmese",
+    "neighborhood": "Inner Richmond",
+    "address": "309 Clement St, San Francisco, CA 94118",
+    "coords": [
+      37.7826,
+      -122.4598
+    ],
+    "description": "The tea-leaf salad that started a Bay Area Burmese craze — plus samusa soup and rainbow salad.",
+    "why": "If you've never had Burmese food, start here. If you have, you already know.",
+    "tags": [
+      "SF favorite since 1992"
+    ],
+    "price": "$$",
+    "website": "https://www.burmasuperstar.com/"
+  },
+  {
+    "id": "burma-love",
+    "name": "Burma Love",
+    "category": "eats",
+    "subcategory": "Thai / SE Asian",
+    "kind": "Burmese",
+    "neighborhood": "Mission",
+    "address": "211 Valencia St, San Francisco, CA 94103",
+    "coords": [
+      37.7681,
+      -122.422
+    ],
+    "description": "Sister to Burma Superstar, brighter dining room — same tea leaf salad, same rich curries.",
+    "why": "All the Burma Superstar greatest hits with a more polished setting and easier reservations.",
+    "tags": [
+      "Burma Superstar family"
+    ],
+    "price": "$$",
+    "website": "https://burmalove.com/"
+  },
+  {
+    "id": "copra",
+    "name": "Copra",
+    "category": "eats",
+    "subcategory": "Indian",
+    "kind": "Coastal South Indian",
+    "neighborhood": "Fillmore",
+    "address": "1700 Fillmore St, San Francisco, CA 94115",
+    "coords": [
+      37.7843,
+      -122.4326
+    ],
+    "description": "Srijith Gopinathan's coastal South Indian — extravagant chutney platters, banana-leaf cod, rasam puri.",
+    "why": "The most exhilarating Indian restaurant in the country right now, in a stunning room.",
+    "tags": [
+      "#7 Chronicle",
+      "Michelin Selected"
+    ],
+    "price": "$$$",
+    "website": "https://www.coprarestaurant.com/"
+  },
+  {
+    "id": "tiya",
+    "name": "Tiya",
+    "category": "eats",
+    "subcategory": "Indian",
+    "kind": "Modern Indian",
+    "neighborhood": "Marina",
+    "address": "3213 Scott St, San Francisco, CA 94123",
+    "coords": [
+      37.8016,
+      -122.4407
+    ],
+    "description": "Modern New Indian by chefs Sujan and Pujan Sarkar — Indian flavors with California's seasonal bounty.",
+    "why": "Bold, creative, beautifully plated Indian — try the tasting menu for the full picture.",
+    "tags": [
+      "Michelin Selected",
+      "Sarkar brothers"
+    ],
+    "price": "$$$",
+    "website": "https://www.tiyasf.com/"
+  },
+  {
+    "id": "amber-india",
+    "name": "Amber India",
+    "category": "eats",
+    "subcategory": "Indian",
+    "kind": "Modern Indian",
+    "neighborhood": "SoMa / Yerba Buena",
+    "address": "25 Yerba Buena Ln, San Francisco, CA 94103",
+    "coords": [
+      37.7849,
+      -122.4032
+    ],
+    "description": "Spacious modern Indian with sandstone latticework — butter chicken, biryanis, naan from the tandoor.",
+    "why": "The polished Indian destination near downtown — great for a pre-show meal.",
+    "tags": [
+      "Three-story dining room"
+    ],
+    "price": "$$$",
+    "website": "https://www.amber-india.com/"
+  },
+  {
+    "id": "daeho",
+    "name": "Daeho Kalbijjim & Beef Soup",
+    "category": "eats",
+    "subcategory": "Korean",
+    "kind": "Korean galbijjim",
+    "neighborhood": "Japantown",
+    "address": "1620 Post St, San Francisco, CA 94115",
+    "coords": [
+      37.7848,
+      -122.4297
+    ],
+    "description": "The iconic short-rib galbijjim — braised, cheese-blanketed, served at long communal tables.",
+    "why": "Loud, fun, fortifying — the city's go-to Korean comfort meal in a group of 4+.",
+    "tags": [
+      "Cult galbijjim"
+    ],
+    "price": "$$",
+    "website": "https://daehosf.com/"
+  },
+  {
+    "id": "aziza",
+    "name": "Aziza",
+    "category": "eats",
+    "subcategory": "Mediterranean",
+    "kind": "Moroccan",
+    "neighborhood": "Outer Richmond",
+    "address": "5800 Geary Blvd, San Francisco, CA 94121",
+    "coords": [
+      37.7805,
+      -122.4811
+    ],
+    "description": "Mourad Lahlou's quietly remarkable Moroccan — basteeya, lamb tagine, the famous Moroccan pancakes.",
+    "why": "Twenty years on Geary, still one of the most singular dining rooms in the city.",
+    "tags": [
+      "#14 Chronicle",
+      "James Beard winner"
+    ],
+    "price": "$$",
+    "website": "https://aziza-sf.com/"
+  },
+  {
+    "id": "kokkari",
+    "name": "Kokkari Estiatorio",
+    "category": "eats",
+    "subcategory": "Mediterranean",
+    "kind": "Greek",
+    "neighborhood": "Jackson Square",
+    "address": "200 Jackson St, San Francisco, CA 94111",
+    "coords": [
+      37.7965,
+      -122.3998
+    ],
+    "description": "Whole roasted lamb, charcoal-grilled fish, hand-stretched filo — taverna grandeur in Jackson Square.",
+    "why": "The spit-roast lamb is one of the great main courses in San Francisco.",
+    "tags": [
+      "SF Greek standard-bearer"
+    ],
+    "price": "$$$$",
+    "website": "https://kokkari.com/"
+  },
+  {
+    "id": "dalida",
+    "name": "Dalida",
+    "category": "eats",
+    "subcategory": "Mediterranean",
+    "kind": "Eastern Mediterranean",
+    "neighborhood": "Presidio (Tunnel Tops)",
+    "address": "101 Montgomery St #100, San Francisco, CA 94129",
+    "coords": [
+      37.7997,
+      -122.4567
+    ],
+    "description": "Turkish, Greek, and Lebanese flavors in a brick-walled landmark — labneh, kebabs, tahdig with trout roe.",
+    "why": "One of the most beautiful new dining rooms in SF, pointed at the Parade Lawn.",
+    "tags": [
+      "Indoor / outdoor Presidio setting"
+    ],
+    "price": "$$$",
+    "website": "https://www.dalidasf.com/"
+  },
+  {
+    "id": "milos-meze",
+    "name": "Milos Meze",
+    "category": "eats",
+    "subcategory": "Mediterranean",
+    "kind": "Greek",
+    "neighborhood": "Marina",
+    "address": "2030 Lombard St, San Francisco, CA 94123",
+    "coords": [
+      37.7995,
+      -122.4344
+    ],
+    "description": "Family-run Marina Greek — oregano lamb chops, bubbling saganaki, the city's best souvlaki.",
+    "why": "Modest room, no pretension, food worth driving across town for.",
+    "tags": [
+      "Family-run"
+    ],
+    "price": "$$",
+    "website": "https://www.milosmezesf.com/"
+  },
+  {
+    "id": "lokma",
+    "name": "Lokma",
+    "category": "eats",
+    "subcategory": "Mediterranean",
+    "kind": "Turkish-Mediterranean",
+    "neighborhood": "Inner Richmond",
+    "address": "1801 Clement St, San Francisco, CA 94121",
+    "coords": [
+      37.7826,
+      -122.476
+    ],
+    "description": "Bright Turkish-influenced all-day spot — sucuk-and-eggs, simit, mezze, lamb kofte.",
+    "why": "Brunch or dinner, the menu always over-delivers for the price.",
+    "tags": [
+      "All-day favorite"
+    ],
+    "price": "$$",
+    "website": "https://www.lokma-sf.com/"
+  },
+  {
+    "id": "senor-sisig",
+    "name": "Señor Sisig",
+    "category": "eats",
+    "subcategory": "Filipino",
+    "kind": "Filipino-Mexican",
+    "neighborhood": "Mission / Ferry Building",
+    "address": "990 Valencia St, San Francisco, CA 94110",
+    "coords": [
+      37.7569,
+      -122.4214
+    ],
+    "description": "Sisig burritos, tacos, and rice bowls — the truck-turned-empire that everyone in SF has tried.",
+    "why": "Comfort food crossover that genuinely works — get the tofu sisig if you don't eat pork.",
+    "tags": [
+      "Cult truck-to-storefront"
+    ],
+    "price": "$",
+    "website": "https://senorsisig.com/"
+  },
+  {
+    "id": "limon",
+    "name": "Limón",
+    "category": "eats",
+    "subcategory": "Peruvian",
+    "kind": "Peruvian",
+    "neighborhood": "Mission",
+    "address": "1001 S Van Ness Ave, San Francisco, CA 94110",
+    "coords": [
+      37.7567,
+      -122.417
+    ],
+    "description": "Ceviches, lomo saltado, anticuchos — twenty years of bright, briny Peruvian classics.",
+    "why": "A rotisserie chicken and a pisco sour is the dinner deal of the Mission.",
+    "tags": [
+      "SF Peruvian institution"
+    ],
+    "price": "$$",
+    "website": "https://www.limon-sf.com/"
+  },
+  {
+    "id": "hog-island-oyster",
+    "name": "Hog Island Oyster Co.",
+    "category": "eats",
+    "subcategory": "Seafood",
+    "kind": "Oysters / seafood",
+    "neighborhood": "Ferry Building",
+    "address": "1 Ferry Building #11, San Francisco, CA 94111",
+    "coords": [
+      37.7956,
+      -122.3933
+    ],
+    "description": "Briny Tomales Bay oysters at the Ferry Building, plus chowder and the famed grilled cheese.",
+    "why": "Sit at the bar facing the water with a dozen Sweetwaters — pure California.",
+    "tags": [
+      "Tomales Bay oyster farm"
+    ],
+    "price": "$$$",
+    "website": "https://hogislandoysters.com/"
+  },
+  {
+    "id": "woodhouse-fish",
+    "name": "Woodhouse Fish Co.",
+    "category": "eats",
+    "subcategory": "Seafood",
+    "kind": "Casual seafood",
+    "neighborhood": "Castro / Marina",
+    "address": "2073 Market St, San Francisco, CA 94114",
+    "coords": [
+      37.7693,
+      -122.4283
+    ],
+    "description": "New England-style fish shack — lobster rolls, oysters, fried clams, ice-cold beer.",
+    "why": "When you want a lobster roll on a Tuesday and don't want to fly to Maine.",
+    "tags": [
+      "Neighborhood fish house"
+    ],
+    "price": "$$",
+    "website": "https://woodhousefish.com/"
+  },
+  {
+    "id": "house-of-prime-rib",
+    "name": "House of Prime Rib",
+    "category": "eats",
+    "subcategory": "Steakhouse",
+    "kind": "Prime rib",
+    "neighborhood": "Van Ness",
+    "address": "1906 Van Ness Ave, San Francisco, CA 94109",
+    "coords": [
+      37.7937,
+      -122.4218
+    ],
+    "description": "Carved-tableside prime rib from gleaming silver carts — the only main course on the menu.",
+    "why": "The hardest reservation in San Francisco and worth every minute of the wait.",
+    "tags": [
+      "#87 Chronicle",
+      "SF institution since 1949"
+    ],
+    "price": "$$$",
+    "website": "https://www.houseofprimerib.net/"
+  },
+  {
+    "id": "schroeders",
+    "name": "Schroeder's",
+    "category": "eats",
+    "subcategory": "Steakhouse",
+    "kind": "German-American",
+    "neighborhood": "Financial District",
+    "address": "240 Front St, San Francisco, CA 94111",
+    "coords": [
+      37.7949,
+      -122.3989
+    ],
+    "description": "Wiener schnitzel, sauerbraten, liter steins — SF's oldest German beer hall, refreshed.",
+    "why": "Lederhosen-optional. The pretzel and a stein at happy hour is exactly what FiDi was missing.",
+    "tags": [
+      "SF institution since 1893"
+    ],
+    "price": "$$",
+    "website": "https://schroederssf.com/"
+  },
+  {
+    "id": "tartine-bakery",
+    "name": "Tartine Bakery",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "Bakery",
+    "neighborhood": "Mission",
+    "address": "600 Guerrero St, San Francisco, CA 94110",
+    "coords": [
+      37.7615,
+      -122.4242
+    ],
+    "description": "Country bread, morning buns, frangipane croissants — the bakery that taught a generation about bread.",
+    "why": "Stand in line for the morning bun. Stand in line again for the country bread at 4:30 p.m.",
+    "tags": [
+      "James Beard winner",
+      "City-defining bakery"
+    ],
+    "price": "$",
+    "website": "https://tartinebakery.com/"
+  },
+  {
+    "id": "tartine-manufactory",
+    "name": "Tartine Manufactory",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "Bakery + restaurant",
+    "neighborhood": "Mission",
+    "address": "595 Alabama St, San Francisco, CA 94110",
+    "coords": [
+      37.7647,
+      -122.4117
+    ],
+    "description": "Bigger Tartine sibling — full menu of sandwiches, bowls, and pastries plus an in-house ice cream bar.",
+    "why": "When you want Tartine the bakery and Tartine the restaurant in one stop.",
+    "tags": [
+      "All-day"
+    ],
+    "price": "$$",
+    "website": "https://tartinebakery.com/manufactory"
+  },
+  {
+    "id": "arsicault",
+    "name": "Arsicault Bakery",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "French bakery",
+    "neighborhood": "Inner Richmond",
+    "address": "397 Arguello Blvd, San Francisco, CA 94118",
+    "coords": [
+      37.7822,
+      -122.4587
+    ],
+    "description": "Outer Richmond's small French bakery turning out arguably the country's best croissants.",
+    "why": "Get there before 11 a.m. or risk being out of luck.",
+    "tags": [
+      "Bon Appétit Best New Bakery"
+    ],
+    "price": "$",
+    "website": "https://www.arsicault-bakery.com/"
+  },
+  {
+    "id": "b-patisserie",
+    "name": "b. patisserie",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "French patisserie",
+    "neighborhood": "Pacific Heights",
+    "address": "2821 California St, San Francisco, CA 94115",
+    "coords": [
+      37.7878,
+      -122.44
+    ],
+    "description": "Belinda Leong's pastry temple — kouign-amann, canelés, and sablé tarts that disappear by noon.",
+    "why": "The kouign-amann is the city's standard. Pair with an espresso, sit in the window.",
+    "tags": [
+      "Belinda Leong"
+    ],
+    "price": "$",
+    "website": "https://bpatisserie.com/"
+  },
+  {
+    "id": "neighbor-bakehouse",
+    "name": "Neighbor Bakehouse",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "Bakery",
+    "neighborhood": "Dogpatch",
+    "address": "2343 3rd St, San Francisco, CA 94107",
+    "coords": [
+      37.7587,
+      -122.3895
+    ],
+    "description": "Laminated dough at every angle — everything croissants, kouign-amann, focaccia, sourdough.",
+    "why": "If laminated pastry is its own art form, Neighbor is the museum.",
+    "tags": [
+      "Pastry destination"
+    ],
+    "price": "$",
+    "website": "https://www.neighborsf.com/"
+  },
+  {
+    "id": "jane-the-bakery",
+    "name": "Jane the Bakery",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "Sourdough + café",
+    "neighborhood": "Pacific Heights / Fillmore",
+    "address": "1881 Geary Blvd, San Francisco, CA 94115",
+    "coords": [
+      37.7846,
+      -122.4344
+    ],
+    "description": "Sourdough miches, scones, breakfast pizzas, plus all-day café fare and coffee.",
+    "why": "Bread you'd be proud to bring to a dinner party — and a perfect breakfast counter.",
+    "tags": [
+      "Sourdough specialist"
+    ],
+    "price": "$",
+    "website": "https://janethebakery.com/"
+  },
+  {
+    "id": "boulettes-larder",
+    "name": "Boulettes Larder",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "Café + provisions",
+    "neighborhood": "Ferry Building",
+    "address": "Ferry Building #48, San Francisco, CA 94111",
+    "coords": [
+      37.7956,
+      -122.3933
+    ],
+    "description": "Counter-style breakfast and lunch beside the Ferry Building's open kitchen — soulful Cal food.",
+    "why": "Watch them cook your eggs at the marble counter; bay window seating is the bonus.",
+    "tags": [
+      "Open-kitchen counter"
+    ],
+    "price": "$$",
+    "website": "https://bouletteslarder.com/"
+  },
+  {
+    "id": "dandelion-chocolate",
+    "name": "Dandelion Chocolate",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "Chocolate factory + café",
+    "neighborhood": "Mission",
+    "address": "740 Valencia St, San Francisco, CA 94110",
+    "coords": [
+      37.7607,
+      -122.4217
+    ],
+    "description": "Bean-to-bar chocolate factory — single-origin bars, hot chocolate, brownies, the chocolate panini.",
+    "why": "The Mission Hot Chocolate (75% Madagascar) is one of the best things you'll drink all year.",
+    "tags": [
+      "Bean-to-bar"
+    ],
+    "price": "$$",
+    "website": "https://www.dandelionchocolate.com/"
+  },
+  {
+    "id": "saint-frank",
+    "name": "Saint Frank Coffee",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "Coffee bar",
+    "neighborhood": "Russian Hill",
+    "address": "2340 Polk St, San Francisco, CA 94109",
+    "coords": [
+      37.7976,
+      -122.4226
+    ],
+    "description": "Bright, minimalist Russian Hill flagship — direct-trade beans, perfect espresso, Friends-team pastries.",
+    "why": "The cleanest, most precise espresso program in San Francisco.",
+    "tags": [
+      "Direct-trade"
+    ],
+    "price": "$",
+    "website": "https://saintfrankcoffee.com/"
+  },
+  {
+    "id": "sightglass",
+    "name": "Sightglass Coffee",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "Coffee roaster + café",
+    "neighborhood": "SoMa / Mission",
+    "address": "270 7th St, San Francisco, CA 94103",
+    "coords": [
+      37.7773,
+      -122.4081
+    ],
+    "description": "Industrial SoMa flagship with a mezzanine — long bar, deep roast program, cult cold brew.",
+    "why": "A weekend-morning espresso destination that still feels like a working roaster.",
+    "tags": [
+      "SF roaster"
+    ],
+    "price": "$",
+    "website": "https://sightglasscoffee.com/"
+  },
+  {
+    "id": "ritual",
+    "name": "Ritual Coffee",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "Coffee roaster",
+    "neighborhood": "Mission",
+    "address": "1026 Valencia St, San Francisco, CA 94110",
+    "coords": [
+      37.7565,
+      -122.4214
+    ],
+    "description": "The Valencia Street original — bright, fruity coffees and a daily-changing single-origin lineup.",
+    "why": "If you only go to one third-wave shop in SF, make it Ritual.",
+    "tags": [
+      "SF third-wave pioneer"
+    ],
+    "price": "$",
+    "website": "https://ritualcoffee.com/"
+  },
+  {
+    "id": "juniper",
+    "name": "Juniper",
+    "category": "eats",
+    "subcategory": "Bakery / Coffee",
+    "kind": "French bakery + café",
+    "neighborhood": "Polk",
+    "address": "1401 Polk St, San Francisco, CA 94109",
+    "coords": [
+      37.7894,
+      -122.4201
+    ],
+    "description": "Saint Frank's bakery sister — viennoiserie, matcha lattes, and the croissant that won SF's best.",
+    "why": "The most beautiful breakfast pastries in the city, if you can find seats.",
+    "tags": [
+      "Saint Frank team"
+    ],
+    "price": "$",
+    "website": "https://www.juniper.cafe/"
+  },
+  {
+    "id": "plow",
+    "name": "Plow",
+    "category": "eats",
+    "subcategory": "Brunch",
+    "kind": "Breakfast",
+    "neighborhood": "Potrero Hill",
+    "address": "1299 18th St, San Francisco, CA 94107",
+    "coords": [
+      37.7625,
+      -122.3962
+    ],
+    "description": "Lemon-ricotta pancakes, the legendary Plow potatoes, and Hong-Kong-style toast.",
+    "why": "Worth the wait — go early on a Saturday or accept your fate.",
+    "tags": [
+      "Brunch institution"
+    ],
+    "price": "$$",
+    "website": "https://www.eatatplow.com/"
+  },
+  {
+    "id": "sweet-maple",
+    "name": "Sweet Maple",
+    "category": "eats",
+    "subcategory": "Brunch",
+    "kind": "Brunch",
+    "neighborhood": "Pacific Heights",
+    "address": "2101 Sutter St, San Francisco, CA 94115",
+    "coords": [
+      37.7854,
+      -122.4357
+    ],
+    "description": "Pacific Heights brunch with the famed Millionaire's Bacon — thick-cut, brown-sugared, peppered.",
+    "why": "Pancakes, eggs Benedict, and a side of bacon you'll talk about all day.",
+    "tags": [
+      "Millionaire's Bacon"
+    ],
+    "price": "$$",
+    "website": "https://www.sweetmaplesf.com/"
+  },
+  {
+    "id": "mamas-washington-square",
+    "name": "Mama's on Washington Square",
+    "category": "eats",
+    "subcategory": "Brunch",
+    "kind": "Breakfast",
+    "neighborhood": "North Beach",
+    "address": "1701 Stockton St, San Francisco, CA 94133",
+    "coords": [
+      37.8002,
+      -122.4099
+    ],
+    "description": "French toast sampler, Monte Cristo, Dungeness benedict — North Beach brunch worth the line.",
+    "why": "Show up at 8:30 a.m. or accept a 90-minute wait. It's worth it either way.",
+    "tags": [
+      "Brunch line institution"
+    ],
+    "price": "$$",
+    "website": "https://mamas-sf.com/"
+  },
+  {
+    "id": "zazie",
+    "name": "Zazie",
+    "category": "eats",
+    "subcategory": "Brunch",
+    "kind": "French brunch",
+    "neighborhood": "Cole Valley",
+    "address": "941 Cole St, San Francisco, CA 94117",
+    "coords": [
+      37.766,
+      -122.4502
+    ],
+    "description": "Cole Valley French bistro best known for inventive eggs Benedict and the back garden.",
+    "why": "Brunch in the back garden on a sunny day is one of the city's quiet pleasures.",
+    "tags": [
+      "Cole Valley anchor"
+    ],
+    "price": "$$",
+    "website": "https://zaziesf.com/"
+  },
+  {
+    "id": "the-mill",
+    "name": "The Mill",
+    "category": "eats",
+    "subcategory": "Brunch",
+    "kind": "Toast + coffee",
+    "neighborhood": "NoPa",
+    "address": "736 Divisadero St, San Francisco, CA 94117",
+    "coords": [
+      37.7773,
+      -122.4373
+    ],
+    "description": "Josey Baker bread, toasted thick, schmeared with cinnamon-sugar butter or almond butter and honey.",
+    "why": "The platonic ideal of toast. Yes, just toast. Yes, you should go.",
+    "tags": [
+      "Josey Baker bread"
+    ],
+    "price": "$",
+    "website": "https://themillsf.com/"
+  },
+  {
+    "id": "causwells",
+    "name": "Causwells",
+    "category": "eats",
+    "subcategory": "Burgers / Sandwiches",
+    "kind": "American",
+    "neighborhood": "Marina",
+    "address": "2346 Chestnut St, San Francisco, CA 94123",
+    "coords": [
+      37.8003,
+      -122.44
+    ],
+    "description": "Marina bistro hiding one of SF's best burgers — the Americana, with American cheese and house pickles.",
+    "why": "Sit at the bar for the burger and a martini, then maybe stay for the rest of the menu.",
+    "tags": [
+      "Cult burger"
+    ],
+    "price": "$$",
+    "website": "https://causwells.com/"
+  },
+  {
+    "id": "wise-sons",
+    "name": "Wise Sons Jewish Deli",
+    "category": "eats",
+    "subcategory": "Burgers / Sandwiches",
+    "kind": "Jewish deli",
+    "neighborhood": "Mission",
+    "address": "3150 24th St, San Francisco, CA 94110",
+    "coords": [
+      37.7522,
+      -122.4127
+    ],
+    "description": "House-cured pastrami, latkes, matzo ball soup, and a daily black-and-white cookie.",
+    "why": "A real Jewish deli, in a city that needed one — stay for the chocolate babka.",
+    "tags": [
+      "SF deli revival"
+    ],
+    "price": "$$",
+    "website": "https://wisesonsdeli.com/"
+  },
+  {
+    "id": "gotts",
+    "name": "Gott's Roadside",
+    "category": "eats",
+    "subcategory": "Burgers / Sandwiches",
+    "kind": "Burgers + shakes",
+    "neighborhood": "Ferry Building",
+    "address": "1 Ferry Building, San Francisco, CA 94111",
+    "coords": [
+      37.7956,
+      -122.3933
+    ],
+    "description": "Counter-service burgers, ahi tuna burgers, sweet-potato fries, and shakes by the bay.",
+    "why": "Lunch outside facing the Bay Bridge — a classic SF afternoon.",
+    "tags": [
+      "California roadside"
+    ],
+    "price": "$",
+    "website": "https://www.gotts.com/"
+  },
+  {
+    "id": "shizen",
+    "name": "Shizen",
+    "category": "eats",
+    "subcategory": "Vegetarian",
+    "kind": "Vegan sushi + ramen",
+    "neighborhood": "Mission",
+    "address": "370 14th St, San Francisco, CA 94103",
+    "coords": [
+      37.7689,
+      -122.4205
+    ],
+    "description": "Vegan sushi that converts skeptics — eggplant nigiri, body-and-soul roll, miso ramen.",
+    "why": "The clearest argument that sushi can be untethered from fish — and still delicious.",
+    "tags": [
+      "#99 Chronicle"
+    ],
+    "price": "$$",
+    "website": "https://shizensf.com/"
+  },
+  {
+    "id": "greens",
+    "name": "Greens Restaurant",
+    "category": "eats",
+    "subcategory": "Vegetarian",
+    "kind": "Vegetarian Cal",
+    "neighborhood": "Fort Mason",
+    "address": "2 Marina Blvd Building A, San Francisco, CA 94123",
+    "coords": [
+      37.8064,
+      -122.4321
+    ],
+    "description": "The vegetarian dining room that started a national conversation, with a wall of bay windows.",
+    "why": "Bay views, polished service, and vegetable cooking that even committed carnivores admire.",
+    "tags": [
+      "SF Zen Center",
+      "Vegetarian landmark since 1979"
+    ],
+    "price": "$$$",
+    "website": "https://www.greensrestaurant.com/"
+  },
+  {
+    "id": "wildseed",
+    "name": "Wildseed",
+    "category": "eats",
+    "subcategory": "Vegetarian",
+    "kind": "Plant-based Cal",
+    "neighborhood": "Cow Hollow",
+    "address": "2000 Union St, San Francisco, CA 94123",
+    "coords": [
+      37.7976,
+      -122.4332
+    ],
+    "description": "Plant-based California cooking that's friendly to all — bowls, tacos, burgers, brunch.",
+    "why": "The kind of vegan food that doesn't feel like vegan food.",
+    "tags": [
+      "Plant-based all-day"
+    ],
+    "price": "$$",
+    "website": "https://www.wildseed.com/"
+  },
+  {
+    "id": "trick-dog",
+    "name": "Trick Dog",
+    "category": "eats",
+    "subcategory": "Bars",
+    "kind": "Cocktail bar",
+    "neighborhood": "Mission",
+    "address": "3010 20th St, San Francisco, CA 94110",
+    "coords": [
+      37.7592,
+      -122.4115
+    ],
+    "description": "Mission warehouse cocktail palace with a menu that reinvents itself twice a year — every concept clever.",
+    "why": "On every short list of best bars in the country, year after year.",
+    "tags": [
+      "World's 50 Best Bars"
+    ],
+    "price": "$$",
+    "website": "https://www.trickdogbar.com/"
+  },
+  {
+    "id": "abv",
+    "name": "ABV",
+    "category": "eats",
+    "subcategory": "Bars",
+    "kind": "Cocktail bar",
+    "neighborhood": "Mission",
+    "address": "3174 16th St, San Francisco, CA 94103",
+    "coords": [
+      37.7651,
+      -122.4202
+    ],
+    "description": "A bartender's bar — riff classics, easy-drinking originals, and a kitchen that punches above its weight.",
+    "why": "The sit-at-the-bar place every SF bartender goes on their night off.",
+    "tags": [
+      "World's 50 Best Bars"
+    ],
+    "price": "$$",
+    "website": "https://www.abvsf.com/"
+  },
+  {
+    "id": "true-laurel",
+    "name": "True Laurel",
+    "category": "eats",
+    "subcategory": "Bars",
+    "kind": "Cocktail bar",
+    "neighborhood": "Mission",
+    "address": "753 Alabama St, San Francisco, CA 94110",
+    "coords": [
+      37.7615,
+      -122.4116
+    ],
+    "description": "Lazy Bear's mid-century-modern cocktail spinoff — fermented honey, roasted quince, perfect snacks.",
+    "why": "Cocktails as ambitious as the food at the Michelin-starred sister.",
+    "tags": [
+      "From the Lazy Bear team"
+    ],
+    "price": "$$",
+    "website": "https://truelaurelsf.com/"
+  },
+  {
+    "id": "pagan-idol",
+    "name": "Pagan Idol",
+    "category": "eats",
+    "subcategory": "Bars",
+    "kind": "Tiki bar",
+    "neighborhood": "Financial District",
+    "address": "375 Bush St, San Francisco, CA 94104",
+    "coords": [
+      37.7906,
+      -122.4036
+    ],
+    "description": "Wooden-ship interior, erupting volcano in the back room — Tiki Bob's space, taken to its peak.",
+    "why": "An immersive, escapist tiki experience — perfect for a first date or a last drink.",
+    "tags": [
+      "Erupting volcano"
+    ],
+    "price": "$$",
+    "website": "https://www.paganidol.com/"
+  },
+  {
+    "id": "comstock-saloon",
+    "name": "Comstock Saloon",
+    "category": "eats",
+    "subcategory": "Bars",
+    "kind": "Historic saloon + food",
+    "neighborhood": "North Beach",
+    "address": "155 Columbus Ave, San Francisco, CA 94133",
+    "coords": [
+      37.7969,
+      -122.4046
+    ],
+    "description": "Restored Barbary Coast saloon — perfectly mixed classics and a kitchen that goes deep on craft.",
+    "why": "The most evocative drinking room in the city, with cocktails to match.",
+    "tags": [
+      "1907 building"
+    ],
+    "price": "$$",
+    "website": "https://www.comstocksaloon.com/"
+  },
+  {
+    "id": "the-snug",
+    "name": "The Snug",
+    "category": "eats",
+    "subcategory": "Bars",
+    "kind": "Neighborhood cocktail bar",
+    "neighborhood": "Pacific Heights",
+    "address": "2301 Fillmore St, San Francisco, CA 94115",
+    "coords": [
+      37.7892,
+      -122.4348
+    ],
+    "description": "Pacific Heights cocktail bar with deep amaro shelves and food that's actually worth ordering.",
+    "why": "The neighborhood bar you wish was your neighborhood bar.",
+    "tags": [
+      "Pac Heights anchor"
+    ],
+    "price": "$$",
+    "website": "https://www.thesnugsf.com/"
+  },
+  {
+    "id": "smugglers-cove",
+    "name": "Smuggler's Cove",
+    "category": "eats",
+    "subcategory": "Bars",
+    "kind": "Tiki bar",
+    "neighborhood": "Civic Center",
+    "address": "650 Gough St, San Francisco, CA 94102",
+    "coords": [
+      37.7783,
+      -122.4226
+    ],
+    "description": "Three-story rum temple — 700+ rums, unflashy expertise, drinks served from a literal pirate ship.",
+    "why": "If you've ever wondered what tiki does taken seriously, Smuggler's is the answer.",
+    "tags": [
+      "World's 50 Best Bars"
+    ],
+    "price": "$",
+    "website": "https://smugglerscovesf.com/"
+  },
+  {
+    "id": "15-romolo",
+    "name": "15 Romolo",
+    "category": "eats",
+    "subcategory": "Bars",
+    "kind": "Cocktails + small plates",
+    "neighborhood": "North Beach",
+    "address": "15 Romolo Pl, San Francisco, CA 94133",
+    "coords": [
+      37.7977,
+      -122.4087
+    ],
+    "description": "Tucked down an alley off Broadway — punch bowls, snug booths, food that's better than it needs to be.",
+    "why": "When you want to feel like you've found something secret in the middle of the city.",
+    "tags": [
+      "Hidden alley"
+    ],
+    "price": "$$",
+    "website": "https://15romolo.com/"
+  },
+  {
+    "id": "bourbon-branch",
+    "name": "Bourbon & Branch",
+    "category": "eats",
+    "subcategory": "Bars",
+    "kind": "Speakeasy",
+    "neighborhood": "Tenderloin",
+    "address": "501 Jones St, San Francisco, CA 94102",
+    "coords": [
+      37.7864,
+      -122.4128
+    ],
+    "description": "Reservation-only speakeasy with a buzzer at the door — classic cocktails done with reverence.",
+    "why": "When you want the speakeasy bit done with sincerity instead of theme.",
+    "tags": [
+      "Reservation required"
+    ],
+    "price": "$$",
+    "website": "https://www.bourbonandbranch.com/"
+  },
+  {
+    "id": "balboa-cafe",
+    "name": "Balboa Cafe",
+    "category": "eats",
+    "subcategory": "Burgers / Sandwiches",
+    "kind": "American",
+    "neighborhood": "Cow Hollow",
+    "address": "3199 Fillmore St, San Francisco, CA 94123",
+    "coords": [
+      37.7989,
+      -122.4364
+    ],
+    "description": "Cow Hollow saloon institution — the famed Balboa burger on a baguette, espressotinis, regulars at the bar.",
+    "why": "The kind of bar where you'll know everybody's name by the time you leave.",
+    "tags": [
+      "SF saloon since 1913",
+      "PlumpJack"
+    ],
+    "price": "$$$",
+    "website": "https://www.balboacafesf.com/"
+  }
+]
