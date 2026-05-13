@@ -11,19 +11,11 @@ interface Project {
 export default function Projects() {
   const projects: Project[] = [
     {
-      title: 'Arts & Culture in San Francisco',
+      title: 'San Francisco — A Private Guide',
       description:
-        'A small private guide to museums, galleries, and performance halls around the city, with an interactive Leaflet map of every stop and a one-tap link into Google Maps for each one.',
+        'Everything to see, hear, and eat in San Francisco on one map. Art, performance, and ~100 good places to eat, all filterable by category and searchable by name, with one-tap links into Google Maps.',
       tags: ['HTML', 'CSS', 'Leaflet', 'OpenStreetMap'],
-      href: '/sf-guide/',
-      external: true,
-    },
-    {
-      title: 'Restaurants in San Francisco',
-      description:
-        'A filterable card grid of ~100 San Francisco restaurants — fine dining, neighborhood favorites, bakeries, and bars — with cuisine and price filters and a one-tap link into Google Maps for every spot.',
-      tags: ['HTML', 'CSS', 'JSON', 'No build step'],
-      href: '/restaurants/',
+      href: '/sf/',
       external: true,
     },
     {

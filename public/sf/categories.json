@@ -1,0 +1,51 @@
+{
+  "categories": [
+    {
+      "id": "art",
+      "label": "Art & Culture",
+      "blurb": "Museums, galleries, performance halls, and architectural landmarks.",
+      "color": "#6b7a3f",
+      "subcategoryOrder": [
+        "Golden Gate Park",
+        "Lincoln Park",
+        "Yerba Buena",
+        "Civic Center",
+        "Dogpatch",
+        "Nob Hill / Chinatown",
+        "Fort Mason",
+        "Ferry Building & Sausalito",
+        "Peninsula"
+      ]
+    },
+    {
+      "id": "eats",
+      "label": "Eats",
+      "blurb": "Places to eat and drink — from corner taquerias to once-a-year tasting menus.",
+      "color": "#a23f3f",
+      "subcategoryOrder": [
+        "Fine Dining",
+        "Californian",
+        "Italian",
+        "Pizza",
+        "French",
+        "Japanese",
+        "Chinese",
+        "Mexican / Latin",
+        "Vietnamese",
+        "Thai / SE Asian",
+        "Indian",
+        "Korean",
+        "Mediterranean",
+        "Filipino",
+        "Peruvian",
+        "Seafood",
+        "Steakhouse",
+        "Bakery / Coffee",
+        "Brunch",
+        "Burgers / Sandwiches",
+        "Vegetarian",
+        "Bars"
+      ]
+    }
+  ]
+}
