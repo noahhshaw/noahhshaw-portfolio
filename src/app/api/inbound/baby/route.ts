@@ -4,23 +4,27 @@ import { emailReplies, dailyEmails, photos } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { isR2Configured, makePhotoKey, uploadBytes } from "@/lib/baby/r2";
 import { verifySvixSignature } from "@/lib/baby/svix";
+import { processSender } from "@/lib/baby/reply-processor";
 
 export const runtime = "nodejs";
+// We await the classifier inline (5-15s typical, 60s worst case). Set the
+// function timeout high enough to cover that without truncating mid-call.
+export const maxDuration = 60;
 
 // Resend / Cloudflare Email inbound webhook handler.
 //
 // Behavior:
 //   1. Persist the reply (with raw headers + attachments metadata) to
-//      `email_replies` immediately so nothing is lost if processing crashes.
-//   2. Trigger the reply processor inline (awaited fetch with
-//      BABY_INTERNAL_SECRET). The processor batches all unprocessed replies
-//      for this sender, runs the classifier, and sends a response. Processing
-//      takes 5-15s; the inbound function waits for completion so the upstream
-//      webhook (Cloudflare Worker or Resend) gets a real success/failure code.
+//      `email_replies` immediately. Duplicate webhook deliveries (same
+//      message_id) are absorbed via the unique-constraint catch.
+//   2. Call the reply processor in-process. A per-sender Redis mutex inside
+//      processSender prevents concurrent triggers from double-sending.
+//      Processing takes 5-15s; the inbound function waits so the upstream
+//      webhook gets a real success/failure code, but the cron sweep is the
+//      safety net if the inline call fails.
 //
 // Previously we used a 10-min Redis debounce + QStash delayed POST. That
 // pipeline was inert without QSTASH_TOKEN and left replies sitting forever.
-// We accept the latency cost in exchange for the trigger being unconditional.
 //
 // Resend inbound webhook payload shape is documented at
 // https://resend.com/docs/dashboard/inbound — this handler is defensive and
@@ -131,23 +135,45 @@ export async function POST(request: NextRequest) {
     dailyEmailId = matches[0]?.id ?? null;
   }
 
-  const inserted = await db
-    .insert(emailReplies)
-    .values({
-      fromEmail,
-      toEmails,
-      ccEmails,
-      subject: data.subject ?? null,
-      bodyText: data.text ?? null,
-      bodyHtml: data.html ?? null,
-      inReplyTo: inReplyTo ?? null,
-      messageId: data.message_id ?? null,
-      dailyEmailId,
-      rawHeaders: data.headers ?? null,
-    })
-    .returning();
-
-  const replyId = inserted[0].id;
+  // Insert reply. The schema has a UNIQUE constraint on message_id, so a
+  // duplicate webhook delivery (upstream retry, double-fire) returns the
+  // existing row instead of erroring. We treat duplicates as "already
+  // accepted" — the original delivery already triggered processing.
+  let replyId: number;
+  let duplicate = false;
+  try {
+    const inserted = await db
+      .insert(emailReplies)
+      .values({
+        fromEmail,
+        toEmails,
+        ccEmails,
+        subject: data.subject ?? null,
+        bodyText: data.text ?? null,
+        bodyHtml: data.html ?? null,
+        inReplyTo: inReplyTo ?? null,
+        messageId: data.message_id ?? null,
+        dailyEmailId,
+        rawHeaders: data.headers ?? null,
+      })
+      .returning();
+    replyId = inserted[0].id;
+  } catch (err) {
+    const isDup =
+      data.message_id &&
+      err instanceof Error &&
+      /unique|duplicate/i.test(err.message);
+    if (!isDup) throw err;
+    const existing = await db
+      .select({ id: emailReplies.id })
+      .from(emailReplies)
+      .where(eq(emailReplies.messageId, data.message_id!))
+      .limit(1);
+    if (!existing[0]) throw err;
+    replyId = existing[0].id;
+    duplicate = true;
+    console.log("[baby-inbound] duplicate message_id absorbed", data.message_id);
+  }
 
   // Persist any image attachments to R2 + photos rows. Non-image attachments
   // are stored to R2 but not surfaced in the photo gallery.
@@ -160,54 +186,29 @@ export async function POST(request: NextRequest) {
     });
   }
 
-  // Trigger the reply processor inline. We await so the upstream webhook
-  // sees a real result and so this serverless invocation doesn't terminate
-  // before the processor finishes. Any failure is logged but does not
-  // change the inbound 200 — the reply is already persisted and the
-  // dashboard "Process pending now" button is the manual fallback.
-  const internalSecret = process.env.BABY_INTERNAL_SECRET;
-  let processorStatus: number | null = null;
+  // Run the processor inline. Per-sender Redis mutex inside processSender
+  // protects against concurrent triggers. If this throws, the reply is
+  // already persisted — the 5-minute cron sweep at /api/cron/process-replies
+  // is the safety net.
+  let processorResult: Record<string, unknown> | null = null;
   let processorError: string | null = null;
-  if (internalSecret) {
+  if (duplicate) {
+    processorResult = { skipped: "duplicate-message-id" };
+  } else {
     try {
-      const processorRes = await fetch(
-        new URL(
-          "/api/baby/internal/process-replies",
-          request.nextUrl.origin
-        ).toString(),
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${internalSecret}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ fromEmail, triggerReplyId: replyId }),
-        }
-      );
-      processorStatus = processorRes.status;
-      if (!processorRes.ok) {
-        processorError = await processorRes.text().catch(() => "");
-        console.error(
-          "[baby-inbound] processor returned non-OK",
-          processorStatus,
-          processorError
-        );
-      }
+      processorResult = await processSender(fromEmail);
     } catch (err) {
       processorError = err instanceof Error ? err.message : String(err);
-      console.error("[baby-inbound] processor trigger failed", err);
+      console.error("[baby-inbound] processor threw", err);
     }
-  } else {
-    console.warn(
-      "[baby-inbound] BABY_INTERNAL_SECRET not set; reply persisted but processor not triggered"
-    );
   }
 
   return NextResponse.json({
     ok: true,
     replyId,
+    duplicate,
     attachmentsStored,
-    processorStatus,
+    processorResult,
     processorError,
   });
 }
