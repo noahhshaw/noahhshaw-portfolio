@@ -386,27 +386,6 @@
     "website": "https://filoli.org/"
   },
   {
-    "id": "benu",
-    "name": "Benu",
-    "category": "eats",
-    "subcategory": "Fine Dining",
-    "kind": "Asian-leaning tasting menu",
-    "neighborhood": "SoMa",
-    "address": "22 Hawthorne St, San Francisco, CA 94105",
-    "coords": [
-      37.7876,
-      -122.399
-    ],
-    "description": "Corey Lee's pioneering tasting menu — Korean-Cantonese-American precision across ~20 courses.",
-    "why": "If you want one of the most ambitious meals in the country and you can plan months ahead.",
-    "tags": [
-      "Michelin ★★★",
-      "#17 Chronicle"
-    ],
-    "price": "$$$$",
-    "website": "https://www.benusf.com/"
-  },
-  {
     "id": "saison",
     "name": "Saison",
     "category": "eats",
@@ -445,27 +424,6 @@
     ],
     "price": "$$$$",
     "website": "https://www.lazybearsf.com/"
-  },
-  {
-    "id": "californios",
-    "name": "Californios",
-    "category": "eats",
-    "subcategory": "Fine Dining",
-    "kind": "Mexican fine dining tasting",
-    "neighborhood": "SoMa",
-    "address": "355 11th St, San Francisco, CA 94103",
-    "coords": [
-      37.7711,
-      -122.4128
-    ],
-    "description": "Val Cantú's elevated Mexican tasting menu, with heirloom corn masa milled in-house and Mexican wines.",
-    "why": "The most elegant case anywhere for what fine-dining Mexican cuisine can be.",
-    "tags": [
-      "Michelin ★★",
-      "#28 Chronicle"
-    ],
-    "price": "$$$$",
-    "website": "https://www.californiossf.com/"
   },
   {
     "id": "nari",
