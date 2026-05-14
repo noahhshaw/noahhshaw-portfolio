@@ -2,24 +2,25 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db";
 import { emailReplies, dailyEmails, photos } from "@/db/schema";
 import { eq } from "drizzle-orm";
-import { redis, isRedisConfigured } from "@/lib/redis";
-import { REPLY_DEBOUNCE_SECONDS } from "@/lib/baby/constants";
 import { isR2Configured, makePhotoKey, uploadBytes } from "@/lib/baby/r2";
 import { verifySvixSignature } from "@/lib/baby/svix";
 
 export const runtime = "nodejs";
 
-// Resend inbound webhook handler.
+// Resend / Cloudflare Email inbound webhook handler.
 //
 // Behavior:
 //   1. Persist the reply (with raw headers + attachments metadata) to
 //      `email_replies` immediately so nothing is lost if processing crashes.
-//   2. Push a debounce marker to Redis with a 10-min TTL keyed by the sender
-//      email. The processor (see /api/baby/internal/process-replies) checks
-//      this key and waits until it's expired before batching.
-//   3. Schedule deferred processing.
-//      - If QSTASH_TOKEN is set: publish a delayed POST to the processor.
-//      - Otherwise: rely on a per-minute cron (`process-replies`) to scan.
+//   2. Trigger the reply processor inline (awaited fetch with
+//      BABY_INTERNAL_SECRET). The processor batches all unprocessed replies
+//      for this sender, runs the classifier, and sends a response. Processing
+//      takes 5-15s; the inbound function waits for completion so the upstream
+//      webhook (Cloudflare Worker or Resend) gets a real success/failure code.
+//
+// Previously we used a 10-min Redis debounce + QStash delayed POST. That
+// pipeline was inert without QSTASH_TOKEN and left replies sitting forever.
+// We accept the latency cost in exchange for the trigger being unconditional.
 //
 // Resend inbound webhook payload shape is documented at
 // https://resend.com/docs/dashboard/inbound — this handler is defensive and
@@ -159,16 +160,56 @@ export async function POST(request: NextRequest) {
     });
   }
 
-  // Debounce marker — the processor uses this to know whether to batch or wait.
-  if (isRedisConfigured()) {
-    const key = `baby:debounce:${fromEmail}`;
-    await redis.set(key, String(replyId), { ex: REPLY_DEBOUNCE_SECONDS });
+  // Trigger the reply processor inline. We await so the upstream webhook
+  // sees a real result and so this serverless invocation doesn't terminate
+  // before the processor finishes. Any failure is logged but does not
+  // change the inbound 200 — the reply is already persisted and the
+  // dashboard "Process pending now" button is the manual fallback.
+  const internalSecret = process.env.BABY_INTERNAL_SECRET;
+  let processorStatus: number | null = null;
+  let processorError: string | null = null;
+  if (internalSecret) {
+    try {
+      const processorRes = await fetch(
+        new URL(
+          "/api/baby/internal/process-replies",
+          request.nextUrl.origin
+        ).toString(),
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${internalSecret}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ fromEmail, triggerReplyId: replyId }),
+        }
+      );
+      processorStatus = processorRes.status;
+      if (!processorRes.ok) {
+        processorError = await processorRes.text().catch(() => "");
+        console.error(
+          "[baby-inbound] processor returned non-OK",
+          processorStatus,
+          processorError
+        );
+      }
+    } catch (err) {
+      processorError = err instanceof Error ? err.message : String(err);
+      console.error("[baby-inbound] processor trigger failed", err);
+    }
+  } else {
+    console.warn(
+      "[baby-inbound] BABY_INTERNAL_SECRET not set; reply persisted but processor not triggered"
+    );
   }
 
-  // Schedule deferred processing.
-  await scheduleProcessing({ fromEmail, replyId, request });
-
-  return NextResponse.json({ ok: true, replyId, attachmentsStored });
+  return NextResponse.json({
+    ok: true,
+    replyId,
+    attachmentsStored,
+    processorStatus,
+    processorError,
+  });
 }
 
 async function persistAttachments(opts: {
@@ -233,38 +274,6 @@ function extractEmail(v: unknown): string | undefined {
     return typeof e === "string" ? e : undefined;
   }
   return undefined;
-}
-
-async function scheduleProcessing(opts: {
-  fromEmail: string;
-  replyId: number;
-  request: NextRequest;
-}) {
-  const qstashToken = process.env.QSTASH_TOKEN;
-  if (!qstashToken) {
-    // No deferred-execution available; rely on cron sweep. Nothing to do.
-    return;
-  }
-  const target = new URL(
-    "/api/baby/internal/process-replies",
-    opts.request.nextUrl.origin
-  );
-  try {
-    await fetch(`https://qstash.upstash.io/v2/publish/${target.toString()}`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${qstashToken}`,
-        "Content-Type": "application/json",
-        "Upstash-Delay": `${REPLY_DEBOUNCE_SECONDS}s`,
-      },
-      body: JSON.stringify({
-        fromEmail: opts.fromEmail,
-        triggerReplyId: opts.replyId,
-      }),
-    });
-  } catch (err) {
-    console.error("[baby-inbound] failed to schedule QStash job", err);
-  }
 }
 
 async function hmacHex(secret: string, input: string): Promise<string> {

@@ -12,12 +12,9 @@ import {
   and,
   gte,
   asc,
-  desc,
 } from "drizzle-orm";
 import { Resend } from "resend";
-import { redis, isRedisConfigured } from "@/lib/redis";
 import {
-  REPLY_DEBOUNCE_SECONDS,
   BABY_FROM_EMAIL,
   BABY_REPLY_TO_EMAIL,
 } from "@/lib/baby/constants";
@@ -39,10 +36,11 @@ export const maxDuration = 60;
 
 // Reply processor.
 //
-// Triggered either by:
-//   1. QStash deferred POST after the 10-minute debounce window, or
+// Triggered by:
+//   1. The inbound webhook (immediately on receipt of a reply), or
 //   2. A periodic cron sweep (no body) that scans all senders with
-//      ready-to-process replies.
+//      unprocessed replies — backstop in case the inbound trigger missed.
+//   3. The dashboard "Process pending now" button (session auth).
 //
 // For each sender:
 //   - Loads all unprocessed replies + linked attachments + the daily email
@@ -106,11 +104,6 @@ export async function POST(request: NextRequest) {
 }
 
 async function processSender(sender: string): Promise<Record<string, unknown>> {
-  const ready = await debounceReady(sender);
-  if (!ready) {
-    return { fromEmail: sender, skipped: "still-debouncing" };
-  }
-
   const pending = await db
     .select()
     .from(emailReplies)
@@ -295,27 +288,6 @@ async function loadAttachmentsForReply(
     });
   }
   return out;
-}
-
-async function debounceReady(sender: string): Promise<boolean> {
-  if (!isRedisConfigured()) {
-    const latest = await db
-      .select()
-      .from(emailReplies)
-      .where(
-        and(eq(emailReplies.fromEmail, sender), isNull(emailReplies.processedAt))
-      )
-      .orderBy(desc(emailReplies.receivedAt))
-      .limit(1);
-    const latestRow = latest[0];
-    if (!latestRow) return false;
-    const ageSeconds =
-      (Date.now() - new Date(latestRow.receivedAt).getTime()) / 1000;
-    return ageSeconds >= REPLY_DEBOUNCE_SECONDS;
-  }
-  const key = `baby:debounce:${sender}`;
-  const value = await redis.get(key);
-  return value === null;
 }
 
 async function loadSendersWithReadyReplies(): Promise<string[]> {
