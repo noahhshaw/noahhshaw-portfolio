@@ -47,6 +47,11 @@ import {
   validateReplyText,
 } from "@/lib/baby/output-cleaner";
 import { buildThreadHeaders } from "@/lib/baby/threading";
+import {
+  buildHtmlWithQuote,
+  buildPlainTextWithQuote,
+  extractFromName,
+} from "@/lib/baby/quoting";
 
 export type ProcessSenderResult = Record<string, unknown>;
 
@@ -245,7 +250,10 @@ export async function processSender(
         outboundSubject = threadHeaders.Subject;
 
         // Output sanitation: strip any markdown the model leaked through,
-        // ensure HTML is paragraph-wrapped with anchored links.
+        // ensure HTML is paragraph-wrapped with anchored links. Validate
+        // the agent's body BEFORE we attach the quoted inbound thread —
+        // otherwise the inbound's own bare URLs / formatting would trip
+        // validators that only apply to the agent's authored content.
         const cleanText = cleanReplyText(classification.replyText);
         const cleanHtml = cleanReplyHtml(
           classification.replyHtml ?? cleanText,
@@ -261,6 +269,18 @@ export async function processSender(
             htmlViolations: htmlCheck.violations,
           });
         }
+
+        // Append the quoted inbound thread Gmail-style so the response
+        // reads as a normal reply with history visible.
+        const quoteSource = {
+          fromEmail: row.fromEmail,
+          fromName: extractFromName(row.rawHeaders),
+          receivedAt: new Date(row.receivedAt),
+          bodyText: row.bodyText,
+          bodyHtml: row.bodyHtml,
+        };
+        const finalText = buildPlainTextWithQuote(cleanText, quoteSource);
+        const finalHtml = buildHtmlWithQuote(cleanHtml, quoteSource);
 
         const resendHeaders: Record<string, string> = {};
         if (threadHeaders["In-Reply-To"])
@@ -283,8 +303,8 @@ export async function processSender(
             to: outboundRecipients,
             reply_to: BABY_REPLY_TO_EMAIL,
             subject: outboundSubject,
-            text: cleanText,
-            html: cleanHtml,
+            text: finalText,
+            html: finalHtml,
             headers: resendHeaders,
           });
           agentResponseMessageId = result.data?.id ?? null;
