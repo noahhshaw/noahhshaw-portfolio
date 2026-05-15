@@ -77,8 +77,8 @@ function row(
 }
 
 describe("CDC/AAP catalog file", () => {
-  it("has at least 40 milestones covering year 1", () => {
-    expect(CATALOG.milestones.length).toBeGreaterThanOrEqual(40);
+  it("has at least 100 milestones covering year 1 + early year 2", () => {
+    expect(CATALOG.milestones.length).toBeGreaterThanOrEqual(100);
   });
 
   it("every entry has a unique key", () => {
@@ -122,14 +122,36 @@ describe("CDC/AAP catalog file", () => {
     expect(sorted[0]).toBe(1);
   });
 
-  it("covers age 0-30 (newborn), 30-90 (1-3mo), and 270+ (9mo+)", () => {
-    const byWindow = (lo: number, hi: number) =>
-      CATALOG.milestones.filter(
-        (m) => m.age_window_low_days >= lo && m.age_window_low_days < hi
+  it("covers every key 30-day age band from 0-365 with at least 1 milestone whose low_days falls in the band", () => {
+    // Floor of 1 per month — the daily check-in section requires only 1
+    // surfaceable item, so each month must have at least one new one.
+    for (let m = 0; m < 12; m++) {
+      const lo = m * 30;
+      const hi = lo + 30;
+      const inBand = CATALOG.milestones.filter(
+        (e) => e.age_window_low_days >= lo && e.age_window_low_days < hi
       );
-    expect(byWindow(0, 30).length).toBeGreaterThanOrEqual(2);
-    expect(byWindow(30, 90).length).toBeGreaterThanOrEqual(2);
-    expect(byWindow(270, 400).length).toBeGreaterThanOrEqual(2);
+      expect(
+        inBand.length,
+        `Need ≥1 milestone with low_days in [${lo},${hi}); got ${inBand.length}`
+      ).toBeGreaterThanOrEqual(1);
+    }
+  });
+
+  it("has at least 8 entries in each of the 5 canonical categories", () => {
+    const counts: Record<string, number> = {};
+    for (const m of CATALOG.milestones) {
+      counts[m.category] = (counts[m.category] ?? 0) + 1;
+    }
+    for (const cat of [
+      "social-emotional",
+      "language-communication",
+      "cognitive",
+      "movement-gross",
+      "movement-fine",
+    ]) {
+      expect(counts[cat] ?? 0, `category ${cat} has ${counts[cat] ?? 0}`).toBeGreaterThanOrEqual(8);
+    }
   });
 });
 
