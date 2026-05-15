@@ -170,6 +170,25 @@ describe("renderCheckInText", () => {
     expect(out).toContain(`${ORIGIN}/baby/milestones`);
   });
 
+  it("includes the clinical note as 'What to look for' when present", () => {
+    const r = row("first-social-smile", {
+      displayName: "First social smile",
+      clinicalNote: "Smile in response to a face, not gas reflex.",
+    });
+    const out = renderCheckInText({ rows: [r], origin: ORIGIN });
+    expect(out).toContain("What to look for:");
+    expect(out).toContain("Smile in response to a face, not gas reflex.");
+  });
+
+  it("includes the source URL on its own line", () => {
+    const r = row("first-social-smile", {
+      displayName: "First social smile",
+      sourceUrl: "https://example.cdc.gov/foo",
+    });
+    const out = renderCheckInText({ rows: [r], origin: ORIGIN });
+    expect(out).toContain("Source: https://example.cdc.gov/foo");
+  });
+
   it("marks past-window items", () => {
     const r = row("late-walker", { displayName: "First steps" }, {}, true);
     const out = renderCheckInText({ rows: [r], origin: ORIGIN });
@@ -180,6 +199,13 @@ describe("renderCheckInText", () => {
 describe("renderCheckInHtml", () => {
   it("is empty when no rows", () => {
     expect(renderCheckInHtml({ rows: [], origin: ORIGIN })).toBe("");
+  });
+
+  it("center-aligns the card with max-width:620px;margin:auto so it visually matches the daily-email column", () => {
+    const r = row("first-social-smile", { displayName: "First social smile" });
+    const html = renderCheckInHtml({ rows: [r], origin: ORIGIN });
+    expect(html).toMatch(/max-width\s*:\s*620px/);
+    expect(html).toMatch(/margin\s*:\s*[0-9]+px\s+auto/);
   });
 
   it("wraps each row in a list item with a Mark complete anchor", () => {
@@ -196,11 +222,35 @@ describe("renderCheckInHtml", () => {
     expect(html).toContain("Mark complete");
   });
 
-  it("escapes HTML in the display name", () => {
-    const r = row("xss", { displayName: "<script>alert(1)</script>" });
+  it("renders the clinical note as a description div", () => {
+    const r = row("first-social-smile", {
+      displayName: "First social smile",
+      clinicalNote: "Smile in response to a face, not gas reflex.",
+    });
+    const html = renderCheckInHtml({ rows: [r], origin: ORIGIN });
+    expect(html).toContain("Smile in response to a face, not gas reflex.");
+  });
+
+  it("renders a clickable source link per row", () => {
+    const r = row("first-social-smile", {
+      displayName: "First social smile",
+      sourceUrl: "https://example.cdc.gov/foo",
+    });
+    const html = renderCheckInHtml({ rows: [r], origin: ORIGIN });
+    expect(html).toContain('href="https://example.cdc.gov/foo"');
+    expect(html).toMatch(/>source<\/a>/);
+  });
+
+  it("escapes HTML in the display name and clinical note", () => {
+    const r = row("xss", {
+      displayName: "<script>alert(1)</script>",
+      clinicalNote: "<img src=x onerror=alert(1)>",
+    });
     const html = renderCheckInHtml({ rows: [r], origin: ORIGIN });
     expect(html).not.toContain("<script>alert(1)</script>");
+    expect(html).not.toContain("<img src=x onerror=alert(1)>");
     expect(html).toContain("&lt;script&gt;");
+    expect(html).toContain("&lt;img");
   });
 
   it("renders the past-window badge for past-window rows", () => {

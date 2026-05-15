@@ -240,6 +240,10 @@ export function renderCheckInText(input: CheckInRenderInput): string {
       `  AAP window: day ${r.catalog.ageWindowLowDays}-${r.catalog.ageWindowHighDays}` +
         (r.pastWindow ? " (past expected window)" : "")
     );
+    if (r.catalog.clinicalNote) {
+      lines.push(`  What to look for: ${r.catalog.clinicalNote}`);
+    }
+    lines.push(`  Source: ${r.catalog.sourceUrl}`);
     lines.push(
       `  Mark complete: ${input.origin}/baby/milestones/${r.catalog.key}/complete`
     );
@@ -248,7 +252,12 @@ export function renderCheckInText(input: CheckInRenderInput): string {
   return lines.join("\n");
 }
 
-/** HTML email fragment. Empty string if no rows. */
+/** HTML email fragment. Empty string if no rows.
+ *
+ * The wrapper uses max-width:620px;margin:0 auto so it center-aligns inside
+ * the email's body — the pre-computed artifact uses the same 620px column,
+ * so this card visually matches.
+ */
 export function renderCheckInHtml(input: CheckInRenderInput): string {
   if (input.rows.length === 0) return "";
   const items = input.rows
@@ -258,18 +267,23 @@ export function renderCheckInHtml(input: CheckInRenderInput): string {
         ? ` <span style="color:#92400e;font-size:11px;background:#fef3c7;padding:2px 6px;border-radius:4px;margin-left:6px">past expected window</span>`
         : "";
       const completeUrl = `${input.origin}/baby/milestones/${r.catalog.key}/complete`;
+      const sourceAnchor = `<a href="${r.catalog.sourceUrl}" style="color:#1d4ed8;text-decoration:none">source</a>`;
+      const description = r.catalog.clinicalNote
+        ? `<div style="font-size:13px;color:#4b5563;margin:0 0 10px;line-height:1.5">${escapeHtml(r.catalog.clinicalNote)}</div>`
+        : "";
       return `
-  <li style="margin:0 0 12px;padding:0;list-style:none">
-    <div style="font-weight:600;color:#111827">${escapeHtml(r.catalog.displayName)}${pastBadge}</div>
-    <div style="font-size:12px;color:#6b7280;margin:2px 0 8px">${window}</div>
-    <a href="${completeUrl}" style="display:inline-block;padding:6px 12px;background:#1d4ed8;color:#ffffff;text-decoration:none;border-radius:6px;font-size:13px">Mark complete</a>
-  </li>`;
+    <li style="margin:0 0 18px;padding:0;list-style:none">
+      <div style="font-weight:600;color:#111827;line-height:1.35">${escapeHtml(r.catalog.displayName)}${pastBadge}</div>
+      <div style="font-size:12px;color:#6b7280;margin:3px 0 8px">${window} &middot; ${sourceAnchor}</div>
+      ${description}
+      <a href="${completeUrl}" style="display:inline-block;padding:7px 14px;background:#1d4ed8;color:#ffffff;text-decoration:none;border-radius:6px;font-size:13px;font-weight:500">Mark complete</a>
+    </li>`;
     })
     .join("");
   return `
-<div style="margin-top:32px;padding:20px;border:1px solid #e5e7eb;border-radius:8px;background:#f9fafb">
+<div style="max-width:620px;margin:20px auto 0;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:24px 28px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1f2937;line-height:1.55">
   <h2 style="margin:0 0 6px;font-size:14px;text-transform:uppercase;letter-spacing:0.05em;color:#111827">Developmental milestone check-in</h2>
-  <p style="margin:0 0 14px;color:#4b5563;font-size:13px">Tap to mark any of these complete. <a href="${input.origin}/baby/milestones" style="color:#1d4ed8">Manage all milestones</a>.</p>
+  <p style="margin:0 0 18px;color:#4b5563;font-size:13px">Tap to mark any of these complete when you've seen them. <a href="${input.origin}/baby/milestones" style="color:#1d4ed8">Manage all milestones</a>.</p>
   <ul style="margin:0;padding:0">${items}
   </ul>
 </div>`;
