@@ -9,6 +9,7 @@ import {
   type NewMilestoneCatalog,
 } from "@/db/schema";
 import { eq, sql } from "drizzle-orm";
+import { getCurrentParent } from "@/lib/baby/session";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -21,10 +22,14 @@ export const maxDuration = 60;
 //   - Upserts catalog rows by `key`.
 //   - Lazy-creates pending event rows for every (baby, milestone) pair.
 //
-// Auth: Bearer BABY_INTERNAL_SECRET.
+// Auth: parent session cookie (sign in to /baby first), OR Bearer
+// BABY_INTERNAL_SECRET if that env var is set.
 //
-// Usage:
-//   SECRET=$(grep '^BABY_INTERNAL_SECRET=' .env.local | cut -d= -f2- | tr -d '"')
+// Usage from a logged-in browser DevTools console (no secret needed):
+//   fetch('/api/baby/admin/migrate-and-seed-milestones', { method: 'POST' })
+//     .then(r => r.json()).then(console.log)
+//
+// Or from curl (if BABY_INTERNAL_SECRET is set in prod):
 //   curl -s -X POST "https://www.noahhshaw.com/api/baby/admin/migrate-and-seed-milestones" \
 //     -H "Authorization: Bearer $SECRET" | jq
 
@@ -83,7 +88,16 @@ CREATE INDEX IF NOT EXISTS "milestone_events_status_idx" ON "milestone_events" U
 export async function POST(request: NextRequest) {
   const auth = request.headers.get("authorization");
   const internalSecret = process.env.BABY_INTERNAL_SECRET;
-  if (!internalSecret || auth !== `Bearer ${internalSecret}`) {
+  const bearerOk =
+    !!internalSecret &&
+    internalSecret.length > 0 &&
+    auth === `Bearer ${internalSecret}`;
+  let sessionOk = false;
+  if (!bearerOk) {
+    const parent = await getCurrentParent();
+    sessionOk = !!parent;
+  }
+  if (!bearerOk && !sessionOk) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
