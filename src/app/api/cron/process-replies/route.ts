@@ -7,10 +7,15 @@ export const maxDuration = 60;
 // Cron backstop for the reply processor.
 //
 // Inbound webhooks trigger processSender() in-process — fast path. This
-// cron runs every 5 minutes and sweeps any sender with unprocessed
-// replies, in case the inline trigger failed (cold-start timeout,
-// transient Anthropic 5xx, function crash, BABY_INTERNAL_SECRET
-// misconfigured, etc).
+// cron runs daily at 13:00 UTC (6am Pacific, an hour before the morning
+// email) and sweeps any sender with unprocessed replies, in case the
+// inline trigger failed (cold-start timeout, transient Anthropic 5xx,
+// function crash, BABY_INTERNAL_SECRET misconfigured, etc).
+//
+// NOTE: Vercel Hobby plan only allows daily cron jobs. If we upgrade to
+// Pro, drop this to */5 or */15 for faster recovery. Until then, the
+// dashboard "Process pending now" button and /api/baby/diag/replies POST
+// are the human-in-the-loop recovery paths for sub-24h failures.
 //
 // Idempotent by construction: the per-sender Redis mutex inside
 // processSender bails fast if another invocation is already running.
