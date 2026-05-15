@@ -13,7 +13,9 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "db:check": "tsx scripts/check-baby-schema.ts",
-    "precompute:validate": "tsx scripts/validate-precomputed.ts"
+    "precompute:validate": "tsx scripts/validate-precomputed.ts",
+    "milestones:seed": "tsx scripts/milestones-seed.ts",
+    "milestones:status": "tsx scripts/milestones-status.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.72.1",

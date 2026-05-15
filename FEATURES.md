@@ -36,6 +36,7 @@ Each push to `main` triggers a Vercel deploy. Verify the new deploy is `Ready` i
 | 14 | **Pre-compute test-send** (route days to noahhshaw@gmail.com for review) | `/api/baby/test-send/route.ts` | Browser-navigate `/api/baby/test-send?days=0,7,14`; emails arrive in inbox |
 | 15 | **KB-update queue** + reply log + dashboard review | `kb_update_queue` schema, `/api/baby/kb-queue`, `KbQueueSection.tsx`, `ReplyLogSection.tsx` | Reply with "change the format to X"; classifier queues a feedback item; dashboard shows it |
 | 16 | **Vercel cron schedule** at 14:00 UTC daily | `vercel.json` crons block | Vercel dashboard → Crons; see next run; check `daily_emails` table after each |
+| 17 | **Developmental milestones** (catalog + per-baby state + dashboard + email CTAs) | `baby-kb/milestones/aap-cdc-2022.json`, `src/db/schema.ts` (`milestones_catalog`, `milestone_events`), `src/lib/baby/milestones.ts`, `/api/baby/milestones/*`, `/baby/milestones`, `/baby/milestones/[key]/[action]` | Visit `/baby/milestones`; tap "Mark complete" on a row → URL changes, row moves to Complete tab; tap "Copy as text" → clipboard has formatted list; `GET /api/baby/milestones/export?format=csv` downloads a CSV with the AAP source URL per row |
 
 ---
 
@@ -75,6 +76,17 @@ After any architectural change, run this top-to-bottom:
     - Audience → check `/api/baby/diag/replies?limit=5` for the inbound's recorded `toEmails` / `ccEmails`
 
 ---
+
+## Milestones — operator workflow
+
+The milestone check-in section at the bottom of each daily email is rendered **at gen time**, not send time. So the personalization loop is:
+
+1. Parents tap "Mark complete" in an email, or update via `/baby/milestones`.
+2. Operator (you) runs `npm run milestones:status` (or `--age-days=N` / `--from=N --to=M`) to see what's currently pending.
+3. Operator re-generates affected days in Claude Code, inlining the check-in section using the data from step 2.
+4. Resulting JSON ships on the next cron (or test-send).
+
+If steps 2-4 don't happen, stale content sends — acceptable by design. The seeded catalog uses CDC 2022 / AAP HealthyChildren windows; refresh by editing `baby-kb/milestones/aap-cdc-2022.json` and running `npm run milestones:seed`.
 
 ## Known operational gotchas
 

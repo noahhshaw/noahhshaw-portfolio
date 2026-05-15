@@ -362,8 +362,84 @@ export const agentSettings = pgTable("agent_settings", {
   updatedByEmail: text("updated_by_email"),
 });
 
+// ============================================================
+// DEVELOPMENTAL MILESTONES
+// ============================================================
+// Catalog seeded from baby-kb/milestones/aap-cdc-2022.json. Each row is a
+// clinically-resourced milestone with an AAP/CDC age window. The catalog
+// is immutable per-version; bumping the version reseeds.
+export const milestonesCatalog = pgTable(
+  "milestones_catalog",
+  {
+    id: serial("id").primaryKey(),
+    // Stable string key, used in URLs (e.g. /baby/milestones/first-social-smile/complete).
+    key: text("key").notNull().unique(),
+    displayName: text("display_name").notNull(),
+    // 'social-emotional' | 'language-communication' | 'cognitive' | 'movement-gross' | 'movement-fine'
+    category: text("category").notNull(),
+    ageWindowLowDays: integer("age_window_low_days").notNull(),
+    ageWindowHighDays: integer("age_window_high_days").notNull(),
+    sourceUrl: text("source_url").notNull(),
+    clinicalNote: text("clinical_note"),
+    seedOrder: integer("seed_order").notNull(),
+    catalogVersion: text("catalog_version").notNull(),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (t) => ({
+    catVerIdx: index("milestones_catalog_seed_order_idx").on(t.seedOrder),
+    windowIdx: index("milestones_catalog_window_idx").on(t.ageWindowLowDays),
+    catCheck: check(
+      "milestones_catalog_window_valid",
+      sql`${t.ageWindowLowDays} <= ${t.ageWindowHighDays}`
+    ),
+  })
+);
+
+// Per-baby state. One row per (baby_profile, milestone). UPDATEs in place —
+// no change-log table. status starts 'pending' and moves to 'complete' or
+// 'skipped'. observed_date is the parent's recall of when it happened; can
+// differ from completed_at (the moment the row was flipped).
+export const milestoneEvents = pgTable(
+  "milestone_events",
+  {
+    id: serial("id").primaryKey(),
+    babyProfileId: integer("baby_profile_id")
+      .notNull()
+      .references(() => babyProfile.id, { onDelete: "cascade" }),
+    milestoneId: integer("milestone_id")
+      .notNull()
+      .references(() => milestonesCatalog.id, { onDelete: "cascade" }),
+    // 'pending' | 'complete' | 'skipped'
+    status: text("status").notNull().default("pending"),
+    observedDate: date("observed_date"),
+    completedAt: timestamp("completed_at", { withTimezone: true }),
+    skippedAt: timestamp("skipped_at", { withTimezone: true }),
+    notes: text("notes"),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (t) => ({
+    uniqBabyMilestone: unique("milestone_events_baby_milestone_unique").on(
+      t.babyProfileId,
+      t.milestoneId
+    ),
+    statusIdx: index("milestone_events_status_idx").on(t.status),
+    statusCheck: check(
+      "milestone_events_status_valid",
+      sql`${t.status} IN ('pending', 'complete', 'skipped')`
+    ),
+  })
+);
+
 export type BabyProfile = typeof babyProfile.$inferSelect;
 export type NewBabyProfile = typeof babyProfile.$inferInsert;
+export type MilestoneCatalog = typeof milestonesCatalog.$inferSelect;
+export type NewMilestoneCatalog = typeof milestonesCatalog.$inferInsert;
+export type MilestoneEvent = typeof milestoneEvents.$inferSelect;
+export type NewMilestoneEvent = typeof milestoneEvents.$inferInsert;
 export type DailyEmail = typeof dailyEmails.$inferSelect;
 export type NewDailyEmail = typeof dailyEmails.$inferInsert;
 export type EmailReply = typeof emailReplies.$inferSelect;

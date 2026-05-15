@@ -1,0 +1,507 @@
+{
+  "version": "2026-05-14",
+  "source": "Synthesized from CDC's 2022 Learn the Signs Act Early developmental-milestone update (set to 75th percentile presentation) and AAP HealthyChildren ages-and-stages guidance. CDC 2022 reference: https://www.cdc.gov/ncbddd/actearly/milestones/index.html",
+  "notes": "age_window_low_days is the earliest age at which the milestone typically first appears for most term infants. age_window_high_days is the CDC 2022 checkpoint by which 75% of children have demonstrated the skill — past this age and still pending is worth raising with the pediatrician but not necessarily pathologic. Surface from low_days; never surface earlier. The check-in section sorts by seed_order so the most foundational items appear first.",
+  "milestones": [
+    {
+      "key": "tracks-face-briefly",
+      "display_name": "Watches your face when you talk",
+      "category": "social-emotional",
+      "age_window_low_days": 7,
+      "age_window_high_days": 60,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-2mo.html",
+      "seed_order": 1,
+      "clinical_note": "Baseline social orientation. Look for sustained gaze, even briefly, during alert windows."
+    },
+    {
+      "key": "responds-to-loud-sound",
+      "display_name": "Reacts to loud sounds (startle, blink, stillness)",
+      "category": "language-communication",
+      "age_window_low_days": 0,
+      "age_window_high_days": 60,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-2mo.html",
+      "seed_order": 2,
+      "clinical_note": "Confirms intact hearing response. Universal newborn hearing screen catches most cases but daily observation matters."
+    },
+    {
+      "key": "calms-with-soothing",
+      "display_name": "Calms when picked up or talked to",
+      "category": "social-emotional",
+      "age_window_low_days": 14,
+      "age_window_high_days": 60,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-2mo.html",
+      "seed_order": 3,
+      "clinical_note": "Early co-regulation. Not the same as stopping crying immediately — look for any shift in state."
+    },
+    {
+      "key": "brief-head-lift",
+      "display_name": "Briefly lifts head during tummy time",
+      "category": "movement-gross",
+      "age_window_low_days": 14,
+      "age_window_high_days": 60,
+      "source_url": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx",
+      "seed_order": 4,
+      "clinical_note": "Few seconds of head lift, even with bobble, counts. Builds neck strength for later head control."
+    },
+    {
+      "key": "first-social-smile",
+      "display_name": "First social smile (responding to a face, not gas)",
+      "category": "social-emotional",
+      "age_window_low_days": 28,
+      "age_window_high_days": 60,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-2mo.html",
+      "seed_order": 5,
+      "clinical_note": "Smile in response to someone smiling or talking to them, not a reflexive gas smile. Hallmark social milestone."
+    },
+    {
+      "key": "coos-makes-sounds",
+      "display_name": "Coos or makes sounds beyond crying",
+      "category": "language-communication",
+      "age_window_low_days": 35,
+      "age_window_high_days": 60,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-2mo.html",
+      "seed_order": 6,
+      "clinical_note": "Vowel sounds like ooh, ahh. Pre-language vocalization. Distinct from fussing or hiccup sounds."
+    },
+    {
+      "key": "tracks-moving-object",
+      "display_name": "Follows a moving object with eyes past midline",
+      "category": "cognitive",
+      "age_window_low_days": 28,
+      "age_window_high_days": 60,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-2mo.html",
+      "seed_order": 7,
+      "clinical_note": "Hold a small object 8-12 inches away and slowly move side to side. Eyes should cross the body midline."
+    },
+    {
+      "key": "holds-head-up-tummy",
+      "display_name": "Holds head up while on tummy",
+      "category": "movement-gross",
+      "age_window_low_days": 35,
+      "age_window_high_days": 60,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-2mo.html",
+      "seed_order": 8,
+      "clinical_note": "Sustained head lift of several seconds, not just a brief bob. Forearms may or may not be supporting yet."
+    },
+    {
+      "key": "hands-open-mostly",
+      "display_name": "Hands relax open most of the time",
+      "category": "movement-fine",
+      "age_window_low_days": 35,
+      "age_window_high_days": 90,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-2mo.html",
+      "seed_order": 9,
+      "clinical_note": "Newborn fists relax as the palmar grasp reflex fades. Predictor of voluntary grasp coming."
+    },
+    {
+      "key": "smiles-to-get-attention",
+      "display_name": "Smiles on his own to get your attention",
+      "category": "social-emotional",
+      "age_window_low_days": 60,
+      "age_window_high_days": 120,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-4mo.html",
+      "seed_order": 10,
+      "clinical_note": "Initiates the smile rather than responding to yours — emerging social agency."
+    },
+    {
+      "key": "laughs",
+      "display_name": "Laughs out loud",
+      "category": "social-emotional",
+      "age_window_low_days": 70,
+      "age_window_high_days": 120,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-4mo.html",
+      "seed_order": 11,
+      "clinical_note": "Full belly laugh, not just a smile with sound. Often triggered by gentle physical play or peekaboo."
+    },
+    {
+      "key": "turns-head-toward-sound",
+      "display_name": "Turns head toward the sound of your voice",
+      "category": "language-communication",
+      "age_window_low_days": 60,
+      "age_window_high_days": 120,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-4mo.html",
+      "seed_order": 12,
+      "clinical_note": "Localizes sound source. Worth raising with the pediatrician if absent at the 4-month visit."
+    },
+    {
+      "key": "makes-sounds-back",
+      "display_name": "Makes sounds back when you talk to him",
+      "category": "language-communication",
+      "age_window_low_days": 60,
+      "age_window_high_days": 120,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-4mo.html",
+      "seed_order": 13,
+      "clinical_note": "Conversational turn-taking. Foundation for later vocabulary growth."
+    },
+    {
+      "key": "holds-head-steady-when-held",
+      "display_name": "Holds head steady without support when held",
+      "category": "movement-gross",
+      "age_window_low_days": 60,
+      "age_window_high_days": 120,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-4mo.html",
+      "seed_order": 14,
+      "clinical_note": "Critical safety milestone — allows for forward-facing carriers, less head-and-neck cradling."
+    },
+    {
+      "key": "pushes-up-on-elbows",
+      "display_name": "Pushes up on elbows during tummy time",
+      "category": "movement-gross",
+      "age_window_low_days": 70,
+      "age_window_high_days": 120,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-4mo.html",
+      "seed_order": 15,
+      "clinical_note": "Tripod position. Builds toward eventual rolling."
+    },
+    {
+      "key": "holds-toy-when-placed",
+      "display_name": "Holds a toy when you put it in his hand",
+      "category": "movement-fine",
+      "age_window_low_days": 70,
+      "age_window_high_days": 120,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-4mo.html",
+      "seed_order": 16,
+      "clinical_note": "Voluntary grasp emerging. Soon followed by reaching."
+    },
+    {
+      "key": "brings-hands-to-mouth",
+      "display_name": "Brings hands to mouth on purpose",
+      "category": "movement-fine",
+      "age_window_low_days": 60,
+      "age_window_high_days": 120,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-4mo.html",
+      "seed_order": 17,
+      "clinical_note": "Body awareness; precursor to self-feeding and oral exploration."
+    },
+    {
+      "key": "reaches-for-toy",
+      "display_name": "Reaches to grab a toy he wants",
+      "category": "movement-fine",
+      "age_window_low_days": 90,
+      "age_window_high_days": 180,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-6mo.html",
+      "seed_order": 18,
+      "clinical_note": "Visually-guided reaching, eye-hand coordination."
+    },
+    {
+      "key": "rolls-tummy-to-back",
+      "display_name": "Rolls from tummy to back",
+      "category": "movement-gross",
+      "age_window_low_days": 90,
+      "age_window_high_days": 180,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-6mo.html",
+      "seed_order": 19,
+      "clinical_note": "Usually appears first — back-to-tummy follows later. Once rolling begins, stop swaddling for sleep."
+    },
+    {
+      "key": "rolls-back-to-tummy",
+      "display_name": "Rolls from back to tummy",
+      "category": "movement-gross",
+      "age_window_low_days": 120,
+      "age_window_high_days": 210,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-6mo.html",
+      "seed_order": 20,
+      "clinical_note": "Harder direction; requires more core and upper-body strength."
+    },
+    {
+      "key": "leans-on-hands-tummy-time",
+      "display_name": "Leans on hands to support self during tummy time",
+      "category": "movement-gross",
+      "age_window_low_days": 120,
+      "age_window_high_days": 180,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-6mo.html",
+      "seed_order": 21,
+      "clinical_note": "Full arm extension, chest off the floor. Builds toward sitting."
+    },
+    {
+      "key": "knows-familiar-people",
+      "display_name": "Knows familiar people (parents vs strangers)",
+      "category": "social-emotional",
+      "age_window_low_days": 120,
+      "age_window_high_days": 180,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-6mo.html",
+      "seed_order": 22,
+      "clinical_note": "Different reaction (calming, leaning in) for parents vs strangers. Precursor to stranger anxiety."
+    },
+    {
+      "key": "likes-mirror",
+      "display_name": "Likes to look at himself in a mirror",
+      "category": "cognitive",
+      "age_window_low_days": 120,
+      "age_window_high_days": 180,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-6mo.html",
+      "seed_order": 23,
+      "clinical_note": "Doesn't yet recognize as self, but visually attentive."
+    },
+    {
+      "key": "takes-turns-making-sounds",
+      "display_name": "Takes turns making sounds with you",
+      "category": "language-communication",
+      "age_window_low_days": 120,
+      "age_window_high_days": 180,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-6mo.html",
+      "seed_order": 24,
+      "clinical_note": "Reciprocal vocal exchange. Pause after speaking, wait for response."
+    },
+    {
+      "key": "blows-raspberries",
+      "display_name": "Blows raspberries (sticks tongue out and blows)",
+      "category": "language-communication",
+      "age_window_low_days": 120,
+      "age_window_high_days": 180,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-6mo.html",
+      "seed_order": 25,
+      "clinical_note": "Oral-motor practice. Often coincides with starting solids."
+    },
+    {
+      "key": "makes-squealing-sounds",
+      "display_name": "Makes squealing noises",
+      "category": "language-communication",
+      "age_window_low_days": 120,
+      "age_window_high_days": 180,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-6mo.html",
+      "seed_order": 26,
+      "clinical_note": "Exploring pitch range. Can be loud — normal."
+    },
+    {
+      "key": "puts-things-in-mouth",
+      "display_name": "Puts things in mouth to explore them",
+      "category": "cognitive",
+      "age_window_low_days": 120,
+      "age_window_high_days": 180,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-6mo.html",
+      "seed_order": 27,
+      "clinical_note": "Primary mode of sensory exploration. Time to audit floor-level small-object hazards."
+    },
+    {
+      "key": "reaches-to-be-picked-up",
+      "display_name": "Reaches up to be picked up",
+      "category": "social-emotional",
+      "age_window_low_days": 180,
+      "age_window_high_days": 270,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-9mo.html",
+      "seed_order": 28,
+      "clinical_note": "Intentional communicative gesture. Bridges to pointing later."
+    },
+    {
+      "key": "stranger-shyness",
+      "display_name": "Shows shyness or anxiety with strangers",
+      "category": "social-emotional",
+      "age_window_low_days": 180,
+      "age_window_high_days": 270,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-9mo.html",
+      "seed_order": 29,
+      "clinical_note": "Healthy attachment signal, even when intense. Peaks 8-12 months."
+    },
+    {
+      "key": "looks-when-name-called",
+      "display_name": "Looks when his name is called",
+      "category": "language-communication",
+      "age_window_low_days": 180,
+      "age_window_high_days": 270,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-9mo.html",
+      "seed_order": 30,
+      "clinical_note": "Worth raising with pediatrician if consistently absent at the 9-month visit."
+    },
+    {
+      "key": "babbles-strings",
+      "display_name": "Babbles long strings like 'mamamama' or 'bababababa'",
+      "category": "language-communication",
+      "age_window_low_days": 180,
+      "age_window_high_days": 270,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-9mo.html",
+      "seed_order": 31,
+      "clinical_note": "Canonical babbling. Strong predictor of speech development."
+    },
+    {
+      "key": "lifts-arms-to-be-picked-up",
+      "display_name": "Lifts arms when wanting to be picked up",
+      "category": "language-communication",
+      "age_window_low_days": 180,
+      "age_window_high_days": 270,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-9mo.html",
+      "seed_order": 32,
+      "clinical_note": "Pre-verbal communicative gesture."
+    },
+    {
+      "key": "object-permanence",
+      "display_name": "Looks for objects when dropped out of sight",
+      "category": "cognitive",
+      "age_window_low_days": 180,
+      "age_window_high_days": 270,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-9mo.html",
+      "seed_order": 33,
+      "clinical_note": "Beginning of object permanence. Makes peekaboo suddenly the funniest thing in the world."
+    },
+    {
+      "key": "bangs-two-objects",
+      "display_name": "Bangs two things together",
+      "category": "cognitive",
+      "age_window_low_days": 180,
+      "age_window_high_days": 270,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-9mo.html",
+      "seed_order": 34,
+      "clinical_note": "Cause-and-effect exploration."
+    },
+    {
+      "key": "sits-without-support",
+      "display_name": "Sits without support",
+      "category": "movement-gross",
+      "age_window_low_days": 150,
+      "age_window_high_days": 270,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-9mo.html",
+      "seed_order": 35,
+      "clinical_note": "Tripod sit first (hands forward), then hands free."
+    },
+    {
+      "key": "gets-to-sitting",
+      "display_name": "Moves things from one hand to the other",
+      "category": "movement-fine",
+      "age_window_low_days": 180,
+      "age_window_high_days": 270,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-9mo.html",
+      "seed_order": 36,
+      "clinical_note": "Cross-body coordination."
+    },
+    {
+      "key": "uses-fingers-rake",
+      "display_name": "Uses fingers to 'rake' food toward himself",
+      "category": "movement-fine",
+      "age_window_low_days": 210,
+      "age_window_high_days": 270,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-9mo.html",
+      "seed_order": 37,
+      "clinical_note": "Predecessor to pincer grasp. Coincides with starting finger foods."
+    },
+    {
+      "key": "crawls",
+      "display_name": "Crawls (hands and knees) or scoots",
+      "category": "movement-gross",
+      "age_window_low_days": 210,
+      "age_window_high_days": 330,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-12mo.html",
+      "seed_order": 38,
+      "clinical_note": "Some babies skip crawling and go straight to cruising — that is within normal range."
+    },
+    {
+      "key": "pulls-to-stand",
+      "display_name": "Pulls to stand at furniture or your legs",
+      "category": "movement-gross",
+      "age_window_low_days": 240,
+      "age_window_high_days": 330,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-12mo.html",
+      "seed_order": 39,
+      "clinical_note": "Time to switch to a lower crib mattress setting if not already."
+    },
+    {
+      "key": "plays-peekaboo",
+      "display_name": "Plays peekaboo (or covers and uncovers face)",
+      "category": "cognitive",
+      "age_window_low_days": 270,
+      "age_window_high_days": 365,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-1yr.html",
+      "seed_order": 40,
+      "clinical_note": "Social game, demonstrates object permanence in action."
+    },
+    {
+      "key": "waves-bye",
+      "display_name": "Waves bye-bye",
+      "category": "language-communication",
+      "age_window_low_days": 270,
+      "age_window_high_days": 365,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-1yr.html",
+      "seed_order": 41,
+      "clinical_note": "Intentional gesture with social meaning."
+    },
+    {
+      "key": "calls-parent-by-name",
+      "display_name": "Calls a parent 'mama' or 'dada' or similar",
+      "category": "language-communication",
+      "age_window_low_days": 270,
+      "age_window_high_days": 365,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-1yr.html",
+      "seed_order": 42,
+      "clinical_note": "Specifically referring to a person, not generalized babble. First true word for many babies."
+    },
+    {
+      "key": "understands-no",
+      "display_name": "Understands 'no' (pauses briefly even if not obedient)",
+      "category": "language-communication",
+      "age_window_low_days": 270,
+      "age_window_high_days": 365,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-1yr.html",
+      "seed_order": 43,
+      "clinical_note": "Receptive language. Compliance is a much later milestone."
+    },
+    {
+      "key": "puts-something-in-container",
+      "display_name": "Puts something in a container",
+      "category": "cognitive",
+      "age_window_low_days": 270,
+      "age_window_high_days": 365,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-1yr.html",
+      "seed_order": 44,
+      "clinical_note": "Demonstrates planning and spatial reasoning."
+    },
+    {
+      "key": "looks-for-hidden-objects",
+      "display_name": "Looks for things you hide (under a blanket)",
+      "category": "cognitive",
+      "age_window_low_days": 270,
+      "age_window_high_days": 365,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-1yr.html",
+      "seed_order": 45,
+      "clinical_note": "Object permanence consolidated."
+    },
+    {
+      "key": "pincer-grasp",
+      "display_name": "Picks up small food bits with thumb and index finger (pincer grasp)",
+      "category": "movement-fine",
+      "age_window_low_days": 240,
+      "age_window_high_days": 365,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-1yr.html",
+      "seed_order": 46,
+      "clinical_note": "Fine motor milestone with major implications for self-feeding."
+    },
+    {
+      "key": "cruises",
+      "display_name": "Walks while holding on to furniture (cruising)",
+      "category": "movement-gross",
+      "age_window_low_days": 270,
+      "age_window_high_days": 365,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-1yr.html",
+      "seed_order": 47,
+      "clinical_note": "Independent walking usually follows within 2-3 months."
+    },
+    {
+      "key": "stands-briefly-no-support",
+      "display_name": "Stands alone for a few seconds",
+      "category": "movement-gross",
+      "age_window_low_days": 300,
+      "age_window_high_days": 365,
+      "source_url": "https://www.cdc.gov/ncbddd/actearly/milestones/milestones-1yr.html",
+      "seed_order": 48,
+      "clinical_note": "Often follows cruising. Balance precedes locomotion."
+    },
+    {
+      "key": "first-independent-steps",
+      "display_name": "Takes a few steps independently",
+      "category": "movement-gross",
+      "age_window_low_days": 300,
+      "age_window_high_days": 450,
+      "source_url": "https://www.healthychildren.org/English/ages-stages/toddler/Pages/Cognitive-Development-One-Year-Old.aspx",
+      "seed_order": 49,
+      "clinical_note": "CDC checkpoint is 15 months. Wide normal range — late walking alone is not concerning if other milestones are on track."
+    },
+    {
+      "key": "uses-one-word",
+      "display_name": "Uses one word besides mama or dada",
+      "category": "language-communication",
+      "age_window_low_days": 300,
+      "age_window_high_days": 450,
+      "source_url": "https://www.healthychildren.org/English/ages-stages/toddler/Pages/Cognitive-Development-One-Year-Old.aspx",
+      "seed_order": 50,
+      "clinical_note": "Commonly 'ball', 'dog', 'bye', or a family-specific word."
+    }
+  ]
+}

@@ -38,14 +38,22 @@ export default async function BabyDashboardPage() {
               Signed in as {parent.firstName} ({parent.email})
             </p>
           </div>
-          <form action="/api/baby/auth/logout" method="post">
-            <button
-              type="submit"
-              className="text-xs text-gray-500 hover:text-gray-900"
+          <div className="flex items-center gap-4">
+            <a
+              href="/baby/milestones"
+              className="text-sm text-blue-700 hover:underline"
             >
-              Sign out
-            </button>
-          </form>
+              Milestones →
+            </a>
+            <form action="/api/baby/auth/logout" method="post">
+              <button
+                type="submit"
+                className="text-xs text-gray-500 hover:text-gray-900"
+              >
+                Sign out
+              </button>
+            </form>
+          </div>
         </header>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

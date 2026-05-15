@@ -8,6 +8,13 @@
       "when": 1778251111162,
       "tag": "0000_baby_agent",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1778816632461,
+      "tag": "0001_freezing_squirrel_girl",
+      "breakpoints": true
     }
   ]
 }
