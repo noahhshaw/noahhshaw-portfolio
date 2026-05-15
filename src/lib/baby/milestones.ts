@@ -20,7 +20,7 @@ import {
   type MilestoneCatalog,
   type MilestoneEvent,
 } from "@/db/schema";
-import { and, asc, eq, lte } from "drizzle-orm";
+import { and, asc, desc, eq, lte } from "drizzle-orm";
 
 export type MilestoneStatus = "pending" | "complete" | "skipped";
 export const MILESTONE_STATUSES: readonly MilestoneStatus[] = [
@@ -115,8 +115,11 @@ export async function loadAllMilestoneRows(
 
 /**
  * Surface-eligible rows for the email check-in: pending only, low_days <=
- * ageInDays. Capped at `limit`. Sorted by seed_order so the most
- * foundational item comes first.
+ * ageInDays. Capped at `limit`. Sorted **newest-opened first** —
+ * `age_window_low_days DESC, seed_order ASC` — so the daily email
+ * highlights milestones that just became expected rather than repeating
+ * the same day-0 list forever. Older still-pending items remain visible
+ * on the dashboard for catch-up review.
  */
 export async function loadSurfaceableMilestones(opts: {
   babyProfileId: number;
@@ -140,7 +143,10 @@ export async function loadSurfaceableMilestones(opts: {
         lte(milestonesCatalog.ageWindowLowDays, opts.ageInDays)
       )
     )
-    .orderBy(asc(milestonesCatalog.seedOrder))
+    .orderBy(
+      desc(milestonesCatalog.ageWindowLowDays),
+      asc(milestonesCatalog.seedOrder)
+    )
     .limit(limit);
 
   return rows.map(({ milestones_catalog, milestone_events }) => ({

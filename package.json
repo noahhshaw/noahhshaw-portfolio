@@ -15,7 +15,8 @@
     "db:check": "tsx scripts/check-baby-schema.ts",
     "precompute:validate": "tsx scripts/validate-precomputed.ts",
     "milestones:seed": "tsx scripts/milestones-seed.ts",
-    "milestones:status": "tsx scripts/milestones-status.ts"
+    "milestones:status": "tsx scripts/milestones-status.ts",
+    "milestones:bake": "tsx scripts/bake-milestones-into-precomputed.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.72.1",

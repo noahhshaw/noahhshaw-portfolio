@@ -59,9 +59,24 @@ const SUBJECT_PREFIX = (age: number) => `Day ${age}:`;
 const MAX_SUBJECT_LENGTH = 72;
 const MIN_WORD_COUNT = 200; // slight headroom under voice spec's 250
 const MAX_WORD_COUNT = 600; // slight headroom over voice spec's 500
+// The milestone check-in section is mechanically rendered (not gen-agent
+// prose) and exempt from prose-quality constraints — banned-phrase scan,
+// word count, exclamation count, "Further reading" structure. We strip
+// the section before applying those checks.
+const MILESTONE_SECTION_HEADER = "Developmental milestone check-in";
+
+function stripMilestoneSection(text: string): string {
+  const idx = text.indexOf(MILESTONE_SECTION_HEADER);
+  if (idx < 0) return text;
+  return text.slice(0, idx).trimEnd();
+}
 
 export function validateEmail(email: EmailToValidate): string[] {
   const issues: string[] = [];
+  // Strip the appended milestone section from the prose-quality checks —
+  // it's mechanically rendered with fixed-format clinical notes that
+  // intentionally use vocabulary the gen-agent voice rules would flag.
+  const proseText = stripMilestoneSection(email.bodyText);
 
   // Subject format
   if (!email.subject.startsWith(SUBJECT_PREFIX(email.ageInDays))) {
@@ -81,8 +96,8 @@ export function validateEmail(email: EmailToValidate): string[] {
     issues.push("subject contains exclamation point");
   }
 
-  // Word count
-  const words = email.bodyText.trim().split(/\s+/).filter(Boolean);
+  // Word count (prose only, milestone section excluded)
+  const words = proseText.trim().split(/\s+/).filter(Boolean);
   if (words.length < MIN_WORD_COUNT) {
     issues.push(`body too short: ${words.length} words (min ${MIN_WORD_COUNT})`);
   }
@@ -90,15 +105,17 @@ export function validateEmail(email: EmailToValidate): string[] {
     issues.push(`body too long: ${words.length} words (max ${MAX_WORD_COUNT})`);
   }
 
-  // Banned register
-  const haystack = email.bodyText.toLowerCase();
+  // Banned register (prose only)
+  const haystack = proseText.toLowerCase();
   for (const phrase of BANNED_PHRASES) {
     if (haystack.includes(phrase)) {
       issues.push(`banned phrase in body: "${phrase}"`);
     }
   }
 
-  // Banned canonical-name misspellings (e.g., Anushka → Anoushka)
+  // Banned canonical-name misspellings (e.g., Anushka → Anoushka).
+  // Applied to full body — even the milestone section must spell names
+  // correctly if any future catalog item references a parent.
   for (const { pattern, canonical } of BANNED_NAME_REGEXES) {
     if (pattern.test(email.bodyText) || pattern.test(email.subject)) {
       issues.push(
@@ -107,22 +124,23 @@ export function validateEmail(email: EmailToValidate): string[] {
     }
   }
 
-  // KB file paths leak into body — internal metadata never goes to readers
+  // KB file paths leak into body — internal metadata never goes to readers.
+  // Applied to full body.
   if (/baby-kb\//.test(email.bodyText) || /baby-kb\//.test(email.bodyHtml)) {
     issues.push(
       "body contains 'baby-kb/' file path — KB paths are internal metadata; use external authority URLs in the body"
     );
   }
 
-  // Emoji in body
+  // Emoji in body — applied to full body.
   if (/[\u{1F300}-\u{1F9FF}\u{2600}-\u{27BF}]/u.test(email.bodyText)) {
     issues.push("body contains emoji");
   }
 
   // Exclamation points: allowed only in `[call now]` lines (per voice.md
-  // exception). Approximate: any `!` not on the same line as `[call now]`
-  // is flagged.
-  const lines = email.bodyText.split("\n");
+  // exception). Prose only — milestone section is exempt because some
+  // clinical-note text needs naturalistic punctuation.
+  const lines = proseText.split("\n");
   for (const line of lines) {
     if (line.includes("!") && !line.includes("[call now]")) {
       issues.push(
@@ -132,15 +150,17 @@ export function validateEmail(email: EmailToValidate): string[] {
     }
   }
 
-  // Required sections
+  // Required sections (prose only — the gen-agent must still author all
+  // canonical sections; milestone section is a non-gen-agent addition).
   for (const section of REQUIRED_SECTIONS) {
-    if (!email.bodyText.includes(section)) {
+    if (!proseText.includes(section)) {
       issues.push(`missing section: ${section}`);
     }
   }
 
   // "Further reading" must be a bullet list of 2+ items, each with a URL.
-  const frBlock = extractSection(email.bodyText, "Further reading");
+  // Prose only — milestone section comes after Further reading.
+  const frBlock = extractSection(proseText, "Further reading");
   if (frBlock !== null) {
     const bulletLines = frBlock
       .split("\n")
