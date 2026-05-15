@@ -1,10 +1,12 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { loadVoiceGuide } from "./kb-loader";
 
-// Multimodal classifier + reply drafter. Called from process-replies after
-// the debounce window elapses. Receives the batched replies from one sender,
-// returns a structured decision: classification, whether to reply, the reply
-// itself, any context to persist, any KB-update request to queue.
+// Multimodal classifier + reply drafter. Called from process-replies once
+// per inbound reply (NOT batched across replies — see the 2026-05-14
+// product rule revision). Receives one reply with any attached images,
+// returns a structured decision: classification, whether to reply, the
+// reply body itself, any context to persist, any KB-update request to
+// queue.
 //
 // We use Sonnet 4.6 (cheap, capable, multimodal) with prompt caching on the
 // voice guide and the prior daily-email context.
@@ -78,7 +80,8 @@ export type DailyEmailContext = {
 export type ClassifierInputs = {
   fromEmail: string;
   fromName?: string;
-  replies: ReplyInput[];
+  /** A single inbound reply. One classifier call ↔ one outbound response. */
+  reply: ReplyInput;
   originalDailyEmail?: DailyEmailContext;
   babyContext: {
     babyName: string | null;
@@ -119,37 +122,36 @@ export async function classifyAndDraft(
     type: "text",
     text: buildContextBlock(inputs),
   });
-  for (const reply of inputs.replies) {
-    userContent.push({
-      type: "text",
-      text: `\n--- inbound reply received ${reply.receivedAt.toISOString()} ---\nSubject: ${
-        reply.subject ?? "(none)"
-      }\n\n${reply.bodyText ?? "(no plain-text body)"}`,
-    });
-    for (const att of reply.attachments) {
-      if (att.mediaType.startsWith("image/")) {
-        userContent.push({
-          type: "image",
-          source: {
-            type: "base64",
-            media_type: att.mediaType as
-              | "image/jpeg"
-              | "image/png"
-              | "image/gif"
-              | "image/webp",
-            data: att.base64,
-          },
-        });
-        userContent.push({
-          type: "text",
-          text: `(image attached: ${att.filename ?? "unnamed"})`,
-        });
-      } else {
-        userContent.push({
-          type: "text",
-          text: `(non-image attachment: ${att.filename ?? "unnamed"} ${att.mediaType})`,
-        });
-      }
+  const { reply } = inputs;
+  userContent.push({
+    type: "text",
+    text: `\n--- inbound reply received ${reply.receivedAt.toISOString()} ---\nSubject: ${
+      reply.subject ?? "(none)"
+    }\n\n${reply.bodyText ?? "(no plain-text body)"}`,
+  });
+  for (const att of reply.attachments) {
+    if (att.mediaType.startsWith("image/")) {
+      userContent.push({
+        type: "image",
+        source: {
+          type: "base64",
+          media_type: att.mediaType as
+            | "image/jpeg"
+            | "image/png"
+            | "image/gif"
+            | "image/webp",
+          data: att.base64,
+        },
+      });
+      userContent.push({
+        type: "text",
+        text: `(image attached: ${att.filename ?? "unnamed"})`,
+      });
+    } else {
+      userContent.push({
+        type: "text",
+        text: `(non-image attachment: ${att.filename ?? "unnamed"} ${att.mediaType})`,
+      });
     }
   }
 
@@ -219,7 +221,7 @@ const SYSTEM_PROLOGUE = `You are the inbound-reply agent for "Daily Baby" — a 
 
 const SYSTEM_TASK = `## Your task
 
-You will receive one batch of replies from a single parent (debounced over 10 minutes). The user content includes the original daily email they're replying to, recent context, and the reply text + any attached images.
+You will receive ONE inbound reply from a parent (not a batch). One reply in, at most one outbound response. The user content includes the original daily email they're replying to, the reply text, and any attached images.
 
 Decide:
 
@@ -237,7 +239,12 @@ Decide:
    - "photo-only" → false (silently store; no nag-prompts for tags)
    - "none" → false
 
-3. If should_reply, draft **reply_subject** (≤72 chars, prefix "Re: " of inbound subject is fine), **reply_html**, and **reply_text**. Match the voice guide above. Severity judgments allowed using the four-tier flag set; do NOT diagnose.
+3. If should_reply, draft **reply_html** and **reply_text**. Do NOT draft a subject — the pipeline forces the outgoing subject to match the inbound thread (so Gmail keeps the conversation grouped). Any reply_subject you emit is ignored.
+
+   **Formatting rules (strict — output is validated):**
+   - **reply_text** is plain prose in paragraphs separated by a blank line. NO markdown: no \`**bold**\`, no \`*italic*\`, no \`---\` separators, no leading \`- \` or \`1. \` list markers, no inline backticks. If you need to call out a severity flag use bracketed shorthand inside the sentence, e.g. "[call within 24h]". Inline URLs are allowed as bare URLs in plain-text only because the email client linkifies them.
+   - **reply_html** is paragraph-wrapped using \`<p>...</p>\`. External sources must be rendered as \`<a href="URL">human-readable anchor</a>\` where the anchor text is a noun phrase (e.g. "AAP on cord care"), NEVER the URL itself.
+   - Same content in both bodies. If the user is on a text-only client, reply_text must read as clean prose with the same information density.
 
 4. **context_to_store**: every meaningful fact about the baby, the family, dates, preferences, or noted concerns goes here so future emails can use it. Each entry has a content_type and tags.
 

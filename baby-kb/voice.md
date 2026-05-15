@@ -127,7 +127,7 @@ If any validator returns an issue, the agent re-drafts the email with the failur
 
 You don't. The parents asked for this register specifically. The only acceptable deviation is a single-sentence concession in `[call now]` content where empathy beats precision: e.g., "If she's blue around the lips, call 911 — don't second-guess." That's it.
 
-## Formatting
+## Formatting (daily email — pre-computed)
 
 - Use Markdown. Renderer converts to HTML for the email client.
 - No emoji. Ever.
@@ -135,3 +135,14 @@ You don't. The parents asked for this register specifically. The only acceptable
 - Numbers: digits for ≥10 ("10 days"), spelled for <10 ("five feeds") except in measurements ("4 oz", "8 lb 2 oz").
 - Temperature: always note the route (rectal, axillary). Default to rectal for infants under 3 months.
 - Time: use 24-hour clock for protocols ("18:00 bedtime"), 12-hour for narrative ("around 6pm").
+
+## Formatting (reply agent — different rules)
+
+The interactive reply agent (`src/lib/baby/classifier.ts`) is a different surface than the daily email and follows stricter rules. The reply lands directly in the parent's inbox as a reply to their own message, so it must look like a person typed it, not a markdown document. Output is mechanically validated; violations are stripped or logged.
+
+- `reply_text` (plain-text body): **plain prose in paragraphs separated by a blank line.** No markdown of any kind — no `**bold**`, no `*italic*`, no `---` separators, no leading `- ` or `1. ` list markers, no inline backticks. Severity flags use bracketed shorthand inside a sentence (`"[call within 24h]"`, `"[call now]"`). Bare URLs are acceptable here because email clients auto-linkify.
+- `reply_html`: paragraph-wrapped using `<p>...</p>`. External sources MUST be rendered as `<a href="URL">human-readable anchor text</a>` (e.g. anchor = "AAP on cord care", never the URL itself).
+- Subject line: **the classifier does not draft the subject.** The pipeline sets `Subject:` to the inbound reply's subject verbatim, so Gmail keeps the response in the same conversation thread.
+- Threading: outgoing `In-Reply-To` and `References` headers are built by `src/lib/baby/threading.ts` from the inbound `message_id` and the original daily email's `message_id`. Never break this chain.
+- One inbound reply → at most one outbound response. The classifier sees exactly one reply per invocation. Do not aggregate answers across replies.
+- Audience: the response goes only to the union of `from + to + cc` of THE specific inbound reply (minus the agent itself, minus on-domain non-allowlist aliases). Never inflate by adding the other parent unless they were on the reply.

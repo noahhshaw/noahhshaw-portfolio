@@ -26,7 +26,7 @@ Each push to `main` triggers a Vercel deploy. Verify the new deploy is `Ready` i
 | 4 | **Settings** (voice intensity, enrichment intensity, topics, paused_until) | `agent_settings` (key/value JSON), `/api/baby/settings/route.ts`, `SettingsSection.tsx` | Toggle a slider, save, reload |
 | 5 | **Personal calendar** (Mother's Day, birthdays, vaccines) | `calendar_events` schema, `/api/baby/calendar/route.ts`, recurrence engine in `recurrence.ts` | Add a yearly event for 2024-05-10; verify it surfaces in next-14-day window via gen pipeline |
 | 6 | **Photo upload** (R2 path-style, confirm-after-upload) | `r2.ts`, `/api/baby/photos/{upload-url,confirm,...}/route.ts`, `PhotoSection.tsx` | Drag image into Photos section; appears in gallery |
-| 7 | **Inbound replies** (Cloudflare Email Worker → HMAC POST → debounced classifier) | `cloudflare/email-worker/src/worker.ts`, `/api/inbound/baby/route.ts`, `/api/baby/internal/process-replies/route.ts`, `classifier.ts` | Reply to a daily email; verify entry appears in Reply log with classification |
+| 7 | **Inbound replies** (Cloudflare Email Worker → HMAC POST → per-reply classifier → threaded response) | `cloudflare/email-worker/src/worker.ts`, `/api/inbound/baby/route.ts`, `src/lib/baby/reply-processor.ts`, `classifier.ts`, `threading.ts`, `output-cleaner.ts` | Reply to a daily email; verify a response arrives in the **same Gmail thread** within ~15 s; only the people on your reply's to/cc receive it; plain-prose body with hyperlinked sources, no markdown bleed-through |
 | 8 | **Pre-compute pipeline** (Claude Code agent generates → JSON artifacts → committed to repo) | `.claude-routines/precompute-pipeline.md` (procedure), `baby-kb/precomputed/day-N.json` | `ls baby-kb/precomputed/ \| wc -l` ≥ days you've generated; `npm run precompute:validate` passes |
 | 9 | **Daily cron** reads precomputed artifact, sends via Resend | `/api/cron/baby-morning/route.ts`, `src/lib/baby/send.ts` | `curl https://noahhshaw.com/api/cron/baby-morning?force=1&token=...` returns `ok: true`, email lands in inbox |
 | 10 | **Missing-artifact notice** when day-N.json absent | Same cron route, `sendMissingArtifactNotice()` | Move/delete an artifact, force the cron, verify alert email arrives |
@@ -59,10 +59,20 @@ After any architectural change, run this top-to-bottom:
    - No `baby-kb/...` paths visible in body
    - Anoushka spelled correctly (no `Anushka`)
    - All links clickable and load to non-error pages
-9. Send a reply to any of the test emails
-10. Within ~10 min (or click "Process pending now" in dashboard), confirm:
-    - Reply appears in Reply log with classification
-    - If classified as feedback, an entry appears in Pending KB updates
+9. Send a reply to any of the test emails. Then send a second reply to a different test email from the same inbox. (Verifies the no-batching rule.)
+10. Within ~15-30 s, confirm:
+    - **Two** distinct responses arrive (one per reply), not one merged answer
+    - Each response appears in the SAME Gmail conversation as the reply it answers (not a new thread)
+    - Response subjects match the inbound subjects verbatim ("Re: <original daily subject>")
+    - Body is plain prose paragraphs; no visible `**`, `---`, `1.`, or `- ` markers
+    - External sources are clickable anchor links with readable text (e.g. "AAP on cord care"), not raw URLs as visible text
+    - Audience: if you replied only to daily-baby@, response is only to you; if you cc'd the other parent, response is to both
+    - Reply log in `/baby` dashboard shows each reply with its classification + per-reply outbound message id
+    - `GET /api/baby/diag/trace?stage=proc.send.done` (with `Authorization: Bearer $BABY_INTERNAL_SECRET`) shows two `proc.send.done` events with distinct reply ids
+11. If any of the above fails:
+    - Body formatting → check `/api/baby/diag/trace?stage=proc.output.violations` for the post-clean validator output
+    - Threading → check the outbound's `In-Reply-To` and `References` headers in the raw email source (Gmail → Show original)
+    - Audience → check `/api/baby/diag/replies?limit=5` for the inbound's recorded `toEmails` / `ccEmails`
 
 ---
 

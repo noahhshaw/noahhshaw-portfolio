@@ -4,15 +4,17 @@
  * Responsibilities:
  *   - Load all unprocessed replies for a sender (or all senders, sweep mode).
  *   - Hold a short Redis mutex per sender so concurrent triggers can't
- *     double-send a response.
- *   - Run the classifier on the batch + linked attachments + original email.
- *   - Send the agent's reply (if any) via Resend.
+ *     double-send for the same inbound batch.
+ *   - For EACH pending reply (no batching across replies — product rule
+ *     from 2026-05-14): run the classifier on that one reply, send at most
+ *     one outbound response, threaded under the inbound message-id with
+ *     proper References/In-Reply-To/Subject headers.
  *   - Queue feedback items into kb_update_queue.
- *   - Mark replies processed.
+ *   - Mark each reply processed independently.
  *
- * Originally lived inside `/api/baby/internal/process-replies/route.ts`.
- * Extracted so the inbound webhook can call it in-process — no extra
- * HTTP hop, no extra Lambda cold-start, no extra failure surface.
+ * The per-sender mutex covers concurrency only, not batching: we still
+ * process every pending reply in sequence inside one invocation, but each
+ * gets its own classifier call and its own send.
  */
 
 import { db } from "@/db";
@@ -30,13 +32,21 @@ import { loadAgeContext } from "@/lib/baby/age";
 import {
   classifyAndDraft,
   estimateCost,
+  type ClassifierResult,
   type ReplyAttachmentInput,
   type ReplyInput,
 } from "@/lib/baby/classifier";
 import { fetchObjectBase64 } from "@/lib/baby/r2-fetch";
-import { computeReplyRecipients, plainToHtml } from "@/lib/baby/recipients";
+import { computeReplyRecipients } from "@/lib/baby/recipients";
 import { getAllRecipientEmails } from "@/lib/baby/recipients-store";
 import { newTraceId, trace } from "@/lib/baby/trace";
+import {
+  cleanReplyHtml,
+  cleanReplyText,
+  validateReplyHtml,
+  validateReplyText,
+} from "@/lib/baby/output-cleaner";
+import { buildThreadHeaders } from "@/lib/baby/threading";
 
 export type ProcessSenderResult = Record<string, unknown>;
 
@@ -53,9 +63,6 @@ export async function processSender(
 ): Promise<ProcessSenderResult> {
   const traceId = opts.traceId ?? newTraceId("proc");
 
-  // Per-sender Redis mutex. If two inbound webhooks race (e.g. Cloudflare
-  // Worker retry while the first call is still in-flight), only one of them
-  // will run the classifier and send a response. The loser bails fast.
   const lockKey = `baby:processing:${sender}`;
   let lockAcquired = false;
   if (isRedisConfigured()) {
@@ -95,172 +102,234 @@ export async function processSender(
       oldestReceivedAt: pending[0].receivedAt,
     });
 
-    const replyInputs: ReplyInput[] = await Promise.all(
-      pending.map(async (r) => {
-        const atts = await loadAttachmentsForReply(r.id);
-        return {
-          receivedAt: new Date(r.receivedAt),
-          subject: r.subject,
-          bodyText: r.bodyText,
-          bodyHtml: r.bodyHtml,
-          attachments: atts,
-        };
-      })
-    );
-
-    const dailyEmailId = pending.find((r) => r.dailyEmailId !== null)
-      ?.dailyEmailId;
-    let originalDaily:
-      | { sentDate: string; subject: string; bodyText: string }
-      | undefined;
-    if (dailyEmailId) {
-      const rows = await db
-        .select()
-        .from(dailyEmails)
-        .where(eq(dailyEmails.id, dailyEmailId))
-        .limit(1);
-      if (rows[0]) {
-        originalDaily = {
-          sentDate: rows[0].sentDate,
-          subject: rows[0].subject,
-          bodyText: rows[0].bodyText,
-        };
-      }
-    }
-
+    // Cache the parent allow-list once; it doesn't change between replies.
+    const parentAllowList = await getAllRecipientEmails();
     const age = await loadAgeContext();
-    await trace("info", traceId, "proc.classify.start", "calling classifyAndDraft", {
-      sender,
-      ageInDays: age?.ageInDays ?? -999,
-      hasOriginalDaily: !!originalDaily,
-      replyCount: replyInputs.length,
-      attachmentCount: replyInputs.reduce((n, r) => n + r.attachments.length, 0),
-    });
-    const classifyStartedAt = Date.now();
 
-    let classification;
-    try {
-      classification = await classifyAndDraft({
-        fromEmail: sender,
-        replies: replyInputs,
-        originalDailyEmail: originalDaily,
-        babyContext: {
-          babyName: null,
-          ageInDays: age?.ageInDays ?? -999,
-          weekIndex: age?.weekIndex ?? 0,
-          status: age?.status ?? "unknown",
-        },
-      });
-    } catch (err) {
-      await trace("error", traceId, "proc.classify.threw", "classifyAndDraft error", {
+    // Per-reply results aggregated for the return payload + trace.
+    const perReply: Array<Record<string, unknown>> = [];
+    let combinedCost = 0;
+
+    for (const row of pending) {
+      const replyTraceId = newTraceId("proc-r");
+      await trace("info", replyTraceId, "proc.reply.start", "processing one reply", {
+        parentTraceId: traceId,
+        replyId: row.id,
         sender,
-        durationMs: Date.now() - classifyStartedAt,
-        error: err instanceof Error ? err.message : String(err),
       });
-      throw err;
-    }
 
-    await trace("info", traceId, "proc.classify.done", "classifier returned", {
-      sender,
-      durationMs: Date.now() - classifyStartedAt,
-      classification: classification.classification,
-      shouldReply: classification.shouldReply,
-      replySubject: classification.replySubject ?? null,
-      replyTextLen: classification.replyText?.length ?? 0,
-      feedbackItems: classification.feedbackItems.length,
-      contextItems: classification.contextToStore.length,
-      tokensIn: classification.inputTokens,
-      tokensOut: classification.outputTokens,
-    });
-
-    const cost = estimateCost(classification);
-
-    for (const item of classification.feedbackItems) {
-      await db.insert(kbUpdateQueue).values({
-        requesterEmail: sender,
-        sourceReplyId: pending[0].id,
-        requestText: `[${item.changeType} → ${item.targetPath}] ${item.changeSummary}\n\nEvidence: "${item.evidenceQuote}"\nConfidence: ${item.confidence}`,
-        targetTopic: item.targetPath,
-      });
-    }
-
-    let agentResponseMessageId: string | null = null;
-    let sendError: string | null = null;
-    if (
-      classification.shouldReply &&
-      classification.replyText &&
-      classification.replySubject
-    ) {
-      const parentAllowList = await getAllRecipientEmails();
-      const recipients = computeReplyRecipients(pending, { parentAllowList });
-      const inReplyToHeaders: Record<string, string> = {};
-      const lastMessageId = pending[pending.length - 1].messageId;
-      if (lastMessageId) {
-        inReplyToHeaders["In-Reply-To"] = lastMessageId;
-        inReplyToHeaders["References"] = lastMessageId;
-      }
-      await trace("info", traceId, "proc.send.start", "calling resend", {
-        sender,
-        recipients,
-        subject: classification.replySubject,
-        hasInReplyTo: !!lastMessageId,
-      });
-      const sendStartedAt = Date.now();
-      try {
-        const resend = new Resend(process.env.RESEND_API_KEY);
-        const result = await resend.emails.send({
-          from: BABY_FROM_EMAIL,
-          to: recipients,
-          reply_to: BABY_REPLY_TO_EMAIL,
-          subject: classification.replySubject,
-          text: classification.replyText,
-          html:
-            classification.replyHtml ?? plainToHtml(classification.replyText),
-          headers: inReplyToHeaders,
-        });
-        agentResponseMessageId = result.data?.id ?? null;
-        if (result.error) sendError = result.error.message;
-        await trace(
-          sendError ? "error" : "info",
-          traceId,
-          "proc.send.done",
-          sendError ? "resend returned error" : "resend success",
-          {
-            durationMs: Date.now() - sendStartedAt,
-            agentResponseMessageId,
-            sendError,
+      // Lookup linked daily email for this specific reply.
+      let originalDaily:
+        | {
+            sentDate: string;
+            subject: string;
+            bodyText: string;
+            messageId: string | null;
           }
-        );
+        | undefined;
+      if (row.dailyEmailId) {
+        const rows = await db
+          .select()
+          .from(dailyEmails)
+          .where(eq(dailyEmails.id, row.dailyEmailId))
+          .limit(1);
+        if (rows[0]) {
+          originalDaily = {
+            sentDate: rows[0].sentDate,
+            subject: rows[0].subject,
+            bodyText: rows[0].bodyText,
+            messageId: rows[0].resendMessageId ?? null,
+          };
+        }
+      }
+
+      const replyInput: ReplyInput = {
+        receivedAt: new Date(row.receivedAt),
+        subject: row.subject,
+        bodyText: row.bodyText,
+        bodyHtml: row.bodyHtml,
+        attachments: await loadAttachmentsForReply(row.id),
+      };
+
+      const classifyStartedAt = Date.now();
+      let classification: ClassifierResult;
+      try {
+        classification = await classifyAndDraft({
+          fromEmail: sender,
+          reply: replyInput,
+          originalDailyEmail: originalDaily
+            ? {
+                sentDate: originalDaily.sentDate,
+                subject: originalDaily.subject,
+                bodyText: originalDaily.bodyText,
+              }
+            : undefined,
+          babyContext: {
+            babyName: null,
+            ageInDays: age?.ageInDays ?? -999,
+            weekIndex: age?.weekIndex ?? 0,
+            status: age?.status ?? "unknown",
+          },
+        });
       } catch (err) {
-        sendError = err instanceof Error ? err.message : String(err);
-        await trace("error", traceId, "proc.send.threw", "resend threw", {
-          durationMs: Date.now() - sendStartedAt,
-          error: sendError,
+        await trace("error", replyTraceId, "proc.classify.threw", "classifyAndDraft error", {
+          replyId: row.id,
+          durationMs: Date.now() - classifyStartedAt,
+          error: err instanceof Error ? err.message : String(err),
+        });
+        await db
+          .update(emailReplies)
+          .set({
+            processedAt: new Date(),
+            classification: null,
+            actionTaken: "classify-failed",
+            processingError: err instanceof Error ? err.message : String(err),
+          })
+          .where(eq(emailReplies.id, row.id));
+        perReply.push({
+          replyId: row.id,
+          error: err instanceof Error ? err.message : String(err),
+        });
+        continue;
+      }
+
+      const cost = Number(estimateCost(classification));
+      combinedCost += cost;
+      await trace("info", replyTraceId, "proc.classify.done", "classifier returned", {
+        replyId: row.id,
+        durationMs: Date.now() - classifyStartedAt,
+        classification: classification.classification,
+        shouldReply: classification.shouldReply,
+        replyTextLen: classification.replyText?.length ?? 0,
+      });
+
+      // Queue feedback items now (independent of send).
+      for (const item of classification.feedbackItems) {
+        await db.insert(kbUpdateQueue).values({
+          requesterEmail: sender,
+          sourceReplyId: row.id,
+          requestText: `[${item.changeType} → ${item.targetPath}] ${item.changeSummary}\n\nEvidence: "${item.evidenceQuote}"\nConfidence: ${item.confidence}`,
+          targetTopic: item.targetPath,
         });
       }
-    } else {
-      await trace("info", traceId, "proc.send.skipped", "classifier said no reply", {
-        sender,
-        shouldReply: classification.shouldReply,
-        hasReplyText: !!classification.replyText,
-        hasReplySubject: !!classification.replySubject,
-      });
-    }
 
-    const action = sendError
-      ? "send-failed"
-      : classification.shouldReply
-      ? classification.feedbackItems.length > 0
-        ? "replied+queued-kb-update"
-        : "replied"
-      : classification.feedbackItems.length > 0
-      ? "queued-kb-update"
-      : classification.classification === "context" ||
-        classification.classification === "photo-only"
-      ? "stored-context"
-      : "silent";
+      let agentResponseMessageId: string | null = null;
+      let sendError: string | null = null;
+      let outboundSubject: string | null = null;
+      let outboundRecipients: string[] = [];
 
-    for (const r of pending) {
+      if (classification.shouldReply && classification.replyText) {
+        // Audience: ONLY the people on THIS inbound reply (from + to + cc),
+        // minus the agent. Never inflated by other pending replies.
+        outboundRecipients = computeReplyRecipients(
+          [
+            {
+              fromEmail: row.fromEmail,
+              toEmails: row.toEmails,
+              ccEmails: row.ccEmails,
+            },
+          ],
+          { parentAllowList }
+        );
+
+        // Threading: subject + In-Reply-To + References. The classifier
+        // does NOT control the outbound subject — the threading helper
+        // forces it to match the inbound thread so Gmail keeps them
+        // grouped.
+        const threadHeaders = buildThreadHeaders({
+          inboundSubject: row.subject,
+          inboundMessageId: row.messageId,
+          originalDailyMessageId: originalDaily?.messageId ?? null,
+          originalDailySubject: originalDaily?.subject ?? null,
+        });
+        outboundSubject = threadHeaders.Subject;
+
+        // Output sanitation: strip any markdown the model leaked through,
+        // ensure HTML is paragraph-wrapped with anchored links.
+        const cleanText = cleanReplyText(classification.replyText);
+        const cleanHtml = cleanReplyHtml(
+          classification.replyHtml ?? cleanText,
+          cleanText
+        );
+
+        const textCheck = validateReplyText(cleanText);
+        const htmlCheck = validateReplyHtml(cleanHtml);
+        if (!textCheck.ok || !htmlCheck.ok) {
+          await trace("warn", replyTraceId, "proc.output.violations", "post-clean validation found leftovers", {
+            replyId: row.id,
+            textViolations: textCheck.violations,
+            htmlViolations: htmlCheck.violations,
+          });
+        }
+
+        const resendHeaders: Record<string, string> = {};
+        if (threadHeaders["In-Reply-To"])
+          resendHeaders["In-Reply-To"] = threadHeaders["In-Reply-To"];
+        if (threadHeaders.References)
+          resendHeaders.References = threadHeaders.References;
+
+        await trace("info", replyTraceId, "proc.send.start", "calling resend", {
+          replyId: row.id,
+          recipients: outboundRecipients,
+          subject: outboundSubject,
+          hasInReplyTo: !!resendHeaders["In-Reply-To"],
+          hasReferences: !!resendHeaders.References,
+        });
+        const sendStartedAt = Date.now();
+        try {
+          const resend = new Resend(process.env.RESEND_API_KEY);
+          const result = await resend.emails.send({
+            from: BABY_FROM_EMAIL,
+            to: outboundRecipients,
+            reply_to: BABY_REPLY_TO_EMAIL,
+            subject: outboundSubject,
+            text: cleanText,
+            html: cleanHtml,
+            headers: resendHeaders,
+          });
+          agentResponseMessageId = result.data?.id ?? null;
+          if (result.error) sendError = result.error.message;
+          await trace(
+            sendError ? "error" : "info",
+            replyTraceId,
+            "proc.send.done",
+            sendError ? "resend returned error" : "resend success",
+            {
+              replyId: row.id,
+              durationMs: Date.now() - sendStartedAt,
+              agentResponseMessageId,
+              sendError,
+            }
+          );
+        } catch (err) {
+          sendError = err instanceof Error ? err.message : String(err);
+          await trace("error", replyTraceId, "proc.send.threw", "resend threw", {
+            replyId: row.id,
+            durationMs: Date.now() - sendStartedAt,
+            error: sendError,
+          });
+        }
+      } else {
+        await trace("info", replyTraceId, "proc.send.skipped", "classifier said no reply", {
+          replyId: row.id,
+          shouldReply: classification.shouldReply,
+          hasReplyText: !!classification.replyText,
+        });
+      }
+
+      const action = sendError
+        ? "send-failed"
+        : classification.shouldReply
+        ? classification.feedbackItems.length > 0
+          ? "replied+queued-kb-update"
+          : "replied"
+        : classification.feedbackItems.length > 0
+        ? "queued-kb-update"
+        : classification.classification === "context" ||
+          classification.classification === "photo-only"
+        ? "stored-context"
+        : "silent";
+
       await db
         .update(emailReplies)
         .set({
@@ -270,37 +339,37 @@ export async function processSender(
           agentResponseMessageId,
           processingError: sendError,
         })
-        .where(eq(emailReplies.id, r.id));
+        .where(eq(emailReplies.id, row.id));
+
+      perReply.push({
+        replyId: row.id,
+        classification: classification.classification,
+        shouldReply: classification.shouldReply,
+        action,
+        outboundSubject,
+        outboundRecipients,
+        agentResponseMessageId,
+        sendError,
+        feedbackItemsQueued: classification.feedbackItems.length,
+        cost: cost.toFixed(6),
+      });
     }
 
     await trace("info", traceId, "proc.done", "processSender complete", {
       sender,
-      action,
       repliesProcessed: pending.length,
+      sends: perReply.filter((p) => p.action === "replied" || p.action === "replied+queued-kb-update").length,
+      combinedCost: combinedCost.toFixed(6),
     });
 
     return {
       fromEmail: sender,
       traceId,
       repliesProcessed: pending.length,
-      classification: classification.classification,
-      shouldReply: classification.shouldReply,
-      action,
-      agentResponseMessageId,
-      sendError,
-      contextStored: classification.contextToStore.length,
-      feedbackItemsQueued: classification.feedbackItems.length,
-      cost,
-      tokens: {
-        input: classification.inputTokens,
-        output: classification.outputTokens,
-        cacheRead: classification.cacheReadTokens,
-        cacheCreation: classification.cacheCreationTokens,
-      },
+      results: perReply,
+      combinedCost: combinedCost.toFixed(6),
     };
   } finally {
-    // Best-effort lock release. If this throws (network hiccup) the TTL
-    // will expire it within SENDER_LOCK_TTL_SECONDS.
     if (lockAcquired && isRedisConfigured()) {
       try {
         await redis.del(lockKey);
