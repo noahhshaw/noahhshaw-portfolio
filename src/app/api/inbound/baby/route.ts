@@ -5,6 +5,7 @@ import { eq } from "drizzle-orm";
 import { isR2Configured, makePhotoKey, uploadBytes } from "@/lib/baby/r2";
 import { verifySvixSignature } from "@/lib/baby/svix";
 import { processSender } from "@/lib/baby/reply-processor";
+import { newTraceId, trace } from "@/lib/baby/trace";
 
 export const runtime = "nodejs";
 // We await the classifier inline (5-15s typical, 60s worst case). Set the
@@ -52,14 +53,26 @@ type ResendInboundPayload = {
 };
 
 export async function POST(request: NextRequest) {
+  const traceId = newTraceId("inb");
   // We accept inbound from either Cloudflare Email Worker (HMAC-signed) or
   // Resend (svix-signed). The source header disambiguates.
   const source = request.headers.get("x-inbound-source");
   const rawBody = await request.text();
+  await trace("info", traceId, "inbound.received", "inbound webhook hit", {
+    source,
+    bodyLength: rawBody.length,
+    contentType: request.headers.get("content-type"),
+  });
 
   if (source === "cloudflare-email") {
     const secret = process.env.INBOUND_WEBHOOK_SECRET;
     if (!secret) {
+      await trace(
+        "error",
+        traceId,
+        "inbound.auth.no-secret",
+        "INBOUND_WEBHOOK_SECRET missing"
+      );
       return NextResponse.json(
         { error: "INBOUND_WEBHOOK_SECRET not configured" },
         { status: 500 }
@@ -68,6 +81,7 @@ export async function POST(request: NextRequest) {
     const ts = request.headers.get("x-inbound-timestamp");
     const sig = request.headers.get("x-inbound-signature");
     if (!ts || !sig) {
+      await trace("warn", traceId, "inbound.auth.missing-headers", "missing sig/ts", { hasTs: !!ts, hasSig: !!sig });
       return NextResponse.json({ error: "missing signature" }, { status: 401 });
     }
     // Reject stale signatures (>5 min) to limit replay window.
@@ -76,12 +90,18 @@ export async function POST(request: NextRequest) {
       !Number.isFinite(tsNum) ||
       Math.abs(Date.now() / 1000 - tsNum) > 300
     ) {
+      await trace("warn", traceId, "inbound.auth.stale", "stale timestamp", {
+        ts,
+        skewSec: tsNum ? Date.now() / 1000 - tsNum : null,
+      });
       return NextResponse.json({ error: "stale timestamp" }, { status: 401 });
     }
     const expected = await hmacHex(secret, `${ts}.${rawBody}`);
     if (!constantTimeEqual(expected, sig)) {
+      await trace("error", traceId, "inbound.auth.bad-sig", "HMAC mismatch");
       return NextResponse.json({ error: "invalid signature" }, { status: 401 });
     }
+    await trace("info", traceId, "inbound.auth.ok", "cloudflare-email signature verified");
   } else {
     // Legacy / Resend path. Verify svix headers if a secret is set.
     const svixId = request.headers.get("svix-id");
@@ -97,23 +117,38 @@ export async function POST(request: NextRequest) {
         body: rawBody,
       });
       if (!ok) {
+        await trace("error", traceId, "inbound.auth.bad-svix", "svix mismatch");
         return NextResponse.json({ error: "invalid signature" }, { status: 401 });
       }
     }
+    await trace("info", traceId, "inbound.auth.ok", "resend/svix path");
   }
 
   let payload: ResendInboundPayload;
   try {
     payload = JSON.parse(rawBody) as ResendInboundPayload;
   } catch {
+    await trace("error", traceId, "inbound.parse.bad-json", "JSON parse failed");
     return NextResponse.json({ error: "invalid json" }, { status: 400 });
   }
 
   const data = payload.data ?? {};
   const fromEmail = extractEmail(data.from)?.toLowerCase().trim();
   if (!fromEmail) {
+    await trace("error", traceId, "inbound.parse.no-from", "no from email", {
+      rawFrom: data.from,
+    });
     return NextResponse.json({ error: "missing from" }, { status: 400 });
   }
+  await trace("info", traceId, "inbound.parsed", "payload parsed", {
+    fromEmail,
+    subject: data.subject?.slice(0, 80) ?? null,
+    messageId: data.message_id ?? null,
+    inReplyTo: data.in_reply_to ?? null,
+    hasText: !!data.text,
+    hasHtml: !!data.html,
+    attachmentCount: data.attachments?.length ?? 0,
+  });
 
   const toEmails = (Array.isArray(data.to) ? data.to : [])
     .map(extractEmail)
@@ -158,12 +193,22 @@ export async function POST(request: NextRequest) {
       })
       .returning();
     replyId = inserted[0].id;
+    await trace("info", traceId, "inbound.persisted", "reply row inserted", {
+      replyId,
+      dailyEmailId,
+      fromEmail,
+    });
   } catch (err) {
     const isDup =
       data.message_id &&
       err instanceof Error &&
       /unique|duplicate/i.test(err.message);
-    if (!isDup) throw err;
+    if (!isDup) {
+      await trace("error", traceId, "inbound.persist.failed", "DB insert threw", {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      throw err;
+    }
     const existing = await db
       .select({ id: emailReplies.id })
       .from(emailReplies)
@@ -172,7 +217,10 @@ export async function POST(request: NextRequest) {
     if (!existing[0]) throw err;
     replyId = existing[0].id;
     duplicate = true;
-    console.log("[baby-inbound] duplicate message_id absorbed", data.message_id);
+    await trace("warn", traceId, "inbound.persist.duplicate", "message_id seen before", {
+      replyId,
+      messageId: data.message_id,
+    });
   }
 
   // Persist any image attachments to R2 + photos rows. Non-image attachments
@@ -194,17 +242,41 @@ export async function POST(request: NextRequest) {
   let processorError: string | null = null;
   if (duplicate) {
     processorResult = { skipped: "duplicate-message-id" };
+    await trace("info", traceId, "inbound.processor.skipped", "dup-message-id", {
+      replyId,
+    });
   } else {
+    await trace("info", traceId, "inbound.processor.start", "calling processSender", {
+      replyId,
+      fromEmail,
+    });
+    const startedAt = Date.now();
     try {
-      processorResult = await processSender(fromEmail);
+      processorResult = await processSender(fromEmail, { traceId });
+      await trace(
+        "info",
+        traceId,
+        "inbound.processor.done",
+        "processSender returned",
+        {
+          replyId,
+          durationMs: Date.now() - startedAt,
+          ...processorResult,
+        }
+      );
     } catch (err) {
       processorError = err instanceof Error ? err.message : String(err);
-      console.error("[baby-inbound] processor threw", err);
+      await trace("error", traceId, "inbound.processor.threw", "processSender error", {
+        replyId,
+        durationMs: Date.now() - startedAt,
+        error: processorError,
+      });
     }
   }
 
   return NextResponse.json({
     ok: true,
+    traceId,
     replyId,
     duplicate,
     attachmentsStored,

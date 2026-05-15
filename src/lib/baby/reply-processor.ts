@@ -36,14 +36,23 @@ import {
 import { fetchObjectBase64 } from "@/lib/baby/r2-fetch";
 import { computeReplyRecipients, plainToHtml } from "@/lib/baby/recipients";
 import { getAllRecipientEmails } from "@/lib/baby/recipients-store";
+import { newTraceId, trace } from "@/lib/baby/trace";
 
 export type ProcessSenderResult = Record<string, unknown>;
 
 const SENDER_LOCK_TTL_SECONDS = 90; // covers worst-case classifier + send
 
+export type ProcessSenderOpts = {
+  /** Correlation id from the caller; if omitted a new one is generated. */
+  traceId?: string;
+};
+
 export async function processSender(
-  sender: string
+  sender: string,
+  opts: ProcessSenderOpts = {}
 ): Promise<ProcessSenderResult> {
+  const traceId = opts.traceId ?? newTraceId("proc");
+
   // Per-sender Redis mutex. If two inbound webhooks race (e.g. Cloudflare
   // Worker retry while the first call is still in-flight), only one of them
   // will run the classifier and send a response. The loser bails fast.
@@ -56,8 +65,12 @@ export async function processSender(
     });
     lockAcquired = ok === "OK" || ok === true;
     if (!lockAcquired) {
-      return { fromEmail: sender, skipped: "already-processing" };
+      await trace("warn", traceId, "proc.lock.held", "another invocation in progress", { sender });
+      return { fromEmail: sender, skipped: "already-processing", traceId };
     }
+    await trace("info", traceId, "proc.lock.acquired", "mutex held", { sender });
+  } else {
+    await trace("warn", traceId, "proc.lock.no-redis", "redis unconfigured; concurrency unprotected", { sender });
   }
 
   try {
@@ -73,8 +86,14 @@ export async function processSender(
       .orderBy(asc(emailReplies.receivedAt));
 
     if (pending.length === 0) {
-      return { fromEmail: sender, skipped: "none-ready" };
+      await trace("info", traceId, "proc.pending.empty", "no unprocessed replies for sender", { sender });
+      return { fromEmail: sender, skipped: "none-ready", traceId };
     }
+    await trace("info", traceId, "proc.pending.loaded", `${pending.length} unprocessed`, {
+      sender,
+      pendingIds: pending.map((p) => p.id),
+      oldestReceivedAt: pending[0].receivedAt,
+    });
 
     const replyInputs: ReplyInput[] = await Promise.all(
       pending.map(async (r) => {
@@ -110,17 +129,48 @@ export async function processSender(
     }
 
     const age = await loadAgeContext();
+    await trace("info", traceId, "proc.classify.start", "calling classifyAndDraft", {
+      sender,
+      ageInDays: age?.ageInDays ?? -999,
+      hasOriginalDaily: !!originalDaily,
+      replyCount: replyInputs.length,
+      attachmentCount: replyInputs.reduce((n, r) => n + r.attachments.length, 0),
+    });
+    const classifyStartedAt = Date.now();
 
-    const classification = await classifyAndDraft({
-      fromEmail: sender,
-      replies: replyInputs,
-      originalDailyEmail: originalDaily,
-      babyContext: {
-        babyName: null,
-        ageInDays: age?.ageInDays ?? -999,
-        weekIndex: age?.weekIndex ?? 0,
-        status: age?.status ?? "unknown",
-      },
+    let classification;
+    try {
+      classification = await classifyAndDraft({
+        fromEmail: sender,
+        replies: replyInputs,
+        originalDailyEmail: originalDaily,
+        babyContext: {
+          babyName: null,
+          ageInDays: age?.ageInDays ?? -999,
+          weekIndex: age?.weekIndex ?? 0,
+          status: age?.status ?? "unknown",
+        },
+      });
+    } catch (err) {
+      await trace("error", traceId, "proc.classify.threw", "classifyAndDraft error", {
+        sender,
+        durationMs: Date.now() - classifyStartedAt,
+        error: err instanceof Error ? err.message : String(err),
+      });
+      throw err;
+    }
+
+    await trace("info", traceId, "proc.classify.done", "classifier returned", {
+      sender,
+      durationMs: Date.now() - classifyStartedAt,
+      classification: classification.classification,
+      shouldReply: classification.shouldReply,
+      replySubject: classification.replySubject ?? null,
+      replyTextLen: classification.replyText?.length ?? 0,
+      feedbackItems: classification.feedbackItems.length,
+      contextItems: classification.contextToStore.length,
+      tokensIn: classification.inputTokens,
+      tokensOut: classification.outputTokens,
     });
 
     const cost = estimateCost(classification);
@@ -149,6 +199,13 @@ export async function processSender(
         inReplyToHeaders["In-Reply-To"] = lastMessageId;
         inReplyToHeaders["References"] = lastMessageId;
       }
+      await trace("info", traceId, "proc.send.start", "calling resend", {
+        sender,
+        recipients,
+        subject: classification.replySubject,
+        hasInReplyTo: !!lastMessageId,
+      });
+      const sendStartedAt = Date.now();
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
         const result = await resend.emails.send({
@@ -163,9 +220,31 @@ export async function processSender(
         });
         agentResponseMessageId = result.data?.id ?? null;
         if (result.error) sendError = result.error.message;
+        await trace(
+          sendError ? "error" : "info",
+          traceId,
+          "proc.send.done",
+          sendError ? "resend returned error" : "resend success",
+          {
+            durationMs: Date.now() - sendStartedAt,
+            agentResponseMessageId,
+            sendError,
+          }
+        );
       } catch (err) {
         sendError = err instanceof Error ? err.message : String(err);
+        await trace("error", traceId, "proc.send.threw", "resend threw", {
+          durationMs: Date.now() - sendStartedAt,
+          error: sendError,
+        });
       }
+    } else {
+      await trace("info", traceId, "proc.send.skipped", "classifier said no reply", {
+        sender,
+        shouldReply: classification.shouldReply,
+        hasReplyText: !!classification.replyText,
+        hasReplySubject: !!classification.replySubject,
+      });
     }
 
     const action = sendError
@@ -194,8 +273,15 @@ export async function processSender(
         .where(eq(emailReplies.id, r.id));
     }
 
+    await trace("info", traceId, "proc.done", "processSender complete", {
+      sender,
+      action,
+      repliesProcessed: pending.length,
+    });
+
     return {
       fromEmail: sender,
+      traceId,
       repliesProcessed: pending.length,
       classification: classification.classification,
       shouldReply: classification.shouldReply,
