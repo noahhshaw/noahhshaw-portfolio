@@ -34,27 +34,30 @@ For each `ageInDays` in the requested range, the agent:
 1. **Determines weekIndex** = `Math.max(1, Math.floor(age / 7) + 1)`; if `age < 0`, frame as "preparing for arrival"
 2. **Reads** voice.md, the bucket file, 1–3 relevant topic files, the AAP calendars
 3. **Computes static calendar slice**: any vaccine/well-visit/family-date that falls in the 14-day window after `ageInDays`
-4. **Drafts** the email body following voice.md exactly:
+4. **Drafts** the email as structured `DailyContent` (see `src/lib/baby/render-daily.ts`), following voice.md exactly:
    - Subject `Day N: {most important info}` (≤72 chars)
-   - Six sections: Today's focus / Action items / Watch-fors (severity-flagged) / Enrichment / Upcoming / Source
-   - Both `text` and `html` versions
-   - Inline links to authority sources (CDC, AAP, NIH) where applicable
+   - Five sections: Today's focus / Action items / Watch-fors (severity-flagged) / Enrichment opportunities (3-5 bullets) / Upcoming
+   - **No "Further reading" / "Source" section** — authority URLs go inline on the claim
+   - Inline links to authority sources (CDC, AAP, NIH) where a bullet rests on a specific claim
    - Citations list of `baby-kb/...` paths
-5. **Validates** content (`src/lib/baby/validators.ts → validateEmail`) and links (`checkLinks`)
-6. **Retries** up to 3× with validation issues as feedback if anything fails
-7. **Writes** `baby-kb/precomputed/day-{ageInDays}.json` with:
+5. **Renders** the structured content with `renderDaily()` → `{ bodyText, bodyHtml }`. Never hand-write HTML — the renderer is the single template source.
+6. **Validates** content (`src/lib/baby/validators.ts → validateEmail`) and links (`checkLinks` via `npm run precompute:validate`)
+7. **Writes** `baby-kb/precomputed/day-{ageInDays}.json`:
    ```json
    {
      "ageInDays": <N>,
      "subject": "...",
-     "bodyHtml": "...",
-     "bodyText": "...",
      "citations": ["baby-kb/..."],
      "generatedAt": "<ISO timestamp>",
-     "kbVersion": "<short git SHA>",
-     "validationPassed": true
+     "kbVersion": "<version tag>",
+     "validationPassed": true,
+     "bodyText": "...",
+     "bodyHtml": "..."
    }
    ```
+8. **Bakes** the milestone check-in section: `npm run milestones:bake -- --days=<range>`. This appends the "Developmental milestone check-in" block — the gen agent does NOT author it.
+
+The practical pattern (see `scripts/regenerate-days-10-23.ts`): author the `DailyContent` objects in a regen script, call `renderDaily`, write artifacts, then bake + validate. Spent past-day artifacts live in `baby-kb/precomputed/archive/`.
 
 ## Test-mode flow (first 3 days)
 

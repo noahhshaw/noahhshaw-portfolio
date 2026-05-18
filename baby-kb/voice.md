@@ -68,7 +68,9 @@ Hard limits: ≤72 characters total, no emoji, no exclamation points, no quotati
 
 ## Email structure (every daily email)
 
-Renderer must produce exactly these six sections in this order. If a section is empty, omit the heading entirely — do not print "(none today)."
+Renderer must produce exactly these five sections in this order. If a section is empty, omit the heading entirely — do not print "(none today)."
+
+A sixth block — "Developmental milestone check-in" — is appended mechanically by the send pipeline (`npm run milestones:bake`). The gen agent does NOT author it.
 
 ### 1. Today's focus
 1–2 sentences. What this week/day is about. Pull from `buckets/week-NN.md` "Focus" field.
@@ -85,31 +87,25 @@ Bulleted, each tagged with a severity flag. Examples:
 - `[call within 24h]` Fever ≥100.4°F rectal under 3 months — page the pediatrician same-day.
 - `[call now]` Bluish lips, labored breathing, or unresponsive episodes — 911.
 
-### 4. Enrichment opportunity
-One concrete thing to do today, grounded in evidence, age-appropriate. Examples:
-- "Read aloud for 15 minutes during the morning wake window. Dialogic reading (point, ask, expand) drives expressive vocabulary at 18–24 mo[3]."
-- "Place baby on her stomach across your lap for 5 minutes after each feed. Tummy time correlates with earlier sitting and rolling[7]."
+### 4. Enrichment opportunities
+A bullet list of **3–5** concrete things to do, grounded in evidence, age-appropriate. Each bullet starts with a verb. Vary the developmental domain across the bullets (motor, language, sensory, social, regulation) so a single email gives the parent a balanced set rather than five variations of one activity. Inline an authority URL where a bullet rests on a specific claim. Examples:
+- "Read aloud for 15 minutes during the morning wake window. Dialogic reading (point, ask, expand) drives expressive vocabulary at 18–24 mo: https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+- "Place baby on her stomach across your lap for 5 minutes after each feed. Tummy time correlates with earlier sitting and rolling."
+- "Hold a high-contrast card 8–12 inches from her face and move it slowly side to side."
+- "Narrate one ordinary task — diaper change, dishwashing — in full sentences during an awake-alert window."
+- "Lay her skin-to-skin on your chest after a feed to support thermoregulation and bonding."
 
 ### 5. Upcoming
 Next 14 days of calendar events. Pull from `calendars/*.json` plus parent-supplied dates. Format:
 - "Day 56 (Jul 6): 2-month well visit. Vaccines due: HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1."
 - "Day 60 (Jul 10): pediatrician will likely flag 4-month sleep regression as upcoming."
 
-### 6. Further reading
-A bullet list of **2–5 external resources** the parents can open to go deeper. Every bullet must contain a clickable URL. Acceptable resource types:
-
-- Authority pages on healthychildren.org, cdc.gov, aap.org, nih.gov, acog.org, who.int, edd.ca.gov, ssa.gov, healthcare.gov
-- Peer-reviewed papers on pubmed.ncbi.nlm.nih.gov or pmc.ncbi.nlm.nih.gov
-- Specific named books with an author and year (link to a stable bookseller/library page)
-- Reputable podcasts or video courses (link to the episode/course page)
-
-Format: `- {resource title} — {one-line takeaway}: {url}`
-
-Do NOT list `baby-kb/...` paths in this section. KB paths belong in the `citations` array only, which is internal metadata never shown to the recipient.
+### Sourcing
+External authority URLs belong **inline** in the body, on the sentence that rests on the claim — healthychildren.org, cdc.gov, aap.org, nih.gov, acog.org, who.int, pubmed.ncbi.nlm.nih.gov. There is no separate "Further reading" section. Do NOT print `baby-kb/...` paths in the body — KB paths belong in the `citations` array only (internal metadata, never shown to the recipient).
 
 ## Length
 
-Total email body: 250–550 words (Further reading bullets included). The parents are time-constrained executives with a newborn. Anything longer goes unread.
+Total email body: 250–600 words. The parents are time-constrained executives with a newborn. Anything longer goes unread.
 
 ## Repetition
 
@@ -118,7 +114,7 @@ Tired parents will not remember a single mention. The gen agent should restate h
 ## Validation
 
 After drafting each day, the agent runs:
-1. **Content validators** (`src/lib/baby/validators.ts`): subject format; banned register; banned canonical-name misspellings (`Anushka`); emoji; exclamations; required sections (Action items, Watch-fors, Further reading); length; Further reading bullet count + URL-per-bullet; no `baby-kb/` in body; `citations[]` entries point at `baby-kb/`.
+1. **Content validators** (`src/lib/baby/validators.ts`): subject format; banned register; banned canonical-name misspellings (`Anushka`); emoji; exclamations; required sections (Action items, Watch-fors, Enrichment opportunities); length; Enrichment opportunities bullet count (3–5); no `baby-kb/` in body; `citations[]` entries point at `baby-kb/`.
 2. **Link checker**: HTTP HEAD/GET (browser User-Agent) on every URL in the body. Any non-2xx is reported.
 
 If any validator returns an issue, the agent re-drafts the email with the failure list as feedback and re-runs validation. Up to 3 attempts per day.

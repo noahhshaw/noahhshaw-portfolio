@@ -25,12 +25,13 @@ const goodEmail = {
     "- [call within 24h] Redness greater than 1 cm around the umbilical stump.",
     "- [call now] Rectal temperature at or above 100.4F.",
     "",
-    "Enrichment opportunity",
-    "Narrate one ordinary task during his next awake-alert window.",
+    "Enrichment opportunities",
+    "- Narrate one ordinary task during his next awake-alert window.",
+    "- Hold him 8-12 inches away and let him track your face side to side.",
+    "- Lay him skin-to-skin on your chest after a feed.",
     "",
-    "Further reading",
-    "- AAP HealthyChildren on the first month: https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx",
-    "- CDC newborn screening explainer: https://www.cdc.gov/newborn-screening/about/index.html",
+    "Upcoming",
+    "- Day 7-10: first-week pediatrician visit.",
   ].join("\n"),
   bodyHtml: "<p>...</p><p>External links only here.</p>",
 };
@@ -128,18 +129,43 @@ describe("validateEmail", () => {
     expect(issues.some((i) => i.includes("baby-kb/"))).toBe(true);
   });
 
-  it("flags Further reading with fewer than 2 bulleted URLs", () => {
+  it("flags Enrichment opportunities with fewer than 3 bullets", () => {
+    const stripped = goodEmail.bodyText
+      .replace(
+        "- Hold him 8-12 inches away and let him track your face side to side.\n",
+        ""
+      )
+      .replace("- Lay him skin-to-skin on your chest after a feed.\n", "");
+    const issues = validateEmail({ ...goodEmail, bodyText: stripped });
+    expect(
+      issues.some((i) => i.includes("Enrichment opportunities must have at least 3"))
+    ).toBe(true);
+  });
+
+  it("flags Enrichment opportunities with more than 5 bullets", () => {
+    const extra = goodEmail.bodyText.replace(
+      "- Lay him skin-to-skin on your chest after a feed.",
+      [
+        "- Lay him skin-to-skin on your chest after a feed.",
+        "- Play soft music during a calm-alert window.",
+        "- Read aloud from any book — the cadence is what matters.",
+        "- Let him grasp your finger and feel different textures.",
+      ].join("\n")
+    );
+    const issues = validateEmail({ ...goodEmail, bodyText: extra });
+    expect(
+      issues.some((i) => i.includes("Enrichment opportunities must have at most 5"))
+    ).toBe(true);
+  });
+
+  it("flags missing Enrichment opportunities section", () => {
     const stripped = goodEmail.bodyText.replace(
-      "- AAP HealthyChildren on the first month: https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx",
-      "Only one resource described in prose."
+      /Enrichment opportunities[\s\S]*?\n\nUpcoming/,
+      "Upcoming"
     );
     const issues = validateEmail({ ...goodEmail, bodyText: stripped });
     expect(
-      issues.some(
-        (i) =>
-          i.includes("Further reading must have at least 2") ||
-          i.includes("without a URL")
-      )
+      issues.some((i) => i.includes("missing section: Enrichment opportunities"))
     ).toBe(true);
   });
 

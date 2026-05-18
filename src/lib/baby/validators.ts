@@ -50,10 +50,17 @@ const BANNED_NAME_REGEXES: Array<{ pattern: RegExp; canonical: string }> = [
   { pattern: /\bAnushka\b/i, canonical: "Anoushka" },
 ];
 
-const REQUIRED_SECTIONS = ["Action items", "Watch-fors", "Further reading"];
+const REQUIRED_SECTIONS = [
+  "Action items",
+  "Watch-fors",
+  "Enrichment opportunities",
+];
+
+// Enrichment opportunities must be a bullet list of 3-5 items.
+const ENRICHMENT_MIN = 3;
+const ENRICHMENT_MAX = 5;
 
 const BULLET_RE = /^\s*[-*•]\s+/;
-const URL_IN_LINE_RE = /https?:\/\/\S+/i;
 
 const SUBJECT_PREFIX = (age: number) => `Day ${age}:`;
 const MAX_SUBJECT_LENGTH = 72;
@@ -158,25 +165,20 @@ export function validateEmail(email: EmailToValidate): string[] {
     }
   }
 
-  // "Further reading" must be a bullet list of 2+ items, each with a URL.
-  // Prose only — milestone section comes after Further reading.
-  const frBlock = extractSection(proseText, "Further reading");
-  if (frBlock !== null) {
-    const bulletLines = frBlock
+  // "Enrichment opportunities" must be a bullet list of 3-5 items.
+  const enrichBlock = extractSection(proseText, "Enrichment opportunities");
+  if (enrichBlock !== null) {
+    const bulletLines = enrichBlock
       .split("\n")
       .filter((l) => BULLET_RE.test(l));
-    if (bulletLines.length < 2) {
+    if (bulletLines.length < ENRICHMENT_MIN) {
       issues.push(
-        `Further reading must have at least 2 bullet items; found ${bulletLines.length}`
+        `Enrichment opportunities must have at least ${ENRICHMENT_MIN} bullet items; found ${bulletLines.length}`
       );
     }
-    let urlMissing = 0;
-    for (const line of bulletLines) {
-      if (!URL_IN_LINE_RE.test(line)) urlMissing += 1;
-    }
-    if (urlMissing > 0) {
+    if (bulletLines.length > ENRICHMENT_MAX) {
       issues.push(
-        `Further reading has ${urlMissing} bullet(s) without a URL`
+        `Enrichment opportunities must have at most ${ENRICHMENT_MAX} bullet items; found ${bulletLines.length}`
       );
     }
   }
@@ -209,10 +211,9 @@ function extractSection(bodyText: string, heading: string): string | null {
     "Today's focus",
     "Action items",
     "Watch-fors",
-    "Enrichment opportunity",
+    "Enrichment opportunities",
     "Upcoming",
-    "Further reading",
-    "Source",
+    "Developmental milestone check-in",
   ].filter((h) => h !== heading);
   const lines = after.split("\n");
   const collected: string[] = [];
