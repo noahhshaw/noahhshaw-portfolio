@@ -3,8 +3,13 @@ import { promises as fs } from "fs";
 import path from "path";
 import { Resend } from "resend";
 import { db } from "@/db";
-import { dailyEmails, agentSettings, babyProfile } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import {
+  dailyEmails,
+  agentSettings,
+  babyProfile,
+  emailReplies,
+} from "@/db/schema";
+import { and, eq, gte, inArray, isNull, lt, or, sql } from "drizzle-orm";
 import { loadAgeContext } from "@/lib/baby/age";
 import { sendDaily } from "@/lib/baby/send";
 import { BABY_FROM_EMAIL } from "@/lib/baby/constants";
@@ -124,6 +129,14 @@ export async function GET(request: NextRequest) {
     await sendCoverageGapNotice(gaps, age.ageInDays);
   }
 
+  // Reliability check: any inbound reply received >1h ago that was never
+  // answered (no agent_response_message_id and not classified as
+  // intentionally silent) is a quiet failure. Alert if any are found.
+  const stuck = await findUnrespondedReplies();
+  if (stuck.length > 0) {
+    await sendUnrespondedReplyNotice(stuck);
+  }
+
   return NextResponse.json({
     ok: !result.error,
     error: result.error,
@@ -133,6 +146,7 @@ export async function GET(request: NextRequest) {
     ageInDays: age.ageInDays,
     kbVersion: artifact.kbVersion ?? null,
     coverageGaps: gaps,
+    unrespondedReplies: stuck.length,
   });
 }
 
@@ -214,6 +228,115 @@ Action needed: run the pre-compute pipeline in Claude Code to generate days arou
   } catch (err) {
     console.error("[baby-cron] failed to send missing-artifact notice", err);
   }
+}
+
+// "Failure" buckets for the unresponded-reply check. action_taken values
+// that indicate the agent intentionally chose not to reply ('silent',
+// 'stored-context', 'queued-kb-update') are excluded — they represent
+// correct behavior. Everything else with no outbound message-id is suspect.
+const FAILURE_ACTIONS = [
+  "send-failed",
+  "classify-failed",
+  "classify-empty-reply",
+  "send-unknown",
+];
+
+type StuckReply = {
+  id: number;
+  fromEmail: string;
+  subject: string | null;
+  receivedAt: Date;
+  classification: string | null;
+  actionTaken: string | null;
+  processingError: string | null;
+};
+
+async function findUnrespondedReplies(): Promise<StuckReply[]> {
+  const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
+  // 48h cap to avoid alerting on the same ancient row forever once it has
+  // been seen. The first morning after a failure is when we want to know.
+  const twoDaysAgo = new Date(Date.now() - 48 * 60 * 60 * 1000);
+  const rows = await db
+    .select({
+      id: emailReplies.id,
+      fromEmail: emailReplies.fromEmail,
+      subject: emailReplies.subject,
+      receivedAt: emailReplies.receivedAt,
+      classification: emailReplies.classification,
+      actionTaken: emailReplies.actionTaken,
+      processingError: emailReplies.processingError,
+      agentResponseMessageId: emailReplies.agentResponseMessageId,
+      processedAt: emailReplies.processedAt,
+    })
+    .from(emailReplies)
+    .where(
+      and(
+        lt(emailReplies.receivedAt, oneHourAgo),
+        gte(emailReplies.receivedAt, twoDaysAgo),
+        or(
+          // Bucket A: never processed at all.
+          isNull(emailReplies.processedAt),
+          // Bucket B: processed but the action recorded means we know it
+          // failed to send (classifier truncation, send errors, etc).
+          inArray(emailReplies.actionTaken, FAILURE_ACTIONS),
+          // Bucket C: processed, action says "replied", but no message-id
+          // was recorded — the old bug, kept as a guardrail for any legacy
+          // rows.
+          and(
+            eq(emailReplies.actionTaken, "replied"),
+            isNull(emailReplies.agentResponseMessageId)
+          )
+        )
+      )
+    )
+    .orderBy(sql`${emailReplies.receivedAt} DESC`)
+    .limit(20);
+
+  return rows.map((r) => ({
+    id: r.id,
+    fromEmail: r.fromEmail,
+    subject: r.subject,
+    receivedAt: r.receivedAt,
+    classification: r.classification,
+    actionTaken: r.actionTaken,
+    processingError: r.processingError,
+  }));
+}
+
+async function sendUnrespondedReplyNotice(stuck: StuckReply[]): Promise<void> {
+  try {
+    const lines = stuck.map((r) => {
+      const age = humanAge(Date.now() - new Date(r.receivedAt).getTime());
+      const reason =
+        r.actionTaken ??
+        (r.processingError ? `error: ${r.processingError}` : "never-processed");
+      return `- id ${r.id} from ${r.fromEmail} (${age} ago) — ${reason} — "${(r.subject ?? "(no subject)").slice(0, 60)}"`;
+    });
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    await resend.emails.send({
+      from: BABY_FROM_EMAIL,
+      to: "noahhshaw@gmail.com",
+      subject: `[Daily Baby] ${stuck.length} unresponded reply(s) need attention`,
+      text: `One or more inbound replies were not answered within the expected window. Most likely a classifier truncation, send error, or webhook drop.
+
+${lines.join("\n")}
+
+Investigate via the dashboard reply log or:
+  GET /api/baby/diag/replies?unprocessed=1
+  GET /api/baby/diag/trace?level=error
+
+To re-run the processor for a sender:
+  POST /api/baby/diag/replies  body: { "fromEmail": "..." }`,
+    });
+  } catch (err) {
+    console.error("[baby-cron] failed to send unresponded-reply notice", err);
+  }
+}
+
+function humanAge(ms: number): string {
+  const h = Math.floor(ms / (60 * 60 * 1000));
+  if (h < 24) return `${h}h`;
+  return `${Math.floor(h / 24)}d`;
 }
 
 function isoDateInPacific(now: Date): string {

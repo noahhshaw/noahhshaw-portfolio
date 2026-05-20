@@ -45,8 +45,7 @@ export type FeedbackItem = {
 export type ClassifierResult = {
   classification: Classification;
   shouldReply: boolean;
-  replySubject?: string;
-  replyHtml?: string;
+  /** Plain-prose reply body. HTML is rendered downstream by cleanReplyHtml. */
   replyText?: string;
   contextToStore: ContextEntry[];
   feedbackItems: FeedbackItem[];
@@ -123,11 +122,17 @@ export async function classifyAndDraft(
     text: buildContextBlock(inputs),
   });
   const { reply } = inputs;
+  // Strip the user's client's quoted history (the daily email they replied
+  // to, plus any prior agent responses) before sending to the classifier.
+  // The quoted block is what they're responding to, not what they wrote.
+  // Keeping it in inflates input by 10-20x for a long daily email and was
+  // the cause of the 2026-05-20 truncated-reply incident.
+  const userPortion = stripQuotedHistory(reply.bodyText ?? "");
   userContent.push({
     type: "text",
     text: `\n--- inbound reply received ${reply.receivedAt.toISOString()} ---\nSubject: ${
       reply.subject ?? "(none)"
-    }\n\n${reply.bodyText ?? "(no plain-text body)"}`,
+    }\n\n${userPortion || "(no plain-text body)"}`,
   });
   for (const att of reply.attachments) {
     if (att.mediaType.startsWith("image/")) {
@@ -157,7 +162,11 @@ export async function classifyAndDraft(
 
   const response = await client.messages.create({
     model: MODEL,
-    max_tokens: 2048,
+    // 4096 leaves headroom for the full tool-use envelope (classification +
+    // reasoning + reply_text + context_to_store + feedback_items). With
+    // 2048 a long reply_text could be truncated and the SDK returned a
+    // partial tool_use with reply_text undefined — see 2026-05-20 incident.
+    max_tokens: 4096,
     system: systemBlocks,
     tools: [
       {
@@ -180,8 +189,6 @@ export async function classifyAndDraft(
   return {
     classification: args.classification,
     shouldReply: args.should_reply,
-    replySubject: args.reply_subject,
-    replyHtml: args.reply_html,
     replyText: args.reply_text,
     contextToStore: (args.context_to_store ?? []).map((c) => ({
       contentType: c.content_type,
@@ -239,12 +246,12 @@ Decide:
    - "photo-only" → false (silently store; no nag-prompts for tags)
    - "none" → false
 
-3. If should_reply, draft **reply_html** and **reply_text**. Do NOT draft a subject — the pipeline forces the outgoing subject to match the inbound thread (so Gmail keeps the conversation grouped). Any reply_subject you emit is ignored.
+3. If should_reply, draft **reply_text** (plain-prose body only). Do NOT draft HTML — the pipeline renders HTML from the text, paragraph-wraps it, and auto-links bare URLs. Do NOT draft a subject — the pipeline forces the outgoing subject to match the inbound thread.
 
-   **Formatting rules (strict — output is validated):**
-   - **reply_text** is plain prose in paragraphs separated by a blank line. NO markdown: no \`**bold**\`, no \`*italic*\`, no \`---\` separators, no leading \`- \` or \`1. \` list markers, no inline backticks. If you need to call out a severity flag use bracketed shorthand inside the sentence, e.g. "[call within 24h]". Inline URLs are allowed as bare URLs in plain-text only because the email client linkifies them.
-   - **reply_html** is paragraph-wrapped using \`<p>...</p>\`. External sources must be rendered as \`<a href="URL">human-readable anchor</a>\` where the anchor text is a noun phrase (e.g. "AAP on cord care"), NEVER the URL itself.
-   - Same content in both bodies. If the user is on a text-only client, reply_text must read as clean prose with the same information density.
+   **Formatting rules for reply_text (strict — output is validated):**
+   - Plain prose in paragraphs separated by a blank line. NO markdown: no \`**bold**\`, no \`*italic*\`, no \`---\` separators, no leading \`- \` or \`1. \` list markers, no inline backticks.
+   - If you need to call out a severity flag use bracketed shorthand inside the sentence, e.g. "[call within 24h]".
+   - Inline authority URLs as bare URLs in the prose — email clients linkify them, and the HTML renderer will anchor them with humanized text.
 
 4. **context_to_store**: every meaningful fact about the baby, the family, dates, preferences, or noted concerns goes here so future emails can use it. Each entry has a content_type and tags.
 
@@ -278,8 +285,6 @@ Return your decision via the "respond" tool.`;
 type ToolArgs = {
   classification: Classification;
   should_reply: boolean;
-  reply_subject?: string;
-  reply_html?: string;
   reply_text?: string;
   context_to_store?: Array<{
     content_type: ContextEntry["contentType"];
@@ -304,8 +309,6 @@ const TOOL_SCHEMA: Anthropic.Messages.Tool.InputSchema = {
       enum: ["question", "context", "feedback", "photo-only", "none"],
     },
     should_reply: { type: "boolean" },
-    reply_subject: { type: "string", maxLength: 72 },
-    reply_html: { type: "string" },
     reply_text: { type: "string" },
     context_to_store: {
       type: "array",
@@ -357,6 +360,51 @@ const TOOL_SCHEMA: Anthropic.Messages.Tool.InputSchema = {
   },
   required: ["classification", "should_reply", "reasoning"],
 };
+
+/**
+ * Strip the quoted-history block from a plain-text email body so the
+ * classifier sees only the user's new content.
+ *
+ * Gmail (and most clients) prefix the quoted block with an attribution
+ * line like "On Thu, May 14, 2026 at 7:50 PM, ... wrote:" followed by
+ * lines starting with "> ". We cut at the first such attribution or at
+ * the first run of "> "-prefixed lines, whichever comes first.
+ *
+ * Also handles the legacy "[Quoted text hidden]" marker some clients
+ * substitute when collapsing a quote.
+ *
+ * Exported for unit testing.
+ */
+export function stripQuotedHistory(text: string): string {
+  if (!text) return text;
+  const lines = text.split(/\r?\n/);
+  let cutAt = -1;
+
+  // Pattern A: Gmail attribution line. Cover common date formats by being
+  // permissive — anchored on "On <stuff> wrote:" optionally with trailing
+  // whitespace or stray Unicode.
+  const ATTR = /^On\s.+\swrote:\s*$/;
+  // Pattern B: a line starting with "> " — the canonical reply-quote marker.
+  const QUOTE = /^>\s?/;
+  // Pattern C: collapsed quote marker.
+  const COLLAPSED = /^\[Quoted text hidden\]\s*$/;
+
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i];
+    if (ATTR.test(l) || COLLAPSED.test(l)) {
+      cutAt = i;
+      break;
+    }
+    // Two consecutive "> "-prefixed lines is a strong quote signal.
+    if (QUOTE.test(l) && i + 1 < lines.length && QUOTE.test(lines[i + 1])) {
+      cutAt = i;
+      break;
+    }
+  }
+
+  if (cutAt < 0) return text.trim();
+  return lines.slice(0, cutAt).join("\n").trim();
+}
 
 export function estimateCost(usage: {
   inputTokens: number;

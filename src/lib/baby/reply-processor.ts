@@ -254,11 +254,10 @@ export async function processSender(
         // the agent's body BEFORE we attach the quoted inbound thread —
         // otherwise the inbound's own bare URLs / formatting would trip
         // validators that only apply to the agent's authored content.
+        // Classifier no longer produces reply_html — we render HTML from
+        // the cleaned text deterministically.
         const cleanText = cleanReplyText(classification.replyText);
-        const cleanHtml = cleanReplyHtml(
-          classification.replyHtml ?? cleanText,
-          cleanText
-        );
+        const cleanHtml = cleanReplyHtml(cleanText, cleanText);
 
         const textCheck = validateReplyText(cleanText);
         const htmlCheck = validateReplyHtml(cleanHtml);
@@ -329,6 +328,15 @@ export async function processSender(
             error: sendError,
           });
         }
+      } else if (classification.shouldReply && !classification.replyText) {
+        // Classifier said "yes reply" but emitted no body. Most likely a
+        // max_tokens truncation. Log at error level so the unresponded-
+        // reply alert picks it up and so trace surfaces it clearly.
+        await trace("error", replyTraceId, "proc.classify.empty-text", "shouldReply true but reply_text empty", {
+          replyId: row.id,
+          classification: classification.classification,
+          reasoning: classification.reasoning,
+        });
       } else {
         await trace("info", replyTraceId, "proc.send.skipped", "classifier said no reply", {
           replyId: row.id,
@@ -339,10 +347,17 @@ export async function processSender(
 
       const action = sendError
         ? "send-failed"
-        : classification.shouldReply
+        : classification.shouldReply && !classification.replyText
+        ? "classify-empty-reply"
+        : classification.shouldReply && agentResponseMessageId
         ? classification.feedbackItems.length > 0
           ? "replied+queued-kb-update"
           : "replied"
+        : classification.shouldReply
+        ? // shouldReply true, replyText present, but no message id and no
+          // sendError — defensive bucket so we don't claim "replied" when
+          // we don't have evidence of one.
+          "send-unknown"
         : classification.feedbackItems.length > 0
         ? "queued-kb-update"
         : classification.classification === "context" ||
