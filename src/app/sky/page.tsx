@@ -16,11 +16,15 @@ type StarNameRec = { name?: string; bayer?: string; c?: string };
 
 export default function SkyPage() {
   const [address, setAddress] = useState("");
-  const [loc, setLoc] = useState<Loc | null>(null);
+  const [loc, setLoc] = useState<Loc | null>({
+    lat: 37.7749,
+    lon: -122.4194,
+    label: "San Francisco, CA",
+  });
   const [recent, setRecent] = useState<Loc[]>([]);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
-  const [panelOpen, setPanelOpen] = useState(false);
+  const [panelOpen, setPanelOpen] = useState(true);
 
   const [day, setDay] = useState<string>(DEFAULT_DATE.toISOString().slice(0, 10));
   const [hour, setHour] = useState<number>(22);
