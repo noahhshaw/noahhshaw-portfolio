@@ -53,7 +53,7 @@ export default function SkyPage() {
   // Selected object (from canvas click)
   const [selected, setSelected] = useState<{ name: string; detail: string } | null>(null);
 
-  // Load saved settings + recent
+  // Load saved settings + recent + URL params
   useEffect(() => {
     try {
       const r = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]");
@@ -64,6 +64,16 @@ export default function SkyPage() {
         if (typeof s.magLimit === "number") setMagLimit(s.magLimit);
       }
     } catch {}
+    const params = new URLSearchParams(window.location.search);
+    const qLat = params.get("lat");
+    const qLon = params.get("lon");
+    if (qLat && qLon) {
+      setLoc({
+        lat: parseFloat(qLat),
+        lon: parseFloat(qLon),
+        label: params.get("label") || `(${qLat}, ${qLon})`,
+      });
+    }
   }, []);
   useEffect(() => {
     localStorage.setItem(SETTINGS_KEY, JSON.stringify({ layers, magLimit }));
