@@ -19,6 +19,13 @@ export default function Projects() {
       external: true,
     },
     {
+      title: 'Night Sky',
+      description:
+        'An interactive star chart for any address on Earth. Type a location to see the constellations, planets, sun, and moon overhead — with pan, zoom, search by star name, and configurable layers. Star positions, planetary ephemerides, and the moon phase are computed in the browser.',
+      tags: ['Next.js', 'TypeScript', 'Canvas', 'astronomy-engine'],
+      href: '/sky',
+    },
+    {
       title: 'Baby Name Rater',
       description:
         'A collaborative app for couples to rate and discover baby names together. Features a Tinder-style swiping interface, smart ranking algorithm, and a shared shortlist to find the perfect name.',
