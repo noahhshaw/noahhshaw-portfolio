@@ -207,7 +207,7 @@ export default function SkyPage() {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             placeholder="Enter an address…"
-            className="flex-1 min-w-0 px-2 py-1 bg-slate-900 border border-slate-700 rounded text-sm"
+            className="flex-1 min-w-0 px-2 py-1 bg-slate-900 border border-slate-600 rounded text-sm placeholder:text-slate-400"
           />
           <button
             type="submit"
@@ -276,7 +276,7 @@ export default function SkyPage() {
         ) : (
           <div className="flex flex-col items-center justify-center h-full text-slate-400 text-sm gap-2 px-4 text-center">
             <p>Enter an address above, or click 📍 to use your location.</p>
-            <p className="text-slate-500 text-xs">
+            <p className="text-slate-400 text-xs">
               Try: <button
                 className="underline hover:text-slate-200"
                 onClick={() => setAddress("Brooklyn, NY")}
@@ -332,7 +332,7 @@ export default function SkyPage() {
 
             {recent.length > 0 && (
               <section>
-                <div className="text-xs uppercase tracking-wide text-slate-500 mb-1.5">Recent</div>
+                <div className="text-xs uppercase tracking-wide text-slate-400 mb-1.5">Recent</div>
                 <div className="flex flex-wrap gap-1">
                   {recent.map((r) => (
                     <button
@@ -352,7 +352,7 @@ export default function SkyPage() {
             )}
 
             <section className="space-y-2">
-              <div className="text-xs uppercase tracking-wide text-slate-500">Time</div>
+              <div className="text-xs uppercase tracking-wide text-slate-400">Time</div>
               <div className="flex items-center gap-2">
                 <input
                   type="date"
@@ -388,7 +388,7 @@ export default function SkyPage() {
             </section>
 
             <section className="space-y-2">
-              <div className="text-xs uppercase tracking-wide text-slate-500">Display</div>
+              <div className="text-xs uppercase tracking-wide text-slate-400">Display</div>
               <div>
                 <div className="flex justify-between text-xs mb-1">
                   <span className="text-slate-400">Star magnitude limit</span>
@@ -431,7 +431,7 @@ export default function SkyPage() {
             </section>
 
             <section>
-              <div className="text-xs uppercase tracking-wide text-slate-500 mb-1.5">Layers</div>
+              <div className="text-xs uppercase tracking-wide text-slate-400 mb-1.5">Layers</div>
               <div className="grid grid-cols-2 gap-1.5">
                 {([
                   ["lines", "Constellations"],
@@ -455,7 +455,7 @@ export default function SkyPage() {
             </section>
 
             <section>
-              <div className="text-xs uppercase tracking-wide text-slate-500 mb-1.5">Find</div>
+              <div className="text-xs uppercase tracking-wide text-slate-400 mb-1.5">Find</div>
               <div className="flex gap-1">
                 <input
                   value={search}
@@ -467,7 +467,7 @@ export default function SkyPage() {
                     }
                   }}
                   placeholder="Vega, Sirius, Polaris…"
-                  className="flex-1 px-2 py-1 bg-slate-900 border border-slate-700 rounded text-xs"
+                  className="flex-1 px-2 py-1 bg-slate-900 border border-slate-600 rounded text-xs placeholder:text-slate-400"
                 />
                 <button
                   type="button"
@@ -491,7 +491,7 @@ export default function SkyPage() {
               </div>
             </section>
 
-            <section className="text-[11px] text-slate-500 leading-relaxed border-t border-slate-800 pt-3">
+            <section className="text-[11px] text-slate-400 leading-relaxed border-t border-slate-800 pt-3">
               drag/pinch · scroll to zoom · arrows pan · +/- zoom · R reset · click an object · Esc to dismiss
             </section>
           </div>

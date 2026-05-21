@@ -706,7 +706,7 @@ export default function SkyCanvas(props: Props) {
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
       />
-      <div className="absolute top-3 left-3 text-xs text-slate-300/80 bg-black/50 rounded px-2 py-1 max-w-[60%] pointer-events-none">
+      <div className="absolute top-3 left-3 text-xs text-slate-200 bg-black/70 rounded px-2 py-1 max-w-[60%] pointer-events-none">
         <div className="truncate">{label}</div>
         <div>
           {date.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" })} · {lat.toFixed(3)}, {lon.toFixed(3)}
