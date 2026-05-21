@@ -358,6 +358,7 @@ export default function SkyPage() {
                   type="date"
                   value={day}
                   onChange={(e) => setDay(e.target.value)}
+                  aria-label="Observation date"
                   className="bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs flex-1"
                 />
                 <button onClick={setNow} className="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-xs">
@@ -382,6 +383,7 @@ export default function SkyPage() {
                     setHour(Math.floor(m / 60));
                     setMinute(m % 60);
                   }}
+                  aria-label="Hour of day"
                   className="w-full"
                 />
               </div>
@@ -401,6 +403,7 @@ export default function SkyPage() {
                   step={0.1}
                   value={magLimit}
                   onChange={(e) => setMagLimit(Number(e.target.value))}
+                  aria-label="Star magnitude limit"
                   className="w-full"
                 />
               </div>
@@ -416,6 +419,7 @@ export default function SkyPage() {
                   step={1}
                   value={rotation}
                   onChange={(e) => setRotation(Number(e.target.value))}
+                  aria-label="Sky rotation in degrees"
                   className="w-full"
                 />
               </div>

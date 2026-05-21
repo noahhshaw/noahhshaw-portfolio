@@ -39,6 +39,7 @@
     "@types/react-dom": "^18",
     "@vitest/coverage-v8": "^4.1.5",
     "autoprefixer": "^10",
+    "axe-core": "^4.11.4",
     "drizzle-kit": "^0.31.10",
     "pg": "^8.20.0",
     "postcss": "^8",
