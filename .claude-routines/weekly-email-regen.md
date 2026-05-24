@@ -42,11 +42,15 @@ Working directory: the repo root.
    template — copy it to `scripts/regenerate-days-<lo>-<hi>.ts`, swap
    in the new range and content, or extend the existing one.
 
-5. **Render + write:** run the regen script. It calls `renderDaily()`
-   and writes `baby-kb/precomputed/day-N.json` for each day.
+5. **Render + write + auto-bake:** run the regen script. It calls
+   `renderDaily()`, writes `baby-kb/precomputed/day-N.json` for each
+   day, AND auto-runs `milestones:bake` for the full range at the end.
+   Do not skip — without this, emails ship with no milestone section
+   (the 2026-05-21 incident).
 
-6. **Bake milestones:**
-   `npm run milestones:bake -- --days=<lo>-<hi>`
+6. **Sanity-check milestones baked:**
+   `grep -c "Developmental milestone check-in" baby-kb/precomputed/day-<N>.json`
+   for at least one day in the range. Should return 2 (text + html).
 
 7. **Validate:**
    `npm run precompute:validate`

@@ -12,6 +12,7 @@
  */
 import { promises as fs } from "fs";
 import { resolve } from "path";
+import { spawnSync } from "child_process";
 import { renderDaily, type DailyContent } from "@/lib/baby/render-daily";
 
 const GENERATED_AT = "2026-05-18T12:00:00Z";
@@ -1098,9 +1099,27 @@ async function main() {
     const words = bodyText.trim().split(/\s+/).length;
     console.log(`day-${day.ageInDays}.json written (${words} words)`);
   }
-  console.log(
-    `\n${DAYS.length} artifacts regenerated. Next: npm run milestones:bake -- --days=10-23 && npm run precompute:validate`
+  console.log(`\n${DAYS.length} artifacts regenerated.`);
+
+  // Auto-bake the milestone check-in section into the artifacts we just
+  // wrote. Without this step the regenerated emails ship without the
+  // section — the 2026-05-21 incident: regen on May 18 wrote 14 fresh
+  // days, only day-9 was baked afterward, days 10-23 went out for three
+  // days with no milestone block.
+  const lo = Math.min(...DAYS.map((d) => d.ageInDays));
+  const hi = Math.max(...DAYS.map((d) => d.ageInDays));
+  console.log(`\nBaking milestone check-in into days ${lo}-${hi}…`);
+  const r = spawnSync(
+    "npm",
+    ["run", "milestones:bake", "--", `--days=${lo}-${hi}`],
+    { stdio: "inherit" }
   );
+  if (r.status !== 0) {
+    console.error(`\nMilestone bake exited with code ${r.status}.`);
+    process.exit(r.status ?? 1);
+  }
+
+  console.log(`\nDone. Run \`npm run precompute:validate\` to confirm.`);
 }
 
 main().catch((err) => {
