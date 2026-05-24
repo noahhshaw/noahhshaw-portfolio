@@ -181,4 +181,68 @@ describe("validateEmail", () => {
     const issues = validateEmail({ ...goodEmail, citations: [] });
     expect(issues.some((i) => i.includes("no citations"))).toBe(true);
   });
+
+  describe("milestone-section presence (2026-05-21 incident guard)", () => {
+    const MILE_HEADER = "Developmental milestone check-in";
+    // Pad the prose so goodEmail clears the word-count minimum, then
+    // append the milestone block AFTER (stripMilestoneSection will trim
+    // it before word counting).
+    const padded = {
+      ...goodEmail,
+      bodyText:
+        goodEmail.bodyText + "\n\n" + Array(150).fill("word").join(" "),
+    };
+    const withMilestoneBody = (base: typeof goodEmail) => ({
+      ...base,
+      bodyText: `${base.bodyText}\n\n${MILE_HEADER}\nTap any link to mark it complete.\n- Moves both arms and both legs\n  AAP window: day 0-60\n`,
+      bodyHtml: `${base.bodyHtml}\n<div>${MILE_HEADER}</div>`,
+    });
+
+    it("passes when milestonesExpected=true and section is present in both bodies", () => {
+      const issues = validateEmail({
+        ...withMilestoneBody(padded),
+        milestonesExpected: true,
+      });
+      expect(issues).toEqual([]);
+    });
+
+    it("FAILS when milestonesExpected=true and section is missing from bodyText", () => {
+      const issues = validateEmail({
+        ...goodEmail,
+        milestonesExpected: true,
+      });
+      expect(
+        issues.some((i) => i.includes("missing milestone section in bodyText"))
+      ).toBe(true);
+    });
+
+    it("FAILS when milestonesExpected=true and section is missing from bodyHtml", () => {
+      const issues = validateEmail({
+        ...goodEmail,
+        bodyText: goodEmail.bodyText + `\n\n${MILE_HEADER}\n…`,
+        // bodyHtml intentionally lacks the header
+        milestonesExpected: true,
+      });
+      expect(
+        issues.some((i) => i.includes("missing milestone section in bodyHtml"))
+      ).toBe(true);
+    });
+
+    it("FAILS when milestonesExpected=false but the section is present (stale bake)", () => {
+      const issues = validateEmail({
+        ...withMilestoneBody(goodEmail),
+        milestonesExpected: false,
+      });
+      expect(
+        issues.some((i) => i.includes("milestone section present but"))
+      ).toBe(true);
+    });
+
+    it("is back-compat: when milestonesExpected is undefined, no check runs", () => {
+      const issues = validateEmail({ ...goodEmail }); // no milestonesExpected
+      expect(
+        issues.some((i) => i.toLowerCase().includes("milestone"))
+      ).toBe(false);
+    });
+  });
 });

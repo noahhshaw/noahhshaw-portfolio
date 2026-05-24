@@ -13,6 +13,12 @@ import path from "path";
 import { validateEmail, checkLinks } from "@/lib/baby/validators";
 
 const DIR = path.join(process.cwd(), "baby-kb", "precomputed");
+const CATALOG_FILE = path.join(
+  process.cwd(),
+  "baby-kb",
+  "milestones",
+  "aap-cdc-2022.json"
+);
 
 type Artifact = {
   ageInDays: number;
@@ -21,6 +27,34 @@ type Artifact = {
   bodyText: string;
   citations: string[];
 };
+
+type CatalogJson = {
+  milestones: Array<{ age_window_low_days: number }>;
+};
+
+/**
+ * Pure file-side eligibility check — matches the rule in
+ * loadSurfaceableMilestones (catalog row whose low_days <= ageInDays).
+ * Does NOT consider per-baby completion state because (a) this script
+ * runs without DB access and (b) emails are baked from the catalog's
+ * pending-default view; state-aware re-baking is a separate flow.
+ */
+function loadMilestonesExpectedFn(): (ageInDays: number) => boolean {
+  let catalog: CatalogJson["milestones"] = [];
+  try {
+    const raw = readFileSync(CATALOG_FILE, "utf8");
+    catalog = (JSON.parse(raw) as CatalogJson).milestones ?? [];
+  } catch (err) {
+    console.warn(
+      `[validate] could not read catalog at ${CATALOG_FILE} (${
+        err instanceof Error ? err.message : err
+      }) — milestone-presence check disabled for this run`
+    );
+    return () => undefined as unknown as boolean;
+  }
+  return (ageInDays: number) =>
+    catalog.some((m) => m.age_window_low_days <= ageInDays);
+}
 
 function selectFiles(argv: string[]): string[] {
   const wanted = argv.slice(2).map((s) => Number(s.trim())).filter((n) => Number.isFinite(n));
@@ -36,6 +70,7 @@ function selectFiles(argv: string[]): string[] {
 
 async function main() {
   const files = selectFiles(process.argv);
+  const milestonesExpectedAt = loadMilestonesExpectedFn();
   let failed = 0;
   let total = 0;
 
@@ -51,7 +86,11 @@ async function main() {
       continue;
     }
 
-    const contentIssues = validateEmail(artifact);
+    const milestonesExpected = milestonesExpectedAt(artifact.ageInDays);
+    const contentIssues = validateEmail({
+      ...artifact,
+      milestonesExpected,
+    });
     const linkResults = await checkLinks(artifact, { timeoutMs: 10000 });
     const linkIssues = linkResults
       .filter((r) => !r.ok)

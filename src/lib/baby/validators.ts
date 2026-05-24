@@ -15,6 +15,15 @@ export type EmailToValidate = {
   bodyText: string;
   bodyHtml: string;
   citations: string[];
+  /**
+   * Whether at least one milestone is surface-eligible at this age (any
+   * catalog row with age_window_low_days <= ageInDays). The validator
+   * uses this to require the "Developmental milestone check-in" section
+   * is present (and absent when it shouldn't be). The caller computes
+   * this from the on-disk catalog so the validator stays sync + DB-free.
+   * If unspecified, the milestone-section check is skipped (back-compat).
+   */
+  milestonesExpected?: boolean;
 };
 
 const BANNED_PHRASES = [
@@ -162,6 +171,31 @@ export function validateEmail(email: EmailToValidate): string[] {
   for (const section of REQUIRED_SECTIONS) {
     if (!proseText.includes(section)) {
       issues.push(`missing section: ${section}`);
+    }
+  }
+
+  // Milestone check-in presence. The 2026-05-21 incident — three days
+  // of emails went out without the section because a regen wrote fresh
+  // JSON and the bake step was skipped — should never recur silently.
+  if (email.milestonesExpected === true) {
+    if (!email.bodyText.includes(MILESTONE_SECTION_HEADER)) {
+      issues.push(
+        `missing milestone section in bodyText — at least one catalog row is eligible at age ${email.ageInDays}; run 'npm run milestones:bake -- --days=${email.ageInDays}'`
+      );
+    }
+    if (!email.bodyHtml.includes(MILESTONE_SECTION_HEADER)) {
+      issues.push(
+        `missing milestone section in bodyHtml — at least one catalog row is eligible at age ${email.ageInDays}; run 'npm run milestones:bake -- --days=${email.ageInDays}'`
+      );
+    }
+  } else if (email.milestonesExpected === false) {
+    if (
+      email.bodyText.includes(MILESTONE_SECTION_HEADER) ||
+      email.bodyHtml.includes(MILESTONE_SECTION_HEADER)
+    ) {
+      issues.push(
+        `milestone section present but no catalog row is eligible at age ${email.ageInDays} — stale bake; regenerate`
+      );
     }
   }
 
