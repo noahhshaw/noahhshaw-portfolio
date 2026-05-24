@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /**
  * Author + render days 24-42 (19 daily artifacts). Covers the
- * tail of week 4, all of weeks 5 and 6 (peak crying curve, 1-month
+ * tail of week 4, all of weeks 5 and 6 (peak-crying curve, 1-month
  * visit follow-through, maternal 6-week postpartum visit). Auto-bakes
  * the milestone check-in section at the end.
  *
@@ -40,7 +40,6 @@ const U = {
   carSeat: "https://www.nhtsa.gov/equipment/car-seats-and-booster-seats",
   vaccines:
     "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/",
-  purpleCrying: "https://purplecrying.info/",
   vitaminD:
     "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx",
   cdc4mo: "https://www.cdc.gov/act-early/milestones/4-months.html",
@@ -125,7 +124,7 @@ const DAYS: DayDef[] = [
       ],
       upcoming: [
         "Day 28-35: 1-month well visit; first social smiles.",
-        "Day 35-42: peak crying curve at about six weeks.",
+        "Day 35-42: peak-crying curve at about six weeks.",
         "Day 42: maternal 6-week postpartum visit.",
         "Day 56-70: 2-month well visit; first round of vaccines.",
       ],
@@ -198,7 +197,7 @@ const DAYS: DayDef[] = [
       ],
       upcoming: [
         "Day 28-35: 1-month well visit window.",
-        "Day 35-42: peak crying curve.",
+        "Day 35-42: peak-crying curve.",
         "Day 42: maternal 6-week postpartum visit.",
         "Day 56-70: 2-month well visit; first round of vaccines.",
       ],
@@ -269,7 +268,7 @@ const DAYS: DayDef[] = [
       ],
       upcoming: [
         "Day 28-35: 1-month well visit window (if not yet done).",
-        "Day 35-42: peak crying curve.",
+        "Day 35-42: peak-crying curve.",
         "Day 42: maternal 6-week postpartum visit.",
         "Day 56-70: 2-month well visit; first round of vaccines.",
       ],
@@ -295,9 +294,9 @@ const DAYS: DayDef[] = [
           sourceUrl: U.brightFutures,
         },
         {
-          body: "Read up on the PURPLE crying curve before the peak so the upcoming evenings feel expected, not alarming.",
-          sourceLabel: "Period of PURPLE crying program",
-          sourceUrl: U.purpleCrying,
+          body: "Read up on the peak-crying curve before the peak so the upcoming evenings feel expected, not alarming.",
+          sourceLabel: "AAP HealthyChildren on crying and colic",
+          sourceUrl: U.crying,
         },
         {
           body: "Lock daycare or nanny start dates; coordinate the 1-2 week overlap with paid leave if possible.",
@@ -337,7 +336,7 @@ const DAYS: DayDef[] = [
         },
       ],
       upcoming: [
-        "Day 28-35: peak PURPLE crying curve begins.",
+        "Day 28-35: peak crying curve begins.",
         "Day 28-35: 1-month well visit (if not yet done).",
         "Day 42: maternal 6-week postpartum visit.",
         "Day 56-70: 2-month well visit; first round of vaccines.",
@@ -346,7 +345,7 @@ const DAYS: DayDef[] = [
   },
   {
     ageInDays: 28,
-    subject: "Day 28: week 5; peak crying curve approaches",
+    subject: "Day 28: week 5; peak-crying curve approaches",
     citations: [
       "baby-kb/voice.md",
       "baby-kb/buckets/week-05.md",
@@ -354,9 +353,9 @@ const DAYS: DayDef[] = [
     ],
     content: {
       ageInDays: 28,
-      hook: "peak crying approaches",
+      hook: "peak-crying approaches",
       todaysFocus:
-        "Day 28. Four weeks old; week five opens. You are near the front edge of the PURPLE crying curve — inconsolable evenings peak around six weeks. This is normal and self-limited; it is not a parenting failure.",
+        "Day 28. Four weeks old; week five opens. You are near the front edge of the peak-crying curve — inconsolable evenings peak around six weeks. This is normal and self-limited; it is not a parenting failure.",
       actionItems: [
         {
           body: "Confirm the 1-month visit happened and the growth chart is on track.",
@@ -383,7 +382,7 @@ const DAYS: DayDef[] = [
         },
       ],
       watchFors: [
-        "[low concern] Inconsolable crying in the evenings with no clear cause — the PURPLE pattern. Hiccups during feeds. Wet sneezing.",
+        "[low concern] Inconsolable crying in the evenings with no clear cause — peak crying is normal at this age. Hiccups during feeds. Wet sneezing.",
         "[low concern] More sustained head lifts in tummy time, social smiles, brief tracking across the visual field.",
         "[monitor] Forceful arching during or after feeds, painful spit-up, refusal to feed despite hunger cues — possible GERD or CMPI; raise at the next visit.",
         "[call within 24h] Bloody-mucus stool (possible cow's-milk-protein intolerance or anal fissure). Sustained refusal of feeds.",
@@ -406,7 +405,7 @@ const DAYS: DayDef[] = [
         },
       ],
       upcoming: [
-        "Day 35-42: peak PURPLE crying at about six weeks.",
+        "Day 35-42: peak crying at about six weeks.",
         "Day 42: maternal 6-week postpartum visit (OB clearance for exercise; EPDS rescreen).",
         "Day 56-70: 2-month well visit; first round of vaccines.",
       ],
@@ -414,7 +413,7 @@ const DAYS: DayDef[] = [
   },
   {
     ageInDays: 29,
-    subject: "Day 29: PURPLE crying primer; the 5 S's",
+    subject: "Day 29: peak-crying primer; the 5 S's",
     citations: [
       "baby-kb/voice.md",
       "baby-kb/buckets/week-05.md",
@@ -422,14 +421,14 @@ const DAYS: DayDef[] = [
     ],
     content: {
       ageInDays: 29,
-      hook: "PURPLE primer",
+      hook: "peak crying primer",
       todaysFocus:
-        "Day 29. PURPLE stands for Peak of crying, Unexpected, Resists soothing, Pain-like face, Long lasting, Evening clustering. It peaks at about six weeks and tapers by three to four months. Recognizing the pattern is half the recovery.",
+        "Day 29. The peak-crying pattern: unexpected episodes, resistant to soothing, pain-like facial expressions that are not pain, long duration, clustered in the evenings. It peaks at about six weeks and tapers by three to four months. Recognizing the pattern is half the recovery.",
       actionItems: [
         {
-          body: "Read the PURPLE crying overview together so both parents share the same mental model when the evenings are hard.",
-          sourceLabel: "Period of PURPLE crying program",
-          sourceUrl: U.purpleCrying,
+          body: "Read the peak-crying overview together so both parents share the same mental model when the evenings are hard.",
+          sourceLabel: "AAP HealthyChildren on crying and colic",
+          sourceUrl: U.crying,
         },
         {
           body: "Stock the kitchen for the evening hours; dinner that takes both hands does not work this week.",
@@ -482,33 +481,31 @@ const DAYS: DayDef[] = [
   },
   {
     ageInDays: 30,
-    subject: "Day 30: shaken-baby risk peaks with crying; safety plan",
+    subject: "Day 30: one month; routines firming; help-network check",
     citations: [
       "baby-kb/voice.md",
       "baby-kb/buckets/week-05.md",
-      "baby-kb/topics/safety-and-emergencies.md",
+      "baby-kb/topics/parental-sleep-and-recovery.md",
     ],
     content: {
       ageInDays: 30,
-      hook: "safety plan",
+      hook: "one month in",
       todaysFocus:
-        "Day 30. One month. The peak of infant crying is also the peak of caregiver-induced traumatic brain injury. The single most-preventable cause is unplanned reaction in a moment of overwhelm. A safety plan today is the prevention.",
+        "Day 30. One month. Feeding cadence is steady, social smiles are appearing more reliably, and head control is visibly stronger. With the harder weeks ahead, this is the right day to firm up the help network rather than improvise it later.",
       actionItems: [
         {
-          body: "Write the explicit safety plan with Anoushka: if you feel the urge to shake or hit, put him in the crib, walk to another room, set a 10-minute timer, breathe, then call the partner or a trusted contact.",
-          sourceLabel: "Period of PURPLE crying program",
-          sourceUrl: U.purpleCrying,
+          body: "List the two or three people you can call at 2am for an extra set of hands — a relative, a postpartum doula, a close friend. Confirm each is actually willing and on the same coast.",
         },
         {
-          body: "Share the safety plan with any caregiver — relative, nanny candidate, daycare worker — who will be alone with him.",
+          body: "Settle a working evening-rotation plan between Anoushka and Noah for the cluster-fussy hours; write it on the fridge so it is not renegotiated at the moment of need.",
         },
         {
-          body: "Verify Avi is covered on the health insurance plan and the insurance card or member number is accessible from your phone.",
+          body: "Verify Avi is covered on the health-insurance plan and the insurance card or member number is accessible from your phone.",
           sourceLabel: "Healthcare.gov on qualifying life events",
           sourceUrl: U.qle,
         },
         {
-          body: "Confirm the 2-month visit is scheduled.",
+          body: "Confirm the 2-month well visit is scheduled.",
           sourceLabel: "AAP Bright Futures periodicity",
           sourceUrl: U.brightFutures,
         },
@@ -517,10 +514,10 @@ const DAYS: DayDef[] = [
         },
       ],
       watchFors: [
-        "[low concern] Evening cluster fussiness; quiet startle; hiccups.",
+        "[low concern] Evening cluster fussiness; hiccups during or after feeds; quiet startle to loud sounds.",
         "[low concern] Brief head lifts during tummy time; social smiles consolidating.",
-        "[monitor] Caregiver burnout — own it early; ask for help before the worst night.",
-        "[call within 24h] Any caregiver impulse to shake or hit followed by an action they regret — call the pediatrician and Anoushka's OB; a head-injury check matters more than embarrassment.",
+        "[monitor] Caregiver burnout signals — short fuse, dread of evenings, persistent low mood — name them out loud before the worst night.",
+        "[call within 24h] Sustained feeding refusal. Forceful projectile vomiting. Fewer than six wet diapers per day.",
         CALL_NOW,
       ],
       enrichment: [
@@ -542,7 +539,7 @@ const DAYS: DayDef[] = [
         },
       ],
       upcoming: [
-        "Day 35-42: peak PURPLE crying.",
+        "Day 35-42: peak crying.",
         "Day 42: maternal 6-week postpartum visit.",
         "Day 56-70: 2-month well visit; first vaccines.",
       ],
@@ -605,7 +602,7 @@ const DAYS: DayDef[] = [
         },
       ],
       upcoming: [
-        "Day 35-42: peak PURPLE crying.",
+        "Day 35-42: peak crying.",
         "Day 42: maternal 6-week postpartum visit.",
         "Day 56-70: 2-month well visit and first vaccines.",
       ],
@@ -671,7 +668,7 @@ const DAYS: DayDef[] = [
         },
       ],
       upcoming: [
-        "Day 35-42: PURPLE crying at peak.",
+        "Day 35-42: crying at peak intensity.",
         "Day 42: maternal 6-week postpartum visit.",
         "Day 56-70: 2-month well visit and first vaccines.",
       ],
@@ -739,7 +736,7 @@ const DAYS: DayDef[] = [
         },
       ],
       upcoming: [
-        "Day 35-42: peak PURPLE crying.",
+        "Day 35-42: peak crying.",
         "Day 42: maternal 6-week postpartum visit.",
         "Day 56-70: 2-month well visit and first vaccines.",
       ],
@@ -807,7 +804,7 @@ const DAYS: DayDef[] = [
         },
       ],
       upcoming: [
-        "Day 35-41: peak PURPLE crying.",
+        "Day 35-41: peak crying.",
         "Day 42: maternal 6-week postpartum visit.",
         "Day 56-70: 2-month well visit and first vaccines.",
       ],
@@ -879,7 +876,7 @@ const DAYS: DayDef[] = [
         },
       ],
       upcoming: [
-        "Day 35-41: PURPLE crying at peak.",
+        "Day 35-41: crying at peak intensity.",
         "Day 42: maternal 6-week postpartum visit.",
         "Day 56-70: 2-month well visit and first vaccines.",
       ],
@@ -955,7 +952,7 @@ const DAYS: DayDef[] = [
   },
   {
     ageInDays: 37,
-    subject: "Day 37: peak crying window; 5 S's revisited",
+    subject: "Day 37: peak-crying window; 5 S's revisited",
     citations: [
       "baby-kb/voice.md",
       "baby-kb/buckets/week-06.md",
@@ -965,7 +962,7 @@ const DAYS: DayDef[] = [
       ageInDays: 37,
       hook: "5 S's revisited",
       todaysFocus:
-        "Day 37. The PURPLE crying curve is at or near its peak. The 5 S's sequence — swaddle, side or stomach hold (only while held and awake), shush, swing, suck — settles most infants when applied together rather than one at a time.",
+        "Day 37. The peak-crying curve is at or near its peak. The 5 S's sequence — swaddle, side or stomach hold (only while held and awake), shush, swing, suck — settles most infants when applied together rather than one at a time.",
       actionItems: [
         {
           body: "Drill the 5 S's together today during a calm period so the sequence is ready in the evening.",
@@ -1303,7 +1300,7 @@ const DAYS: DayDef[] = [
       ageInDays: 42,
       hook: "six weeks; postpartum visit",
       todaysFocus:
-        "Day 42. Six weeks old. Anoushka's 6-week postpartum visit is today. The PURPLE crying curve is at its peak today or has just passed; many families describe this week as the first sustainable inflection.",
+        "Day 42. Six weeks old. Anoushka's 6-week postpartum visit is today. The peak-crying curve is at its peak today or has just passed; many families describe this week as the first sustainable inflection.",
       actionItems: [
         {
           body: "Take the EPDS result and the question list to the postpartum visit; expect a discussion of pelvic floor, mood, exercise clearance, contraception, and breastfeeding.",
