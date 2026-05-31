@@ -13,22 +13,29 @@ export default function Projects() {
     {
       title: 'San Francisco — A Private Guide',
       description:
-        'Everything to see, hear, and eat in San Francisco on one map. Art, performance, and ~100 good places to eat, all filterable by category and searchable by name, with one-tap links into Google Maps.',
+        `A personal city interface I built for my mother-in-law's month in San Francisco around the birth of my son: simple enough to share as a URL, opinionated enough to feel like my guide. Instead of spending hours wrangling Google Maps lists, I used voice prompting with a coding agent to turn favorites like Rose's polenta, Turtle Tower, Dalida, the Legion of Honor, and the de Young into a lightweight map with search, filters, and one-tap navigation. It became a small proof point for a bigger belief: AI will let more people turn their taste into personal software.`,
       tags: ['HTML', 'CSS', 'Leaflet', 'OpenStreetMap'],
       href: '/sf/',
       external: true,
     },
     {
+      title: 'Shop Lens',
+      description:
+        `An imaginative-shopping prototype for turning an existing scene into a counterfactual one. Upload a room photo, describe the party or room you want to create in natural language, and the system uses Gemini 2.5 Pro to infer intent, query SerpApi for real inventory, and pass the product assortment into Gemini 2.5 Flash Image to recompose the scene with items you can actually buy. I built it because I love throwing themed parties but hate the search-and-revise loop of online shopping; the hard product work was giving the agent low-latency inventory and iterating until the generated images and shoppable items matched the user's taste.`,
+      tags: ['Next.js', 'Gemini 2.5 Pro', 'Gemini 2.5 Flash Image', 'SerpApi', 'QStash'],
+      href: '/shop-lens',
+    },
+    {
       title: 'Night Sky',
       description:
-        'An interactive star chart for any address on Earth. Type a location to see the constellations, planets, sun, and moon overhead — with pan, zoom, search by star name, and configurable layers. Star positions, planetary ephemerides, and the moon phase are computed in the browser.',
+        'A private, browser-based sky map inspired by childhood nights at Hetch Hetchy, where a naturalist once led us out at 2 a.m. to lie under the Milky Way during a meteor shower. I ran the same prompt across Claude Code, Codex, and Antigravity to evaluate one-shot constellation accuracy, time-to-output, and qualitative UX, then productionized the strongest result into a tool that accepts real addresses and computes constellations, planets, the sun, moon, and moon phase in the browser. The learning was both technical and personal: AI can produce surprising scientific interfaces, but the craft is in making complexity legible and trustworthy.',
       tags: ['Next.js', 'TypeScript', 'Canvas', 'astronomy-engine'],
       href: '/sky',
     },
     {
       title: 'Baby Name Rater',
       description:
-        'A collaborative app for couples to rate and discover baby names together. Features a Tinder-style swiping interface, smart ranking algorithm, and a shared shortlist to find the perfect name.',
+        `Disposable software I built while my wife and I were choosing our son's name: a small, purpose-built app for a temporary but meaningful decision. The problem was not a lack of baby-name lists; it was that tone, timing, cultural constraints, and busy schedules made preference-sharing noisy. The Hinge-like rating and matching UX gave each of us a private login, a fast flow through names, meanings, and origins, partner-aware ranking, and a shared shortlist when we both liked something. It taught me that software can structure an emotional decision without pretending to replace taste — fittingly, the name we chose, Avi, was on the list.`,
       tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
       href: '/projects/baby-name-rater',
     },
