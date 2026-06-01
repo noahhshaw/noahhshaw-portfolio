@@ -5,7 +5,7 @@ export default defineConfig({
   out: "./drizzle",
   dialect: "postgresql",
   dbCredentials: {
-    url: process.env.DATABASE_URL ?? "",
+    url: process.env.DATABASE_URL ?? process.env.SHOP_LENS_DATABASE_URL ?? "",
   },
   // Treat existing tables as managed by other migrations (the names-rater
   // tables predate this config); we only generate diffs for the schema as a

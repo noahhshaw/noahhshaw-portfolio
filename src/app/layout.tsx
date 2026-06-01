@@ -4,18 +4,33 @@ import { ErrorBoundary } from './components/ErrorBoundary'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Noah Shaw | Product Leader',
+  metadataBase: new URL('https://www.noahhshaw.com'),
+  title: 'Noah Shaw',
   description: 'Product leader building and scaling AI/ML products in complex and safety-critical domains',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
   openGraph: {
-    title: 'Noah Shaw | Product Leader',
+    title: 'Noah Shaw',
     description: 'Product leader building and scaling AI/ML products in complex and safety-critical domains',
-    url: 'https://noahhshaw.com',
-    siteName: 'Noah Shaw Portfolio',
+    url: 'https://www.noahhshaw.com',
+    siteName: 'Noah Shaw',
     type: 'website',
+    images: [
+      {
+        url: '/profile.jpg',
+        width: 1704,
+        height: 1992,
+        alt: 'Noah Shaw headshot',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Noah Shaw',
+    description: 'Product leader building and scaling AI/ML products in complex and safety-critical domains',
+    images: ['/profile.jpg'],
   },
 }
 

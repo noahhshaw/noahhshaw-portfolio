@@ -434,6 +434,477 @@ export const milestoneEvents = pgTable(
   })
 );
 
+// ============================================================
+// SHOP LENS
+// Mobile visual shopping demo. Text enums are validated at the app boundary
+// so the MVP can iterate without frequent DB enum migrations.
+// ============================================================
+
+export const shopSessions = pgTable(
+  "shop_sessions",
+  {
+    id: text("id").primaryKey(),
+    visitorId: text("visitor_id").notNull(),
+    status: text("status").notNull().default("active"),
+    initialPrompt: text("initial_prompt").notNull(),
+    currentPrompt: text("current_prompt").notNull(),
+    preferredAspectRatio: text("preferred_aspect_ratio")
+      .notNull()
+      .default("9:16"),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+  },
+  (table) => [
+    index("idx_shop_sessions_visitor").on(table.visitorId),
+    index("idx_shop_sessions_status").on(table.status),
+    index("idx_shop_sessions_expires").on(table.expiresAt),
+  ]
+);
+
+export const agentRuns = pgTable(
+  "agent_runs",
+  {
+    id: text("id").primaryKey(),
+    sessionId: text("session_id")
+      .notNull()
+      .references(() => shopSessions.id, { onDelete: "cascade" }),
+    parentRunId: text("parent_run_id"),
+    trigger: text("trigger").notNull(),
+    status: text("status").notNull().default("queued"),
+    currentState: text("current_state").notNull().default("queued"),
+    qstashMessageId: text("qstash_message_id"),
+    startedAt: timestamp("started_at", { withTimezone: true }),
+    completedAt: timestamp("completed_at", { withTimezone: true }),
+    timeoutAt: timestamp("timeout_at", { withTimezone: true }),
+    errorCode: text("error_code"),
+    errorMessage: text("error_message"),
+  },
+  (table) => [
+    index("idx_agent_runs_session").on(table.sessionId),
+    index("idx_agent_runs_status_state").on(table.status, table.currentState),
+    index("idx_agent_runs_timeout").on(table.timeoutAt),
+  ]
+);
+
+export const runEvents = pgTable(
+  "run_events",
+  {
+    id: serial("id").primaryKey(),
+    sessionId: text("session_id")
+      .notNull()
+      .references(() => shopSessions.id, { onDelete: "cascade" }),
+    runId: text("run_id")
+      .notNull()
+      .references(() => agentRuns.id, { onDelete: "cascade" }),
+    eventType: text("event_type").notNull(),
+    fromState: text("from_state"),
+    toState: text("to_state"),
+    message: text("message"),
+    metadataJson: jsonb("metadata_json").notNull().default(sql`'{}'::jsonb`),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_run_events_run_created").on(table.runId, table.createdAt),
+    index("idx_run_events_session").on(table.sessionId),
+  ]
+);
+
+export const imageAssets = pgTable(
+  "image_assets",
+  {
+    id: text("id").primaryKey(),
+    sessionId: text("session_id")
+      .notNull()
+      .references(() => shopSessions.id, { onDelete: "cascade" }),
+    role: text("role").notNull(),
+    source: text("source").notNull(),
+    storageUrl: text("storage_url").notNull(),
+    originalUrl: text("original_url"),
+    mimeType: text("mime_type").notNull(),
+    width: integer("width"),
+    height: integer("height"),
+    aspectRatio: text("aspect_ratio"),
+    sizeBytes: integer("size_bytes"),
+    exifOrientationApplied: boolean("exif_orientation_applied")
+      .notNull()
+      .default(false),
+    metadataJson: jsonb("metadata_json").notNull().default(sql`'{}'::jsonb`),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_image_assets_session").on(table.sessionId),
+    index("idx_image_assets_role").on(table.role),
+  ]
+);
+
+export const productSources = pgTable(
+  "product_sources",
+  {
+    id: text("id").primaryKey(),
+    name: text("name").notNull().unique(),
+    status: text("status").notNull().default("active"),
+    priority: integer("priority").notNull(),
+    configJson: jsonb("config_json").notNull().default(sql`'{}'::jsonb`),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_product_sources_status_priority").on(
+      table.status,
+      table.priority
+    ),
+  ]
+);
+
+export const designPlans = pgTable(
+  "design_plans",
+  {
+    id: text("id").primaryKey(),
+    sessionId: text("session_id")
+      .notNull()
+      .references(() => shopSessions.id, { onDelete: "cascade" }),
+    runId: text("run_id")
+      .notNull()
+      .references(() => agentRuns.id, { onDelete: "cascade" }),
+    userGoal: text("user_goal").notNull(),
+    inferredScenario: text("inferred_scenario").notNull(),
+    budgetMode: text("budget_mode").notNull().default("none"),
+    targetBudgetCents: integer("target_budget_cents"),
+    priceStrategy: text("price_strategy").notNull().default("best_result"),
+    desiredProductCount: integer("desired_product_count").notNull(),
+    heroProductCount: integer("hero_product_count").notNull(),
+    generationGoal: text("generation_goal").notNull(),
+    clarificationNeeded: boolean("clarification_needed").notNull().default(false),
+    clarificationQuestion: text("clarification_question"),
+    planJson: jsonb("plan_json").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_design_plans_session").on(table.sessionId),
+    index("idx_design_plans_run").on(table.runId),
+  ]
+);
+
+export const planCategories = pgTable(
+  "plan_categories",
+  {
+    id: text("id").primaryKey(),
+    planId: text("plan_id")
+      .notNull()
+      .references(() => designPlans.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    priority: integer("priority").notNull(),
+    desiredCount: integer("desired_count").notNull(),
+    searchQueriesJson: jsonb("search_queries_json").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_plan_categories_plan").on(table.planId),
+    index("idx_plan_categories_priority").on(table.priority),
+  ]
+);
+
+export const productSearches = pgTable(
+  "product_searches",
+  {
+    id: text("id").primaryKey(),
+    sessionId: text("session_id")
+      .notNull()
+      .references(() => shopSessions.id, { onDelete: "cascade" }),
+    runId: text("run_id")
+      .notNull()
+      .references(() => agentRuns.id, { onDelete: "cascade" }),
+    planCategoryId: text("plan_category_id")
+      .notNull()
+      .references(() => planCategories.id, { onDelete: "cascade" }),
+    sourceId: text("source_id")
+      .notNull()
+      .references(() => productSources.id),
+    query: text("query").notNull(),
+    status: text("status").notNull().default("queued"),
+    rawResponseJson: jsonb("raw_response_json"),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    completedAt: timestamp("completed_at", { withTimezone: true }),
+    errorMessage: text("error_message"),
+  },
+  (table) => [
+    index("idx_product_searches_run").on(table.runId),
+    index("idx_product_searches_category").on(table.planCategoryId),
+  ]
+);
+
+export const productSearchResults = pgTable(
+  "product_search_results",
+  {
+    id: text("id").primaryKey(),
+    productSearchId: text("product_search_id")
+      .notNull()
+      .references(() => productSearches.id, { onDelete: "cascade" }),
+    source: text("source").notNull(),
+    externalProductId: text("external_product_id").notNull(),
+    title: text("title").notNull(),
+    merchant: text("merchant"),
+    productUrl: text("product_url").notNull(),
+    imageUrl: text("image_url").notNull(),
+    priceText: text("price_text"),
+    priceCents: integer("price_cents"),
+    currency: text("currency").default("USD"),
+    rating: integer("rating"),
+    reviewCount: integer("review_count"),
+    rank: integer("rank").notNull(),
+    rawJson: jsonb("raw_json").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_product_search_results_search").on(table.productSearchId),
+    index("idx_product_search_results_external").on(
+      table.source,
+      table.externalProductId
+    ),
+  ]
+);
+
+export const emergencyCatalogItems = pgTable(
+  "emergency_catalog_items",
+  {
+    id: text("id").primaryKey(),
+    title: text("title").notNull(),
+    merchant: text("merchant").notNull(),
+    category: text("category").notNull(),
+    productUrl: text("product_url").notNull(),
+    imageUrl: text("image_url").notNull(),
+    unitPriceCents: integer("unit_price_cents").notNull(),
+    currency: text("currency").notNull().default("USD"),
+    tagsJson: jsonb("tags_json").notNull().default(sql`'[]'::jsonb`),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_emergency_catalog_category").on(table.category),
+  ]
+);
+
+export const productCandidates = pgTable(
+  "product_candidates",
+  {
+    id: text("id").primaryKey(),
+    sessionId: text("session_id")
+      .notNull()
+      .references(() => shopSessions.id, { onDelete: "cascade" }),
+    runId: text("run_id")
+      .notNull()
+      .references(() => agentRuns.id, { onDelete: "cascade" }),
+    planCategoryId: text("plan_category_id")
+      .notNull()
+      .references(() => planCategories.id, { onDelete: "cascade" }),
+    productSearchResultId: text("product_search_result_id").references(
+      () => productSearchResults.id
+    ),
+    emergencyCatalogItemId: text("emergency_catalog_item_id").references(
+      () => emergencyCatalogItems.id
+    ),
+    rank: integer("rank").notNull(),
+    role: text("role").notNull(),
+    reason: text("reason"),
+    quantity: integer("quantity").notNull().default(1),
+    unitPriceCents: integer("unit_price_cents"),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_product_candidates_session").on(table.sessionId),
+    index("idx_product_candidates_run").on(table.runId),
+    index("idx_product_candidates_category").on(table.planCategoryId),
+  ]
+);
+
+export const productCandidateImages = pgTable(
+  "product_candidate_images",
+  {
+    id: text("id").primaryKey(),
+    productCandidateId: text("product_candidate_id")
+      .notNull()
+      .references(() => productCandidates.id, { onDelete: "cascade" }),
+    imageAssetId: text("image_asset_id")
+      .notNull()
+      .references(() => imageAssets.id, { onDelete: "cascade" }),
+    position: integer("position").notNull(),
+    selectedForContext: boolean("selected_for_context").notNull().default(false),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_product_candidate_images_candidate").on(table.productCandidateId),
+    index("idx_product_candidate_images_asset").on(table.imageAssetId),
+  ]
+);
+
+export const contextBundles = pgTable(
+  "context_bundles",
+  {
+    id: text("id").primaryKey(),
+    sessionId: text("session_id")
+      .notNull()
+      .references(() => shopSessions.id, { onDelete: "cascade" }),
+    runId: text("run_id")
+      .notNull()
+      .references(() => agentRuns.id, { onDelete: "cascade" }),
+    designPlanId: text("design_plan_id")
+      .notNull()
+      .references(() => designPlans.id, { onDelete: "cascade" }),
+    model: text("model").notNull(),
+    aspectRatio: text("aspect_ratio").notNull(),
+    promptText: text("prompt_text").notNull(),
+    imageCount: integer("image_count").notNull(),
+    bundleJson: jsonb("bundle_json").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_context_bundles_run").on(table.runId),
+    index("idx_context_bundles_session").on(table.sessionId),
+  ]
+);
+
+export const contextBundleItems = pgTable(
+  "context_bundle_items",
+  {
+    id: text("id").primaryKey(),
+    contextBundleId: text("context_bundle_id")
+      .notNull()
+      .references(() => contextBundles.id, { onDelete: "cascade" }),
+    imageAssetId: text("image_asset_id")
+      .notNull()
+      .references(() => imageAssets.id, { onDelete: "cascade" }),
+    productCandidateId: text("product_candidate_id").references(
+      () => productCandidates.id
+    ),
+    role: text("role").notNull(),
+    position: integer("position").notNull(),
+    caption: text("caption"),
+    includeReason: text("include_reason"),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_context_bundle_items_bundle").on(table.contextBundleId),
+    index("idx_context_bundle_items_asset").on(table.imageAssetId),
+  ]
+);
+
+export const generationAttempts = pgTable(
+  "generation_attempts",
+  {
+    id: text("id").primaryKey(),
+    sessionId: text("session_id")
+      .notNull()
+      .references(() => shopSessions.id, { onDelete: "cascade" }),
+    runId: text("run_id")
+      .notNull()
+      .references(() => agentRuns.id, { onDelete: "cascade" }),
+    contextBundleId: text("context_bundle_id").references(
+      () => contextBundles.id
+    ),
+    model: text("model").notNull(),
+    status: text("status").notNull(),
+    attemptNumber: integer("attempt_number").notNull(),
+    inputImageCount: integer("input_image_count").notNull().default(0),
+    outputImageAssetId: text("output_image_asset_id").references(
+      () => imageAssets.id
+    ),
+    latencyMs: integer("latency_ms"),
+    costCents: integer("cost_cents"),
+    rawResponseJson: jsonb("raw_response_json"),
+    startedAt: timestamp("started_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    completedAt: timestamp("completed_at", { withTimezone: true }),
+    errorCode: text("error_code"),
+    errorMessage: text("error_message"),
+  },
+  (table) => [
+    unique("generation_attempt_run_attempt_unique").on(
+      table.runId,
+      table.attemptNumber
+    ),
+    index("idx_generation_attempts_run").on(table.runId),
+    index("idx_generation_attempts_status").on(table.status),
+  ]
+);
+
+export const itemSelections = pgTable(
+  "item_selections",
+  {
+    id: text("id").primaryKey(),
+    sessionId: text("session_id")
+      .notNull()
+      .references(() => shopSessions.id, { onDelete: "cascade" }),
+    productCandidateId: text("product_candidate_id")
+      .notNull()
+      .references(() => productCandidates.id, { onDelete: "cascade" }),
+    selected: boolean("selected").notNull().default(true),
+    quantity: integer("quantity").notNull().default(1),
+    variantJson: jsonb("variant_json").notNull().default(sql`'{}'::jsonb`),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    unique("item_selections_candidate_unique").on(table.productCandidateId),
+    index("idx_item_selections_session").on(table.sessionId),
+  ]
+);
+
+export const costEvents = pgTable(
+  "cost_events",
+  {
+    id: serial("id").primaryKey(),
+    sessionId: text("session_id")
+      .notNull()
+      .references(() => shopSessions.id, { onDelete: "cascade" }),
+    runId: text("run_id")
+      .notNull()
+      .references(() => agentRuns.id, { onDelete: "cascade" }),
+    kind: text("kind").notNull(),
+    provider: text("provider").notNull(),
+    model: text("model"),
+    estimatedCostCents: integer("estimated_cost_cents"),
+    actualCostCents: integer("actual_cost_cents"),
+    metadataJson: jsonb("metadata_json").notNull().default(sql`'{}'::jsonb`),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    index("idx_cost_events_session").on(table.sessionId),
+    index("idx_cost_events_run").on(table.runId),
+    index("idx_cost_events_created").on(table.createdAt),
+  ]
+);
+
 export type BabyProfile = typeof babyProfile.$inferSelect;
 export type NewBabyProfile = typeof babyProfile.$inferInsert;
 export type MilestoneCatalog = typeof milestonesCatalog.$inferSelect;
@@ -454,3 +925,37 @@ export type KbUpdateRequest = typeof kbUpdateQueue.$inferSelect;
 export type NewKbUpdateRequest = typeof kbUpdateQueue.$inferInsert;
 export type MagicLinkToken = typeof magicLinkTokens.$inferSelect;
 export type AgentSetting = typeof agentSettings.$inferSelect;
+export type ShopSession = typeof shopSessions.$inferSelect;
+export type NewShopSession = typeof shopSessions.$inferInsert;
+export type AgentRun = typeof agentRuns.$inferSelect;
+export type NewAgentRun = typeof agentRuns.$inferInsert;
+export type RunEvent = typeof runEvents.$inferSelect;
+export type NewRunEvent = typeof runEvents.$inferInsert;
+export type ImageAsset = typeof imageAssets.$inferSelect;
+export type NewImageAsset = typeof imageAssets.$inferInsert;
+export type ProductSource = typeof productSources.$inferSelect;
+export type NewProductSource = typeof productSources.$inferInsert;
+export type DesignPlan = typeof designPlans.$inferSelect;
+export type NewDesignPlan = typeof designPlans.$inferInsert;
+export type PlanCategory = typeof planCategories.$inferSelect;
+export type NewPlanCategory = typeof planCategories.$inferInsert;
+export type ProductSearch = typeof productSearches.$inferSelect;
+export type NewProductSearch = typeof productSearches.$inferInsert;
+export type ProductSearchResult = typeof productSearchResults.$inferSelect;
+export type NewProductSearchResult = typeof productSearchResults.$inferInsert;
+export type EmergencyCatalogItem = typeof emergencyCatalogItems.$inferSelect;
+export type NewEmergencyCatalogItem = typeof emergencyCatalogItems.$inferInsert;
+export type ProductCandidate = typeof productCandidates.$inferSelect;
+export type NewProductCandidate = typeof productCandidates.$inferInsert;
+export type ProductCandidateImage = typeof productCandidateImages.$inferSelect;
+export type NewProductCandidateImage = typeof productCandidateImages.$inferInsert;
+export type ContextBundle = typeof contextBundles.$inferSelect;
+export type NewContextBundle = typeof contextBundles.$inferInsert;
+export type ContextBundleItem = typeof contextBundleItems.$inferSelect;
+export type NewContextBundleItem = typeof contextBundleItems.$inferInsert;
+export type GenerationAttempt = typeof generationAttempts.$inferSelect;
+export type NewGenerationAttempt = typeof generationAttempts.$inferInsert;
+export type ItemSelection = typeof itemSelections.$inferSelect;
+export type NewItemSelection = typeof itemSelections.$inferInsert;
+export type CostEvent = typeof costEvents.$inferSelect;
+export type NewCostEvent = typeof costEvents.$inferInsert;

@@ -15,6 +15,10 @@
     {
       "path": "/api/cron/process-replies",
       "schedule": "0 13 * * *"
+    },
+    {
+      "path": "/api/cron/shop-lens-stale-runs",
+      "schedule": "0 10 * * *"
     }
   ]
 }
