@@ -39,13 +39,18 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  let upserts = 0;
+  // Build rows; dedupe by name_lower so a batch can't conflict with itself.
+  const seen = new Set<string>();
+  const rows: (typeof names.$inferInsert)[] = [];
   for (const e of babyNames) {
     const trimmed = (e.name ?? "").trim();
     if (!trimmed) continue;
-    const row = {
+    const nameLower = trimmed.toLowerCase();
+    if (seen.has(nameLower)) continue;
+    seen.add(nameLower);
+    rows.push({
       name: trimmed,
-      nameLower: trimmed.toLowerCase(),
+      nameLower,
       origin: e.origin ?? null,
       meaning: e.meaning ?? null,
       usRank: e.usRank ?? 0,
@@ -60,31 +65,38 @@ export async function POST(request: NextRequest) {
       startingLetter: trimmed[0].toUpperCase(),
       syllableCount: e.syllableCount ?? null,
       meaningTags: e.meaningTags ?? [],
-    };
+    });
+  }
+
+  // Overwrite-on-conflict (refresh content), batched so thousands of names
+  // load in a handful of round-trips instead of one INSERT per name.
+  const updateSet = {
+    name: sql`excluded."name"`,
+    origin: sql`excluded."origin"`,
+    meaning: sql`excluded."meaning"`,
+    usRank: sql`excluded."us_rank"`,
+    worldRank: sql`excluded."world_rank"`,
+    famousPerson1: sql`excluded."famous_person_1"`,
+    famousPerson2: sql`excluded."famous_person_2"`,
+    famousPerson3: sql`excluded."famous_person_3"`,
+    alternativeSpellings: sql`excluded."alternative_spellings"`,
+    isBoy: sql`excluded."is_boy"`,
+    isGirl: sql`excluded."is_girl"`,
+    phonetic: sql`excluded."phonetic"`,
+    startingLetter: sql`excluded."starting_letter"`,
+    syllableCount: sql`excluded."syllable_count"`,
+    meaningTags: sql`excluded."meaning_tags"`,
+  };
+
+  const BATCH = 500;
+  let upserts = 0;
+  for (let i = 0; i < rows.length; i += BATCH) {
+    const batch = rows.slice(i, i + BATCH);
     await db
       .insert(names)
-      .values(row)
-      .onConflictDoUpdate({
-        target: names.nameLower,
-        set: {
-          name: row.name,
-          origin: row.origin,
-          meaning: row.meaning,
-          usRank: row.usRank,
-          worldRank: row.worldRank,
-          famousPerson1: row.famousPerson1,
-          famousPerson2: row.famousPerson2,
-          famousPerson3: row.famousPerson3,
-          alternativeSpellings: row.alternativeSpellings,
-          isBoy: row.isBoy,
-          isGirl: row.isGirl,
-          phonetic: row.phonetic,
-          startingLetter: row.startingLetter,
-          syllableCount: row.syllableCount,
-          meaningTags: row.meaningTags,
-        },
-      });
-    upserts += 1;
+      .values(batch)
+      .onConflictDoUpdate({ target: names.nameLower, set: updateSet });
+    upserts += batch.length;
   }
 
   return NextResponse.json({ ok: true, seeded: upserts, total: await countNames() });
