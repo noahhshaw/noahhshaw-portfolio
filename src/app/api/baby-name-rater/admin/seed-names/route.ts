@@ -11,12 +11,7 @@ export const maxDuration = 60;
 // One-shot recovery endpoint to (re)seed the baby-name-rater `names` table.
 // Touches ONLY the `names` table — no effect on any other feature or table.
 //
-// Auth model:
-//   - With `Authorization: Bearer <BABY_INTERNAL_SECRET>` → always allowed.
-//   - Without the secret → allowed ONLY while `names` is currently empty
-//     (a safe one-time recovery: the dataset is a fixed, public list of baby
-//     names bundled with the app, and the table self-locks once populated).
-//
+// Auth: requires `Authorization: Bearer <BABY_INTERNAL_SECRET>`.
 // Idempotent: upserts by `name_lower` (unique), so re-running updates content
 // rather than creating duplicates.
 //
@@ -37,14 +32,9 @@ export async function POST(request: NextRequest) {
   const bearerOk =
     !!secret && secret.length > 0 && auth === `Bearer ${secret}`;
 
-  const existing = await countNames();
-  if (!bearerOk && existing > 0) {
+  if (!bearerOk) {
     return NextResponse.json(
-      {
-        error:
-          "names table is not empty; provide Authorization: Bearer BABY_INTERNAL_SECRET to re-seed",
-        existing,
-      },
+      { error: "unauthorized: Authorization: Bearer BABY_INTERNAL_SECRET required" },
       { status: 401 }
     );
   }
