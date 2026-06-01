@@ -5,7 +5,14 @@ import SkyCanvas, { type Layers } from "./SkyCanvas";
 
 type Loc = { lat: number; lon: number; label: string };
 
-const DEFAULT_DATE = new Date("2026-05-21T22:00:00");
+// Deterministic defaults so the server (UTC) and the client (local TZ) seed
+// identical initial state. Previously `new Date("2026-05-21T22:00:00")` was
+// parsed in local time and `.toISOString()` shifted the day across the UTC
+// boundary, so the SSR'd date and the client date disagreed → React hydration
+// mismatch (#418/#425), which the app's ErrorBoundary then surfaced as a crash.
+const DEFAULT_DAY = "2026-05-21"; // YYYY-MM-DD
+const DEFAULT_HOUR = 22;
+const DEFAULT_MINUTE = 0;
 
 const RECENT_KEY = "sky.recent";
 const SETTINGS_KEY = "sky.settings";
@@ -26,9 +33,9 @@ export default function SkyPage() {
   const [err, setErr] = useState<string | null>(null);
   const [panelOpen, setPanelOpen] = useState(true);
 
-  const [day, setDay] = useState<string>(DEFAULT_DATE.toISOString().slice(0, 10));
-  const [hour, setHour] = useState<number>(22);
-  const [minute, setMinute] = useState<number>(0);
+  const [day, setDay] = useState<string>(DEFAULT_DAY);
+  const [hour, setHour] = useState<number>(DEFAULT_HOUR);
+  const [minute, setMinute] = useState<number>(DEFAULT_MINUTE);
   const date = useMemo(() => {
     const d = new Date(`${day}T00:00:00`);
     d.setHours(hour, minute, 0, 0);

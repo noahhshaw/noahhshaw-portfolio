@@ -611,10 +611,15 @@ export default function SkyCanvas(props: Props) {
       setView((v) => ({ ...v, scale: newScale }));
       movedRef.current = true;
     } else if (dragRef.current) {
-      const dx = e.clientX - dragRef.current.x;
-      const dy = e.clientY - dragRef.current.y;
+      // Snapshot the drag origin: the setView updater below runs asynchronously,
+      // and onPointerUp may null out dragRef.current before React flushes it.
+      // Reading dragRef.current!.tx inside the updater therefore crashed with
+      // "Cannot read properties of null (reading 'tx')".
+      const drag = dragRef.current;
+      const dx = e.clientX - drag.x;
+      const dy = e.clientY - drag.y;
       if (Math.hypot(dx, dy) > 3) movedRef.current = true;
-      setView((v) => ({ ...v, tx: dragRef.current!.tx + dx, ty: dragRef.current!.ty + dy }));
+      setView((v) => ({ ...v, tx: drag.tx + dx, ty: drag.ty + dy }));
     }
   };
   const onPointerUp: React.PointerEventHandler<HTMLCanvasElement> = (e) => {
