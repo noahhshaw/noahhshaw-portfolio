@@ -21,9 +21,22 @@
  *   npm run milestones:bake -- --days=6,10,15
  *   npm run milestones:bake -- --days=all
  *
+ * Completed / skipped milestones:
+ *   The catalog on disk has no per-baby state, so by default this bakes
+ *   the pending-default view (every eligible row). When the parent has
+ *   already marked items complete or skipped, pass their catalog keys so
+ *   they are dropped and the next still-pending eligible row backfills —
+ *   matching production loadSurfaceableMilestones (status='pending'):
+ *
+ *     npm run milestones:bake -- --days=25-42 --exclude=brief-head-lift,calms-with-soothing
+ *     npm run milestones:bake -- --days=25-42 --exclude-file=completed-milestones.json
+ *
+ *   --exclude-file points at a JSON file shaped either as a bare array
+ *   of keys (["brief-head-lift", ...]) or { "excludeKeys": [...] }.
+ *
  * Idempotent: removes any previously-injected milestone section before
- * adding the fresh one, so re-running with the same catalog produces
- * the same output.
+ * adding the fresh one, so re-running with the same catalog (and the same
+ * exclude set) produces the same output.
  */
 import { promises as fs } from "fs";
 import { resolve } from "path";
@@ -88,12 +101,19 @@ function escapeHtml(s: string): string {
     .replace(/"/g, "&quot;");
 }
 
-function surfaceable(catalog: CatalogRow[], ageInDays: number): CatalogRow[] {
-  // Match loadSurfaceableMilestones in production: newest-opened first,
-  // tiebreak by seed_order. So the daily email surfaces milestones that
-  // just became expected, not the same day-0 list every day.
+function surfaceable(
+  catalog: CatalogRow[],
+  ageInDays: number,
+  excludeKeys: Set<string> = new Set()
+): CatalogRow[] {
+  // Match loadSurfaceableMilestones in production: pending-only (we model
+  // "pending" by dropping the parent's completed/skipped keys), newest-
+  // opened first, tiebreak by seed_order. So the daily email surfaces
+  // milestones that just became expected, not the same day-0 list every
+  // day — and never re-surfaces something the parent already marked.
   return catalog
     .filter((c) => c.age_window_low_days <= ageInDays)
+    .filter((c) => !excludeKeys.has(c.key))
     .sort((a, b) => {
       if (b.age_window_low_days !== a.age_window_low_days)
         return b.age_window_low_days - a.age_window_low_days;
@@ -178,12 +198,47 @@ function stripPreviousText(text: string): string {
   return text.slice(0, idx).trimEnd();
 }
 
+async function loadExcludeKeys(): Promise<Set<string>> {
+  const argv = process.argv.slice(2);
+  const keys = new Set<string>();
+
+  const inline = argv.find((a) => a.startsWith("--exclude="))?.split("=")[1];
+  if (inline) {
+    for (const k of inline.split(",")) {
+      const key = k.trim();
+      if (key) keys.add(key);
+    }
+  }
+
+  const fileArg = argv
+    .find((a) => a.startsWith("--exclude-file="))
+    ?.split("=")[1];
+  if (fileArg) {
+    const raw = await fs.readFile(resolve(process.cwd(), fileArg), "utf8");
+    const parsed = JSON.parse(raw) as string[] | { excludeKeys?: string[] };
+    const arr = Array.isArray(parsed) ? parsed : parsed.excludeKeys ?? [];
+    for (const k of arr) {
+      const key = String(k).trim();
+      if (key) keys.add(key);
+    }
+  }
+
+  return keys;
+}
+
 async function main() {
   const daysArg = process.argv
     .slice(2)
     .find((a) => a.startsWith("--days="))
     ?.split("=")[1];
   const days = parseDayArg(daysArg);
+
+  const excludeKeys = await loadExcludeKeys();
+  if (excludeKeys.size > 0) {
+    console.log(
+      `Excluding ${excludeKeys.size} completed/skipped milestone(s): ${[...excludeKeys].join(", ")}`
+    );
+  }
 
   const catalogJson = JSON.parse(
     await fs.readFile(resolve(process.cwd(), CATALOG_FILE), "utf8")
@@ -216,7 +271,7 @@ async function main() {
       await fs.readFile(filePath, "utf8")
     ) as Artifact;
 
-    const rows = surfaceable(catalog, day);
+    const rows = surfaceable(catalog, day, excludeKeys);
     const milestoneHtml = renderHtml(rows, day);
     const milestoneText = renderText(rows, day);
 

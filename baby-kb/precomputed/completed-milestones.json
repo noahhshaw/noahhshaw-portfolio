@@ -1,0 +1,16 @@
+{
+  "_comment": "Snapshot of milestones the parents have marked complete/skipped, exported from noahhshaw.com/baby/milestones on 2026-06-04. Pass to the milestone bake + validate steps via --exclude-file so completed items stop surfacing in the daily check-in. Refresh from a fresh export before regenerating future days.",
+  "exportedAt": "2026-06-04",
+  "excludeKeys": [
+    "moves-arms-and-legs",
+    "responds-to-loud-sound",
+    "brings-hands-near-face",
+    "head-side-to-side-tummy",
+    "focuses-near-objects",
+    "prefers-human-faces",
+    "recognizes-parent-voice",
+    "tracks-face-briefly",
+    "calms-with-soothing",
+    "brief-head-lift"
+  ]
+}

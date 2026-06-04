@@ -6,6 +6,16 @@
  *   npx tsx scripts/validate-precomputed.ts            # all
  *   npx tsx scripts/validate-precomputed.ts 0 7 14     # specific days
  *
+ * Completed / skipped milestones:
+ *   By default the milestone-presence check treats any catalog row whose
+ *   window has opened (low_days <= ageInDays) as "expected". When the
+ *   parent has marked rows complete/skipped, those days may legitimately
+ *   have an empty check-in (no pending row in-window). Pass the same
+ *   exclude set you baked with so the presence check matches reality:
+ *
+ *     npx tsx scripts/validate-precomputed.ts --exclude=brief-head-lift,... 25 26 27
+ *     npx tsx scripts/validate-precomputed.ts --exclude-file=completed.json
+ *
  * Exits 0 if every file passes, 1 otherwise. No network/API except link probes.
  */
 import { readdirSync, readFileSync } from "fs";
@@ -29,8 +39,34 @@ type Artifact = {
 };
 
 type CatalogJson = {
-  milestones: Array<{ age_window_low_days: number }>;
+  milestones: Array<{ age_window_low_days: number; key: string }>;
 };
+
+/** Parse --exclude=a,b and --exclude-file=path into a key set. */
+function loadExcludeKeys(argv: string[]): Set<string> {
+  const keys = new Set<string>();
+  const inline = argv.find((a) => a.startsWith("--exclude="))?.split("=")[1];
+  if (inline) {
+    for (const k of inline.split(",")) {
+      const key = k.trim();
+      if (key) keys.add(key);
+    }
+  }
+  const fileArg = argv
+    .find((a) => a.startsWith("--exclude-file="))
+    ?.split("=")[1];
+  if (fileArg) {
+    const parsed = JSON.parse(
+      readFileSync(path.resolve(process.cwd(), fileArg), "utf8")
+    ) as string[] | { excludeKeys?: string[] };
+    const arr = Array.isArray(parsed) ? parsed : parsed.excludeKeys ?? [];
+    for (const k of arr) {
+      const key = String(k).trim();
+      if (key) keys.add(key);
+    }
+  }
+  return keys;
+}
 
 /**
  * Pure file-side eligibility check — matches the rule in
@@ -39,7 +75,9 @@ type CatalogJson = {
  * runs without DB access and (b) emails are baked from the catalog's
  * pending-default view; state-aware re-baking is a separate flow.
  */
-function loadMilestonesExpectedFn(): (ageInDays: number) => boolean {
+function loadMilestonesExpectedFn(
+  excludeKeys: Set<string>
+): (ageInDays: number) => boolean {
   let catalog: CatalogJson["milestones"] = [];
   try {
     const raw = readFileSync(CATALOG_FILE, "utf8");
@@ -52,8 +90,13 @@ function loadMilestonesExpectedFn(): (ageInDays: number) => boolean {
     );
     return () => undefined as unknown as boolean;
   }
+  // A day "expects" a check-in only if at least one in-window milestone is
+  // still pending — i.e. eligible by age AND not in the parent's
+  // completed/skipped exclude set. This mirrors loadSurfaceableMilestones.
   return (ageInDays: number) =>
-    catalog.some((m) => m.age_window_low_days <= ageInDays);
+    catalog.some(
+      (m) => m.age_window_low_days <= ageInDays && !excludeKeys.has(m.key)
+    );
 }
 
 function selectFiles(argv: string[]): string[] {
@@ -70,7 +113,13 @@ function selectFiles(argv: string[]): string[] {
 
 async function main() {
   const files = selectFiles(process.argv);
-  const milestonesExpectedAt = loadMilestonesExpectedFn();
+  const excludeKeys = loadExcludeKeys(process.argv.slice(2));
+  if (excludeKeys.size > 0) {
+    console.log(
+      `Treating ${excludeKeys.size} milestone(s) as complete/skipped: ${[...excludeKeys].join(", ")}\n`
+    );
+  }
+  const milestonesExpectedAt = loadMilestonesExpectedFn(excludeKeys);
   let failed = 0;
   let total = 0;
 
