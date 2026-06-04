@@ -101,25 +101,40 @@ function escapeHtml(s: string): string {
     .replace(/"/g, "&quot;");
 }
 
+const SURFACE_LIMIT = 5;
+
 function surfaceable(
   catalog: CatalogRow[],
   ageInDays: number,
   excludeKeys: Set<string> = new Set()
 ): CatalogRow[] {
-  // Match loadSurfaceableMilestones in production: pending-only (we model
-  // "pending" by dropping the parent's completed/skipped keys), newest-
-  // opened first, tiebreak by seed_order. So the daily email surfaces
-  // milestones that just became expected, not the same day-0 list every
-  // day — and never re-surfaces something the parent already marked.
-  return catalog
+  // Drop the parent's completed/skipped keys (our stand-in for "pending").
+  const pending = catalog.filter((c) => !excludeKeys.has(c.key));
+
+  // In-window first, newest-opened first (tiebreak seed_order) — like
+  // production loadSurfaceableMilestones, so the email leads with what
+  // just became expected rather than the same day-0 list every day.
+  const current = pending
     .filter((c) => c.age_window_low_days <= ageInDays)
-    .filter((c) => !excludeKeys.has(c.key))
     .sort((a, b) => {
       if (b.age_window_low_days !== a.age_window_low_days)
         return b.age_window_low_days - a.age_window_low_days;
       return a.seed_order - b.seed_order;
-    })
-    .slice(0, 5);
+    });
+
+  // Backfill the remaining slots with the nearest UPCOMING milestones
+  // (soonest-opening first). This keeps the check-in useful and forward-
+  // looking even when the parent has already completed everything in the
+  // current window — the section should never go blank.
+  const upcoming = pending
+    .filter((c) => c.age_window_low_days > ageInDays)
+    .sort((a, b) => {
+      if (a.age_window_low_days !== b.age_window_low_days)
+        return a.age_window_low_days - b.age_window_low_days;
+      return a.seed_order - b.seed_order;
+    });
+
+  return [...current, ...upcoming].slice(0, SURFACE_LIMIT);
 }
 
 function renderHtml(rows: CatalogRow[], ageInDays: number): string {
@@ -127,8 +142,12 @@ function renderHtml(rows: CatalogRow[], ageInDays: number): string {
   const items = rows
     .map((r) => {
       const past = ageInDays > r.age_window_high_days;
+      const upcoming = ageInDays < r.age_window_low_days;
       const pastBadge = past
         ? ` <span style="color:#92400e;font-size:11px;background:#fef3c7;padding:2px 6px;border-radius:4px;margin-left:6px">past expected window</span>`
+        : "";
+      const upcomingBadge = upcoming
+        ? ` <span style="color:#1e40af;font-size:11px;background:#dbeafe;padding:2px 6px;border-radius:4px;margin-left:6px">coming up</span>`
         : "";
       const completeUrl = `${ORIGIN}/baby/milestones/${r.key}/complete`;
       const window = `Day ${r.age_window_low_days}-${r.age_window_high_days}`;
@@ -138,7 +157,7 @@ function renderHtml(rows: CatalogRow[], ageInDays: number): string {
         : "";
       return `
     <li style="margin:0 0 18px;padding:0;list-style:none">
-      <div style="font-weight:600;color:#111827;line-height:1.35">${escapeHtml(r.display_name)}${pastBadge}</div>
+      <div style="font-weight:600;color:#111827;line-height:1.35">${escapeHtml(r.display_name)}${pastBadge}${upcomingBadge}</div>
       <div style="font-size:12px;color:#6b7280;margin:3px 0 8px">${window} &middot; ${sourceAnchor}</div>
       ${description}
       <a href="${completeUrl}" style="display:inline-block;padding:7px 14px;background:#1d4ed8;color:#ffffff;text-decoration:none;border-radius:6px;font-size:13px;font-weight:500">Mark complete</a>
@@ -166,10 +185,11 @@ function renderText(rows: CatalogRow[], ageInDays: number): string {
   lines.push("");
   for (const r of rows) {
     const past = ageInDays > r.age_window_high_days;
+    const upcoming = ageInDays < r.age_window_low_days;
     lines.push(`- ${r.display_name}`);
     lines.push(
       `  AAP window: day ${r.age_window_low_days}-${r.age_window_high_days}` +
-        (past ? " (past expected window)" : "")
+        (past ? " (past expected window)" : upcoming ? " (coming up)" : "")
     );
     if (r.clinical_note) {
       lines.push(`  What to look for: ${r.clinical_note}`);

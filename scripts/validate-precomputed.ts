@@ -90,13 +90,12 @@ function loadMilestonesExpectedFn(
     );
     return () => undefined as unknown as boolean;
   }
-  // A day "expects" a check-in only if at least one in-window milestone is
-  // still pending — i.e. eligible by age AND not in the parent's
-  // completed/skipped exclude set. This mirrors loadSurfaceableMilestones.
-  return (ageInDays: number) =>
-    catalog.some(
-      (m) => m.age_window_low_days <= ageInDays && !excludeKeys.has(m.key)
-    );
+  // A day "expects" a check-in if there is any still-pending milestone to
+  // surface at all — the bake backfills empty in-window slots with the
+  // nearest UPCOMING milestones, so the section is present whenever a
+  // non-excluded catalog row exists (current or future). It only goes
+  // absent once the parent has completed/skipped literally everything.
+  return (_ageInDays: number) => catalog.some((m) => !excludeKeys.has(m.key));
 }
 
 function selectFiles(argv: string[]): string[] {
