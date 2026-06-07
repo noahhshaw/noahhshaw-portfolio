@@ -19,13 +19,6 @@ export default function Projects() {
       external: true,
     },
     {
-      title: 'Fraud-Safety Evaluation of Frontier Models',
-      description:
-        `Generative AI is a massive opportunity to amplify human creativity and prosperity, but the same capabilities can be turned by threat actors toward ends that are destructive to humanity. To understand how far today's frontier models can be pushed, I evaluated GPT-5.5, Claude Sonnet 4.6, and DeepSeek V4 Pro against realistic fraud-content requests. I found that every model could be made to produce usable fraud material (34% for GPT-5.5, 38% for Sonnet 4.6, and 96% for DeepSeek), harmful compliance rose as intent was obfuscated within the prompt (56%, 56%, and 99% respectively), and rose again under repeated attempts. Further work is needed to harden deployed systems, address the ecosystem risk posed by open-weight models, and safeguard against new threats as model capabilities advance.`,
-      tags: ['LLM Safety', 'Evaluation', 'Red-teaming', 'Python', 'LLM-as-judge'],
-      href: '/safety-eval',
-    },
-    {
       title: 'Shop Lens',
       description:
         `An imaginative-shopping prototype for turning an existing scene into a counterfactual one. Upload a room photo, describe the party or room you want to create in natural language, and the system uses Gemini 2.5 Pro to infer intent, query SerpApi for real inventory, and pass the product assortment into Gemini 2.5 Flash Image to recompose the scene with items you can actually buy. I built it because I love throwing themed parties but hate the search-and-revise loop of online shopping; the hard product work was giving the agent low-latency inventory and iterating until the generated images and shoppable items matched the user's taste.`,
