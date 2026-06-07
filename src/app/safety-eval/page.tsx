@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   },
 };
 
+// report.generated.html is the rendered report body. It is produced from the
+// report's markdown source in the private fraud-safeguard-eval repo (via that
+// repo's scripts/build_report_html.mjs) and copied here as published output;
+// the source, converter, evaluation code, and data are not part of this repo.
 const reportHtml = readFileSync(
   join(process.cwd(), "src/app/safety-eval/report.generated.html"),
   "utf8"
