@@ -11,19 +11,19 @@ interface Project {
 export default function Projects() {
   const projects: Project[] = [
     {
-      title: 'Fraud-Safety Evaluation of Frontier Models',
-      description:
-        `An independent red-team study of how today's leading models behave when asked to produce fraud content. I built a corpus of realistic scam prompts — written the way an actual requester would, with no eval tells — and measured GPT-5.5, Claude Sonnet 4.6, and an open-weight model (DeepSeek V4 Pro) across plain requests, a single obfuscation wrapper, and repeated sampling, with every response labeled by an LLM judge whose reliability I checked against a cross-family panel. The findings: all three produced usable artifacts at substantial rates, a one-line roleplay wrapper converted refusals and hedges into operational output, retrying the same prompt sharply raised an attacker's odds, and the open-weight model complied almost every time — so end-to-end safety rested on the models themselves. It reflects how I think about measuring and governing AI risk in safety-critical domains.`,
-      tags: ['LLM Safety', 'Evaluation', 'Red-teaming', 'Python', 'LLM-as-judge'],
-      href: '/safety-eval',
-    },
-    {
       title: 'San Francisco — A Private Guide',
       description:
         `A personal city interface I built for my mother-in-law's month in San Francisco around the birth of my son: simple enough to share as a URL, opinionated enough to feel like my guide. Instead of spending hours wrangling Google Maps lists, I used voice prompting with a coding agent to turn favorites like Rose's polenta, Turtle Tower, Dalida, the Legion of Honor, and the de Young into a lightweight map with search, filters, and one-tap navigation. It became a small proof point for a bigger belief: AI will let more people turn their taste into personal software.`,
       tags: ['HTML', 'CSS', 'Leaflet', 'OpenStreetMap'],
       href: '/sf/',
       external: true,
+    },
+    {
+      title: 'Fraud-Safety Evaluation of Frontier Models',
+      description:
+        `Generative AI is a massive opportunity to amplify human creativity and prosperity, but the same capabilities can be turned by threat actors toward ends that are destructive to humanity. To understand how far today's frontier models can be pushed, I evaluated GPT-5.5, Claude Sonnet 4.6, and DeepSeek V4 Pro against realistic fraud-content requests. I found that every model could be made to produce usable fraud material (34% for GPT-5.5, 38% for Sonnet 4.6, and 96% for DeepSeek), harmful compliance rose as intent was obfuscated within the prompt (56%, 56%, and 99% respectively), and rose again under repeated attempts. Further work is needed to harden deployed systems, address the ecosystem risk posed by open-weight models, and safeguard against new threats as model capabilities advance.`,
+      tags: ['LLM Safety', 'Evaluation', 'Red-teaming', 'Python', 'LLM-as-judge'],
+      href: '/safety-eval',
     },
     {
       title: 'Shop Lens',
