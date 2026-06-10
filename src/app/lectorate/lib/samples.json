@@ -1,0 +1,44 @@
+[
+  {
+    "id": "benefits-bureaucratic",
+    "title": "Benefits notice — as typically written",
+    "note": "Original composition in the style of a real eligibility notice. Pair with the plain-language rewrite below.",
+    "text": "Pursuant to the eligibility redetermination provisions applicable to your household's continued participation in the program, you are hereby notified that documentation substantiating your current income, residency, and household composition must be furnished to this office no later than thirty (30) calendar days from the date of issuance of this correspondence. Failure to submit the requisite documentation within the aforementioned timeframe will result in the termination of benefits effective the first day of the month subsequent to the expiration of the notice period. Recipients who experience extenuating circumstances that preclude timely submission may request an extension of the documentation deadline, provided that such request is submitted in writing prior to the expiration of the original deadline and articulates with specificity the nature of the circumstances alleged to justify the extension. Adverse determinations rendered pursuant to this redetermination are subject to administrative appeal in accordance with the procedures enumerated in the accompanying notice of appellate rights."
+  },
+  {
+    "id": "benefits-plain",
+    "title": "Benefits notice — plain-language rewrite",
+    "note": "The same content rewritten to plain-language guidelines.",
+    "text": "We need some documents from you to keep your benefits. Please send us proof of your income, your address, and who lives with you. You must send these within 30 days of the date on this letter. If we do not get your documents in time, your benefits will stop at the start of next month. If something serious makes it hard for you to send them on time, you can ask for more time. Write to us before the deadline and tell us what happened. If we decide to stop your benefits, you can appeal. The blue sheet that came with this letter explains how to appeal, step by step."
+  },
+  {
+    "id": "clinic-notice",
+    "title": "Community vaccine clinic announcement",
+    "note": "Typical municipal communication, mid-range difficulty.",
+    "text": "The county health department will hold a free walk-in vaccine clinic this Saturday from 9 a.m. to 3 p.m. at the Riverside Community Center. No appointment is needed, and you do not need insurance. Flu shots and updated COVID-19 boosters will be available for everyone six months and older. Please bring a photo ID if you have one, and wear a short-sleeved shirt. Parents or guardians must come with children under 18. Interpreters for Spanish and Vietnamese will be on site all day. If you cannot attend, the clinic will repeat on the first Saturday of next month at the same location."
+  },
+  {
+    "id": "privacy-policy",
+    "title": "Privacy policy excerpt (legalese)",
+    "note": "Original composition in the style of a typical terms-of-service.",
+    "text": "By accessing or utilizing the services, you acknowledge and consent to the collection, processing, retention, and disclosure of personal information as delineated herein, including but not limited to identifiers, commercial information, biometric data, geolocation data, and inferences drawn therefrom, which may be shared with affiliates, subsidiaries, service providers, and other third parties for purposes including service provision, analytics, personalization, and compliance with applicable legal obligations. Notwithstanding the foregoing, residents of certain jurisdictions may be entitled to exercise statutory rights with respect to their personal information, including rights of access, deletion, correction, and portability, subject to verification procedures and permissible exemptions. The company reserves the right to modify this policy at its sole discretion, and continued use of the services subsequent to the effective date of any modification shall constitute acceptance thereof."
+  },
+  {
+    "id": "academic-methods",
+    "title": "Academic methods paragraph",
+    "note": "Original composition in the style of a social-science paper.",
+    "text": "We operationalize comprehensibility as the probability that a randomly sampled adult can extract the propositional content of a text on first reading, and estimate this quantity via a hierarchical Bayesian framework that integrates psycholinguistic complexity indices with population-level literacy distributions. Lexical sophistication was indexed by corpus-derived frequency norms and age-of-acquisition ratings, while syntactic complexity was approximated through clausal subordination density and mean dependency length. To mitigate confounding between topic familiarity and structural complexity, we residualized the predictors against genre fixed effects. The resulting estimates exhibited robust convergent validity with criterion measures derived from cloze testing, although we caution that extrapolation beyond the sampled difficulty range entails substantial epistemic uncertainty."
+  },
+  {
+    "id": "childrens-story",
+    "title": "Children's story opening",
+    "note": "Very easy baseline.",
+    "text": "Maya found a small red kite in the park. The kite was stuck in a tree. She asked her big brother for help. He lifted her up so she could reach it. The kite came free and the wind picked it up right away. Maya held the string tight and laughed as the kite danced in the sky. A little dog ran in circles under it, barking at the bright red shape. When the sun went down, Maya took the kite home and put it by her bed. She dreamed about flying all night long."
+  },
+  {
+    "id": "irs-style",
+    "title": "Tax instruction paragraph",
+    "note": "Original composition in the style of federal tax instructions.",
+    "text": "If you received distributions from a qualified retirement plan during the taxable year and any portion of those distributions was rolled over into another eligible retirement account within sixty days of receipt, you must nevertheless report the gross distribution amount on the applicable line, then enter the taxable portion, which excludes the amount timely rolled over, on the subsequent line. If the distribution included after-tax contributions, the nontaxable portion must be allocated proportionally between the amount rolled over and the amount retained, unless the rollover was accomplished by a direct trustee-to-trustee transfer, in which case the after-tax contributions may, at the taxpayer's election, be allocated first to the amount not rolled over."
+  }
+]

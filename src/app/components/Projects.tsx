@@ -11,6 +11,13 @@ interface Project {
 export default function Projects() {
   const projects: Project[] = [
     {
+      title: 'Lectorate',
+      description:
+        `Readability tools tell you a grade level; I wanted the question that actually matters for public writing: how many people does this exclude? Lectorate is a machine-learning model I trained locally on 111,000 pairwise human difficulty judgments (the CLEAR corpus), then chained to real population data — the PIAAC 2023 adult literacy survey, UNESCO literacy rates, Ethnologue speaker counts — so any pasted text returns the share of US adults and the world's adults who could functionally comprehend it, with honest conformal error bars. The version here is the exact trained model exported to JSON and re-implemented in dependency-free JavaScript, parity-tested against the Python original, running entirely in your browser. Try the same benefits letter written two ways: the gap is about 100 million American readers.`,
+      tags: ['scikit-learn', 'Conformal prediction', 'PIAAC', 'Next.js', 'Client-side ML'],
+      href: '/lectorate',
+    },
+    {
       title: 'San Francisco — A Private Guide',
       description:
         `A personal city interface I built for my mother-in-law's month in San Francisco around the birth of my son: simple enough to share as a URL, opinionated enough to feel like my guide. Instead of spending hours wrangling Google Maps lists, I used voice prompting with a coding agent to turn favorites like Rose's polenta, Turtle Tower, Dalida, the Legion of Honor, and the de Young into a lightweight map with search, filters, and one-tap navigation. It became a small proof point for a bigger belief: AI will let more people turn their taste into personal software.`,
