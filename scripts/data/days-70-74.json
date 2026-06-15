@@ -1,0 +1,270 @@
+[
+  {
+    "ageInDays": 70,
+    "subject": "Day 70: confirm caregiver Tdap",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-11.md",
+      "baby-kb/topics/vaccines-overview.md"
+    ],
+    "content": {
+      "ageInDays": 70,
+      "hook": "confirm caregiver Tdap",
+      "todaysFocus": "Avi is 10 weeks into the calmest stretch of year one, so this is the week to harden the systems around him. Today's lead item is cocooning: make sure every adult who holds him is current on their own vaccines.",
+      "actionItems": [
+        {
+          "body": "Confirm that grandparents and any nanny are current on Tdap, MMR, flu, and COVID per the CDC adult schedule before they hold Avi. Pertussis is the contact illness most likely to kill an infant, and adult boosters are the primary defense for a baby this young.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Build a childcare backup plan now: identify a backup nanny agency or an on-call family member before a sick day forces the question.",
+          "sourceLabel": "Care.com",
+          "sourceUrl": "https://www.care.com/"
+        },
+        {
+          "body": "Inquire about first-birthday venues if you want a formal event; top SF and NYC venues book six to nine months out."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Sleep stretches that lengthen one week and shorten the next. Week-to-week variability in the longest night stretch is normal in the 8-to-14-week window.",
+        "[monitor] Persistent fisted hands that never open, or movement that consistently favors one side; note it and raise at the next visit.",
+        "[call within 24h] A new feeding-refusal pattern, or refusal of multiple feeds in a row.",
+        "[call now] Rectal temperature of 100.4F (38.0C) or higher under 90 days, blue lips or labored breathing, or a limp, unresponsive episode. Call the pediatrician same-day for fever; call 911 for blue lips!"
+      ],
+      "enrichment": [
+        {
+          "body": "Confirm the adult-vaccine cocoon as part of social safety: the people in Avi's daily orbit are his pertussis firewall, so log each caregiver's Tdap date.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Place an unbreakable mirror in front of Avi during tummy time to motivate head lift; aim for 60 to 75 minutes per day cumulative across short bouts.",
+          "sourceLabel": "HealthyChildren tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Extend his cooing exchanges by responding to each vocalization, pausing, then answering the next. This serve-and-return cadence predicts later language outcomes.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91 (~3 months): sleep-consolidation window opens; start anchoring a consistent sleep-wake routine.",
+        "Day 112-126 (4-month visit): RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 71,
+    "subject": "Day 71: start a freezer milk stash",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-11.md",
+      "baby-kb/mom/return-to-work.md"
+    ],
+    "content": {
+      "ageInDays": 71,
+      "hook": "start a freezer milk stash",
+      "todaysFocus": "With Avi feeding predictably, this is the week to operationalize the return-to-work logistics. Today's lead is building a freezer stash so a daycare or nanny handoff does not start from zero.",
+      "actionItems": [
+        {
+          "body": "If Anoushka is returning to work, start a pumping rhythm now: one to two sessions a day, targeting roughly 2 oz of frozen milk per missed feed. Building the stash gradually protects supply better than a last-minute sprint."
+        },
+        {
+          "body": "Stage the pumping kit Anoushka will need: an insulated cooler bag, a spare set of pump parts, and a labeling system for dated bottles."
+        },
+        {
+          "body": "Confirm the daycare or nanny start date lines up with the return-to-work date, ideally with a one-to-two-week overlap buffer.",
+          "sourceLabel": "Childcare.gov",
+          "sourceUrl": "https://www.childcare.gov/"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Profuse drooling and hand-sucking. This reflects salivary-gland maturation, not necessarily teething; first teeth typically arrive at six to 10 months.",
+        "[monitor] Persistent head tilt to one side with limited rotation; flag possible torticollis for a physical-therapy referral.",
+        "[call within 24h] Acute new fever onset, or persistent vomiting lasting more than 24 hours.",
+        "[call now] Rectal temperature of 100.4F (38.0C) or higher under 90 days, an apnea or color-change episode, or seizure-like activity. Call 911 if his lips turn blue!"
+      ],
+      "enrichment": [
+        {
+          "body": "Build the pumping stash as a household project, not an afterthought: a steady one-to-two-session rhythm is what keeps the social handoff to a caregiver smooth when leave ends."
+        },
+        {
+          "body": "Play one instrument's recording on repeat for five to 10 minutes during play, such as violin if you are considering Suzuki; pre-Suzuki listening exposure can begin this early with no downside.",
+          "sourceLabel": "Suzuki Association",
+          "sourceUrl": "https://suzukiassociation.org/"
+        },
+        {
+          "body": "Read a board book with a repeated refrain so Avi can start anticipating the pattern; repeated-refrain text drives predictive language processing.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91 (~3 months): sleep-consolidation window opens; begin a consistent sleep-wake routine.",
+        "Day 112-126 (4-month visit): RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 72,
+    "subject": "Day 72: peek-a-boo for laughs",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-11.md",
+      "baby-kb/topics/language-exposure.md"
+    ],
+    "content": {
+      "ageInDays": 72,
+      "hook": "peek-a-boo for laughs",
+      "todaysFocus": "Avi's social reciprocity is sharpening into recognizable personality, and full laughs are emerging in the typical 10-to-14-week window. Today's lead is reciprocal laughter play.",
+      "actionItems": [
+        {
+          "body": "Play peek-a-boo in short rounds during an awake-alert window and watch for chuckles or full laughs; the back-and-forth surprise is the active ingredient.",
+          "sourceLabel": "Bright Futures",
+          "sourceUrl": "https://www.aap.org/en/practice-management/bright-futures/bright-futures-tools-and-resources/"
+        },
+        {
+          "body": "Start tracking sleep windows now: last wake time, time he fell asleep, and nap length. The pattern stabilizes by 12 to 14 weeks and gives you an anchor for a loose schedule."
+        },
+        {
+          "body": "Continue the caregiver-vaccine and childcare-backup work from earlier this week if either is still open."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Hiccups after feeds and non-painful spit-up; spit-up volume should be trending down as the upper esophageal sphincter matures.",
+        "[monitor] No social smile by now, or persistent head asymmetry suggesting positional plagiocephaly; raise repositioning or PT at the next visit.",
+        "[call within 24h] Decreased feeding sustained over 24 hours, or new color changes during feeds.",
+        "[call now] Rectal temperature of 100.4F (38.0C) or higher under 90 days, blue lips, or labored breathing. Call the pediatrician same-day, and call 911 for blue lips!"
+      ],
+      "enrichment": [
+        {
+          "body": "Run peek-a-boo as social-cognition practice: the reciprocal turn-taking is what laughter rewards, and it builds the same exchange circuitry as conversation.",
+          "sourceLabel": "Bright Futures",
+          "sourceUrl": "https://www.aap.org/en/practice-management/bright-futures/bright-futures-tools-and-resources/"
+        },
+        {
+          "body": "Keep extending his cooing exchanges, leaving longer pauses so he takes more turns; vocal range is widening now.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Stack 60 to 75 minutes of tummy time across the day, looking for chest fully off the floor on his forearms.",
+          "sourceLabel": "HealthyChildren tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91 (~3 months): sleep-consolidation window opens; first laugh often consolidates around here too.",
+        "Day 112-126 (4-month visit): RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 73,
+    "subject": "Day 73: hidden-toy reach",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-11.md",
+      "baby-kb/topics/tummy-time-and-motor.md"
+    ],
+    "content": {
+      "ageInDays": 73,
+      "hook": "hidden-toy reach",
+      "todaysFocus": "Avi is starting to reach with intent and anticipate routines. Today's lead is a simple object-permanence precursor that pairs reaching with cause and effect.",
+      "actionItems": [
+        {
+          "body": "Partly hide a toy under a blanket, leaving an edge visible, and see whether Avi reaches for the exposed part. Full object permanence does not consolidate until eight to 10 months, so partial reaching now is the developmentally appropriate target.",
+          "sourceLabel": "HealthyChildren movement",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        },
+        {
+          "body": "Keep the freezer-stash pumping rhythm going if return-to-work is on the calendar; consistency over the next few weeks matters more than any single big session."
+        },
+        {
+          "body": "Note when his longest night stretch lands each night so the emerging pattern is documented before the 4-month visit."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Bringing both hands to his mouth and looking at his hands with interest; this is expected hand-discovery, not a feeding cue.",
+        "[monitor] Persistent asymmetric movement that consistently favors one arm or leg; document and raise at the next visit.",
+        "[call within 24h] A new persistent crying pattern, or persistent feeding refusal.",
+        "[call now] Rectal temperature of 100.4F (38.0C) or higher under 90 days, an apnea episode, or seizure-like activity. Call 911 immediately for blue lips or labored breathing!"
+      ],
+      "enrichment": [
+        {
+          "body": "Set up the hidden-toy reach as a motor goal: place the visible edge just past his reach so he stretches and pivots toward it.",
+          "sourceLabel": "HealthyChildren movement",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        },
+        {
+          "body": "Let him visually track the toy as it disappears under the cloth and reappears, narrating where it went to tie vision to language.",
+          "sourceLabel": "HealthyChildren baby senses",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Pair a sound, a soft rattle or a clap, with each reveal to add a cause-and-effect layer he can begin to predict.",
+          "sourceLabel": "Music and infant cognition study",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91 (~3 months): sleep-consolidation window opens; start a consistent sleep-wake routine.",
+        "Day 112-126 (4-month visit): RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 74,
+    "subject": "Day 74: narrate a Golden Gate walk",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-11.md",
+      "baby-kb/topics/reading-aloud.md"
+    ],
+    "content": {
+      "ageInDays": 74,
+      "hook": "narrate a Golden Gate walk",
+      "todaysFocus": "The easy stretch is a good time for low-stimulation outdoor input. Today's lead is a calm Golden Gate Park stroller loop with running narration to pair words with what Avi sees.",
+      "actionItems": [
+        {
+          "body": "Walk a quiet Golden Gate Park stroller loop most days this week and narrate the trees, water, and birds. Daylight outdoor time supports varied sensory input and Anoushka's cardiovascular recovery."
+        },
+        {
+          "body": "Continue 400 IU/day vitamin D supplementation for Avi regardless of outdoor exposure, since sunlight alone does not meet the AAP target for breastfed infants.",
+          "sourceLabel": "HealthyChildren vitamin D",
+          "sourceUrl": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx"
+        },
+        {
+          "body": "Inquire about first-birthday venues if you have not yet; top SF venues book six to nine months out."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Quiet startle to loud park sounds and wet sneezing; both are normal sensory responses, not signs of illness.",
+        "[monitor] Sleep stretches lengthening then shortening day to day; note the trend rather than reacting to any single night.",
+        "[call within 24h] New feeding refusal, or acute fever onset after an outing.",
+        "[call now] Rectal temperature of 100.4F (38.0C) or higher under 90 days, blue lips, or labored breathing. Call the pediatrician same-day for fever and call 911 for blue lips!"
+      ],
+      "enrichment": [
+        {
+          "body": "Use the stroller loop as a sensory-outdoor session: vary the route so the light, sound, and scenery change, keeping the overall stimulation low and the pace slow."
+        },
+        {
+          "body": "Name whatever Avi looks at, following his gaze, so the word lands on the object he is already attending to.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "After the walk, log 60 to 75 minutes of tummy time across short bouts, looking for chest fully off the floor on his forearms; prone strength now precedes rolling and sitting.",
+          "sourceLabel": "HealthyChildren tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91 (~3 months): sleep-consolidation window opens; start anchoring a consistent sleep-wake routine.",
+        "Day 112-126 (4-month visit): RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  }
+]

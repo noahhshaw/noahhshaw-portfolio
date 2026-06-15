@@ -1,0 +1,292 @@
+[
+  {
+    "ageInDays": 60,
+    "subject": "Day 60: texture-book reading",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-09.md",
+      "baby-kb/topics/reading-aloud.md"
+    ],
+    "content": {
+      "ageInDays": 60,
+      "hook": "texture-book reading",
+      "todaysFocus": "Day 60 lands in the easy stretch between the colic peak and the 4-month sleep regression. Avi tracks fluidly now and engages more, so it is the right week to upgrade the book rotation from pure high-contrast to narrative and tactile pages.",
+      "actionItems": [
+        {
+          "body": "Add two texture or simple-narrative board books to the rotation today, keeping one or two high-contrast favorites in the mix. Tactile pages now recruit touch alongside vision, and reading aloud is one of the highest-effect-size inputs for later expressive vocabulary.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Hold the 2-month visit's six vaccines as the baseline and confirm the 4-month visit is on the calendar, window day 112-126, when RV #2, DTaP #2, Hib #2, PCV #2, and IPV #2 are due.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Run a 2-4 hour daycare or nanny trial this week if you are returning to work soon, since standard 12-week US leave ends in roughly two to three weeks and you want the handoff tested before it counts."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Lingering low-grade fussiness up to about 72 hours after the 2-month shots, and spit-up volume tapering as the upper esophageal sphincter matures.",
+        "[monitor] Asymmetric movement or a persistent head turn to one side suggesting torticollis; document which side and raise it at the 4-month visit.",
+        "[call within 24h] Persistent vomiting unrelated to vaccines, a new heart murmur, or a clear drop in wet-diaper output.",
+        "[call now] Rectal temperature of 100.4F (38.0C) or higher in an infant under 90 days, blue lips, or labored breathing warrant a same-day call now, and 911 for blue lips."
+      ],
+      "enrichment": [
+        {
+          "body": "Graduate the rotation from purely high-contrast cards to texture board books and simple narrative, letting him pat and mouth the tactile pages so touch and vision work together.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Sing live across varied tempos, a slow lullaby into a fast clapping song and back, while his tempo discrimination is sharpening; varied input preserves perceptual range.",
+          "sourceLabel": "Trainor infant music study",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        },
+        {
+          "body": "Hold coo conversations in extended turns, answering each vocalization and pausing two to three seconds for his reply; vowel-consonant combinations like goo are starting, and conversational turns predict later language outcomes.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Keep cumulative tummy time at 60-plus minutes a day in short bouts, placing a toy just out of reach to motivate stretching and forearm push-ups.",
+          "sourceLabel": "AAP tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 56-70 (now): 2-month well visit window, with HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, and IPV #1 if not yet done.",
+        "Day 57-72 (now): post-vaccine 24-72h window for low-grade fever, drowsiness, and fussiness.",
+        "Day 112-126: 4-month well visit, with RV #2, DTaP #2, Hib #2, PCV #2, and IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 61,
+    "subject": "Day 61: respond to his name",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-09.md",
+      "baby-kb/topics/language-exposure.md"
+    ],
+    "content": {
+      "ageInDays": 61,
+      "hook": "respond to his name",
+      "todaysFocus": "Around now Avi begins turning attention toward his own name and holding back-and-forth coo exchanges. The week's job is to feed that reciprocity, since conversational turns, not raw word count, are what predict later language outcomes.",
+      "actionItems": [
+        {
+          "body": "Say his name warmly during awake-alert windows and watch for the orienting turn; then respond to each coo as if he spoke, pause two to three seconds, and answer again. Conversational turns drive Broca's-area development independent of total word count.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Confirm the 4-month visit is scheduled, window day 112-126, where RV #2, DTaP #2, Hib #2, PCV #2, and IPV #2 are due; the rotavirus series has hard age cutoffs, so do not let it drift.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Start a loose first-birthday plan now if you want a specific SF or NYC venue, since top venues book six to nine months out and putting the date down prevents calendar collisions with family visits."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Quiet startle to loud sounds and wet sneezing during the day; both are routine and need no action.",
+        "[monitor] No social smile by this point; note it and raise it at the next well visit rather than waiting.",
+        "[call within 24h] A run of refused feeds in a row, or new color changes during feeds.",
+        "[call now] Rectal temperature of 100.4F (38.0C) or higher under 90 days, an apnea pause, or seizure-like activity needs a call now, and 911 for blue lips or labored breathing."
+      ],
+      "enrichment": [
+        {
+          "body": "Use his name and warm parentese in serve-and-return turns, pausing for his reply; back-and-forth cooing is consolidating and the turn-taking is the active ingredient, not the volume.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Vary the tummy-time surface across the day, a firm mat, your lap, then a slight Boppy incline, to keep cumulative prone time above 60 minutes and build neck and upper-body strength.",
+          "sourceLabel": "AAP tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Take a carrier walk outside with his chin off his chest and face visible, giving him upright sensory input and the parent some cardiovascular recovery.",
+          "sourceLabel": "AAP movement guide",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 57-72 (now): tail of the post-vaccine window; lingering low-grade fussiness is still expected.",
+        "Day 84-91: sleep-consolidation window opens near three months; start anchoring a consistent sleep-wake routine.",
+        "Day 112-126: 4-month well visit, with RV #2, DTaP #2, Hib #2, PCV #2, and IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 62,
+    "subject": "Day 62: plan a Botanical Garden loop",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-09.md",
+      "baby-kb/dad/activity-pipeline.md"
+    ],
+    "content": {
+      "ageInDays": 62,
+      "hook": "plan a Botanical Garden loop",
+      "todaysFocus": "Day 62 closes out week nine, the calm post-vaccine stretch. A low-stimulation outdoor outing fits the moment: it gives Avi varied sensory input and the parents daylight and movement without overloading him.",
+      "actionItems": [
+        {
+          "body": "Plan a quiet stroller loop through the SF Botanical Garden for a weekday this week, mid-morning before crowds, packing a sun hat and one feed's worth of milk; greenery and dappled light are exactly the low-key sensory variety he can handle now."
+        },
+        {
+          "body": "Keep vitamin D supplementation at 400 IU per day for breastfed or predominantly breastfed infants regardless of how much outdoor time he gets; sun exposure does not replace the supplement at this age.",
+          "sourceLabel": "AAP vitamin D",
+          "sourceUrl": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx"
+        },
+        {
+          "body": "Lock the 4-month visit on the calendar, window day 112-126, for RV #2, DTaP #2, Hib #2, PCV #2, and IPV #2.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Brief fussing when the stroller stops moving, and squinting in bright light; shade the canopy and keep moving.",
+        "[monitor] Spit-up that is forceful or paired with arching during feeds rather than the usual easy posset; document frequency for the next visit.",
+        "[call within 24h] A clear drop in wet diapers over a day, or a new murmur noted by anyone examining him.",
+        "[call now] Rectal temperature of 100.4F (38.0C) or higher under 90 days, blue lips, or labored breathing means call now, and 911 for blue lips."
+      ],
+      "enrichment": [
+        {
+          "body": "Plan a calm stroller loop through the SF Botanical Garden for greenery, fresh air, and gentle sensory variety, keeping the outing short and the canopy shaded."
+        },
+        {
+          "body": "Let him track leaves and dappled light moving overhead, recline the stroller slightly so the moving pattern fills his visual field and feeds smooth tracking.",
+          "sourceLabel": "AAP baby senses",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Hum a calm tune as you walk the paths, pairing your live voice with the new setting; participatory singing, not recorded background, is what carries the benefit.",
+          "sourceLabel": "Trainor infant music study",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        }
+      ],
+      "upcoming": [
+        "Day 57-72 (now): final days of the post-vaccine window; mild lingering fussiness still counts as low concern.",
+        "Day 84-91: sleep-consolidation window opens; begin a consistent dim-after-sunset routine.",
+        "Day 112-126: 4-month well visit, with RV #2, DTaP #2, Hib #2, PCV #2, and IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 63,
+    "subject": "Day 63: coax the first laugh",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-10.md",
+      "baby-kb/topics/reading-aloud.md"
+    ],
+    "content": {
+      "ageInDays": 63,
+      "hook": "coax the first laugh",
+      "todaysFocus": "Week 10 opens, and many infants produce their first true laugh in the 10-14 week range. Social reciprocity is sharpening fast, so this week is about playing for that laugh and answering every chuckle.",
+      "actionItems": [
+        {
+          "body": "Play exaggerated peek-a-boo and gentle tickle games during his most alert window and watch for the first laugh, which commonly emerges between 10 and 14 weeks; some infants wait until 14-16 weeks, which is still normal.",
+          "sourceLabel": "AAP Bright Futures",
+          "sourceUrl": "https://www.aap.org/en/practice-management/bright-futures/bright-futures-tools-and-resources/"
+        },
+        {
+          "body": "Begin tracking sleep windows this week, logging last wake, time he fell asleep, and nap length; the pattern stabilizes enough by 12-14 weeks to anchor a loose schedule before the 4-month regression.",
+          "sourceLabel": "AAP infant sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx"
+        },
+        {
+          "body": "Book a 100-day or 3-month photo session now if you want one, since week 12-14 is the window and the better photographers are scheduling weeks out."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Profuse drooling and hand-sucking, which reflect salivary-gland maturation rather than teething; first teeth typically arrive at 6-10 months.",
+        "[monitor] Persistent head asymmetry or flattening on one side; reposition during sleep and held time and flag at the next visit if it does not respond.",
+        "[call within 24h] Decreased feeding lasting more than 24 hours, or any new color change during feeds.",
+        "[call now] Rectal temperature of 100.4F (38.0C) or higher under 90 days, an apnea pause, or seizure-like activity needs a call now, and 911 for blue lips."
+      ],
+      "enrichment": [
+        {
+          "body": "Play exaggerated peek-a-boo and light tummy raspberries face-to-face to elicit early laughs, repeating the gag that lands; the surprise-and-resolution structure is what tips a coo into a chuckle.",
+          "sourceLabel": "AAP Bright Futures",
+          "sourceUrl": "https://www.aap.org/en/practice-management/bright-futures/bright-futures-tools-and-resources/"
+        },
+        {
+          "body": "Cheer and answer every chuckle to extend the back-and-forth, treating each sound as a turn and pausing for his next one; the reciprocity is what builds later language.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Add one new book this week alongside the repeats at roughly a 3:1 repeat-to-novel ratio, which balances prosodic familiarity against lexical novelty.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        }
+      ],
+      "upcoming": [
+        "Day 70-76: confirm caregivers and grandparents are current on Tdap before more contact, since pertussis is the contact-borne illness most dangerous to infants.",
+        "Day 84-91: sleep-consolidation window opens near three months; start a consistent sleep-wake routine.",
+        "Day 112-126: 4-month well visit, with RV #2, DTaP #2, Hib #2, PCV #2, and IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 64,
+    "subject": "Day 64: cause-and-effect rattle",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-10.md",
+      "baby-kb/topics/tummy-time-and-motor.md"
+    ],
+    "content": {
+      "ageInDays": 64,
+      "hook": "cause-and-effect rattle",
+      "todaysFocus": "Avi is bringing hands to mouth and starting to swipe at what he sees. Day 64 leans into early cause and effect: putting a sound-making object where his own motion produces a result he can notice.",
+      "actionItems": [
+        {
+          "body": "Place a light rattle in his hand or set a kick-piano at his feet during alert play so his own movement makes the sound, which is the first cause-and-effect link and motivates more deliberate reaching and kicking.",
+          "sourceLabel": "AAP movement guide",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        },
+        {
+          "body": "Confirm that caregivers, grandparents, and any nanny are up to date on Tdap, flu, and COVID-19 before increased contact; pertussis from an adult contact is the vaccine-preventable illness most likely to be fatal to an infant.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Keep logging sleep windows so a loose schedule is ready to anchor by 12-14 weeks, ahead of the 4-month regression.",
+          "sourceLabel": "AAP infant sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Hands-to-mouth and gumming on fists; this is normal oral and motor exploration, not a feeding problem.",
+        "[monitor] Hands that stay persistently fisted without opening, or movement that consistently favors one side; document and raise at the next visit.",
+        "[call within 24h] A new feeding-refusal pattern, or a fever onset you are tracking that has not yet crossed the rectal threshold.",
+        "[call now] Rectal temperature of 100.4F (38.0C) or higher under 90 days, blue lips, labored breathing, or seizure-like activity means call now, and 911 for blue lips."
+      ],
+      "enrichment": [
+        {
+          "body": "Put a light rattle in his hand or a kick-piano at his feet so his action makes a sound, building the earliest sense that his own movement causes a result.",
+          "sourceLabel": "AAP movement guide",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        },
+        {
+          "body": "Connect those cause-and-effect sounds to your varied live singing, echoing the rattle's beat in a quick clapping tune so the self-made sound ties into participatory music.",
+          "sourceLabel": "Trainor infant music study",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        },
+        {
+          "body": "Narrate the cause and effect out loud as it happens, naming what he just did in warm parentese and pausing for his reply, so the new motor discovery doubles as a conversational turn.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        }
+      ],
+      "upcoming": [
+        "Day 70-76: confirm caregiver Tdap and start a small freezer milk stash if you are returning to work.",
+        "Day 84-91: sleep-consolidation window opens; dim the lights after sunset to seed the routine.",
+        "Day 112-126: 4-month well visit, with RV #2, DTaP #2, Hib #2, PCV #2, and IPV #2."
+      ]
+    }
+  }
+]

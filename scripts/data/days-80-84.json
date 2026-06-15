@@ -1,0 +1,282 @@
+[
+  {
+    "ageInDays": 80,
+    "subject": "Day 80: bookend the day with a book",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-12.md",
+      "baby-kb/topics/reading-aloud.md",
+      "baby-kb/dad/activity-pipeline.md"
+    ],
+    "content": {
+      "ageInDays": 80,
+      "hook": "bookend the day with a book",
+      "todaysFocus": "End of the first quarter, and for families on standard 12-week leave this is return-to-work week. The operational goal is continuity: a fixed reading ritual at the start and end of the day keeps Avi anchored through caregiver handoffs.",
+      "actionItems": [
+        {
+          "body": "Read the same board book at morning drop-off and evening pick-up. Bookending the day with one fixed text gives Avi a predictable signal on either side of childcare and turns the handoff into a routine rather than a rupture.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Pack the daycare or nanny bag the night before: labeled bottles, two spare outfits, a day of diapers, and a sleep sack. Confirm the communication channel so you get same-day feeding and nap notes."
+        },
+        {
+          "body": "Get the pumping rhythm operational at about three sessions per 8-hour workday, 15-20 minutes each. Refrigerate immediately and freeze the same day if milk will not be used within four days."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Mild adjustment fussiness in the first one to two weeks of a new childcare arrangement is expected and usually settles as the routine stabilizes.",
+        "[monitor] Crying that is out of proportion to the handoff context, or night wakings that start creeping up. Note the date the pattern changes so you can tell regression from adjustment.",
+        "[call within 24h] A first childcare fever of 100.4F rectal or higher. Under 90 days this still needs same-day evaluation regardless of how minor it looks.",
+        "[call now] Apnea, a color change during sleep, or blue lips. Call 911 and do not wait to see if it passes."
+      ],
+      "enrichment": [
+        {
+          "body": "Read aloud about 15-20 minutes a day, rotating three to five favorites with one fresh title. At this age the prosody and repetition do the work; the same book read at both ends of the day compounds the exposure.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Stagger 75-90 minutes of tummy time across short bouts, placing toys at varying distances to motivate pivoting and reaching as he pushes up on extended arms.",
+          "sourceLabel": "AAP Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Keep the dim-lights-after-sunset wind-down identical every evening. A stable pre-sleep sequence becomes the sleep-onset cue you will lean on when the 4-month regression arrives.",
+          "sourceLabel": "AAP getting your baby to sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91 (~3 months): sleep-consolidation window opens; lock in a consistent sleep-wake routine before the 4-month sleep architecture shift.",
+        "Day 112-126 (~4 months): 4-month well visit with RV #2, DTaP #2, Hib #2, PCV #2, IPV #2.",
+        "Day 98-126 (~14-18 weeks): 4-month sleep regression typically begins as night sleep fragments."
+      ]
+    }
+  },
+  {
+    "ageInDays": 81,
+    "subject": "Day 81: cause-and-effect play-gym",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-12.md",
+      "baby-kb/topics/tummy-time-and-motor.md",
+      "baby-kb/topics/music-and-suzuki.md"
+    ],
+    "content": {
+      "ageInDays": 81,
+      "hook": "cause-and-effect play-gym",
+      "todaysFocus": "Avi is starting to link his own action to a result. A play gym where a kick or swipe produces a sound or light is the cleanest way to let him discover that he can make things happen, the foundation for intentional reaching.",
+      "actionItems": [
+        {
+          "body": "Set him under a play gym positioned so a kick or arm-swipe triggers a chime or light. When the same movement reliably produces the same result, he begins repeating the action on purpose rather than at random.",
+          "sourceLabel": "AAP movement, birth to three months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        },
+        {
+          "body": "Keep the pumping freezer stash building if you have returned to work. Aim for roughly 2 oz frozen per missed feed so a single off day does not put you behind."
+        },
+        {
+          "body": "Confirm a childcare backup plan now: identify a backup agency or an on-call family member before you need one, since the first illness usually lands within two to four weeks of starting."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Frequent hand-to-mouth and looking intently at his own hands. This is normal sensorimotor exploration, not a problem to redirect.",
+        "[monitor] Asymmetric movement, where he consistently favors one side or holds his head turned one way. Note it and raise it if it persists past a week or two.",
+        "[call within 24h] A new feeding-refusal pattern or persistent crying that is unlike his usual fussiness.",
+        "[call now] Fever of 100.4F rectal or higher under 90 days, or labored breathing. Page the pediatrician same-day and go to the ER if he is blue around the lips!"
+      ],
+      "enrichment": [
+        {
+          "body": "Offer cause-and-effect play under the gym daily, and pause to let him work out the link between his swipe and the sound rather than triggering it for him.",
+          "sourceLabel": "AAP movement, birth to three months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        },
+        {
+          "body": "Let him track the hanging toys across his full visual field. He now follows the 180 degrees smoothly, so move a toy slowly from one side to the other and let his eyes lead.",
+          "sourceLabel": "HealthyChildren baby senses",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Pair the play-gym sounds with your own live singing, varying tempo from a slow lullaby to a faster clapping song. Live, participatory music drives prelinguistic communication far more than recorded audio.",
+          "sourceLabel": "Gerry et al. 2012, infant music classes",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91 (~3 months): sleep-consolidation window opens; start anchoring a loose, consistent sleep-wake routine.",
+        "Day 112-126 (~4 months): 4-month well visit with RV #2, DTaP #2, Hib #2, PCV #2, IPV #2.",
+        "Day 98-126 (~14-18 weeks): 4-month sleep regression typically begins."
+      ]
+    }
+  },
+  {
+    "ageInDays": 82,
+    "subject": "Day 82: laugh-and-narrate outing",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-12.md",
+      "baby-kb/topics/language-exposure.md",
+      "baby-kb/dad/activity-pipeline.md"
+    ],
+    "content": {
+      "ageInDays": 82,
+      "hook": "laugh-and-narrate outing",
+      "todaysFocus": "Avi laughs reliably now and settles visibly when a familiar voice enters the room. Combine that reciprocity with outdoor time: a calm walk where you play for laughs and narrate what he watches turns one outing into motor, social, and language input at once.",
+      "actionItems": [
+        {
+          "body": "Take a 20-30 minute walk in daylight and play for laughs along the way. Sunlight aids the parent's cardiovascular recovery and varies his sensory input, though it does not replace the 400 IU daily vitamin D he still needs as a breastfed or predominantly breastfed infant.",
+          "sourceLabel": "AAP vitamin D",
+          "sourceUrl": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx"
+        },
+        {
+          "body": "Trade laughs and exaggerated faces during the walk and on his back at home. Reliable laughing and clear preference for familiar people are right on schedule for the end of the quarter.",
+          "sourceLabel": "AAP Bright Futures",
+          "sourceUrl": "https://www.aap.org/en/practice-management/bright-futures/bright-futures-tools-and-resources/"
+        },
+        {
+          "body": "Plan for the first childcare illness, which usually arrives within two to four weeks of starting. Have the pediatrician's after-hours line saved and decide in advance who stays home."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Profuse drooling and hand-sucking. This reflects salivary gland maturation, not teething; first teeth typically arrive at 6-10 months.",
+        "[monitor] No social smile or no reciprocal laugh by now. It is usually nothing, but note it so you can raise it at the 4-month visit.",
+        "[call within 24h] Vomiting that persists beyond 24 hours, or refusal of several feeds in a row.",
+        "[call now] Fever of 100.4F rectal or higher under 90 days, seizure-like activity, or a color change during a feed. Call same-day; if his lips go blue, call 911!"
+      ],
+      "enrichment": [
+        {
+          "body": "Narrate what he is looking at during the walk in full sentences, naming what catches his eye. Conversational turns built on his attention, not raw word count, are what predict later language outcomes.",
+          "sourceLabel": "Romeo et al. 2018, conversational turns",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Run several short serve-and-return rounds: respond to his coo as if he spoke, pause two to three seconds, then answer his next sound. The back-and-forth is the active ingredient even before words.",
+          "sourceLabel": "Romeo et al. 2018, conversational turns",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Give him outdoor tactile contrast on the same outing, letting him feel a blanket on grass or watch leaves move, to widen his sensory range beyond the indoor palette."
+        }
+      ],
+      "upcoming": [
+        "Day 84-91 (~3 months): sleep-consolidation window opens; lock in a consistent sleep-wake routine.",
+        "Day 112-126 (~4 months): 4-month well visit with RV #2, DTaP #2, Hib #2, PCV #2, IPV #2.",
+        "Day 98-126 (~14-18 weeks): 4-month sleep regression typically begins."
+      ]
+    }
+  },
+  {
+    "ageInDays": 83,
+    "subject": "Day 83: schedule the 4-month visit",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-12.md",
+      "baby-kb/topics/vaccines-overview.md",
+      "baby-kb/topics/reading-aloud.md"
+    ],
+    "content": {
+      "ageInDays": 83,
+      "hook": "schedule the 4-month visit",
+      "todaysFocus": "Closing out week 12, the highest-leverage administrative task is booking the 4-month well visit. Get it on the calendar now so the next vaccine round lands inside its window and the appointment is not pushed back by scheduling lag.",
+      "actionItems": [
+        {
+          "body": "Schedule the 4-month well visit for the day 112-126 window. The vaccines due are RV #2, DTaP #2, Hib #2, PCV #2, and IPV #2; there is no HepB dose at this visit.",
+          "sourceLabel": "CDC 4-month milestones",
+          "sourceUrl": "https://www.cdc.gov/act-early/milestones/4-months.html"
+        },
+        {
+          "body": "Restock infant acetaminophen and confirm the weight-based dose with the pediatrician now, so you are ready for the 24-48h of post-vaccine fussiness and low-grade fever after the 4-month shots.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Keep building the freezer milk stash and confirm your pump parts and cooler bag are stocked at work, so the visit and any post-vaccine feeding disruption do not knock the supply off rhythm."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Sleep stretches that lengthen one week and shorten the next. Week-to-week variability at this age is normal and not a sign the routine is failing.",
+        "[monitor] Persistently fisted hands that rarely open, or movement that consistently favors one side. Document it and raise it at the 4-month visit.",
+        "[call within 24h] Acute onset of fever or a new feeding-refusal pattern that does not fit his baseline.",
+        "[call now] Fever of 100.4F rectal or higher under 90 days, apnea, or seizure-like activity. Call same-day, and call 911 for blue lips or labored breathing!"
+      ],
+      "enrichment": [
+        {
+          "body": "Introduce one concept board book this week, such as colors, shapes, or animals, alongside his familiar titles. Repetition remains the vehicle, so keep the new one in heavy rotation rather than reading it once.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Hold tummy time at 75-90 minutes a day across short bouts. Some infants now tolerate 15-20 minute stretches as head control and forearm push-ups consolidate.",
+          "sourceLabel": "AAP Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Hold him in front of a mirror for two to three minutes and let him study the face. Mirror play sharpens the visual and social circuitry that powers his growing preference for familiar people."
+        }
+      ],
+      "upcoming": [
+        "Day 84-91 (~3 months): sleep-consolidation window opens; lock in a consistent sleep-wake routine before the regression.",
+        "Day 112-126 (~4 months): 4-month well visit with RV #2, DTaP #2, Hib #2, PCV #2, IPV #2.",
+        "Day 113-128: expect 24-48h of fussiness and low-grade fever after the 4-month shots."
+      ]
+    }
+  },
+  {
+    "ageInDays": 84,
+    "subject": "Day 84: lock in the sleep routine",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-13.md",
+      "baby-kb/topics/sleep-4-month-regression.md",
+      "baby-kb/topics/naps-by-age.md"
+    ],
+    "content": {
+      "ageInDays": 84,
+      "hook": "lock in the sleep routine",
+      "todaysFocus": "Avi turns three months today, the end of the newborn period and the opening of the sleep-consolidation window. The move now is to lock in a consistent sleep-wake routine while sleep is still cooperative, so the structure is in place before the 4-month regression arrives.",
+      "actionItems": [
+        {
+          "body": "Lock in a consistent sleep-wake routine this week. Around three months the consolidation window opens, and a fixed sequence built now is the scaffold that carries you through the 4-month sleep architecture shift.",
+          "sourceLabel": "AAP sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx"
+        },
+        {
+          "body": "Optimize the sleep environment before the regression peaks: room-darkening blackout shades, a white-noise machine at 50 dB or less measured at the crib, and a room temperature of 68-72F.",
+          "sourceLabel": "AAP getting your baby to sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Decide your sleep-training stance as a couple now, whether to train at four months, at six months, or not at all, so you are not improvising a plan in the middle of fragmented nights."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Almost-rolling attempts that do not yet succeed. Motor progression continues on its own timetable regardless of how much you drill it.",
+        "[monitor] Sleep beginning to fragment with more frequent night wakings. Note the date it starts so you can distinguish regression onset from a one-off bad night.",
+        "[call within 24h] Persistent feeding refusal or a new, persistent crying pattern that does not match his baseline.",
+        "[call now] Fever of 100.4F rectal or higher. Under 90 days the same-day workup threshold still holds, and blue lips or labored breathing means call 911!"
+      ],
+      "enrichment": [
+        {
+          "body": "Make the lights-out song the fixed final cue of the bedtime sequence, sung the same way every night, so it becomes a reliable sleep-onset association before the regression.",
+          "sourceLabel": "Gerry et al. 2012, infant music classes",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        },
+        {
+          "body": "Treat bath time as a language lab, narrating each step in full sentences. Nightly baths over the next 18-plus months add up to enormous cumulative language exposure."
+        },
+        {
+          "body": "Hold tummy time at about 90 minutes a day across the day. Many infants now tolerate 15-20 minute bouts with the chest fully off the floor.",
+          "sourceLabel": "AAP Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 98-126 (~14-18 weeks): 4-month sleep regression typically begins as sleep architecture matures.",
+        "Day 112-126 (~4 months): 4-month well visit with RV #2, DTaP #2, Hib #2, PCV #2, IPV #2.",
+        "Day 113-128: expect 24-48h of fussiness and low-grade fever after the 4-month shots."
+      ]
+    }
+  }
+]

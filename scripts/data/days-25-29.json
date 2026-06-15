@@ -1,0 +1,289 @@
+[
+  {
+    "ageInDays": 25,
+    "subject": "Day 25: chest-incline tummy time",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-04.md",
+      "baby-kb/topics/tummy-time-and-motor.md"
+    ],
+    "content": {
+      "ageInDays": 25,
+      "hook": "chest-incline tummy time",
+      "todaysFocus": "Avi is 25 days old, inside the 1-month milestone window. The priority this week is logging early head-lifting and watching for the first true social smile, which typically lands between weeks 4 and 6.",
+      "actionItems": [
+        {
+          "body": "Run tummy time at 15-20 minutes cumulative today, broken into short bouts after feeds when he is alert. Lay him on your chest at a slight incline to lower the protest in these early weeks.",
+          "sourceLabel": "AAP Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Schedule the 1-month well visit if it is not already booked; the window is day 28-35 and you want it on the calendar before the weekend.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        },
+        {
+          "body": "Start a feeding and output log now so the pediatrician can plot growth on the WHO curves at the 1-month visit."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Evening fussiness clustering around 5-8pm is the normal witching hour; cradle cap and a single continuously tearing eye with no redness are also benign at this age.",
+        "[monitor] Crying that exceeds 3 hours a day, more than 3 days a week, for 3 weeks fits the Wessel definition of colic; document the pattern but expect a peak near week 6 and resolution by 12-16 weeks.",
+        "[call within 24h] Forceful projectile vomiting paired with weight loss can signal pyloric stenosis; persistent arching and inability to console during feeds warrants a same-day conversation about GERD versus milk-protein intolerance.",
+        "[call now] A rectal temperature of 100.4F or higher, blue color around the lips with crying, or any seizure-like activity is an emergency under 90 days; call the pediatrician or 911 now!"
+      ],
+      "enrichment": [
+        {
+          "body": "Position him on your chest at a slight incline for tummy time so face-tracking motivates the head lift while the angle eases the load on his neck.",
+          "sourceLabel": "AAP tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Get face-to-face within 8-12 inches, exaggerate your expression, and hold it; the directed social smile he is working toward emerges weeks 4-6.",
+          "sourceLabel": "AAP movement birth to three months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        },
+        {
+          "body": "Begin a daily 10-15 minute read-aloud with a rotating 3-5 board-book set such as Black on White and Brown Bear, Brown Bear; the rhythm and cadence are the active ingredients now.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        }
+      ],
+      "upcoming": [
+        "Day 28-35: 1-month well visit; bring the feeding and output log",
+        "Day 56-70: 2-month well visit; vaccines HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1",
+        "Day 57-72: post-2-month-vaccine window; expect 24-48h of fussiness, drowsiness, and low-grade fever"
+      ]
+    }
+  },
+  {
+    "ageInDays": 26,
+    "subject": "Day 26: high-contrast card session",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-04.md",
+      "baby-kb/topics/language-exposure.md"
+    ],
+    "content": {
+      "ageInDays": 26,
+      "hook": "high-contrast card session",
+      "todaysFocus": "At 26 days Avi prefers human faces and bold contrast over everything else, and he is starting to recognize your voices. Today leans into visual fixation and the back-and-forth that builds language.",
+      "actionItems": [
+        {
+          "body": "Run a short high-contrast card session today, holding bold black-and-white cards 8-12 inches from his face and letting him lock on and track.",
+          "sourceLabel": "AAP baby senses",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Confirm the 400 IU/day vitamin D supplement is in his daily routine; AAP advises it for breastfed and predominantly breastfed infants regardless of how much daylight he gets.",
+          "sourceLabel": "AAP vitamin D",
+          "sourceUrl": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx"
+        },
+        {
+          "body": "If you are returning to work at 12 or 16 weeks, start daycare and nanny research in earnest this week; top Bay Area daycares run 6-18 month waitlists and nanny searches take 4-8 weeks."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Wet sneezing, hiccups after feeds, and a quiet startle at loud sounds are all normal reflex activity at this stage.",
+        "[monitor] Frequent painful spit-up with arching during or after feeds, or feed refusal despite clear hunger cues, may point to GERD or cow's-milk-protein intolerance; note it for the 1-month visit.",
+        "[call within 24h] A persistent inability to console combined with back-arching during feeds should be raised same-day to sort severe reflux from milk-protein intolerance.",
+        "[call now] A rectal temperature of 100.4F or higher, cyanosis around the lips, or seizure-like movement means call the pediatrician or 911 right now!"
+      ],
+      "enrichment": [
+        {
+          "body": "Hold high-contrast black-and-white cards 8-12 inches out and move them slowly side to side; at this age he prefers faces and bold contrast, so let him fixate before you shift.",
+          "sourceLabel": "AAP baby senses",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Answer every coo as if he spoke a full sentence, pause, then answer his next sound; this serve-and-return turn-taking is the pattern Romeo et al. linked to stronger later language.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Take a 20-30 minute daylight stroller walk for varied sensory input and your own cardiovascular recovery; the outdoor light and motion are good input even though the vitamin D supplement does the nutritional work.",
+          "sourceLabel": "AAP vitamin D",
+          "sourceUrl": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 28-35: 1-month well visit; bring the feeding and output log",
+        "Day 56-70: 2-month well visit; vaccines HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1",
+        "Day 57-72: post-2-month-vaccine window; expect 24-48h of fussiness and low-grade fever"
+      ]
+    }
+  },
+  {
+    "ageInDays": 27,
+    "subject": "Day 27: narrate a diaper change",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-04.md",
+      "baby-kb/topics/music-and-suzuki.md"
+    ],
+    "content": {
+      "ageInDays": 27,
+      "hook": "narrate a diaper change",
+      "todaysFocus": "Day 27 closes out week 4. The high-leverage move today is turning ordinary caregiving into dense language and music exposure, since the serve-and-return cadence is what compounds.",
+      "actionItems": [
+        {
+          "body": "Narrate the next diaper change step by step in warm, sing-song speech; routine tasks are some of the densest language exposure he gets, and Romeo et al. tied conversational turns to later language outcomes.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Confirm the 1-month well visit is on the books for the day 28-35 window if you have not locked it in yet.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        },
+        {
+          "body": "Pre-write Anoushka's questions for the 6-week postpartum OB visit now: pelvic floor symptoms, mood, contraception, and the timeline for returning to exercise."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Increasing evening fussiness and a blocked tear duct that weeps from one eye without redness are both common and need no action.",
+        "[monitor] Track any crying that trends toward 3-plus hours a day across multiple days; this is the run-up to the week-6 crying peak, and coping strategies matter more than a colic label.",
+        "[call within 24h] Forceful projectile vomiting with poor weight gain warrants a same-day call to rule out pyloric stenosis.",
+        "[call now] A rectal temperature of 100.4F or higher, blue lips while crying, or any seizure-like activity is an emergency under 90 days; call the pediatrician or 911 now!"
+      ],
+      "enrichment": [
+        {
+          "body": "Narrate the diaper change in full sentences with a sing-song lilt; describing each step turns a daily chore into rich language input.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Add a football-hold tummy-time variant, draping him belly-down along your forearm, to vary the position as you build toward 20-30 minutes a day.",
+          "sourceLabel": "AAP tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Sing live during the change rather than playing a recording; the serve-and-return cadence drives the benefit, not the polish of the song.",
+          "sourceLabel": "Music and infant development",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        }
+      ],
+      "upcoming": [
+        "Day 28-35: 1-month well visit; bring the feeding and output log",
+        "Day 56-70: 2-month well visit; vaccines HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1",
+        "Day 57-72: post-2-month-vaccine window; expect 24-48h of fussiness and low-grade fever"
+      ]
+    }
+  },
+  {
+    "ageInDays": 28,
+    "subject": "Day 28: schedule the 1-month visit",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-05.md",
+      "baby-kb/topics/reading-aloud.md"
+    ],
+    "content": {
+      "ageInDays": 28,
+      "hook": "schedule the 1-month visit",
+      "todaysFocus": "Avi is 28 days old and entering week 5, near the peak of the PURPLE crying curve. The action item is closing out the 1-month well check; inconsolable evenings this week are expected, not pathological.",
+      "actionItems": [
+        {
+          "body": "Schedule the 1-month well visit today if it is not already booked, and bring a feeding and output log so the pediatrician can plot growth on the WHO curves.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        },
+        {
+          "body": "Pre-schedule the 2-month visit for the day 56-70 window now; that round delivers HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, and IPV #1.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Keep daycare tours and nanny interviews active this week if Anoushka or Noah is returning to work in the next 7-11 weeks."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Inconsolable evening crying with no clear trigger is classic PURPLE crying; the 5 S's of swaddle, side or stomach hold, shush, swing, and suck help most infants settle.",
+        "[monitor] Bloody or mucus-streaked stool can suggest milk-protein intolerance or an anal fissure; document it and let the pediatrician distinguish the two.",
+        "[call within 24h] Sustained refusal of multiple feeds in a row warrants a same-day call.",
+        "[call now] A rectal temperature of 100.4F or higher, apnea or color change, or inconsolable high-pitched crying with lethargy and a bulging fontanelle is an emergency; call the pediatrician or 911 now!"
+      ],
+      "enrichment": [
+        {
+          "body": "Lean in close, brighten your whole face, and reward any flicker of a smile with obvious delight; consolidating social smiles is the week-5 social milestone.",
+          "sourceLabel": "AAP Bright Futures",
+          "sourceUrl": "https://www.aap.org/en/practice-management/bright-futures/bright-futures-tools-and-resources/"
+        },
+        {
+          "body": "Read the same 3-5 board books on rotation rather than constantly new titles; the repetition is what lets rhythm and predictability start to register.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Keep tummy time at 20-30 minutes cumulative across short bouts, using the forearm football hold for variety when floor time draws protest.",
+          "sourceLabel": "AAP tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 28-35: 1-month well visit; bring the feeding and output log",
+        "Day 35-41: Anoushka's 6-week postpartum OB visit; expect exercise clearance, contraception, and an EPDS screen",
+        "Day 56-70: 2-month well visit; vaccines HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1"
+      ]
+    }
+  },
+  {
+    "ageInDays": 29,
+    "subject": "Day 29: waitlist a swim class",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-05.md",
+      "baby-kb/dad/activity-pipeline.md"
+    ],
+    "content": {
+      "ageInDays": 29,
+      "hook": "waitlist a swim class",
+      "todaysFocus": "At 29 days Avi is still near the crying peak, so today pairs one forward-looking logistics task with low-stimulation enrichment. Bay Area parent-baby swim classes carry real lead time worth claiming now.",
+      "actionItems": [
+        {
+          "body": "Get on a Bay Area parent-baby swim waitlist today; most classes start around 3-6 months, so the lead time is the reason to act this far ahead.",
+          "sourceLabel": "AAP swim lessons",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Swim-Lessons.aspx"
+        },
+        {
+          "body": "Confirm the 1-month visit is complete with growth and feeding tracking, and that the 2-month visit is pre-scheduled inside the day 56-70 window.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        },
+        {
+          "body": "Have a written shaken-baby plan ready for the crying peak: if you feel the urge, put Avi down safely in the crib, step away for 10 minutes, and call your partner or a friend.",
+          "sourceLabel": "AAP crying and colic",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/default.aspx"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Vowel sounds like ah and eh beginning to emerge, and visible settling when full, are expected week-5 progress.",
+        "[monitor] Forceful arching during or after feeds with frequent painful spit-up may indicate GERD or milk-protein intolerance; raise it at the 1-month or 2-month visit.",
+        "[call within 24h] Bloody stool with mucus streaks should prompt a same-day call to distinguish milk-protein intolerance from a fissure.",
+        "[call now] A rectal temperature of 100.4F or higher, apnea or a color change, or seizure-like activity is an emergency under 90 days; call the pediatrician or 911 now!"
+      ],
+      "enrichment": [
+        {
+          "body": "Waitlist a Bay Area parent-baby swim class now; booking ahead of the typical 3-6 month start age is the difference between a prime slot and a year delay.",
+          "sourceLabel": "AAP swim lessons",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Swim-Lessons.aspx"
+        },
+        {
+          "body": "Set up a high-contrast mobile over the changing area at his eye line to draw fixation and early tracking during the minutes he spends there.",
+          "sourceLabel": "AAP baby senses",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Run forearm tummy time on a firm mat with a rolled blanket tucked under his chest for support, which lets him practice head lifts with less strain.",
+          "sourceLabel": "AAP tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 35-41: Anoushka's 6-week postpartum OB visit; exercise clearance, contraception, and EPDS screen",
+        "Day 56-70: 2-month well visit; vaccines HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1",
+        "Day 57-72: post-2-month-vaccine window; expect 24-48h of fussiness and low-grade fever"
+      ]
+    }
+  }
+]

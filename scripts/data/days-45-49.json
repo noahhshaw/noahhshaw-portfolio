@@ -1,0 +1,282 @@
+[
+  {
+    "ageInDays": 45,
+    "subject": "Day 45: introduce a lights-out song",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-07.md",
+      "baby-kb/topics/sleep-newborn-fundamentals.md"
+    ],
+    "content": {
+      "ageInDays": 45,
+      "hook": "introduce a lights-out song",
+      "todaysFocus": "Day 45, the back half of week seven. Crying is tapering and night stretches are inching toward 4-5 hours for some infants, which makes this the right week to install a single repeatable sleep-onset cue before the 2-month visit reshuffles the routine.",
+      "actionItems": [
+        {
+          "body": "Pick one lights-out song and sing it at the same point every night, after the bath and before the crib, so the pairing becomes the cue rather than the song itself. Circadian rhythm is still consolidating at six to 12 weeks, so a consistent association does more than any schedule right now.",
+          "sourceLabel": "AAP HealthyChildren on getting your baby to sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Keep the sleep space compliant as you build the routine: Avi on his back every sleep, alone in the bassinet or crib, firm flat mattress, no loose bedding, room at 68-72F.",
+          "sourceLabel": "AAP HealthyChildren on infant sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx"
+        },
+        {
+          "body": "Confirm the 2-month well visit is on the calendar within the next one to two weeks and start a feeding and output log to bring."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Drool starting; this is early salivary-gland maturation, not necessarily teething, since first teeth usually arrive at six to 10 months.",
+        "[low concern] Rolling-eye episodes as he drifts off during sleep transitions.",
+        "[monitor] Persistent head tilt to one side with limited rotation, which can be torticollis from in-utero positioning; flag it for a physical-therapy referral at the 2-month visit.",
+        "[call within 24h] Persistent vomiting beyond 24 hours, or refusal of multiple feeds in a row.",
+        "[call now] Rectal temperature at or above 100.4F (38.0C), lethargy, refusing all feeds, blue or grey color, or labored breathing. Call 911 for blue lips!"
+      ],
+      "enrichment": [
+        {
+          "body": "Sing the same lights-out song every night just before the crib to start building a durable sleep-onset association; the predictability is the active ingredient.",
+          "sourceLabel": "AAP HealthyChildren on getting your baby to sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Stagger 30-45 minutes of tummy time across short bouts and prompt forearm push-ups, which build the neck and shoulder strength that precedes rolling and sitting.",
+          "sourceLabel": "AAP HealthyChildren on tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Smile and talk to him face-to-face during awake-alert windows and watch for the responsive smile back, the hallmark social milestone of this window.",
+          "sourceLabel": "AAP Bright Futures",
+          "sourceUrl": "https://www.aap.org/en/practice-management/bright-futures/bright-futures-tools-and-resources/"
+        }
+      ],
+      "upcoming": [
+        "Day 49: crying typically tapering noticeably; 2-month visit prep week.",
+        "Day 56-70: 2-month well visit and first vaccines (HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1).",
+        "Day 57-72: post-vaccine 24-48 hour window of fussiness and low-grade fever."
+      ]
+    }
+  },
+  {
+    "ageInDays": 46,
+    "subject": "Day 46: book the 100-day photos",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-07.md",
+      "baby-kb/topics/photography-milestones.md"
+    ],
+    "content": {
+      "ageInDays": 46,
+      "hook": "book the 100-day photos",
+      "todaysFocus": "Day 46. The 100-day photo window lands around days 95 to 105, when Avi is smiling and head-steady but not yet rolling out of poses. Top photographers book out weeks ahead, so reserving now is the cheap insurance.",
+      "actionItems": [
+        {
+          "body": "Book the 100-day photographer now for the week 14-15 window; he will be smiling and head-controlled by then, and the best studios fill six weeks out. Schedule it around his nap and feed times to maximize the alert stretch."
+        },
+        {
+          "body": "Confirm the 2-month well visit is booked within the next one to two weeks and keep a running feeding and output log to bring."
+        },
+        {
+          "body": "If returning to work, confirm the daycare or nanny start date with a three-to-five-day overlap with the primary caregiver for a clean transition."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Posed-shoot interruptions from feeds, blowouts, or fussiness are routine; pad the session schedule accordingly.",
+        "[low concern] Varied cooing and gurgling expanding day to day as the vocal range widens.",
+        "[monitor] No social smile yet; it is still within range now but note it so you can raise it at the 2-month visit if it has not appeared by week eight.",
+        "[call within 24h] A cluster of poor feeding, unusual lethargy, and decreased wet diapers together.",
+        "[call now] Rectal temperature at or above 100.4F (38.0C), refusing all feeds, blue or grey color, or breathing faster than 60 per minute at rest. Call 911 for blue lips!"
+      ],
+      "enrichment": [
+        {
+          "body": "Prop a high-contrast or simply illustrated board book open in front of him during tummy time so head-lifting earns a visual payoff and prone time lasts longer.",
+          "sourceLabel": "AAP HealthyChildren on baby senses",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Keep coo conversations going: when he gurgles, answer as if he spoke, pause, then respond to his next sound; this serve-and-return turn-taking predicts later language outcomes.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Close the day with the same lights-out song you started this week to reinforce the sleep-onset cue."
+        }
+      ],
+      "upcoming": [
+        "Day 49: 2-month visit prep; build the question list.",
+        "Day 56-70: 2-month well visit and first vaccines.",
+        "Day 57-72: post-vaccine 24-48 hour fussiness and low-grade fever window.",
+        "Day 95-105: 100-day photo session window."
+      ]
+    }
+  },
+  {
+    "ageInDays": 47,
+    "subject": "Day 47: mirror play minutes",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-07.md",
+      "baby-kb/topics/music-and-suzuki.md"
+    ],
+    "content": {
+      "ageInDays": 47,
+      "hook": "mirror play minutes",
+      "todaysFocus": "Day 47. Head control is steadying when he is held upright, and face-tracking is one of the strongest motivators available. A few minutes of mirror play doubles as motor practice and face-circuit calibration.",
+      "actionItems": [
+        {
+          "body": "Hold Avi upright in front of a baby-safe mirror for two to three minutes during an alert window; the face in the glass pulls his head up and steady, so head-control practice and visual engagement happen at once."
+        },
+        {
+          "body": "Have infant acetaminophen on hand ahead of the 2-month vaccines; the pediatrician will give a weight-based dose, and dosing after the shots rather than before avoids blunting the antibody response."
+        },
+        {
+          "body": "Confirm the daycare or nanny start date aligns with the return-to-work date, with a one-to-two-week buffer."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Hiccups during or after feeds and quiet startles at loud sounds.",
+        "[monitor] Asymmetric movement or a persistent head turn to one side; document it and raise it at the 2-month visit.",
+        "[monitor] Forceful arching during or after feeds with frequent painful spit-up, which can point to reflux; note the pattern for the pediatrician.",
+        "[call within 24h] Persistent vomiting beyond 24 hours, or refusal of several feeds in a row.",
+        "[call now] Rectal temperature at or above 100.4F (38.0C), lethargy disproportionate to activity, blue or grey color, or persistent grunting at rest. Call 911 for blue lips or unresponsiveness!"
+      ],
+      "enrichment": [
+        {
+          "body": "Hold him at the mirror for two to three minutes and let the head-steadiness practice double as face-circuit calibration; self-recognition comes much later, but the visual tracking is building now.",
+          "sourceLabel": "AAP HealthyChildren on tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Play the chosen instrument's Suzuki listening recording during quiet play; early repeated exposure builds the auditory template the Suzuki method relies on later.",
+          "sourceLabel": "Suzuki Association",
+          "sourceUrl": "https://suzukiassociation.org/"
+        },
+        {
+          "body": "Take a carrier walk outside with his chin off his chest and face visible, giving him upright air, daylight, and varied motion input.",
+          "sourceLabel": "AAP HealthyChildren on movement, birth to three months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 49: 2-month visit prep; build the question list.",
+        "Day 56-70: 2-month well visit and first vaccines.",
+        "Day 57-72: post-vaccine 24-48 hour fussiness window.",
+        "Day 95-105: 100-day photo session window."
+      ]
+    }
+  },
+  {
+    "ageInDays": 48,
+    "subject": "Day 48: dialogic-precursor reading",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-07.md",
+      "baby-kb/topics/reading-aloud.md"
+    ],
+    "content": {
+      "ageInDays": 48,
+      "hook": "dialogic-precursor reading",
+      "todaysFocus": "Day 48, the last day of week seven. Reading aloud pays off even pre-verbally when you make it interactive rather than a monologue; the same back-and-forth cadence that drives later vocabulary starts now.",
+      "actionItems": [
+        {
+          "body": "Read one line, look at Avi, pause, then read the next line; this dialogic-precursor rhythm keeps reading a two-way exchange and lays the groundwork for the point-ask-expand dialogic reading that drives expressive vocabulary later.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Schedule the 2-month well visit if it is not yet booked; the rotavirus first dose must be given by roughly day 104, so the visit should not slip much past day 70."
+        },
+        {
+          "body": "Book the 100-day photographer now if you have not, since the week 14-15 window fills early."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Wet sneezing and occasional hiccups; both are normal and need no action.",
+        "[low concern] Longest night stretch may be 4-5 hours for some infants and still 2-3 hours for others; both are within normal range.",
+        "[monitor] Persistent torticollis (head tilt with limited rotation) not improving with repositioning; raise it for a PT referral at the 2-month visit.",
+        "[call within 24h] Bloody or mucus-streaked stool, which can suggest cow's-milk-protein intolerance or an anal fissure; the pediatrician will distinguish.",
+        "[call now] Rectal temperature at or above 100.4F (38.0C), refusing all feeds, blue or grey color, or breathing faster than 60 per minute at rest. Call 911 for blue lips!"
+      ],
+      "enrichment": [
+        {
+          "body": "Read a line, look, pause, and let him respond before the next line; the interactive pacing matters more than finishing the book.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Let his coos fill the pauses and answer each one as a conversational turn; this serve-and-return pattern is associated with stronger later language outcomes.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Close the day with the same lights-out song to reinforce the sleep-onset cue you started this week.",
+          "sourceLabel": "AAP HealthyChildren on getting your baby to sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 49: 2-month visit prep; build the printed question list.",
+        "Day 56-70: 2-month well visit and first vaccines.",
+        "Day 57-72: post-vaccine 24-48 hour fussiness window.",
+        "Day 95-105: 100-day photo session window."
+      ]
+    }
+  },
+  {
+    "ageInDays": 49,
+    "subject": "Day 49: prep your 2-month questions",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-08.md",
+      "baby-kb/topics/vaccines-overview.md"
+    ],
+    "content": {
+      "ageInDays": 49,
+      "hook": "prep your 2-month questions",
+      "todaysFocus": "Day 49, the start of week eight, which culminates in the 2-month well visit and the first major vaccine round. Visits run 20-30 minutes, so a printed question list is the difference between covered and forgotten.",
+      "actionItems": [
+        {
+          "body": "Print a question list for the 2-month visit covering sleep training, when to introduce solids (four versus six months), the growth-percentile trajectory, and when to transition out of the swaddle. Expect six vaccines given as three to four injections plus the oral rotavirus dose.",
+          "sourceLabel": "CDC 2-month milestones",
+          "sourceUrl": "https://www.cdc.gov/act-early/milestones/2-months.html"
+        },
+        {
+          "body": "Have infant acetaminophen ready for a weight-based dose after the shots, not before; prophylactic dosing can blunt the antibody response."
+        },
+        {
+          "body": "Pre-fill 24 hours of formula or breastmilk ahead of the visit, since post-vaccine fussiness can disrupt the feeding rhythm."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Brief, sustained head lifts during tummy time and hands opening more often as the newborn fist relaxes.",
+        "[low concern] He watches you as you move and fixes on a toy for several seconds; both are expected 2-month milestones.",
+        "[monitor] No social smile by now; raise it directly at the 2-month visit if it has not appeared.",
+        "[call within 24h] A cluster of poor feeding, lethargy, and decreased output together, before any vaccine is given.",
+        "[call now] Rectal temperature at or above 100.4F (38.0C), blue or grey color, labored breathing, or anaphylaxis (facial swelling, hives, breathing difficulty) within 30 minutes of a vaccine. Call 911 for blue lips or trouble breathing!"
+      ],
+      "enrichment": [
+        {
+          "body": "Stagger tummy time into four to six short bouts toward 45-60 minutes a day total; short frequent sessions beat one or two long ones at this age.",
+          "sourceLabel": "AAP HealthyChildren on tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Hold a toy steady and let him watch it for several seconds, then move slowly across the room so he tracks you; sustained visual attention precedes reaching.",
+          "sourceLabel": "AAP HealthyChildren on baby senses",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Keep the nightly lights-out song in place so the sleep-onset cue stays consistent through the vaccine week.",
+          "sourceLabel": "AAP HealthyChildren on getting your baby to sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 56-70: 2-month well visit and first vaccines (HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1).",
+        "Day 57-72: post-vaccine 24-48 hour window of fussiness, low-grade fever, and drowsiness.",
+        "Day 95-105: 100-day photo session window.",
+        "Day 112-126: 4-month well visit and second vaccine round."
+      ]
+    }
+  }
+]

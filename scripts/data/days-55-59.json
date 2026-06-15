@@ -1,0 +1,293 @@
+[
+  {
+    "ageInDays": 55,
+    "subject": "Day 55: pre-fill 24h of feeds",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-08.md",
+      "baby-kb/topics/vaccines-overview.md"
+    ],
+    "content": {
+      "ageInDays": 55,
+      "hook": "pre-fill 24h of feeds",
+      "todaysFocus": "Today is logistics prep ahead of the 2-month visit, which opens tomorrow. The single highest-leverage move is buffering the next day of feeds so post-vaccine fussiness does not collide with an empty bottle.",
+      "actionItems": [
+        {
+          "body": "Pre-fill the next 24 hours of breastmilk or formula and stage it in the fridge, since vaccine fussiness reliably disrupts the feeding rhythm for a day or two.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Confirm tomorrow's appointment time and bring a printed question list: sleep-training stance, solids timing, growth percentile trajectory, and when to drop the swaddle.",
+          "sourceLabel": "AAP Bright Futures",
+          "sourceUrl": "https://www.aap.org/en/practice-management/bright-futures/bright-futures-tools-and-resources/"
+        },
+        {
+          "body": "Stage infant acetaminophen but do not dose before the shots; treat fever after, since pre-dosing can blunt the antibody response.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Drooling and wet sneezes from salivary-gland maturation, plus occasional hiccups after feeds; none require action.",
+        "[monitor] No social smile by eight weeks (Avi is 55 days, just under): note it now and raise it at tomorrow's visit.",
+        "[call within 24h] Forceful arching during feeds with painful spit-up, or refusal of multiple feeds in a row.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher, blue lips, labored breathing, or a seizure-like episode; for blue lips call 911 now!"
+      ],
+      "enrichment": [
+        {
+          "body": "Sing or play a short Suzuki recording during a calm wake window; early listening exposure builds the perceptual base before formal lessons begin.",
+          "sourceLabel": "Suzuki Association",
+          "sourceUrl": "https://suzukiassociation.org/"
+        },
+        {
+          "body": "Read the same favorite board book aloud to anchor the day with familiar rhythm; predictable repetition is the active ingredient pre-verbally.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Run tummy time as four to six short bouts toward 45 to 60 minutes total, staggered across the day rather than one long session.",
+          "sourceLabel": "HealthyChildren tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Hold him at a mirror for two to three minutes; self-recognition is months away, but the face circuitry is actively calibrating now."
+        }
+      ],
+      "upcoming": [
+        "Day 56-70 (now open): 2-month well visit. Vaccines due: HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1.",
+        "Day 57-72: post-vaccine 24-48h window. Expect fussiness, low-grade fever, and extra sleep.",
+        "Day 112-126: 4-month well visit. Vaccines: RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 56,
+    "subject": "Day 56: attend the 2-month visit",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-09.md",
+      "baby-kb/topics/vaccines-overview.md"
+    ],
+    "content": {
+      "ageInDays": 56,
+      "hook": "attend the 2-month visit",
+      "todaysFocus": "Avi is eight weeks old and the 2-month well visit window opens today. This is the most consequential health-care touchpoint since the newborn visit, with six vaccines on the schedule.",
+      "actionItems": [
+        {
+          "body": "Attend the 2-month visit; vaccines are HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1, given as three to four injections plus the oral rotavirus dose.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Remember that any rectal temperature of 100.4F (38.0C) or higher in an infant under 90 days still needs same-day evaluation, even immediately after shots; the pediatrician will not assume it is vaccine-related.",
+          "sourceLabel": "HealthyChildren fever",
+          "sourceUrl": "https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/default.aspx"
+        },
+        {
+          "body": "Do not delay this visit much past day 70: the first rotavirus dose must be given by 14 weeks 6 days, about day 104.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Mild fever at or below 101F rectal, injection-site redness or swelling, fussiness, and extra sleep for 24 to 48 hours; the oral rotavirus dose may cause mild diarrhea.",
+        "[monitor] Fever 102 to 104F rectal post-vaccine, persistent crying of one to three hours, or hard injection-site swelling over 2 inches.",
+        "[call within 24h] Fever above 104F rectal, inconsolable crying past three hours, or a hypotonic-hyporesponsive episode (limp, pale, unresponsive).",
+        "[call now] Anaphylaxis within 30 minutes of a shot (facial swelling, breathing difficulty, hives), a seizure, or any rectal temperature 100.4F (38.0C) or higher under 90 days; for breathing difficulty call 911 now!"
+      ],
+      "enrichment": [
+        {
+          "body": "Keep tummy time gentle today; short staggered bouts are fine even on a fussy vaccine day, and skipping a day causes no setback.",
+          "sourceLabel": "HealthyChildren tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Offer slow serve-and-return coo turns when he is calm and alert: respond as if he spoke, pause, then answer his next sound. This turn-taking cadence predicts later language outcomes.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Pair one specific song with each diaper change as a regulation ritual; the predictability matters more than the song."
+        },
+        {
+          "body": "Keep the room dim and low-stimulation through the evening to help an over-tired, post-shot baby settle.",
+          "sourceLabel": "HealthyChildren sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 57-72: post-vaccine 24-48h window. Plan for fussiness, low-grade fever, and drowsiness over the next day or two.",
+        "Day 84-91: sleep-consolidation window opens near three months; start anchoring a consistent sleep-wake routine.",
+        "Day 112-126: 4-month well visit. Vaccines: RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 57,
+    "subject": "Day 57: comfort post-vaccine fussiness",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-09.md",
+      "baby-kb/topics/sleep-newborn-fundamentals.md"
+    ],
+    "content": {
+      "ageInDays": 57,
+      "hook": "comfort post-vaccine fussiness",
+      "todaysFocus": "Day one of the post-vaccine recovery window. Expect a fussier, sleepier baby for 24 to 48 hours; the job today is comfort, hydration, and weight-based fever management.",
+      "actionItems": [
+        {
+          "body": "Expect mild fever, fussiness, and extra sleep for 24 to 48 hours; escalate for fever over 102 to 104F rectal or inconsolable crying past three hours.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Dose acetaminophen weight-based per the pediatrician only if he is uncomfortable; treat the fever after the fact, not on a schedule.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Keep offering feeds on demand from yesterday's pre-filled supply, since fussiness can suppress intake for a day."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Low-grade fever at or below 101F rectal, a tender injection site, more sleep than usual, and mild diarrhea from the rotavirus dose.",
+        "[monitor] Fever 102 to 104F rectal lasting beyond 48 hours, or hard injection-site swelling of 2 to 4 inches.",
+        "[call within 24h] Inconsolable crying past three hours, a hypotonic-hyporesponsive episode, or injection-site swelling that crosses a joint.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher with lethargy, blue lips, labored breathing, or a seizure; for blue lips or trouble breathing call 911 now!"
+      ],
+      "enrichment": [
+        {
+          "body": "Soothe with the same live lullaby you use nightly; a familiar melody aids regulation on a hard day, and the repetition is what helps.",
+          "sourceLabel": "Infant music perception (PubMed)",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        },
+        {
+          "body": "Lean on the lights-out song to ease an extra-sleepy evening into rest, keeping the bedtime sequence identical to other nights.",
+          "sourceLabel": "HealthyChildren sleep routine",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Offer skin-to-skin chest time rather than structured floor activity today; it supports comfort and lets you skip tummy time without consequence."
+        }
+      ],
+      "upcoming": [
+        "Day 57-72: you are inside the post-vaccine window now; symptoms should fade within 48 hours.",
+        "Day 84-91: sleep-consolidation window opens near three months; begin a consistent sleep-wake routine.",
+        "Day 112-126: 4-month well visit. Vaccines: RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 58,
+    "subject": "Day 58: extra cuddles and rest",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-09.md",
+      "baby-kb/topics/reading-aloud.md"
+    ],
+    "content": {
+      "ageInDays": 58,
+      "hook": "extra cuddles and rest",
+      "todaysFocus": "Day two of post-vaccine recovery, when most symptoms taper. Keep the day low-stimulation and let the established routines do the work while he finishes recovering.",
+      "actionItems": [
+        {
+          "body": "Keep today low-stimulation with extra skin-to-skin and rest; note that the oral rotavirus dose may still cause mild diarrhea or fussiness for another day.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Continue the AAP-recommended 400 IU/day vitamin D supplement, which is required for exclusively or predominantly breastfed infants regardless of how much daylight he gets.",
+          "sourceLabel": "HealthyChildren vitamin D",
+          "sourceUrl": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx"
+        },
+        {
+          "body": "Track feeds and wet diapers today so you can confirm intake recovered to baseline before resuming normal activity tomorrow."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Lingering low-grade fussiness 24 to 72 hours post-vaccine and decreasing spit-up volume as the upper esophageal sphincter matures.",
+        "[monitor] Asymmetric movement favoring one side, or a persistent head turn to one side suggesting torticollis; flag at the next visit.",
+        "[call within 24h] Persistent vomiting unrelated to the vaccines, a noticeable drop in output, or a new feeding-refusal pattern.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher more than 72 hours after the shots, blue lips, or a seizure; for blue lips call 911 now!"
+      ],
+      "enrichment": [
+        {
+          "body": "Read quietly from a familiar book to hold the routine steady while he recovers; daily reading from infancy builds the language base that drives later vocabulary.",
+          "sourceLabel": "Reach Out and Read",
+          "sourceUrl": "https://reachoutandread.org/"
+        },
+        {
+          "body": "Offer soft serve-and-return coo turns only when he is alert and calm; back off if he turns away or frets, since over-stimulation is the wrong move today.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Hold him upright on your chest for short stretches; the gentle head-steadying practice counts without a formal floor session."
+        }
+      ],
+      "upcoming": [
+        "Day 57-72: still inside the post-vaccine window; expect symptoms to resolve by tomorrow.",
+        "Day 84-91: sleep-consolidation window opens near three months.",
+        "Day 112-126: 4-month well visit. Vaccines: RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 59,
+    "subject": "Day 59: toy just out of reach",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-09.md",
+      "baby-kb/topics/tummy-time-and-motor.md"
+    ],
+    "content": {
+      "ageInDays": 59,
+      "hook": "toy just out of reach",
+      "todaysFocus": "The post-vaccine window has closed and the easy stretch begins. With Avi engaging more and reaching emerging, today is about motivating the stretch-and-push toward 60-plus minutes of tummy time.",
+      "actionItems": [
+        {
+          "body": "Resume full tummy time toward 60-plus minutes per day cumulative, placing a toy just out of reach to motivate stretching and forearm push-ups.",
+          "sourceLabel": "HealthyChildren tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Confirm the 4-month visit and its vaccines are on the calendar: window opens day 112 to 126 with RV #2, DTaP #2, Hib #2, PCV #2, IPV #2.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        },
+        {
+          "body": "If returning to work, use this calm stretch for a two-to-four-hour daycare or nanny trial run to test the handoff before leave ends."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Decreasing spit-up volume and longer alert windows as he engages more with faces and toys.",
+        "[monitor] Persistent head turn to one side or a flattening spot (positional plagiocephaly); alternate his resting head side and add prone time.",
+        "[call within 24h] Persistent vomiting, a new color change during feeds, or feeding refusal lasting more than 24 hours.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher, blue lips, labored breathing, or sudden limpness; for blue lips or trouble breathing call 911 now!"
+      ],
+      "enrichment": [
+        {
+          "body": "Let him track the toy fluidly side to side and up toward the midline as his visual following sharpens at this age.",
+          "sourceLabel": "HealthyChildren baby senses",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Take an easy daylight stroller loop now that the vaccine window has passed; outdoor light and varied sensory input support his rhythm and your cardiovascular recovery.",
+          "sourceLabel": "HealthyChildren vitamin D",
+          "sourceUrl": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx"
+        },
+        {
+          "body": "Graduate read-aloud from purely high-contrast pages to a simple narrative or texture book to engage tactile attention alongside the visual.",
+          "sourceLabel": "Reach Out and Read",
+          "sourceUrl": "https://reachoutandread.org/"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91: sleep-consolidation window opens near three months; start a consistent sleep-wake routine.",
+        "Day 112-126: 4-month well visit. Vaccines: RV #2, DTaP #2, Hib #2, PCV #2, IPV #2.",
+        "Watch for the first laugh in the coming weeks (typical range 10 to 14 weeks)."
+      ]
+    }
+  }
+]

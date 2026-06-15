@@ -1,0 +1,307 @@
+[
+  {
+    "ageInDays": 35,
+    "subject": "Day 35: order Suzuki recordings",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-06.md",
+      "baby-kb/topics/music-and-suzuki.md"
+    ],
+    "content": {
+      "ageInDays": 35,
+      "hook": "order Suzuki recordings",
+      "todaysFocus": "Week 6 is the first sustainable inflection point: the crying curve is at or just past peak, and Avi is now smiling spontaneously at faces. Today's lever is a one-time setup task with a multi-year payoff: decide on a first instrument and start passive listening exposure.",
+      "actionItems": [
+        {
+          "body": "Decide on a first instrument with Noah and Anoushka today: violin (Suzuki's original), piano, or cello. The choice mostly sets which recordings you order; formal lessons are still about three years out, around age 3-4.",
+          "sourceLabel": "Suzuki Association of the Americas",
+          "sourceUrl": "https://suzukiassociation.org/"
+        },
+        {
+          "body": "Order the Book 1 and Book 2 listening recordings for that instrument. Daily passive listening from this age carries no downside and is the single highest-leverage Suzuki prep step.",
+          "sourceLabel": "Suzuki Association of the Americas",
+          "sourceUrl": "https://suzukiassociation.org/"
+        },
+        {
+          "body": "Schedule Avi's 2-month well visit if it is not yet booked; the window is day 56-70 and the rotavirus first dose must land by about day 104, so do not let it drift.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Hiccups during or after feeds and wet sneezing are normal autonomic noise at this age and need no action.",
+        "[monitor] No social smile yet. About 80% of infants smile spontaneously by 8 weeks; if absent by then, flag it at the 2-month visit rather than now.",
+        "[monitor] Forceful arching or painful spit-up after feeds. Document frequency and discuss reflux or cow's-milk-protein intolerance at the next visit.",
+        "[call within 24h] A cluster of new symptoms together: poor feeding plus unusual lethargy plus decreased wet-diaper output.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher, a pause in breathing, blue color around the lips, or seizure-like activity: call the pediatrician same-day, and dial 911 for blue lips or labored breathing!"
+      ],
+      "enrichment": [
+        {
+          "body": "Play the new Suzuki recording softly during quiet play and feeds; aim to build toward roughly 30 minutes a day of background listening over the coming months. Live, participatory music matters more later, but early ear exposure is the Suzuki mother-tongue premise.",
+          "sourceLabel": "Suzuki Association of the Americas",
+          "sourceUrl": "https://suzukiassociation.org/"
+        },
+        {
+          "body": "Build toward 30 minutes a day of tummy time across several short bouts as Avi now sustains 30-60 second head lifts. Distribute it after alert wake windows rather than after feeds.",
+          "sourceLabel": "AAP Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Read aloud with intentional pauses: read a line, look at him, pause, then read the next line. The serve-and-return cadence is the active ingredient even before he can talk and predicts later expressive language.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        }
+      ],
+      "upcoming": [
+        "Day 41 (this week): Anoushka's 6-week postpartum OB visit, typically with exercise clearance, contraception discussion, and a final mood screen.",
+        "Day 56-70: 2-month well visit with the first major vaccine round (HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1).",
+        "Day 57-72: expect 24-48h of fussiness, low-grade fever, and extra drowsiness following the 2-month shots.",
+        "Day 112-126: 4-month well visit with the second vaccine round (RV #2, DTaP #2, Hib #2, PCV #2, IPV #2)."
+      ]
+    }
+  },
+  {
+    "ageInDays": 36,
+    "subject": "Day 36: prep the postpartum visit",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-06.md",
+      "baby-kb/mom/postpartum-physical-recovery.md"
+    ],
+    "content": {
+      "ageInDays": 36,
+      "hook": "prep the postpartum visit",
+      "todaysFocus": "Anoushka's 6-week postpartum visit is days away, and it is a high-value, easy-to-underprepare appointment. Today is about writing the question list so nothing gets skipped in a 20-minute slot.",
+      "actionItems": [
+        {
+          "body": "Draft Anoushka's written question list for the 6-week OB visit covering pelvic floor symptoms, mood and a repeat depression screen, return to exercise, and contraception. A written list is the difference between a thorough visit and a rushed one.",
+          "sourceLabel": "ACOG postpartum care",
+          "sourceUrl": "https://www.acog.org/womens-health/faqs/postpartum-pain-management"
+        },
+        {
+          "body": "Add a contraception decision to the list. Progestin-only options (mini-pill, IUD, implant) are breastfeeding-compatible; combined estrogen products are usually deferred until weaning.",
+          "sourceLabel": "ACOG postpartum birth control",
+          "sourceUrl": "https://www.acog.org/womens-health/faqs/postpartum-birth-control"
+        },
+        {
+          "body": "Note the return-to-work date and a daycare or nanny start date on the same list so the OB conversation and household logistics stay aligned; aim for a 1-2 week buffer between the two.",
+          "sourceLabel": "AAP Bright Futures",
+          "sourceUrl": "https://www.aap.org/en/practice-management/bright-futures/bright-futures-tools-and-resources/"
+        }
+      ],
+      "watchFors": [
+        "[low concern] A quiet startle to loud sounds and a brief whole-body twitch as he drifts off are normal and need no action.",
+        "[monitor] For Anoushka: lochia alba persisting past 6 weeks, or red bleeding reappearing for a day or two. Note it for the OB visit.",
+        "[call within 24h] For Anoushka: incision redness or discharge, foul-smelling lochia, or one-sided calf pain. For Avi: a new murmur or blue color around the lips during feeds.",
+        "[call within 24h] Soaking more than one pad an hour for over two hours, which can signal delayed postpartum hemorrhage.",
+        "[call now] Avi with a rectal temperature 100.4F (38.0C) or higher, apnea, or seizure-like activity; or Anoushka with chest pain, shortness of breath, or thoughts of self-harm: get same-day help, and call 911 for breathing trouble!"
+      ],
+      "enrichment": [
+        {
+          "body": "Refresh the high-contrast card set and hold each card 8-12 inches from his face; he now smiles spontaneously, especially at faces, so pair the cards with your own exaggerated expression.",
+          "sourceLabel": "AAP HealthyChildren baby senses",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Narrate ordinary tasks in parentese, the slow high-pitched register infants prefer: describe the diaper change, the dishwashing, the walk in full sentences. Rich responsive talk in infancy predicts later language outcomes.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Take a 20-30 minute stroller walk in daylight most days. It supports Anoushka's cardiovascular recovery and gives Avi varied sensory input, though it does not replace the 400 IU/day vitamin D supplement recommended for breastfed infants.",
+          "sourceLabel": "AAP HealthyChildren vitamin D",
+          "sourceUrl": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 41 (this week): Anoushka's 6-week postpartum OB visit.",
+        "Day 56-70: 2-month well visit with the first major vaccine round (HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1).",
+        "Day 57-72: expect 24-48h of post-vaccine fussiness, low-grade fever, and drowsiness.",
+        "Day 112-126: 4-month well visit with the second vaccine round."
+      ]
+    }
+  },
+  {
+    "ageInDays": 37,
+    "subject": "Day 37: plan a Cal Academy outing",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-06.md",
+      "baby-kb/topics/tummy-time-and-motor.md"
+    ],
+    "content": {
+      "ageInDays": 37,
+      "hook": "plan a Cal Academy outing",
+      "todaysFocus": "With the crying peak easing, a short low-stimulation outing is now realistic and good for both parents and baby. Today is about planning one well-timed trip rather than improvising one on a crowded afternoon.",
+      "actionItems": [
+        {
+          "body": "Plan a low-stimulation weekday morning at the California Academy of Sciences; arrive at opening to avoid crowds and noise, and keep the loop short enough that you can leave before Avi tips into overstimulation.",
+          "sourceLabel": "California Academy of Sciences",
+          "sourceUrl": "https://www.calacademy.org/"
+        },
+        {
+          "body": "Pack the outing bag the night before with a feed's worth of milk, a spare outfit, and the carrier, so a fussy morning does not cancel the plan.",
+          "sourceLabel": "AAP Bright Futures",
+          "sourceUrl": "https://www.aap.org/en/practice-management/bright-futures/bright-futures-tools-and-resources/"
+        },
+        {
+          "body": "Confirm the 2-month well visit is on the calendar for the day 56-70 window if you have not already booked it; the rotavirus first dose has a hard upper age limit around day 104.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Evening fussiness with no clear cause; the witching-hour pattern around 5-8pm is normal and tapering this week.",
+        "[monitor] Cradle cap (yellow scale on the scalp) or continuous tearing from one eye without redness (a blocked tear duct). Both are common and usually resolve without treatment.",
+        "[call within 24h] Persistent inability to console combined with arching during feeds, which can point to reflux or cow's-milk-protein intolerance.",
+        "[call within 24h] Forceful, projectile vomiting paired with poor weight gain.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher, apnea, blue lips, or inconsolable crying with a fever: call same-day, and dial 911 for blue lips or labored breathing!"
+      ],
+      "enrichment": [
+        {
+          "body": "Set a baby-safe mirror at Avi's eye level during tummy time; face-tracking is the strongest motivator for longer head lifts and helps build toward the 30 minutes-a-day target.",
+          "sourceLabel": "AAP Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Play the Suzuki recording softly for 5-10 minutes during quiet play to keep the daily listening habit going without crowding out live singing.",
+          "sourceLabel": "Suzuki Association of the Americas",
+          "sourceUrl": "https://suzukiassociation.org/"
+        },
+        {
+          "body": "Wear Avi in a carrier outside with his face visible and chin off his chest. Upright outdoor time gives him a changing field of light, sound, and motion that floor play cannot.",
+          "sourceLabel": "AAP HealthyChildren movement",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 41 (this week): Anoushka's 6-week postpartum OB visit.",
+        "Day 56-70: 2-month well visit with the first vaccine round (HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1).",
+        "Day 57-72: expect 24-48h of post-vaccine fussiness, low-grade fever, and drowsiness.",
+        "Day 112-126: 4-month well visit with the second vaccine round."
+      ]
+    }
+  },
+  {
+    "ageInDays": 38,
+    "subject": "Day 38: board-book rotation refresh",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-06.md",
+      "baby-kb/topics/reading-aloud.md"
+    ],
+    "content": {
+      "ageInDays": 38,
+      "hook": "board-book rotation refresh",
+      "todaysFocus": "Reading aloud is one of the highest-effect-size early-language interventions, and at this age repetition does the work. Today is about locking in a small fixed book set rather than chasing variety.",
+      "actionItems": [
+        {
+          "body": "Set a fixed rotation of three to five board books and read them daily; repetition, not novelty, is the vehicle for predictive language processing at this age. High-contrast and rhythmic-text titles work best now.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Order or borrow any missing staples for the rotation; a library card is free from birth and lets favorites repeat without buying every title.",
+          "sourceLabel": "Reach Out and Read",
+          "sourceUrl": "https://reachoutandread.org/"
+        },
+        {
+          "body": "Confirm Avi's 2-month well visit is booked in the day 56-70 window; the visit anchors the first vaccine round and should not slip past day 70.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Frequent hiccups after feeds and occasional wet sneezing; neither needs intervention.",
+        "[monitor] No social smile by 8 weeks. Most infants reach it earlier; if it is missing by then, raise it at the 2-month visit.",
+        "[monitor] A persistent head tilt to one side with limited rotation may be positional torticollis; mention it at the next visit for a possible PT referral.",
+        "[call within 24h] Poor feeding plus lethargy plus a clear drop in wet-diaper output as a cluster.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher, apnea, blue color around the lips, or seizure-like activity: call the pediatrician same-day, and call 911 for blue lips or labored breathing!"
+      ],
+      "enrichment": [
+        {
+          "body": "Keep the same three to five board books in daily rotation and re-read them often; predictable repetition is what drives early predictive language processing, so resist the urge to constantly swap titles.",
+          "sourceLabel": "Reach Out and Read",
+          "sourceUrl": "https://reachoutandread.org/"
+        },
+        {
+          "body": "Smile and make eye contact to get Avi's attention, then wait for him to smile back. The social smile is consolidating this week, and these face-to-face exchanges reinforce it.",
+          "sourceLabel": "AAP Bright Futures",
+          "sourceUrl": "https://www.aap.org/en/practice-management/bright-futures/bright-futures-tools-and-resources/"
+        },
+        {
+          "body": "Prop Avi on a rolled towel under his chest for tummy time so his arms clear the floor; the slight incline lowers the effort of each head lift and keeps prone minutes accruing toward 30 a day.",
+          "sourceLabel": "AAP Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 41 (this week): Anoushka's 6-week postpartum OB visit.",
+        "Day 56-70: 2-month well visit with the first vaccine round (HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1).",
+        "Day 57-72: expect 24-48h of post-vaccine fussiness, low-grade fever, and drowsiness.",
+        "Day 112-126: 4-month well visit with the second vaccine round."
+      ]
+    }
+  },
+  {
+    "ageInDays": 39,
+    "subject": "Day 39: football-hold tummy time",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-06.md",
+      "baby-kb/topics/tummy-time-and-motor.md"
+    ],
+    "content": {
+      "ageInDays": 39,
+      "hook": "football-hold tummy time",
+      "todaysFocus": "Tummy time is the prescribed counterweight to back-sleeping, but floor sessions often draw protest at 6-10 weeks. Today is a lower-effort variant that keeps prone time accruing when the floor is a fight.",
+      "actionItems": [
+        {
+          "body": "Drape Avi across your forearm in a football hold as a low-protest tummy-time substitute when floor time turns fussy; it still loads the neck and upper body and counts toward the daily total.",
+          "sourceLabel": "AAP Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Keep limiting container time (bouncer, swing, car seat outside the car) to under two hours a day so floor and prone practice is not crowded out.",
+          "sourceLabel": "AAP Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Confirm the 2-month well visit is on the calendar; with Anoushka's postpartum visit landing this week, lock both appointments in together while the schedule is open.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Hating floor tummy time at 6-10 weeks is normal; shorten the bouts and pair them with your face or a song rather than dropping the practice.",
+        "[monitor] A head tilt that responds to repositioning is low-grade, but a tilt that persists despite varying his held and sleep positions warrants a mention at the 2-month visit.",
+        "[monitor] Forceful arching or painful, frequent spit-up during feeds; track it and raise reflux or milk-protein intolerance at the next visit.",
+        "[call within 24h] Persistent vomiting beyond 24h or refusal of several feeds in a row.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher, apnea, blue lips, limpness, or asymmetric movement on one side: call same-day, and dial 911 for blue lips or labored breathing!"
+      ],
+      "enrichment": [
+        {
+          "body": "Use the forearm football hold and across-the-lap incline as gentler tummy-time variants; rotating positions keeps prone time accumulating toward 30 minutes a day even on protest-heavy days.",
+          "sourceLabel": "AAP Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Take coo turns: when Avi vocalizes, respond as if he spoke, pause, wait for his next sound, then respond again. These proto-conversations are the serve-and-return pattern linked to stronger later language.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Slowly track a high-contrast card across his full visual field, side to side; by now he can follow an object roughly 180 degrees, and this exercises smooth visual pursuit.",
+          "sourceLabel": "AAP HealthyChildren baby senses",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 41 (this week): Anoushka's 6-week postpartum OB visit.",
+        "Day 56-70: 2-month well visit with the first vaccine round (HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1).",
+        "Day 57-72: expect 24-48h of post-vaccine fussiness, low-grade fever, and drowsiness.",
+        "Day 112-126: 4-month well visit with the second vaccine round (RV #2, DTaP #2, Hib #2, PCV #2, IPV #2)."
+      ]
+    }
+  }
+]

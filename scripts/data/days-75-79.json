@@ -1,0 +1,303 @@
+[
+  {
+    "ageInDays": 75,
+    "subject": "Day 75: dim lights after sunset",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-11.md",
+      "baby-kb/topics/sleep-newborn-fundamentals.md",
+      "baby-kb/topics/naps-by-age.md"
+    ],
+    "content": {
+      "ageInDays": 75,
+      "hook": "dim lights after sunset",
+      "todaysFocus": "You are in the calm stretch of weeks 10-13, the right window to install systems before the 4-month shift. Today's lever is light: dimming the house after sunset reinforces the wind-down and consolidates a predictable sleep-onset routine.",
+      "actionItems": [
+        {
+          "body": "Dim every light in the house after sunset and keep the last 30 minutes before bed low and quiet, so the routine itself signals sleep. Circadian rhythm is consolidating now and external light cues are the strongest anchor you control.",
+          "sourceLabel": "AAP HealthyChildren, getting baby to sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Fix the order of the wind-down (feed, bath or wipe-down, lights-out song, crib) and run it the same way nightly, since predictability is what does the work, not any single step.",
+          "sourceLabel": "AAP HealthyChildren, sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx"
+        },
+        {
+          "body": "Confirm grandparents and any nanny are current on Tdap, flu, and COVID-19 before unsupervised contact. Pertussis is the vaccine-preventable illness most likely to kill an infant from an adult contact.",
+          "sourceLabel": "AAP immunization policy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Start a small freezer milk stash if Anoushka is returning to work, pumping one to two sessions a day. Target about 2 oz of frozen milk per missed feed."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Sleep stretches lengthening one week then shortening the next is normal variability at this age and not a setback.",
+        "[monitor] Persistent fisted hands that rarely open, or movement that consistently favors one side; note it and raise it at the next visit.",
+        "[call within 24h] Acute fever onset paired with a new feeding-refusal pattern, or refusal of multiple feeds in a row.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher under 90 days, blue lips, labored breathing, or an unresponsive episode is a same-day call, and 911 for blue lips or breathing trouble!"
+      ],
+      "enrichment": [
+        {
+          "body": "Dim the lights after sunset as the opening move of the wind-down; the dark-after-dusk cue is the most reliable sleep-onset association you can build now.",
+          "sourceLabel": "AAP HealthyChildren, getting baby to sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Keep one fixed lights-out song as the final step every night; the repeated, live pairing is what makes it a cue rather than background noise.",
+          "sourceLabel": "Gerry et al. 2012, active music in infancy",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        },
+        {
+          "body": "Vary tummy-time surfaces across the day toward 60 to 75 minutes cumulative, alternating a firm mat, your lap, and a slight incline to keep him pushing up on his forearms.",
+          "sourceLabel": "AAP HealthyChildren, tummy to play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91: sleep consolidation window opens (~3 months); lock in the consistent sleep-wake routine before the 4-month architecture shift",
+        "Day 112-126: 4-month well visit; vaccines RV #2, DTaP #2, Hib #2, PCV #2, IPV #2 (no HepB at 4 months)",
+        "Weeks 14-18: 4-month sleep regression onset for many infants as sleep architecture matures"
+      ]
+    }
+  },
+  {
+    "ageInDays": 76,
+    "subject": "Day 76: move swim off the waitlist",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-11.md",
+      "baby-kb/topics/reading-aloud.md",
+      "baby-kb/topics/language-exposure.md"
+    ],
+    "content": {
+      "ageInDays": 76,
+      "hook": "move swim off the waitlist",
+      "todaysFocus": "At about 3 months Avi is now age-eligible for parent-baby swim. Today is the day to convert the waitlist you joined back in week 4 into a booked first class.",
+      "actionItems": [
+        {
+          "body": "Move swim from the waitlist to a booked first parent-baby class now that he is around 3 months. Choose a warm-pool program with parent-in-water format rather than any independent-float gimmick.",
+          "sourceLabel": "AAP HealthyChildren, swim lessons",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Swim-Lessons.aspx"
+        },
+        {
+          "body": "Set up a childcare backup before you need it; identify a backup nanny agency or a family member on call so a sick nanny or closed daycare does not strand a workday."
+        },
+        {
+          "body": "Inquire about first-birthday venues now if you plan to host; top Bay Area and NYC venues book 6 to 9 months out."
+        },
+        {
+          "body": "Keep building the freezer milk stash at one to two pump sessions a day, aiming for roughly 2 oz frozen per missed feed, so the return-to-work handoff is not rushed."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Profuse drooling and hand-sucking now; this is salivary-gland maturation, not necessarily teething, since first teeth typically arrive at 6 to 10 months.",
+        "[monitor] No reliable social smile yet, or a head that persistently turns to one side; document it for the 4-month visit.",
+        "[call within 24h] Decreased feeding over 24 hours, or a new feeding-refusal pattern with no obvious cause.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher under 90 days, apnea, blue lips, or labored breathing is a same-day call, and 911 immediately for blue lips or breathing trouble!"
+      ],
+      "enrichment": [
+        {
+          "body": "Book the first parent-baby swim class; at this age the value is sensory and social, with warm water and your face close, not any swimming skill.",
+          "sourceLabel": "AAP HealthyChildren, swim lessons",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Swim-Lessons.aspx"
+        },
+        {
+          "body": "Keep daily reading at 15 to 20 minutes with a roughly 3-to-1 repeat-to-novel ratio; repetition of favorites drives the predictive language processing that underwrites later vocabulary.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Answer his squeaks and squeals as if they were words, pausing for his turn before you reply; this serve-and-return cadence predicts stronger later language outcomes.",
+          "sourceLabel": "Romeo et al. 2018, conversational turns",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91: sleep consolidation window opens (~3 months); start the consistent sleep-wake routine ahead of the 4-month shift",
+        "Day 112-126: 4-month well visit; vaccines RV #2, DTaP #2, Hib #2, PCV #2, IPV #2",
+        "Weeks 14-18: 4-month sleep regression for many as night wakings increase"
+      ]
+    }
+  },
+  {
+    "ageInDays": 77,
+    "subject": "Day 77: research solids approach",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-12.md",
+      "baby-kb/topics/introducing-solids.md",
+      "baby-kb/topics/tummy-time-and-motor.md"
+    ],
+    "content": {
+      "ageInDays": 77,
+      "hook": "research solids approach",
+      "todaysFocus": "Week 12 opens the end of the first quarter, and for families on a 12-week leave, return-to-work week. Solids are still 1 to 3 months out, but deciding the approach now, while you have bandwidth, beats deciding in the high chair.",
+      "actionItems": [
+        {
+          "body": "Start researching baby-led weaning versus purees for the 4-to-6-month start and decide as a couple before the window opens; the evidence shows no difference in choking risk between the two methods, so this is about logistics and preference, not safety.",
+          "sourceLabel": "AAP HealthyChildren, starting solid foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Note the three readiness signals you will look for around 6 months: sitting with minimal support, loss of the tongue-thrust reflex, and active interest in food.",
+          "sourceLabel": "AAP HealthyChildren, starting solid foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Get the pumping schedule operational if Anoushka is back at work: about three sessions per 8-hour day, 15 to 20 minutes each, refrigerated immediately and frozen the same day if not used within four days."
+        },
+        {
+          "body": "Pack the daycare or nanny bag the night before with labeled bottles, extra outfits, diapers, and a sleep sack, and confirm the communication channel the provider uses."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Daycare or nanny adjustment fussiness for one to two weeks at the start; frequent minor illness in the first two months of group care is expected.",
+        "[monitor] Sleep starting to fragment with more frequent night wakings; note the date it begins, as it may mark the early 4-month regression.",
+        "[call within 24h] Persistent vomiting beyond 24 hours, or crying clearly disproportionate to the handoff that does not settle.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher under 90 days, apnea, or a color change during sleep is a same-day call, and 911 for blue lips or labored breathing!"
+      ],
+      "enrichment": [
+        {
+          "body": "Place toys at varying distances during tummy time toward 75 to 90 minutes cumulative, staggered into short bouts, to motivate scooting and pivoting.",
+          "sourceLabel": "AAP HealthyChildren, tummy to play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Live-sing across varied tempos during play, moving slow to fast to slow, since participatory singing, not recordings, is the active ingredient for perceptual and communicative gains.",
+          "sourceLabel": "Gerry et al. 2012, active music in infancy",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        },
+        {
+          "body": "Spend a few minutes hiding a toy partly under a blanket and watch whether he reaches for the visible part; this is an early object-permanence precursor that consolidates around 8 to 10 months."
+        }
+      ],
+      "upcoming": [
+        "Day 84-91: sleep consolidation window opens (~3 months); set the consistent sleep-wake routine",
+        "Months 4-6: target window for starting solids; allergen introduction window opens around month 4",
+        "Day 112-126: 4-month well visit; vaccines RV #2, DTaP #2, Hib #2, PCV #2, IPV #2"
+      ]
+    }
+  },
+  {
+    "ageInDays": 78,
+    "subject": "Day 78: first parent-baby swim",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-12.md",
+      "baby-kb/topics/language-exposure.md",
+      "baby-kb/topics/tummy-time-and-motor.md"
+    ],
+    "content": {
+      "ageInDays": 78,
+      "hook": "first parent-baby swim",
+      "todaysFocus": "First day in the pool. Treat it as a sensory and social outing, not a skills lesson; warm water, slow movements, and your face close are the entire curriculum.",
+      "actionItems": [
+        {
+          "body": "Attend the first parent-baby swim class and keep it short and calm; at 3 months the goal is comfort in water with you, and AAP notes infant classes do not water-proof a baby, so supervision rules never relax.",
+          "sourceLabel": "AAP HealthyChildren, swim lessons",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Swim-Lessons.aspx"
+        },
+        {
+          "body": "Keep the rest of the day light around the outing, since a new environment plus an extra wake window can run him toward overtired; bank any lost sleep with an earlier bedtime rather than a late nap."
+        },
+        {
+          "body": "Continue 400 IU/day of vitamin D if he is exclusively or predominantly breastfed; pool or sun time does not replace the supplement.",
+          "sourceLabel": "AAP HealthyChildren, vitamin D",
+          "sourceUrl": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx"
+        },
+        {
+          "body": "Pack a labeled bag for the class with a swim diaper, towel, a feed for after, and a warm layer, and plan to feed soon after since the water and activity will burn energy."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Mild post-swim fatigue and a bigger appetite afterward; both are expected after a new, active outing.",
+        "[monitor] Shivering or persistent fussiness in the water, which usually means the pool is too cool for him; keep sessions brief and the water warm.",
+        "[call within 24h] New cough, congestion, or eye redness in the day after the class; note onset and call if it persists or worsens.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher under 90 days, choking, blue lips, or labored breathing after a water swallow is a same-day call, and 911 immediately for blue lips or breathing trouble!"
+      ],
+      "enrichment": [
+        {
+          "body": "Hold him chest-to-chest through the water introduction so your reassuring face stays in view; secure, smooth movement is the whole lesson at this stage.",
+          "sourceLabel": "AAP HealthyChildren, swim lessons",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Swim-Lessons.aspx"
+        },
+        {
+          "body": "Support him in arm-supported floats and gentle reaches in the water; the buoyant resistance is novel motor input that complements floor tummy time.",
+          "sourceLabel": "AAP HealthyChildren, movement birth to three months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        },
+        {
+          "body": "Narrate the water in a calm running commentary (splash, kick, float, warm) and pause for his sounds; the live language plus serve-and-return is the active ingredient for later language.",
+          "sourceLabel": "Romeo et al. 2018, conversational turns",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91: sleep consolidation window opens (~3 months); start the consistent sleep-wake routine",
+        "Day 112-126: 4-month well visit; vaccines RV #2, DTaP #2, Hib #2, PCV #2, IPV #2",
+        "Weeks 14-18: 4-month sleep regression onset for many infants"
+      ]
+    }
+  },
+  {
+    "ageInDays": 79,
+    "subject": "Day 79: raspberries and squeals",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-12.md",
+      "baby-kb/topics/language-exposure.md",
+      "baby-kb/topics/reading-aloud.md"
+    ],
+    "content": {
+      "ageInDays": 79,
+      "hook": "raspberries and squeals",
+      "todaysFocus": "Vocal play is expanding into prolonged cooing, squeals, and the first lip-vibration raspberries. These experiments are the raw material of speech, and your responses are what turn them into conversation.",
+      "actionItems": [
+        {
+          "body": "Blow raspberries and trade squeals with him, treating each sound as a turn: make a sound, pause, let him answer, then respond. This back-and-forth pattern predicts stronger later language outcomes.",
+          "sourceLabel": "Romeo et al. 2018, conversational turns",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Keep tracking sleep windows (last wake, time fell asleep, nap length) this week; the pattern stabilizes by about 12 to 14 weeks and gives you a loose schedule to anchor against the coming regression."
+        },
+        {
+          "body": "Plan for the first daycare illness, which typically arrives within two to four weeks of starting; have the pediatrician's after-hours line saved and a decision in advance for who stays home."
+        },
+        {
+          "body": "Lock in the first-birthday venue now if booking is required, since the calmest week of the quarter is the right time to clear this off the list."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Loud squeals, raspberries, and vocal experiments at all hours; this is healthy vocal-range expansion, not agitation.",
+        "[monitor] Persistent crying that is disproportionate to the daycare handoff, or fisted hands that rarely open; document and raise at the 4-month visit.",
+        "[call within 24h] A first daycare fever, or persistent feeding refusal; under 90 days this still warrants same-day evaluation.",
+        "[call now] Rectal temperature 100.4F (38.0C) or higher under 90 days, apnea, blue lips, or labored breathing is a same-day call, and 911 immediately for blue lips or breathing trouble!"
+      ],
+      "enrichment": [
+        {
+          "body": "Turn his raspberries into a rhythm game by echoing them in a sung beat; live, participatory music layered on his own sounds drives communicative and perceptual development.",
+          "sourceLabel": "Gerry et al. 2012, active music in infancy",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        },
+        {
+          "body": "Read aloud with exaggerated sounds and animal noises and pause to invite imitation; the prosody and the interaction matter more than the book itself.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Keep cumulative tummy time at 75 to 90 minutes in short bouts, placing a toy just out of reach to prompt swiping and reaching as his arms strengthen.",
+          "sourceLabel": "AAP HealthyChildren, tummy to play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 84-91: sleep consolidation window opens (~3 months); set and hold the sleep-wake routine",
+        "Day 112-126: 4-month well visit; vaccines RV #2, DTaP #2, Hib #2, PCV #2, IPV #2",
+        "Weeks 14-18: 4-month sleep regression as night wakings increase"
+      ]
+    }
+  }
+]

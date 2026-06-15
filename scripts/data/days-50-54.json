@@ -1,0 +1,290 @@
+[
+  {
+    "ageInDays": 50,
+    "subject": "Day 50: have infant Tylenol ready",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-08.md",
+      "baby-kb/topics/vaccines-overview.md",
+      "baby-kb/topics/reading-aloud.md"
+    ],
+    "content": {
+      "ageInDays": 50,
+      "hook": "have infant Tylenol ready",
+      "todaysFocus": "Avi is 50 days old, mid-week 8, and the 2-month vaccine round is days away. This week is about staging the post-vaccine response so a predictable 24-48h of fussiness does not turn into a scramble.",
+      "actionItems": [
+        {
+          "body": "Stock infant acetaminophen now and confirm the weight-based dose with your pediatrician before the visit. Treat after the shots if needed, not before; prophylactic dosing can blunt the antibody response.",
+          "sourceLabel": "AAP on immunizations",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Print your 2-month question list (sleep training, solids timing at 4 vs 6 months, growth percentile trajectory, when to drop the swaddle); a 20-30 minute visit goes fast.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        },
+        {
+          "body": "Block the 48 hours after the visit lightly so one parent can be home for expected drowsiness and feeding disruption."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Witching-hour fussiness in the early evening and a stronger startle to loud sounds; both are typical at this age and resolve without intervention.",
+        "[monitor] No social smile yet by week 8. Note it and raise it at the 2-month visit rather than waiting; about 90% of infants smile responsively by now.",
+        "[call within 24h] Persistent vomiting beyond 24 hours, or refusal of multiple feeds in a row with a drop in wet diapers.",
+        "[call now] Rectal temperature at or above 100.4F (38.0C) in an infant under 90 days, blue lips, labored breathing, or a seizure-like episode warrants a same-day call or 911!"
+      ],
+      "enrichment": [
+        {
+          "body": "Pair one specific song with every diaper change so Avi learns to predict the sequence; live, participatory singing is the active ingredient, not recording quality.",
+          "sourceLabel": "Gerry et al. on infant music",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        },
+        {
+          "body": "Keep the daily read-aloud at roughly a 3:1 repeat-to-novel ratio so familiar rhythm and predictability do the cognitive work.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Stagger tummy time into four to six short bouts toward 45-60 minutes cumulative; short sessions after feeds beat one long protest.",
+          "sourceLabel": "HealthyChildren tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 56-70: 2-month well visit; vaccines HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1.",
+        "Day 57-72: post-vaccine 24-48h window of fussiness, low-grade fever, and extra drowsiness.",
+        "Day 112-126: 4-month well visit; vaccines RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 51,
+    "subject": "Day 51: confirm daycare overlap",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-08.md",
+      "baby-kb/mom/return-to-work.md",
+      "baby-kb/topics/tummy-time-and-motor.md"
+    ],
+    "content": {
+      "ageInDays": 51,
+      "hook": "confirm daycare overlap",
+      "todaysFocus": "At 51 days, the survival phase is giving way to operational planning. Today's priority is locking the childcare transition so the handoff has a buffer rather than a hard cutover.",
+      "actionItems": [
+        {
+          "body": "Confirm the daycare or nanny start date with a 3-5 day overlap with the primary caregiver, so the handoff is supervised rather than abrupt.",
+          "sourceLabel": "ChildCare.gov",
+          "sourceUrl": "https://www.childcare.gov/"
+        },
+        {
+          "body": "Draft the caregiver onboarding packet now: pediatrician contact, feeding schedule, sleep cues, and emergency contacts, so it is ready before day one."
+        },
+        {
+          "body": "Schedule the 2-month well visit if it is not yet booked; the rotavirus first dose must be given by about day 104, so do not let the visit drift past day 70.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Early drool from salivary-gland maturation, not teething; first teeth typically arrive at 6-10 months.",
+        "[monitor] A persistent head tilt to one side with limited rotation (torticollis), common after in-utero positioning; flag it at the 2-month visit for a possible PT referral.",
+        "[call within 24h] Inconsolable crying that pairs with poor feeding and decreased output, or a new bluish tint to the lips during feeds.",
+        "[call now] Rectal temperature at or above 100.4F (38.0C) under 90 days, apnea, or color change demands a same-day call or 911 right away!"
+      ],
+      "enrichment": [
+        {
+          "body": "Encourage chest-off-the-floor push-ups on the forearms during tummy time; insufficient prone time is linked to small delays in rolling and sitting.",
+          "sourceLabel": "HealthyChildren tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Take a 20-30 minute daylight stroller loop most days for varied sensory input and your own cardiovascular recovery; still give 400 IU/day of vitamin D since sun exposure does not replace the supplement for breastfed infants.",
+          "sourceLabel": "HealthyChildren on vitamin D",
+          "sourceUrl": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx"
+        },
+        {
+          "body": "Respond to each coo as if it were a full sentence, then pause for his turn; these serve-and-return exchanges predict later language outcomes.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        }
+      ],
+      "upcoming": [
+        "Day 56-70: 2-month well visit; vaccines HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1.",
+        "Day 57-72: post-vaccine 24-48h window of fussiness, low-grade fever, and extra sleep.",
+        "Day 112-126: 4-month well visit; vaccines RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 52,
+    "subject": "Day 52: reach for a play-gym toy",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-08.md",
+      "baby-kb/topics/tummy-time-and-motor.md",
+      "baby-kb/topics/music-and-suzuki.md"
+    ],
+    "content": {
+      "ageInDays": 52,
+      "hook": "reach for a play-gym toy",
+      "todaysFocus": "Avi is 52 days old and starting to turn looking into reaching. Today is about giving his hands a target under a play gym while the 2-month visit prep continues in the background.",
+      "actionItems": [
+        {
+          "body": "Lay him under a play gym with one toy hung just within arm's reach so passive looking starts to become batting and swiping.",
+          "sourceLabel": "HealthyChildren on movement",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        },
+        {
+          "body": "Pre-fill 24 hours of formula or pumped milk ahead of the visit week, since vaccine-day fussiness can disrupt the feeding rhythm."
+        },
+        {
+          "body": "Verify infant acetaminophen is in the cabinet and the weight-based dose is written down, to treat after the shots if needed.",
+          "sourceLabel": "AAP on immunizations",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        }
+      ],
+      "watchFors": [
+        "[low concern] Hiccups during or after feeds and wet sneezing; both are normal and self-limited.",
+        "[monitor] Forceful arching during feeds with frequent painful spit-up or refusal despite hunger cues, which can point to reflux or cow's-milk-protein intolerance; raise it at the 2-month visit.",
+        "[call within 24h] Lethargy that is out of proportion to recent activity, or a feeding refusal pattern that runs more than 24 hours.",
+        "[call now] Rectal temperature at or above 100.4F (38.0C) under 90 days, cyanosis around the lips, or labored breathing means call now or dial 911!"
+      ],
+      "enrichment": [
+        {
+          "body": "Hang or hold a toy just out of reach during tummy time and floor play so reaching motivates head lift and upper-body work.",
+          "sourceLabel": "HealthyChildren on movement",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-Birth-to-Three-Months.aspx"
+        },
+        {
+          "body": "Vary live-singing tempo across a session (slow lullaby, fast clapping song, then slow again) to preserve the rhythm and pitch range his brain is still tuning.",
+          "sourceLabel": "Gerry et al. on infant music",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        },
+        {
+          "body": "Answer his increasingly varied coos with full back-and-forth turns, pausing for his reply; conversational turn-taking is the language-building unit.",
+          "sourceLabel": "Romeo et al. 2018",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        }
+      ],
+      "upcoming": [
+        "Day 56-70: 2-month well visit; vaccines HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1.",
+        "Day 57-72: post-vaccine 24-48h window of fussiness and low-grade fever.",
+        "Day 112-126: 4-month well visit; vaccines RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 53,
+    "subject": "Day 53: bath as a language lab",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-08.md",
+      "baby-kb/topics/language-exposure.md",
+      "baby-kb/topics/sleep-newborn-fundamentals.md"
+    ],
+    "content": {
+      "ageInDays": 53,
+      "hook": "bath as a language lab",
+      "todaysFocus": "At 53 days, the nightly bath is high-frequency, multisensory, and low-effort to upgrade. Today is about turning it into narrated language exposure and a clean sleep-onset cue.",
+      "actionItems": [
+        {
+          "body": "Narrate every bath step slowly (warm water, soap on your shoulders, lift your arm, splash) to layer language onto a sensory routine he already gets nightly.",
+          "sourceLabel": "HealthyChildren ages and stages",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Keep the 2-month visit on the calendar within the next week or two and bring a feeding and output log so growth can be plotted.",
+          "sourceLabel": "AAP periodicity schedule",
+          "sourceUrl": "https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/"
+        },
+        {
+          "body": "Decide as a couple who is home for the post-vaccine window, so the recovery days are covered before they arrive."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Rolling-eye episodes during sleep transitions and quiet startles to sound; both are normal at this stage.",
+        "[monitor] Crying that exceeds 3 hours a day, more than 3 days a week, for more than 3 weeks fits the Wessel colic definition; it peaks near week 6-8 and resolves by 12-16 weeks.",
+        "[call within 24h] A cluster of new symptoms together, such as poor feeding plus unusual lethargy plus decreased output.",
+        "[call now] Rectal temperature at or above 100.4F (38.0C) under 90 days, blue color around the lips during feeds, or a seizure-like episode warrants a same-day call or 911!"
+      ],
+      "enrichment": [
+        {
+          "body": "Read one calm board book in the post-bath wind-down to anchor the transition; reading aloud is among the highest-yield early-language inputs.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Sing the same lights-out song after the bath every night so the melody becomes a reliable sleep-onset signal.",
+          "sourceLabel": "HealthyChildren on getting baby to sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Use the bath itself as multisensory narration, naming temperature, textures, and body parts as you go, for cumulative exposure over thousands of future baths.",
+          "sourceLabel": "HealthyChildren ages and stages",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 56-70: 2-month well visit; vaccines HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1.",
+        "Day 57-72: post-vaccine 24-48h window of fussiness, low-grade fever, and drowsiness.",
+        "Day 112-126: 4-month well visit; vaccines RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  },
+  {
+    "ageInDays": 54,
+    "subject": "Day 54: do a daycare trial run",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-08.md",
+      "baby-kb/mom/return-to-work.md",
+      "baby-kb/topics/tummy-time-and-motor.md"
+    ],
+    "content": {
+      "ageInDays": 54,
+      "hook": "do a daycare trial run",
+      "todaysFocus": "Avi is 54 days old and the 2-month visit is now within days. Today is about testing the childcare handoff with a short trial run before leave ends, while keeping the visit prep on track.",
+      "actionItems": [
+        {
+          "body": "Run a short trial with the daycare or nanny this week to test the handoff, ideally a half-day, so the first real day is not also the first separation.",
+          "sourceLabel": "ChildCare.gov",
+          "sourceUrl": "https://www.childcare.gov/"
+        },
+        {
+          "body": "Treat after the shots, not before: have the weight-based acetaminophen dose ready but skip prophylactic dosing, which can reduce the antibody response.",
+          "sourceLabel": "AAP on immunizations",
+          "sourceUrl": "https://www.aap.org/en/patient-care/immunizations/aap-policy-on-immunizations/"
+        },
+        {
+          "body": "Pack the trial-run bag the way you will pack the daycare bag: labeled bottles, extra outfits, diapers, and a sleep sack, to surface gaps early."
+        }
+      ],
+      "watchFors": [
+        "[low concern] Sleeping a bit more than usual and a brief fuss when over-stimulated; both are common at week 8.",
+        "[monitor] Asymmetric movement that favors one side, or a persistent head turn to one side; document it and raise it at the 2-month visit.",
+        "[call within 24h] Sustained refusal of feeds, or persistent vomiting that continues past 24 hours.",
+        "[call now] Rectal temperature at or above 100.4F (38.0C) under 90 days, blue lips, labored breathing, or unresponsiveness means call now or dial 911!"
+      ],
+      "enrichment": [
+        {
+          "body": "Place an unbreakable mirror in front of him during tummy time; face-tracking is the strongest motivator for longer head lifts and forearm push-ups.",
+          "sourceLabel": "HealthyChildren tummy time",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Hold a toy and let him fix on it for several seconds, then move it slowly so he tracks it across his visual field.",
+          "sourceLabel": "HealthyChildren ages and stages",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx"
+        },
+        {
+          "body": "Build a short, repeatable goodbye ritual for the trial run (one phrase, one song) so the handoff becomes predictable for him and for the caregiver."
+        }
+      ],
+      "upcoming": [
+        "Day 56-70: 2-month well visit; vaccines HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1.",
+        "Day 57-72: post-vaccine 24-48h window of fussiness, low-grade fever, and extra sleep.",
+        "Day 112-126: 4-month well visit; vaccines RV #2, DTaP #2, Hib #2, PCV #2, IPV #2."
+      ]
+    }
+  }
+]
