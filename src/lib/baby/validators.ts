@@ -59,11 +59,20 @@ const BANNED_NAME_REGEXES: Array<{ pattern: RegExp; canonical: string }> = [
   { pattern: /\bAnushka\b/i, canonical: "Anoushka" },
 ];
 
-const REQUIRED_SECTIONS = [
+// Day the newsletter switched from daily to Saturday-weekly cadence.
+// Artifacts with ageInDays >= this follow the weekly rules: subject is
+// "Week N: ..." (N = floor(age/7)+1), and there is no Action items
+// section (dated admin lives in Upcoming instead).
+export const WEEKLY_START_DAY = 85;
+
+const REQUIRED_SECTIONS_DAILY = [
   "Action items",
   "Watch-fors",
   "Enrichment opportunities",
 ];
+
+// "Watch-fors" also matches the weekly heading "Watch-fors this week".
+const REQUIRED_SECTIONS_WEEKLY = ["Watch-fors", "Enrichment opportunities"];
 
 // Enrichment opportunities must be a bullet list of 3-5 items.
 const ENRICHMENT_MIN = 3;
@@ -71,7 +80,10 @@ const ENRICHMENT_MAX = 5;
 
 const BULLET_RE = /^\s*[-*•]\s+/;
 
-const SUBJECT_PREFIX = (age: number) => `Day ${age}:`;
+const SUBJECT_PREFIX = (age: number) =>
+  age >= WEEKLY_START_DAY
+    ? `Week ${Math.floor(age / 7) + 1}:`
+    : `Day ${age}:`;
 const MAX_SUBJECT_LENGTH = 72;
 const MIN_WORD_COUNT = 200; // slight headroom under voice spec's 250
 const MAX_WORD_COUNT = 600; // slight headroom over voice spec's 500
@@ -94,10 +106,10 @@ export function validateEmail(email: EmailToValidate): string[] {
   // intentionally use vocabulary the gen-agent voice rules would flag.
   const proseText = stripMilestoneSection(email.bodyText);
 
-  // Subject format
+  // Subject format (daily: "Day N:", weekly era: "Week N:")
   if (!email.subject.startsWith(SUBJECT_PREFIX(email.ageInDays))) {
     issues.push(
-      `subject must start with "Day ${email.ageInDays}:" — got "${email.subject.slice(0, 30)}…"`
+      `subject must start with "${SUBJECT_PREFIX(email.ageInDays)}" — got "${email.subject.slice(0, 30)}…"`
     );
   }
   if (email.subject.length > MAX_SUBJECT_LENGTH) {
@@ -168,10 +180,24 @@ export function validateEmail(email: EmailToValidate): string[] {
 
   // Required sections (prose only — the gen-agent must still author all
   // canonical sections; milestone section is a non-gen-agent addition).
-  for (const section of REQUIRED_SECTIONS) {
+  const requiredSections =
+    email.ageInDays >= WEEKLY_START_DAY
+      ? REQUIRED_SECTIONS_WEEKLY
+      : REQUIRED_SECTIONS_DAILY;
+  for (const section of requiredSections) {
     if (!proseText.includes(section)) {
       issues.push(`missing section: ${section}`);
     }
+  }
+  // Weekly era must NOT carry an Action items section — dated admin
+  // belongs in Upcoming.
+  if (
+    email.ageInDays >= WEEKLY_START_DAY &&
+    proseText.includes("Action items")
+  ) {
+    issues.push(
+      "weekly email contains an 'Action items' section — removed in the weekly format; fold dated admin into Upcoming"
+    );
   }
 
   // Milestone check-in presence. The 2026-05-21 incident — three days
@@ -243,8 +269,10 @@ function extractSection(bodyText: string, heading: string): string | null {
   // and matches one of the known section headings.
   const otherHeadings = [
     "Today's focus",
+    "This week",
     "Action items",
     "Watch-fors",
+    "Watch-fors this week",
     "Enrichment opportunities",
     "Upcoming",
     "Developmental milestone check-in",

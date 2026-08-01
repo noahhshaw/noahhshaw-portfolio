@@ -16,13 +16,27 @@ import { BABY_FROM_EMAIL } from "@/lib/baby/constants";
 
 export const runtime = "nodejs";
 
-// Daily 7am Pacific cron. Reads a pre-generated email artifact from
+// 7am Pacific cron. Reads a pre-generated email artifact from
 // baby-kb/precomputed/day-<ageInDays>.json, sends via Resend, logs.
 //
+// Cadence: DAILY through day 84, then WEEKLY on Saturdays only (the
+// newsletter moved to a Saturday-morning weekly starting day 89 /
+// 2026-08-08). The Vercel cron still fires every day; on a non-send day
+// this route returns a skip instead of treating the missing artifact as
+// an error. Day 0 (2026-05-11) was a Monday, so ageInDays % 7 === 5 is
+// a Saturday.
+//
 // There is NO live AI rendering at send time and NO fallback template.
-// If the artifact is missing, the cron sends an error notice to Noah's
-// inbox and returns 500. Re-run the pre-compute pipeline (in Claude Code)
-// to fix.
+// If the artifact is missing on a genuine send day, the cron sends an
+// error notice to Noah's inbox and returns 500. Re-run the pre-compute
+// pipeline (in Claude Code) to fix.
+
+const WEEKLY_START_DAY = 85; // first day of the weekly era (no daily sends >= this)
+
+function sendExpected(ageInDays: number): boolean {
+  if (ageInDays < WEEKLY_START_DAY) return true; // daily era
+  return ageInDays % 7 === 5; // Saturdays only
+}
 
 type PrecomputedArtifact = {
   ageInDays: number;
@@ -96,6 +110,17 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  // Weekly cadence: past day 84 the newsletter goes out Saturdays only.
+  // A non-send weekday is a normal skip, never a missing-artifact error.
+  if (!force && !sendExpected(age.ageInDays)) {
+    return NextResponse.json({
+      skipped: true,
+      reason: "weekly-cadence-non-send-day",
+      ageInDays: age.ageInDays,
+      todayKey,
+    });
+  }
+
   const artifact = await loadPrecomputed(age.ageInDays);
   if (!artifact) {
     await sendMissingArtifactNotice(age.ageInDays, todayKey);
@@ -122,9 +147,12 @@ export async function GET(request: NextRequest) {
     sourcePath: "precomputed",
   });
 
-  // Forward-looking coverage check: warn if any of the next 7 days lack
-  // artifacts. The notice goes only to Noah and only when a gap exists.
-  const gaps = await findCoverageGaps(age.ageInDays, 7);
+  // Forward-looking coverage check: warn if any upcoming SEND day lacks
+  // an artifact. Daily era: next 7 days. Weekly era: the next 4 Saturdays
+  // (28-day lookahead, non-send days ignored). The notice goes only to
+  // Noah and only when a gap exists.
+  const lookahead = age.ageInDays >= WEEKLY_START_DAY - 7 ? 28 : 7;
+  const gaps = await findCoverageGaps(age.ageInDays, lookahead);
   if (gaps.length > 0) {
     await sendCoverageGapNotice(gaps, age.ageInDays);
   }
@@ -167,9 +195,10 @@ async function loadPrecomputed(
   }
 }
 
-// Look ahead to see how many of the next `lookaheadDays` days have artifacts.
-// Returns the list of missing ageInDays (excluding today, which is the
-// cron's main job already).
+// Look ahead to see whether every upcoming SEND day in the window has an
+// artifact. Non-send days (weekly-era weekdays) are skipped. Returns the
+// list of missing ageInDays (excluding today, which is the cron's main
+// job already).
 async function findCoverageGaps(
   todayAge: number,
   lookaheadDays: number
@@ -177,6 +206,7 @@ async function findCoverageGaps(
   const missing: number[] = [];
   for (let i = 1; i <= lookaheadDays; i++) {
     const age = todayAge + i;
+    if (!sendExpected(age)) continue;
     const file = path.join(
       process.cwd(),
       "baby-kb",

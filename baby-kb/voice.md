@@ -54,9 +54,16 @@ Avoid attachment-parenting / RIE / Janet-Lansbury vocabulary: "attune," "attunem
 
 Avoid woke-load language: "birthing person" (use "mother" — the parents are a hetero couple), "chestfeeding" (use "breastfeeding"), "parented" as a verb instead of "raised."
 
+## Cadence eras
+
+- **Daily era — day -7 through day 84.** One email per day, structure below.
+- **Weekly era — day 85 onward.** One email per week, sent Saturday morning (Saturday = ageInDays % 7 == 5; first weekly send day 89 / week 13, 2026-08-08). Artifacts are still `day-N.json` keyed to the Saturday's ageInDays. See "Email structure — weekly era" below. The cron fires daily but skips non-Saturdays past day 84.
+
 ## Subject line
 
-Format: `Day N: {most important info}` where N is the age in days (negative pre-birth, e.g. `Day -3`) and the hook is the single most actionable item from today's email — not a generic summary.
+Daily era: `Day N: {most important info}` where N is the age in days (negative pre-birth, e.g. `Day -3`) and the hook is the single most actionable item from today's email — not a generic summary.
+
+Weekly era: `Week N: {most important info}` where N = floor(ageInDays / 7) + 1 (day 89 = week 13). Same hook discipline, same hard limits.
 
 Examples:
 - `Day 7: schedule first-week visit; weight-regain window open`
@@ -99,6 +106,24 @@ A bullet list of **3–5** concrete things to do, grounded in evidence, age-appr
 Next 14 days of calendar events. Pull from `calendars/*.json` plus parent-supplied dates. Format:
 - "Day 56 (Jul 6): 2-month well visit. Vaccines due: HepB #2, RV #1, DTaP #1, Hib #1, PCV #1, IPV #1."
 - "Day 60 (Jul 10): pediatrician will likely flag 4-month sleep regression as upcoming."
+
+## Email structure (weekly era — day 85 onward)
+
+Renderer produces exactly these four sections in this order (the milestone check-in is still appended mechanically by the bake step):
+
+### 1. This week
+2–3 sentences. What develops across days N through N+6. Pull from the matching `buckets/week-NN.md` Focus + milestones.
+
+### 2. Watch-fors this week
+Same rules as the daily Watch-fors section: bulleted, severity-tagged, varied week to week, exactly one `[call now]` line.
+
+### 3. Enrichment opportunities
+Single merged section, 3–5 bullets: at-home practice activities AND pipeline moves (enrollment windows, waitlists, teacher lists — with lead times) mixed together. Verb-first, evidence-linked, spanning ≥3 developmental domains. **SF Bay Area only** — no NYC programs. Pipeline moves draw from `calendars/enrichment-pipeline-calendar.json`.
+
+### 4. Upcoming
+Next ~3 weeks of dated events. This section absorbs medical/admin scheduling ("Day 112–126 (Aug 31–Sep 14): 4-month well visit — book it") — **there is no Action items section in the weekly era.** Generic un-dated admin imperatives are cut entirely; if it isn't dated or enrichment-relevant, it doesn't run.
+
+Length: unchanged — 250–600 words. Weekly does NOT mean longer; less is more.
 
 ### Sourcing
 External authority URLs belong **inline** in the body, on the sentence that rests on the claim — healthychildren.org, cdc.gov, aap.org, nih.gov, acog.org, who.int, pubmed.ncbi.nlm.nih.gov. There is no separate "Further reading" section. Do NOT print `baby-kb/...` paths in the body — KB paths belong in the `citations` array only (internal metadata, never shown to the recipient).
