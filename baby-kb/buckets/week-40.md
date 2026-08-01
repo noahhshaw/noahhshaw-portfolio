@@ -4,10 +4,10 @@
 Beginning the final quarter. Walking is the dominant motor question now: ~50% of infants walk by 12 mo, ~75% by 14 mo, ~90% by 15 mo. The 75th-percentile CDC milestone for "walks alone" is now 15 mo (2022 revision). Whatever pace yours is on, daily practice + safe falls drives consolidation.
 
 ## Expected developmental milestones
-- **Motor**: cruises; stands alone; possibly walks 1–5 steps.
+- **Motor**: cruises; stands alone briefly for some (CDC checkpoint: 12 months); possibly walks 1–5 steps.
 - **Cognitive**: imitates more elaborate actions (stir with a spoon, push a toy car).
-- **Language**: 1–3 specific words; gestures.
-- **Social**: waves bye; plays pat-a-cake; gives objects on request.
+- **Language**: first specific words for some (CDC 2022 checkpoint for words besides "mama"/"dada": 15 months); gestures.
+- **Social**: waving bye and pat-a-cake emerging (CDC 1-year items); gives objects on request.
 
 ## Watch-fors
 - `[low concern]` Falls are routine. Bumps on carpet harmless.

@@ -4,9 +4,9 @@
 Pre-birthday quarter mid-stretch. Self-feeding more refined; eating most family foods (soft, appropriately sized); drinking from cup with help. Words may be 1–5 by now or zero — both within range.
 
 ## Expected developmental milestones
-- **Motor**: cruises fluently; first steps for many.
+- **Motor**: cruises fluently for many; first steps for some (CDC walks-alone checkpoint: 15 months).
 - **Cognitive**: tries to imitate adult tasks (sweeping with toy broom).
-- **Language**: 1–5 specific words; gestures rich.
+- **Language**: first specific words for some (CDC 2022 checkpoint for words besides "mama"/"dada": 15 months); gestures rich.
 - **Social**: emotional expressions varied; preferences for foods and people clear.
 
 ## Watch-fors

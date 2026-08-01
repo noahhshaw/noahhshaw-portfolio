@@ -4,8 +4,8 @@
 Approaching 9-month visit. Crawling beginning for many; pulling-to-stand often emerges 8–10 months. Standing-cruise progression is in early stages.
 
 ## Expected developmental milestones
-- **Motor**: crawls (commando or quadrupedal); pulls to kneel or stand using furniture.
-- **Cognitive**: looks for hidden objects; bangs two objects together (CDC 9-mo).
+- **Motor**: crawling for some (commando or quadrupedal); some pull to kneel or stand at furniture (CDC pull-to-stand checkpoint: 12 months).
+- **Cognitive**: looks for partially hidden objects; bangs two objects together (CDC 9-mo).
 - **Language**: babbling getting richer; some imitation of intonation.
 - **Social**: stranger anxiety; preference for familiar caregivers; lifts arms to be picked up (CDC 9-mo).
 
@@ -27,7 +27,7 @@ Approaching 9-month visit. Crawling beginning for many; pulling-to-stand often e
 - **Standing practice**: support him at hips while he stands at a low table.
 
 ## What's coming next
-- **Week 30**: Pulling to stand for many.
+- **Week 30**: Pulling to stand for early movers.
 - **Week 31**: Cruising precursors.
 - **Week 32**: 8-month mark.
 

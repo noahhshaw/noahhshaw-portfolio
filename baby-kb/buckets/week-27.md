@@ -4,7 +4,7 @@
 Second half of year 1 begins. Mobility transition window: most infants commando-crawl, scoot, or roll-roll-roll between 6 and 8 months; quadrupedal crawling typical 7–10 months; some skip crawling entirely. This is also early stranger-anxiety territory.
 
 ## Expected developmental milestones
-- **Motor**: sits without support reliably; pushes to all fours; some commando-crawling.
+- **Motor**: sits, often leaning on hands for support; unsupported sitting emerging (CDC checkpoint: 9 months); pushes to all fours; some commando-crawling.
 - **Cognitive**: looks for objects partially hidden; manipulates objects with both hands.
 - **Language**: babble with intonation; "mamama," "dadada" (still non-referential).
 - **Social**: reacts when caregiver leaves the room; responds to his name.

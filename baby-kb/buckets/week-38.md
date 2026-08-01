@@ -4,9 +4,9 @@
 Receptive language is rich now — he likely understands 20–50 words and several simple commands. Production may include 1–3 specific words. Big variability is normal; the 12-mo CDC milestone for language is "calls a parent 'mama' or 'dada' or another special name."
 
 ## Expected developmental milestones
-- **Motor**: cruises; stands alone briefly; first few steps possible.
+- **Motor**: cruises; stands alone briefly for some; first few steps possible.
 - **Cognitive**: looks for hidden objects; tries to use objects correctly.
-- **Language**: 1–3 specific words; understands "no."
+- **Language**: first specific words emerging for some (CDC 2022 places words besides "mama"/"dada" at the 15-month checkpoint); understands "no."
 - **Social**: stranger anxiety usually easing slightly; preference for primary caregivers strong.
 
 ## Watch-fors

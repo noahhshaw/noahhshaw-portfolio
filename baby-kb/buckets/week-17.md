@@ -4,7 +4,7 @@
 Post-4-month-vaccine recovery. Sleep regression often easing as new sleep architecture stabilizes. If you started sleep training at 4 mo, you should be seeing meaningful improvement by night 5–7 (graduated extinction) or night 3–4 (unmodified extinction).
 
 ## Expected developmental milestones
-- **Motor**: rolling reliably; bearing weight on legs; some infants beginning tripod-sitting (sitting with hands forward for support, briefly).
+- **Motor**: rolling tummy-to-back possible/emerging (CDC 2022 checkpoint: 6 months); bearing weight on legs; some infants beginning tripod-sitting (sitting with hands forward for support, briefly).
 - **Cognitive**: reaches toward objects deliberately; tracks fast-moving objects.
 - **Language**: longer cooing strings; first proto-syllables ("ba," "da" without consistent referent).
 - **Social**: laughs reliably; preference for parents over strangers solidifying.

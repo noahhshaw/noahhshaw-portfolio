@@ -7,7 +7,7 @@ Post-9-month-visit review. The mobility surge is in full force. Receptive langua
 - **Motor**: cruises confidently; first independent stands (briefly) possible.
 - **Cognitive**: anticipates routines; understands simple commands ("come here," "no").
 - **Language**: imitates sounds; "mama"/"dada" specific to a parent emerging.
-- **Social**: peek-a-boo, pat-a-cake; turns head when name called.
+- **Social**: peek-a-boo; pat-a-cake emerging for some (a CDC 1-year item); turns head when name called.
 
 ## Watch-fors
 - `[low concern]` Falls during cruising; bumps to head if walking surface is hard.

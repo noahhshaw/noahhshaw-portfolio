@@ -4,8 +4,8 @@
 Mid-stretch between 4-month vaccines and 6-month milestones. Active solids prep window. If you're aiming for early peanut/egg introduction (especially if there's family history of atopy or your baby has eczema), the AAP/NIAID protocol allows starting at 4 mo with high-risk infants — discuss with your pediatrician at the next visit.
 
 ## Expected developmental milestones
-- **Motor**: tripod sitting briefly; rolling both directions; reaches toward objects with one hand.
-- **Cognitive**: looks for toy that falls out of view; distinguishes parents from strangers.
+- **Motor**: tripod sitting briefly; rolling both directions for some (CDC rolls-tummy-to-back checkpoint: 6 months); reaches toward objects with one hand.
+- **Cognitive**: watches where a toy falls (searching for out-of-sight objects is a 9-month CDC checkpoint); distinguishes parents from strangers.
 - **Language**: babbling consonants ("ba," "da," "ga"); takes turns vocalizing.
 - **Social**: anticipates being picked up; distress when caregiver leaves room (early separation reactions).
 

@@ -4,9 +4,9 @@
 Mid-quarter pre-birthday. Walking is the dominant motor question; first words are starting to consolidate. Sleep is generally well-established for sleep-trained babies; ongoing fragmentation is the renew-conversation-with-pediatrician moment.
 
 ## Expected developmental milestones
-- **Motor**: walking emerging; standing alone reliably.
+- **Motor**: walking emerging for some; stands alone momentarily for some (CDC checkpoint for standing alone: 12 months).
 - **Cognitive**: imitates familiar actions; uses objects intentionally.
-- **Language**: 1–5 specific words; understands "no" (CDC 12-mo).
+- **Language**: first specific words emerging for some (CDC 2022 places words besides "mama"/"dada" at the 15-month checkpoint); understands "no" (CDC 12-mo).
 - **Social**: gives objects on request; plays interactive games.
 
 ## Watch-fors

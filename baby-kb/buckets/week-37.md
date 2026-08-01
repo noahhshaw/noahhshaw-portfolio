@@ -4,9 +4,9 @@
 Pincer grasp refining. Self-feeding capacity expanding rapidly. Many infants this week begin to hold and drink from an open cup with help — preferred over sippy for oral-motor development.
 
 ## Expected developmental milestones
-- **Motor**: pincer grasp (thumb + index finger); cruises; stands briefly.
+- **Motor**: pincer grasp emerging (thumb + index finger; CDC checkpoint: 12 months); cruising for early movers; stands briefly for some.
 - **Cognitive**: imitates actions; tries to "use" objects functionally.
-- **Language**: babble with adult-like intonation; specific "mama"/"dada."
+- **Language**: babble with adult-like intonation; specific "mama"/"dada" emerging.
 - **Social**: gives objects when asked; engages in back-and-forth play.
 
 ## Watch-fors

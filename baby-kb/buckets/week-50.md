@@ -4,9 +4,9 @@
 12-month visit final scheduling window. The visit covers the largest single vaccine round of year 1 (MMR, VAR, HepA, PCV #4, Hib booster). Anticipatory guidance shifts to year 2: speech expectations, table foods, dental, walking refinement.
 
 ## Expected developmental milestones
-- **Motor**: walks; getting more confident.
+- **Motor**: walking for some, with growing confidence (CDC walks-alone checkpoint: 15 months).
 - **Cognitive**: uses tools to extend reach; imitates elaborate actions.
-- **Language**: 1–5+ words; many gestures.
+- **Language**: first words for some (CDC 2022 checkpoint for words besides "mama"/"dada": 15 months); many gestures.
 - **Social**: warm with familiar; clear stranger wariness.
 
 ## Watch-fors

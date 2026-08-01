@@ -4,7 +4,7 @@
 6-month visit prep. Solids countdown. The baby's social world is widening — he's noticing strangers, distinguishing parents, and his preference for primary attachment figures is sharpening (precursor to stranger anxiety, which peaks 7–10 mo).
 
 ## Expected developmental milestones
-- **Motor**: sits independently for longer stretches; rolls deliberately to reach toys.
+- **Motor**: sits with support; tripod-sitting emerging for some (CDC sits-without-support checkpoint: 9 months); rolls deliberately to reach toys.
 - **Cognitive**: explores objects with hands and mouth; brings toys to mouth, examines, mouths again.
 - **Language**: takes turns making sounds (CDC 6-mo); blows raspberries; squeals.
 - **Social**: knows familiar people; likes to look at self in mirror.

@@ -4,7 +4,7 @@
 Pre-solids week. Sleep should be largely stabilized post-regression. The baby is on the cusp of sitting, mouthing-to-explore, and motor-driven exploration.
 
 ## Expected developmental milestones
-- **Motor**: sitting with hands forward (tripod) for 5–10 sec; rolling reliably both directions; rocks on hands and knees.
+- **Motor**: sitting with hands forward (tripod) for 5–10 sec; rolling possible/emerging (CDC 2022 checkpoint: 6 months); rocking on hands and knees for a few early movers (more typically ~6–10 months).
 - **Cognitive**: brings objects to mouth deliberately; explores texture by mouthing.
 - **Language**: babble strings; vocal play with intonation.
 - **Social**: laughs at peek-a-boo; reaches arms to be picked up.

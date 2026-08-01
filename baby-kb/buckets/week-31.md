@@ -1,10 +1,10 @@
 # Week 31 — Days 210–216
 
 ## Focus
-Cruising consolidation. The first instances of "cruising" — stepping sideways while holding furniture — typically emerge 8–11 months. Vocal turn-taking is increasingly conversational in pattern, even though words proper haven't arrived.
+Cruising consolidation for early movers. The first instances of "cruising" — stepping sideways while holding furniture — typically emerge 8–11 months. Vocal turn-taking is increasingly conversational in pattern, even though words proper haven't arrived.
 
 ## Expected developmental milestones
-- **Motor**: cruises along furniture; gets to sitting from prone position.
+- **Motor**: cruising along furniture for early movers (CDC checkpoint: 12 months); gets to sitting from prone position for some.
 - **Cognitive**: imitates simple actions (clapping, banging).
 - **Language**: babble with intonation; "mama"/"dada" inconsistently.
 - **Social**: clings to primary caregivers in unfamiliar settings.

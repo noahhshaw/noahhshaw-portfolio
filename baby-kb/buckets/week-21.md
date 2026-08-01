@@ -1,10 +1,10 @@
 # Week 21 — Days 140–146
 
 ## Focus
-Pre-6-month consolidation. Sitting independent for short periods; first solids on the imminent horizon. Ear infections become more common from this age onward — peak incidence is 6 mo through 24 mo, often triggered by viral URIs.
+Pre-6-month consolidation. Supported sitting steadier, with independent moments for some; first solids on the imminent horizon. Ear infections become more common from this age onward — peak incidence is 6 mo through 24 mo, often triggered by viral URIs.
 
 ## Expected developmental milestones
-- **Motor**: sits without support for 30+ sec; rolls to navigate.
+- **Motor**: sits with support; brief unsupported sitting for some (CDC sits-without-support checkpoint: 9 months); rolls to navigate.
 - **Cognitive**: anticipates outcomes (smiles when bath water runs).
 - **Language**: babble extending; turn-taking sustained for several exchanges.
 - **Social**: clear preference for parents; smiles at familiar caregivers.

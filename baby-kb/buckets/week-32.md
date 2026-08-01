@@ -1,11 +1,11 @@
 # Week 32 — Days 217–223
 
 ## Focus
-8-month mark. Mobility now substantial — most infants are some combination of crawling, cruising, and pulling-to-stand. Joint attention emerging: he follows your gaze and your point.
+8-month mark. Mobility now substantial — many infants crawl or scoot; cruising and pulling-to-stand are emerging for early movers (CDC checkpoint: 12 months). Joint attention emerging: he follows your gaze and your point.
 
 ## Expected developmental milestones
-- **Motor**: crawls reliably; cruises along furniture.
-- **Cognitive**: looks for hidden objects; uses both hands for tasks.
+- **Motor**: crawling for many (some skip it); cruising along furniture for early movers (CDC checkpoint: 12 months).
+- **Cognitive**: looks for partially hidden objects; uses both hands for tasks.
 - **Language**: imitates speech sounds; uses voice to get attention.
 - **Social**: joint attention emerging — follows where you look or point.
 

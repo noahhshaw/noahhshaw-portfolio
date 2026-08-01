@@ -4,7 +4,7 @@
 Solids progression. By the end of this week most "starter" infants have tried 5–10 foods. The protocol question now is allergen-introduction frequency: introduction is not enough — sustained 2–3× weekly exposure maintains tolerance per LEAP and EAT findings.
 
 ## Expected developmental milestones
-- **Motor**: sits steadily; reaches with one hand; transfers objects between hands.
+- **Motor**: sits steadily for some, with support for many (CDC sits-without-support checkpoint: 9 months); reaches with one hand; transfers objects between hands.
 - **Cognitive**: brings hand to mouth deliberately for self-feeding.
 - **Language**: babble strings with varied consonants.
 - **Social**: smiles at self in mirror; laughs in social play.

@@ -4,7 +4,7 @@
 Mid-regression for many. The "100-day mark" is a culturally celebrated milestone in Korean (백일, *baekil*) and Chinese (百日宴) traditions; among Bay Area / NYC families with East Asian heritage or aesthetic sensibility, the 100-day photo session is standard. Logistically, this is also the typical onset window for sleep training if you're going to do it early.
 
 ## Expected developmental milestones
-- **Motor**: pushing up on extended arms; rolling more reliably; bearing weight on legs when held standing.
+- **Motor**: pushing up on extended arms; rolling for some (CDC 2022 checkpoint: 6 months); bearing weight on legs when held standing.
 - **Cognitive**: tracks objects in motion smoothly; reaches for objects within range.
 - **Language**: extended cooing turns; consonant-vowel combinations multiplying.
 - **Social**: smiles spontaneously; laughs; preference for familiar people becoming sharper.

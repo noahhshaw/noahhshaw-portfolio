@@ -4,9 +4,9 @@
 Pre-birthday week. Logistics finalize: cake, decorations, family travel, the day-of timeline. The smash-cake photo is a tradition; a non-smash-cake photo session can also work for families who'd rather skip the food fight.
 
 ## Expected developmental milestones
-- **Motor**: walks for many; cruises for all.
+- **Motor**: walks for some (CDC walks-alone checkpoint: 15 months); cruises for many.
 - **Cognitive**: object permanence solid; cause-and-effect understanding deep.
-- **Language**: 1–5+ words; rich gestural communication.
+- **Language**: first words for some (CDC 2022 checkpoint for words besides "mama"/"dada": 15 months); rich gestural communication.
 - **Social**: warm with familiar, wary with strangers.
 
 ## Watch-fors

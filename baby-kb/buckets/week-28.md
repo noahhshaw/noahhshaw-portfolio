@@ -1,11 +1,11 @@
 # Week 28 — Days 189–195
 
 ## Focus
-Stranger anxiety in early peak. Object permanence consolidating — he now searches for hidden objects. The cognitive substrate for "out of sight, out of mind" → "he still exists when I can't see him" is the same substrate driving separation distress.
+Stranger anxiety in early peak. Object permanence consolidating — searching for hidden objects is emerging (solid by ~9 months). The cognitive substrate for "out of sight, out of mind" → "he still exists when I can't see him" is the same substrate driving separation distress.
 
 ## Expected developmental milestones
 - **Motor**: rocks on hands and knees; first quadrupedal crawl steps possible.
-- **Cognitive**: looks for objects when fully hidden (object permanence, Piaget Stage 4).
+- **Cognitive**: looks for partially hidden objects; finding fully hidden objects emerging (≈9 months; object permanence, Piaget Stage 4).
 - **Language**: extended babble; vocalizes when alone.
 - **Social**: shows distress at strangers; may cry when held by unfamiliar adults.
 

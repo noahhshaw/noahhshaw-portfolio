@@ -1,10 +1,10 @@
 # Week 36 — Days 245–251
 
 ## Focus
-First-step territory begins for early walkers (range 9–17 months; CDC walks-alone milestone moved to 15 mo in 2022 revision but this is the 75th-percentile mark, not "abnormal if later"). Cruising is fluid for most.
+First-step territory begins for early walkers (range 9–17 months; CDC walks-alone milestone moved to 15 mo in 2022 revision but this is the 75th-percentile mark, not "abnormal if later"). Cruising is fluid for early movers.
 
 ## Expected developmental milestones
-- **Motor**: stands alone briefly; cruises along furniture; some take 1–3 first steps.
+- **Motor**: stands alone briefly for some; cruising for early movers (CDC checkpoint for both: 12 months); some take 1–3 first steps.
 - **Cognitive**: tries to use objects correctly (puts cup to mouth, phone to ear).
 - **Language**: 1–2 specific words possible ("mama"/"dada" specifically referring to parent).
 - **Social**: gives objects when asked; plays interactive games.

@@ -1,0 +1,142 @@
+[
+  {
+    "age_window_days": [85, 150],
+    "move": "Enroll in La Petite Baleen SF free infant swim (2-5 months swim free; SF location 933 Mason St). Costless water acclimation plus grandfathered queue position before paid tuition starts at 6 months. One free trial lesson; perpetual enrollment, no fixed session dates.",
+    "domain": "swim",
+    "program_examples": ["La Petite Baleen SF (Presidio)"],
+    "lead_time": "None — enroll anytime; free tier ends at day ~180",
+    "cost": "Free until 6 months; then $130-138/mo + $50/yr registration",
+    "evidence": "low",
+    "source_urls": ["https://www.swimlpb.com/", "https://www.swimlpb.com/swim-classes/tuition"]
+  },
+  {
+    "age_window_days": [85, 175],
+    "move": "Register with all four regional baby-lab pools in one sitting: Stanford SVNDL (recruiting 3-6-month-olds NOW — hard eligibility ceiling at 6 months), UC Berkeley BELL (registration shared across Berkeley developmental labs), Stanford Developmental Labs (birth-8; BabyView home study 6-36 mo), UCSF Kids Development Study (0-25 mo, Mission Bay). Free structured 1:1 sessions; per-study opt-in after registering.",
+    "domain": "baby-lab",
+    "program_examples": ["Stanford SVNDL", "UC Berkeley BELL", "Stanford Language & Cognition Lab", "UCSF Kids Development Study"],
+    "lead_time": "SVNDL window closes at day ~180 (age ceiling 6 months); others open-ended but register before eligibility ages",
+    "cost": "Free",
+    "evidence": "low",
+    "source_urls": ["https://svndl.stanford.edu/participate/", "https://babylab.berkeley.edu/get-involved", "https://langcog.stanford.edu/parents", "https://kidsdevelopment.ucsf.edu/faqs"]
+  },
+  {
+    "age_window_days": [85, 210],
+    "move": "If raising bilingual: lock the live-exposure supply line before perceptual narrowing closes (~day 365). Either hire a bilingual nanny (agency search 4-8 weeks; target-language supply is the constraint) or tour/waitlist an immersion infant room (Star Bridge West Portal accepts from 3 months — earliest verified immersion entry in SF). Dose target: 25-30% of waking hours in L2, live human interaction only. Passive audio/video is a verified zero.",
+    "domain": "language",
+    "program_examples": ["British American Household Staffing", "Seaside Staffing", "Star Bridge Mandarin Immersion (West Portal)", "L'Academy Nob Hill (from 12 mo)"],
+    "lead_time": "Nanny: 4-8 week search. Immersion infant rooms: 3-12 month waitlists — list now for entry by day ~365",
+    "cost": "Nanny $45-50+/hr agency ($28-30/hr platform), premium ~$6-16K/yr over monolingual; immersion tuition [unverified]",
+    "evidence": "high",
+    "source_urls": ["https://www.premiernannysource.com/nanny-blog/whats-the-going-rate-for-a-full-time-nanny-in-san-francisco-2025", "https://www.care.com/chinese-speaking-nannies/san-francisco-ca", "https://www.starbridgemandarinimmersion.com/", "https://www.lacademyschools.com/locations/san-francisco-preschool-nob-hill"]
+  },
+  {
+    "age_window_days": [90, 200],
+    "move": "If Montessori nido is the childcare plan: tour and join waitlists now. Cosmos Montessori SF nido takes 3-12 months with a 3-child cap (capacity is the waitlist); Mission Montessori from 12 weeks. Evaluate as premium-ratio childcare — no outcome study supports a Montessori-specific effect under 12 months.",
+    "domain": "montessori-infant",
+    "program_examples": ["Cosmos Montessori SF", "Mission Montessori", "Montessori School of San Francisco (Eddy St)"],
+    "lead_time": "SF infant-room waitlists commonly 3-12 months; micro-capacity programs effectively enroll from waitlist only",
+    "cost": "[unverified]; SF full-time infant care market ~$2,400-3,800/mo",
+    "evidence": "low",
+    "source_urls": ["https://www.cosmosmontessorisf.com/program-3", "https://missionmontessori.org/infant/", "https://www.montessorisf.org/montessorisf-Infants.html"]
+  },
+  {
+    "age_window_days": [100, 180],
+    "move": "Get the SFPL library card and put one weekly Baby Rhyme & Play Time (infants-15 months, free, ticketed at popular branches) on the standing calendar. If in San Mateo County, register the 1000 Books Before Kindergarten log/app (SFPL does not run the branded program; the read-aloud is the intervention, the log is optional tracking). Cantonese/Spanish storytimes double as free live L2 exposure blocks.",
+    "domain": "reading",
+    "program_examples": ["SFPL Baby Rhyme & Play Time", "San Mateo County Libraries 1000 Books", "South SF Public Library 1000 Books"],
+    "lead_time": "None; ticketed same-day at branch",
+    "cost": "Free",
+    "evidence": "high",
+    "source_urls": ["https://sfpl.org/kids/kids/events/storytime-sfpl", "https://sfpl.org/events/2025/03/17/baby-rhyme-time", "https://smcl.org/blogs/post/1000-books-before-kindergarten/", "https://www.ssf.net/Departments/Library/Services/Kids/1000-Books"]
+  },
+  {
+    "age_window_days": [140, 200],
+    "move": "Enroll one weekly participatory music class — the best-evidenced paid class at this age (Gerry/Trainor 2012: active classes at 6 months beat passive listening on pitch/rhythm discrimination and prelinguistic gestures). Music Together SF babies class (rolling 10-week sessions, auto-enroll holds the slot) or SFCM Smart Start 0-12-month cohort if targeting the conservatory sequence.",
+    "domain": "music",
+    "program_examples": ["Music Together SF (babies 0-12 mo)", "SFCM Smart Start 0-12 mo"],
+    "lead_time": "Music Together: rolling, enroll ~2 weeks before session start. SFCM: registration opens August for September semester",
+    "cost": "Music Together $405/10-wk ($380 auto-enroll; under-8-mo free with sibling); SFCM Smart Start $845/semester",
+    "evidence": "medium",
+    "source_urls": ["https://www.sfmusictogether.com/Prices.html", "https://www.sfmusictogether.com/infants.html", "https://sfcm.edu/study/pre-college/early-childhood"]
+  },
+  {
+    "age_window_days": [150, 240],
+    "move": "SFCM Smart Start August registration window: if baby is under ~10 months when the fall semester starts, register in August for the 0-12-month Saturday cohort. This is the only infant music program in SF with a fixed dated registration window rather than rolling enrollment.",
+    "domain": "music",
+    "program_examples": ["SFCM Smart Start (50 Oak St)"],
+    "lead_time": "Registration opens August; semester starts early September — a missed August means a semester delay",
+    "cost": "$750 tuition + $60 registration + $35 materials per semester",
+    "evidence": "medium",
+    "source_urls": ["https://sfcm.edu/study/pre-college/early-childhood"]
+  },
+  {
+    "age_window_days": [180, 240],
+    "move": "Convert swim to one paid weekly class: La Petite Baleen paid tuition starts at 6 months (perpetual enrollment, auto-bill), or JCCSF Water Babies (waitlists capped at 5 — check for openings actively rather than queueing), or SF Rec & Parks parent-tot at <$10/session (registration-day execution required). One program only; no dose-response evidence under 12 months.",
+    "domain": "swim",
+    "program_examples": ["La Petite Baleen SF", "JCCSF Water Babies", "SF Rec & Parks parent-tot"],
+    "lead_time": "LPB: none. JCCSF: waitlist caps of 5, max 3 lists per child. Rec & Parks: register the day sessions open",
+    "cost": "LPB $130-138/mo + $50/yr; JCCSF $185-230/mo; Rec & Parks <$10/session",
+    "evidence": "low",
+    "source_urls": ["https://www.swimlpb.com/swim-classes/tuition", "https://www.jccsf.org/program/swim-school/", "https://tinybeans.com/san-francisco/bay-area-swimming-lessons/"]
+  },
+  {
+    "age_window_days": [180, 270],
+    "move": "If ISR self-rescue is in the plan (strongest case: households with pool/water exposure): contact certified instructors now. Eligibility starts at 6 months + sitting unassisted, but nearby instructors (Mill Valley, Orinda, Walnut Creek) book 6-12+ months out — one Walnut Creek instructor is booked through 2026. Contact at month 6 for a realistic month-12-18 start. Format: 10-min 1:1 lessons, 5 days/week, ~6 weeks. Evidence is case-series only; no RCT — treat as drowning-risk mitigation, not enrichment.",
+    "domain": "swim",
+    "program_examples": ["ISR — Kim Boswell (Mill Valley)", "ISR — Kymberlea Troye (Orinda/Lafayette/Alamo)", "ISR — Laura Young (Walnut Creek)"],
+    "lead_time": "6-12+ months instructor backlog; join lists at day ~180 for a day ~365-540 start",
+    "cost": "$105 national registration + instructor-set weekly tuition [~$700-1,000 total, unverified]",
+    "evidence": "low",
+    "source_urls": ["https://www.infantswim.com/swimming-lessons/san-francisco-ca", "https://www.infantswim.com/"]
+  },
+  {
+    "age_window_days": [180, 270],
+    "move": "Suzuki long option: decide the instrument (violin/piano/cello), start Book 1 repertoire recordings 30+ min/day, and join named-teacher waitlists via the Suzuki Association directory (SF-area teachers listed under 94115/94118). Lessons start age 3-4; top-teacher waitlists run multi-year, so a listing at 6-9 months targets a 2029-2030 start. Cost of the option now: recordings only.",
+    "domain": "music",
+    "program_examples": ["SAA teacher directory (SF)", "Suzuki ECE classes where available (0-3, parent-attended)"],
+    "lead_time": "Multi-year teacher waitlists; join 2.5-3 years before intended lesson start",
+    "cost": "Recordings ~$20-40 now; lessons later $80-150/lesson (~$5-10K/yr from age 3-4)",
+    "evidence": "medium",
+    "source_urls": ["https://dev.suzukiassociation.org/find-a-suzuki-teacher/?do=directory&zip=94118", "https://suzukiassociation.org/teachers/teacher-training/suzuki-early-childhood-education/"]
+  },
+  {
+    "age_window_days": [180, 300],
+    "move": "Optional movement/gym slot — buy for logistics and parent community, not development (no evidence structured infant gym beats floor time). Rational entry: Recess Collective Outer Sunset (dedicated 0-18-month zone; reported free under 6 months then ~$89/mo family [unverified]). My Gym takes 6 weeks+, The Little Gym (Millbrae) 4 months+. Skipping this domain entirely costs nothing measurable.",
+    "domain": "movement",
+    "program_examples": ["Recess Collective (Outer Sunset)", "My Gym (San Carlos/Bay Area)", "The Little Gym (Millbrae)"],
+    "lead_time": "None material; drop-in and monthly memberships",
+    "cost": "Recess ~$89/mo family [unverified]; My Gym ~$80-120/mo [unverified]; Little Gym ~$76/mo + annual fee [unverified]",
+    "evidence": "low",
+    "source_urls": ["https://recesscollective.org/", "https://www.mygym.com/classes", "https://www.thelittlegym.com/regions/san-francisco-san-jose/"]
+  },
+  {
+    "age_window_days": [200, 300],
+    "move": "Baby sign, at home and free, if desired: teach 5-10 functional signs (milk, more, done) from ~6-8 months; expect signs back at 8-12 months. The only longitudinal RCT found no language-outcome acceleration and the 17-study systematic review supports no developmental claims — value is limited to possible communication-frustration reduction. Do not buy a paid class series.",
+    "domain": "baby-sign",
+    "program_examples": ["At-home via free ASL sign references"],
+    "lead_time": "None",
+    "cost": "Free (skip $200-350 paid class series)",
+    "evidence": "low",
+    "source_urls": ["https://www.herts.ac.uk/research/centres/psychology/psychology-of-movement/gestures-and-communication-research-group/baby-sign-research", "https://www.hanen.org/information-tips/does-baby-sign-make-a-difference"]
+  },
+  {
+    "age_window_days": [270, 365],
+    "move": "Preschool list-building only — no applications exist for under-18-month-olds. Build the ISSFBA long-list from the directory, note per-school fees ($50-100/application across ~8-10 schools), and calendar the real machinery: tour season opens September of the year before entry; applications due January of the enrollment year (for a 2s start the fall he turns 2, tours land at ~16-20 months of age). Touring before ~14 months buys nothing — tour slots reset annually.",
+    "domain": "preschool-pipeline",
+    "program_examples": ["ISSFBA directory schools", "SFUSD early education (age 3+, not yet)"],
+    "lead_time": "Zero action-forcing now; first hard date is tour-season September at ~16-20 months of age",
+    "cost": "Free now; later $50-100/application, 2s tuition $30-50K/yr at top SF privates",
+    "evidence": "low",
+    "source_urls": ["https://www.issfba.org/admission-process/", "https://www.issfba.org/admission-process/admission-process-applying/"]
+  },
+  {
+    "age_window_days": [300, 365],
+    "move": "Toddler-entry immersion tours: programs with 12-18-month minimums open up just past the first birthday. Tour L'Academy Nob Hill (Mandarin immersion + Spanish enrichment from 12 months, ELFA subsidies accepted) before the birthday; calendar Little Bee and Fun With Mandarin (both 18 months) and Tiny Treks outdoor/Mandarin (20 months) for the month-15-18 review.",
+    "domain": "language",
+    "program_examples": ["L'Academy Nob Hill (12 mo)", "Little Bee (18 mo)", "Fun With Mandarin (18 mo)", "Tiny Treks (20 mo)"],
+    "lead_time": "Tour 1-3 months before target start; assume waitlist at popular rooms",
+    "cost": "[unverified] — request at tour; ELFA waives fees for eligible families at L'Academy",
+    "evidence": "high",
+    "source_urls": ["https://www.lacademyschools.com/locations/san-francisco-preschool-nob-hill", "https://littlebeeschool.com/", "https://www.tinytreks.com/"]
+  }
+]

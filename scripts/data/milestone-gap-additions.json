@@ -1,0 +1,112 @@
+[
+  {
+    "key": "watches-across-the-room",
+    "display_name": "Watches people and objects across the room",
+    "category": "cognitive",
+    "age_window_low_days": 120,
+    "age_window_high_days": 210,
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Developmental-Milestones-7-Months.aspx",
+    "seed_order": 108,
+    "clinical_note": "Distance vision matures in the 4-7 month window — baby now notices and tracks a person or pet moving across the room, not just things within arm's reach."
+  },
+  {
+    "key": "rocks-and-kicks-on-tummy",
+    "display_name": "Rocks on tummy, kicks legs, and makes swimming motions",
+    "category": "movement-gross",
+    "age_window_low_days": 120,
+    "age_window_high_days": 180,
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-4-to-7-Months.aspx",
+    "seed_order": 109,
+    "clinical_note": "The 'airplane' posture — chest lifted, arms and legs pumping. Strengthens the back and hip muscles used for rolling."
+  },
+  {
+    "key": "grabs-own-feet",
+    "display_name": "Grabs her own feet and toes while lying on her back",
+    "category": "movement-gross",
+    "age_window_low_days": 120,
+    "age_window_high_days": 210,
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-4-to-7-Months.aspx",
+    "seed_order": 110,
+    "clinical_note": "Body-exploration play that builds core strength and hip flexibility. Feet often go straight to the mouth — that's expected."
+  },
+  {
+    "key": "turns-and-twists-objects",
+    "display_name": "Turns and twists a toy to look at all sides",
+    "category": "movement-fine",
+    "age_window_low_days": 150,
+    "age_window_high_days": 240,
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-4-to-7-Months.aspx",
+    "seed_order": 111,
+    "clinical_note": "Wrist rotation plus visual inspection — a step past simply holding or mouthing. Often paired with passing the toy between hands."
+  },
+  {
+    "key": "bounces-when-held-standing",
+    "display_name": "Bounces up and down when held in a standing position",
+    "category": "movement-gross",
+    "age_window_low_days": 150,
+    "age_window_high_days": 240,
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-4-to-7-Months.aspx",
+    "seed_order": 112,
+    "clinical_note": "Deliberate rhythmic leg-pushing while supported under the arms. Builds the leg strength used later for pulling to stand."
+  },
+  {
+    "key": "rocks-on-hands-and-knees",
+    "display_name": "Gets up on hands and knees and rocks back and forth",
+    "category": "movement-gross",
+    "age_window_low_days": 180,
+    "age_window_high_days": 300,
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Developmental-Milestones-12-Months.aspx",
+    "seed_order": 113,
+    "clinical_note": "Assuming the hands-and-knees position and rocking is the rehearsal stage before forward movement. Some babies skip it and scoot instead — also normal."
+  },
+  {
+    "key": "catches-self-when-sitting",
+    "display_name": "Catches himself with his arms when tipping over while sitting",
+    "category": "movement-gross",
+    "age_window_low_days": 210,
+    "age_window_high_days": 300,
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-8-to-12-Months.aspx",
+    "seed_order": 114,
+    "clinical_note": "Protective arm extension — reaching out to break a sideways or forward topple. Makes independent sitting safe enough for hands-busy play."
+  },
+  {
+    "key": "shows-new-fears",
+    "display_name": "Shows new fears (vacuum cleaner, dark, loud noises)",
+    "category": "social-emotional",
+    "age_window_low_days": 240,
+    "age_window_high_days": 365,
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Emotional-and-Social-Development-8-12-Months.aspx",
+    "seed_order": 115,
+    "clinical_note": "New fears at this age reflect growing memory and anticipation, not regression. Comfort without avoiding the trigger entirely — repeated calm exposure helps."
+  },
+  {
+    "key": "tests-your-reactions",
+    "display_name": "Tests your reactions to his behavior (drops food and watches your response)",
+    "category": "social-emotional",
+    "age_window_low_days": 240,
+    "age_window_high_days": 365,
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Developmental-Milestones-12-Months.aspx",
+    "seed_order": 116,
+    "clinical_note": "Deliberately repeating an action to see what you do — during meals and play. Social experimentation, not defiance."
+  },
+  {
+    "key": "feeds-self-with-fingers",
+    "display_name": "Feeds herself small pieces of food with her fingers",
+    "category": "movement-fine",
+    "age_window_low_days": 270,
+    "age_window_high_days": 365,
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Developmental-Milestones-12-Months.aspx",
+    "seed_order": 117,
+    "clinical_note": "Self-feeding combines the pincer grasp with hand-to-mouth accuracy. Offer soft, pea-sized pieces; mess is part of the learning."
+  },
+  {
+    "key": "squats-to-pick-up",
+    "display_name": "Squats to pick something up, then stands back up",
+    "category": "movement-gross",
+    "age_window_low_days": 330,
+    "age_window_high_days": 450,
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-8-to-12-Months.aspx",
+    "seed_order": 118,
+    "clinical_note": "Controlled squat-and-return shows balance well beyond first steps. Usually appears within weeks of confident walking."
+  }
+]

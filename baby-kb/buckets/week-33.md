@@ -4,7 +4,7 @@
 Pre-9-month visit final prep. Pincer grasp emerging in many infants — practice with small soft foods (puffs, pieces of banana) drives refinement.
 
 ## Expected developmental milestones
-- **Motor**: pulls to stand; cruises; rakes food with fingers (CDC 9-mo).
+- **Motor**: pull-to-stand and cruising for early movers (CDC checkpoint: 12 months); rakes food with fingers (CDC 9-mo).
 - **Cognitive**: looks for object you hide; bangs two objects together.
 - **Language**: makes a lot of different sounds — "mamamama," "bababababa."
 - **Social**: shy/clingy with strangers; reacts when you leave.

@@ -4,9 +4,9 @@
 Pre-12-month-visit final preparation. Some practices schedule the 12-mo visit in this window. The visit will include the major year-1 vaccine round (MMR, VAR, HepA + PCV #4 + Hib booster) and the transition to year 2 anticipatory guidance (whole milk, table foods, dental, walking, language).
 
 ## Expected developmental milestones
-- **Motor**: walks 5+ steps for many; standing alone reliably.
+- **Motor**: walks 5+ steps for some (CDC walks-alone checkpoint: 15 months); stands alone momentarily for many (CDC checkpoint: 12 months).
 - **Cognitive**: looks for fully hidden objects; uses tools to reach (drag a string, etc.).
-- **Language**: 1–5+ words; understands "no."
+- **Language**: first words for some (CDC 2022 checkpoint for words besides "mama"/"dada": 15 months); understands "no."
 - **Social**: plays games; gives objects.
 
 ## Watch-fors

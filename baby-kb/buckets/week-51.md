@@ -4,9 +4,9 @@
 Year-1 closing operations. Most year-1 vaccines are given; the next major vaccine round is at 15 mo and 18 mo (DTaP #4, etc., crossing into year 2). The shift toward toddler-style operations — table foods, walking, words — is fully underway.
 
 ## Expected developmental milestones
-- **Motor**: walks; many beginning to climb (couch, low stairs).
+- **Motor**: walks for some (CDC walks-alone checkpoint: 15 months); some beginning to climb (couch, low stairs).
 - **Cognitive**: simple problem-solving; uses tools.
-- **Language**: 1–5+ words; rich gesture; understands many commands.
+- **Language**: first words for some (CDC 2022 checkpoint for words besides "mama"/"dada": 15 months); rich gesture; understands many commands.
 - **Social**: emotional preferences clear.
 
 ## Watch-fors

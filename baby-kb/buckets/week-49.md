@@ -4,9 +4,9 @@
 Post-birthday operational reset. The transition from "infant" to "toddler" is now formal. Year 2 begins with motor refinement, vocabulary explosion, and the start of pre-language cognitive milestones (symbolic play, simple problem-solving).
 
 ## Expected developmental milestones
-- **Motor**: walks; some early running posture.
+- **Motor**: walks for some (CDC walks-alone checkpoint: 15 months); early running posture in a few.
 - **Cognitive**: imitates more elaborate actions; tries to feed self with utensils.
-- **Language**: 1–5+ words; understands many simple commands.
+- **Language**: first words for some (CDC 2022 checkpoint for words besides "mama"/"dada": 15 months); understands many simple commands.
 - **Social**: shows clear preferences; emotional range expressive.
 
 ## Watch-fors

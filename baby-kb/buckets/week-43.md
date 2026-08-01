@@ -4,9 +4,9 @@
 Pre-12-month-visit window. Motor and language consolidation. The 12-mo visit is a major milestone visit — multiple vaccines, comprehensive surveillance, transition to year 2 anticipatory guidance.
 
 ## Expected developmental milestones
-- **Motor**: walks holding hands; stands alone; first independent steps for many.
+- **Motor**: walks holding hands; stands alone momentarily for some (CDC checkpoint: 12 months); first independent steps for some (CDC checkpoint: 15 months).
 - **Cognitive**: hides toys deliberately to recover; begins simple problem-solving.
-- **Language**: 1–5+ specific words; vocalizations with adult-like intonation.
+- **Language**: first specific words for some (CDC 2022 checkpoint for words besides "mama"/"dada": 15 months); vocalizations with adult-like intonation.
 - **Social**: preference behaviors clear; engages in social games.
 
 ## Watch-fors

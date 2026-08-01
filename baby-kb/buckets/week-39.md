@@ -6,7 +6,7 @@ Last week of the third quarter. Three months until the first birthday. He's like
 ## Expected developmental milestones
 - **Motor**: cruises; stands alone briefly; some first independent steps.
 - **Cognitive**: object permanence solid; functional use of objects.
-- **Language**: 1–3 specific words; gestures (waves bye, shakes head).
+- **Language**: first specific words emerging for some (CDC 2022 places first words besides "mama"/"dada" at the 15-month checkpoint); gestures (waves bye, shakes head).
 - **Social**: gives object on request; engages in social games.
 
 ## Watch-fors

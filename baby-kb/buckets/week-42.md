@@ -4,10 +4,10 @@
 11-month informal landmark. The shift from "infant" to "toddler" is happening now (toddler = able to toddle). Receptive vocabulary likely 50–100 words; expressive 0–10 words.
 
 ## Expected developmental milestones
-- **Motor**: walks 3–10 steps for many; pulls to stand and walks holding furniture for nearly all.
+- **Motor**: walks 3–10 steps for some (CDC walks-alone checkpoint: 15 months); pulls to stand and walks holding furniture for many (CDC checkpoint: 12 months).
 - **Cognitive**: imitates familiar actions; uses objects with intent (hairbrush, phone).
-- **Language**: 1–5 specific words; understands several simple commands.
-- **Social**: peek-a-boo / pat-a-cake reliably; gives object on request.
+- **Language**: first specific words for some (CDC 2022 checkpoint for words besides "mama"/"dada": 15 months); understands several simple commands.
+- **Social**: peek-a-boo reliably; pat-a-cake emerging (CDC 1-year item); gives object on request.
 
 ## Watch-fors
 - `[low concern]` Separation distress at daycare drop-off; bedtime resistance returning briefly.

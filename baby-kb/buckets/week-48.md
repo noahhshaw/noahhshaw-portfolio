@@ -4,9 +4,9 @@
 First-birthday week. The 12-month visit may fall in this window depending on scheduling. Birthday party logistics dominate Saturday/Sunday; the rest of the week is normal operations.
 
 ## Expected developmental milestones
-- **Motor**: walks for many; standing alone for nearly all.
+- **Motor**: walking for some — the typical range is wide (9–15+ months; CDC checkpoint: 15 months); standing alone momentarily for many.
 - **Cognitive**: tries to use objects correctly; imitates more elaborate actions.
-- **Language**: 1–5+ words.
+- **Language**: a few words for some; CDC 2022 expects one or two words besides "mama"/"dada" by 15 months.
 - **Social**: warm with familiar; wary of strangers.
 
 ## Watch-fors

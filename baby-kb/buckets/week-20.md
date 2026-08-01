@@ -4,7 +4,7 @@
 Approaching the 6-month landmark. The baby's iron stores are beginning to deplete (peak depletion around 6 mo for breastfed infants); solids will start to backfill iron via fortified cereals and iron-rich foods. This is also the typical week to begin Suzuki-style "listening" exposure if planning early instrumental lessons.
 
 ## Expected developmental milestones
-- **Motor**: sits with progressively less support; rolls fluidly.
+- **Motor**: sits with progressively less support; rolls fluidly for some (CDC tummy-to-back checkpoint: 6 months).
 - **Cognitive**: examines objects deliberately (turns them, mouths them, transfers them).
 - **Language**: babbling with varied consonants; reduplicated babble starting ("baba," "dada" — non-referential at this stage).
 - **Social**: laughs in social context; reaches for familiar people.

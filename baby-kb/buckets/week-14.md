@@ -4,7 +4,7 @@
 4-month sleep regression onset for many infants. This is a *biological* transition — not a behavioral problem. Sleep cycles shorten from 50–60 minutes to ~45 minutes (adult-like), with waking between cycles. Most infants who weren't sleep-trained will begin waking 4–8 times per night for several weeks[1].
 
 ## Expected developmental milestones
-- **Motor**: head fully steady; rolling front-to-back common; pushing up on extended arms in tummy time.
+- **Motor**: head fully steady; rolling front-to-back for some early rollers (CDC 2022 checkpoint: 6 months); pushing up on extended arms in tummy time.
 - **Cognitive**: looks at hands with interest; opens mouth when he sees breast/bottle (CDC 4-mo).
 - **Language**: cooing, "ah-goo," squealing.
 - **Social**: smiles to get attention; chuckles in response to play.

@@ -4,9 +4,9 @@
 Pre-birthday final stretch. Year-1 retrospective is appropriate this week — what worked, what didn't, what's the year-2 plan. The 12-month visit is the formal recap.
 
 ## Expected developmental milestones
-- **Motor**: walks for many; cruises for nearly all.
+- **Motor**: walks for some (CDC walks-alone checkpoint: 15 months); cruises for many.
 - **Cognitive**: searches for hidden objects; uses objects functionally.
-- **Language**: 1–5+ words; rich understanding.
+- **Language**: first words for some (CDC 2022 checkpoint for words besides "mama"/"dada": 15 months); rich understanding.
 - **Social**: emotional range full (happy, sad, angry, fearful, surprised).
 
 ## Watch-fors

@@ -4,7 +4,7 @@
 Half-year mark approaching. Many practices schedule the 6-month visit this week. Solids may begin if you're starting at exactly 6 mo. RSV season is approaching for fall babies; for a 2026-05-11 baby, RSV season (Oct–Mar) hits at ~5–10 months — peak vulnerability for severe disease.
 
 ## Expected developmental milestones
-- **Motor**: sits independently; pushes up with straight arms in tummy time.
+- **Motor**: sits with support, independently for some (CDC sits-without-support checkpoint: 9 months); pushes up with straight arms in tummy time.
 - **Cognitive**: anticipates routines; begins to look for partially hidden objects.
 - **Language**: takes turns vocalizing; makes squealing noises; varied babble.
 - **Social**: laughs in response to play; recognizes familiar people.

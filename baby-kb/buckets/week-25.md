@@ -4,7 +4,7 @@
 Solids variety expanding to 10–15 foods. Begin offering a sippy cup of water (a few sips at meals) — AAP recommends introduction of an open or straw cup around 6 mo, full transition off the bottle by 12–18 mo[1]. Cup skill is also a fine-motor enrichment.
 
 ## Expected developmental milestones
-- **Motor**: sits independently for extended periods; rocks on hands and knees; some infants beginning to scoot or commando-crawl.
+- **Motor**: sits independently for some (CDC sits-without-support checkpoint: 9 months); rocking on hands and knees emerging; some infants beginning to scoot or commando-crawl.
 - **Cognitive**: closes lips to refuse food (a real signal — respect it).
 - **Language**: "mamamama" or "bababababa" babble strings (CDC 9-mo precursor).
 - **Social**: knows familiar people; reacts when caregiver leaves room.

@@ -1,11 +1,11 @@
 # Week 30 — Days 203–209
 
 ## Focus
-Cruising precursor. Pulls to stand for many infants now. The motor surge often coincides with the 8/9-month sleep regression — separation-anxiety cognition + mobility excitement = night wakings to practice the new skill.
+Cruising precursor. Some early movers pull to stand now (CDC checkpoint: 12 months). The motor surge often coincides with the 8/9-month sleep regression — separation-anxiety cognition + mobility excitement = night wakings to practice the new skill.
 
 ## Expected developmental milestones
-- **Motor**: pulls to stand at furniture; some cruise-step (stepping sideways while holding furniture).
-- **Cognitive**: looks for fully hidden object; explores objects through banging, dropping, mouthing.
+- **Motor**: pull-to-stand at furniture emerging for early movers; some cruise-step (stepping sideways while holding furniture) — CDC checkpoint for both: 12 months.
+- **Cognitive**: looks for partially hidden object (finding a fully hidden object ≈ 9 months); explores objects through banging, dropping, mouthing.
 - **Language**: "mamamama" / "bababababa" varied babble.
 - **Social**: stranger anxiety persisting; reaches for primary caregivers.
 
@@ -26,7 +26,7 @@ Cruising precursor. Pulls to stand for many infants now. The motor surge often c
 - **Music class**: continue weekly attendance if doing.
 
 ## What's coming next
-- **Week 31**: Cruising consolidation for many.
+- **Week 31**: Cruising consolidation for early movers.
 - **Week 32**: 8-month mark.
 - **Week 33**: Pre-9-mo visit final prep.
 
