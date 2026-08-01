@@ -1,0 +1,245 @@
+[
+  {
+    "ageInDays": 229,
+    "subject": "Week 33: gift-debris sweep — button batteries are the top hazard",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-33.md",
+      "baby-kb/topics/holidays-with-baby.md",
+      "baby-kb/topics/baby-proofing-timeline.md"
+    ],
+    "content": {
+      "ageInDays": 229,
+      "week": 33,
+      "hook": "gift-debris sweep — button batteries are the top hazard",
+      "thisWeek": "Avi hits day 229 in peak holiday mode: expect long babble strings (\"mamamama,\" \"bababababa\") — a CDC 9-month checkpoint item — plus raking food with his fingers and hunting for objects you hide. Many babies crawl in this stretch, though the CDC dropped crawling from its checklist entirely — some skip it and go straight to pulling to stand, which is emerging for early movers (CDC checkpoint: 12 months). Stranger anxiety runs at full strength through 7-10 months, so expect clinginess with rotating holiday visitors.",
+      "watchFors": [
+        "[low concern] Clinginess and one-parent preference around holiday visitors — stranger anxiety peaks 7-10 months; give him warm-up time in your arms before hand-offs.",
+        "[low concern] Sleep disruption for 1-3 nights around travel or late gatherings — protect the usual bedtime where you can.",
+        "[monitor] Upper-respiratory cluster after extended-family contact — track fever, feeding, and breathing effort rather than counting days.",
+        "[call within 24h] Persistent illness that is not improving, or any new wheezing.",
+        "[call now] Suspected button-battery or magnet ingestion from new toys or gift debris — ER immediately, do not wait for symptoms; fever ≥102°F (rectal) with lethargy, labored breathing, or blue lips — 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Run a floor-level sweep before and after gift-opening: ribbons, coin batteries, small ornaments, and loose battery compartments on new toys are the season's ingestion hazards.",
+          "sourceLabel": "AAP: Childproofing Your Home",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Childproofing-Your-Home.aspx"
+        },
+        {
+          "body": "Put raking-size finger foods on the tray daily — puffs, banana pieces, well-cooked lentils. Raking is the CDC 9-month item; the two-finger pincer it feeds is checked at 12 months. Featuring iron-rich options now also sets up the hemoglobin rescreen at the 9-month visit.",
+          "sourceLabel": "AAP: Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Answer his babble strings as conversation — pause, respond, wait for the return serve. Conversational turns, not word count alone, predict language-network development (Romeo et al. 2018).",
+          "sourceLabel": "Romeo et al. 2018 (PubMed)",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Cap the schedule at one major event per day and hold naps fixed — an overtired evening collapse costs more than any gathering delivers.",
+          "sourceLabel": "AAP: Baby Sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 235 (Jan 1, 2027): New Year's — he will be asleep at midnight; keep bedtime and log it as a parents-only marker.",
+        "Day 252-280 (Jan 18–Feb 15, 2027): 9-month well visit — book it now for early in the window; iron rescreen, influenza #2 if first season, and possibly an ASQ-3 developmental screen."
+      ]
+    }
+  },
+  {
+    "ageInDays": 236,
+    "subject": "Week 34: book the 9-month visit — iron rescreen and ASQ-3 ahead",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-34.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json",
+      "baby-kb/topics/enrichment-maximalist-sf.md"
+    ],
+    "content": {
+      "ageInDays": 236,
+      "week": 34,
+      "hook": "book the 9-month visit — iron rescreen and ASQ-3 ahead",
+      "thisWeek": "This is the CDC 9-month checklist in live action: getting to sitting on his own, transferring objects hand to hand, raking food, varied babble strings, and reacting when you leave the room. The well-visit window opens Day 252 (Jan 18) — the pediatrician will run a hemoglobin rescreen and often a standardized ASQ-3 developmental screen, so book now and start a notes file: babble variety, feeding, sleep, anything that nags at you.",
+      "watchFors": [
+        "[low concern] Shyness or fear around strangers and lifting arms to be picked up — both are on-schedule 9-month social behavior.",
+        "[monitor] No babble strings, no response to his name, or no object transfer between hands — none is an emergency, all belong in the visit notes.",
+        "[call within 24h] New wheezing, or an illness that stops improving after day three.",
+        "[call now] Fever ≥102°F (rectal) with lethargy, labored breathing, or blue lips — call now or 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Lock the paid swim slot before the conversion window closes Wednesday Jan 6: La Petite Baleen runs perpetual enrollment at $130-138/mo, or check JCCSF Water Babies for openings (waitlists cap at five). One program only — there is no dose-response evidence under 12 months.",
+          "sourceLabel": "La Petite Baleen tuition",
+          "sourceUrl": "https://www.swimlpb.com/swim-classes/tuition"
+        },
+        {
+          "body": "Play object-permanence games daily: hide a toy under a cup, pause, reveal. Looking for hidden objects is the 9-month cognitive checkpoint, and predictable surprise is the engagement mechanism.",
+          "sourceLabel": "CDC 9-month milestones",
+          "sourceUrl": "https://www.cdc.gov/act-early/milestones/9-months.html"
+        },
+        {
+          "body": "Read 30 min/day but slow down: pause after he vocalizes and respond as if it were a word — that serve-and-return loop is the active ingredient.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Rehearse short separations with a fixed ritual — same phrase, brief exit, prompt return. Separation protest is object permanence applied to people; predictable exits shrink it."
+        }
+      ],
+      "upcoming": [
+        "Day 240 (Jan 6, 2027): paid-swim conversion window closes — last day to hold the queue position.",
+        "Day 252-280 (Jan 18–Feb 15, 2027): 9-month well visit — book this week to land early in the window; influenza #2 if this is his first flu season, iron rescreen, possible ASQ-3."
+      ]
+    }
+  },
+  {
+    "ageInDays": 243,
+    "subject": "Week 35: anchor the furniture — pulling to stand changes the risk map",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-35.md",
+      "baby-kb/topics/baby-proofing-timeline.md",
+      "baby-kb/topics/naps-by-age.md"
+    ],
+    "content": {
+      "ageInDays": 243,
+      "week": 35,
+      "hook": "anchor the furniture — pulling to stand changes the risk map",
+      "thisWeek": "Receptive language is running ahead of production: he likely understands 10-20 simple words, and production typically lags reception by 1-3 months. Cruising along furniture is consolidating for early movers and pulling to stand keeps improving — both are CDC 12-month checkpoints, so later is still normal. The same cognitive upgrade that finds hidden toys now notices exits, which is why separation protest and a sleep wobble often arrive together around 8-9 months.",
+      "watchFors": [
+        "[low concern] More night wakings and bedtime protest without illness — the 8-9-month sleep disruption typically resolves in 2-4 weeks and often overlaps the shift from three naps to two.",
+        "[low concern] Falls and bumps during cruising practice — pad sharp corners and keep practice zones on forgiving surfaces.",
+        "[monitor] No pulling to stand or cruising yet — not a red flag (CDC checkpoint: 12 months), but worth a line in the 9-month visit notes.",
+        "[call within 24h] Sudden persistent sleep refusal arriving with illness signs — fever, ear-pulling, refusing feeds.",
+        "[call now] Head injury followed by persistent vomiting or lethargy; fever ≥102°F (rectal) with lethargy; labored breathing or blue lips — 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Anchor everything tall this week — TV, dressers, bookshelves — and hardware-mount a gate at the top of any stairs. Pulling to stand converts furniture from scenery into load-bearing equipment, and tip-overs are a recurring, preventable cause of infant deaths.",
+          "sourceLabel": "AAP: Childproofing Your Home",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Childproofing-Your-Home.aspx"
+        },
+        {
+          "body": "Hold the bedtime routine absolutely fixed through the regression: same sequence, same brief response at wakings. Consistency is the intervention; novelty resets the clock.",
+          "sourceLabel": "AAP: Getting Your Baby to Sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Sing hand-motion songs — Itsy Bitsy Spider, pat-a-cake — imitation, rhythm, and receptive vocabulary in one activity; pat-a-cake itself is a CDC 1-year checklist item some babies show early.",
+          "sourceLabel": "CDC 1-year milestones",
+          "sourceUrl": "https://www.cdc.gov/act-early/milestones/1-year.html"
+        },
+        {
+          "body": "Ask two-choice questions at the book — where is the dog, here or here. He answers with gaze before he answers with a point, and both count as comprehension data for the ASQ-3.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        }
+      ],
+      "upcoming": [
+        "Day 252-280 (Jan 18–Feb 15, 2027): 9-month well visit — window opens in nine days; if it is not booked, book it today.",
+        "Day 250-256 (Jan 16-22, 2027): first-step territory opens for early walkers (full range 9-17 months) — clear the cruising runways now."
+      ]
+    }
+  },
+  {
+    "ageInDays": 250,
+    "subject": "Week 36: 9-month visit window opens Monday — first steps for some",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-36.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json",
+      "baby-kb/topics/enrichment-maximalist-sf.md"
+    ],
+    "content": {
+      "ageInDays": 250,
+      "week": 36,
+      "hook": "9-month visit window opens Monday — first steps for some",
+      "thisWeek": "First-step territory opens for early walkers this week — the full range runs 9-17 months, and the CDC moved its walks-alone checkpoint to 15 months, so later is not a lag. Expect brief unsupported stands for some, functional object use (cup to mouth, phone to ear), and possibly a first specific word: mama or dada aimed at the right parent. The 9-month well-visit window opens Monday Jan 18.",
+      "watchFors": [
+        "[low concern] Falls rise as cruising speeds up — the standard is supervised falls onto forgiving surfaces, not zero falls.",
+        "[low concern] Everything still goes in the mouth — keep the daily floor sweep going.",
+        "[monitor] Babble that stays vowel-only, without consonant variety — raise it at this month's visit.",
+        "[call within 24h] Persistent illness that is not improving.",
+        "[call now] Fever ≥102°F (rectal) with lethargy; labored breathing or blue lips — 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Practice walking his way: hold both hands and let him step, or set a weighted push toy along the cruising route. Keep him barefoot indoors — bare feet beat shoes for early balance; save soft soles for outdoor surfaces.",
+          "sourceLabel": "AAP: Movement 8-12 Months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-8-to-12-Months.aspx"
+        },
+        {
+          "body": "Decide the Suzuki question before the option lapses Feb 5: pick the instrument (violin, piano, or cello), start Book 1 recordings 30+ min/day, and join named-teacher waitlists — top SF teachers run multi-year lists, so listing now targets a 2029-2030 lesson start. Cost today: recordings only.",
+          "sourceLabel": "Suzuki Association directory",
+          "sourceUrl": "https://suzukiassociation.org/"
+        },
+        {
+          "body": "Play give-and-take: ask for the toy with an open hand, thank him, hand it back. Giving objects on request sits on the CDC 1-year checklist and doubles as turn-taking rehearsal.",
+          "sourceLabel": "CDC 1-year milestones",
+          "sourceUrl": "https://www.cdc.gov/act-early/milestones/1-year.html"
+        },
+        {
+          "body": "Shift reading toward retrieval practice — name an image and let him find it on the page. Pointing on request is exactly what the ASQ-3 samples.",
+          "sourceLabel": "Reach Out and Read",
+          "sourceUrl": "https://reachoutandread.org/"
+        }
+      ],
+      "upcoming": [
+        "Day 252-280 (Jan 18–Feb 15, 2027): 9-month well visit — window opens Monday; iron rescreen, influenza #2 if first season, possible ASQ-3. Bring the notes file: babble variety, feeding, sleep, mobility.",
+        "Day 270 (Feb 5, 2027): Suzuki teacher-waitlist and ISR instructor-contact windows both close — ISR decision detail next week."
+      ]
+    }
+  },
+  {
+    "ageInDays": 257,
+    "subject": "Week 37: pincer practice at every meal — open cup beats the sippy",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-37.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json",
+      "baby-kb/topics/enrichment-maximalist-sf.md"
+    ],
+    "content": {
+      "ageInDays": 257,
+      "week": 37,
+      "hook": "pincer practice at every meal — open cup beats the sippy",
+      "thisWeek": "The pincer grasp — thumb and index finger — is emerging and refines fastest with daily practice; the CDC checks it at 12 months, so emerging now is ahead of the checkpoint, not a requirement. Self-feeding capacity is expanding: many infants this week can drink from an open cup with help, which beats a sippy for oral-motor development. Babble is picking up adult-like intonation, and a specific mama or dada is emerging for some.",
+      "watchFors": [
+        "[low concern] Food and objects launched from the high chair — gravity experimentation, not defiance; it fades faster without an audience reaction.",
+        "[monitor] No raking grasp or no progress toward picking up small foods — bring it to the 9-month visit.",
+        "[monitor] Not imitating sounds or simple actions — same route: visit notes, not alarm.",
+        "[call within 24h] Persistent illness that is not improving.",
+        "[call now] Choking with no air movement — start infant back blows and chest thrusts and call 911; fever ≥102°F (rectal) with lethargy — call now."
+      ],
+      "enrichment": [
+        {
+          "body": "Serve two-finger-size pieces at every meal and hand over pre-loaded spoons (yogurt, mashed potato). The mess is the training signal — daily self-feeding practice drives the pincer refinement the CDC checks at 12 months.",
+          "sourceLabel": "CDC 1-year milestones",
+          "sourceUrl": "https://www.cdc.gov/act-early/milestones/1-year.html"
+        },
+        {
+          "body": "Offer an open cup with help at one meal a day and sketch the bottle exit: AAP guidance is off bottles entirely by 12 months, and open-cup practice is the ramp.",
+          "sourceLabel": "AAP: Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Contact certified ISR instructors before the window closes Feb 5 if pool or regular water exposure is in the family's future — Bay Area instructors book 6-12+ months out, and the evidence is case-series only, so treat it as drowning-risk mitigation, not enrichment.",
+          "sourceLabel": "ISR instructor directory",
+          "sourceUrl": "https://www.infantswim.com/"
+        },
+        {
+          "body": "Keep live music daily — sing the same two songs at cleanup and bath. Active participation, not playback, is what moved pitch discrimination and prelinguistic gesture in the randomized trial (Gerry, Unrau and Trainor 2012).",
+          "sourceLabel": "Gerry/Unrau/Trainor 2012 (PubMed)",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        }
+      ],
+      "upcoming": [
+        "Day 252-280 (Jan 18–Feb 15, 2027): 9-month well visit — the window is open; attend or book this week. Iron rescreen, influenza #2 if first season, possible ASQ-3.",
+        "Day 270 (Feb 5, 2027): ISR instructor-contact and Suzuki-waitlist windows close.",
+        "Day 264-270 (Jan 30–Feb 5, 2027): first words consolidating — log anything that sounds referential."
+      ]
+    }
+  }
+]

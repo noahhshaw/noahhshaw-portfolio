@@ -1,0 +1,250 @@
+[
+  {
+    "ageInDays": 159,
+    "subject": "Week 23: book the 6-month well visit; window opens Oct 26",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-23.md",
+      "baby-kb/topics/introducing-solids.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json"
+    ],
+    "content": {
+      "ageInDays": 159,
+      "week": 23,
+      "hook": "The 6-month well visit window opens a week from Monday, Oct 26, and this one carries the first seasonal flu dose and an iron screen — call Monday if it is not on the calendar. If you plan to start solids at the 6-month mark, this is also the week to set the plan.",
+      "thisWeek": "Days 159-165 are the run-up to the half-year mark. Expect pushing up on straight arms in tummy time and sitting with support — independent sitting is emerging for some, but the CDC checkpoint for sitting without support is 9 months, so propped sitting is fully on-curve. Listen for turn-taking vocalization, squealing, and increasingly varied babble; he should be anticipating familiar routines and starting to look for partially hidden objects.",
+      "watchFors": [
+        "[low concern] Mild constipation when solids begin — offer small sips of water from a cup and fiber-forward purees (pear, prune).",
+        "[monitor] Persistent reflux with back-arching during feeds — document and raise at the 6-month visit; a GI consult is the escalation path.",
+        "[call within 24h] First reaction to a new food: rash spreading beyond the mouth, hives, or vomiting within two hours of ingestion.",
+        "[call now] Anaphylaxis after an allergen — facial swelling, breathing difficulty, hives plus vomiting, or sudden lethargy — call 911. Introduce allergens at home, in daytime, never solo."
+      ],
+      "enrichment": [
+        {
+          "body": "Register with Stanford SVNDL this weekend if you never did — the study's eligibility ceiling is 6 months, so the window closes around Nov 7; free structured 1:1 sessions, and the signup takes minutes.",
+          "sourceLabel": "Stanford SVNDL participation",
+          "sourceUrl": "https://svndl.stanford.edu/participate/"
+        },
+        {
+          "body": "Set the solids plan if you are starting at 6 months: readiness signals are sitting with minimal support, a retired tongue-thrust reflex, and active interest in your food. Weight the first rotation toward iron — fortified oatmeal, pureed meats, lentils — because iron stores in breastfed infants deplete around 6 months.",
+          "sourceLabel": "AAP: Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Pull the high chair up to the table for one family meal a day from the first spoonful — the family-meal context builds long-run eating norms and adds live language exposure at zero cost."
+        },
+        {
+          "body": "Keep reading at 30 min/day cumulative, split across bedtime, bath, and one daytime block — the dose is what compounds, not the book list.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        }
+      ],
+      "upcoming": [
+        "Day 168-182 (Oct 26–Nov 9, 2026): 6-month well visit — book now. Vaccines: RV #3 (if RV5), DTaP #3, Hib #3 (if PRP-T), PCV #3, plus seasonal influenza #1; iron/hemoglobin screen and a solids-readiness check.",
+        "Day 180 (Nov 7, 2026): the 6-month program windows open — paid swim conversion, ISR instructor contact, Suzuki instrument decision. Full brief lands that week.",
+        "RSV season (Oct–Mar) is underway — refresh the daycare sick-policy and household visitor rules this month."
+      ]
+    }
+  },
+  {
+    "ageInDays": 166,
+    "subject": "Week 24: allergens are a cadence — peanut and egg 2-3x weekly",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-24.md",
+      "baby-kb/topics/introducing-solids.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json"
+    ],
+    "content": {
+      "ageInDays": 166,
+      "week": 24,
+      "hook": "Introduction is not the finish line: LEAP and EAT follow-up data show tolerance holds only with sustained exposure, so the job this week is building each major allergen into a 2-3x-weekly rotation. The 6-month visit window opens Monday, Oct 26 — bring the allergen questions.",
+      "thisWeek": "By the end of days 166-172, most starter eaters have tried 5-10 foods, and self-feeding intent shows up — deliberate hand-to-mouth, objects transferring hand to hand. Sitting is steadying with support and solid for some, though the CDC sits-without-support checkpoint remains 9 months, so support is still the expected default. Babble strings with varied consonants and delighted mirror games round out the week.",
+      "watchFors": [
+        "[low concern] Stool changes color and consistency on solids — beets and blueberries pass through visibly. Normal.",
+        "[monitor] Frequent gagging at meals — gagging is loud and protective; choking is silent. Also monitor constipation lasting past three days.",
+        "[call within 24h] Hives beyond the mouth area or repeated vomiting inside two hours of a new food — note the food and call.",
+        "[call now] Choking with no air movement — no cough, no cry: back blows and chest thrusts (never abdominal thrusts at this age) and 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Build the allergen calendar: once first foods are tolerated, introduce peanut (1 tsp smooth peanut butter thinned in warm water, or softened peanut puffs) and well-cooked egg, then hold peanut, egg, dairy, wheat, and soy each at 2-3x weekly. One new allergen at a time, in the morning, at home, with a 2-hour observation window.",
+          "sourceLabel": "AAP: Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Book an infant CPR and choking class before finger foods scale up — the infant protocol is back blows plus chest thrusts, and the Red Cross runs classes weekly across the city."
+        },
+        {
+          "body": "Lock the weekly SFPL Baby Rhyme & Play Time slot onto the standing calendar if it is not there already — free, ticketed same-day at popular branches, and the Cantonese and Spanish sessions double as live second-language exposure.",
+          "sourceLabel": "SFPL storytimes",
+          "sourceUrl": "https://sfpl.org/kids/kids/events/storytime-sfpl"
+        },
+        {
+          "body": "Practice standing: hold his hands and let him bear weight in short bouts — leg strength now feeds pulling-to-stand and cruising later.",
+          "sourceLabel": "AAP: Movement 4-7 Months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-4-to-7-Months.aspx"
+        },
+        {
+          "body": "Keep one true family meal a day — adult conversation around him beats solo high-chair time, and conversational turns are the language input that shows up on brain imaging (Romeo et al. 2018).",
+          "sourceLabel": "Romeo et al. 2018, conversational turns",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        }
+      ],
+      "upcoming": [
+        "Day 168-182 (Oct 26–Nov 9, 2026): 6-month well visit window is open. Vaccines: RV #3 (if RV5), DTaP #3, Hib #3 (if PRP-T), PCV #3, seasonal influenza #1; iron/hemoglobin screen. Bring the sleep log and feeding plan.",
+        "Day 180 (Nov 7, 2026): three 6-month windows open at once — swim converts to paid, ISR instructor lists open, and the Suzuki instrument decision comes due."
+      ]
+    }
+  },
+  {
+    "ageInDays": 173,
+    "subject": "Week 25: start the open cup — visit window closes Nov 9",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-25.md",
+      "baby-kb/topics/introducing-solids.md"
+    ],
+    "content": {
+      "ageInDays": 173,
+      "week": 25,
+      "hook": "Put an open cup of water on the tray at meals this week — a few sips, mostly spilled, is the point. And if the 6-month visit is still unbooked, the window closes Monday, Nov 9.",
+      "thisWeek": "Days 173-179 widen the menu: 10-15 foods is a typical running total, with acceptance swinging day to day. Independent sitting is arriving for some and rocking on hands and knees can emerge — the CDC checkpoint for sitting without support is 9 months, so neither is due yet. Expect long 'mamama' and 'bababa' babble strings and a real reaction when you leave the room.",
+      "watchFors": [
+        "[low concern] A food accepted Tuesday is refused Thursday — expect 5-10 exposures before a new food lands.",
+        "[monitor] Refusal across whole food categories, or flat weight since starting solids — bring both to the pediatrician.",
+        "[call within 24h] Diarrhea persisting past three days, or a new wheeze or lingering cough.",
+        "[call now] Fever of 102F rectal or higher with marked lethargy — same-day call, ER if he is hard to rouse."
+      ],
+      "enrichment": [
+        {
+          "body": "Offer an open cup (or straw cup) at each meal — the AAP puts cup introduction around 6 months with full bottle retirement by 12-18 months, and open beats spouted for oral-motor development. Keep the allergen rotation running at 2-3x weekly per allergen in parallel.",
+          "sourceLabel": "AAP: Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Take him to the California Academy of Sciences on a rainy morning — the aquarium floor is slow-moving, high-contrast visual tracking at stroller height, and a reliable recurring sensory outing for the wet season.",
+          "sourceLabel": "California Academy of Sciences",
+          "sourceUrl": "https://www.calacademy.org/"
+        },
+        {
+          "body": "Anchor a morning song and a different bedtime song — a consistent audio cue at each end of the day reinforces the sleep routine you already run.",
+          "sourceLabel": "AAP: infant sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx"
+        },
+        {
+          "body": "Stage toys just out of reach during floor and tummy time — pivoting, then commando crawling, is the usual sequence, and reach practice is the input you control.",
+          "sourceLabel": "AAP: Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Shoot the 6-month tripod-sit portrait — solo on a blanket, same backdrop as the 100-day shot, for the comparison stack."
+        }
+      ],
+      "upcoming": [
+        "Day 168-182 (Oct 26–Nov 9, 2026): 6-month well visit window closes Nov 9 — last call to book. Influenza #1 needs a second dose four weeks later in a first season; calendar it on the way out.",
+        "Day 180 (Nov 7, 2026): the 6-month program windows open — swim converts to paid, ISR instructor lists open, Suzuki instrument decision due. Next week's email carries the full brief."
+      ]
+    }
+  },
+  {
+    "ageInDays": 180,
+    "subject": "Week 26: half-year mark — convert swim to paid and call ISR now",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-26.md",
+      "baby-kb/topics/enrichment-maximalist-sf.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json"
+    ],
+    "content": {
+      "ageInDays": 180,
+      "week": 26,
+      "hook": "Half-year mark: he has more than doubled birth weight, eats solids, and is on the cusp of mobility. Two water decisions open today at day 180 — converting the free swim slot to one paid class, and joining ISR instructor lists that run 6-12 months deep.",
+      "thisWeek": "Avi's 6-month birthday lands Wednesday, Nov 11. The CDC 6-month checklist reads: rolls tummy-to-back, pushes up on straight arms, leans on hands when sitting; takes vocal turns, blows raspberries, squeals; reaches for what he wants and closes his lips to end a meal. Sleep is consolidated for many by now — if nights are still fragmented, this is a reasonable second window for sleep training.",
+      "watchFors": [
+        "[low concern] Drool surge and mouthing everything — often, not always, upstream of a first tooth.",
+        "[monitor] No babbling, no rolling in either direction, or no weight-bearing on legs when held upright — raise any of these at the 6-month visit.",
+        "[call within 24h] Fever persisting past 24 hours, or lethargy out of proportion to a mild illness.",
+        "[call now] Seizure activity, unresponsiveness, or blue lips — 911, not the nurse line."
+      ],
+      "enrichment": [
+        {
+          "body": "Convert swim to exactly one paid weekly class now that the free tier has ended: La Petite Baleen rolls into paid tuition at 6 months ($130-138/mo plus $50/yr registration, perpetual enrollment, auto-billing), JCCSF Water Babies runs $185-230/mo with waitlists capped at five (check actively for open slots rather than queueing), and SF Rec & Parks parent-tot runs under $10/session but demands registration-day execution. One program only — there is no dose-response evidence for swim under 12 months.",
+          "sourceLabel": "La Petite Baleen tuition",
+          "sourceUrl": "https://www.swimlpb.com/swim-classes/tuition"
+        },
+        {
+          "body": "If ISR self-rescue is on the roadmap — strongest case for households with pool or regular water exposure — contact certified instructors this month: eligibility starts at 6 months plus unassisted sitting, but the nearest instructors (Mill Valley, Orinda, Walnut Creek) book 6-12 months out, so calling now targets a realistic start at 12-18 months. Evidence is case-series only; treat it as drowning-risk mitigation, not enrichment.",
+          "sourceLabel": "Infant Swimming Resource",
+          "sourceUrl": "https://www.infantswim.com/"
+        },
+        {
+          "body": "Hand him an egg shaker or soft maraca — rhythm production, not just consumption, is the active ingredient in the infant music literature.",
+          "sourceLabel": "Gerry, Unrau and Trainor 2012",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        },
+        {
+          "body": "Protect 60+ min/day of open floor play at his level — it outperforms any container and is the cheapest motor input available.",
+          "sourceLabel": "AAP: Movement 4-7 Months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-4-to-7-Months.aspx"
+        },
+        {
+          "body": "Alternate the fixed bedtime book with a rotating library stack — repetition anchors the routine, novelty feeds vocabulary.",
+          "sourceLabel": "Reach Out and Read",
+          "sourceUrl": "https://reachoutandread.org/"
+        }
+      ],
+      "upcoming": [
+        "Day 168-182 (Oct 26–Nov 9, 2026): 6-month well visit window closes Monday, Nov 9 — if the visit has not happened, book the make-up now and hold the flu dose-two timing (four weeks after dose one).",
+        "Day 180-240: Suzuki decision window — instrument choice, Book 1 recordings, teacher waitlists. Full brief next week.",
+        "Nov 26, 2026: first Thanksgiving — if you are flying, book the infant-in-arms ticket now and plan feeds around ascent and descent."
+      ]
+    }
+  },
+  {
+    "ageInDays": 187,
+    "subject": "Week 27: babyproof before he crawls; Suzuki instrument call due",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-27.md",
+      "baby-kb/topics/music-and-suzuki.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json"
+    ],
+    "content": {
+      "ageInDays": 187,
+      "week": 27,
+      "hook": "The mobility clock is running — most infants commando-crawl, scoot, or roll their way across a room between 6 and 8 months, and the cheapest time to babyproof is before he can cross one. The other decision this week is the Suzuki long option: instrument, recordings, waitlists.",
+      "thisWeek": "Days 187-193 open the second half of year one. Sitting usually still leans on hands, with unsupported sitting emerging for some — the CDC checkpoint is 9 months — while pushing to all fours and early commando crawling appear for a subset. Babble picks up intonation ('mamama', 'dadada', still non-referential), he responds to his name, and early stranger anxiety can begin; it typically peaks at 7-10 months.",
+      "watchFors": [
+        "[low concern] Clinging and brief distress around new faces — normal early stranger anxiety, peaking 7-10 months.",
+        "[monitor] A persistent flat spot despite repositioning — pediatricians typically discuss helmet referral around 7-9 months if there is no improvement.",
+        "[call within 24h] Acute illness onset, or feeding refusal that persists across multiple consecutive feeds.",
+        "[call now] Respiratory distress in RSV season — nasal flaring, rib retractions, more than 60 breaths/min at rest, or bluish lips — 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Exercise the Suzuki long option this month: pick the instrument (violin, piano, or cello), order the Book 1 recordings and run them 30+ min/day as ambient listening, and join named-teacher waitlists through the Suzuki Association directory — top SF teachers carry multi-year lists, so listing at 6-9 months targets a 2029-2030 lesson start at age 3-4. Cost of the option today: $20-40 of recordings.",
+          "sourceLabel": "Suzuki Association of the Americas",
+          "sourceUrl": "https://suzukiassociation.org/"
+        },
+        {
+          "body": "Babyproof ahead of mobility: outlet covers, stair gates at top and bottom, anchored TV and furniture, latched low cabinets, and blind-cord cleats — every cord inaccessible.",
+          "sourceLabel": "AAP: Childproofing Your Home",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Childproofing-Your-Home.aspx"
+        },
+        {
+          "body": "Make pointing-and-naming part of every read — 'Where's the dog? There's the dog' — labeling with joint attention is the mechanism behind read-aloud vocabulary gains.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Rotate in cause-and-effect toys — pop-up boxes, rolling balls, a shape sorter with no sorting agenda — and keep only four to six of the toy library visible at a time; rotation restores novelty for free."
+        }
+      ],
+      "upcoming": [
+        "Nov 26, 2026: first Thanksgiving. If hosting, give him a seat at the table — family meals still count; if traveling, pack the allergen foods you have already cleared so the 2-3x-weekly rotation holds through the trip.",
+        "Day 252-280 (Jan 18–Feb 15, 2027): 9-month well visit — influenza #2 if this is his first flu season, an iron rescreen, and possibly an ASQ-3 developmental screen. Book after the holidays."
+      ]
+    }
+  }
+]

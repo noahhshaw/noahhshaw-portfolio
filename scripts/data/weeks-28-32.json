@@ -1,0 +1,234 @@
+[
+  {
+    "ageInDays": 194,
+    "subject": "Week 28: stranger anxiety peaks - brief the Thanksgiving table",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-28.md",
+      "baby-kb/topics/introducing-solids.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json"
+    ],
+    "content": {
+      "ageInDays": 194,
+      "week": 28,
+      "hook": "Crying at unfamiliar relatives on Thursday is not regression - it is a cognitive milestone arriving on schedule, and 15 minutes of floor-level warm-up is the fix.",
+      "thisWeek": "Stranger anxiety is entering its early peak, and it shares machinery with this week's cognitive work: Avi now searches for partially hidden objects, which means he also knows familiar people still exist when they leave the room. Rocking on hands and knees is emerging for some, with first crawl steps possible; finding fully hidden objects is a roughly 9-month attainment, so half-hidden is the right game this week. Expect extended babble strings, including vocalizing when he is alone.",
+      "watchFors": [
+        "[low concern] Crying at unfamiliar adults and clinging at daycare drop-off - normal attachment behavior at 7-9 months, not a social red flag.",
+        "[low concern] Refusing a new solid on first offer - acceptance averages 5-10 exposures; keep offering without pressure.",
+        "[monitor] Sustained refusal of all unfamiliar caregivers beyond the typical 2-5 minute adjustment - document it and raise if it persists.",
+        "[call within 24h] Hives spreading beyond the mouth area, vomiting within 2 hours, or lethargy after a newly introduced food.",
+        "[call now] Fever at or above 102F (rectal) with lethargy, labored breathing, or blue lips - call 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Half-hide a toy under a burp cloth and let him find it, then graduate to fully hidden once he solves it reliably - object permanence is consolidating now, and peek-a-boo is at peak developmental value.",
+          "sourceLabel": "CDC 9-month milestones",
+          "sourceUrl": "https://www.cdc.gov/act-early/milestones/9-months.html"
+        },
+        {
+          "body": "Brief Thanksgiving relatives before they arrive: give Avi 15 minutes of warm-up at floor level before anyone picks him up, and keep the handoff ritual scripted and decisive - lingering goodbyes intensify the distress.",
+          "sourceLabel": "AAP developmental milestones, 7 months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Developmental-Milestones-7-Months.aspx"
+        },
+        {
+          "body": "Keep every introduced allergen in rotation at 2-3 exposures weekly - the LEAP follow-up data show maintenance, not first introduction, is what sustains tolerance. Thin peanut butter into oatmeal, fold yogurt into fruit, flake salmon into a vegetable mash.",
+          "sourceLabel": "AAP Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Decide the movement-gym question once and move on: no evidence shows structured infant gym classes beat floor time, so buy one for logistics and parent community or skip the domain at zero measurable cost. The rational entry is Recess Collective in the Outer Sunset - dedicated 0-18-month zone, roughly $89 a month per family.",
+          "sourceLabel": "Recess Collective",
+          "sourceUrl": "https://recesscollective.org/"
+        }
+      ],
+      "upcoming": [
+        "Day 208-214 (week of Dec 5, 2026): if he pulls to stand, the crib mattress drops to its lowest setting that same day - pre-position the plan now.",
+        "Day 215-221 (week of Dec 12, 2026): the 8/9-month sleep-regression window opens - mobility surge plus separation cognition drives night wakings; hold the sleep practices that already work."
+      ]
+    }
+  },
+  {
+    "ageInDays": 201,
+    "subject": "Week 29: crawling starts - babyproof at floor level now",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-29.md",
+      "baby-kb/topics/baby-proofing-timeline.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json"
+    ],
+    "content": {
+      "ageInDays": 201,
+      "week": 29,
+      "hook": "Crawling is beginning for some this week, which means the babyproofing audit stops being a someday project and becomes this weekend's job.",
+      "thisWeek": "Crawling is underway for some - commando or quadrupedal - and a few infants pull to kneel or stand at furniture, though the CDC pull-to-stand checkpoint sits at 12 months, so no alarm if he stays planted. Babble is getting richer, with early imitation of your intonation, and lifting his arms to be picked up (a CDC 9-month checkpoint) turns communication deliberate. Stranger anxiety stays peaked; strong preference for you two is the design, not a bug.",
+      "watchFors": [
+        "[low concern] Falling backward from sitting or forward onto his face while learning to crawl - bumps on soft surfaces are the cost of the curriculum.",
+        "[monitor] No weight-bearing on his legs when held standing, or no banging two objects together as the 9-month checkpoint approaches - note it for the visit.",
+        "[call within 24h] Persistent vomiting, or a new wheeze - RSV season is on.",
+        "[call now] No wet diaper for more than 12 hours with lethargy, fever at or above 102F (rectal) with lethargy, or respiratory distress - call now; 911 for blue lips or unresponsiveness."
+      ],
+      "enrichment": [
+        {
+          "body": "Run the babyproofing sweep at floor level this weekend: clear coins, batteries, magnets, and pet kibble from reach; put magnetic locks on medication and cleaning cabinets; add toilet locks; move toxic houseplants (pothos, philodendron, lily) up and out of range.",
+          "sourceLabel": "AAP Childproofing Your Home",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Childproofing-Your-Home.aspx"
+        },
+        {
+          "body": "Practice supported standing daily - hold him at the hips at a low table for a few minutes; weight-bearing now feeds the pull-to-stand sequence later.",
+          "sourceLabel": "AAP Movement: 8 to 12 Months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-8-to-12-Months.aspx"
+        },
+        {
+          "body": "Hand him a wooden spoon and a metal pot: banging two objects together is a CDC 9-month checkpoint, and the auditory payoff drives the repetition that builds it.",
+          "sourceLabel": "CDC 9-month milestones",
+          "sourceUrl": "https://www.cdc.gov/act-early/milestones/9-months.html"
+        },
+        {
+          "body": "Start baby sign at home if it appeals - five to 10 functional signs (milk, more, done), with signs back expected at 8-12 months. Calibration: the only longitudinal RCT found no language acceleration and a 17-study review supports no developmental claims; the plausible value is less frustration. It is free - skip the $200-350 paid class series.",
+          "sourceLabel": "Hanen Centre on baby sign evidence",
+          "sourceUrl": "https://www.hanen.org/information-tips/does-baby-sign-make-a-difference"
+        }
+      ],
+      "upcoming": [
+        "Day 210 (early in the week of Dec 5, 2026): the live bilingual-exposure window effectively closes - if a bilingual nanny or immersion infant room is still on the table, commit this week; sub-threshold exposure buys familiarity, not phonology.",
+        "Day 222-228 (week of Dec 19, 2026): holiday week - plan for disrupted naps and a re-run of the stranger-anxiety playbook with visiting family."
+      ]
+    }
+  },
+  {
+    "ageInDays": 208,
+    "subject": "Week 30: book the 9-month visit; regression window opens",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-30.md",
+      "baby-kb/topics/baby-proofing-timeline.md"
+    ],
+    "content": {
+      "ageInDays": 208,
+      "week": 30,
+      "hook": "Two calendar moves this week: get the 9-month visit on the books before holiday scheduling compresses January, and brace the sleep routine - the 8/9-month regression window is opening just as he learns to stand.",
+      "thisWeek": "Pulling to stand at furniture is emerging for early movers, with the occasional sideways cruise step - the CDC checkpoint for both is 12 months, so absence means nothing. Babble now runs in long varied strings (bababa, mamama), and he is doing systematic physics: banging, dropping, and mouthing everything in reach. The motor surge often coincides with the 8/9-month sleep regression - night wakings to practice standing are skill-driven, not a schedule failure.",
+      "watchFors": [
+        "[low concern] Standing in the crib and crying because he cannot get back down - teach sitting-back-down during daytime practice, and drop the mattress to its lowest setting.",
+        "[monitor] No forward progress on any locomotion - no crawling, scooting, or rolling toward a target - worth documenting for the 9-month visit.",
+        "[call within 24h] Any illness persisting past 3 days, or ear-pulling with fever.",
+        "[call now] Labored breathing with retractions between the ribs, or fever at or above 102F (rectal) with lethargy - same-day call; 911 for blue lips or unresponsiveness."
+      ],
+      "enrichment": [
+        {
+          "body": "Install hardware-mounted gates at the top of any stairs now rather than after the first climb - pressure-mounted passes only at the bottom - and lower the crib mattress the first day he pulls to stand."
+        },
+        {
+          "body": "Hold the line on the existing sleep routine through the regression window - respond consistently, offer daytime standing practice, and resist introducing new sleep crutches; regressions resolve in 2-6 weeks when practices stay stable.",
+          "sourceLabel": "AAP Getting Your Baby to Sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Read 30+ minutes daily with longer pauses - treat his babble as a conversational turn and answer it; turn-taking, not word count alone, is what predicts language-network development.",
+          "sourceLabel": "Romeo et al. 2018, conversational turns",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Play crawling chase and rolling-ball games on the floor - locomotor play is the highest-value motor input this month, and it is free."
+        }
+      ],
+      "upcoming": [
+        "Day 252-280 (Jan 18-Feb 15, 2027): 9-month well visit - influenza #2 if this is his first flu season, an iron rescreen, and possibly the ASQ-3 developmental screen. Book now; January pediatric slots compress around the holidays.",
+        "Day 215-221 (week of Dec 12, 2026): furniture-anchoring audit - every tall piece, before cruising starts."
+      ]
+    }
+  },
+  {
+    "ageInDays": 215,
+    "subject": "Week 31: cruising begins - anchor every tall piece this weekend",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-31.md",
+      "baby-kb/topics/baby-proofing-timeline.md",
+      "baby-kb/topics/introducing-solids.md"
+    ],
+    "content": {
+      "ageInDays": 215,
+      "week": 31,
+      "hook": "The first sideways steps along the couch put every unanchored bookshelf, dresser, and TV in play - the anchoring audit is this weekend's non-negotiable.",
+      "thisWeek": "Cruising - sideways steps while holding furniture - is consolidating for early movers, though the CDC checkpoint remains 12 months; some infants also get themselves from prone to sitting now. Vocal turn-taking is increasingly conversational in rhythm, with mama and dada appearing inconsistently and no referent required yet. Imitation of simple actions - clapping, banging - is the week's cognitive headline.",
+      "watchFors": [
+        "[low concern] Cruising falls with brief tears and normal behavior afterward - pad sharp coffee-table corners and let the curriculum run.",
+        "[low concern] No first tooth yet - typical eruption spans 6-10 months, and later than that is usually unremarkable.",
+        "[monitor] Persistent inability to bear weight on his legs, or no imitation of clapping or banging - add it to the 9-month-visit list.",
+        "[call within 24h] Fever lasting more than 24 hours, or a new wheeze.",
+        "[call now] After any fall: loss of consciousness, repeated vomiting, or unequal pupils - ER now. Bumps with normal behavior afterward need only observation."
+      ],
+      "enrichment": [
+        {
+          "body": "Anchor everything tall this weekend - TV, bookshelves, dressers, particle-board pieces especially: tip-over deaths in the crawling-to-climbing years are recurring and entirely preventable.",
+          "sourceLabel": "AAP Childproofing Your Home",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Childproofing-Your-Home.aspx"
+        },
+        {
+          "body": "Play imitation games in rounds - clap, wave, bang, pause - and wait him out; imitation is how motor programs get acquired, and he will start serving first."
+        },
+        {
+          "body": "Advance food textures from mashed toward chopped and soft finger foods, holding the top-9 allergen rotation at 2-3 exposures weekly each - texture progression by 9-12 months matters for oral-motor development.",
+          "sourceLabel": "AAP Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Schedule a first structured playdate - 30 minutes of parallel play with one other baby is the right dose; parallel, not interactive, is the developmental mode at this age."
+        }
+      ],
+      "upcoming": [
+        "Day 252-280 (Jan 18-Feb 15, 2027): 9-month well visit - if it is not on the calendar yet, book before holiday closures; the window includes influenza #2 and an iron rescreen.",
+        "Day 222-228 (week of Dec 19, 2026): holiday week - brief visiting relatives on the 15-minute floor-level warm-up rule before anyone holds him."
+      ]
+    }
+  },
+  {
+    "ageInDays": 222,
+    "subject": "Week 32: joint attention emerging - point, name, pause",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-32.md",
+      "baby-kb/topics/baby-proofing-timeline.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json"
+    ],
+    "content": {
+      "ageInDays": 222,
+      "week": 32,
+      "hook": "When you point across the room and he looks where you point - not at your finger - joint attention has arrived; it is the platform first words get built on, and it trains for free.",
+      "thisWeek": "At the 32-week mark mobility is substantial - many infants crawl or scoot, some skip crawling entirely, and cruising remains an early-mover attainment against a 12-month CDC checkpoint. The headline is joint attention emerging: he follows your gaze and your point, the shared-reference skill that naming and first words are built on. He imitates speech sounds and uses his voice deliberately to get your attention.",
+      "watchFors": [
+        "[low concern] Pulling up and toppling on carpet - bruise-grade falls with instant recovery are part of the acquisition curve.",
+        "[low concern] Holiday schedule chaos degrading naps for a few days - expect a reset within a week of routine resuming.",
+        "[monitor] No joint attention by 9-10 months - not following your point or gaze is an early flag for atypical development; raise it at the 9-month visit rather than waiting.",
+        "[call within 24h] Ear-pulling with fever, or any new illness that is not clearly improving.",
+        "[call now] A fall with loss of consciousness, blue lips, or severe respiratory distress - call 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Point and name a dozen times a day - look, a dog - then pause and wait for his eyes to follow your finger to the target; this is the joint-attention rep, and it is the highest-value daily ritual of the month.",
+          "sourceLabel": "CDC 9-month milestones",
+          "sourceUrl": "https://www.cdc.gov/act-early/milestones/9-months.html"
+        },
+        {
+          "body": "Ask where-is questions during the daily 30 minutes of reading and accept a look or a hand-swipe as the answer - he is mapping receptive vocabulary months before speech arrives.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Screen the holiday present haul before it reaches the floor: button batteries and loose small magnets are the two ER-grade hazards, and grandparent presents often predate current safety standards - tape battery compartments and bin anything that fits through a toilet-paper tube."
+        },
+        {
+          "body": "Lock in the single paid weekly swim slot before the conversion window closes at day 240: La Petite Baleen rolls enrollment automatically at $130-138 a month, and JCCSF Water Babies caps waitlists at five, so check for openings rather than queue. One program only - there is no dose-response evidence under 12 months.",
+          "sourceLabel": "La Petite Baleen tuition",
+          "sourceUrl": "https://www.swimlpb.com/swim-classes/tuition"
+        }
+      ],
+      "upcoming": [
+        "Day 252-280 (Jan 18-Feb 15, 2027): 9-month well visit - final call to book; the window opens Jan 18 and includes influenza #2 (first season), an iron rescreen, and possibly an ASQ-3 screen. Bring the joint-attention and motor notes.",
+        "Day 229-235 (week of Dec 26, 2026): quiet holiday stretch - a good week to finish the pre-9-month babyproofing list (anchors, gates, cabinet locks) before the January visit conversation."
+      ]
+    }
+  }
+]

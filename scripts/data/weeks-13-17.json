@@ -1,0 +1,242 @@
+[
+  {
+    "ageInDays": 89,
+    "subject": "Week 13: register the baby-lab pools before the 6-month ceiling",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-13.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json",
+      "baby-kb/topics/enrichment-maximalist-sf.md"
+    ],
+    "content": {
+      "ageInDays": 89,
+      "week": 13,
+      "hook": "register the baby-lab pools before the 6-month ceiling",
+      "thisWeek": "This is the first weekly edition — one Saturday email from here on, same structure and sourcing. Week 13 closes the formal newborn period: expect a fully steady head when upright, purposeful reaching with hands meeting at midline, and sustained cooing exchanges, with front-to-back rolling emerging for some (CDC checkpoint: 6 months). The 4-month sleep regression is imminent — the first night fragmenting typically starts within one to three weeks.",
+      "watchFors": [
+        "[low concern] Almost-rolling without success — the progression is endogenous and continues regardless of practice volume.",
+        "[monitor] No social smile yet — document and raise at the 4-month visit.",
+        "[monitor] Early sleep fragmenting — likely regression onset rather than illness if feeding and temperament are unchanged.",
+        "[call within 24h] Persistent feeding refusal or a new persistent crying pattern.",
+        "[call now] Fever ≥100.4°F rectal through day 90 — the workup-required threshold still applies (https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/default.aspx); from day 91 a same-day call remains the practical default. Blue lips, labored breathing, or unresponsiveness — 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Register with all four regional baby-lab pools in one sitting this week: Stanford SVNDL is recruiting 3–6-month-olds now with a hard eligibility ceiling at 6 months, plus UC Berkeley BELL, Stanford Language & Cognition, and the UCSF Kids Development Study. Free structured 1:1 sessions with trained researchers — one email session, four registrations, zero dollars.",
+          "sourceLabel": "Stanford SVNDL — participate",
+          "sourceUrl": "https://svndl.stanford.edu/participate/"
+        },
+        {
+          "body": "Enroll Avi in La Petite Baleen's free infant swim tier (ages 2–5 months swim free; 933 Mason St). It buys water acclimation plus grandfathered queue position before paid tuition starts at 6 months ($130–138/mo) — and since there is no dose-response evidence for swim under 12 months, one program is plenty.",
+          "sourceLabel": "La Petite Baleen SF",
+          "sourceUrl": "https://www.swimlpb.com/"
+        },
+        {
+          "body": "Extend tummy time toward 90 min/day cumulative — some infants now tolerate 15–20 min bouts, and chest-off-the-floor push-ups are the current target.",
+          "sourceLabel": "AAP: Back to Sleep, Tummy to Play",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Back-to-Sleep-Tummy-to-Play.aspx"
+        },
+        {
+          "body": "Narrate the entire bath, every night — warm water, soap, lift your arm. Conversational turns, not raw word count, predict later language outcomes, and bath runs nightly for the next 18 months, so the cumulative exposure is enormous.",
+          "sourceLabel": "Romeo et al. 2018, conversational turns",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        }
+      ],
+      "upcoming": [
+        "Day 100 (Aug 19, 2026): 100-day mark — book the photo session now if you're marking it.",
+        "Day 112–126 (Aug 31–Sep 14, 2026): 4-month well visit — book this week; vaccines due: RV #2, DTaP #2, Hib #2, PCV #2, IPV #2.",
+        "Days 98–126 (Aug 17–Sep 14, 2026): typical onset window for the 4-month sleep regression."
+      ]
+    }
+  },
+  {
+    "ageInDays": 96,
+    "subject": "Week 14: SFCM Smart Start registration closes this month",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-14.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json",
+      "baby-kb/topics/sleep-4-month-regression.md"
+    ],
+    "content": {
+      "ageInDays": 96,
+      "week": 14,
+      "hook": "SFCM Smart Start registration closes this month",
+      "thisWeek": "Sleep cycles are shortening from the newborn 50–60 minutes toward the adult-like ~45 minutes, and many infants start waking between cycles this week — 4–8 wakings a night is within the expected band for weeks 14–18, biological rather than behavioral. Daytime, look for pushing up on forearms, fascinated hand-watching, and ah-goo vocal play; front-to-back rolling remains emerging for some (CDC checkpoint: 6 months).",
+      "watchFors": [
+        "[low concern] Multiple night wakings, shortened naps, and distractible feeds — the regression's hallmark trio.",
+        "[monitor] A daytime feeding strike that persists past 48 hours.",
+        "[monitor] Any rolling attempt while swaddled — retire the swaddle for a sleep sack the same day.",
+        "[call within 24h] Persistent vomiting, or fever with poor feeding.",
+        "[call now] Fever ≥102°F rectal at 90+ days, lethargy disproportionate to a bad night, or labored breathing; blue lips or unresponsiveness — 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Register for SFCM Smart Start's 0–12-month Saturday cohort before August ends — the only SF infant music program with a fixed registration window (semester starts early September; ~$845 all-in). A missed August means a semester's delay. Active participatory music is the best-evidenced paid class at this age; passive listening is not the ingredient.",
+          "sourceLabel": "SFCM Smart Start",
+          "sourceUrl": "https://sfcm.edu/study/pre-college/early-childhood"
+        },
+        {
+          "body": "Audit the sleep environment before the regression peaks: crib-only sleep, room at 68–72°F, white noise at or under 50 dB measured at the crib, room-darkening shades.",
+          "sourceLabel": "AAP: Getting Your Baby to Sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Hand him a teether or soft fabric book and watch for hand-to-hand transfer attempts — most infants transfer objects between hands by 6 months, and the precursor practice is now."
+        },
+        {
+          "body": "Pause on each page at reading time — point, name the object, wait for a response. This is the first scaffold of dialogic reading.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        }
+      ],
+      "upcoming": [
+        "Day 100 (Aug 19, 2026): the 100-day mark (baekil) falls Wednesday — photo session this week if planned; bring two to three outfit changes and budget 60–90 minutes with soothing breaks.",
+        "Day 112–126 (Aug 31–Sep 14, 2026): 4-month well visit; vaccines: RV #2, DTaP #2, Hib #2, PCV #2, IPV #2 — book now if you haven't.",
+        "Early September 2026: SFCM Smart Start fall semester begins — registration must land in August."
+      ]
+    }
+  },
+  {
+    "ageInDays": 103,
+    "subject": "Week 15: sleep-training decision point; lock bilingual exposure",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-15.md",
+      "baby-kb/topics/sleep-4-month-regression.md",
+      "baby-kb/topics/enrichment-maximalist-sf.md"
+    ],
+    "content": {
+      "ageInDays": 103,
+      "week": 15,
+      "hook": "sleep-training decision point; lock bilingual exposure",
+      "thisWeek": "Mid-regression for many households — catnaps of 30–45 minutes and continued night wakings are the expected texture, not a setback. Motor this week: pushing up on extended arms, bearing weight on legs when held standing, and rolling for some (CDC checkpoint: 6 months). Cooing turns are lengthening into consonant-vowel combinations, laughing is arriving, and his preference for the two of you is sharpening.",
+      "watchFors": [
+        "[low concern] 30–45-minute catnaps and distractible, popping-off feeds — mid-regression baseline.",
+        "[monitor] A pattern worse than that baseline — wakings every 30 minutes, total night sleep under 8 hours, or naps only in motion. Document and bring to the 4-month visit.",
+        "[monitor] No spontaneous smiling or laughing yet — add it to the visit list.",
+        "[call within 24h] Fever with poor feeding, or acute illness signs layered on the sleep disruption.",
+        "[call now] Fever ≥102°F rectal, true lethargy (hard to rouse), or apnea or color change during sleep; blue lips or unresponsiveness — 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Lock the bilingual supply line now if a second language is the plan — perceptual narrowing closes around 12 months, and live human interaction is the only exposure mode shown to preserve non-native phoneme discrimination (high evidence, the best-supported domain this year). Two routes: a bilingual nanny (agency search runs 4–8 weeks; roughly $6,000–16,000/yr premium over monolingual) or an immersion infant room — Star Bridge Mandarin Immersion in West Portal accepts from 3 months, with 3–12-month waitlists. Target 25–30% of waking hours in the second language; passive audio and video are a verified zero.",
+          "sourceLabel": "Star Bridge Mandarin Immersion",
+          "sourceUrl": "https://www.starbridgemandarinimmersion.com/"
+        },
+        {
+          "body": "Write the sleep-training plan as a couple this week if you are starting at 4 months: graduated extinction carries the most evidence, unmodified extinction acts fastest, and 5-year follow-up data shows no measurable harm from behavioral methods. Commit to seven nights before judging results.",
+          "sourceLabel": "AAP sleep guidance",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx"
+        },
+        {
+          "body": "Arrange floor toys in a semicircle just out of reach during belly time — pivoting on the belly is the current motor frontier."
+        },
+        {
+          "body": "Add one flap-lift book (Where Is Baby's Belly Button?) to the rotation — anticipating the lift drives fine-motor reaching."
+        }
+      ],
+      "upcoming": [
+        "Day 112–126 (Aug 31–Sep 14, 2026): 4-month well visit — bring the sleep log, feeding log, and any milestone questions.",
+        "Days 105–140 (Aug 24–Sep 28, 2026): regression peak window — whatever response you choose, evaluate at the one-week mark, not night to night."
+      ]
+    }
+  },
+  {
+    "ageInDays": 110,
+    "subject": "Week 16: 4-month well visit opens Monday; five vaccines due",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-16.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json",
+      "baby-kb/topics/enrichment-maximalist-sf.md"
+    ],
+    "content": {
+      "ageInDays": 110,
+      "week": 16,
+      "hook": "4-month well visit opens Monday; five vaccines due",
+      "thisWeek": "The 4-month well visit window opens Monday, Aug 31 — the pediatrician will run the full CDC 4-month checklist (https://www.cdc.gov/act-early/milestones/4-months.html): smiling for attention, chuckling, cooing back at you, holding his head steady unsupported, pushing up on forearms, swinging at toys. Expect the sleep regression on the agenda whether you raise it or not. Worth asking there: early allergen introduction at 4 months vs. solids at six, growth trajectory, and iron status if exclusively breastfeeding.",
+      "watchFors": [
+        "[low concern] Extensive drooling and hand-mouthing — salivary maturation precedes first teeth (typically 6–10 months) by 2–3 months.",
+        "[monitor] A persistent flat spot or head asymmetry — the pediatrician may discuss a helmet referral around 6 months if it is not improving.",
+        "[call within 24h] Post-vaccine injection-site reaction with a hard knot over 2 inches, new-onset feeding refusal, or persistent vomiting.",
+        "[call now] Fever ≥102°F rectal, seizure activity, or anaphylaxis signs after vaccines (hives with breathing difficulty, facial swelling) — 911."
+      ],
+      "enrichment": [
+        {
+          "body": "Get the SFPL library card if you have not and put one weekly Baby Rhyme & Play Time on the standing calendar — free, runs infants to 15 months, ticketed same-day at popular branches. The Cantonese and Spanish storytimes double as free live second-language exposure blocks.",
+          "sourceLabel": "SFPL Baby Rhyme & Play Time",
+          "sourceUrl": "https://sfpl.org/kids/kids/events/storytime-sfpl"
+        },
+        {
+          "body": "Tour Montessori nidos and join waitlists now if a nido is the childcare plan: Cosmos Montessori SF takes 3–12-month-olds with a 3-child cap, so capacity is effectively the waitlist. Evaluate it as premium-ratio childcare — no outcome study supports a Montessori-specific effect under 12 months.",
+          "sourceLabel": "Cosmos Montessori SF nido",
+          "sourceUrl": "https://www.cosmosmontessorisf.com/program-3"
+        },
+        {
+          "body": "Settle the solids philosophy question — baby-led weaning vs. purées — and order the high chair this week, even on a 6-month timeline; Monday's visit is the right venue for the early-allergen question.",
+          "sourceLabel": "AAP: Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Hold a toy within batting range and let him swing, grab, and bring it to his mouth — the exact skills on the checklist he will be assessed against."
+        }
+      ],
+      "upcoming": [
+        "Day 112–126 (Aug 31–Sep 14, 2026): 4-month well visit; vaccines: RV #2, DTaP #2, Hib #2, PCV #2, IPV #2. Dose acetaminophen weight-based and only after symptoms appear — prophylactic dosing blunts the antibody response.",
+        "Day 117 (Sep 5, 2026): next email — post-vaccine recovery and the sleep-training one-week check."
+      ]
+    }
+  },
+  {
+    "ageInDays": 117,
+    "subject": "Week 17: sleep-training week-one verdict; post-vaccine recovery",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-17.md",
+      "baby-kb/topics/sleep-4-month-regression.md"
+    ],
+    "content": {
+      "ageInDays": 117,
+      "week": 17,
+      "hook": "sleep-training week-one verdict; post-vaccine recovery",
+      "thisWeek": "Post-vaccine week: expect mild fussiness for days 1–3, then a return to baseline — and for many infants the regression begins easing as the new sleep architecture stabilizes. If you started graduated extinction, meaningful improvement should be visible by night 5–7 (night 3–4 for unmodified extinction). Listen this week for the first proto-syllables — ba and da without a consistent referent — alongside reliable laughing and a solidifying preference for parents over strangers.",
+      "watchFors": [
+        "[low concern] Low-grade fever, fussiness, and injection-site tenderness for days 1–3 post-vaccine.",
+        "[low concern] Constant drool and hand-mouthing — rarely actual teething at this age.",
+        "[monitor] Fussiness beyond five days post-vaccine, or a regression showing no easing four weeks past onset.",
+        "[call within 24h] Persistent vomiting, or acute illness signs unrelated to the vaccines.",
+        "[call now] Fever ≥102°F rectal, seizure-like movements, or blue lips or unresponsiveness — call 911, don't second-guess."
+      ],
+      "enrichment": [
+        {
+          "body": "Evaluate the sleep training at the one-week mark: no improvement means revisit the method, re-audit the room environment, or postpone two weeks — not nightly method-switching.",
+          "sourceLabel": "AAP sleep guidance",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx"
+        },
+        {
+          "body": "Confirm the vitamin D routine: 400 IU/day for exclusively or predominantly breastfed infants; formula-fed infants taking over 32 oz/day are already covered.",
+          "sourceLabel": "AAP: Vitamin D",
+          "sourceUrl": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Vitamin-D-On-the-Double.aspx"
+        },
+        {
+          "body": "Set up the first side-by-side floor session with a similar-age baby — parallel-play foundations, and enrichment for both households."
+        },
+        {
+          "body": "Add one longer story (Goodnight Moon, Time for Bed) to the evening wind-down — reading as the fixed pre-sleep cue does double duty for the routine you are reinforcing.",
+          "sourceLabel": "AAP early literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        },
+        {
+          "body": "Order the solids kit on the 4–6-week countdown: silicone bibs, a suction-cup bowl, soft-tipped spoons, and a mesh feeder for early experimentation.",
+          "sourceLabel": "AAP: Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 112–126 (Aug 31–Sep 14, 2026): 4-month well visit window closes Sep 14 — book immediately if it has not happened.",
+        "Day 168–182 (Oct 26–Nov 9, 2026): 6-month well visit; third vaccine round plus iron/hemoglobin screen and solids-readiness assessment."
+      ]
+    }
+  }
+]

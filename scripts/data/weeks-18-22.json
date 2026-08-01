@@ -1,0 +1,245 @@
+[
+  {
+    "ageInDays": 124,
+    "subject": "Week 18: finalize the allergen-introduction plan before solids",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-18.md",
+      "baby-kb/topics/introducing-solids.md",
+      "baby-kb/topics/sleep-4-month-regression.md"
+    ],
+    "content": {
+      "ageInDays": 124,
+      "week": 18,
+      "hook": "Solids are about eight weeks out, and the allergen-introduction plan is the decision to settle first: Avi's eczema and family-history risk tier determines whether peanut starts at home around 6 months or under an allergist's supervision at 4-6 months.",
+      "thisWeek": "Days 124-130 sit mid-stretch between the 4-month vaccines and the 6-month milestones: brief tripod sitting, one-handed reaching, and consonant babble (ba, da, ga) with vocal turn-taking are the headline developments. Rolling both directions is emerging for some - the CDC checkpoint for rolling tummy-to-back is 6 months, so its absence now is not a flag. Socially he distinguishes you from strangers and anticipates being picked up.",
+      "watchFors": [
+        "[low concern] Teething signs - drool, gum-rubbing, chewing everything, extra fussiness. Symptoms front-run the first tooth by weeks; eruption typically waits until 6-10 months.",
+        "[monitor] Night sleep not consolidating 4-6 weeks past regression onset despite a stable routine and environment - log the wakings and bring the log to the 6-month visit.",
+        "[call within 24h] Persistent or worsening eczema - it moves him into a higher allergen-introduction risk tier, and that conversation must happen before peanut does.",
+        "[call now] Fever of 102F rectal or higher, fewer than five wet diapers in 24 hours, labored breathing, or blue lips or unresponsiveness - 911 for breathing or color change."
+      ],
+      "enrichment": [
+        {
+          "body": "Finalize the allergen plan by risk tier: severe eczema or known egg allergy means a pediatric allergist before peanut; mild eczema or family history means a pediatrician conversation about a 4-6-month start per the LEAP-derived guidelines; no risk factors means peanut arrives around 6 months with other solids.",
+          "sourceLabel": "AAP - Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Protect open floor time - rolling practice is organic now, with him flipping in and out of tummy time on his own. Keep container time (seats, swings) to a minimum during wake windows.",
+          "sourceLabel": "AAP - Movement: 4 to 7 Months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-4-to-7-Months.aspx"
+        },
+        {
+          "body": "Anchor the post-regression bedtime routine: bath, feed, book, song - same order nightly, drowsy-but-awake into the crib, bedtime in the 18:00-19:00 slot. Most infants consolidate within 2-6 weeks of a consistent response strategy.",
+          "sourceLabel": "AAP - Getting Your Baby to Sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Book the first-birthday photographer - top SF milestone photographers book 4-6 months out, which puts a May 2027 session inside the booking window now."
+        }
+      ],
+      "upcoming": [
+        "Day 112-126 (Aug 31-Sep 14, 2026): 4-month well visit - window closes Monday; if it has not happened yet, book today.",
+        "Day 168-182 (Oct 26-Nov 9, 2026): 6-month well visit - book now. Vaccines: RV #3 (if RV5), DTaP #3, Hib #3 (if PRP-T), PCV #3, influenza #1; iron/hemoglobin screen; solids-readiness assessment."
+      ]
+    }
+  },
+  {
+    "ageInDays": 131,
+    "subject": "Week 19: choking-hazard audit - everything goes in the mouth now",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-19.md",
+      "baby-kb/topics/naps-by-age.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json"
+    ],
+    "content": {
+      "ageInDays": 131,
+      "week": 19,
+      "hook": "Deliberate mouthing arrives this week - every object he can grab goes straight in. That is exactly how he should be exploring, which makes the floor-level choking-hazard audit this weekend's job.",
+      "thisWeek": "Days 131-137 are the pre-solids consolidation week: tripod sitting with hands forward for 5-10 seconds, deliberate bring-to-mouth exploration of texture, babble strings with real intonation, and laughing at peek-a-boo. Rolling is possible or emerging - the CDC 2022 checkpoint is 6 months, so no rolling yet is within range. A few early movers rock on hands and knees; more typically that lands at 6-10 months.",
+      "watchFors": [
+        "[low concern] Everything in the mouth - necessary developmental exploration, not a behavior to discourage. Supervise and control the floor instead.",
+        "[low concern] 30-45-minute catnaps - common at this age and typically lengthening by 5-6 months. If he wakes content and the next wake window holds, the nap is doing its job.",
+        "[monitor] Persistent inability to bear weight on his legs when held standing, or no rolling in either direction - worth a line in the 6-month visit notes.",
+        "[call within 24h] Fever of 100.4F rectal or higher with reduced feeding, or acute illness onset with unusual irritability - same-day call.",
+        "[call now] Fever of 102F rectal or higher, sudden-onset lethargy, labored breathing, or blue lips - 911 for breathing or color change."
+      ],
+      "enrichment": [
+        {
+          "body": "Walk every room at floor level this weekend: coins, batteries, magnets (neodymium sets are life-threatening if two are swallowed), small toy parts, pet food. Install outlet covers while you are down there - crawling typically starts at 7-10 months.",
+          "sourceLabel": "AAP - Childproofing Your Home",
+          "sourceUrl": "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Childproofing-Your-Home.aspx"
+        },
+        {
+          "body": "Prop him into supported sitting with toys in a semicircle and you as the backstop - 5-10-second tripod holds are the current working set. Offer a toy at midline and watch for the hand-to-hand transfer.",
+          "sourceLabel": "AAP - Movement: 4 to 7 Months",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Movement-4-to-7-Months.aspx"
+        },
+        {
+          "body": "Restructure the day around three naps if the fourth is collapsing - wake windows run 2-2.5 hours at this age, and the last nap should end by 16:30-17:00 to protect an 18:30-19:30 bedtime.",
+          "sourceLabel": "AAP - Baby Sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/default.aspx"
+        },
+        {
+          "body": "Keep the weekly SFPL Baby Rhyme & Play Time slot on the standing calendar - free, ticketed at popular branches, and the Cantonese session doubles as live L2 exposure; the infant program runs to 15 months.",
+          "sourceLabel": "SFPL storytimes",
+          "sourceUrl": "https://sfpl.org/kids/kids/events/storytime-sfpl"
+        }
+      ],
+      "upcoming": [
+        "Day 168-182 (Oct 26-Nov 9, 2026): 6-month well visit - confirm it is booked. Bring the iron question if exclusively breastfed, the allergen plan, and sleep status.",
+        "Sat Sep 26, 2026 (week 20): the day 140-200 participatory-music enrollment window opens - decision brief next week."
+      ]
+    }
+  },
+  {
+    "ageInDays": 138,
+    "subject": "Week 20: participatory music class window opens - enroll one",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-20.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json",
+      "baby-kb/topics/enrichment-maximalist-sf.md"
+    ],
+    "content": {
+      "ageInDays": 138,
+      "week": 20,
+      "hook": "The one paid class with randomized-trial evidence behind it opens its window this week: active, participatory infant music. Enroll one - the participation is the ingredient, not the brand.",
+      "thisWeek": "Days 138-144 approach the 6-month landmark: sitting with progressively less support, deliberate object examination (turn, mouth, transfer), and reduplicated babble (baba, dada - non-referential at this stage). Rolling is fluid for some; the CDC tummy-to-back checkpoint remains 6 months. His iron stores are beginning their pre-6-month depletion - solids will backfill via fortified cereal and iron-rich foods.",
+      "watchFors": [
+        "[low concern] Mini sleep disruptions at developmental leaps even with the 4-month regression behind you - hold the routine steady rather than re-engineering it.",
+        "[low concern] Dada with no referent - reduplicated babble is a language milestone, not a first word; referential use comes months later.",
+        "[monitor] Persistent failure to roll, sit with support, or transfer objects hand to hand - flag for the 6-month visit.",
+        "[call within 24h] Acute illness onset or persistent feeding difficulties - same-day call.",
+        "[call now] Fever of 102F rectal or higher with lethargy, labored breathing, or blue lips - 911 for breathing or color change."
+      ],
+      "enrichment": [
+        {
+          "body": "Enroll one weekly participatory music class. The Gerry/Unrau/Trainor 2012 randomized trial found active classes at 6 months beat passive listening on pitch and rhythm discrimination and prelinguistic gestures. Music Together SF runs rolling 10-week babies sessions ($405, or $380 on auto-enroll; enroll about two weeks before a session start); SFCM Smart Start's fixed August registration has passed for this fall, so Music Together is the live option. One class is the right dose - no dose-response evidence exists under 12 months.",
+          "sourceLabel": "Gerry, Unrau & Trainor 2012 (PubMed)",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/22490184/"
+        },
+        {
+          "body": "Start Suzuki listening if early instrumental training is the plan: settle the instrument (violin and piano are the common calls), order the Book 1-2 repertoire recordings, and run them 30+ minutes a day during play or feeds. Years of listening precede lessons at age 3-4; the cost of the option now is recordings only.",
+          "sourceLabel": "Suzuki Association of the Americas",
+          "sourceUrl": "https://suzukiassociation.org/"
+        },
+        {
+          "body": "Rotate in hand-eye coordination toys: stacking rings (target the ring toward the post) and a shape-sorter used for open exploration - sorting itself is not the goal yet."
+        },
+        {
+          "body": "Shift read-alouds toward dialogue: ask what's-that and pause for a response even though he is pre-verbal - the turn-taking, not the answer, is the input.",
+          "sourceLabel": "AAP - Early Literacy",
+          "sourceUrl": "https://www.aap.org/en/patient-care/early-childhood/early-literacy/"
+        }
+      ],
+      "upcoming": [
+        "Day 168-182 (Oct 26-Nov 9, 2026): 6-month well visit - book now if it is not on the calendar; the iron/hemoglobin screen and solids-readiness assessment happen here.",
+        "Oct 2026-Mar 2027: RSV season - put RSV questions on the 6-month visit list, and review circulating-illness patterns if he is in group care."
+      ]
+    }
+  },
+  {
+    "ageInDays": 145,
+    "subject": "Week 21: decide puree vs baby-led weaning before solids start",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-21.md",
+      "baby-kb/topics/introducing-solids.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json"
+    ],
+    "content": {
+      "ageInDays": 145,
+      "week": 21,
+      "hook": "First solids are roughly a month out, and the method decision - purees, baby-led weaning, or combo - is this week's call. The honest evidence summary: method matters less than allergen timing.",
+      "thisWeek": "Days 145-151 are pre-6-month consolidation: supported sitting is steadier, with brief independent moments for some - the CDC sits-without-support checkpoint is 9 months, so support is still the norm. Rolling is now navigation, babble turn-taking sustains several exchanges, and he anticipates outcomes, smiling when the bath starts running. One epidemiological note: ear-infection incidence starts climbing from 6 months, usually riding on viral colds.",
+      "watchFors": [
+        "[low concern] Drool surge ahead of the first tooth - eruption typically lands at 6-10 months.",
+        "[monitor] Ear-tugging without other illness signs - usually self-soothing or teething, occasionally early ear pain; watch for the fever pairing.",
+        "[call within 24h] Ear-tugging plus fever plus fussiness - possible otitis media; peak incidence runs 6-24 months.",
+        "[call now] Fever of 102F rectal or higher with lethargy, persistent vomiting with reduced wet diapers, labored breathing, or blue lips - 911 for breathing or color change."
+      ],
+      "enrichment": [
+        {
+          "body": "Decide the solids method and stage the gear. Combo approaches are common and not harmful, and baby-led weaning does not increase choking risk versus purees in the randomized data - allergen timing matters more than method. Equipment: high chair, bibs, pre-loaded spoons, suction bowl, 2-oz silicone freezer cups, mat under the chair. First 5 foods: avocado, banana, sweet potato, iron-fortified oatmeal, well-cooked egg yolk - then peanut within the first two weeks of solids.",
+          "sourceLabel": "AAP - Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Log 30+ minutes outside daily - grass and sand under his hands, birdsong, traffic, wind, and light variation are the sensory curriculum at this age, free of charge."
+        },
+        {
+          "body": "Introduce cause-and-effect toys - a ball that rolls when pushed, a button that triggers music. This is the front edge of intentional action-outcome learning."
+        },
+        {
+          "body": "Use the final free-tier weeks at La Petite Baleen (933 Mason St) - the free infant-swim window ends when paid tuition starts at 6 months, around day 180.",
+          "sourceLabel": "La Petite Baleen - tuition",
+          "sourceUrl": "https://www.swimlpb.com/swim-classes/tuition"
+        },
+        {
+          "body": "Bank skipped or short naps into an earlier bedtime - 30-60 minutes forward - rather than a late-afternoon make-up nap that pushes the whole night later.",
+          "sourceLabel": "AAP - Getting Your Baby to Sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        }
+      ],
+      "upcoming": [
+        "Day 168-182 (Oct 26-Nov 9, 2026): 6-month well visit - final booking check; solids-readiness assessment and iron/hemoglobin screen happen here.",
+        "Day 166-172 (week of Oct 24, 2026): likely first-solids week if the visit lands early and readiness signs are in - first-foods brief to follow."
+      ]
+    }
+  },
+  {
+    "ageInDays": 152,
+    "subject": "Week 22: build the 6-month visit list - iron screen is universal",
+    "citations": [
+      "baby-kb/voice.md",
+      "baby-kb/buckets/week-22.md",
+      "baby-kb/topics/sleep-4-month-regression.md",
+      "baby-kb/calendars/enrichment-pipeline-calendar.json"
+    ],
+    "content": {
+      "ageInDays": 152,
+      "week": 22,
+      "hook": "The 6-month visit window opens in about two weeks. This week's job is the prep list - allergen plan review, the universal iron check, lead questionnaire, solids strategy, sleep status - so the appointment converts decisions instead of opening them.",
+      "thisWeek": "Days 152-158 widen the social world: he knows familiar people, studies himself in the mirror, blows raspberries, and takes turns making sounds - a CDC 6-month checkpoint. Tripod sitting is emerging for some; the CDC sits-without-support checkpoint is 9 months, so propped is still the expected posture. His sharpening preference for the two of you is the precursor to stranger anxiety, which peaks at 7-10 months.",
+      "watchFors": [
+        "[low concern] Increased clinginess and protest at being put down - attachment sharpening, on schedule.",
+        "[monitor] Little interest in toys, minimal vocalizing, or scarce eye contact - document and raise at the 6-month visit.",
+        "[monitor] Night wakings still at 4+ after six or more weeks of consistent response - see the sleep re-evaluation below.",
+        "[call within 24h] New ear-pulling with fever, or illness symptoms persisting past 48 hours - same-day call.",
+        "[call now] Seizure-like activity, fever of 102F rectal or higher with lethargy, labored breathing, or blue lips - call 911, don't second-guess."
+      ],
+      "enrichment": [
+        {
+          "body": "Stock the solids shelf: iron-fortified single-grain oat cereal (the standard starting point) plus the week-one produce - avocado, banana, sweet potato. If baby-led weaning won the method decision, skip spoons and plan soft strips; if purees, a NumNum-style pre-loaded spoon.",
+          "sourceLabel": "AAP - Starting Solid Foods",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+        },
+        {
+          "body": "Point and name consistently during read-alouds - this is a cat; the cat is on the mat. Conversational turns, not raw word count, are what predict language outcomes in the neuroimaging data.",
+          "sourceLabel": "Romeo et al. 2018 (PubMed)",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/29442613/"
+        },
+        {
+          "body": "Get on the floor at his eye level after sitting him up - lie down beside him rather than looming above. Eye-level interaction raises the quality of vocal turn-taking."
+        },
+        {
+          "body": "Re-evaluate the sleep plan if you rode out the regression: past week 22 with 4+ nightly wakings, pick a formal method and commit for seven nights. Graduated extinction shows meaningful improvement by night 5-7, with no measurable harm to behavior or attachment at 5-year follow-up (Hiscock 2012).",
+          "sourceLabel": "AAP - Getting Your Baby to Sleep",
+          "sourceUrl": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Getting-Your-Baby-to-Sleep.aspx"
+        },
+        {
+          "body": "Register with Stanford SVNDL this week if the baby-lab batch never happened - the 3-6-month eligibility ceiling closes around day 180, four weeks out.",
+          "sourceLabel": "Stanford SVNDL",
+          "sourceUrl": "https://svndl.stanford.edu/participate/"
+        }
+      ],
+      "upcoming": [
+        "Day 168-182 (Oct 26-Nov 9, 2026): 6-month well visit - bring the list above. Vaccines: RV #3 (if RV5), DTaP #3, Hib #3 (if PRP-T), PCV #3, influenza #1; iron/hemoglobin screen; solids-readiness assessment.",
+        "Day 166-172 (week of Oct 24, 2026): solids could start this week if the visit lands at the front of the window - shelf stocked per above."
+      ]
+    }
+  }
+]
