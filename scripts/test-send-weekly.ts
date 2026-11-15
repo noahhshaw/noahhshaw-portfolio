@@ -79,7 +79,7 @@ async function main() {
     const result = await resend.emails.send({
       from: FROM,
       to: [TO],
-      replyTo: REPLY_TO,
+      reply_to: REPLY_TO,
       subject: `[${label}] ${artifact.subject}`,
       text: artifact.bodyText,
       html: artifact.bodyHtml,

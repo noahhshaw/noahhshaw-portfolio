@@ -9,10 +9,6 @@
       "schedule": "0 9 * * *"
     },
     {
-      "path": "/api/cron/baby-morning",
-      "schedule": "0 14 * * *"
-    },
-    {
       "path": "/api/cron/process-replies",
       "schedule": "0 13 * * *"
     },
